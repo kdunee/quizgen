@@ -1,0 +1,310 @@
+[
+    {
+        "question": "What is the primary purpose of a build cache in Gradle?",
+        "options": {
+            "A": "To store source code for future reference",
+            "B": "To remember and reuse previous build outputs",
+            "C": "To manage version control for project files",
+            "D": "To compile code faster by using multiple processors"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a build cache in Gradle is to remember and reuse previous build outputs. This helps to avoid unnecessary work by allowing developers to access results from earlier builds, thus speeding up the build process and improving efficiency."
+    },
+    {
+        "question": "How does a local build cache benefit a single developer?",
+        "options": {
+            "A": "It allows for collaboration with other developers",
+            "B": "It prevents the need to rebuild outputs that have already been generated",
+            "C": "It automatically updates the project dependencies",
+            "D": "It provides a backup of the entire project"
+        },
+        "correct_answer": "B",
+        "explanation": "A local build cache benefits a single developer by preventing the need to rebuild outputs that have already been generated. This is particularly useful when switching branches or working on different commits, as it allows the developer to reuse previously built results."
+    },
+    {
+        "question": "What is a recommended first step when introducing a build cache in a team environment?",
+        "options": {
+            "A": "Enable it for all developer machines immediately",
+            "B": "Use it for builds running as part of continuous integration (CI)",
+            "C": "Share results between all developers right away",
+            "D": "Disable it for all builds to ensure stability"
+        },
+        "correct_answer": "B",
+        "explanation": "A recommended first step when introducing a build cache in a team environment is to use it for builds running as part of continuous integration (CI). This approach allows for a more stable and predictable environment, helping to identify any issues with cacheability before expanding its use."
+    },
+    {
+        "question": "What is a potential risk of allowing developers to upload their results to a shared cache?",
+        "options": {
+            "A": "It can lead to faster build times",
+            "B": "It may result in corrupted results being cached",
+            "C": "It ensures all developers have the same outputs",
+            "D": "It simplifies the build process for everyone"
+        },
+        "correct_answer": "B",
+        "explanation": "A potential risk of allowing developers to upload their results to a shared cache is that it may result in corrupted results being cached. This can happen if developers unintentionally modify task inputs or outputs while a task is executing, leading to unreliable outputs being stored in the cache."
+    },
+    {
+        "question": "What is the primary benefit of using incremental builds in Gradle?",
+        "options": {
+            "A": "To avoid rebuilding tasks that have already been completed",
+            "B": "To ensure all tasks are rebuilt every time",
+            "C": "To increase the size of the build output",
+            "D": "To eliminate the need for version control"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary benefit of using incremental builds in Gradle is to avoid rebuilding tasks that have already been completed. This feature helps to save time and resources by only executing tasks that are necessary based on changes made, thus improving overall build efficiency."
+    },
+    {
+        "question": "What happens to previous build results when a task is re-executed in an incremental build?",
+        "options": {
+            "A": "They are permanently deleted from the cache",
+            "B": "They are remembered and reused if applicable",
+            "C": "They are ignored completely",
+            "D": "They are automatically updated without any checks"
+        },
+        "correct_answer": "B",
+        "explanation": "In an incremental build, previous build results are remembered and can be reused if applicable. This allows Gradle to optimize the build process by leveraging already completed tasks, thus reducing unnecessary work and speeding up the build time."
+    },
+    {
+        "question": "Why is it important to configure cacheable tasks properly in incremental builds?",
+        "options": {
+            "A": "To ensure that all tasks are executed every time",
+            "B": "To prevent stale outputs from being cached",
+            "C": "To increase the complexity of the build process",
+            "D": "To allow for unlimited task modifications"
+        },
+        "correct_answer": "B",
+        "explanation": "It is important to configure cacheable tasks properly in incremental builds to prevent stale outputs from being cached. If tasks are not correctly set up to handle stale outputs, it can lead to corrupted results and unreliable builds, undermining the benefits of incremental building."
+    },
+    {
+        "question": "What is a common issue that can arise when sharing task outputs between developers in an incremental build environment?",
+        "options": {
+            "A": "All developers will have the same build results",
+            "B": "Unintentional modifications to task inputs or outputs can occur",
+            "C": "Builds will always be faster",
+            "D": "There will be no need for version control"
+        },
+        "correct_answer": "B",
+        "explanation": "A common issue that can arise when sharing task outputs between developers in an incremental build environment is unintentional modifications to task inputs or outputs. These changes can happen without the developers noticing, potentially leading to corrupted results being uploaded to the shared cache, which can compromise the integrity of the build process."
+    },
+    {
+        "question": "What is the primary purpose of Continuous Integration (CI) in software development?",
+        "options": {
+            "A": "To ensure that code changes are automatically tested and integrated into a shared repository",
+            "B": "To allow developers to work independently without any collaboration",
+            "C": "To create a final product without the need for testing",
+            "D": "To manage project documentation and user feedback"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Continuous Integration (CI) is to ensure that code changes are automatically tested and integrated into a shared repository. This practice helps to identify integration issues early, facilitates collaboration among developers, and ensures that the software remains in a deployable state."
+    },
+    {
+        "question": "How does Continuous Integration (CI) benefit developers when working on shared projects?",
+        "options": {
+            "A": "By allowing developers to ignore changes made by others",
+            "B": "By providing faster feedback on code changes and reducing integration problems",
+            "C": "By eliminating the need for version control systems",
+            "D": "By requiring all developers to work on the same machine"
+        },
+        "correct_answer": "B",
+        "explanation": "Continuous Integration (CI) benefits developers by providing faster feedback on code changes and reducing integration problems. By automatically testing and integrating changes, CI helps developers identify issues early, which leads to a smoother development process and improved collaboration."
+    },
+    {
+        "question": "What is a common first step when introducing a build cache in a Continuous Integration (CI) environment?",
+        "options": {
+            "A": "Enabling it for local developer builds only",
+            "B": "Enabling it for builds running as part of Continuous Integration only",
+            "C": "Disabling it completely to avoid complications",
+            "D": "Using it for all builds without any testing"
+        },
+        "correct_answer": "B",
+        "explanation": "A common first step when introducing a build cache in a Continuous Integration (CI) environment is to enable it for builds running as part of CI only. This approach allows teams to leverage the stability and predictability of CI environments to identify any issues with the build that may affect cacheability."
+    },
+    {
+        "question": "What is a potential risk of allowing developers to upload their results to a shared cache in a CI environment?",
+        "options": {
+            "A": "It can lead to faster builds for all developers",
+            "B": "It may result in corrupted results due to unintentional changes during task execution",
+            "C": "It ensures that all developers are using the same version of the software",
+            "D": "It eliminates the need for testing before integration"
+        },
+        "correct_answer": "B",
+        "explanation": "A potential risk of allowing developers to upload their results to a shared cache in a CI environment is that it may result in corrupted results due to unintentional changes made during task execution. Developers can inadvertently modify task inputs or outputs, leading to unreliable cache entries unless safeguards are implemented."
+    },
+    {
+        "question": "What are task outputs in the context of Gradle's build cache?",
+        "options": {
+            "A": "The results generated by executing a task",
+            "B": "The inputs required to execute a task",
+            "C": "The configuration settings for a build",
+            "D": "The source code files in a project"
+        },
+        "correct_answer": "A",
+        "explanation": "Task outputs refer to the results generated by executing a task in Gradle. These outputs can be reused in subsequent builds to avoid redundant work, thereby speeding up the build process. Understanding task outputs is crucial for effectively utilizing the build cache."
+    },
+    {
+        "question": "Why is it important to manage task outputs carefully when using a shared build cache?",
+        "options": {
+            "A": "To ensure that all developers have access to the same source code",
+            "B": "To prevent unintentional modifications that can corrupt cached results",
+            "C": "To increase the size of the build cache for better performance",
+            "D": "To allow for faster internet connections during builds"
+        },
+        "correct_answer": "B",
+        "explanation": "Managing task outputs carefully is important to prevent unintentional modifications that can corrupt cached results. If developers change task inputs or outputs while a task is executing, it can lead to unreliable outputs being cached. This is why Gradle recommends using clean builds for uploading content to the cache until confidence in incremental build behavior is established."
+    },
+    {
+        "question": "How can task outputs benefit a development team working on the same project?",
+        "options": {
+            "A": "By ensuring that all developers write the same code",
+            "B": "By allowing developers to reuse outputs generated in continuous integration builds",
+            "C": "By eliminating the need for version control systems",
+            "D": "By automatically resolving code conflicts between developers"
+        },
+        "correct_answer": "B",
+        "explanation": "Task outputs can significantly benefit a development team by allowing developers to reuse outputs that have already been generated in continuous integration (CI) builds. This means that when a developer pulls changes from version control, they can avoid rebuilding components that have already been built, thus saving time and resources."
+    },
+    {
+        "question": "What is a potential risk of allowing developers to upload their task outputs to a shared cache?",
+        "options": {
+            "A": "It can lead to faster build times for all developers",
+            "B": "It may result in corrupted results due to unintended changes during execution",
+            "C": "It can simplify the build process for new developers",
+            "D": "It allows for better tracking of code changes"
+        },
+        "correct_answer": "B",
+        "explanation": "Allowing developers to upload their task outputs to a shared cache poses a risk of corrupted results due to unintended changes made during task execution. Since Gradle currently lacks safeguards against such modifications, it is recommended to be cautious when sharing outputs to ensure the integrity of the cached results."
+    },
+    {
+        "question": "What is a primary benefit of using a build cache in developer collaboration?",
+        "options": {
+            "A": "It allows developers to share their local changes directly with others.",
+            "B": "It enables the reuse of previously built outputs, reducing redundant work.",
+            "C": "It ensures that all developers work on the same version of the code.",
+            "D": "It automatically resolves all merge conflicts between developers."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using a build cache in developer collaboration is that it enables the reuse of previously built outputs, which significantly reduces redundant work. This means that when developers pull changes from version control, they can avoid rebuilding outputs that have already been generated, thus speeding up the development process."
+    },
+    {
+        "question": "Why is it recommended to start using the build cache in continuous integration (CI) environments?",
+        "options": {
+            "A": "CI environments are less stable than local developer machines.",
+            "B": "CI environments typically have more predictable conditions for caching.",
+            "C": "CI environments do not require any configuration for the build cache.",
+            "D": "CI environments are designed to handle all developer changes simultaneously."
+        },
+        "correct_answer": "B",
+        "explanation": "It is recommended to start using the build cache in continuous integration (CI) environments because these environments typically have more predictable conditions for caching. This stability helps identify any potential issues with the build that may affect cacheability, making it easier to ensure that the cache works effectively before rolling it out to individual developer machines."
+    },
+    {
+        "question": "What is a potential risk of allowing developers to upload their results to a shared cache?",
+        "options": {
+            "A": "It can lead to faster builds for all developers.",
+            "B": "It may result in corrupted results being uploaded due to unintentional changes.",
+            "C": "It ensures that all developers are using the same build configuration.",
+            "D": "It prevents developers from making changes to their local builds."
+        },
+        "correct_answer": "B",
+        "explanation": "A potential risk of allowing developers to upload their results to a shared cache is that it may result in corrupted results being uploaded due to unintentional changes made during task execution. Since Gradle currently lacks safeguards against such modifications, this can lead to unreliable outputs in the shared cache."
+    },
+    {
+        "question": "How can combining local and remote caches benefit developer builds?",
+        "options": {
+            "A": "It eliminates the need for version control systems.",
+            "B": "It allows developers to work without any internet connection.",
+            "C": "It speeds up switching branches and reduces network usage.",
+            "D": "It ensures that all builds are identical across different machines."
+        },
+        "correct_answer": "C",
+        "explanation": "Combining local and remote caches can benefit developer builds by speeding up the process of switching branches and reducing network usage. The local cache helps avoid redundant work when switching branches, while the remote cache provides access to outputs generated by other developers, creating a compound effect that enhances overall build efficiency."
+    },
+    {
+        "question": "What does cacheability refer to in the context of Gradle's build cache?",
+        "options": {
+            "A": "The ability to store and reuse build outputs across different builds",
+            "B": "The process of cleaning up old build artifacts",
+            "C": "The speed at which builds are executed",
+            "D": "The method of tracking changes in version control"
+        },
+        "correct_answer": "A",
+        "explanation": "Cacheability refers to the ability to store and reuse build outputs across different builds. This allows developers to avoid redundant work by retrieving previously generated outputs instead of rebuilding them, thus improving efficiency and reducing build times."
+    },
+    {
+        "question": "Why is it important to ensure that tasks are properly configured for cacheability?",
+        "options": {
+            "A": "To prevent network issues during builds",
+            "B": "To avoid corrupted results in the shared cache",
+            "C": "To increase the number of developers working on a project",
+            "D": "To enhance the visual appearance of build logs"
+        },
+        "correct_answer": "B",
+        "explanation": "It is important to ensure that tasks are properly configured for cacheability to avoid corrupted results in the shared cache. If tasks are not correctly set up, they may produce stale or incorrect outputs, which can lead to issues when those outputs are reused by other developers or builds."
+    },
+    {
+        "question": "What is a potential risk of allowing developers to upload their results to a shared cache?",
+        "options": {
+            "A": "Increased build times due to network latency",
+            "B": "Unintentional modifications to task inputs or outputs",
+            "C": "Loss of version control history",
+            "D": "Incompatibility with continuous integration systems"
+        },
+        "correct_answer": "B",
+        "explanation": "A potential risk of allowing developers to upload their results to a shared cache is unintentional modifications to task inputs or outputs. Developers may change files while a build is running, leading to corrupted or unreliable outputs being cached, which can affect other developers relying on those results."
+    },
+    {
+        "question": "What is the benefit of combining local and remote caching in Gradle?",
+        "options": {
+            "A": "To simplify the build configuration process",
+            "B": "To reduce network usage and speed up builds",
+            "C": "To ensure all developers use the same IDE",
+            "D": "To eliminate the need for version control systems"
+        },
+        "correct_answer": "B",
+        "explanation": "The benefit of combining local and remote caching in Gradle is to reduce network usage and speed up builds. Local caching allows for quick access to previously built outputs, while remote caching provides access to outputs generated by other developers, enhancing overall build efficiency."
+    },
+    {
+        "question": "What is the primary purpose of artifact management in the context of build systems?",
+        "options": {
+            "A": "To track changes in source code",
+            "B": "To manage the storage and retrieval of build outputs",
+            "C": "To optimize network usage during builds",
+            "D": "To automate the deployment of applications"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of artifact management is to manage the storage and retrieval of build outputs, which are the artifacts generated during the build process. This includes ensuring that these artifacts can be reused efficiently across different builds and by different developers, thereby improving build speed and consistency."
+    },
+    {
+        "question": "How does artifact management contribute to team collaboration in software development?",
+        "options": {
+            "A": "By enforcing coding standards among developers",
+            "B": "By allowing developers to share and reuse build outputs",
+            "C": "By providing a platform for code reviews",
+            "D": "By automating the testing of code changes"
+        },
+        "correct_answer": "B",
+        "explanation": "Artifact management contributes to team collaboration by allowing developers to share and reuse build outputs. This means that when one developer builds a module, others can access the already built artifacts instead of rebuilding them, which saves time and reduces redundancy in the development process."
+    },
+    {
+        "question": "What is a potential risk when sharing build outputs among developers?",
+        "options": {
+            "A": "Increased build times due to network latency",
+            "B": "Corrupted results due to unintentional modifications",
+            "C": "Loss of version control over source code",
+            "D": "Incompatibility with different build tools"
+        },
+        "correct_answer": "B",
+        "explanation": "A potential risk when sharing build outputs among developers is the possibility of corrupted results due to unintentional modifications. Developers may change task inputs or outputs while a task is executing, which can lead to incorrect or stale artifacts being uploaded to the shared cache, compromising the integrity of the build outputs."
+    },
+    {
+        "question": "What is a recommended practice when uploading artifacts to a shared cache?",
+        "options": {
+            "A": "Use incremental builds to save time",
+            "B": "Only use clean builds to ensure reliability",
+            "C": "Allow all developers to upload their results freely",
+            "D": "Disable caching for all builds to avoid issues"
+        },
+        "correct_answer": "B",
+        "explanation": "A recommended practice when uploading artifacts to a shared cache is to only use clean builds to ensure reliability. This helps to avoid issues with stale outputs and ensures that the artifacts being uploaded are consistent and accurate, thereby maintaining the integrity of the shared cache."
+    }
+]

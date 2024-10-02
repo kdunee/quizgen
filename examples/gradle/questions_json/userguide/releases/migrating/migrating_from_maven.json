@@ -1,0 +1,398 @@
+[
+    {
+        "question": "What is a primary difference between Gradle and Maven in terms of build execution?",
+        "options": {
+            "A": "Gradle uses a fixed, linear phase model while Maven uses a flexible task graph.",
+            "B": "Gradle provides a flexible and extensible build model that uses a task graph.",
+            "C": "Maven allows for more customization of build tasks than Gradle.",
+            "D": "Gradle requires all tasks to be defined upfront, while Maven allows for dynamic task creation."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle provides a flexible and extensible build model that delegates the actual work to the execution of a graph of tasks, allowing for more dynamic and customizable builds compared to Maven's fixed, linear phase model."
+    },
+    {
+        "question": "Which of the following statements about dependency management in Gradle is true?",
+        "options": {
+            "A": "Gradle does not support transitive dependencies.",
+            "B": "Gradle uses a 'closest' match algorithm for version conflicts.",
+            "C": "Gradle allows for more control over dependency versions than Maven.",
+            "D": "Gradle requires all dependencies to be declared in a single block."
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle's dependency management system is more flexible than Maven's, allowing for greater control over dependency versions, including the ability to manage transitive dependencies and version conflicts more effectively."
+    },
+    {
+        "question": "What is the purpose of the 'init' task in Gradle?",
+        "options": {
+            "A": "To compile the source code of the project.",
+            "B": "To create a new skeleton project or convert an existing Maven build to Gradle.",
+            "C": "To run all tests in the project.",
+            "D": "To publish the project artifacts to a repository."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'init' task in Gradle is used to create a new skeleton project or to convert an existing Maven build to Gradle automatically, making it easier to migrate projects between these two build tools."
+    },
+    {
+        "question": "How does Gradle handle the concept of build lifecycles compared to Maven?",
+        "options": {
+            "A": "Gradle has a fixed set of lifecycles that cannot be changed.",
+            "B": "Gradle allows users to define their own lifecycles using no-action tasks.",
+            "C": "Maven's lifecycles are more flexible than Gradle's.",
+            "D": "Gradle does not have a concept of build lifecycles."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle allows users to define their own lifecycles by creating no-action tasks that depend on the tasks they are interested in, providing a more customizable approach to managing build processes compared to Maven's fixed lifecycles."
+    },
+    {
+        "question": "What is a key feature of Gradle's dependency management system compared to Maven's?",
+        "options": {
+            "A": "Gradle uses a 'closest' match algorithm for version conflicts.",
+            "B": "Gradle allows for more flexible dependency configurations.",
+            "C": "Gradle does not support transitive dependencies.",
+            "D": "Gradle requires all dependencies to be declared in a single block."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's dependency management system is more flexible than Maven's, allowing for various configurations and better control over dependency versions. Unlike Maven, which uses a 'closest' match algorithm for resolving version conflicts, Gradle picks the newest version by default, providing developers with more options to manage dependencies effectively."
+    },
+    {
+        "question": "How does Gradle handle transitive dependencies differently from Maven?",
+        "options": {
+            "A": "Gradle ignores all transitive dependencies.",
+            "B": "Gradle allows for the exclusion of transitive dependencies.",
+            "C": "Gradle requires explicit declaration of all transitive dependencies.",
+            "D": "Gradle automatically resolves transitive dependencies without any configuration."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle allows for the exclusion of transitive dependencies, giving developers control over which dependencies are included in their projects. This is a key difference from Maven, which uses exclusions to manage unwanted dependencies but does not provide the same level of flexibility in handling transitive dependencies."
+    },
+    {
+        "question": "What is the purpose of using dependency configurations in Gradle?",
+        "options": {
+            "A": "To define the order of task execution.",
+            "B": "To specify the scope and visibility of dependencies.",
+            "C": "To manage the build lifecycle phases.",
+            "D": "To automatically generate build scripts."
+        },
+        "correct_answer": "B",
+        "explanation": "Dependency configurations in Gradle are used to specify the scope and visibility of dependencies, allowing developers to differentiate between compile-time and runtime dependencies. This helps in managing how dependencies are included in the build and which ones are exposed to consumers of the project."
+    },
+    {
+        "question": "What is a common way to manage dependency versions across multiple projects in Gradle?",
+        "options": {
+            "A": "Using a single build script for all projects.",
+            "B": "Utilizing the Java Platform Plugin.",
+            "C": "Declaring all dependencies in the root project only.",
+            "D": "Creating separate repositories for each project."
+        },
+        "correct_answer": "B",
+        "explanation": "The Java Platform Plugin in Gradle allows developers to manage dependency versions across multiple projects by declaring a set of dependency constraints that can be applied consistently. This approach is similar to Maven's `<dependencyManagement>` section, ensuring that all projects use compatible versions of shared dependencies."
+    },
+    {
+        "question": "What are the main phases of the Gradle build lifecycle?",
+        "options": {
+            "A": "Initialization, Configuration, Execution",
+            "B": "Setup, Compilation, Deployment",
+            "C": "Build, Test, Release",
+            "D": "Preparation, Execution, Cleanup"
+        },
+        "correct_answer": "A",
+        "explanation": "The main phases of the Gradle build lifecycle are Initialization, Configuration, and Execution. During Initialization, Gradle sets up the project environment. In the Configuration phase, Gradle configures the tasks that will be executed. Finally, in the Execution phase, the tasks are executed in the order defined by their dependencies."
+    },
+    {
+        "question": "How does Gradle's build lifecycle differ from Maven's?",
+        "options": {
+            "A": "Gradle has a fixed set of phases, while Maven is flexible.",
+            "B": "Gradle allows for custom task dependencies, while Maven uses a linear phase model.",
+            "C": "Gradle does not support plugins, while Maven does.",
+            "D": "Gradle requires all tasks to be defined upfront, while Maven allows dynamic task creation."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's build lifecycle allows for custom task dependencies and a more flexible execution model, whereas Maven follows a fixed, linear phase model. This flexibility in Gradle enables users to define their own task dependencies and create a more tailored build process."
+    },
+    {
+        "question": "What is the purpose of lifecycle tasks in Gradle?",
+        "options": {
+            "A": "To define the order of task execution based on user input.",
+            "B": "To replicate Maven's fixed phases within Gradle's flexible model.",
+            "C": "To automatically generate build scripts from existing projects.",
+            "D": "To manage dependencies between different projects."
+        },
+        "correct_answer": "B",
+        "explanation": "Lifecycle tasks in Gradle are used to replicate Maven's fixed phases within Gradle's flexible model. They allow users to define no-action tasks that depend on the tasks they are interested in, making it easier for users transitioning from Maven to understand and utilize Gradle's build lifecycle."
+    },
+    {
+        "question": "Which Gradle task corresponds to the Maven 'clean' phase?",
+        "options": {
+            "A": "assemble",
+            "B": "check",
+            "C": "clean",
+            "D": "publish"
+        },
+        "correct_answer": "C",
+        "explanation": "The Gradle task that corresponds to the Maven 'clean' phase is the 'clean' task. This task is provided by the Base Plugin and is used to remove build artifacts, similar to its function in Maven."
+    },
+    {
+        "question": "What is the primary characteristic of Gradle's project structure compared to Maven's?",
+        "options": {
+            "A": "Gradle uses a fixed, linear phase model for builds.",
+            "B": "Gradle provides a flexible and extensible build model.",
+            "C": "Gradle requires all dependencies to be declared in a single file.",
+            "D": "Gradle does not support multi-module projects."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's project structure is characterized by its flexibility and extensibility, allowing users to define custom tasks and configurations. Unlike Maven's fixed, linear phase model, Gradle enables a more dynamic approach to building projects, accommodating various project layouts and requirements."
+    },
+    {
+        "question": "In Gradle, how are dependencies typically managed in relation to project structure?",
+        "options": {
+            "A": "Dependencies must be declared in a separate configuration file.",
+            "B": "Dependencies are managed through a centralized dependency management system.",
+            "C": "Dependencies are declared within the build script using specific configurations.",
+            "D": "Dependencies are automatically resolved without any declaration."
+        },
+        "correct_answer": "C",
+        "explanation": "In Gradle, dependencies are declared within the build script using specific configurations, such as `implementation` or `testImplementation`. This allows for a clear and organized way to manage dependencies in relation to the project's structure, making it easier to understand and maintain."
+    },
+    {
+        "question": "What is a key benefit of maintaining a standard project structure in Gradle?",
+        "options": {
+            "A": "It eliminates the need for any plugins.",
+            "B": "It ensures that all builds are executed in the same way.",
+            "C": "It simplifies the migration process from other build tools.",
+            "D": "It restricts the use of custom tasks and configurations."
+        },
+        "correct_answer": "C",
+        "explanation": "Maintaining a standard project structure in Gradle simplifies the migration process from other build tools, such as Maven. By following common conventions, users can more easily adapt their existing projects to Gradle, leveraging familiar layouts and practices while benefiting from Gradle's flexibility."
+    },
+    {
+        "question": "How does Gradle's approach to project structure facilitate multi-module builds?",
+        "options": {
+            "A": "It requires all modules to be in a single directory.",
+            "B": "It allows for independent configuration of each module.",
+            "C": "It enforces a strict hierarchy of modules.",
+            "D": "It does not support multi-module builds."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's approach to project structure facilitates multi-module builds by allowing for independent configuration of each module. This flexibility enables developers to manage dependencies and tasks for each module separately while still maintaining a cohesive overall project structure."
+    },
+    {
+        "question": "What is the primary purpose of the plugin system in Gradle?",
+        "options": {
+            "A": "To extend and customize the build process",
+            "B": "To manage project dependencies",
+            "C": "To enforce coding standards",
+            "D": "To compile source code"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the plugin system in Gradle is to extend and customize the build process. Plugins allow users to add specific functionalities and configurations to their builds, making it easier to manage various tasks and integrate with other tools."
+    },
+    {
+        "question": "How does Gradle's plugin system differ from Maven's?",
+        "options": {
+            "A": "Gradle plugins are less flexible than Maven plugins",
+            "B": "Gradle allows for more customization without needing a plugin",
+            "C": "Maven plugins can only be used for dependency management",
+            "D": "Gradle does not support plugins at all"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's plugin system allows for more customization without needing a plugin compared to Maven. While both systems use plugins to extend functionality, Gradle's build model is inherently more flexible, enabling users to achieve similar results with less reliance on plugins."
+    },
+    {
+        "question": "What is a common reason for migrating from Maven to Gradle regarding plugins?",
+        "options": {
+            "A": "Gradle has a larger number of plugins available",
+            "B": "Gradle plugins are always easier to configure",
+            "C": "Gradle allows for more straightforward integration of custom tasks",
+            "D": "Maven plugins are deprecated"
+        },
+        "correct_answer": "C",
+        "explanation": "A common reason for migrating from Maven to Gradle regarding plugins is that Gradle allows for more straightforward integration of custom tasks. This flexibility enables developers to create and manage tasks more easily, adapting the build process to their specific needs."
+    },
+    {
+        "question": "What should you consider when migrating a custom Maven plugin to Gradle?",
+        "options": {
+            "A": "The custom plugin can be directly copied to Gradle without changes",
+            "B": "The problem the plugin solves should be understood to find a Gradle solution",
+            "C": "Gradle does not support custom plugins at all",
+            "D": "Maven plugins are always more efficient than Gradle plugins"
+        },
+        "correct_answer": "B",
+        "explanation": "When migrating a custom Maven plugin to Gradle, it is important to understand the problem the plugin solves in order to find an appropriate solution in Gradle. This approach allows developers to leverage Gradle's richer build model and API to create effective custom tasks."
+    },
+    {
+        "question": "What is a key benefit of using Gradle over Maven in terms of performance?",
+        "options": {
+            "A": "Gradle is always slower than Maven.",
+            "B": "Gradle can utilize build caching to speed up builds.",
+            "C": "Gradle requires more manual configuration than Maven.",
+            "D": "Gradle does not support incremental builds."
+        },
+        "correct_answer": "B",
+        "explanation": "One of the key benefits of using Gradle over Maven is its ability to utilize build caching, which significantly speeds up the build process. Gradle has invested in features that enhance performance, making it generally faster than Maven for most projects, even without caching."
+    },
+    {
+        "question": "How does Gradle's approach to dependency management contribute to performance optimization?",
+        "options": {
+            "A": "Gradle ignores all transitive dependencies.",
+            "B": "Gradle allows for more flexible dependency resolution strategies.",
+            "C": "Gradle requires all dependencies to be declared explicitly.",
+            "D": "Gradle does not support version conflict resolution."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's approach to dependency management allows for more flexible resolution strategies, which can optimize performance by ensuring that the most appropriate versions of dependencies are used. This flexibility helps avoid issues that can slow down builds, such as version conflicts."
+    },
+    {
+        "question": "What is the purpose of the 'incremental compiler' feature in Gradle?",
+        "options": {
+            "A": "To compile all source files every time a build is run.",
+            "B": "To only compile files that have changed since the last build.",
+            "C": "To ignore changes in source files.",
+            "D": "To compile files in a random order."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'incremental compiler' feature in Gradle is designed to only compile files that have changed since the last build. This optimization reduces build times significantly by avoiding unnecessary recompilation of unchanged files."
+    },
+    {
+        "question": "Which of the following statements best describes Gradle's build lifecycle in relation to performance?",
+        "options": {
+            "A": "Gradle has a fixed build lifecycle that cannot be customized.",
+            "B": "Gradle's build lifecycle allows for task execution to be optimized based on dependencies.",
+            "C": "Gradle's build lifecycle is slower than Maven's due to its complexity.",
+            "D": "Gradle does not have a build lifecycle."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's build lifecycle allows for task execution to be optimized based on dependencies, which can enhance performance. This flexibility enables Gradle to execute only the necessary tasks, reducing build times compared to a fixed lifecycle model."
+    },
+    {
+        "question": "What is the primary purpose of version control in software development?",
+        "options": {
+            "A": "To track changes to code and manage different versions of a project",
+            "B": "To compile code into executable files",
+            "C": "To automate the deployment of applications",
+            "D": "To monitor system performance during runtime"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of version control is to track changes to code and manage different versions of a project. This allows developers to collaborate effectively, revert to previous versions if necessary, and maintain a history of changes made to the codebase."
+    },
+    {
+        "question": "Which of the following is a common feature of version control systems?",
+        "options": {
+            "A": "Automatic code compilation",
+            "B": "Branching and merging capabilities",
+            "C": "Real-time code execution",
+            "D": "User interface design tools"
+        },
+        "correct_answer": "B",
+        "explanation": "Branching and merging capabilities are common features of version control systems. These features allow developers to create separate lines of development (branches) and later combine them (merge) back into the main codebase, facilitating collaboration and experimentation."
+    },
+    {
+        "question": "How does version control help in collaborative software development?",
+        "options": {
+            "A": "By allowing multiple developers to work on the same codebase without conflicts",
+            "B": "By eliminating the need for testing",
+            "C": "By automatically generating documentation",
+            "D": "By providing a graphical user interface for coding"
+        },
+        "correct_answer": "A",
+        "explanation": "Version control helps in collaborative software development by allowing multiple developers to work on the same codebase without conflicts. It manages changes made by different contributors, ensuring that their work can be integrated smoothly and that any conflicts can be resolved effectively."
+    },
+    {
+        "question": "What is a 'commit' in the context of version control?",
+        "options": {
+            "A": "A snapshot of changes made to the codebase at a specific point in time",
+            "B": "A request to merge changes from one branch to another",
+            "C": "A command to delete a file from the repository",
+            "D": "A tool for analyzing code performance"
+        },
+        "correct_answer": "A",
+        "explanation": "A 'commit' in the context of version control refers to a snapshot of changes made to the codebase at a specific point in time. Each commit records the changes along with a message describing what was changed, allowing developers to track the history of the project."
+    },
+    {
+        "question": "What is the primary purpose of a multi-module build in Gradle?",
+        "options": {
+            "A": "To manage multiple independent projects without any dependencies",
+            "B": "To aggregate related projects into a single build for easier management",
+            "C": "To create a single executable file from multiple source files",
+            "D": "To enforce strict version control across all modules"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a multi-module build in Gradle is to aggregate related projects into a single build, allowing for easier management and coordination of dependencies and tasks across those projects. This structure helps in organizing complex applications that consist of multiple interdependent modules."
+    },
+    {
+        "question": "How do you declare which projects are part of a multi-module build in Gradle?",
+        "options": {
+            "A": "By listing them in the build.gradle file of each module",
+            "B": "By creating a settings script that matches the modules defined in the root POM",
+            "C": "By using the 'include' command in the main build script",
+            "D": "By defining them in a separate configuration file"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, you declare which projects are part of a multi-module build by creating a settings script that matches the `<modules>` block of the root POM from Maven. This script specifies the subprojects that are included in the build, allowing Gradle to recognize and manage them as part of the overall project structure."
+    },
+    {
+        "question": "What is a key benefit of using multi-module builds in Gradle?",
+        "options": {
+            "A": "They eliminate the need for dependency management",
+            "B": "They allow for better organization and modularization of code",
+            "C": "They automatically generate documentation for each module",
+            "D": "They restrict the use of external libraries"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using multi-module builds in Gradle is that they allow for better organization and modularization of code. By breaking a large application into smaller, manageable modules, developers can work on individual components independently while still maintaining a cohesive project structure."
+    },
+    {
+        "question": "When migrating a multi-module Maven build to Gradle, what is an important step to take?",
+        "options": {
+            "A": "Remove all dependencies from the modules",
+            "B": "Create a settings script that defines the modules",
+            "C": "Convert all modules into a single project",
+            "D": "Use only the Gradle wrapper for building"
+        },
+        "correct_answer": "B",
+        "explanation": "When migrating a multi-module Maven build to Gradle, an important step is to create a settings script that defines the modules. This script will specify the structure of the multi-module build, allowing Gradle to recognize and manage the individual subprojects effectively."
+    },
+    {
+        "question": "What is the primary purpose of configuration management in the context of build tools?",
+        "options": {
+            "A": "To manage the versions of dependencies and ensure consistency across builds",
+            "B": "To automate the testing process of the software",
+            "C": "To define the user interface of the application",
+            "D": "To handle the deployment of applications to production environments"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of configuration management in build tools is to manage the versions of dependencies and ensure consistency across builds. This involves specifying which versions of libraries and frameworks are used, thereby preventing issues that arise from version conflicts and ensuring that the build behaves consistently across different environments."
+    },
+    {
+        "question": "How does Gradle's approach to dependency management differ from Maven's?",
+        "options": {
+            "A": "Gradle allows for more flexible dependency version resolution, picking the newest version by default",
+            "B": "Gradle does not support transitive dependencies",
+            "C": "Maven allows for more control over dependency versions than Gradle",
+            "D": "Gradle requires all dependencies to be declared in a single file"
+        },
+        "correct_answer": "A",
+        "explanation": "Gradle's approach to dependency management is more flexible than Maven's, as it picks the newest version of a dependency by default when multiple versions are present. This contrasts with Maven's 'closest' match algorithm, which can lead to different versions being resolved based on the dependency tree structure."
+    },
+    {
+        "question": "What is a key benefit of using a build tool like Gradle for configuration management?",
+        "options": {
+            "A": "It eliminates the need for any manual configuration",
+            "B": "It provides a clear and consistent way to manage project dependencies and build processes",
+            "C": "It automatically generates user documentation for the project",
+            "D": "It ensures that all code is written in a single programming language"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using a build tool like Gradle for configuration management is that it provides a clear and consistent way to manage project dependencies and build processes. This helps developers maintain control over their builds, ensuring that all necessary components are included and correctly configured, which ultimately leads to more reliable and reproducible builds."
+    },
+    {
+        "question": "In Gradle, what is the purpose of declaring repositories?",
+        "options": {
+            "A": "To specify where to find the source code for the project",
+            "B": "To define the locations from which dependencies can be retrieved",
+            "C": "To manage the user permissions for the build process",
+            "D": "To configure the output directory for build artifacts"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, declaring repositories serves the purpose of defining the locations from which dependencies can be retrieved. This is essential for ensuring that the build tool knows where to look for the libraries and frameworks that the project depends on, allowing for successful resolution and inclusion of these dependencies in the build process."
+    }
+]

@@ -1,0 +1,101 @@
+[
+    {
+        "question": "What is the primary purpose of the 'src/main/java' directory in a Java project?",
+        "options": {
+            "A": "To store production Java source code",
+            "B": "To hold configuration files for the project",
+            "C": "To contain test cases for the application",
+            "D": "To manage external libraries and dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The 'src/main/java' directory is specifically designated for storing production Java source code in a Java project. This structure helps organize the codebase, making it easier to manage and maintain the application's core functionality."
+    },
+    {
+        "question": "What type of files would you typically find in the 'src/main/resources' directory?",
+        "options": {
+            "A": "Java class files compiled from source code",
+            "B": "XML and properties files used for configuration",
+            "C": "JavaScript files for front-end development",
+            "D": "Test scripts for unit testing"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'src/main/resources' directory is intended for production resources, which typically include configuration files such as XML and properties files. These resources are essential for the application to function correctly and are often loaded at runtime."
+    },
+    {
+        "question": "Why is it important to have a structured directory layout in a Java project?",
+        "options": {
+            "A": "It allows for faster compilation of Java files.",
+            "B": "It helps in organizing code and resources for better maintainability.",
+            "C": "It ensures that all files are stored in a single location.",
+            "D": "It prevents the need for version control systems."
+        },
+        "correct_answer": "B",
+        "explanation": "Having a structured directory layout in a Java project is crucial for organizing code and resources, which enhances maintainability. A clear structure allows developers to easily locate files, understand the project organization, and collaborate more effectively."
+    },
+    {
+        "question": "What is the primary purpose of production resources in a software project?",
+        "options": {
+            "A": "To store source code files",
+            "B": "To provide configuration and support files for the application",
+            "C": "To manage version control of the project",
+            "D": "To compile the application into executable format"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of production resources in a software project is to provide configuration and support files that the application needs to run properly. These resources can include XML files, properties files, and other non-code assets that are essential for the application's functionality."
+    },
+    {
+        "question": "Which of the following best describes the location of production resources in a typical project structure?",
+        "options": {
+            "A": "In the 'src/main/java' directory",
+            "B": "In the 'src/test/java' directory",
+            "C": "In the 'src/main/resources' directory",
+            "D": "In the 'bin' directory"
+        },
+        "correct_answer": "C",
+        "explanation": "Production resources are typically located in the 'src/main/resources' directory of a project structure. This directory is designated for non-source code files that the application requires during its execution, distinguishing it from the source code files found in 'src/main/java'."
+    },
+    {
+        "question": "Which type of files would you expect to find in the production resources directory?",
+        "options": {
+            "A": "Java class files",
+            "B": "Unit test files",
+            "C": "Configuration files",
+            "D": "Compiled binary files"
+        },
+        "correct_answer": "C",
+        "explanation": "In the production resources directory, you would expect to find configuration files, such as XML and properties files. These files are crucial for the application as they provide necessary settings and parameters that the application uses at runtime, unlike Java class files or unit test files."
+    },
+    {
+        "question": "What is the primary purpose of organizing a project in a structured manner?",
+        "options": {
+            "A": "To ensure all team members have equal responsibilities",
+            "B": "To facilitate easier management and navigation of project components",
+            "C": "To limit the number of files in the project",
+            "D": "To create a uniform coding style across all files"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of organizing a project in a structured manner is to facilitate easier management and navigation of project components. A well-organized project structure allows team members to quickly locate files, understand the project's layout, and maintain consistency throughout the development process."
+    },
+    {
+        "question": "Which of the following is a common practice in project organization?",
+        "options": {
+            "A": "Combining all source code and resources into a single directory",
+            "B": "Separating production code from test code",
+            "C": "Using random naming conventions for files and directories",
+            "D": "Storing all documentation in the same folder as the source code"
+        },
+        "correct_answer": "B",
+        "explanation": "A common practice in project organization is to separate production code from test code. This separation helps maintain clarity and allows developers to easily distinguish between the code that is ready for deployment and the code that is used for testing purposes."
+    },
+    {
+        "question": "What is typically found in the 'src/main/java' directory of a project?",
+        "options": {
+            "A": "Configuration files for the project",
+            "B": "Production Java source code",
+            "C": "Test scripts and resources",
+            "D": "Documentation and user manuals"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'src/main/java' directory typically contains the production Java source code of a project. This directory is designated for the main application code that will be compiled and executed, distinguishing it from other directories that may contain resources or test code."
+    }
+]

@@ -1,0 +1,255 @@
+[
+    {
+        "question": "What is the primary purpose of a Gradle plugin?",
+        "options": {
+            "A": "To encapsulate and reuse build logic across projects",
+            "B": "To manage project dependencies automatically",
+            "C": "To compile source code into executable files",
+            "D": "To generate documentation for the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a Gradle plugin is to encapsulate and reuse build logic across different projects. This allows developers to define common tasks and configurations that can be applied consistently, improving maintainability and reducing duplication of effort."
+    },
+    {
+        "question": "Which method must be overridden to define the behavior of a custom Gradle plugin?",
+        "options": {
+            "A": "initialize()",
+            "B": "apply()",
+            "C": "execute()",
+            "D": "configure()"
+        },
+        "correct_answer": "B",
+        "explanation": "To define the behavior of a custom Gradle plugin, the 'apply()' method must be overridden. This method is called when the plugin is applied to a project, allowing the developer to add tasks and configure the project as needed."
+    },
+    {
+        "question": "What type of Gradle plugin is implemented in a compiled language and packaged as a JAR file?",
+        "options": {
+            "A": "Convention Plugin",
+            "B": "Pre-compiled Script Plugin",
+            "C": "Binary Plugin",
+            "D": "Script Plugin"
+        },
+        "correct_answer": "C",
+        "explanation": "A binary plugin is implemented in a compiled language and packaged as a JAR file. This allows it to be resolved as a dependency rather than being compiled from source, making it suitable for distribution and reuse across multiple projects."
+    },
+    {
+        "question": "What is a key characteristic of convention plugins in Gradle?",
+        "options": {
+            "A": "They must be written in Java only.",
+            "B": "They encapsulate common build logic for reuse.",
+            "C": "They are always applied directly in the build.gradle file.",
+            "D": "They cannot be used in multi-project builds."
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of convention plugins is that they encapsulate common build logic for reuse across different projects. This allows developers to apply a set of predefined conventions, streamlining the build process and ensuring consistency."
+    },
+    {
+        "question": "What is the primary purpose of creating custom plugins in Gradle?",
+        "options": {
+            "A": "To encapsulate and reuse common build logic",
+            "B": "To increase the complexity of the build process",
+            "C": "To eliminate the need for any build scripts",
+            "D": "To ensure all tasks are executed in parallel"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of creating custom plugins in Gradle is to encapsulate and reuse common build logic. This allows developers to define specific behaviors and configurations that can be applied across multiple projects, promoting consistency and reducing duplication."
+    },
+    {
+        "question": "Which method must be overridden when creating a custom plugin in Gradle?",
+        "options": {
+            "A": "initialize()",
+            "B": "apply()",
+            "C": "execute()",
+            "D": "configure()"
+        },
+        "correct_answer": "B",
+        "explanation": "When creating a custom plugin in Gradle, the 'apply()' method must be overridden. This method is where the plugin's logic is defined, including the tasks and configurations that will be added to the project when the plugin is applied."
+    },
+    {
+        "question": "What type of plugin allows for rapid prototyping and experimentation in Gradle?",
+        "options": {
+            "A": "Binary plugins",
+            "B": "Convention plugins",
+            "C": "Pre-compiled script plugins",
+            "D": "Script plugins"
+        },
+        "correct_answer": "C",
+        "explanation": "Pre-compiled script plugins offer an easy way to rapidly prototype and experiment with build logic in Gradle. They allow developers to package build logic as script files, which can be easily applied to projects without the need for extensive setup."
+    },
+    {
+        "question": "What is a key characteristic of binary plugins in Gradle?",
+        "options": {
+            "A": "They are implemented in a scripting language.",
+            "B": "They are packaged as JAR files and resolved as dependencies.",
+            "C": "They require frequent updates by developers.",
+            "D": "They cannot be reused across multiple projects."
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of binary plugins in Gradle is that they are implemented in a compiled language and packaged as JAR files. These plugins are resolved as dependencies rather than being compiled from source, making them easier to distribute and manage across projects."
+    },
+    {
+        "question": "What is a pre-compiled script plugin in Gradle?",
+        "options": {
+            "A": "A plugin that is written in a compiled language and packaged as a JAR file.",
+            "B": "A script file that contains build logic and can be applied without subclassing the Plugin interface.",
+            "C": "A plugin that requires manual compilation before it can be used in a project.",
+            "D": "A type of plugin that can only be used in the root project of a Gradle build."
+        },
+        "correct_answer": "B",
+        "explanation": "A pre-compiled script plugin is a script file that contains build logic and can be applied directly in a Gradle build without the need to subclass the Plugin interface. This allows for rapid prototyping and easier management of build logic."
+    },
+    {
+        "question": "Where should pre-compiled script plugins be stored in a Gradle project?",
+        "options": {
+            "A": "In the root directory of the project.",
+            "B": "In the buildSrc directory under specific subdirectories like src/main/groovy or src/main/kotlin.",
+            "C": "In a separate plugins directory at the same level as the build.gradle file.",
+            "D": "In the .gradle directory to keep them hidden from the project structure."
+        },
+        "correct_answer": "B",
+        "explanation": "Pre-compiled script plugins should be stored in the buildSrc directory, specifically under subdirectories like src/main/groovy or src/main/kotlin. This structure allows Gradle to recognize and apply the plugins correctly."
+    },
+    {
+        "question": "What is the main advantage of using pre-compiled script plugins?",
+        "options": {
+            "A": "They are automatically compiled and do not require any additional setup.",
+            "B": "They allow for rapid prototyping and experimentation with build logic.",
+            "C": "They can only be used in multi-project builds.",
+            "D": "They are more efficient than binary plugins in terms of performance."
+        },
+        "correct_answer": "B",
+        "explanation": "The main advantage of using pre-compiled script plugins is that they allow for rapid prototyping and experimentation with build logic. This flexibility makes it easier for developers to test and implement new features without extensive setup."
+    },
+    {
+        "question": "How can a pre-compiled script plugin be applied in a Gradle build script?",
+        "options": {
+            "A": "By using the apply plugin: 'plugin-id' syntax.",
+            "B": "By referencing its ID derived from the script filename in the plugins block.",
+            "C": "By manually copying the script into the build.gradle file.",
+            "D": "By including it in the settings.gradle file."
+        },
+        "correct_answer": "B",
+        "explanation": "A pre-compiled script plugin can be applied in a Gradle build script by referencing its ID derived from the script filename in the plugins block. This allows the plugin to be easily integrated into the build process."
+    },
+    {
+        "question": "What is the primary purpose of convention plugins in Gradle?",
+        "options": {
+            "A": "To encapsulate and reuse common build logic across projects",
+            "B": "To create unique build scripts for each project",
+            "C": "To manage dependencies for a project",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of convention plugins in Gradle is to encapsulate and reuse common build logic across multiple projects. This allows developers to define a set of conventions that can be applied consistently, improving maintainability and reducing duplication of effort."
+    },
+    {
+        "question": "How can a convention plugin be applied in a Gradle build script?",
+        "options": {
+            "A": "By directly writing the plugin code in the build script",
+            "B": "By using its ID in the plugins block of the build script",
+            "C": "By importing it from an external library",
+            "D": "By compiling it into a binary format first"
+        },
+        "correct_answer": "B",
+        "explanation": "A convention plugin can be applied in a Gradle build script by using its ID in the plugins block. This allows the build script to reference the plugin and utilize the defined conventions without needing to include the plugin code directly in the script."
+    },
+    {
+        "question": "What is a key characteristic of convention plugins compared to binary plugins?",
+        "options": {
+            "A": "Convention plugins are always written in Java.",
+            "B": "Convention plugins are packaged as JAR files.",
+            "C": "Convention plugins are defined in script files and do not require compilation.",
+            "D": "Convention plugins cannot be reused across different projects."
+        },
+        "correct_answer": "C",
+        "explanation": "A key characteristic of convention plugins is that they are defined in script files (such as Kotlin or Groovy scripts) and do not require compilation into a binary format. This makes them easier to develop and modify compared to binary plugins, which are packaged as JAR files."
+    },
+    {
+        "question": "What is the benefit of using pre-compiled script plugins in Gradle?",
+        "options": {
+            "A": "They allow for faster execution of build scripts.",
+            "B": "They enable rapid prototyping and experimentation with build logic.",
+            "C": "They automatically manage project dependencies.",
+            "D": "They provide a graphical user interface for build management."
+        },
+        "correct_answer": "B",
+        "explanation": "The benefit of using pre-compiled script plugins in Gradle is that they enable rapid prototyping and experimentation with build logic. Developers can quickly package and test their build scripts without the overhead of compiling them into a binary format, facilitating a more agile development process."
+    },
+    {
+        "question": "What defines a binary plugin in Gradle?",
+        "options": {
+            "A": "A plugin implemented in a compiled language and packaged as a JAR file",
+            "B": "A plugin that is written in Groovy or Kotlin DSL",
+            "C": "A plugin that is only used for testing purposes",
+            "D": "A plugin that requires manual installation on each developer's machine"
+        },
+        "correct_answer": "A",
+        "explanation": "A binary plugin is defined as a plugin that is implemented in a compiled language and packaged as a JAR file. This allows it to be resolved as a dependency rather than being compiled from source, making it easier to distribute and manage across different projects."
+    },
+    {
+        "question": "Why might developers choose to use binary plugins instead of convention plugins?",
+        "options": {
+            "A": "Binary plugins are easier to write than convention plugins",
+            "B": "Binary plugins can be distributed as dependencies, reducing the need for local builds",
+            "C": "Binary plugins are always faster than convention plugins",
+            "D": "Binary plugins do not require any configuration in build scripts"
+        },
+        "correct_answer": "B",
+        "explanation": "Developers might choose to use binary plugins because they can be distributed as dependencies, which reduces the need for each developer to execute the plugin build as part of their development process. This makes it more efficient to manage and update plugins across multiple projects."
+    },
+    {
+        "question": "What is a key advantage of using binary plugins in Gradle?",
+        "options": {
+            "A": "They can be easily modified by any developer",
+            "B": "They are resolved as dependencies rather than compiled from source",
+            "C": "They require no additional configuration in the build script",
+            "D": "They can only be used in specific project types"
+        },
+        "correct_answer": "B",
+        "explanation": "A key advantage of using binary plugins is that they are resolved as dependencies rather than compiled from source. This allows for easier management and distribution, as developers can simply include the plugin as a dependency in their project without needing to compile it themselves."
+    },
+    {
+        "question": "What is the primary purpose of organizing build logic in Gradle?",
+        "options": {
+            "A": "To improve project performance and reduce build times",
+            "B": "To encapsulate and reuse common build logic across projects",
+            "C": "To ensure all plugins are written in Java",
+            "D": "To eliminate the need for version control in projects"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of organizing build logic in Gradle is to encapsulate and reuse common build logic across projects. This allows developers to maintain consistency and efficiency in their build processes by applying the same conventions and tasks to multiple projects."
+    },
+    {
+        "question": "Which type of Gradle plugin is designed to encapsulate common build logic for reuse?",
+        "options": {
+            "A": "Binary plugins",
+            "B": "Convention plugins",
+            "C": "Script plugins",
+            "D": "Custom plugins"
+        },
+        "correct_answer": "B",
+        "explanation": "Convention plugins are specifically designed to encapsulate and reuse common build logic in Gradle. They allow developers to define a set of conventions that can be applied to various projects, promoting consistency and reducing duplication of effort."
+    },
+    {
+        "question": "What is a key characteristic of binary plugins in Gradle?",
+        "options": {
+            "A": "They are implemented in a scripting language like Groovy or Kotlin",
+            "B": "They are packaged as JAR files and resolved as dependencies",
+            "C": "They must be defined in the build.gradle file directly",
+            "D": "They can only be used in single-project builds"
+        },
+        "correct_answer": "B",
+        "explanation": "Binary plugins in Gradle are characterized by being implemented in a compiled language and packaged as JAR files. They are resolved as dependencies rather than being compiled from source, which allows for easier distribution and version management."
+    },
+    {
+        "question": "What is the recommended approach for applying a pre-compiled script plugin in Gradle?",
+        "options": {
+            "A": "By subclassing the Plugin interface",
+            "B": "By using its ID derived from the script filename",
+            "C": "By including it directly in the build.gradle file",
+            "D": "By defining it in the settings.gradle file"
+        },
+        "correct_answer": "B",
+        "explanation": "The recommended approach for applying a pre-compiled script plugin in Gradle is to use its ID, which is derived from the script filename (without the .gradle extension). This allows for easy application of the plugin across different projects."
+    }
+]

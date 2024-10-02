@@ -1,0 +1,222 @@
+[
+    {
+        "question": "What is the primary purpose of Gradle plugins?",
+        "options": {
+            "A": "To enhance the functionality of Gradle builds",
+            "B": "To create standalone applications",
+            "C": "To manage system dependencies",
+            "D": "To compile source code into bytecode"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Gradle plugins is to enhance the functionality of Gradle builds by providing additional tasks, configurations, and capabilities that can be applied to projects. This allows developers to customize their build processes and integrate various tools and frameworks."
+    },
+    {
+        "question": "Which of the following statements is true regarding the Test Report Aggregation plugin?",
+        "options": {
+            "A": "It can be used independently without any other plugins.",
+            "B": "It requires the JVM Test Suite Plugin to function properly.",
+            "C": "It automatically generates reports without any configuration.",
+            "D": "It is only applicable to Java applications."
+        },
+        "correct_answer": "B",
+        "explanation": "The Test Report Aggregation plugin requires the JVM Test Suite Plugin to function properly. It is designed to aggregate test results from multiple test task invocations across Gradle projects, but it does not take action unless it is applied in conjunction with the JVM Test Suite Plugin."
+    },
+    {
+        "question": "What is the role of the `testReportAggregation` configuration in the Test Report Aggregation plugin?",
+        "options": {
+            "A": "To define the output format of the test reports",
+            "B": "To declare project dependencies that have test result data to be aggregated",
+            "C": "To specify the location of the test source files",
+            "D": "To manage the execution order of test tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The `testReportAggregation` configuration is used to declare all project dependencies that have test result data to be aggregated. This allows the plugin to collect and compile test results from various sources into a single report, facilitating better analysis of test outcomes."
+    },
+    {
+        "question": "What happens by default when a task fails in a Gradle build?",
+        "options": {
+            "A": "The build continues to execute all tasks regardless of failures.",
+            "B": "Gradle stops executing tasks immediately.",
+            "C": "Only the failed task is retried automatically.",
+            "D": "Gradle generates a report of all tasks executed."
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle stops executing tasks when any task fails, including test failures. This behavior ensures that subsequent tasks do not run if a critical failure occurs, which helps maintain the integrity of the build process. However, developers can use the `--continue` option to allow the build to proceed despite failures."
+    },
+    {
+        "question": "What is the primary purpose of the Test Report Aggregation plugin?",
+        "options": {
+            "A": "To aggregate test results from multiple Gradle projects into a single report",
+            "B": "To compile source code from multiple projects",
+            "C": "To manage project dependencies for Java applications",
+            "D": "To optimize the performance of Gradle builds"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Test Report Aggregation plugin is to aggregate the results of multiple test task invocations across potentially multiple Gradle projects into a single HTML report. This helps in consolidating test results for better visibility and analysis."
+    },
+    {
+        "question": "Which plugin must be applied alongside the Test Report Aggregation plugin for it to function properly?",
+        "options": {
+            "A": "Java Plugin",
+            "B": "JVM Test Suite Plugin",
+            "C": "Application Plugin",
+            "D": "Dependency Management Plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "The Test Report Aggregation plugin requires the JVM Test Suite Plugin to be applied in order to function properly. This is because the aggregation of test results relies on the test suite configurations provided by the JVM Test Suite Plugin."
+    },
+    {
+        "question": "What happens by default when a task fails during the execution of a Gradle build?",
+        "options": {
+            "A": "Gradle continues executing subsequent tasks regardless of failures",
+            "B": "Gradle stops executing tasks immediately",
+            "C": "Gradle automatically retries the failed task",
+            "D": "Gradle generates a report of the failed task only"
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle stops executing tasks when any task fails, including test failures. This behavior ensures that subsequent tasks do not run if there are unresolved issues, which helps maintain the integrity of the build process."
+    },
+    {
+        "question": "What is the role of the `testReportAggregation` configuration in the Test Report Aggregation plugin?",
+        "options": {
+            "A": "To declare project dependencies for test result aggregation",
+            "B": "To specify the output format of the test reports",
+            "C": "To manage the execution order of test tasks",
+            "D": "To define the types of tests to be executed"
+        },
+        "correct_answer": "A",
+        "explanation": "The `testReportAggregation` configuration is used to declare all project dependencies that have test result data to be aggregated. This configuration plays a crucial role in identifying which test results should be included in the final aggregated report."
+    },
+    {
+        "question": "What is the primary purpose of the Test Report Aggregation plugin?",
+        "options": {
+            "A": "To aggregate test results from multiple Gradle projects into a single report",
+            "B": "To compile source code from multiple projects",
+            "C": "To manage project dependencies for production builds",
+            "D": "To optimize the performance of Gradle tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Test Report Aggregation plugin is to aggregate the results of multiple test task invocations across potentially multiple Gradle projects into a single HTML report. This helps in consolidating test results for better visibility and analysis."
+    },
+    {
+        "question": "Which configuration is used to declare project dependencies that have test result data to be aggregated?",
+        "options": {
+            "A": "aggregateTestReportResults",
+            "B": "testReportAggregation",
+            "C": "testSuiteConfiguration",
+            "D": "dependencyManagement"
+        },
+        "correct_answer": "B",
+        "explanation": "The configuration used to declare all project dependencies having test result data to be aggregated is called `testReportAggregation`. This configuration allows the plugin to collect and manage the test results effectively."
+    },
+    {
+        "question": "What happens if the Test Report Aggregation plugin is applied without the JVM Test Suite Plugin?",
+        "options": {
+            "A": "It automatically generates test reports without any additional configuration.",
+            "B": "You must manually register one or more reports for aggregation.",
+            "C": "It will not function and will cause build errors.",
+            "D": "It will only aggregate results from the main project."
+        },
+        "correct_answer": "B",
+        "explanation": "If the Test Report Aggregation plugin is applied without the JVM Test Suite Plugin, you must manually register one or more reports for aggregation. This means that the automatic report creation feature provided by the JVM Test Suite Plugin will not be available."
+    },
+    {
+        "question": "What is the effect of using the `--continue` option in a Gradle command when running tests?",
+        "options": {
+            "A": "It stops the build process immediately upon the first test failure.",
+            "B": "It allows the build to continue executing tasks even if some tasks fail.",
+            "C": "It automatically generates a report for all test results.",
+            "D": "It optimizes the execution time of the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "Using the `--continue` option in a Gradle command allows the build to continue executing tasks even if some tasks fail, including test failures. This is particularly useful for ensuring that aggregation reports are generated regardless of individual test outcomes."
+    },
+    {
+        "question": "What is the primary purpose of the Test Report Aggregation plugin in build systems?",
+        "options": {
+            "A": "To aggregate test results from multiple test task invocations into a single report",
+            "B": "To compile source code into executable binaries",
+            "C": "To manage project dependencies for runtime execution",
+            "D": "To optimize the performance of build tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Test Report Aggregation plugin is to aggregate test results from multiple test task invocations into a single report. This allows developers to view the results of tests across different projects or modules in a consolidated manner, enhancing the clarity and efficiency of the testing process."
+    },
+    {
+        "question": "Which plugin must be applied alongside the Test Report Aggregation plugin for it to function properly?",
+        "options": {
+            "A": "Java Plugin",
+            "B": "JVM Test Suite Plugin",
+            "C": "Application Plugin",
+            "D": "Dependency Management Plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "The Test Report Aggregation plugin must be applied in conjunction with the JVM Test Suite Plugin for it to function properly. The JVM Test Suite Plugin provides the necessary test suite configurations that the Test Report Aggregation plugin relies on to collect and aggregate test results."
+    },
+    {
+        "question": "What happens by default when a task fails during the execution of a build in Gradle?",
+        "options": {
+            "A": "All subsequent tasks are skipped, and no reports are generated",
+            "B": "The build continues executing all tasks regardless of failures",
+            "C": "Only the failed task is retried automatically",
+            "D": "The build generates partial reports for completed tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "By default, when a task fails during the execution of a build in Gradle, all subsequent tasks are skipped, and no reports are generated. This behavior ensures that developers are alerted to issues immediately, but it can be modified by using the `--continue` option to allow the build to proceed despite failures."
+    },
+    {
+        "question": "What is the role of the `testReportAggregation` configuration in the Test Report Aggregation plugin?",
+        "options": {
+            "A": "To declare dependencies for runtime execution",
+            "B": "To specify which test results should be aggregated",
+            "C": "To manage the build lifecycle of the project",
+            "D": "To configure the output format of test reports"
+        },
+        "correct_answer": "B",
+        "explanation": "The `testReportAggregation` configuration is used to specify which project dependencies have test result data that should be aggregated. This configuration allows the Test Report Aggregation plugin to identify and collect relevant test results from various projects, facilitating the creation of comprehensive test reports."
+    },
+    {
+        "question": "What is the primary purpose of the Test Report Aggregation plugin in multi-project builds?",
+        "options": {
+            "A": "To aggregate test results from multiple projects into a single report",
+            "B": "To compile source code from multiple projects simultaneously",
+            "C": "To manage dependencies across different project types",
+            "D": "To optimize the build process for individual projects"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Test Report Aggregation plugin is to aggregate test results from multiple projects into a single report. This allows developers to easily view and analyze the results of tests that span across different subprojects, enhancing the overall testing process in multi-project builds."
+    },
+    {
+        "question": "Which plugin must be applied alongside the Test Report Aggregation plugin for it to function properly?",
+        "options": {
+            "A": "Java Plugin",
+            "B": "JVM Test Suite Plugin",
+            "C": "Android Plugin",
+            "D": "Dependency Management Plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "The Test Report Aggregation plugin must be applied in conjunction with the JVM Test Suite Plugin for it to function properly. The JVM Test Suite Plugin provides the necessary test suite configurations that the Test Report Aggregation plugin relies on to collect and aggregate test results."
+    },
+    {
+        "question": "What happens by default when a task fails during the execution of a Gradle build?",
+        "options": {
+            "A": "All subsequent tasks are skipped, and no reports are generated",
+            "B": "The build continues, and all tasks are executed",
+            "C": "Only the failed task is retried automatically",
+            "D": "The build generates a report for the failed task only"
+        },
+        "correct_answer": "A",
+        "explanation": "By default, when a task fails during the execution of a Gradle build, all subsequent tasks are skipped, and no reports are generated. This behavior ensures that developers are alerted to issues immediately, but it can be modified by using the `--continue` option to allow the build to proceed despite failures."
+    },
+    {
+        "question": "What is the role of the `testReportAggregation` configuration in the Test Report Aggregation plugin?",
+        "options": {
+            "A": "To declare dependencies for compiling source code",
+            "B": "To specify which test results should be aggregated",
+            "C": "To manage runtime dependencies for the project",
+            "D": "To configure the build environment for testing"
+        },
+        "correct_answer": "B",
+        "explanation": "The `testReportAggregation` configuration is used to declare all project dependencies that have test result data to be aggregated. This configuration allows the Test Report Aggregation plugin to identify which test results from various projects should be collected and included in the final aggregated report."
+    }
+]

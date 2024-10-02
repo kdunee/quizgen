@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the primary purpose of the Groovy plugin in Gradle?",
+        "options": {
+            "A": "To add support for Groovy projects and enable joint compilation with Java",
+            "B": "To optimize Java code for performance",
+            "C": "To manage dependencies for Java projects only",
+            "D": "To provide a graphical user interface for Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Groovy plugin is to extend the Java plugin by adding support for Groovy projects, allowing for joint compilation of Groovy and Java code. This enables developers to use both languages effectively within the same project."
+    },
+    {
+        "question": "Which task is specifically added by the Groovy plugin for compiling Groovy source files?",
+        "options": {
+            "A": "compileJava",
+            "B": "compileGroovy",
+            "C": "groovydoc",
+            "D": "compileTestJava"
+        },
+        "correct_answer": "B",
+        "explanation": "The Groovy plugin adds the 'compileGroovy' task, which is responsible for compiling production Groovy source files. This task is essential for building Groovy projects and is dependent on the Java compilation tasks."
+    },
+    {
+        "question": "What is the significance of the 'groovyClasspath' in the Groovy plugin?",
+        "options": {
+            "A": "It is used to locate classes referenced by the Groovy source code.",
+            "B": "It defines the output directory for compiled Groovy files.",
+            "C": "It specifies the version of Groovy to be used in the project.",
+            "D": "It is a configuration for managing Java dependencies."
+        },
+        "correct_answer": "A",
+        "explanation": "'groovyClasspath' is significant because it is used to locate classes referenced by the Groovy source code during compilation. It typically includes the Groovy library and other necessary dependencies, ensuring that the Groovy compiler can access all required classes."
+    },
+    {
+        "question": "How does the Groovy plugin handle project layout for source files?",
+        "options": {
+            "A": "It requires all source files to be in a single directory.",
+            "B": "It assumes a specific project layout but allows customization.",
+            "C": "It does not support any project layout configurations.",
+            "D": "It automatically generates the project layout based on file types."
+        },
+        "correct_answer": "B",
+        "explanation": "The Groovy plugin assumes a specific project layout for organizing source files but also allows for customization. This flexibility enables developers to configure custom locations for their Groovy production and test source files as needed."
+    },
+    {
+        "question": "What does joint compilation in the context of the Groovy plugin allow developers to do?",
+        "options": {
+            "A": "Compile Groovy and Java code together in the same project",
+            "B": "Compile only Groovy code without any Java code",
+            "C": "Compile Java code exclusively in a Groovy project",
+            "D": "Compile Groovy code in isolation from Java code"
+        },
+        "correct_answer": "A",
+        "explanation": "Joint compilation allows developers to compile Groovy and Java code together within the same project. This means that Groovy classes can extend Java classes and vice versa, enabling the use of both languages in a seamless manner."
+    },
+    {
+        "question": "Which of the following statements is true regarding the Groovy plugin's support for joint compilation?",
+        "options": {
+            "A": "It only supports compiling Java code.",
+            "B": "It allows for dependencies to be mixed between Groovy and Java code.",
+            "C": "It requires separate projects for Groovy and Java code.",
+            "D": "It does not support any form of code mixing."
+        },
+        "correct_answer": "B",
+        "explanation": "The Groovy plugin's support for joint compilation allows for dependencies to be mixed between Groovy and Java code. This flexibility enables developers to choose the best language for specific tasks and facilitates the integration of existing Java code with new Groovy code."
+    },
+    {
+        "question": "What is a key benefit of using joint compilation in Groovy projects?",
+        "options": {
+            "A": "It eliminates the need for any Java code.",
+            "B": "It allows for the reuse of existing Java classes in Groovy code.",
+            "C": "It restricts the use of Groovy features in Java code.",
+            "D": "It simplifies the project structure by separating Groovy and Java files."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using joint compilation in Groovy projects is that it allows for the reuse of existing Java classes in Groovy code. This capability enables developers to leverage their existing Java codebase while taking advantage of Groovy's features, enhancing productivity and code maintainability."
+    },
+    {
+        "question": "What is the primary purpose of declaring a Groovy dependency in a Gradle project?",
+        "options": {
+            "A": "To ensure the Groovy compiler and Groovydoc tool are available during compile and runtime",
+            "B": "To automatically generate Groovy source files from Java code",
+            "C": "To enable the use of Java libraries in Groovy code without any additional configuration",
+            "D": "To configure the project layout for Groovy source files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of declaring a Groovy dependency in a Gradle project is to ensure that the Groovy compiler and Groovydoc tool are available during compile and runtime. This allows the project to compile Groovy code and generate documentation as needed."
+    },
+    {
+        "question": "When should a Groovy dependency be added to the `testImplementation` configuration?",
+        "options": {
+            "A": "When Groovy is used for production code",
+            "B": "When Groovy is only used for test code",
+            "C": "When Groovy is used for both production and test code",
+            "D": "When Groovy is not needed in the project"
+        },
+        "correct_answer": "B",
+        "explanation": "A Groovy dependency should be added to the `testImplementation` configuration when Groovy is only used for test code. This ensures that the Groovy library is available for testing purposes without affecting the production code dependencies."
+    },
+    {
+        "question": "What does the `groovyClasspath` in a Groovy project typically contain?",
+        "options": {
+            "A": "Only the Groovy library and its dependencies",
+            "B": "All Java libraries used in the project",
+            "C": "Only the classes generated from Groovy source files",
+            "D": "The Groovy library and any other libraries referenced in the source code"
+        },
+        "correct_answer": "A",
+        "explanation": "The `groovyClasspath` in a Groovy project typically contains only the Groovy library and its dependencies. This classpath is specifically used to load and execute the Groovy compiler and Groovydoc tool, ensuring that only the necessary libraries are included."
+    },
+    {
+        "question": "What is the significance of the `localGroovy()` dependency in a Gradle project?",
+        "options": {
+            "A": "It allows the project to use the Groovy version bundled with Gradle",
+            "B": "It ensures that the project uses the latest version of Groovy available",
+            "C": "It is used to declare Groovy dependencies for test code only",
+            "D": "It automatically configures the project layout for Groovy source files"
+        },
+        "correct_answer": "A",
+        "explanation": "The `localGroovy()` dependency in a Gradle project allows the project to use the Groovy version that is bundled with Gradle. However, it is important to note that different Gradle versions may ship with different Groovy versions, making this approach less safe than declaring a specific Groovy dependency."
+    },
+    {
+        "question": "What is the primary assumption of the Groovy plugin regarding project layout?",
+        "options": {
+            "A": "All source directories must contain only Groovy code.",
+            "B": "Groovy and Java code can coexist in the same source directories.",
+            "C": "Java source directories can contain Groovy code.",
+            "D": "The project layout must follow a strict directory structure."
+        },
+        "correct_answer": "B",
+        "explanation": "The Groovy plugin assumes that Groovy source directories can contain both Groovy and Java code, allowing for joint compilation. This flexibility enables developers to use the best language for their needs without being restricted to separate directories for each language."
+    },
+    {
+        "question": "Which directory is designated for production Groovy source files in a typical Groovy project layout?",
+        "options": {
+            "A": "src/test/groovy",
+            "B": "src/main/java",
+            "C": "src/main/groovy",
+            "D": "src/test/java"
+        },
+        "correct_answer": "C",
+        "explanation": "In a typical Groovy project layout, the directory designated for production Groovy source files is 'src/main/groovy'. This directory is specifically intended for the main application code, while 'src/test/groovy' is reserved for test code."
+    },
+    {
+        "question": "What is the purpose of the 'src/test/groovy' directory in a Groovy project layout?",
+        "options": {
+            "A": "To store production Groovy source files.",
+            "B": "To contain test Groovy source files.",
+            "C": "To hold configuration files for the project.",
+            "D": "To keep Java source files for joint compilation."
+        },
+        "correct_answer": "B",
+        "explanation": "'src/test/groovy' is specifically designated for test Groovy source files in a Groovy project layout. This separation allows for organized testing of the application code, ensuring that test files are distinct from production code."
+    },
+    {
+        "question": "How does the Groovy plugin handle custom project layouts?",
+        "options": {
+            "A": "It does not allow any customization of project layouts.",
+            "B": "It requires all source files to be in a single directory.",
+            "C": "It allows configuration of custom locations for Groovy production and test source files.",
+            "D": "It automatically generates a default layout without user input."
+        },
+        "correct_answer": "C",
+        "explanation": "The Groovy plugin allows for the configuration of custom locations for Groovy production and test source files, similar to the Java plugin. This flexibility enables developers to adapt the project layout to their specific needs and preferences."
+    },
+    {
+        "question": "What is the primary benefit of incremental compilation in Groovy projects?",
+        "options": {
+            "A": "It recompiles all source files regardless of changes.",
+            "B": "It allows only the changed source files to be recompiled.",
+            "C": "It eliminates the need for a build script.",
+            "D": "It combines Groovy and Java code into a single file."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of incremental compilation in Groovy projects is that it allows only the changed source files to be recompiled. This leads to faster build times, as only the affected files are processed, rather than recompiling the entire project."
+    },
+    {
+        "question": "What must be enabled in a Gradle build script to utilize incremental compilation for Groovy?",
+        "options": {
+            "A": "Java compilation avoidance",
+            "B": "Groovy compilation avoidance",
+            "C": "Full recompilation",
+            "D": "Static type checking"
+        },
+        "correct_answer": "B",
+        "explanation": "To utilize incremental compilation for Groovy, Groovy compilation avoidance must be enabled in the Gradle build script. This feature allows Gradle to determine when recompilation is necessary based on changes in the project."
+    },
+    {
+        "question": "Which of the following statements is true regarding incremental Groovy compilation?",
+        "options": {
+            "A": "It requires recompiling all Groovy source files for every change.",
+            "B": "It can only be used with Java source files.",
+            "C": "It improves build performance by recompiling only modified files.",
+            "D": "It is not supported in Gradle."
+        },
+        "correct_answer": "C",
+        "explanation": "Incremental Groovy compilation improves build performance by recompiling only modified files. This means that if only a small set of Groovy source files are changed, only those files will be recompiled, leading to faster build times."
+    },
+    {
+        "question": "What is a requirement for enabling incremental compilation in Groovy projects?",
+        "options": {
+            "A": "Using a specific version of the Groovy language.",
+            "B": "Enabling Groovy compilation avoidance.",
+            "C": "Declaring all dependencies in the build script.",
+            "D": "Using only Groovy code without any Java code."
+        },
+        "correct_answer": "B",
+        "explanation": "A requirement for enabling incremental compilation in Groovy projects is to enable Groovy compilation avoidance. This allows Gradle to track changes and determine which files need recompilation, thus optimizing the build process."
+    },
+    {
+        "question": "What is the primary purpose of compilation avoidance in Groovy projects?",
+        "options": {
+            "A": "To prevent unnecessary recompilation of unchanged code",
+            "B": "To ensure all code is compiled every time",
+            "C": "To automatically update all dependencies",
+            "D": "To convert Groovy code into Java code"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of compilation avoidance in Groovy projects is to prevent unnecessary recompilation of unchanged code. This feature allows Gradle to determine if a project has changed in an ABI-compatible way, enabling it to skip recompilation for projects that have not been modified, thus improving build efficiency."
+    },
+    {
+        "question": "Which of the following must be enabled to utilize Groovy compilation avoidance?",
+        "options": {
+            "A": "Incremental compilation",
+            "B": "Feature preview for Groovy compilation avoidance",
+            "C": "Java toolchain support",
+            "D": "Automatic dependency resolution"
+        },
+        "correct_answer": "B",
+        "explanation": "To utilize Groovy compilation avoidance, the feature preview for Groovy compilation avoidance must be enabled in the settings file. This allows Gradle to apply the compilation avoidance logic during the build process, enhancing performance by avoiding unnecessary recompilation."
+    },
+    {
+        "question": "What happens when a dependent project changes in an ABI-compatible way?",
+        "options": {
+            "A": "All dependent projects are recompiled",
+            "B": "Only the changed project is recompiled",
+            "C": "Dependent projects remain up-to-date without recompilation",
+            "D": "Gradle fails to build the project"
+        },
+        "correct_answer": "C",
+        "explanation": "When a dependent project changes in an ABI-compatible way, dependent projects remain up-to-date without recompilation. This means that if the changes do not affect the public API, Gradle can skip recompiling the dependent projects, thus saving time and resources during the build process."
+    },
+    {
+        "question": "Which configuration is necessary for enabling incremental Groovy compilation?",
+        "options": {
+            "A": "Setting the `groovyClasspath` explicitly",
+            "B": "Enabling Groovy compilation avoidance and incremental compilation in the build script",
+            "C": "Declaring all dependencies in the `implementation` configuration",
+            "D": "Using only Groovy code without any Java code"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable incremental Groovy compilation, both Groovy compilation avoidance and incremental compilation must be explicitly enabled in the build script. This setup allows Gradle to recompile only the affected source files when changes are made, leading to faster build times."
+    },
+    {
+        "question": "What is the purpose of the `groovy` property in a source set?",
+        "options": {
+            "A": "To define the Groovy source files of the source set",
+            "B": "To specify the Java source files of the source set",
+            "C": "To configure the output directory for compiled files",
+            "D": "To manage dependencies for the source set"
+        },
+        "correct_answer": "A",
+        "explanation": "The `groovy` property in a source set is used to define the Groovy source files associated with that source set. It includes all `.groovy` and `.java` files found in the Groovy source directories, allowing for joint compilation of Groovy and Java code."
+    },
+    {
+        "question": "Which property contains all Groovy source files in a source set?",
+        "options": {
+            "A": "groovy.srcDirs",
+            "B": "allGroovy",
+            "C": "allJava",
+            "D": "groovyClasspath"
+        },
+        "correct_answer": "B",
+        "explanation": "The `allGroovy` property contains all Groovy source files of a source set. It specifically includes only the `.groovy` files found in the Groovy source directories, providing a focused view of the Groovy files available for compilation."
+    },
+    {
+        "question": "What does the `groovy.srcDirs` property specify?",
+        "options": {
+            "A": "The output directory for compiled Groovy files",
+            "B": "The source directories containing Groovy source files",
+            "C": "The dependencies required for Groovy compilation",
+            "D": "The configuration for Groovy test files"
+        },
+        "correct_answer": "B",
+        "explanation": "The `groovy.srcDirs` property specifies the source directories that contain the Groovy source files for a source set. This property allows for customization of where Groovy files are located, enabling flexibility in project structure."
+    },
+    {
+        "question": "How does the Groovy plugin modify the `allJava` property in a source set?",
+        "options": {
+            "A": "It removes all Java files from the source set",
+            "B": "It adds all `.java` files found in the Groovy source directories",
+            "C": "It changes the output directory for Java files",
+            "D": "It configures the dependencies for Java files"
+        },
+        "correct_answer": "B",
+        "explanation": "The Groovy plugin modifies the `allJava` property by adding all `.java` files found in the Groovy source directories. This allows for joint compilation of Groovy and Java code, facilitating the use of both languages within the same project."
+    }
+]

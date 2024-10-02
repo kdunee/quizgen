@@ -1,0 +1,288 @@
+[
+    {
+        "question": "What is the primary purpose of dependency version alignment in Gradle?",
+        "options": {
+            "A": "To ensure that all modules in a project use the same version of dependencies",
+            "B": "To allow different modules to use any version of dependencies without restrictions",
+            "C": "To automatically update all dependencies to the latest version available",
+            "D": "To create separate versions for each module in a project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency version alignment in Gradle is to ensure that all modules within a project use the same version of dependencies. This helps to avoid conflicts and ensures compatibility among the modules, particularly when they belong to the same logical group or platform."
+    },
+    {
+        "question": "How does Gradle support aligning versions of modules produced by Gradle?",
+        "options": {
+            "A": "By using a manual versioning system for each module",
+            "B": "Through the use of the Java Platform Plugin",
+            "C": "By enforcing a single version across all projects globally",
+            "D": "By allowing only one version of a dependency in the entire project"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle supports aligning versions of modules produced by Gradle through the use of the Java Platform Plugin. This plugin allows developers to define a platform that specifies version constraints for all modules, ensuring that they are aligned properly when resolved."
+    },
+    {
+        "question": "What is a platform in the context of dependency version alignment?",
+        "options": {
+            "A": "A tool for managing project documentation",
+            "B": "A set of modules that are tested to work well together",
+            "C": "A method for creating virtual environments for dependencies",
+            "D": "A way to publish modules independently of their versions"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of dependency version alignment, a platform is defined as a set of modules that are tested to work well together. This ensures that when one module is used, all other modules in the platform are also aligned to compatible versions, reducing the risk of conflicts."
+    },
+    {
+        "question": "What happens when a module is added to a dependency graph that belongs to a platform?",
+        "options": {
+            "A": "Only the added module's version is considered, ignoring others",
+            "B": "All modules in the platform are automatically upgraded to the same version",
+            "C": "Constraints on other modules of the platform are included in the dependency resolution",
+            "D": "The platform is removed from the dependency graph"
+        },
+        "correct_answer": "C",
+        "explanation": "When a module that belongs to a platform is added to a dependency graph, Gradle includes constraints on the other modules of the platform in the dependency resolution. This ensures that all modules are aligned to compatible versions, facilitating smoother integration and functionality."
+    },
+    {
+        "question": "What is the primary purpose of transitive dependency resolution in Gradle?",
+        "options": {
+            "A": "To ensure all modules in a project are using the same version",
+            "B": "To automatically include dependencies of dependencies in a project",
+            "C": "To manually manage each dependency version in a project",
+            "D": "To eliminate the need for any dependencies in a project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of transitive dependency resolution in Gradle is to automatically include dependencies of dependencies in a project. This means that when a module depends on another module, Gradle will also include any dependencies that the second module requires, ensuring that all necessary components are available for the project to function correctly."
+    },
+    {
+        "question": "What can happen if different modules in a project depend on conflicting versions of the same library?",
+        "options": {
+            "A": "Gradle will automatically resolve the conflict by selecting the highest version",
+            "B": "The project will compile successfully without any issues",
+            "C": "Gradle will ignore the conflicting versions and proceed with the build",
+            "D": "The project will fail to compile due to version conflicts"
+        },
+        "correct_answer": "D",
+        "explanation": "If different modules in a project depend on conflicting versions of the same library, the project may fail to compile due to version conflicts. Gradle attempts to resolve these conflicts, but if it cannot find a compatible version that satisfies all dependencies, it will result in a build failure, highlighting the need for proper dependency management."
+    },
+    {
+        "question": "How does Gradle handle transitive dependencies when a module is published without using Gradle?",
+        "options": {
+            "A": "Gradle cannot manage transitive dependencies in this case",
+            "B": "Gradle uses a virtual platform to manage these dependencies",
+            "C": "Gradle automatically aligns all versions to the latest available",
+            "D": "Gradle requires manual intervention to resolve these dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "When a module is published without using Gradle, Gradle can still manage transitive dependencies by using a virtual platform. This allows Gradle to treat a set of modules as belonging to the same platform, enabling it to apply version alignment rules and ensure that all dependencies are resolved correctly, even if they were not published with Gradle."
+    },
+    {
+        "question": "What is the primary purpose of a platform in dependency management?",
+        "options": {
+            "A": "To ensure all modules within a group use the same version",
+            "B": "To allow modules to have different versions for flexibility",
+            "C": "To increase the complexity of dependency resolution",
+            "D": "To eliminate the need for versioning in dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a platform in dependency management is to ensure that all modules within a logical group use the same version. This alignment helps prevent issues that arise from having incompatible versions of modules that are intended to work together, thereby simplifying dependency resolution."
+    },
+    {
+        "question": "How does Gradle support the alignment of module versions?",
+        "options": {
+            "A": "By allowing any module to override the versions of others",
+            "B": "By using a platform to enforce version constraints across modules",
+            "C": "By requiring all modules to be published together",
+            "D": "By ignoring version conflicts entirely"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle supports the alignment of module versions by using a platform to enforce version constraints across modules. This means that when a module is added to a project, the platform ensures that all related modules are aligned to compatible versions, thus maintaining consistency and reducing conflicts."
+    },
+    {
+        "question": "What happens when a module is added to a project that depends on a platform?",
+        "options": {
+            "A": "The module's version is ignored in favor of the platform's version",
+            "B": "The module's version is automatically upgraded to the latest available",
+            "C": "The platform's constraints are applied to the module and other related modules",
+            "D": "The module is excluded from the dependency graph"
+        },
+        "correct_answer": "C",
+        "explanation": "When a module is added to a project that depends on a platform, the platform's constraints are applied to the module and other related modules. This ensures that all modules within the same platform are aligned to compatible versions, facilitating smoother dependency management."
+    },
+    {
+        "question": "What is a virtual platform in the context of Gradle?",
+        "options": {
+            "A": "A platform that is retrieved from a remote repository",
+            "B": "A platform that is defined by the user and not published",
+            "C": "A platform that automatically updates all module versions",
+            "D": "A platform that can only contain one module"
+        },
+        "correct_answer": "B",
+        "explanation": "A virtual platform in the context of Gradle is a platform that is defined by the user and not published. It is created on-the-fly by Gradle based on the modules that are used in the project, allowing for flexible version alignment without needing a published BOM."
+    },
+    {
+        "question": "What is the primary purpose of conflict resolution in dependency management?",
+        "options": {
+            "A": "To ensure all dependencies are updated to the latest version",
+            "B": "To select a single version of a dependency when multiple versions are present",
+            "C": "To remove unused dependencies from the project",
+            "D": "To automatically add new dependencies to the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of conflict resolution in dependency management is to select a single version of a dependency when multiple versions are present in the dependency graph. This ensures that the project uses a consistent version of the dependency, which helps avoid compatibility issues and ensures stability."
+    },
+    {
+        "question": "How does Gradle handle conflicts when different modules depend on different versions of the same library?",
+        "options": {
+            "A": "It randomly selects one of the versions to use",
+            "B": "It always chooses the highest version available",
+            "C": "It ignores the conflicting versions and continues with the build",
+            "D": "It requires the user to manually resolve the conflict"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle typically resolves conflicts by choosing the highest version available among the conflicting dependencies. This approach helps ensure that the most recent and potentially most stable version of a library is used, which can help mitigate issues that arise from using outdated versions."
+    },
+    {
+        "question": "What role do platforms play in dependency version alignment?",
+        "options": {
+            "A": "They allow for the automatic removal of unused dependencies",
+            "B": "They ensure that all modules within a platform use the same version",
+            "C": "They provide a way to downgrade dependencies to older versions",
+            "D": "They are used to define the scope of dependencies in a project"
+        },
+        "correct_answer": "B",
+        "explanation": "Platforms play a crucial role in dependency version alignment by ensuring that all modules within a platform use the same version. This alignment helps prevent conflicts and ensures that all components work well together, as they are tested and published as a cohesive unit."
+    },
+    {
+        "question": "What is a virtual platform in the context of dependency management?",
+        "options": {
+            "A": "A platform that is published and retrieved from a repository",
+            "B": "A platform that is created dynamically based on used modules",
+            "C": "A platform that only contains deprecated dependencies",
+            "D": "A platform that is used to enforce strict versioning rules"
+        },
+        "correct_answer": "B",
+        "explanation": "A virtual platform is created dynamically based on the modules that are used in a project. Unlike published platforms, virtual platforms are not retrieved from a repository; instead, they are defined by the build author and allow for flexible dependency management by grouping modules that should be treated as a single unit."
+    },
+    {
+        "question": "What is the primary purpose of component metadata rules in Gradle?",
+        "options": {
+            "A": "To define the build process for a project",
+            "B": "To manage and align dependency versions",
+            "C": "To create user interfaces for applications",
+            "D": "To optimize the performance of the Gradle build system"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of component metadata rules in Gradle is to manage and align dependency versions. These rules allow developers to specify how different modules relate to each other, ensuring that compatible versions are used together, which helps prevent conflicts and ensures stability in the dependency graph."
+    },
+    {
+        "question": "How can component metadata rules help with version alignment?",
+        "options": {
+            "A": "By automatically generating documentation for dependencies",
+            "B": "By enforcing specific versions across multiple modules",
+            "C": "By simplifying the build script syntax",
+            "D": "By providing a graphical interface for dependency management"
+        },
+        "correct_answer": "B",
+        "explanation": "Component metadata rules help with version alignment by enforcing specific versions across multiple modules. This ensures that all components that belong to the same platform or group use compatible versions, which is crucial for maintaining the integrity of the application and avoiding runtime issues."
+    },
+    {
+        "question": "What is a virtual platform in the context of component metadata rules?",
+        "options": {
+            "A": "A platform that is published and retrieved from a repository",
+            "B": "A platform that is defined by the user and not retrieved from a repository",
+            "C": "A platform that automatically updates dependencies",
+            "D": "A platform that only works with Gradle 6.1 and above"
+        },
+        "correct_answer": "B",
+        "explanation": "A virtual platform in the context of component metadata rules is a platform that is defined by the user and not retrieved from a repository. It allows Gradle to create a platform on the fly by collecting all the modules that are specified to belong to that virtual platform, enabling version alignment without needing a published platform."
+    },
+    {
+        "question": "What happens when a module is declared to belong to a platform in Gradle?",
+        "options": {
+            "A": "It automatically updates to the latest version available",
+            "B": "It inherits version constraints from the platform",
+            "C": "It becomes incompatible with other modules",
+            "D": "It is excluded from the dependency graph"
+        },
+        "correct_answer": "B",
+        "explanation": "When a module is declared to belong to a platform in Gradle, it inherits version constraints from that platform. This means that any version constraints defined for the platform will apply to the module, ensuring that it aligns with other modules in the same platform and reducing the risk of version conflicts."
+    },
+    {
+        "question": "What is the primary distinction between published platforms and virtual platforms in Gradle?",
+        "options": {
+            "A": "Published platforms are retrieved from a repository, while virtual platforms are created on the fly.",
+            "B": "Published platforms can only contain one module, while virtual platforms can contain multiple modules.",
+            "C": "Published platforms require manual version alignment, while virtual platforms do not.",
+            "D": "Published platforms are only used for testing, while virtual platforms are used in production."
+        },
+        "correct_answer": "A",
+        "explanation": "The primary distinction is that published platforms are retrieved from a repository and contain modules that are officially published, while virtual platforms are created dynamically by Gradle based on the modules that are used in the project. This allows for flexibility in managing dependencies that do not have a published platform."
+    },
+    {
+        "question": "Which of the following statements is true regarding virtual platforms in Gradle?",
+        "options": {
+            "A": "Virtual platforms must be defined in a repository to be used.",
+            "B": "Virtual platforms are automatically created by Gradle based on the modules that belong to them.",
+            "C": "Virtual platforms can only align versions of published modules.",
+            "D": "Virtual platforms require explicit version declarations for each module."
+        },
+        "correct_answer": "B",
+        "explanation": "Virtual platforms are automatically created by Gradle based on the modules that are defined to belong to them. This allows Gradle to manage dependencies dynamically without needing a pre-defined repository, making it easier to align versions of modules that do not have a published platform."
+    },
+    {
+        "question": "What is a key benefit of using published platforms in Gradle?",
+        "options": {
+            "A": "They allow for the creation of new modules without version constraints.",
+            "B": "They ensure that all modules are aligned to the same version as defined in the platform.",
+            "C": "They can only be used for testing purposes.",
+            "D": "They eliminate the need for dependency management altogether."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using published platforms is that they ensure all modules that belong to the platform are aligned to the same version as defined in the platform. This helps maintain compatibility and reduces the risk of version conflicts in a project."
+    },
+    {
+        "question": "What is the primary purpose of dependency constraints in Gradle?",
+        "options": {
+            "A": "To ensure that all modules in a project use the same version",
+            "B": "To allow for the automatic resolution of transitive dependencies",
+            "C": "To define the minimum and maximum versions of dependencies",
+            "D": "To manage the order of dependency resolution"
+        },
+        "correct_answer": "C",
+        "explanation": "The primary purpose of dependency constraints in Gradle is to define the minimum and maximum versions of dependencies. This allows developers to specify which versions of a dependency are acceptable, ensuring compatibility and stability within the project."
+    },
+    {
+        "question": "How do dependency constraints affect transitive dependencies?",
+        "options": {
+            "A": "They prevent transitive dependencies from being resolved",
+            "B": "They can enforce specific versions for transitive dependencies",
+            "C": "They only apply to direct dependencies, not transitive ones",
+            "D": "They automatically upgrade all dependencies to the latest version"
+        },
+        "correct_answer": "B",
+        "explanation": "Dependency constraints can enforce specific versions for transitive dependencies, ensuring that all modules within a project adhere to the defined versioning rules. This helps maintain compatibility across different modules that may rely on the same dependencies."
+    },
+    {
+        "question": "What happens if a dependency constraint is violated during dependency resolution?",
+        "options": {
+            "A": "Gradle will ignore the constraint and proceed with the resolution",
+            "B": "Gradle will throw an error and halt the build process",
+            "C": "Gradle will automatically adjust the versions to meet the constraint",
+            "D": "Gradle will log a warning but continue with the resolution"
+        },
+        "correct_answer": "B",
+        "explanation": "If a dependency constraint is violated during dependency resolution, Gradle will throw an error and halt the build process. This behavior ensures that the integrity of the dependency graph is maintained and that all specified constraints are respected."
+    },
+    {
+        "question": "Which of the following best describes a 'platform' in the context of dependency constraints?",
+        "options": {
+            "A": "A module that contains only test dependencies",
+            "B": "A collection of modules that are designed to work together",
+            "C": "A tool for visualizing dependency graphs",
+            "D": "A method for manually specifying dependency versions"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of dependency constraints, a 'platform' refers to a collection of modules that are designed to work together. Platforms help manage version alignment across multiple modules, ensuring that they are compatible with each other when included in a project."
+    }
+]

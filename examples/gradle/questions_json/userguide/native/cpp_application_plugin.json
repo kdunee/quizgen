@@ -1,0 +1,266 @@
+[
+    {
+        "question": "What is the primary purpose of the Gradle Application Plugin?",
+        "options": {
+            "A": "To manage dependencies for Java applications",
+            "B": "To provide tasks and configurations for building C++ applications",
+            "C": "To optimize the performance of existing applications",
+            "D": "To automate the deployment of web applications"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Gradle Application Plugin is to provide the necessary tasks, configurations, and conventions for building C++ applications. It facilitates the compilation, linking, and installation processes specific to C++ projects, ensuring that developers can manage their build lifecycle effectively."
+    },
+    {
+        "question": "Which of the following best describes 'build variants' in the context of the Gradle Application Plugin?",
+        "options": {
+            "A": "Different versions of the same application for various platforms",
+            "B": "Configurations that determine how the application is built, such as debug or release",
+            "C": "Tasks that are executed in a specific order during the build process",
+            "D": "Libraries that the application depends on for execution"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of the Gradle Application Plugin, 'build variants' refer to configurations that determine how the application is built, specifically distinguishing between debug and release builds. These variants control aspects such as optimization and the inclusion of debug symbols, which are crucial for development and production environments."
+    },
+    {
+        "question": "What is the role of the 'install__Variant__' task in the Gradle Application Plugin?",
+        "options": {
+            "A": "To compile the source code of the application",
+            "B": "To link the compiled object files into an executable",
+            "C": "To install the executable and its runtime dependencies for execution",
+            "D": "To clean up the build directory before a new build"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'install__Variant__' task in the Gradle Application Plugin is responsible for installing the executable along with all its runtime dependencies, making it ready for easy execution. This task ensures that the application is properly set up in the environment where it will run, facilitating a smooth deployment process."
+    },
+    {
+        "question": "Which configuration is used to declare implementation dependencies for all variants of the main component in a Gradle Application Plugin project?",
+        "options": {
+            "A": "main__Variant__Implementation",
+            "B": "implementation",
+            "C": "nativeRuntime__Variant__",
+            "D": "cppCompile__Variant__"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'implementation' configuration is used to declare implementation dependencies for all variants of the main component in a Gradle Application Plugin project. This allows developers to specify the libraries and resources that their application needs to function correctly across different build variants."
+    },
+    {
+        "question": "What are build variants in the context of the {cpp} Application Plugin?",
+        "options": {
+            "A": "Different configurations for compiling and linking applications based on specific criteria",
+            "B": "Unique versions of the application that are only for testing purposes",
+            "C": "A method to combine multiple programming languages in a single project",
+            "D": "A way to manage user interface elements in an application"
+        },
+        "correct_answer": "A",
+        "explanation": "Build variants refer to different configurations for compiling and linking applications based on specific criteria, such as debug or release modes. These variants allow developers to control the optimization and debugging features of the generated binaries, ensuring that the application behaves as expected in different environments."
+    },
+    {
+        "question": "Which of the following best describes the purpose of the 'debug' build type?",
+        "options": {
+            "A": "To optimize the binary for performance",
+            "B": "To generate debug symbols and avoid optimization",
+            "C": "To create a version of the application for end-users",
+            "D": "To compile the application without any source files"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'debug' build type is designed to generate debug symbols and avoid optimization, which makes it easier for developers to troubleshoot and debug the application. This build type is essential during the development phase to ensure that any issues can be identified and resolved effectively."
+    },
+    {
+        "question": "What is the role of the target machine in the context of build variants?",
+        "options": {
+            "A": "It determines the programming language used in the project",
+            "B": "It specifies the operating system and architecture for which the application is built",
+            "C": "It defines the user interface layout of the application",
+            "D": "It manages the version control system for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The target machine specifies the operating system and architecture for which the application is built. This information is crucial for Gradle to select the appropriate toolchain and ensure that the application can run on the intended environment."
+    },
+    {
+        "question": "How does the {cpp} Application Plugin handle variant-dependent tasks?",
+        "options": {
+            "A": "It creates a single task for all variants to streamline the build process",
+            "B": "It generates separate tasks for each variant to manage specific build requirements",
+            "C": "It eliminates the need for tasks by automating the entire build process",
+            "D": "It combines tasks from different variants into one to reduce complexity"
+        },
+        "correct_answer": "B",
+        "explanation": "The {cpp} Application Plugin generates separate tasks for each variant to manage specific build requirements. This allows for tailored configurations and processes for each variant, ensuring that the build process meets the unique needs of different application versions."
+    },
+    {
+        "question": "What is the primary purpose of task management in the {cpp} Application Plugin?",
+        "options": {
+            "A": "To define the structure and layout of the project",
+            "B": "To automate the build process and manage dependencies",
+            "C": "To optimize the performance of the application",
+            "D": "To handle user input and output during execution"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of task management in the {cpp} Application Plugin is to automate the build process and manage dependencies. This includes creating tasks for compiling, linking, and installing the application, which streamlines the development workflow and ensures that all necessary steps are executed in the correct order."
+    },
+    {
+        "question": "Which of the following best describes a 'build variant' in the context of the {cpp} Application Plugin?",
+        "options": {
+            "A": "A specific version of the application that is optimized for performance",
+            "B": "A configuration that defines how the application is built for different environments",
+            "C": "A task that compiles the source code into an executable format",
+            "D": "A method for managing user interface elements in the application"
+        },
+        "correct_answer": "B",
+        "explanation": "A 'build variant' in the context of the {cpp} Application Plugin refers to a configuration that defines how the application is built for different environments, such as 'debug' or 'release'. Each variant can have its own set of tasks and configurations, allowing developers to tailor the build process to specific needs."
+    },
+    {
+        "question": "What is the role of the 'install__Variant__' task in the {cpp} Application Plugin?",
+        "options": {
+            "A": "To compile the source code into object files",
+            "B": "To link the compiled object files into an executable",
+            "C": "To install the executable and its runtime dependencies for execution",
+            "D": "To clean up the build directory before a new build"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'install__Variant__' task in the {cpp} Application Plugin is responsible for installing the executable and its runtime dependencies, making it easy to execute the application. This task ensures that all necessary components are in place for the application to run correctly on the target machine."
+    },
+    {
+        "question": "How does the {cpp} Application Plugin determine which toolchain to use for building the application?",
+        "options": {
+            "A": "Based on the user's preferences set in the configuration file",
+            "B": "By analyzing the source code for compatibility",
+            "C": "According to the target machine's operating system and architecture",
+            "D": "By defaulting to the most commonly used toolchain"
+        },
+        "correct_answer": "C",
+        "explanation": "The {cpp} Application Plugin determines which toolchain to use for building the application based on the target machine's operating system and architecture. This allows the plugin to select the appropriate tools that are compatible with the environment in which the application is expected to run."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in the {cpp} Application Plugin?",
+        "options": {
+            "A": "To declare and manage dependencies for different application variants",
+            "B": "To optimize the performance of the application during runtime",
+            "C": "To compile the application source code into executable binaries",
+            "D": "To configure the user interface of the application"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management in the {cpp} Application Plugin is to declare and manage dependencies for different application variants. This ensures that each variant of the application has the necessary libraries and components to function correctly, allowing for effective building and execution."
+    },
+    {
+        "question": "Which configuration is used to declare implementation dependencies for all variants of the main component?",
+        "options": {
+            "A": "main__Variant__Implementation",
+            "B": "implementation",
+            "C": "nativeRuntime__Variant__",
+            "D": "cppCompile__Variant__"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'implementation' configuration is used to declare implementation dependencies for all variants of the main component. This allows developers to specify the libraries and components that the application needs to compile and run, ensuring that all necessary dependencies are included."
+    },
+    {
+        "question": "What does the 'main__Variant__Implementation' configuration extend?",
+        "options": {
+            "A": "implementation",
+            "B": "nativeLink__Variant__",
+            "C": "cppCompile__Variant__",
+            "D": "debugRuntimeElements"
+        },
+        "correct_answer": "A",
+        "explanation": "'main__Variant__Implementation' extends the 'implementation' configuration. This means that it inherits the properties of the 'implementation' configuration while allowing for the declaration of dependencies specific to a particular variant of the application, thus providing flexibility in managing dependencies."
+    },
+    {
+        "question": "Which configuration is specifically used for executing the application?",
+        "options": {
+            "A": "cppCompile__Variant__",
+            "B": "nativeRuntime__Variant__",
+            "C": "main__Variant__Implementation",
+            "D": "implementation"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'nativeRuntime__Variant__' configuration is specifically used for executing the application. It contains the runtime libraries necessary for the application to run, ensuring that all required components are available during execution."
+    },
+    {
+        "question": "What is the primary purpose of the project layout in the {cpp} Application Plugin?",
+        "options": {
+            "A": "To define the structure and organization of source files and headers",
+            "B": "To specify the build types and target machines",
+            "C": "To manage dependencies for the application",
+            "D": "To configure the compiler settings for the application"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the project layout in the {cpp} Application Plugin is to define the structure and organization of source files and headers. This layout helps the plugin identify where to find the necessary files for compilation and linking, ensuring that the build process can locate and utilize the correct resources."
+    },
+    {
+        "question": "Which directory is designated for {cpp} source files in the project layout?",
+        "options": {
+            "A": "src/main/headers",
+            "B": "src/main/cpp",
+            "C": "src/main/resources",
+            "D": "src/main/bin"
+        },
+        "correct_answer": "B",
+        "explanation": "In the project layout for the {cpp} Application Plugin, the directory designated for {cpp} source files is 'src/main/cpp'. This is where the plugin looks for source files with the appropriate extensions to compile the application."
+    },
+    {
+        "question": "What does the {cpp} Application Plugin assume about the existence of the specified project directories?",
+        "options": {
+            "A": "All specified directories must exist and contain files.",
+            "B": "None of the specified directories need to exist or have anything in them.",
+            "C": "Only the source directory must exist with files.",
+            "D": "The headers directory must contain at least one header file."
+        },
+        "correct_answer": "B",
+        "explanation": "The {cpp} Application Plugin assumes that none of the specified project directories need to exist or have anything in them. This flexibility allows developers to set up their project structure without needing to create all directories in advance, as the plugin will compile whatever it finds."
+    },
+    {
+        "question": "How can the project layout be customized in the {cpp} Application Plugin?",
+        "options": {
+            "A": "By modifying the build.gradle file directly without any configuration.",
+            "B": "By configuring the 'source' and 'privateHeaders' in the application script block.",
+            "C": "By changing the default compiler settings in the plugin.",
+            "D": "By specifying the target machine in the project properties."
+        },
+        "correct_answer": "B",
+        "explanation": "The project layout in the {cpp} Application Plugin can be customized by configuring the 'source' and 'privateHeaders' in the application script block. This allows developers to specify different paths for their source files and headers, tailoring the project structure to their needs."
+    },
+    {
+        "question": "What is the purpose of lifecycle tasks in the {cpp} Application Plugin?",
+        "options": {
+            "A": "To manage the execution order of tasks during the build process",
+            "B": "To define the source code structure of the application",
+            "C": "To specify the target machines for the application",
+            "D": "To create debug symbols for the application"
+        },
+        "correct_answer": "A",
+        "explanation": "Lifecycle tasks in the {cpp} Application Plugin are designed to manage the execution order of tasks during the build process. They aggregate various tasks, ensuring that tasks like 'assemble', 'check', and 'build' are executed in a logical sequence, which is essential for a successful build."
+    },
+    {
+        "question": "Which of the following is a standard lifecycle task in the {cpp} Application Plugin?",
+        "options": {
+            "A": "compileDebugCpp",
+            "B": "installRelease",
+            "C": "check",
+            "D": "linkDebug"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'check' task is a standard lifecycle task in the {cpp} Application Plugin. It aggregates verification tasks, such as running tests, ensuring that the application meets quality standards before proceeding with the build process."
+    },
+    {
+        "question": "What does the 'build' lifecycle task depend on in the {cpp} Application Plugin?",
+        "options": {
+            "A": "Only the 'assemble' task",
+            "B": "The 'check' and 'assemble' tasks",
+            "C": "The 'install' task",
+            "D": "The 'compile' tasks for all variants"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'build' lifecycle task depends on both the 'check' and 'assemble' tasks. This means that before the build process can be completed, the application must first pass all verification tasks and then be assembled, ensuring a complete and functional build."
+    },
+    {
+        "question": "What is the function of the 'clean' lifecycle task in the {cpp} Application Plugin?",
+        "options": {
+            "A": "To compile the application source code",
+            "B": "To delete the build directory and its contents",
+            "C": "To install the application on the target machine",
+            "D": "To link the compiled object files"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'clean' lifecycle task is responsible for deleting the build directory and everything within it. This task is useful for ensuring that the build environment is reset, allowing for a fresh build without any remnants from previous builds."
+    }
+]

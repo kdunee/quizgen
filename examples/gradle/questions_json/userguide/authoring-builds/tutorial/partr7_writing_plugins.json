@@ -1,0 +1,222 @@
+[
+    {
+        "question": "What is the primary purpose of a Gradle plugin?",
+        "options": {
+            "A": "To manage dependencies in a project",
+            "B": "To extend the functionality of the Gradle build system",
+            "C": "To compile source code into executable files",
+            "D": "To create user interfaces for applications"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a Gradle plugin is to extend the functionality of the Gradle build system. Plugins allow developers to add custom tasks, manage project configurations, and integrate additional features into their build processes, enhancing the capabilities of Gradle."
+    },
+    {
+        "question": "Which of the following is a common step when developing a Gradle plugin?",
+        "options": {
+            "A": "Creating a new programming language",
+            "B": "Registering tasks within the plugin",
+            "C": "Compiling the plugin into a binary format",
+            "D": "Designing a graphical user interface"
+        },
+        "correct_answer": "B",
+        "explanation": "A common step when developing a Gradle plugin is registering tasks within the plugin. This involves defining what the tasks do and how they interact with the Gradle build lifecycle, allowing users to execute these tasks as part of their build process."
+    },
+    {
+        "question": "What is typically included in the description of a custom task in a Gradle plugin?",
+        "options": {
+            "A": "The programming language used",
+            "B": "The purpose of the task",
+            "C": "The version of Gradle required",
+            "D": "The author of the plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "The description of a custom task in a Gradle plugin typically includes the purpose of the task. This helps users understand what the task does and how it fits into the overall build process, making it easier to use and integrate into their workflows."
+    },
+    {
+        "question": "How do you apply a custom Gradle plugin to a subproject?",
+        "options": {
+            "A": "By modifying the main project settings file",
+            "B": "By adding a specific line in the subproject's build script",
+            "C": "By creating a new Gradle wrapper",
+            "D": "By compiling the plugin into a JAR file"
+        },
+        "correct_answer": "B",
+        "explanation": "To apply a custom Gradle plugin to a subproject, you add a specific line in the subproject's build script. This line typically includes the plugin ID, allowing the subproject to utilize the features and tasks defined in the plugin."
+    },
+    {
+        "question": "What is the primary purpose of creating a custom task in a Gradle plugin?",
+        "options": {
+            "A": "To automate repetitive build processes",
+            "B": "To manually compile source code",
+            "C": "To manage project dependencies",
+            "D": "To configure the project settings"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of creating a custom task in a Gradle plugin is to automate repetitive build processes. Custom tasks allow developers to define specific actions that can be executed during the build lifecycle, enhancing efficiency and consistency in project management."
+    },
+    {
+        "question": "Which of the following is a key step in developing a custom Gradle plugin?",
+        "options": {
+            "A": "Registering the custom task with the project",
+            "B": "Creating a new Gradle wrapper",
+            "C": "Defining the project dependencies",
+            "D": "Compiling the plugin code manually"
+        },
+        "correct_answer": "A",
+        "explanation": "A key step in developing a custom Gradle plugin is registering the custom task with the project. This involves defining the task's behavior and associating it with the plugin, allowing it to be executed as part of the build process."
+    },
+    {
+        "question": "What is the expected outcome after running a custom task in a Gradle project?",
+        "options": {
+            "A": "The project will be deleted",
+            "B": "The source code will be modified according to the task's function",
+            "C": "The project will be compiled without any changes",
+            "D": "The build script will be reinitialized"
+        },
+        "correct_answer": "B",
+        "explanation": "The expected outcome after running a custom task in a Gradle project is that the source code will be modified according to the task's function. For example, a task designed to add a license header will update the source files to include the specified header, demonstrating the task's intended effect."
+    },
+    {
+        "question": "In the context of Gradle plugins, what does the term 'apply' refer to?",
+        "options": {
+            "A": "The process of executing a task",
+            "B": "The method of including a plugin in a project",
+            "C": "The action of compiling source code",
+            "D": "The configuration of project dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of Gradle plugins, the term 'apply' refers to the method of including a plugin in a project. This action allows the functionalities defined in the plugin to be utilized within the project, enabling the use of custom tasks and other features provided by the plugin."
+    },
+    {
+        "question": "What is the primary purpose of the Gradle Build Lifecycle?",
+        "options": {
+            "A": "To define the sequence of tasks that are executed during a build",
+            "B": "To manage the dependencies of a project",
+            "C": "To compile source code into executable files",
+            "D": "To apply plugins to a project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Gradle Build Lifecycle is to define the sequence of tasks that are executed during a build. This lifecycle ensures that tasks are run in the correct order, allowing for efficient and organized builds."
+    },
+    {
+        "question": "Which of the following best describes a task in the context of Gradle?",
+        "options": {
+            "A": "A collection of files that are compiled together",
+            "B": "A single unit of work that Gradle executes",
+            "C": "A configuration file that defines project settings",
+            "D": "A plugin that adds functionality to the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, a task is defined as a single unit of work that Gradle executes. Tasks can perform various actions, such as compiling code, running tests, or creating documentation, and they are the building blocks of the build process."
+    },
+    {
+        "question": "What is the significance of applying a plugin in a Gradle project?",
+        "options": {
+            "A": "It automatically generates source code for the project",
+            "B": "It adds predefined tasks and configurations to the project",
+            "C": "It compiles the project into a runnable application",
+            "D": "It manages the version control of the project files"
+        },
+        "correct_answer": "B",
+        "explanation": "Applying a plugin in a Gradle project is significant because it adds predefined tasks and configurations that enhance the build process. Plugins can provide additional functionality, such as support for specific languages or frameworks, and streamline the development workflow."
+    },
+    {
+        "question": "What is the role of a custom task in a Gradle plugin?",
+        "options": {
+            "A": "To define the build lifecycle of the project",
+            "B": "To execute a specific action defined by the user",
+            "C": "To manage project dependencies",
+            "D": "To apply other plugins to the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The role of a custom task in a Gradle plugin is to execute a specific action defined by the user. Custom tasks allow developers to extend the functionality of Gradle by creating tasks that perform unique operations tailored to their project's needs."
+    },
+    {
+        "question": "What is the primary purpose of a Gradle plugin?",
+        "options": {
+            "A": "To manage project dependencies",
+            "B": "To automate tasks and extend build functionality",
+            "C": "To compile source code into bytecode",
+            "D": "To create user interfaces for applications"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a Gradle plugin is to automate tasks and extend the build functionality of a project. Plugins allow developers to encapsulate reusable build logic and apply it across different projects, enhancing the build process."
+    },
+    {
+        "question": "In the context of Gradle, what does the term 'task' refer to?",
+        "options": {
+            "A": "A specific type of project configuration",
+            "B": "A unit of work that Gradle executes",
+            "C": "A file that contains project metadata",
+            "D": "A command-line tool for managing builds"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, a 'task' refers to a unit of work that Gradle executes. Tasks can perform various actions, such as compiling code, running tests, or creating documentation, and they can be defined and customized within a build script or a plugin."
+    },
+    {
+        "question": "What is the significance of the 'apply' method in a Gradle plugin?",
+        "options": {
+            "A": "It defines the dependencies for the project",
+            "B": "It registers tasks and configures the project",
+            "C": "It compiles the source code",
+            "D": "It generates project documentation"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'apply' method in a Gradle plugin is significant because it is where tasks are registered and the project is configured. This method is called when the plugin is applied to a project, allowing the plugin to modify the project's build script and add functionality."
+    },
+    {
+        "question": "What is typically included in a custom task's configuration in a Gradle plugin?",
+        "options": {
+            "A": "The project's dependencies",
+            "B": "The task's description and group",
+            "C": "The source code files to be compiled",
+            "D": "The version of the Gradle wrapper"
+        },
+        "correct_answer": "B",
+        "explanation": "In a Gradle plugin, a custom task's configuration typically includes the task's description and group. This information helps categorize the task and provides context for users when they list available tasks in the project."
+    },
+    {
+        "question": "What is the primary purpose of a custom task in a Gradle plugin?",
+        "options": {
+            "A": "To automate repetitive build processes",
+            "B": "To manage project dependencies",
+            "C": "To compile source code into bytecode",
+            "D": "To configure project settings"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a custom task in a Gradle plugin is to automate repetitive build processes. Custom tasks allow developers to define specific actions that can be executed during the build lifecycle, enhancing the efficiency and organization of the build process."
+    },
+    {
+        "question": "Which of the following is a key step in developing a Gradle plugin?",
+        "options": {
+            "A": "Creating a new project directory",
+            "B": "Registering a task within the plugin",
+            "C": "Compiling the entire project",
+            "D": "Setting up a version control system"
+        },
+        "correct_answer": "B",
+        "explanation": "A key step in developing a Gradle plugin is registering a task within the plugin. This involves defining the task's behavior and associating it with the plugin, allowing it to be executed as part of the build process."
+    },
+    {
+        "question": "What command is used to run a custom task in a Gradle project?",
+        "options": {
+            "A": "gradle run",
+            "B": "gradle execute",
+            "C": "gradlew :projectName:taskName",
+            "D": "gradle build"
+        },
+        "correct_answer": "C",
+        "explanation": "The command used to run a custom task in a Gradle project is 'gradlew :projectName:taskName'. This command specifies the project and the task to be executed, allowing users to run specific tasks defined in their Gradle build scripts."
+    },
+    {
+        "question": "What is the significance of adding a description to a task in a Gradle plugin?",
+        "options": {
+            "A": "It determines the task's execution order",
+            "B": "It provides clarity on the task's purpose",
+            "C": "It restricts the task from being executed",
+            "D": "It automatically generates documentation"
+        },
+        "correct_answer": "B",
+        "explanation": "Adding a description to a task in a Gradle plugin provides clarity on the task's purpose. This helps users understand what the task does when they list available tasks, improving usability and maintainability of the build scripts."
+    }
+]

@@ -1,0 +1,266 @@
+[
+    {
+        "question": "What is the primary purpose of features in Gradle?",
+        "options": {
+            "A": "To allow a library to expose multiple related libraries with distinct dependencies",
+            "B": "To simplify the build process by reducing the number of dependencies",
+            "C": "To ensure that all libraries are compatible with each other",
+            "D": "To automatically generate documentation for the libraries"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of features in Gradle is to allow a library to expose multiple related libraries, each with its own distinct dependencies. This enables developers to choose specific functionalities they need without including unnecessary components, thus promoting modularity and flexibility in dependency management."
+    },
+    {
+        "question": "What is a variant in the context of Gradle features?",
+        "options": {
+            "A": "A specific version of a library that is always compatible with others",
+            "B": "A different implementation of a feature that can be selected based on usage",
+            "C": "A type of dependency that is automatically included in all builds",
+            "D": "A configuration that defines how to publish a library"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of Gradle features, a variant refers to a different implementation of a feature that can be selected based on the specific usage scenario, such as compiling or executing code. Variants allow for flexibility in how components are utilized, ensuring that the appropriate dependencies are included based on the context."
+    },
+    {
+        "question": "Why is it important that no two variants in a dependency graph provide the same capability?",
+        "options": {
+            "A": "To ensure that all dependencies are included in the final build",
+            "B": "To prevent conflicts and ensure clarity in dependency resolution",
+            "C": "To allow for easier debugging of dependency issues",
+            "D": "To automatically update dependencies to the latest versions"
+        },
+        "correct_answer": "B",
+        "explanation": "It is important that no two variants in a dependency graph provide the same capability to prevent conflicts and ensure clarity in dependency resolution. This rule helps Gradle to manage dependencies effectively, ensuring that the correct variant is chosen without ambiguity, which can lead to build failures or unexpected behavior."
+    },
+    {
+        "question": "How can a consumer specify that it needs a specific feature of a producer in Gradle?",
+        "options": {
+            "A": "By declaring a dependency on the main library only",
+            "B": "By requiring the capability associated with the desired feature",
+            "C": "By manually including all possible dependencies in the build file",
+            "D": "By using a special command to fetch all features automatically"
+        },
+        "correct_answer": "B",
+        "explanation": "A consumer can specify that it needs a specific feature of a producer by requiring the capability associated with that feature. This allows the consumer to declare dependencies that are relevant to the specific functionality they wish to utilize, ensuring that only the necessary components are included in the build."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in software development?",
+        "options": {
+            "A": "To ensure that all components are compatible and can work together",
+            "B": "To increase the size of the software project",
+            "C": "To eliminate the need for version control systems",
+            "D": "To reduce the number of libraries used in a project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management is to ensure that all components within a software project are compatible and can work together effectively. This involves managing versions, resolving conflicts, and ensuring that the correct libraries are included in the build process."
+    },
+    {
+        "question": "What is a capability in the context of dependency management?",
+        "options": {
+            "A": "A feature that allows a library to perform multiple functions",
+            "B": "A description of what a component provides, denoted by GAV coordinates",
+            "C": "A method for optimizing the performance of a software application",
+            "D": "A tool for tracking changes in software dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of dependency management, a capability is a description of what a component provides, typically denoted by GAV (Group, Artifact, Version) coordinates. Capabilities help in identifying and resolving dependencies, ensuring that the correct versions and features are utilized in a project."
+    },
+    {
+        "question": "Why is it important to avoid having two variants in a dependency graph that provide the same capability?",
+        "options": {
+            "A": "It can lead to increased build times",
+            "B": "It can cause conflicts and make dependency resolution ambiguous",
+            "C": "It is a requirement of the programming language used",
+            "D": "It simplifies the project structure"
+        },
+        "correct_answer": "B",
+        "explanation": "Avoiding two variants in a dependency graph that provide the same capability is important because it can cause conflicts and make dependency resolution ambiguous. This can lead to errors during the build process, as the system may not know which variant to use, resulting in potential runtime issues."
+    },
+    {
+        "question": "What is the role of features in dependency management?",
+        "options": {
+            "A": "To provide a way to group related dependencies together",
+            "B": "To increase the complexity of the project",
+            "C": "To replace the need for versioning",
+            "D": "To limit the number of dependencies a project can have"
+        },
+        "correct_answer": "A",
+        "explanation": "Features play a crucial role in dependency management by providing a way to group related dependencies together. This allows developers to manage optional or supplementary functionalities within a library, making it easier to include or exclude specific capabilities based on project needs."
+    },
+    {
+        "question": "What is a variant in the context of dependency graphs?",
+        "options": {
+            "A": "A specific version of a library that is always compatible with others",
+            "B": "A distinct configuration of a library that may have different capabilities",
+            "C": "A type of dependency that cannot be resolved",
+            "D": "A method for combining multiple libraries into one"
+        },
+        "correct_answer": "B",
+        "explanation": "A variant in the context of dependency graphs refers to a distinct configuration of a library that may have different capabilities. Variants allow a library to expose multiple related libraries, each with its own dependencies, which can be selected based on the specific needs of the project."
+    },
+    {
+        "question": "Why is it important that no two variants in a dependency graph provide the same capability?",
+        "options": {
+            "A": "To ensure that all dependencies are included in the build",
+            "B": "To prevent conflicts and ensure clear dependency resolution",
+            "C": "To allow for easier debugging of dependency issues",
+            "D": "To enable the use of optional dependencies without restrictions"
+        },
+        "correct_answer": "B",
+        "explanation": "It is important that no two variants in a dependency graph provide the same capability to prevent conflicts and ensure clear dependency resolution. This rule helps Gradle to fail the build if there is a misconfiguration, thereby avoiding ambiguous situations where multiple variants could be selected."
+    },
+    {
+        "question": "How can a consumer specify that it needs a specific feature of a producer in a dependency graph?",
+        "options": {
+            "A": "By declaring a dependency on the main library only",
+            "B": "By requiring the capability associated with that feature",
+            "C": "By using the default configuration of the library",
+            "D": "By manually resolving all dependencies in the project"
+        },
+        "correct_answer": "B",
+        "explanation": "A consumer can specify that it needs a specific feature of a producer by declaring required capabilities. This allows the consumer to indicate which feature it needs, ensuring that the appropriate dependencies are included in the build."
+    },
+    {
+        "question": "What happens when a library supports multiple features that are mutually exclusive?",
+        "options": {
+            "A": "All features can be used together without issues",
+            "B": "The library will automatically resolve to the best feature",
+            "C": "Gradle will fail the build if incompatible features are requested",
+            "D": "Consumers must manually choose which feature to use"
+        },
+        "correct_answer": "C",
+        "explanation": "When a library supports multiple features that are mutually exclusive, Gradle will fail the build if incompatible features are requested. This is because each feature provides the same capability, preventing both from being used in the same dependency graph, thus ensuring clear and correct dependency management."
+    },
+    {
+        "question": "What is the primary purpose of capabilities in Gradle?",
+        "options": {
+            "A": "To define the version of a library",
+            "B": "To manage dependencies and avoid conflicts",
+            "C": "To specify the programming language used in a project",
+            "D": "To enhance the performance of build scripts"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of capabilities in Gradle is to manage dependencies and avoid conflicts. Capabilities allow Gradle to ensure that no two variants in a dependency graph provide the same capability, which helps in resolving dependencies correctly and preventing issues that arise from conflicting libraries."
+    },
+    {
+        "question": "How are capabilities typically denoted in Gradle?",
+        "options": {
+            "A": "By using a unique identifier for each library",
+            "B": "By GAV coordinates that describe the feature",
+            "C": "By the name of the programming language used",
+            "D": "By the version number of the library"
+        },
+        "correct_answer": "B",
+        "explanation": "Capabilities in Gradle are typically denoted by GAV coordinates, which describe the feature. This allows consumers to specify the capabilities they require, ensuring that the correct variants of libraries are selected based on their capabilities."
+    },
+    {
+        "question": "What happens if two variants in a dependency graph provide the same capability?",
+        "options": {
+            "A": "Gradle will automatically choose one variant",
+            "B": "The build will succeed without any issues",
+            "C": "Gradle will fail the build due to a conflict",
+            "D": "The capabilities will be merged into one"
+        },
+        "correct_answer": "C",
+        "explanation": "If two variants in a dependency graph provide the same capability, Gradle will fail the build due to a conflict. This mechanism ensures that developers are alerted to potential issues in their dependency configurations, allowing them to resolve conflicts before proceeding."
+    },
+    {
+        "question": "In Gradle, what is a common use case for declaring capabilities?",
+        "options": {
+            "A": "To specify the programming language of the project",
+            "B": "To group dependencies that contribute to a specific feature",
+            "C": "To define the build environment settings",
+            "D": "To manage the versioning of the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "A common use case for declaring capabilities in Gradle is to group dependencies that contribute to a specific feature. This allows consumers to easily declare dependencies on features, ensuring that all necessary libraries are included without conflicts."
+    },
+    {
+        "question": "What is the primary purpose of publishing features in Gradle?",
+        "options": {
+            "A": "To allow consumers to access specific capabilities of a library",
+            "B": "To increase the size of the library's artifacts",
+            "C": "To ensure all dependencies are included in the main artifact",
+            "D": "To create multiple copies of the same library"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of publishing features in Gradle is to allow consumers to access specific capabilities of a library. By publishing features, a library can expose optional functionalities that consumers can choose to include based on their needs, thus promoting modularity and flexibility in dependency management."
+    },
+    {
+        "question": "Which metadata format allows for the full benefit of features when published?",
+        "options": {
+            "A": "POM metadata",
+            "B": "Ivy metadata",
+            "C": "Gradle Module Metadata",
+            "D": "XML metadata"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle Module Metadata allows for the full benefit of features when published. This format ensures that all features and their associated capabilities are fully represented, enabling consumers to utilize the features effectively without loss of information."
+    },
+    {
+        "question": "What happens when a feature is published using POM metadata?",
+        "options": {
+            "A": "All features are published as mandatory dependencies",
+            "B": "Features are published as optional dependencies",
+            "C": "Features are not published at all",
+            "D": "Features are published with the same capabilities as the main artifact"
+        },
+        "correct_answer": "B",
+        "explanation": "When a feature is published using POM metadata, it is published as optional dependencies. This means that consumers can choose to include these features, but they are not required to do so, allowing for more flexible dependency management."
+    },
+    {
+        "question": "What is a key consideration when publishing features in Gradle?",
+        "options": {
+            "A": "Features must always be included in the main artifact",
+            "B": "Features can only be published with the default capability",
+            "C": "Features may be lossy depending on the metadata file format",
+            "D": "Features cannot be published if they have no dependencies"
+        },
+        "correct_answer": "C",
+        "explanation": "A key consideration when publishing features in Gradle is that features may be lossy depending on the metadata file format used. This means that some information about the features might not be fully represented in the published artifact, which can affect how consumers access and utilize those features."
+    },
+    {
+        "question": "What is the primary rule regarding capabilities in a dependency graph?",
+        "options": {
+            "A": "No two variants can provide the same capability.",
+            "B": "All variants must provide the same capability.",
+            "C": "Variants can provide overlapping capabilities.",
+            "D": "Capabilities are optional for variants."
+        },
+        "correct_answer": "A",
+        "explanation": "The primary rule regarding capabilities in a dependency graph is that no two variants can provide the same capability. This ensures that conflicts are avoided and that the dependency resolution process can clearly determine which variant to use without ambiguity."
+    },
+    {
+        "question": "How can mutually exclusive features be modeled in a library?",
+        "options": {
+            "A": "By allowing all features to be used simultaneously.",
+            "B": "By ensuring each feature provides the same capability.",
+            "C": "By declaring all features as optional dependencies.",
+            "D": "By using a single variant for all features."
+        },
+        "correct_answer": "B",
+        "explanation": "Mutually exclusive features can be modeled by ensuring that each feature provides the same capability. This prevents the use of multiple features that conflict with each other in the same dependency graph, thereby enforcing a clear choice for the consumer."
+    },
+    {
+        "question": "What happens if a consumer tries to use two incompatible variants at the same time?",
+        "options": {
+            "A": "The build will succeed without any issues.",
+            "B": "The consumer will be prompted to choose one variant.",
+            "C": "Dependency resolution will fail with an error.",
+            "D": "The consumer will automatically select one variant."
+        },
+        "correct_answer": "C",
+        "explanation": "If a consumer tries to use two incompatible variants at the same time, dependency resolution will fail with an error. This is because the variants provide the same capability, leading to a conflict that Gradle cannot resolve automatically."
+    },
+    {
+        "question": "What is the benefit of using capabilities to handle features in Gradle?",
+        "options": {
+            "A": "It allows for unlimited variants to be used together.",
+            "B": "It simplifies the dependency resolution process by avoiding conflicts.",
+            "C": "It eliminates the need for declaring dependencies.",
+            "D": "It requires all features to be mandatory."
+        },
+        "correct_answer": "B",
+        "explanation": "The benefit of using capabilities to handle features in Gradle is that it simplifies the dependency resolution process by avoiding conflicts. By ensuring that no two variants provide the same capability, Gradle can effectively manage dependencies and prevent issues during the build process."
+    }
+]

@@ -1,0 +1,332 @@
+[
+    {
+        "question": "What does the concept of convention-over-configuration primarily aim to achieve in build systems?",
+        "options": {
+            "A": "To require extensive configuration for every project",
+            "B": "To simplify the process of project setup and management",
+            "C": "To eliminate the need for any configuration at all",
+            "D": "To enforce a single way of building projects without flexibility"
+        },
+        "correct_answer": "B",
+        "explanation": "Convention-over-configuration aims to simplify the process of project setup and management by providing sensible defaults and reducing the amount of configuration needed from the user. This approach allows developers to focus on writing code rather than configuring the build system."
+    },
+    {
+        "question": "In a convention-over-configuration approach, what is typically provided to the user?",
+        "options": {
+            "A": "A detailed manual for every configuration option",
+            "B": "Sensible defaults that can be overridden if necessary",
+            "C": "A rigid structure that cannot be changed",
+            "D": "Multiple complex configurations for every possible scenario"
+        },
+        "correct_answer": "B",
+        "explanation": "In a convention-over-configuration approach, sensible defaults are provided to the user, allowing them to override these defaults only when necessary. This reduces complexity and makes it easier to get started with building projects."
+    },
+    {
+        "question": "How does convention-over-configuration benefit developers who are new to a build system?",
+        "options": {
+            "A": "It requires them to learn all configuration options before starting.",
+            "B": "It allows them to start building projects quickly with minimal setup.",
+            "C": "It limits their ability to customize their projects.",
+            "D": "It complicates the build process with unnecessary configurations."
+        },
+        "correct_answer": "B",
+        "explanation": "Convention-over-configuration benefits new developers by allowing them to start building projects quickly with minimal setup. By providing sensible defaults, it reduces the learning curve and enables them to focus on development rather than configuration."
+    },
+    {
+        "question": "What is a potential drawback of a strict convention-over-configuration approach?",
+        "options": {
+            "A": "It can lead to confusion about how to customize builds.",
+            "B": "It always requires extensive configuration.",
+            "C": "It eliminates the need for any conventions.",
+            "D": "It makes the build process slower."
+        },
+        "correct_answer": "A",
+        "explanation": "A potential drawback of a strict convention-over-configuration approach is that it can lead to confusion about how to customize builds. While conventions simplify the process, they may also obscure the underlying options available for customization, making it difficult for users to understand how to adjust settings when needed."
+    },
+    {
+        "question": "What is a build variant in the context of Gradle's native projects?",
+        "options": {
+            "A": "A specific configuration of a project that includes one value from each dimension.",
+            "B": "A type of plugin that enhances the build process.",
+            "C": "A method for optimizing the performance of the build.",
+            "D": "A tool used to visualize project dependencies."
+        },
+        "correct_answer": "A",
+        "explanation": "A build variant is defined as a combination of values for different dimensions in a Gradle project. Each variant consists of exactly one value from each dimension, such as build type (debug or release) and architecture (x86-64 or PowerPC). This allows for the creation of multiple binaries tailored to specific requirements."
+    },
+    {
+        "question": "What does the 'dimension' concept refer to in Gradle's build variants?",
+        "options": {
+            "A": "A specific version of a library used in the project.",
+            "B": "A category that defines a characteristic of the build, such as build type or architecture.",
+            "C": "A configuration setting that affects the entire project.",
+            "D": "A tool that manages project dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, a dimension refers to a category that defines a characteristic of the build. For example, the 'build type' dimension includes categories like debug and release, while the 'architecture' dimension includes processor architectures. Dimensions help organize and manage the different configurations of a project."
+    },
+    {
+        "question": "How does Gradle manage multiple build variants for a project?",
+        "options": {
+            "A": "By creating separate build scripts for each variant.",
+            "B": "By allowing the user to define dimensions and their values.",
+            "C": "By automatically generating variants based on the source code.",
+            "D": "By requiring manual configuration for each build type."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle manages multiple build variants by allowing users to define dimensions and their corresponding values. This enables the creation of various combinations, such as 'debug x86-64' or 'release PowerPC', facilitating the building of different binaries tailored to specific needs."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in Gradle for C++ projects?",
+        "options": {
+            "A": "To manage the project's source code structure",
+            "B": "To handle the project's external libraries and dependencies",
+            "C": "To configure the build toolchain for different platforms",
+            "D": "To optimize the performance of the compiled binaries"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of dependency management in Gradle for C++ projects is to handle the project's external libraries and dependencies. This includes specifying what dependencies are needed for compilation, linking, and runtime, ensuring that the project can successfully build and run with the required external resources."
+    },
+    {
+        "question": "Which of the following is a key component of specifying dependencies in a Gradle C++ project?",
+        "options": {
+            "A": "The source file paths",
+            "B": "The dependency configuration type",
+            "C": "The target machine architecture",
+            "D": "The build script language"
+        },
+        "correct_answer": "B",
+        "explanation": "A key component of specifying dependencies in a Gradle C++ project is the dependency configuration type. This defines how the dependencies are grouped and used, such as for compilation, linking, or runtime, allowing for better management of how different dependencies interact with the project."
+    },
+    {
+        "question": "What does the 'implementation' configuration in Gradle signify?",
+        "options": {
+            "A": "Dependencies required only for testing",
+            "B": "Dependencies needed for compilation, linking, and runtime",
+            "C": "Dependencies that are only needed for linking",
+            "D": "Dependencies that are required for documentation generation"
+        },
+        "correct_answer": "B",
+        "explanation": "'Implementation' configuration in Gradle signifies dependencies that are needed for compilation, linking, and runtime. This means that any libraries or modules specified under this configuration will be included in the build process and available during execution."
+    },
+    {
+        "question": "In Gradle, what is the purpose of the 'api' configuration in the context of C++ libraries?",
+        "options": {
+            "A": "To specify dependencies that are only needed for internal implementation",
+            "B": "To declare dependencies that are required for both the library and any consumers of the library",
+            "C": "To manage dependencies for testing purposes only",
+            "D": "To optimize the build process by excluding certain dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'api' configuration in Gradle is used to declare dependencies that are required for both the library and any consumers of the library. This distinction allows consumers to know which dependencies they need to include in their own projects to successfully use the library."
+    },
+    {
+        "question": "What is the purpose of source sets in Gradle's C++ support?",
+        "options": {
+            "A": "To define the locations of source and header files for compilation",
+            "B": "To manage the dependencies of a project",
+            "C": "To specify the build variants for different architectures",
+            "D": "To configure the output directory for compiled binaries"
+        },
+        "correct_answer": "A",
+        "explanation": "Source sets in Gradle's C++ support are used to define the locations of source and header files that need to be compiled. This allows developers to specify where the production code and headers are located, ensuring that the build process can find and compile the necessary files."
+    },
+    {
+        "question": "How does Gradle differentiate between private and public headers in a library project?",
+        "options": {
+            "A": "By using different source set configurations for each type of header",
+            "B": "By compiling private headers into a separate binary",
+            "C": "By requiring all headers to be public for compilation",
+            "D": "By automatically linking private headers to public headers"
+        },
+        "correct_answer": "A",
+        "explanation": "Gradle differentiates between private and public headers in a library project by using different source set configurations. Private headers are implementation details that are not exposed to consumers, while public headers are exported and made available for other projects that depend on the library."
+    },
+    {
+        "question": "What is a key benefit of declaring source sets in a Gradle C++ project?",
+        "options": {
+            "A": "It allows for automatic dependency resolution",
+            "B": "It simplifies the process of managing multiple build configurations",
+            "C": "It enables the customization of source file locations",
+            "D": "It ensures that all source files are compiled in a single step"
+        },
+        "correct_answer": "C",
+        "explanation": "Declaring source sets in a Gradle C++ project enables the customization of source file locations. This is particularly useful for projects that do not follow the conventional directory structure, allowing developers to specify where to find their source and header files."
+    },
+    {
+        "question": "What is the primary purpose of compiling code in a {cpp} project?",
+        "options": {
+            "A": "To convert source code into executable or object files",
+            "B": "To package the project for distribution",
+            "C": "To manage project dependencies",
+            "D": "To run tests on the source code"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of compiling code in a {cpp} project is to convert the source code into executable or object files. This process transforms human-readable code into machine code that can be executed by the computer, which is essential for running the application or library."
+    },
+    {
+        "question": "What does the linking process do in a {cpp} project?",
+        "options": {
+            "A": "It assembles the source files into a single executable",
+            "B": "It combines compiled object files into a final executable or library",
+            "C": "It checks the syntax of the source code",
+            "D": "It installs the project dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The linking process in a {cpp} project combines compiled object files into a final executable or library. This step resolves references between different object files and ensures that all necessary code is included in the final output, allowing the program to run correctly."
+    },
+    {
+        "question": "Which task is typically run to compile and link a {cpp} project?",
+        "options": {
+            "A": "build",
+            "B": "assemble",
+            "C": "compile",
+            "D": "link"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'assemble' task is typically run to compile and link a {cpp} project. This task orchestrates the compilation of source files and the linking of object files to produce the final binary, following the conventions set in the build script."
+    },
+    {
+        "question": "What is a common directory where source code should be placed in a {cpp} project?",
+        "options": {
+            "A": "src/main/java",
+            "B": "src/main/cpp",
+            "C": "build/src",
+            "D": "lib/src"
+        },
+        "correct_answer": "B",
+        "explanation": "In a {cpp} project, the common directory for placing source code is 'src/main/cpp'. This convention helps Gradle locate the source files during the compilation process, ensuring that the build system can find and compile the necessary code."
+    },
+    {
+        "question": "What is the primary purpose of a tool chain in Gradle's native project builds?",
+        "options": {
+            "A": "To manage project dependencies",
+            "B": "To execute the build using a specific set of tools for compiling and linking",
+            "C": "To define the directory structure for source files",
+            "D": "To automate the testing of the application"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a tool chain in Gradle's native project builds is to execute the build using a specific set of tools for compiling and linking. Gradle selects the appropriate tool chain based on the target operating system and architecture, ensuring that the build process is compatible with the environment."
+    },
+    {
+        "question": "Which of the following statements about tool chains in Gradle is true?",
+        "options": {
+            "A": "Tool chains are only available for C++ projects.",
+            "B": "Gradle automatically selects the first compatible tool chain installed on the machine.",
+            "C": "Tool chains must be manually configured for every build.",
+            "D": "Tool chains are irrelevant for native project builds."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle automatically selects the first compatible tool chain installed on the machine when building a native binary. This feature simplifies the build process by eliminating the need for manual configuration, allowing developers to focus on writing code rather than managing build tools."
+    },
+    {
+        "question": "What types of tool chains does Gradle support for building native binaries?",
+        "options": {
+            "A": "Only GCC and Clang",
+            "B": "GCC, Clang, and Visual C++",
+            "C": "Any tool chain available on the internet",
+            "D": "Only tool chains that are open-source"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle supports three major tool chains for building native binaries: GCC, Clang, and Visual C++. This support allows developers to choose the appropriate tool chain based on their operating system and project requirements, ensuring compatibility and efficiency in the build process."
+    },
+    {
+        "question": "How does Gradle determine which tool chain to use for a native project?",
+        "options": {
+            "A": "By checking the project's source code for specific annotations",
+            "B": "By selecting the first tool chain that can build for the target operating system and architecture",
+            "C": "By requiring the user to specify the tool chain in the build script",
+            "D": "By analyzing the project's dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines which tool chain to use for a native project by selecting the first tool chain that can build for the target operating system and architecture. This automatic selection process streamlines the build configuration and helps ensure that the correct tools are used for the build environment."
+    },
+    {
+        "question": "What is the primary purpose of customizing build configurations in Gradle for C++ projects?",
+        "options": {
+            "A": "To simplify the build process by using default settings",
+            "B": "To tailor the build process to specific project requirements",
+            "C": "To eliminate the need for any dependencies",
+            "D": "To ensure that all projects use the same source code structure"
+        },
+        "correct_answer": "B",
+        "explanation": "Customizing build configurations in Gradle allows developers to tailor the build process to meet specific project requirements, such as defining source file locations, setting compiler options, and managing dependencies. This flexibility is essential for handling the unique needs of different projects."
+    },
+    {
+        "question": "Which Gradle feature allows you to specify different compiler options for various build variants?",
+        "options": {
+            "A": "Source sets",
+            "B": "Task configuration",
+            "C": "Binary collections",
+            "D": "Plugin application"
+        },
+        "correct_answer": "C",
+        "explanation": "Binary collections in Gradle allow you to specify different compiler options for various build variants. This feature enables developers to customize the build process based on the specific requirements of each variant, such as debug or release builds."
+    },
+    {
+        "question": "What is a key benefit of using Gradle's convention-over-configuration approach in C++ projects?",
+        "options": {
+            "A": "It requires extensive configuration for every project",
+            "B": "It simplifies the build script authoring process",
+            "C": "It eliminates the need for any plugins",
+            "D": "It restricts the types of projects that can be built"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's convention-over-configuration approach simplifies the build script authoring process by providing sensible defaults and reducing the amount of configuration needed. This allows developers to focus on the unique aspects of their projects rather than boilerplate setup."
+    },
+    {
+        "question": "In Gradle, what is the purpose of the 'dependencies' block in a C++ project?",
+        "options": {
+            "A": "To define the source file locations",
+            "B": "To specify the project's build variants",
+            "C": "To manage and declare project dependencies",
+            "D": "To configure the output directory for binaries"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'dependencies' block in a Gradle C++ project is used to manage and declare project dependencies. This includes specifying what dependencies are needed for compilation, linking, and runtime, which is crucial for building complex projects that rely on external libraries."
+    },
+    {
+        "question": "What is the primary purpose of packaging in the context of {cpp} projects?",
+        "options": {
+            "A": "To compile source code into object files",
+            "B": "To prepare binaries and headers for distribution",
+            "C": "To manage dependencies between projects",
+            "D": "To clean the build directory"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of packaging in {cpp} projects is to prepare binaries and headers for distribution. This involves organizing the compiled executable files, shared libraries, and any necessary headers into a format that can be easily shared or published, such as a Maven repository."
+    },
+    {
+        "question": "Which of the following statements best describes how Gradle handles the publishing of executable files?",
+        "options": {
+            "A": "Executable files are published as zip archives.",
+            "B": "Executable files are published directly to Maven repositories.",
+            "C": "Executable files must be manually uploaded to repositories.",
+            "D": "Executable files are not supported for publishing."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle handles the publishing of executable files by publishing them directly to Maven repositories. This allows for easy distribution and access to the executable files for users and other projects."
+    },
+    {
+        "question": "What additional files are published alongside shared and static library files in Gradle?",
+        "options": {
+            "A": "Source code files",
+            "B": "Documentation files",
+            "C": "Public headers",
+            "D": "Configuration files"
+        },
+        "correct_answer": "C",
+        "explanation": "Alongside shared and static library files, Gradle publishes a zip of the public headers. This is important for consumers of the library, as it allows them to access the necessary headers to use the library effectively."
+    },
+    {
+        "question": "In the context of {cpp} projects, what does the term 'publishing' refer to?",
+        "options": {
+            "A": "The process of compiling source code",
+            "B": "The distribution of binaries and headers to repositories",
+            "C": "The management of project dependencies",
+            "D": "The cleaning of build artifacts"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of {cpp} projects, 'publishing' refers to the distribution of binaries and headers to repositories. This process ensures that the compiled components of the project are available for use by other projects or users, facilitating easier integration and reuse."
+    }
+]

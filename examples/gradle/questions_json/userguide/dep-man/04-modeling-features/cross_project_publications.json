@@ -1,0 +1,310 @@
+[
+    {
+        "question": "What is the primary purpose of managing cross-project dependencies in Gradle?",
+        "options": {
+            "A": "To allow one project to consume artifacts from another project safely and efficiently",
+            "B": "To ensure that all projects are built in a single execution context",
+            "C": "To eliminate the need for version control in multi-project builds",
+            "D": "To automatically generate documentation for all projects"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of managing cross-project dependencies in Gradle is to allow one project to consume artifacts from another project safely and efficiently. This involves defining clear boundaries and using configurations to share artifacts, which helps maintain reproducibility and performance in multi-project builds."
+    },
+    {
+        "question": "What is a common anti-pattern when declaring cross-project dependencies?",
+        "options": {
+            "A": "Using outgoing configurations to share artifacts",
+            "B": "Directly referencing tasks from another project",
+            "C": "Defining dependencies in a separate configuration file",
+            "D": "Using variants to manage different artifact types"
+        },
+        "correct_answer": "B",
+        "explanation": "A common anti-pattern when declaring cross-project dependencies is directly referencing tasks from another project. This approach can lead to non-reproducible builds and complicates parallel execution, as it creates tight coupling between projects instead of using the recommended method of defining exchanges through configurations."
+    },
+    {
+        "question": "What is the role of attributes in variant-aware sharing of artifacts?",
+        "options": {
+            "A": "To define the version of the artifact being shared",
+            "B": "To specify the compatibility and characteristics of the variants",
+            "C": "To automatically generate build scripts for consumers",
+            "D": "To enforce strict type checking during compilation"
+        },
+        "correct_answer": "B",
+        "explanation": "In variant-aware sharing of artifacts, attributes play a crucial role by specifying the compatibility and characteristics of the variants. They allow consumers to express their requirements and help the dependency resolution engine select the appropriate variant based on the attributes defined on both the producer and consumer sides."
+    },
+    {
+        "question": "What should be avoided when publishing custom variants for internal use?",
+        "options": {
+            "A": "Using standard Gradle attributes",
+            "B": "Publishing variants that are not compatible with external consumers",
+            "C": "Defining clear documentation for the variants",
+            "D": "Creating multiple configurations for different environments"
+        },
+        "correct_answer": "B",
+        "explanation": "When publishing custom variants for internal use, it is important to avoid publishing variants that are not compatible with external consumers. This is because external consumers would need to understand the custom attributes and rules defined, which can lead to confusion and integration issues if they are not properly documented or aligned with the consumers' expectations."
+    },
+    {
+        "question": "What is the primary purpose of artifact sharing between projects in a multi-project build?",
+        "options": {
+            "A": "To allow one project to consume the artifacts produced by another project",
+            "B": "To ensure all projects use the same version of Gradle",
+            "C": "To simplify the build process by reducing the number of tasks",
+            "D": "To automatically publish artifacts to a remote repository"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of artifact sharing between projects in a multi-project build is to allow one project to consume the artifacts produced by another project. This enables better modularization and reuse of code, as projects can depend on the outputs of other projects without duplicating effort."
+    },
+    {
+        "question": "What is a key requirement for artifacts to be safely shared between projects?",
+        "options": {
+            "A": "They must be published to a remote repository",
+            "B": "They must be exposed via outgoing configurations",
+            "C": "They must be included in the main project build file",
+            "D": "They must be compatible with all project types"
+        },
+        "correct_answer": "B",
+        "explanation": "For artifacts to be safely shared between projects, they must be exposed via outgoing configurations. This ensures that the artifacts are properly defined and can be consumed by other projects without leading to non-reproducible builds or performance issues."
+    },
+    {
+        "question": "What is the difference between simple sharing and variant-aware sharing of artifacts?",
+        "options": {
+            "A": "Simple sharing requires explicit configuration dependencies, while variant-aware sharing does not",
+            "B": "Simple sharing is only for internal projects, while variant-aware sharing is for external projects",
+            "C": "Simple sharing allows for any artifact type, while variant-aware sharing is limited to jars",
+            "D": "Simple sharing is faster than variant-aware sharing"
+        },
+        "correct_answer": "A",
+        "explanation": "The difference between simple sharing and variant-aware sharing of artifacts is that simple sharing requires explicit configuration dependencies from the consumer, while variant-aware sharing allows the consumer to express requirements using attributes, enabling smarter selection of artifacts without needing to specify the exact configuration."
+    },
+    {
+        "question": "Why is it important to declare attributes on configurations in variant-aware sharing?",
+        "options": {
+            "A": "To ensure all projects use the same version of Gradle",
+            "B": "To allow the dependency resolution engine to select the appropriate variant based on consumer requirements",
+            "C": "To automatically publish artifacts to a remote repository",
+            "D": "To simplify the build process by reducing the number of tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "Declaring attributes on configurations in variant-aware sharing is important because it allows the dependency resolution engine to select the appropriate variant based on consumer requirements. This enhances flexibility and ensures that the correct artifacts are used in different contexts, such as different target platforms."
+    },
+    {
+        "question": "What is the purpose of outgoing configurations in Gradle?",
+        "options": {
+            "A": "To define how artifacts are shared between projects",
+            "B": "To manage the internal state of a project",
+            "C": "To specify the dependencies of a project",
+            "D": "To configure the build environment settings"
+        },
+        "correct_answer": "A",
+        "explanation": "Outgoing configurations in Gradle are used to define how artifacts are shared between projects. They allow a producer project to expose certain artifacts to consumer projects, facilitating the exchange of necessary components while maintaining project boundaries."
+    },
+    {
+        "question": "Which of the following best describes a consumable configuration?",
+        "options": {
+            "A": "A configuration that is only used internally within a project",
+            "B": "A configuration that is exposed to consumers for artifact sharing",
+            "C": "A configuration that manages project dependencies",
+            "D": "A configuration that defines the build script's execution order"
+        },
+        "correct_answer": "B",
+        "explanation": "A consumable configuration is one that is exposed to consumers for artifact sharing. It allows other projects to access specific artifacts produced by a project, enabling collaboration and reuse of components across different builds."
+    },
+    {
+        "question": "What is a common anti-pattern when declaring cross-project dependencies?",
+        "options": {
+            "A": "Using outgoing configurations to share artifacts",
+            "B": "Directly referencing tasks from another project",
+            "C": "Defining dependencies in a separate build file",
+            "D": "Using variant-aware resolution for dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "A common anti-pattern when declaring cross-project dependencies is directly referencing tasks from another project. This approach can lead to non-reproducible builds and complicates the dependency resolution process, making it harder to maintain and parallelize builds."
+    },
+    {
+        "question": "Why is it important to use attributes in outgoing configurations?",
+        "options": {
+            "A": "To ensure all dependencies are included in the build",
+            "B": "To provide semantics for variant selection during dependency resolution",
+            "C": "To limit the number of artifacts shared between projects",
+            "D": "To define the order of task execution in the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "Using attributes in outgoing configurations is important because they provide semantics for variant selection during dependency resolution. Attributes help the dependency resolution engine determine which variant of an artifact is appropriate based on the consumer's requirements, leading to more efficient and accurate builds."
+    },
+    {
+        "question": "What is the primary purpose of variant-aware resolution in Gradle?",
+        "options": {
+            "A": "To allow consumers to select the appropriate variant of a dependency based on their requirements",
+            "B": "To enforce strict versioning of dependencies across all projects",
+            "C": "To simplify the build process by reducing the number of dependencies",
+            "D": "To automatically publish all project artifacts to a central repository"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of variant-aware resolution in Gradle is to enable consumers to select the appropriate variant of a dependency based on their specific requirements. This allows for more flexible and efficient dependency management, as consumers can resolve different variants without needing to specify exact configurations."
+    },
+    {
+        "question": "Which of the following best describes how attributes are used in variant-aware resolution?",
+        "options": {
+            "A": "Attributes are used to define the version of a dependency that must be used.",
+            "B": "Attributes help to categorize and describe the capabilities of different variants.",
+            "C": "Attributes are only relevant for publishing artifacts to external repositories.",
+            "D": "Attributes are used to enforce security policies in dependency management."
+        },
+        "correct_answer": "B",
+        "explanation": "Attributes in variant-aware resolution are used to categorize and describe the capabilities of different variants. They provide metadata that helps the dependency resolution engine determine which variant is suitable for a given consumer's requirements, enhancing the flexibility of dependency management."
+    },
+    {
+        "question": "What is a potential consequence of adding custom attributes to a variant in Gradle?",
+        "options": {
+            "A": "It simplifies the dependency resolution process for all consumers.",
+            "B": "It may create ambiguity during the selection of variants for consumers.",
+            "C": "It automatically publishes the variant to external repositories.",
+            "D": "It ensures that all consumers will use the same version of the dependency."
+        },
+        "correct_answer": "B",
+        "explanation": "Adding custom attributes to a variant can create ambiguity during the selection of variants for consumers. This is because the new attributes may not align with existing attributes, leading to confusion in the dependency resolution process. Care must be taken to ensure that attributes are consistent and do not introduce selection conflicts."
+    },
+    {
+        "question": "In the context of Gradle, what does it mean for a configuration to be 'consumable'?",
+        "options": {
+            "A": "It can be used to publish artifacts to a remote repository.",
+            "B": "It is designed to be used by consumers to obtain artifacts from a producer.",
+            "C": "It automatically resolves all dependencies without user intervention.",
+            "D": "It restricts the types of artifacts that can be shared between projects."
+        },
+        "correct_answer": "B",
+        "explanation": "A 'consumable' configuration in Gradle is designed to be used by consumers to obtain artifacts from a producer. This means that the configuration is set up to expose certain artifacts that can be shared and utilized by other projects, facilitating collaboration and dependency management."
+    },
+    {
+        "question": "What is the primary purpose of attributes in dependency management?",
+        "options": {
+            "A": "To define the version of a library being used",
+            "B": "To provide metadata that helps in selecting the appropriate variant of a dependency",
+            "C": "To specify the location of the dependency in the file system",
+            "D": "To enforce strict versioning rules for dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Attributes in dependency management serve as metadata that helps in selecting the appropriate variant of a dependency. They allow consumers to express their requirements and enable producers to provide suitable variants based on those requirements, facilitating smarter dependency resolution."
+    },
+    {
+        "question": "Which of the following statements about attributes is true?",
+        "options": {
+            "A": "Attributes are only relevant for internal project dependencies.",
+            "B": "Attributes can introduce ambiguity if not managed properly.",
+            "C": "Attributes are automatically generated and cannot be modified.",
+            "D": "Attributes are only used for versioning dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "Attributes can introduce ambiguity if not managed properly, especially when new attributes are added or existing ones are modified. It is crucial to ensure that attributes are consistent across variants to avoid confusion during dependency resolution."
+    },
+    {
+        "question": "How do attributes enhance the dependency resolution process?",
+        "options": {
+            "A": "By allowing consumers to specify exact versions of dependencies.",
+            "B": "By enabling the selection of different variants based on consumer requirements.",
+            "C": "By automatically resolving all dependencies without user input.",
+            "D": "By limiting the number of dependencies a project can have."
+        },
+        "correct_answer": "B",
+        "explanation": "Attributes enhance the dependency resolution process by enabling the selection of different variants based on consumer requirements. This allows for more flexible and context-aware dependency management, as consumers can express their needs without having to specify exact configurations."
+    },
+    {
+        "question": "What should be considered when adding new attributes to a dependency model?",
+        "options": {
+            "A": "New attributes should always be unique and unrelated to existing attributes.",
+            "B": "New attributes must be consistent with existing variants to avoid ambiguity.",
+            "C": "New attributes can be added without any consideration for existing configurations.",
+            "D": "New attributes should only be added if they are required for versioning."
+        },
+        "correct_answer": "B",
+        "explanation": "When adding new attributes to a dependency model, it is essential to ensure that they are consistent with existing variants to avoid ambiguity during selection. This helps maintain clarity in the dependency resolution process and prevents conflicts."
+    },
+    {
+        "question": "What is the primary purpose of compatibility rules in Gradle?",
+        "options": {
+            "A": "To define how to publish artifacts to external repositories",
+            "B": "To specify how different variants can substitute for each other",
+            "C": "To manage the versioning of dependencies in a project",
+            "D": "To enforce strict type checking in build scripts"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of compatibility rules in Gradle is to specify how different variants can substitute for each other. This allows consumers to use alternative artifacts when the preferred variant is not available, enhancing flexibility in dependency resolution."
+    },
+    {
+        "question": "When should you consider adding a compatibility rule?",
+        "options": {
+            "A": "When you want to enforce a specific version of a dependency",
+            "B": "When you need to allow fallback options for dependencies that may not be available",
+            "C": "When you are defining new attributes for a project",
+            "D": "When you want to publish a project to an external repository"
+        },
+        "correct_answer": "B",
+        "explanation": "You should consider adding a compatibility rule when you need to allow fallback options for dependencies that may not be available. This ensures that if a specific variant is not present, the build can still succeed by using an alternative that meets the necessary requirements."
+    },
+    {
+        "question": "What is a potential risk of adding new attributes to a Gradle project?",
+        "options": {
+            "A": "It can simplify the dependency resolution process",
+            "B": "It may create ambiguity during variant selection",
+            "C": "It automatically updates all dependencies to the latest version",
+            "D": "It ensures that all consumers will understand the new attributes"
+        },
+        "correct_answer": "B",
+        "explanation": "A potential risk of adding new attributes to a Gradle project is that it may create ambiguity during variant selection. If the new attributes are not carefully defined, they can lead to confusion about which variant should be selected, complicating the dependency resolution process."
+    },
+    {
+        "question": "What should you do if you add a new attribute to a variant in Gradle?",
+        "options": {
+            "A": "Remove all existing attributes from the variant",
+            "B": "Ensure all consumers are aware of the new attribute",
+            "C": "Automatically publish the new attribute to external repositories",
+            "D": "Ignore the existing attributes and focus on the new one"
+        },
+        "correct_answer": "B",
+        "explanation": "If you add a new attribute to a variant in Gradle, you should ensure all consumers are aware of the new attribute. This is important because all consumers need to understand the extended model to successfully resolve dependencies that utilize the new attributes."
+    },
+    {
+        "question": "What is the primary purpose of using attributes in Gradle for targeting different platforms?",
+        "options": {
+            "A": "To provide semantics for dependency resolution based on compatibility",
+            "B": "To create multiple versions of the same artifact manually",
+            "C": "To simplify the build process by removing all dependencies",
+            "D": "To enforce a single version of a library across all platforms"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of using attributes in Gradle for targeting different platforms is to provide semantics for dependency resolution based on compatibility. This allows the dependency resolution engine to automatically determine which version of a library to use based on the consumer's requirements, rather than relying on classifiers that lack semantic meaning."
+    },
+    {
+        "question": "Which attribute in Gradle indicates the minimum Java version required for a library to function properly?",
+        "options": {
+            "A": "org.gradle.libraryelements",
+            "B": "org.gradle.dependency.bundling",
+            "C": "org.gradle.jvm.version",
+            "D": "org.gradle.usage"
+        },
+        "correct_answer": "C",
+        "explanation": "The attribute 'org.gradle.jvm.version' indicates the minimum Java version required for a library to function properly. This attribute is automatically associated with outgoing variants when the 'java' or 'java-library' plugins are applied, helping consumers understand the compatibility requirements of the library."
+    },
+    {
+        "question": "What is a potential drawback of using classifiers for targeting different platforms in dependency management?",
+        "options": {
+            "A": "They provide clear semantics for dependency resolution.",
+            "B": "They can lead to ambiguity in selecting the correct version.",
+            "C": "They automatically adjust to the consumer's requirements.",
+            "D": "They simplify the build process by eliminating the need for attributes."
+        },
+        "correct_answer": "B",
+        "explanation": "A potential drawback of using classifiers for targeting different platforms is that they can lead to ambiguity in selecting the correct version. Unlike attributes, classifiers do not carry semantics that help the dependency resolution engine determine which version to use based on compatibility, making it less effective for managing dependencies across different platforms."
+    },
+    {
+        "question": "What should be avoided when publishing custom variants for internal use in Gradle?",
+        "options": {
+            "A": "Using attributes to define compatibility",
+            "B": "Publishing custom variants that are not understood by external consumers",
+            "C": "Creating multiple outgoing variants for different platforms",
+            "D": "Defining clear semantics for dependency resolution"
+        },
+        "correct_answer": "B",
+        "explanation": "When publishing custom variants for internal use in Gradle, it is important to avoid publishing custom variants that are not understood by external consumers. This can lead to issues where external consumers cannot properly resolve dependencies, as they would need to be aware of the extended model and rules defined in the internal project."
+    }
+]

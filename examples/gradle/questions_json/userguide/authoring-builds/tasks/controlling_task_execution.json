@@ -1,0 +1,398 @@
+[
+    {
+        "question": "What is the purpose of task dependencies in Gradle?",
+        "options": {
+            "A": "To ensure tasks are executed in a specific order based on their dependencies",
+            "B": "To allow tasks to run simultaneously without any order",
+            "C": "To prevent tasks from being executed altogether",
+            "D": "To automatically generate new tasks based on existing ones"
+        },
+        "correct_answer": "A",
+        "explanation": "The purpose of task dependencies in Gradle is to ensure that tasks are executed in a specific order based on their dependencies. This means that if one task relies on the output of another, Gradle will automatically manage the execution order to ensure that the dependent task runs only after its prerequisites have completed."
+    },
+    {
+        "question": "Which of the following best describes implicit dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that are declared explicitly in the build script",
+            "B": "Dependencies that are automatically inferred by Gradle based on task actions",
+            "C": "Dependencies that are ignored during task execution",
+            "D": "Dependencies that require manual intervention to manage"
+        },
+        "correct_answer": "B",
+        "explanation": "Implicit dependencies in Gradle are those that are automatically inferred by the system based on the actions and configurations of the tasks. For example, if one task uses the output of another, Gradle recognizes this relationship and ensures the correct execution order without needing explicit declarations."
+    },
+    {
+        "question": "What is the difference between 'must run after' and 'should run after' in task ordering?",
+        "options": {
+            "A": "'Must run after' is a strict requirement, while 'should run after' is a suggestion that can be ignored",
+            "B": "'Must run after' allows tasks to run in parallel, while 'should run after' does not",
+            "C": "'Must run after' creates a dependency, while 'should run after' does not affect execution",
+            "D": "There is no difference; both terms mean the same thing"
+        },
+        "correct_answer": "A",
+        "explanation": "'Must run after' is a strict requirement that ensures one task will always execute after another when both are scheduled. In contrast, 'should run after' is a less strict suggestion that can be ignored under certain conditions, such as when it would create an ordering cycle or when tasks are executed in parallel."
+    },
+    {
+        "question": "How can you explicitly declare a dependency between two tasks in Gradle?",
+        "options": {
+            "A": "By using the 'dependsOn' method in the task configuration",
+            "B": "By naming the tasks in the build script without any method",
+            "C": "By using the 'finalizedBy' method in the task configuration",
+            "D": "By setting the 'enabled' flag to false for one of the tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "You can explicitly declare a dependency between two tasks in Gradle by using the 'dependsOn' method in the task configuration. This method allows you to specify that one task should not run until another specified task has completed, ensuring the correct execution order."
+    },
+    {
+        "question": "What are implicit dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that are explicitly declared in the build script.",
+            "B": "Dependencies that are automatically inferred based on task actions and configuration.",
+            "C": "Dependencies that are ignored during task execution.",
+            "D": "Dependencies that require manual intervention to resolve."
+        },
+        "correct_answer": "B",
+        "explanation": "Implicit dependencies in Gradle are those that are automatically inferred based on the actions and configuration of tasks. For example, if one task uses the output of another, Gradle will ensure that the first task is executed before the second, without needing explicit declarations in the build script."
+    },
+    {
+        "question": "How does Gradle handle implicit dependencies?",
+        "options": {
+            "A": "By requiring users to manually specify all dependencies.",
+            "B": "By automatically determining the execution order based on task usage.",
+            "C": "By ignoring any dependencies that are not explicitly stated.",
+            "D": "By executing all tasks in parallel regardless of dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle handles implicit dependencies by automatically determining the execution order based on how tasks are used. If a task relies on the output of another task, Gradle will ensure that the dependent task is executed first, thus maintaining the correct sequence of operations."
+    },
+    {
+        "question": "Which of the following statements is true about implicit dependencies?",
+        "options": {
+            "A": "They can only be defined using the 'dependsOn' method.",
+            "B": "They are inferred from the relationships between tasks without explicit declarations.",
+            "C": "They must always be declared in the build script to function correctly.",
+            "D": "They are less important than explicit dependencies in task execution."
+        },
+        "correct_answer": "B",
+        "explanation": "Implicit dependencies are inferred from the relationships between tasks based on their actions and configurations. This means that Gradle can automatically manage the execution order of tasks without requiring explicit declarations, making them a crucial aspect of task management."
+    },
+    {
+        "question": "What is a key benefit of using implicit dependencies in Gradle?",
+        "options": {
+            "A": "They simplify the build script by reducing the need for explicit declarations.",
+            "B": "They allow for more complex task configurations that are harder to manage.",
+            "C": "They require all tasks to be executed in a specific order regardless of their dependencies.",
+            "D": "They eliminate the need for any task dependencies."
+        },
+        "correct_answer": "A",
+        "explanation": "A key benefit of using implicit dependencies in Gradle is that they simplify the build script by reducing the need for explicit declarations. This allows developers to focus on the relationships between tasks rather than managing every dependency manually, leading to cleaner and more maintainable build configurations."
+    },
+    {
+        "question": "What are explicit dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that are automatically inferred by Gradle based on task actions",
+            "B": "Dependencies that are declared in the build script using specific methods",
+            "C": "Dependencies that are only relevant during runtime",
+            "D": "Dependencies that do not affect the order of task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Explicit dependencies in Gradle are those that are declared in the build script using methods such as `dependsOn`, `mustRunAfter`, or `shouldRunAfter`. This allows developers to clearly define the order in which tasks should be executed, ensuring that certain tasks are completed before others."
+    },
+    {
+        "question": "Which method is used to declare that one task must run after another in Gradle?",
+        "options": {
+            "A": "dependsOn()",
+            "B": "mustRunAfter()",
+            "C": "shouldRunAfter()",
+            "D": "finalizedBy()"
+        },
+        "correct_answer": "B",
+        "explanation": "The `mustRunAfter()` method is used in Gradle to declare that one task must always run after another task. This method establishes a strict order of execution, ensuring that the specified task is executed only after the task it depends on has completed."
+    },
+    {
+        "question": "How do explicit dependencies differ from implicit dependencies in Gradle?",
+        "options": {
+            "A": "Explicit dependencies are inferred automatically, while implicit dependencies are declared in the script.",
+            "B": "Explicit dependencies are declared in the build script, while implicit dependencies are inferred by Gradle based on task actions.",
+            "C": "Explicit dependencies can only be used with certain tasks, while implicit dependencies can be used with all tasks.",
+            "D": "There is no difference; both terms refer to the same concept."
+        },
+        "correct_answer": "B",
+        "explanation": "Explicit dependencies are those that are declared in the build script using specific methods, allowing for clear control over task execution order. In contrast, implicit dependencies are automatically inferred by Gradle based on the actions and outputs of tasks, without the need for explicit declaration."
+    },
+    {
+        "question": "What is the purpose of declaring explicit dependencies in a Gradle build script?",
+        "options": {
+            "A": "To allow tasks to run in parallel without any order",
+            "B": "To ensure that tasks are executed in a specific sequence",
+            "C": "To automatically skip tasks that are not needed",
+            "D": "To define the maximum execution time for tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The purpose of declaring explicit dependencies in a Gradle build script is to ensure that tasks are executed in a specific sequence. This is crucial for builds where certain tasks rely on the outputs of others, as it guarantees that all necessary prerequisites are completed before a task is executed."
+    },
+    {
+        "question": "What is the primary purpose of task ordering in Gradle?",
+        "options": {
+            "A": "To define which tasks will be executed",
+            "B": "To control the sequence in which tasks are executed",
+            "C": "To skip the execution of certain tasks",
+            "D": "To automatically compile all tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of task ordering in Gradle is to control the sequence in which tasks are executed. This allows developers to specify the order of execution without creating explicit dependencies, ensuring that tasks run in a desired sequence when they are scheduled for execution."
+    },
+    {
+        "question": "Which method is used to specify that one task must run after another in Gradle?",
+        "options": {
+            "A": "dependsOn()",
+            "B": "shouldRunAfter()",
+            "C": "mustRunAfter()",
+            "D": "finalizedBy()"
+        },
+        "correct_answer": "C",
+        "explanation": "The method used to specify that one task must run after another in Gradle is `mustRunAfter()`. This method enforces a strict order of execution, ensuring that the specified task will always run after the task it depends on, provided both are scheduled for execution."
+    },
+    {
+        "question": "What is the difference between 'must run after' and 'should run after' in Gradle task ordering?",
+        "options": {
+            "A": "'Must run after' is ignored in parallel execution, while 'should run after' is not.",
+            "B": "'Must run after' creates a strict execution dependency, while 'should run after' is more flexible.",
+            "C": "'Must run after' can introduce cycles, while 'should run after' cannot.",
+            "D": "'Must run after' is used for finalizer tasks, while 'should run after' is for regular tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "'Must run after' creates a strict execution dependency, ensuring that the specified task will always run after the other task when both are scheduled. In contrast, 'should run after' is more flexible and can be ignored in certain situations, such as when it introduces an ordering cycle or when tasks are executed in parallel."
+    },
+    {
+        "question": "When would you use the 'should run after' method in Gradle?",
+        "options": {
+            "A": "When you need to enforce a strict execution order between tasks.",
+            "B": "When the order of execution is helpful but not strictly required.",
+            "C": "When you want to ensure that a task always runs before another task.",
+            "D": "When you want to skip the execution of a task."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'should run after' method is used when the order of execution is helpful but not strictly required. It allows for flexibility in task execution, meaning that if certain conditions are met, the task may still run even if its 'should run after' dependencies have not been executed."
+    },
+    {
+        "question": "What is the primary purpose of finalizer tasks in Gradle?",
+        "options": {
+            "A": "To ensure that certain tasks are executed even if the main task fails",
+            "B": "To define the order of task execution without dependencies",
+            "C": "To skip the execution of tasks based on conditions",
+            "D": "To automatically compile source code before execution"
+        },
+        "correct_answer": "A",
+        "explanation": "Finalizer tasks are designed to run regardless of whether the main task succeeds or fails. They are useful for cleanup operations or ensuring that certain actions are taken, such as releasing resources, even if the preceding tasks encounter issues."
+    },
+    {
+        "question": "How can you specify a finalizer task in Gradle?",
+        "options": {
+            "A": "By using the `dependsOn` method",
+            "B": "By using the `finalizedBy` method",
+            "C": "By using the `mustRunAfter` method",
+            "D": "By using the `shouldRunAfter` method"
+        },
+        "correct_answer": "B",
+        "explanation": "To specify a finalizer task in Gradle, you use the `finalizedBy` method. This method allows you to designate a task that should always run after the specified task, ensuring that it executes regardless of the outcome of the main task."
+    },
+    {
+        "question": "What happens to finalizer tasks if the main task is marked as UP-TO-DATE?",
+        "options": {
+            "A": "Finalizer tasks will not run",
+            "B": "Finalizer tasks will run regardless of the main task's status",
+            "C": "Finalizer tasks will only run if explicitly called",
+            "D": "Finalizer tasks will run only if the main task fails"
+        },
+        "correct_answer": "B",
+        "explanation": "Finalizer tasks are executed even if the main task is considered UP-TO-DATE. This ensures that any necessary cleanup or final actions are performed, regardless of whether the main task's actions were executed."
+    },
+    {
+        "question": "Which of the following statements about finalizer tasks is true?",
+        "options": {
+            "A": "Finalizer tasks can introduce dependencies between tasks.",
+            "B": "Finalizer tasks are executed only if the main task completes successfully.",
+            "C": "Finalizer tasks can be used to clean up resources after a build.",
+            "D": "Finalizer tasks must be defined in the same script as the main task."
+        },
+        "correct_answer": "C",
+        "explanation": "Finalizer tasks are often used to clean up resources or perform necessary actions after a build, regardless of the success or failure of the main task. This makes them essential for ensuring that resources are properly managed."
+    },
+    {
+        "question": "What is the purpose of using the `onlyIf` method in Gradle tasks?",
+        "options": {
+            "A": "To define a dependency between two tasks",
+            "B": "To conditionally execute a task based on a predicate",
+            "C": "To enforce the order of task execution",
+            "D": "To automatically skip all tasks in a build"
+        },
+        "correct_answer": "B",
+        "explanation": "The `onlyIf` method is used to attach a predicate to a task, allowing the task's actions to be executed only if the predicate evaluates to true. This provides a way to conditionally skip the execution of a task based on specific criteria."
+    },
+    {
+        "question": "What happens when a task is marked as `SKIPPED` in Gradle?",
+        "options": {
+            "A": "The task will execute but will not produce any output.",
+            "B": "The task's actions will not be executed at all.",
+            "C": "The task will run after all other tasks have completed.",
+            "D": "The task will execute with a warning message."
+        },
+        "correct_answer": "B",
+        "explanation": "When a task is marked as `SKIPPED`, it means that the task's actions will not be executed at all. This can occur for various reasons, such as the task being disabled or a condition specified by the `onlyIf` predicate not being met."
+    },
+    {
+        "question": "Which of the following methods can be used to skip a task's execution based on a specific condition?",
+        "options": {
+            "A": "dependsOn()",
+            "B": "mustRunAfter()",
+            "C": "onlyIf()",
+            "D": "finalizedBy()"
+        },
+        "correct_answer": "C",
+        "explanation": "The `onlyIf()` method is specifically designed to skip a task's execution based on a condition evaluated by a predicate. This allows for more dynamic control over whether a task should run or not."
+    },
+    {
+        "question": "What is the effect of setting a task's `enabled` flag to false?",
+        "options": {
+            "A": "The task will execute but will not produce any output.",
+            "B": "The task will be skipped and labeled as SKIPPED.",
+            "C": "The task will run only if all other tasks are completed.",
+            "D": "The task will execute with a warning message."
+        },
+        "correct_answer": "B",
+        "explanation": "Setting a task's `enabled` flag to false prevents the task's actions from executing, and the task will be labeled as SKIPPED. This is a straightforward way to disable a task without removing it from the build script."
+    },
+    {
+        "question": "What is the purpose of setting a timeout for a task in Gradle?",
+        "options": {
+            "A": "To limit the execution time of the task",
+            "B": "To ensure the task runs in parallel with others",
+            "C": "To automatically retry the task upon failure",
+            "D": "To increase the priority of the task in execution"
+        },
+        "correct_answer": "A",
+        "explanation": "Setting a timeout for a task in Gradle is intended to limit the execution time of that task. If the task exceeds the specified timeout, its execution thread is interrupted, and the task is marked as 'FAILED'. This helps prevent tasks from running indefinitely and allows for better control over the build process."
+    },
+    {
+        "question": "What happens to a task if it reaches its timeout during execution?",
+        "options": {
+            "A": "It is automatically restarted",
+            "B": "It is marked as 'FAILED'",
+            "C": "It continues running without interruption",
+            "D": "It is skipped and not executed"
+        },
+        "correct_answer": "B",
+        "explanation": "When a task reaches its timeout during execution, it is marked as 'FAILED'. This indicates that the task did not complete successfully within the allowed time frame. Additionally, any finalizer tasks associated with the failed task will still be executed, ensuring that necessary cleanup occurs."
+    },
+    {
+        "question": "Which of the following statements is true regarding task timeouts in Gradle?",
+        "options": {
+            "A": "All tasks in Gradle can be timed out regardless of their nature.",
+            "B": "Only tasks that respond to interrupts can be timed out.",
+            "C": "Timeouts are only applicable to tasks that are executed in parallel.",
+            "D": "Tasks with timeouts will always complete successfully."
+        },
+        "correct_answer": "B",
+        "explanation": "Only tasks that respond to interrupts can be timed out in Gradle. This means that if a task does not handle interruptions properly, it cannot be effectively timed out. Gradle's built-in tasks are designed to respond to timeouts, allowing for better management of task execution."
+    },
+    {
+        "question": "What is the effect of using the `--continue` option when a task fails due to a timeout?",
+        "options": {
+            "A": "All subsequent tasks will be skipped.",
+            "B": "Other tasks will continue to run despite the failure.",
+            "C": "The build process will stop immediately.",
+            "D": "Only the failed task will be retried."
+        },
+        "correct_answer": "B",
+        "explanation": "Using the `--continue` option allows other tasks to continue running even if a task fails due to a timeout. This feature is useful for ensuring that the build process can proceed with other tasks, rather than halting entirely because of a single failure."
+    },
+    {
+        "question": "What is the primary purpose of task rules in Gradle?",
+        "options": {
+            "A": "To define tasks with behavior based on a range of parameters",
+            "B": "To enforce strict execution order among tasks",
+            "C": "To automatically skip tasks based on conditions",
+            "D": "To manage task dependencies explicitly"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of task rules in Gradle is to define tasks whose behavior can vary based on a large or infinite range of parameters. This allows for more dynamic and flexible task creation, enabling users to create tasks that can adapt to different inputs without needing to define each possible task explicitly."
+    },
+    {
+        "question": "How are task rules typically described in Gradle?",
+        "options": {
+            "A": "By using a specific task name",
+            "B": "With a string parameter that describes the rule",
+            "C": "Through explicit dependencies on other tasks",
+            "D": "By defining a timeout for task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Task rules in Gradle are typically described using a string parameter that serves as a description for the rule. This description is displayed when listing tasks, providing clarity on the purpose of the rule and how it can be utilized."
+    },
+    {
+        "question": "What happens when you run a task that is defined by a task rule?",
+        "options": {
+            "A": "The task is executed immediately without any conditions",
+            "B": "The task's logic is executed based on the request to run it",
+            "C": "The task is skipped if it has dependencies",
+            "D": "The task is queued for execution without any output"
+        },
+        "correct_answer": "B",
+        "explanation": "When you run a task that is defined by a task rule, the task's logic is executed based on the request to run it. This means that the task does not need to be explicitly defined in the build script; instead, it can dynamically respond to the command line input, allowing for flexible task management."
+    },
+    {
+        "question": "Which of the following statements about task rules is true?",
+        "options": {
+            "A": "Task rules can only be used for tasks with fixed parameters.",
+            "B": "Task rules allow for the creation of tasks that do not need to be explicitly listed.",
+            "C": "Task rules enforce strict dependencies between tasks.",
+            "D": "Task rules can only be applied to tasks that are executed in parallel."
+        },
+        "correct_answer": "B",
+        "explanation": "Task rules allow for the creation of tasks that do not need to be explicitly listed in the build script. This flexibility enables users to define tasks that can adapt to various inputs, making it easier to manage complex builds without cluttering the task list with numerous individual tasks."
+    },
+    {
+        "question": "What is the purpose of excluding a task from execution in Gradle?",
+        "options": {
+            "A": "To prevent the task from being executed while allowing other tasks to run",
+            "B": "To ensure that all tasks are executed in parallel",
+            "C": "To automatically delete the task from the build script",
+            "D": "To create a new task that replaces the excluded task"
+        },
+        "correct_answer": "A",
+        "explanation": "Excluding a task from execution allows you to run other tasks without executing the specified task. This can be useful when you want to skip certain tasks that may not be necessary for a particular build, but it can lead to unexpected outcomes if the excluded task produces results needed by other tasks."
+    },
+    {
+        "question": "Which command-line option is used to exclude a task from execution in Gradle?",
+        "options": {
+            "A": "--skip-task",
+            "B": "--exclude-task",
+            "C": "--omit-task",
+            "D": "--ignore-task"
+        },
+        "correct_answer": "B",
+        "explanation": "The `--exclude-task` command-line option is used to specify a task that should be excluded from execution. This allows you to run a build while omitting specific tasks, which can be useful in various scenarios."
+    },
+    {
+        "question": "What is a potential risk of using the exclude task feature in Gradle?",
+        "options": {
+            "A": "It may cause the build to fail immediately.",
+            "B": "It can lead to unexpected outcomes if the excluded task is needed by other tasks.",
+            "C": "It will automatically remove the task from the build script.",
+            "D": "It will prevent all tasks from executing."
+        },
+        "correct_answer": "B",
+        "explanation": "Excluding a task can lead to unexpected outcomes, particularly if the excluded task produces results that are required by other tasks in the build process. This can result in incomplete builds or errors during execution."
+    },
+    {
+        "question": "What is the recommended practice instead of frequently using the exclude task option?",
+        "options": {
+            "A": "To define a suitable lifecycle task for the desired action.",
+            "B": "To always run all tasks regardless of their necessity.",
+            "C": "To create a new project for each build.",
+            "D": "To manually delete tasks from the build script."
+        },
+        "correct_answer": "A",
+        "explanation": "Instead of frequently using the exclude task option, it is recommended to define a suitable lifecycle task for the desired action. This approach helps maintain clarity in the build process and ensures that necessary tasks are executed without relying on exclusions."
+    }
+]

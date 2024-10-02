@@ -1,0 +1,277 @@
+[
+    {
+        "question": "What is the primary purpose of toolchain resolver plugins in Gradle?",
+        "options": {
+            "A": "To define auto-provisioning logic for Java toolchains",
+            "B": "To manage dependencies for Java projects",
+            "C": "To compile Java code into bytecode",
+            "D": "To optimize build performance"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of toolchain resolver plugins in Gradle is to define auto-provisioning logic for Java toolchains. This allows developers to specify how to obtain the necessary Java versions and configurations required for their projects, ensuring compatibility and ease of use."
+    },
+    {
+        "question": "Which protocol is required for the download URL in toolchain resolver plugins?",
+        "options": {
+            "A": "FTP",
+            "B": "HTTP",
+            "C": "HTTPS",
+            "D": "SFTP"
+        },
+        "correct_answer": "C",
+        "explanation": "The download URL in toolchain resolver plugins must use the HTTPS protocol. This requirement is in place to ensure the security of the download process, preventing any tampering with the files during transmission."
+    },
+    {
+        "question": "What must be applied to a resolver plugin to make registered toolchain repositories usable?",
+        "options": {
+            "A": "Java plugin",
+            "B": "jvm-toolchain-management base plugin",
+            "C": "application plugin",
+            "D": "base plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "To make registered toolchain repositories usable, the resolver plugin must apply the jvm-toolchain-management base plugin. This action dynamically adds the necessary configuration blocks to the Gradle build script, allowing for effective management of toolchains."
+    },
+    {
+        "question": "What does the mapping method in a toolchain resolver plugin return?",
+        "options": {
+            "A": "A list of available toolchains",
+            "B": "A download response wrapped in an Optional",
+            "C": "A configuration file for the toolchain",
+            "D": "An error message if the toolchain is unavailable"
+        },
+        "correct_answer": "B",
+        "explanation": "The mapping method in a toolchain resolver plugin returns a download response wrapped in an Optional. This design allows the method to indicate whether a matching toolchain is available, with an empty Optional signifying that no suitable toolchain could be provided."
+    },
+    {
+        "question": "What is the primary purpose of Java toolchain auto-provisioning in Gradle?",
+        "options": {
+            "A": "To automatically download and configure Java toolchains for builds",
+            "B": "To manage dependencies for Java projects",
+            "C": "To compile Java code without any configuration",
+            "D": "To provide a user interface for Java development"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Java toolchain auto-provisioning in Gradle is to automatically download and configure the appropriate Java toolchains needed for builds. This feature simplifies the management of different Java versions and ensures that the correct tools are available for the build process."
+    },
+    {
+        "question": "Which protocol is required for the download URL in toolchain resolver plugins?",
+        "options": {
+            "A": "FTP",
+            "B": "HTTP",
+            "C": "HTTPS",
+            "D": "SFTP"
+        },
+        "correct_answer": "C",
+        "explanation": "The download URL in toolchain resolver plugins must use the HTTPS protocol. This requirement is in place to ensure the security of the download process and to prevent tampering with the files during transmission."
+    },
+    {
+        "question": "What is a key component of a toolchain resolver plugin in Gradle?",
+        "options": {
+            "A": "JavaToolchainRequest",
+            "B": "JavaToolchainProvider",
+            "C": "JavaToolchainResolver",
+            "D": "JavaToolchainManager"
+        },
+        "correct_answer": "C",
+        "explanation": "A key component of a toolchain resolver plugin in Gradle is the JavaToolchainResolver. This interface provides the logic to map toolchain requests to download responses, facilitating the auto-provisioning of Java toolchains based on the project's requirements."
+    },
+    {
+        "question": "What must a resolver plugin apply to enable toolchain management in Gradle?",
+        "options": {
+            "A": "java-base plugin",
+            "B": "jvm-toolchain-management base plugin",
+            "C": "java-library plugin",
+            "D": "application plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "A resolver plugin must apply the jvm-toolchain-management base plugin to enable toolchain management in Gradle. This plugin dynamically adds the necessary configuration blocks to manage toolchains effectively within the build."
+    },
+    {
+        "question": "What is the primary purpose of a toolchain resolver plugin in Gradle?",
+        "options": {
+            "A": "To define the logic for mapping toolchain requests to download responses",
+            "B": "To manage dependencies in a Gradle project",
+            "C": "To compile Java code into bytecode",
+            "D": "To optimize build performance by caching results"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a toolchain resolver plugin in Gradle is to define the logic for mapping a toolchain request to a download response. This involves providing a download URI that can be used to retrieve the necessary toolchain components securely."
+    },
+    {
+        "question": "Which protocol is required for the download URL in a toolchain resolver plugin?",
+        "options": {
+            "A": "FTP",
+            "B": "HTTP",
+            "C": "HTTPS",
+            "D": "SFTP"
+        },
+        "correct_answer": "C",
+        "explanation": "The download URL in a toolchain resolver plugin must use the HTTPS protocol. This requirement ensures that the download is secure and prevents tampering during the transfer of the toolchain components."
+    },
+    {
+        "question": "What is the role of the JavaToolchainResolver in a Gradle plugin?",
+        "options": {
+            "A": "To compile Java source files into executable programs",
+            "B": "To provide a mapping from toolchain requests to download responses",
+            "C": "To manage the lifecycle of Gradle tasks",
+            "D": "To optimize memory usage during builds"
+        },
+        "correct_answer": "B",
+        "explanation": "The JavaToolchainResolver in a Gradle plugin is responsible for providing a mapping from toolchain requests to download responses. It facilitates the retrieval of the appropriate toolchain components based on the specified requirements in the build configuration."
+    },
+    {
+        "question": "What must a toolchain resolver plugin apply to register its implementation?",
+        "options": {
+            "A": "The Java plugin",
+            "B": "The jvm-toolchain-management base plugin",
+            "C": "The application plugin",
+            "D": "The kotlin plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "A toolchain resolver plugin must apply the jvm-toolchain-management base plugin to register its implementation. This action dynamically adds the necessary configuration blocks to manage toolchains within the Gradle build environment."
+    },
+    {
+        "question": "What is the primary purpose of a JavaToolchainResolver in Gradle?",
+        "options": {
+            "A": "To manage dependencies for Java projects",
+            "B": "To provide logic for mapping toolchain requests to download responses",
+            "C": "To compile Java code into bytecode",
+            "D": "To execute Java applications in a specific environment"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a JavaToolchainResolver in Gradle is to provide logic for mapping a toolchain request to a download response. This involves defining how to obtain the necessary Java toolchain components, ensuring that the correct versions are used for building and running Java applications."
+    },
+    {
+        "question": "Which protocol is required for the download URL in a JavaToolchainResolver?",
+        "options": {
+            "A": "FTP",
+            "B": "HTTP",
+            "C": "HTTPS",
+            "D": "SFTP"
+        },
+        "correct_answer": "C",
+        "explanation": "The download URL in a JavaToolchainResolver must use the HTTPS protocol. This requirement is in place to ensure the security of the download process, preventing any tampering with the files during transmission."
+    },
+    {
+        "question": "What must a JavaToolchainResolver implementation do if it cannot provide a matching toolchain?",
+        "options": {
+            "A": "Throw an exception",
+            "B": "Return a null value",
+            "C": "Return an empty Optional",
+            "D": "Log an error message"
+        },
+        "correct_answer": "C",
+        "explanation": "If a JavaToolchainResolver implementation cannot provide a matching toolchain, it must return an empty Optional. This design allows for safe handling of the absence of a toolchain without causing runtime errors, enabling the calling code to check for the presence of a value."
+    },
+    {
+        "question": "What type of plugin is used to register a JavaToolchainResolver implementation?",
+        "options": {
+            "A": "Application plugin",
+            "B": "Build plugin",
+            "C": "Settings plugin",
+            "D": "Library plugin"
+        },
+        "correct_answer": "C",
+        "explanation": "A settings plugin is used to register a JavaToolchainResolver implementation. This type of plugin allows for the configuration of settings that affect the entire build, including the registration of services like the JavaToolchainResolver, which is essential for managing toolchain provisioning."
+    },
+    {
+        "question": "What is the primary purpose of a settings plugin in Gradle?",
+        "options": {
+            "A": "To define the build logic for a project",
+            "B": "To configure project dependencies",
+            "C": "To register and configure toolchain resolver implementations",
+            "D": "To manage the execution of tasks"
+        },
+        "correct_answer": "C",
+        "explanation": "The primary purpose of a settings plugin in Gradle is to register and configure toolchain resolver implementations. This allows for the dynamic management of toolchains, ensuring that the appropriate Java versions and configurations are used during the build process."
+    },
+    {
+        "question": "Which of the following is a requirement for a settings plugin in Gradle?",
+        "options": {
+            "A": "It must be a standalone application",
+            "B": "It must apply the `jvm-toolchain-management` base plugin",
+            "C": "It must define all project dependencies",
+            "D": "It must be written in Kotlin"
+        },
+        "correct_answer": "B",
+        "explanation": "A settings plugin in Gradle must apply the `jvm-toolchain-management` base plugin. This requirement ensures that the necessary configurations for managing toolchains are available, allowing the settings plugin to effectively register toolchain resolver implementations."
+    },
+    {
+        "question": "What is a key characteristic of the JavaToolchainResolver in Gradle?",
+        "options": {
+            "A": "It is a concrete class that must be instantiated directly",
+            "B": "It provides a way to map toolchain requests to download responses",
+            "C": "It is only applicable for Java versions below 8",
+            "D": "It requires manual configuration for each toolchain"
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of the JavaToolchainResolver in Gradle is that it provides a way to map toolchain requests to download responses. This mapping logic allows Gradle to automatically provision the correct Java toolchain based on the project's requirements, streamlining the build process."
+    },
+    {
+        "question": "What is the primary purpose of property injection in Gradle plugins?",
+        "options": {
+            "A": "To provide a way to access Gradle services and configurations",
+            "B": "To define the build script dependencies",
+            "C": "To manage the lifecycle of Gradle tasks",
+            "D": "To compile Java source files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of property injection in Gradle plugins is to provide a way to access Gradle services and configurations. This allows plugins to dynamically utilize Gradle's capabilities and integrate with its infrastructure, enhancing the functionality of the build process."
+    },
+    {
+        "question": "Which type of plugin must be used to implement property injection in Gradle?",
+        "options": {
+            "A": "Task plugin",
+            "B": "Settings plugin",
+            "C": "Application plugin",
+            "D": "Java plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "To implement property injection in Gradle, a settings plugin must be used. This type of plugin allows for the registration of services and the injection of properties, enabling the plugin to interact with the Gradle build environment effectively."
+    },
+    {
+        "question": "What is a key characteristic of a class that implements property injection in Gradle?",
+        "options": {
+            "A": "It must be a concrete class with no abstract methods.",
+            "B": "It must be an abstract class.",
+            "C": "It must extend the Gradle build class.",
+            "D": "It must implement a specific interface."
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of a class that implements property injection in Gradle is that it must be an abstract class. This is because property injection requires the class to be designed in a way that allows Gradle to provide dynamic implementations for certain methods at runtime."
+    },
+    {
+        "question": "What is the primary purpose of build services in Gradle?",
+        "options": {
+            "A": "To manage dependencies for Java projects",
+            "B": "To provide reusable components for build logic",
+            "C": "To compile source code into bytecode",
+            "D": "To execute tests in a build pipeline"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of build services in Gradle is to provide reusable components for build logic. They allow developers to define and share services that can be used across different parts of the build process, enhancing modularity and reusability."
+    },
+    {
+        "question": "How are build services typically registered in a Gradle plugin?",
+        "options": {
+            "A": "By using a build script directly",
+            "B": "Through a settings plugin with property injection",
+            "C": "By modifying the Gradle wrapper properties",
+            "D": "Using a command-line interface"
+        },
+        "correct_answer": "B",
+        "explanation": "Build services are typically registered in a Gradle plugin through a settings plugin using property injection. This allows the plugin to access and register the necessary services within the Gradle build environment."
+    },
+    {
+        "question": "What is a key characteristic of a build service in Gradle?",
+        "options": {
+            "A": "It must be a concrete class with a public constructor",
+            "B": "It can only be used in the context of a single build",
+            "C": "It is often implemented as an abstract class",
+            "D": "It requires manual instantiation in every build script"
+        },
+        "correct_answer": "C",
+        "explanation": "A key characteristic of a build service in Gradle is that it is often implemented as an abstract class. This allows Gradle to provide dynamic implementations at runtime, enabling flexibility and extensibility in how services are utilized."
+    }
+]

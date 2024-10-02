@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the primary purpose of dependency metadata in software development?",
+        "options": {
+            "A": "To describe the characteristics and requirements of a dependency",
+            "B": "To compile source code into executable files",
+            "C": "To manage user permissions for software access",
+            "D": "To optimize the performance of the application"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency metadata is to describe the characteristics and requirements of a dependency. This includes information such as the dependency's identity, its required versions, and any other dependencies it may have, which is crucial for effective dependency resolution in software projects."
+    },
+    {
+        "question": "Which of the following is NOT a component of dependency metadata?",
+        "options": {
+            "A": "Identity",
+            "B": "Dependencies",
+            "C": "User Interface",
+            "D": "Artifacts"
+        },
+        "correct_answer": "C",
+        "explanation": "User Interface is not a component of dependency metadata. Dependency metadata typically includes identity, dependencies, variants, artifacts, capabilities, and attributes, which are all related to the management and resolution of software dependencies."
+    },
+    {
+        "question": "What does the term 'variants' refer to in the context of dependency metadata?",
+        "options": {
+            "A": "Different versions of the same software",
+            "B": "Different forms of a component that can be consumed in various contexts",
+            "C": "Alternative programming languages for the same functionality",
+            "D": "Different user roles in a software application"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of dependency metadata, 'variants' refer to different forms of a component that can be consumed in various contexts, such as compile or runtime. This allows for flexibility in how dependencies are utilized based on the specific needs of the project."
+    },
+    {
+        "question": "Which metadata format is specifically designed to support Gradle's dependency management model?",
+        "options": {
+            "A": "Maven POM files",
+            "B": "Ivy descriptor files",
+            "C": "Gradle Module Metadata (GMM) files",
+            "D": "JSON configuration files"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle Module Metadata (GMM) files are specifically designed to support all features of Gradle's dependency management model. This format allows Gradle to effectively manage and resolve dependencies, making it the preferred choice for metadata in Gradle projects."
+    },
+    {
+        "question": "What are module dependencies primarily used for in software development?",
+        "options": {
+            "A": "To define the characteristics and requirements of a software component",
+            "B": "To create user interfaces for applications",
+            "C": "To manage the storage of data in databases",
+            "D": "To optimize the performance of algorithms"
+        },
+        "correct_answer": "A",
+        "explanation": "Module dependencies are primarily used to define the characteristics and requirements of a software component. This includes identifying the component's identity, its required dependencies, and the artifacts it produces, which are essential for effective dependency management in software projects."
+    },
+    {
+        "question": "Which of the following is NOT a component of dependency metadata?",
+        "options": {
+            "A": "Identity",
+            "B": "Dependencies",
+            "C": "User Interface",
+            "D": "Artifacts"
+        },
+        "correct_answer": "C",
+        "explanation": "User Interface is not a component of dependency metadata. Dependency metadata typically includes identity, dependencies, variants, artifacts, capabilities, and attributes, which are all related to the characteristics and requirements of software components."
+    },
+    {
+        "question": "What is the role of 'variants' in module dependencies?",
+        "options": {
+            "A": "To specify different versions of a module",
+            "B": "To represent different forms of a component for various contexts",
+            "C": "To list all possible dependencies of a module",
+            "D": "To define the user interface elements of a module"
+        },
+        "correct_answer": "B",
+        "explanation": "Variants in module dependencies represent different forms of a component that can be consumed in various contexts, such as compile or runtime. This allows for flexibility in how dependencies are utilized based on the specific needs of the project."
+    },
+    {
+        "question": "How does Gradle determine the transitive dependencies of a module?",
+        "options": {
+            "A": "By analyzing the source code of the module",
+            "B": "By reading the module metadata associated with the module",
+            "C": "By executing the module in a test environment",
+            "D": "By manually specifying dependencies in the build file"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines the transitive dependencies of a module by reading the module metadata associated with that module. This metadata provides the necessary information about the dependencies required by the module, allowing Gradle to resolve them automatically."
+    },
+    {
+        "question": "What is the primary purpose of Gradle Module Metadata?",
+        "options": {
+            "A": "To provide information about the dependencies of a module",
+            "B": "To store the source code of a module",
+            "C": "To compile the code of a module",
+            "D": "To execute tests for a module"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Gradle Module Metadata is to provide detailed information about the dependencies of a module, including its identity, required dependencies, variants, artifacts, capabilities, and attributes. This information is crucial for dependency resolution and management within the Gradle build system."
+    },
+    {
+        "question": "Which of the following best describes the 'identity' in Gradle Module Metadata?",
+        "options": {
+            "A": "The version of the module only",
+            "B": "The unique combination of group, name, and version of the module",
+            "C": "The location of the module in the repository",
+            "D": "The list of dependencies required by the module"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'identity' in Gradle Module Metadata refers to the unique combination of the module's group, name, and version (GAV coordinates). This identity allows Gradle to uniquely identify and manage the module within the dependency graph."
+    },
+    {
+        "question": "What type of files does Gradle Module Metadata typically use?",
+        "options": {
+            "A": "XML files only",
+            "B": "JSON files only",
+            "C": "Both JSON and XML files",
+            "D": "Text files only"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle Module Metadata can be represented in both JSON and XML formats. This flexibility allows Gradle to support various metadata formats, including its own GMM files, Maven POM files, and Ivy descriptor files, facilitating compatibility with different repository types."
+    },
+    {
+        "question": "How does Gradle determine which metadata source to use when resolving dependencies?",
+        "options": {
+            "A": "It randomly selects a source each time",
+            "B": "It follows a predefined order of metadata sources",
+            "C": "It only uses the first source it finds",
+            "D": "It requires user input to select the source"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines which metadata source to use by following a predefined order of metadata sources. By default, it first looks for Gradle Module Metadata files, then Maven POM files, followed by Ivy descriptor files, and finally checks for artifacts without associated metadata. This systematic approach ensures that Gradle can effectively resolve dependencies."
+    },
+    {
+        "question": "What is the primary purpose of POM files in Gradle?",
+        "options": {
+            "A": "To define the build process for a project",
+            "B": "To provide metadata about a module's dependencies",
+            "C": "To store source code for a project",
+            "D": "To manage user permissions for a project"
+        },
+        "correct_answer": "B",
+        "explanation": "POM files, or Project Object Model files, serve the primary purpose of providing metadata about a module's dependencies, including information such as group ID, artifact ID, and version. This metadata is essential for dependency resolution in Gradle, allowing it to understand the relationships and requirements of various modules."
+    },
+    {
+        "question": "Which of the following statements is true regarding the use of POM files in Gradle?",
+        "options": {
+            "A": "Gradle ignores POM files when resolving dependencies.",
+            "B": "Gradle prefers POM files over Gradle Module Metadata files.",
+            "C": "POM files are only used for Java projects.",
+            "D": "POM files cannot contain dependency information."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, when both POM files and Gradle Module Metadata files are available, Gradle prefers the information from the Gradle Module Metadata files. However, if a POM file is present and does not contain a special marker indicating the presence of Gradle Module Metadata, Gradle will use the POM file for dependency resolution."
+    },
+    {
+        "question": "What type of information is typically included in a POM file?",
+        "options": {
+            "A": "Source code for the project",
+            "B": "Module identity and dependencies",
+            "C": "User access permissions",
+            "D": "Build scripts and configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "A POM file typically includes information about the module's identity, such as its group ID, artifact ID, and version, as well as a list of dependencies that the module requires. This information is crucial for managing and resolving dependencies in a project."
+    },
+    {
+        "question": "What is the primary purpose of Ivy descriptor files in dependency management?",
+        "options": {
+            "A": "To provide metadata about module dependencies",
+            "B": "To compile source code into binary format",
+            "C": "To execute build scripts directly",
+            "D": "To store user credentials for repositories"
+        },
+        "correct_answer": "A",
+        "explanation": "Ivy descriptor files serve the primary purpose of providing metadata about module dependencies. This metadata includes information about the module's identity, its dependencies, and other relevant characteristics, which are essential for managing and resolving dependencies in a project."
+    },
+    {
+        "question": "Which file format is associated with Ivy descriptor files?",
+        "options": {
+            "A": ".module",
+            "B": ".pom",
+            "C": ".xml",
+            "D": ".jar"
+        },
+        "correct_answer": "C",
+        "explanation": "Ivy descriptor files are associated with the .xml file format. These files contain structured information about the dependencies of a module, including its organization, module name, and version, which are crucial for dependency resolution."
+    },
+    {
+        "question": "In what order does Gradle check for Ivy descriptor files when resolving dependencies?",
+        "options": {
+            "A": "First checks for .jar files, then .pom files, and finally .xml files",
+            "B": "First checks for .module files, then .pom files, and finally .xml files",
+            "C": "First checks for .xml files, then .module files, and finally .pom files",
+            "D": "First checks for .pom files, then .xml files, and finally .module files"
+        },
+        "correct_answer": "B",
+        "explanation": "When resolving dependencies, Gradle first checks for Gradle Module Metadata (.module) files, then looks for Maven POM files (.pom), and finally checks for Ivy descriptor files (.xml). This order ensures that Gradle utilizes the most specific and relevant metadata available for dependency resolution."
+    },
+    {
+        "question": "What happens if an Ivy descriptor file contains a special marker when Gradle is resolving dependencies?",
+        "options": {
+            "A": "Gradle will ignore the Ivy descriptor file",
+            "B": "Gradle will prefer the Gradle Module Metadata file instead",
+            "C": "Gradle will convert the Ivy descriptor into a POM file",
+            "D": "Gradle will treat the Ivy descriptor as invalid"
+        },
+        "correct_answer": "B",
+        "explanation": "If an Ivy descriptor file contains a special marker indicating the presence of a matching Gradle Module Metadata file, Gradle will prefer the Gradle metadata over the Ivy descriptor. This behavior allows Gradle to utilize the most accurate and feature-rich metadata available for dependency resolution."
+    },
+    {
+        "question": "What is the primary purpose of dependency metadata in Gradle?",
+        "options": {
+            "A": "To describe the characteristics and requirements of a dependency",
+            "B": "To compile source code into binary files",
+            "C": "To manage user permissions for accessing repositories",
+            "D": "To optimize the performance of the build process"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency metadata in Gradle is to describe the characteristics and requirements of a dependency. This includes information such as the dependency's identity, its required versions, and any other dependencies it may have, which is crucial for effective dependency resolution."
+    },
+    {
+        "question": "Which of the following formats is NOT supported by Gradle for dependency metadata?",
+        "options": {
+            "A": "Gradle Module Metadata (.module)",
+            "B": "Maven POM files (pom.xml)",
+            "C": "Ivy Descriptor files (ivy.xml)",
+            "D": "JSON Configuration files (.json)"
+        },
+        "correct_answer": "D",
+        "explanation": "Gradle supports several formats for dependency metadata, including Gradle Module Metadata (.module), Maven POM files (pom.xml), and Ivy Descriptor files (ivy.xml). However, JSON Configuration files (.json) are not a recognized format for dependency metadata in Gradle."
+    },
+    {
+        "question": "What is the order in which Gradle searches for metadata sources when resolving dependencies?",
+        "options": {
+            "A": "Ivy files, POM files, Gradle Module Metadata, JAR files",
+            "B": "Gradle Module Metadata, POM files, Ivy files, JAR files",
+            "C": "POM files, Gradle Module Metadata, JAR files, Ivy files",
+            "D": "JAR files, POM files, Ivy files, Gradle Module Metadata"
+        },
+        "correct_answer": "B",
+        "explanation": "When resolving dependencies, Gradle first looks for Gradle Module Metadata files, followed by Maven POM files, then Ivy files, and finally JAR files. This predefined order ensures that Gradle utilizes the most specific and relevant metadata available for dependency resolution."
+    },
+    {
+        "question": "What does the 'artifact' metadata source allow Gradle to do?",
+        "options": {
+            "A": "Resolve dependencies without any associated metadata",
+            "B": "Automatically update dependencies to the latest version",
+            "C": "Generate documentation for the dependencies",
+            "D": "Compile the source code of the dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The 'artifact' metadata source allows Gradle to resolve dependencies even when there is no associated metadata available. This flexibility can be useful in scenarios where metadata files are missing, enabling Gradle to still locate and use the binary artifacts directly."
+    },
+    {
+        "question": "What is the primary purpose of metadata sources in Gradle?",
+        "options": {
+            "A": "To define the structure of the Gradle build script",
+            "B": "To determine how Gradle resolves dependencies and their associated metadata",
+            "C": "To specify the programming language used in the project",
+            "D": "To manage the version control of the project files"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of metadata sources in Gradle is to determine how Gradle resolves dependencies and their associated metadata. By specifying different metadata sources, Gradle can locate and utilize the necessary metadata files to understand the dependencies of a project, ensuring proper dependency resolution."
+    },
+    {
+        "question": "Which of the following is the first metadata source Gradle checks when resolving dependencies?",
+        "options": {
+            "A": "ivyDescriptor()",
+            "B": "mavenPom()",
+            "C": "artifact()",
+            "D": "gradleMetadata()"
+        },
+        "correct_answer": "D",
+        "explanation": "When resolving dependencies, Gradle first checks for the 'gradleMetadata()' source, which looks for Gradle Module Metadata files. This is the preferred source for metadata, as it is specifically designed to support Gradle's dependency management model."
+    },
+    {
+        "question": "What happens if Gradle does not find associated metadata for a dependency?",
+        "options": {
+            "A": "Gradle will automatically fail the build process.",
+            "B": "Gradle will ignore the dependency entirely.",
+            "C": "Gradle can still resolve the artifact directly without metadata if configured to do so.",
+            "D": "Gradle will revert to using an older version of the dependency."
+        },
+        "correct_answer": "C",
+        "explanation": "If Gradle does not find associated metadata for a dependency, it can still resolve the artifact directly without metadata if configured to do so. This is done by specifying the 'artifact()' metadata source, which allows Gradle to derive metadata from the artifact itself, thus providing flexibility in dependency resolution."
+    },
+    {
+        "question": "Which metadata source is checked after Gradle Module Metadata files in a Maven repository?",
+        "options": {
+            "A": "ivyDescriptor()",
+            "B": "artifact()",
+            "C": "mavenPom()",
+            "D": "none, Gradle stops searching"
+        },
+        "correct_answer": "C",
+        "explanation": "In a Maven repository, after checking for Gradle Module Metadata files, Gradle will look for Maven POM files as the next source of metadata. This order of checking ensures that Gradle can utilize the most relevant and compatible metadata formats for dependency resolution."
+    }
+]

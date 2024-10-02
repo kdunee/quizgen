@@ -1,0 +1,266 @@
+[
+    {
+        "question": "What is the primary purpose of a version catalog in Gradle?",
+        "options": {
+            "A": "To manage and organize dependencies and their versions",
+            "B": "To compile source code into executable files",
+            "C": "To create user interfaces for applications",
+            "D": "To store configuration settings for the build process"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a version catalog in Gradle is to manage and organize dependencies along with their versions. This allows developers to define and reference libraries in a structured way, ensuring consistency and ease of updates across projects."
+    },
+    {
+        "question": "What happens if a version catalog contains too many entries?",
+        "options": {
+            "A": "It will automatically optimize the entries to fit the limit",
+            "B": "An error will occur due to exceeding the maximum entry limit",
+            "C": "The catalog will be ignored by Gradle",
+            "D": "Gradle will merge the entries into a single entry"
+        },
+        "correct_answer": "B",
+        "explanation": "If a version catalog contains too many entries, an error will occur because Gradle imposes a limit on the number of aliases that can be included in a single catalog. This limit is currently set at 32,000 entries, and exceeding this limit requires splitting the catalog into multiple distinct catalogs."
+    },
+    {
+        "question": "What should you do if you encounter an 'undefined version reference' error in a version catalog?",
+        "options": {
+            "A": "Remove all version references from the catalog",
+            "B": "Ensure the version reference points to an existing version alias",
+            "C": "Change the catalog file format to JSON",
+            "D": "Add more libraries to the catalog"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter an 'undefined version reference' error, you should ensure that the version reference points to an existing version alias declared in the catalog. This error indicates that the catalog is trying to reference a version that has not been defined, which can be resolved by correcting the reference or declaring the missing version."
+    },
+    {
+        "question": "Which of the following is a common issue when using reserved alias names in a version catalog?",
+        "options": {
+            "A": "The alias will be ignored by Gradle",
+            "B": "An error will occur due to a naming conflict with generated accessors",
+            "C": "The alias will automatically be renamed by Gradle",
+            "D": "The catalog will not load any libraries"
+        },
+        "correct_answer": "B",
+        "explanation": "Using reserved alias names in a version catalog can lead to an error due to a naming conflict with generated accessors. Reserved names typically include those that start with 'versions', 'bundles', or 'plugins', and using them can cause issues in the catalog's functionality."
+    },
+    {
+        "question": "What is the primary purpose of a version catalog in dependency management?",
+        "options": {
+            "A": "To define and manage library versions and aliases in a centralized manner",
+            "B": "To automatically update all dependencies to the latest versions",
+            "C": "To create a backup of all project files and dependencies",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a version catalog in dependency management is to define and manage library versions and aliases in a centralized manner. This allows developers to maintain consistent versions across projects and simplifies the process of updating dependencies."
+    },
+    {
+        "question": "What happens if a version catalog contains too many entries?",
+        "options": {
+            "A": "The catalog will automatically split into multiple catalogs",
+            "B": "An error will occur due to JVM file format restrictions",
+            "C": "The entries will be ignored during the build process",
+            "D": "The build will succeed but with warnings about the excess entries"
+        },
+        "correct_answer": "B",
+        "explanation": "If a version catalog contains too many entries, an error will occur due to JVM file format restrictions. Gradle imposes a limit on the number of aliases that a catalog may contain, which is currently set at 32,000 entries."
+    },
+    {
+        "question": "What should you do if you encounter an 'undefined version reference' error in a version catalog?",
+        "options": {
+            "A": "Remove all version references from the catalog",
+            "B": "Ensure the version reference points to an existing version alias",
+            "C": "Change the catalog file format to JSON",
+            "D": "Add more libraries to the catalog"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter an 'undefined version reference' error in a version catalog, you should ensure that the version reference points to an existing version alias. This means either correcting the reference to use a declared version or adding a new version that corresponds to the reference."
+    },
+    {
+        "question": "What is a common cause of the 'invalid dependency notation' error in a version catalog?",
+        "options": {
+            "A": "Using a version number that is too high",
+            "B": "Incorrectly formatting the dependency notation",
+            "C": "Declaring too many libraries in the catalog",
+            "D": "Using a reserved alias name"
+        },
+        "correct_answer": "B",
+        "explanation": "A common cause of the 'invalid dependency notation' error in a version catalog is incorrectly formatting the dependency notation. The correct format should follow the simplified 'group:artifact:version' notation, and any deviations from this format will trigger an error."
+    },
+    {
+        "question": "What does the 'undefined version reference' error indicate in a version catalog?",
+        "options": {
+            "A": "A library references a version that does not exist.",
+            "B": "A library is declared without an alias.",
+            "C": "A version catalog contains too many entries.",
+            "D": "An alias is using a reserved name."
+        },
+        "correct_answer": "A",
+        "explanation": "The 'undefined version reference' error indicates that a library in the version catalog is trying to reference a version that has not been defined. This means that the version reference must either be corrected to point to an existing version or a new version must be declared in the catalog."
+    },
+    {
+        "question": "What is a common solution for the 'too many entries in a single catalog' error?",
+        "options": {
+            "A": "Remove all aliases from the catalog.",
+            "B": "Split the catalog into multiple distinct catalogs.",
+            "C": "Increase the maximum number of allowed entries.",
+            "D": "Combine all entries into a single alias."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'too many entries in a single catalog' error occurs when the number of aliases exceeds the limit set by the JVM file format. The common solution is to split the catalog into multiple distinct catalogs to stay within the entry limit."
+    },
+    {
+        "question": "What does the 'invalid dependency notation' error signify?",
+        "options": {
+            "A": "The alias name is not unique.",
+            "B": "The dependency notation does not follow the required format.",
+            "C": "The catalog file is not found.",
+            "D": "The version reference is undefined."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'invalid dependency notation' error indicates that the dependency notation associated with an alias does not conform to the expected format. This could mean that the notation is incorrectly structured, such as not using the 'group:artifact:version' format properly."
+    },
+    {
+        "question": "What is the purpose of the 'alias not finished' error message?",
+        "options": {
+            "A": "To indicate that an alias has been registered without a version.",
+            "B": "To signal that an alias name is invalid.",
+            "C": "To show that an alias is conflicting with another.",
+            "D": "To inform that an alias has been successfully created."
+        },
+        "correct_answer": "A",
+        "explanation": "The 'alias not finished' error message indicates that an alias builder was created but not properly registered with the catalog. This typically happens when the necessary method to finalize the alias, such as calling '.version()' or '.withoutVersion()', has not been executed."
+    },
+    {
+        "question": "What is a key requirement for alias names in a Gradle version catalog?",
+        "options": {
+            "A": "Alias names must start with a number.",
+            "B": "Alias names must match a specific regular expression.",
+            "C": "Alias names can contain any special characters.",
+            "D": "Alias names must be unique across all catalogs."
+        },
+        "correct_answer": "B",
+        "explanation": "Alias names in a Gradle version catalog must match a specific regular expression: `[a-z]([a-zA-Z0-9_.\\-])+`. This ensures that alias names are valid and follow the conventions set by Gradle, which helps avoid conflicts and errors."
+    },
+    {
+        "question": "What happens if an alias name in a Gradle version catalog is reserved?",
+        "options": {
+            "A": "The alias will be automatically renamed by Gradle.",
+            "B": "An error will occur indicating the use of a reserved alias name.",
+            "C": "The alias will be ignored during the build process.",
+            "D": "The alias will work but may cause unexpected behavior."
+        },
+        "correct_answer": "B",
+        "explanation": "If an alias name in a Gradle version catalog is reserved, an error will occur indicating the use of a reserved alias name. This typically happens when the alias starts with certain prefixes or contains specific keywords that clash with Gradle's internal naming conventions."
+    },
+    {
+        "question": "Which of the following is a correct format for defining an alias in a TOML version catalog?",
+        "options": {
+            "A": "alias-name = { group='com.example', name='lib', version='1.0' }",
+            "B": "alias-name = { module='com.example:lib', version='1.0' }",
+            "C": "alias-name = { group='com.example', version='1.0' }",
+            "D": "alias-name = { name='lib', version='1.0' }"
+        },
+        "correct_answer": "B",
+        "explanation": "The correct format for defining an alias in a TOML version catalog is to use the `module` notation, which must consist of the `group` and `name` of the module, separated by a colon (`:`). This ensures that the alias is properly recognized and associated with the correct library."
+    },
+    {
+        "question": "What is the consequence of using an invalid alias notation in a Gradle version catalog?",
+        "options": {
+            "A": "The catalog will be ignored entirely.",
+            "B": "An error will be thrown indicating invalid alias notation.",
+            "C": "The alias will be created but will not function correctly.",
+            "D": "The alias will be created with a default name."
+        },
+        "correct_answer": "B",
+        "explanation": "Using an invalid alias notation in a Gradle version catalog will result in an error being thrown, indicating that the alias or bundle name is not supported. This is due to Gradle's restrictions on alias names, which must adhere to specific formatting rules."
+    },
+    {
+        "question": "What is the primary purpose of TOML syntax in version catalogs?",
+        "options": {
+            "A": "To define the structure and format for configuration files",
+            "B": "To execute scripts for dependency management",
+            "C": "To compile code into executable formats",
+            "D": "To create graphical user interfaces"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of TOML syntax in version catalogs is to define the structure and format for configuration files. TOML provides a clear and human-readable way to specify libraries, versions, and other settings necessary for dependency management in a project."
+    },
+    {
+        "question": "Which of the following is a requirement for module notation in a TOML version catalog?",
+        "options": {
+            "A": "It must consist of three elements: group, name, and version",
+            "B": "It must consist of two elements: group and name, separated by a colon",
+            "C": "It must be a single string without any separators",
+            "D": "It must include a version number at the beginning"
+        },
+        "correct_answer": "B",
+        "explanation": "The requirement for module notation in a TOML version catalog is that it must consist of two elements: the group and the name of the module, separated by a colon. This format ensures that the catalog can correctly identify and manage the dependencies specified."
+    },
+    {
+        "question": "What happens if a TOML version catalog contains a syntax error?",
+        "options": {
+            "A": "The catalog will be ignored without any error message",
+            "B": "An error will be thrown indicating a syntax or grammar issue",
+            "C": "The catalog will be processed with default values",
+            "D": "The catalog will be converted to JSON format automatically"
+        },
+        "correct_answer": "B",
+        "explanation": "If a TOML version catalog contains a syntax error, an error will be thrown indicating a syntax or grammar issue. This ensures that users are made aware of the problem so they can correct it before the catalog can be successfully processed."
+    },
+    {
+        "question": "What is a common restriction on alias names in a TOML version catalog?",
+        "options": {
+            "A": "They must be longer than 10 characters",
+            "B": "They must start with a number",
+            "C": "They must match a specific regular expression pattern",
+            "D": "They must contain at least one uppercase letter"
+        },
+        "correct_answer": "C",
+        "explanation": "A common restriction on alias names in a TOML version catalog is that they must match a specific regular expression pattern. This ensures that alias names are valid and conform to the expected naming conventions, which helps prevent errors during catalog processing."
+    },
+    {
+        "question": "What is the purpose of a version catalog in Gradle?",
+        "options": {
+            "A": "To manage and organize dependencies in a centralized manner",
+            "B": "To compile source code into executable files",
+            "C": "To automate the testing of software applications",
+            "D": "To generate documentation for the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The purpose of a version catalog in Gradle is to manage and organize dependencies in a centralized manner. This allows developers to define and reference libraries and their versions in a structured way, making it easier to maintain and update dependencies across projects."
+    },
+    {
+        "question": "What happens if a version catalog contains too many entries?",
+        "options": {
+            "A": "Gradle will automatically optimize the entries",
+            "B": "An error will occur due to JVM file format restrictions",
+            "C": "The catalog will be ignored by Gradle",
+            "D": "Gradle will merge the entries into a single entry"
+        },
+        "correct_answer": "B",
+        "explanation": "If a version catalog contains too many entries, an error will occur due to JVM file format restrictions. Gradle imposes a limit on the number of aliases that a catalog may contain, which is currently set at 32,000 entries. Exceeding this limit requires splitting the catalog into multiple distinct catalogs."
+    },
+    {
+        "question": "What should you do if you encounter an 'undefined version reference' error in a version catalog?",
+        "options": {
+            "A": "Remove the entire catalog",
+            "B": "Ensure the version reference points to an existing version alias",
+            "C": "Change the catalog file format",
+            "D": "Add more entries to the catalog"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter an 'undefined version reference' error in a version catalog, you should ensure that the version reference points to an existing version alias. This means either correcting the reference to use a declared version or adding a new version that corresponds to the reference."
+    },
+    {
+        "question": "What is a common cause of the 'invalid dependency notation' error in a version catalog?",
+        "options": {
+            "A": "Using a version number that is too high",
+            "B": "Incorrectly formatting the dependency notation",
+            "C": "Referencing a library from a different catalog",
+            "D": "Using an alias that is too long"
+        },
+        "correct_answer": "B",
+        "explanation": "A common cause of the 'invalid dependency notation' error in a version catalog is incorrectly formatting the dependency notation. The version catalog supports a specific format, such as 'group:artifact:version', and any deviation from this format can trigger an error."
+    }
+]

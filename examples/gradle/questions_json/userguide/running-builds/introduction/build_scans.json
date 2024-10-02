@@ -1,0 +1,178 @@
+[
+    {
+        "question": "What is the primary purpose of a build scan?",
+        "options": {
+            "A": "To capture and analyze build metadata",
+            "B": "To compile source code into executable files",
+            "C": "To manage dependencies in a project",
+            "D": "To automate the testing process"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a build scan is to capture and analyze build metadata. This metadata provides insights into the build process, allowing users to troubleshoot issues, collaborate effectively, and optimize build performance by sharing relevant information easily."
+    },
+    {
+        "question": "How can you enable build scans in a Gradle command?",
+        "options": {
+            "A": "By adding the `--enable` flag",
+            "B": "By adding the `--scan` flag",
+            "C": "By modifying the build.gradle file",
+            "D": "By using a graphical user interface"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable build scans in a Gradle command, you add the `--scan` flag to the command line option. This instructs Gradle to capture the build metadata and send it to the Build Scan Service for analysis."
+    },
+    {
+        "question": "What advantage do build scans provide when troubleshooting build issues?",
+        "options": {
+            "A": "They automatically fix errors in the build process",
+            "B": "They allow users to share a link with detailed build information",
+            "C": "They eliminate the need for version control",
+            "D": "They provide a graphical interface for build management"
+        },
+        "correct_answer": "B",
+        "explanation": "Build scans provide the advantage of allowing users to share a link that contains detailed build information. This eliminates the need to copy and paste error messages or environment details, making it easier to seek help from others in forums or collaborative platforms."
+    },
+    {
+        "question": "What is the primary purpose of build metadata in the context of build scans?",
+        "options": {
+            "A": "To provide a detailed history of all code changes",
+            "B": "To capture and analyze information about the build process",
+            "C": "To store user credentials for accessing build tools",
+            "D": "To generate user interface elements for the build system"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of build metadata in the context of build scans is to capture and analyze information about the build process. This metadata includes details such as build performance, errors, and environment settings, which can be invaluable for troubleshooting and optimizing builds."
+    },
+    {
+        "question": "How can build metadata be utilized when seeking help with build issues?",
+        "options": {
+            "A": "By sharing the entire source code with others",
+            "B": "By providing a link to the build scan instead of detailed error messages",
+            "C": "By manually documenting each step of the build process",
+            "D": "By creating a video tutorial of the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "When seeking help with build issues, build metadata can be utilized by providing a link to the build scan. This allows others to access comprehensive information about the build, including error messages and environment details, without the need to copy and paste all the information manually."
+    },
+    {
+        "question": "What command is used to enable build scans in Gradle?",
+        "options": {
+            "A": "gradlew build --enable-scans",
+            "B": "gradlew build --scan",
+            "C": "gradlew build --metadata",
+            "D": "gradlew build --info"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable build scans in Gradle, the command used is 'gradlew build --scan'. This command initiates the build process while capturing the necessary metadata for the build scan, allowing for later analysis and sharing."
+    },
+    {
+        "question": "What is the primary benefit of using build scans in troubleshooting?",
+        "options": {
+            "A": "They provide a detailed history of all previous builds.",
+            "B": "They allow for easy sharing of build metadata and error messages.",
+            "C": "They automatically fix errors in the build process.",
+            "D": "They eliminate the need for any documentation during builds."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using build scans in troubleshooting is that they allow for easy sharing of build metadata and error messages. Instead of manually copying and pasting error details, users can simply share a link to their build scan, which contains all relevant information for analysis and collaboration."
+    },
+    {
+        "question": "How can you enable build scans in a Gradle command?",
+        "options": {
+            "A": "By adding the option '--enable-scans' to the command.",
+            "B": "By adding the option '--scan' to the command.",
+            "C": "By modifying the build.gradle file directly.",
+            "D": "By installing a separate plugin for build scans."
+        },
+        "correct_answer": "B",
+        "explanation": "To enable build scans in a Gradle command, you add the option '--scan' to the command line. This prompts Gradle to capture the build metadata and send it to the Build Scan Service for analysis."
+    },
+    {
+        "question": "What type of information do build scans collect during a build?",
+        "options": {
+            "A": "Only the final output of the build process.",
+            "B": "Metadata about the build process, including errors and environment details.",
+            "C": "User credentials and sensitive data.",
+            "D": "Only the configuration settings of the build."
+        },
+        "correct_answer": "B",
+        "explanation": "Build scans collect metadata about the build process, which includes errors, performance metrics, and environment details. This information is crucial for troubleshooting and optimizing builds, as it provides insights into what went wrong and how to improve future builds."
+    },
+    {
+        "question": "What is the primary benefit of using build scans in collaborative environments?",
+        "options": {
+            "A": "They allow for real-time code editing by multiple users.",
+            "B": "They provide a centralized location for build metadata that can be easily shared.",
+            "C": "They automatically fix errors in the build process.",
+            "D": "They eliminate the need for version control systems."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using build scans in collaborative environments is that they provide a centralized location for build metadata that can be easily shared among team members. This allows for more efficient troubleshooting and communication, as users can simply share a link to the build scan instead of copying and pasting error messages or environment details."
+    },
+    {
+        "question": "How do build scans enhance the troubleshooting process?",
+        "options": {
+            "A": "By providing a graphical user interface for debugging.",
+            "B": "By capturing and organizing build metadata for analysis.",
+            "C": "By automatically resolving all build errors.",
+            "D": "By generating code suggestions based on previous builds."
+        },
+        "correct_answer": "B",
+        "explanation": "Build scans enhance the troubleshooting process by capturing and organizing build metadata for analysis. This allows developers to easily review the details of their builds, identify issues, and share relevant information with others, making it easier to resolve problems collaboratively."
+    },
+    {
+        "question": "What command is used to enable build scans in Gradle?",
+        "options": {
+            "A": "gradlew build --enable-scans",
+            "B": "gradlew build --scan",
+            "C": "gradlew build --start-scan",
+            "D": "gradlew build --activate-scans"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable build scans in Gradle, the command used is 'gradlew build --scan'. This command initiates the build process while capturing the necessary metadata for the build scan, which can then be analyzed and shared."
+    },
+    {
+        "question": "What is the primary purpose of using build scans in performance optimization?",
+        "options": {
+            "A": "To capture and analyze build metadata",
+            "B": "To increase the speed of the build process",
+            "C": "To replace the need for version control systems",
+            "D": "To automate the build process without user input"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of using build scans in performance optimization is to capture and analyze build metadata. This information can help identify bottlenecks, troubleshoot issues, and improve collaboration among team members, ultimately leading to more efficient builds."
+    },
+    {
+        "question": "How can build scans assist in troubleshooting build issues?",
+        "options": {
+            "A": "By providing a direct link to the build environment",
+            "B": "By eliminating the need for error messages",
+            "C": "By allowing users to share a link to the build scan instead of detailed logs",
+            "D": "By automatically fixing errors in the build process"
+        },
+        "correct_answer": "C",
+        "explanation": "Build scans assist in troubleshooting build issues by allowing users to share a link to the build scan instead of detailed logs or error messages. This simplifies the process of seeking help from others, as they can access all relevant information through the scan link."
+    },
+    {
+        "question": "What command is used to enable build scans in Gradle?",
+        "options": {
+            "A": "gradlew build --enable-scans",
+            "B": "gradlew build --scan",
+            "C": "gradlew build --optimize",
+            "D": "gradlew build --metadata"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable build scans in Gradle, the command 'gradlew build --scan' is used. This command initiates the build process while capturing the necessary metadata for analysis and optimization."
+    },
+    {
+        "question": "What type of information do build scans provide for performance optimization?",
+        "options": {
+            "A": "Only error messages from the build process",
+            "B": "Detailed metadata about the build environment and performance metrics",
+            "C": "A summary of the build commands used",
+            "D": "User-specific settings and configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "Build scans provide detailed metadata about the build environment and performance metrics, which are crucial for performance optimization. This information helps users analyze their builds and identify areas for improvement."
+    }
+]

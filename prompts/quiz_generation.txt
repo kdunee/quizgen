@@ -1,0 +1,106 @@
+You are an expert educator and subject matter expert. Given the following chapter text and a specific concept from the chapter, create a set of high-quality multiple-choice questions to help learners understand and recall the concept. Each question should:
+
+- Be derived **only from the content of the chapter**, not from outside knowledge, but avoid relying on any unique or highly specific examples or details that are only found within the chapter.
+- Focus on **general principles and core ideas** related to the concept that are widely applicable, ensuring the questions can be understood without needing specific chapter examples.
+- Be **clear, concise, and focused** on key aspects of the concept.
+- Include one correct answer and three plausible incorrect options (distractors).
+
+**Guidelines for Distractors:**
+
+- Distractors should be plausible but clearly incorrect based on the chapter content.
+- Ensure that distractors are not ambiguous or misleading and do not overlap with the correct answer.
+- Use a variety of distractor types, such as common misconceptions, related but incorrect concepts, or logical errors.
+- Verify that each distractor is distinct from the correct answer and does not inadvertently convey the same meaning.
+
+**Provide the multiple-choice questions as a JSON object in the following structure:**
+
+```json
+{
+  "questions": [
+    {
+      "question": "Question text",
+      "options": {
+        "A": "Option A text",
+        "B": "Option B text",
+        "C": "Option C text",
+        "D": "Option D text"
+      },
+      "correct_answer": "Option letter (A, B, C, or D)",
+      "explanation": "Extended explanation of the correct answer, making sure it is self-contained, focuses on the general concept, and does not rely on specific examples from the chapter."
+    },
+    {
+      "question": "Question text",
+      "options": {
+        "A": "Option A text",
+        "B": "Option B text",
+        "C": "Option C text",
+        "D": "Option D text"
+      },
+      "correct_answer": "Option letter (A, B, C, or D)",
+      "explanation": "Extended explanation of the correct answer, making sure it is self-contained, focuses on the general concept, and does not rely on specific examples from the chapter."
+    }
+  ]
+}
+```
+
+**Example:**
+
+**Chapter Excerpt:**
+
+"In this chapter, we explore the principles of **photosynthesis**, the process by which **plants convert light energy into chemical energy**. We discuss the roles of **chlorophyll**, **chloroplasts**, and the **light-dependent and light-independent reactions**. The chapter also covers how **carbon dioxide** and **water** are utilized to produce **glucose** and **oxygen**."
+
+**Concept:** *Photosynthesis*
+
+**Generated Multiple-Choice Questions (JSON Output):**
+
+```json
+{
+  "questions": [
+    {
+      "question": "What is the primary function of photosynthesis in plants?",
+      "options": {
+        "A": "To convert light energy into chemical energy",
+        "B": "To absorb nutrients from the soil",
+        "C": "To release carbon dioxide into the atmosphere",
+        "D": "To break down glucose into energy"
+      },
+      "correct_answer": "A",
+      "explanation": "The primary function of photosynthesis is to convert light energy into chemical energy, specifically in the form of glucose. This process involves capturing light through chlorophyll and using it to transform carbon dioxide and water into glucose and oxygen, which are essential for the plant’s energy needs."
+    },
+    {
+      "question": "Which pigment is essential for absorbing light during photosynthesis?",
+      "options": {
+        "A": "Hemoglobin",
+        "B": "Chlorophyll",
+        "C": "Keratin",
+        "D": "Melanin"
+      },
+      "correct_answer": "B",
+      "explanation": "Chlorophyll is the essential pigment in plants that absorbs light, particularly in the blue and red wavelengths, which drives the photosynthetic process. Chlorophyll is located within the chloroplasts and plays a crucial role in converting light energy into chemical energy."
+    },
+    {
+      "question": "In which part of the plant cell does photosynthesis primarily occur?",
+      "options": {
+        "A": "Nucleus",
+        "B": "Mitochondria",
+        "C": "Chloroplasts",
+        "D": "Ribosomes"
+      },
+      "correct_answer": "C",
+      "explanation": "Photosynthesis primarily occurs in the chloroplasts, which are specialized organelles found in plant cells. These chloroplasts contain chlorophyll, which captures light energy and facilitates the production of glucose and oxygen through photosynthesis."
+    }
+  ]
+}
+```
+
+---
+
+Now, using the chapter text and concept provided, create similar multiple-choice questions in the specified JSON format. Focus on ensuring the questions are general enough to be understood without relying on specific examples unique to the chapter.
+
+**Chapter Text:**
+
+{{CHAPTER_TEXT}}
+
+**Concept:**
+
+{{CONCEPT}}

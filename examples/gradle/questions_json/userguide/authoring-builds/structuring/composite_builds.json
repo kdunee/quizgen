@@ -1,0 +1,288 @@
+[
+    {
+        "question": "What is a composite build in Gradle?",
+        "options": {
+            "A": "A build that includes other builds as part of its structure",
+            "B": "A build that only contains subprojects",
+            "C": "A build that runs tasks in parallel across multiple projects",
+            "D": "A build that is executed without any dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "A composite build in Gradle is defined as a build that includes other builds, allowing for the combination of independently developed builds. This structure enables developers to work on separate builds while still being able to integrate and test them together."
+    },
+    {
+        "question": "What is the main advantage of using composite builds?",
+        "options": {
+            "A": "They allow for the execution of all tasks in a single build file",
+            "B": "They enable the combination of independently developed builds for easier testing and integration",
+            "C": "They eliminate the need for any configuration files",
+            "D": "They automatically resolve all dependency conflicts"
+        },
+        "correct_answer": "B",
+        "explanation": "The main advantage of using composite builds is that they allow developers to combine independently developed builds, facilitating easier testing and integration. This is particularly useful when working on bug fixes or features that span multiple projects."
+    },
+    {
+        "question": "How does Gradle ensure that projects in a composite build are uniquely identifiable?",
+        "options": {
+            "A": "By using a single project path for all included builds",
+            "B": "By adding additional qualification to each project path from included builds",
+            "C": "By merging all project configurations into one",
+            "D": "By automatically renaming projects to avoid conflicts"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle ensures that projects in a composite build are uniquely identifiable by adding additional qualification to each project path from included builds. This is done to avoid conflicts and ensure that each project can be addressed without ambiguity."
+    },
+    {
+        "question": "What is an included build in the context of composite builds?",
+        "options": {
+            "A": "A build that is executed in isolation without any dependencies",
+            "B": "A build that is part of a composite build and does not share configuration with the composite build",
+            "C": "A build that contains all the tasks of the composite build",
+            "D": "A build that can only be included if it has no dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "An included build is a build that is part of a composite build and operates independently, meaning it does not share any configuration with the composite build or other included builds. This isolation allows for greater flexibility and modularity in managing builds."
+    },
+    {
+        "question": "What is a key characteristic of a composite build in Gradle?",
+        "options": {
+            "A": "It includes entire builds rather than just subprojects.",
+            "B": "It allows for shared configuration among all included builds.",
+            "C": "It requires all included builds to be developed in the same directory.",
+            "D": "It automatically merges all included builds into a single project."
+        },
+        "correct_answer": "A",
+        "explanation": "A composite build in Gradle is characterized by its ability to include entire builds rather than just subprojects. This allows for greater flexibility in managing dependencies and configurations across independently developed builds."
+    },
+    {
+        "question": "What is the purpose of the `--include-build` command-line argument in Gradle?",
+        "options": {
+            "A": "To create a new project from an existing build.",
+            "B": "To turn the executed build into a composite build.",
+            "C": "To remove dependencies from the current build.",
+            "D": "To list all available tasks in the included builds."
+        },
+        "correct_answer": "B",
+        "explanation": "The `--include-build` command-line argument is used to turn the executed build into a composite build. This allows Gradle to substitute dependencies from the included build into the executed build, facilitating the integration of multiple builds."
+    },
+    {
+        "question": "What is an included build in the context of a composite build?",
+        "options": {
+            "A": "A build that shares configuration with the composite build.",
+            "B": "A build that is executed in isolation without shared state.",
+            "C": "A build that must be located in the same directory as the composite build.",
+            "D": "A build that automatically inherits tasks from the composite build."
+        },
+        "correct_answer": "B",
+        "explanation": "An included build in a composite build is executed in isolation without shared state. This means that each included build is configured and executed independently, ensuring that there are no conflicts or shared configurations among them."
+    },
+    {
+        "question": "What is a restriction that must be considered when including builds in a composite build?",
+        "options": {
+            "A": "All included builds must have the same project path.",
+            "B": "Each included build must have a unique build path.",
+            "C": "Included builds cannot define any tasks.",
+            "D": "Included builds must be located on the same server."
+        },
+        "correct_answer": "B",
+        "explanation": "A key restriction when including builds in a composite build is that each included build must have a unique build path. This ensures that projects can be uniquely identified and avoids conflicts in project paths within the composite build."
+    },
+    {
+        "question": "What does build isolation in a composite build ensure?",
+        "options": {
+            "A": "All included builds share the same configuration.",
+            "B": "Each included build is configured and executed independently.",
+            "C": "Included builds can directly modify the main build's settings.",
+            "D": "All tasks from included builds are executed in a single process."
+        },
+        "correct_answer": "B",
+        "explanation": "Build isolation in a composite build ensures that each included build is configured and executed independently. This means that included builds do not share any configuration with the composite build or with each other, allowing for greater flexibility and reducing the risk of conflicts."
+    },
+    {
+        "question": "Why is build isolation important in composite builds?",
+        "options": {
+            "A": "It allows for shared configurations across builds.",
+            "B": "It prevents conflicts between projects with similar names.",
+            "C": "It enables the execution of all tasks in a single build process.",
+            "D": "It allows included builds to inherit properties from the main build."
+        },
+        "correct_answer": "B",
+        "explanation": "Build isolation is important in composite builds because it prevents conflicts between projects that may have similar names or configurations. By ensuring that each included build operates independently, Gradle can maintain unique identifiers for each project, which is crucial for avoiding ambiguity and ensuring correct task execution."
+    },
+    {
+        "question": "What is a consequence of build isolation in composite builds?",
+        "options": {
+            "A": "Included builds can share dependencies with the main build.",
+            "B": "Each included build must have a unique build path.",
+            "C": "Tasks from included builds can modify the main build's tasks.",
+            "D": "All included builds must be developed in the same directory."
+        },
+        "correct_answer": "B",
+        "explanation": "A consequence of build isolation in composite builds is that each included build must have a unique build path. This requirement helps to avoid project path conflicts and ensures that each project can be uniquely identified, which is essential for the proper functioning of the composite build."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in composite builds?",
+        "options": {
+            "A": "To ensure that all included builds share the same configuration settings",
+            "B": "To substitute project dependencies with those from included builds",
+            "C": "To eliminate the need for separate builds altogether",
+            "D": "To automatically publish all included builds to a repository"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of dependency management in composite builds is to substitute project dependencies with those from included builds. This allows for a more flexible and modular approach to managing dependencies across multiple builds, ensuring that the correct versions of libraries and components are used without requiring direct dependencies between the builds."
+    },
+    {
+        "question": "What must be ensured for included builds to avoid conflicts in a composite build?",
+        "options": {
+            "A": "Each included build must have a unique build path",
+            "B": "All included builds must be developed in the same directory",
+            "C": "Included builds must share the same project path",
+            "D": "Each included build must have the same version number"
+        },
+        "correct_answer": "A",
+        "explanation": "To avoid conflicts in a composite build, it is essential that each included build has a unique build path. This ensures that projects can be uniquely identified and accessed without conflicts, allowing for smooth integration and execution of tasks across the composite build."
+    },
+    {
+        "question": "How can a composite build declare task dependencies on included builds?",
+        "options": {
+            "A": "By directly referencing the tasks in the main build's configuration",
+            "B": "By using the Gradle API to access included builds and their tasks",
+            "C": "By modifying the settings.gradle file to include task definitions",
+            "D": "By creating a separate build for each task dependency"
+        },
+        "correct_answer": "B",
+        "explanation": "A composite build can declare task dependencies on included builds by using the Gradle API to access the included builds and their tasks. This allows for a structured way to manage task execution across different builds while maintaining their isolation."
+    },
+    {
+        "question": "What is a key limitation of composite builds regarding included builds?",
+        "options": {
+            "A": "They cannot include builds that define Gradle plugins",
+            "B": "They do not allow for task execution from included builds",
+            "C": "They may conflict when multiple composite builds include the same build",
+            "D": "They require all included builds to be in the same programming language"
+        },
+        "correct_answer": "C",
+        "explanation": "A key limitation of composite builds is that they may conflict when multiple composite builds include the same build. This can lead to issues when running builds in parallel, as Gradle does not share the project lock of a shared composite build between invocations, preventing concurrent execution."
+    },
+    {
+        "question": "What is the primary purpose of executing tasks in a composite build?",
+        "options": {
+            "A": "To run tasks from included builds as if they were part of a single build",
+            "B": "To compile all source files in the main build only",
+            "C": "To isolate tasks from being executed in parallel",
+            "D": "To ensure that all tasks are executed in a random order"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of executing tasks in a composite build is to run tasks from included builds as if they were part of a single build. This allows for seamless integration and execution of tasks across multiple builds, ensuring that dependencies are resolved and executed correctly."
+    },
+    {
+        "question": "How can tasks from included builds be executed in a composite build?",
+        "options": {
+            "A": "By using a special command that only works for the main build",
+            "B": "By calling tasks using their fully qualified path",
+            "C": "By manually copying task definitions into the main build",
+            "D": "By executing tasks in a specific order defined by the user"
+        },
+        "correct_answer": "B",
+        "explanation": "Tasks from included builds can be executed in a composite build by calling them using their fully qualified path. This allows Gradle to identify and execute the correct task, including any dependencies that need to be resolved beforehand."
+    },
+    {
+        "question": "What is a key restriction when declaring dependencies on tasks in included builds?",
+        "options": {
+            "A": "Included builds can directly share task dependencies with each other",
+            "B": "Tasks in included builds cannot declare direct dependencies on the main build",
+            "C": "Tasks must be executed in the order they are declared in the build file",
+            "D": "All tasks must be executed in parallel to improve performance"
+        },
+        "correct_answer": "B",
+        "explanation": "A key restriction when declaring dependencies on tasks in included builds is that tasks in included builds cannot declare direct dependencies on the main build. This isolation ensures that each build remains independent, while still allowing the composite build to manage task dependencies effectively."
+    },
+    {
+        "question": "What happens when a task from an included build is executed in a composite build?",
+        "options": {
+            "A": "Only the task itself is executed without any dependencies",
+            "B": "All tasks required to build dependency artifacts from other included builds are executed",
+            "C": "The task is ignored if it belongs to an included build",
+            "D": "The task is executed only if it is marked as a main build task"
+        },
+        "correct_answer": "B",
+        "explanation": "When a task from an included build is executed in a composite build, all tasks required to build dependency artifacts from other included builds are also executed. This ensures that all necessary dependencies are resolved and built before the main task is executed, maintaining the integrity of the build process."
+    },
+    {
+        "question": "What is a key benefit of IDE integration in composite builds?",
+        "options": {
+            "A": "It allows for the automatic generation of build scripts.",
+            "B": "It enables easy development of sources from separate Gradle builds together.",
+            "C": "It eliminates the need for version control systems.",
+            "D": "It ensures that all builds are executed in a single thread."
+        },
+        "correct_answer": "B",
+        "explanation": "IDE integration in composite builds allows developers to easily work on sources from separate Gradle builds together. This integration facilitates cross-build navigation and refactoring, making it simpler to manage dependencies and collaborate on projects that are structured as composite builds."
+    },
+    {
+        "question": "How does IDE integration affect the structure of projects in a composite build?",
+        "options": {
+            "A": "Each included build is treated as a separate project with no shared resources.",
+            "B": "Each subproject is included as an IntelliJ IDEA Module or Eclipse Project.",
+            "C": "It merges all projects into a single module to simplify management.",
+            "D": "It requires all projects to be in the same directory for proper integration."
+        },
+        "correct_answer": "B",
+        "explanation": "In IDE integration for composite builds, each subproject is included as an IntelliJ IDEA Module or Eclipse Project. This structure allows for better organization and management of the projects, enabling developers to navigate and refactor code across different builds seamlessly."
+    },
+    {
+        "question": "What is the primary purpose of importing a composite build into an IDE?",
+        "options": {
+            "A": "To compile all projects into a single executable.",
+            "B": "To facilitate the development of multiple independent builds together.",
+            "C": "To enforce strict version control across all builds.",
+            "D": "To automatically generate documentation for each build."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of importing a composite build into an IDE is to facilitate the development of multiple independent builds together. This allows developers to work on related projects in a cohesive environment, improving collaboration and efficiency in managing dependencies and code changes."
+    },
+    {
+        "question": "What is the primary purpose of a composite build in Gradle?",
+        "options": {
+            "A": "To combine multiple independent builds into a single build environment",
+            "B": "To create a single executable from multiple source files",
+            "C": "To manage dependencies for a single project",
+            "D": "To optimize the performance of a single build"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a composite build in Gradle is to combine multiple independent builds into a single build environment. This allows developers to work on separate builds together, facilitating testing and integration without modifying the individual builds."
+    },
+    {
+        "question": "How does Gradle ensure that projects in a composite build are uniquely identifiable?",
+        "options": {
+            "A": "By using a unique project name for each build",
+            "B": "By adding a build-tree path to each project path",
+            "C": "By requiring all projects to have the same directory structure",
+            "D": "By limiting the number of included builds to one"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle ensures that projects in a composite build are uniquely identifiable by adding a build-tree path to each project path. This qualification helps avoid conflicts between projects that may have the same name but belong to different builds."
+    },
+    {
+        "question": "What is a key restriction when including builds in a composite build?",
+        "options": {
+            "A": "Included builds must share the same configuration settings",
+            "B": "Each included build must have a unique build path",
+            "C": "All included builds must be located in the same directory",
+            "D": "Included builds cannot have any dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "A key restriction when including builds in a composite build is that each included build must have a unique build path. This requirement helps prevent conflicts and ensures that each project can be uniquely identified within the composite structure."
+    },
+    {
+        "question": "What is the role of the `--include-build` command-line argument in Gradle?",
+        "options": {
+            "A": "To create a new build from existing builds",
+            "B": "To execute tasks in a specific included build",
+            "C": "To turn the executed build into a composite build",
+            "D": "To list all available builds in the project"
+        },
+        "correct_answer": "C",
+        "explanation": "The `--include-build` command-line argument in Gradle is used to turn the executed build into a composite build. This allows dependencies from the included build to be substituted into the executed build, facilitating integration between separate builds."
+    }
+]

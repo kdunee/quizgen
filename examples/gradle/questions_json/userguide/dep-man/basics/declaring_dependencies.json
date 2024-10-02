@@ -1,0 +1,354 @@
+[
+    {
+        "question": "What is the primary purpose of dependency management in Gradle?",
+        "options": {
+            "A": "To specify libraries or files that a project depends on",
+            "B": "To compile source code into executable files",
+            "C": "To manage user permissions for project access",
+            "D": "To optimize the performance of the build process"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management in Gradle is to specify libraries or files that a project depends on. This allows developers to manage external libraries, local files, and other project dependencies effectively, ensuring that all necessary components are included in the build process."
+    },
+    {
+        "question": "Which of the following best describes a 'producer' in the context of dependency management?",
+        "options": {
+            "A": "A project that consumes libraries from other projects",
+            "B": "A library that is created for others to use",
+            "C": "A configuration that declares dependencies",
+            "D": "A tool that compiles source code"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of dependency management, a 'producer' refers to a library or module that is created for others to use. When you build a library, you act as a producer, creating artifacts that will be consumed by other projects, which are referred to as consumers."
+    },
+    {
+        "question": "What type of dependency allows you to declare dependencies on other projects within the same Gradle build?",
+        "options": {
+            "A": "Module dependencies",
+            "B": "Project dependencies",
+            "C": "File dependencies",
+            "D": "Transitive dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Project dependencies allow you to declare dependencies on other projects within the same Gradle build. This is particularly useful in multi-project builds where multiple projects are part of a larger Gradle project, enabling better organization and management of dependencies."
+    },
+    {
+        "question": "What is a key characteristic of file dependencies in Gradle?",
+        "options": {
+            "A": "They automatically include transitive dependencies",
+            "B": "They are recommended over project dependencies",
+            "C": "They represent files without any attached metadata",
+            "D": "They are only used for external libraries"
+        },
+        "correct_answer": "C",
+        "explanation": "File dependencies in Gradle represent files without any attached metadata, such as information about transitive dependencies, origin, or author. This means that while they can be used to include necessary files, they lack the additional context that other dependency types provide, making them less preferable in many cases."
+    },
+    {
+        "question": "In the context of dependency management, what role does a producer play?",
+        "options": {
+            "A": "A producer creates artifacts that are used by others.",
+            "B": "A producer consumes artifacts from other projects.",
+            "C": "A producer manages the dependencies of a project.",
+            "D": "A producer defines the configuration for dependencies."
+        },
+        "correct_answer": "A",
+        "explanation": "In dependency management, a producer is responsible for creating artifacts, such as libraries or modules, that can be utilized by other projects or consumers. This role is essential in the software development lifecycle, as it facilitates the sharing and reuse of code."
+    },
+    {
+        "question": "What is the primary function of a consumer in dependency management?",
+        "options": {
+            "A": "To create new libraries for others to use.",
+            "B": "To declare dependencies on existing artifacts.",
+            "C": "To manage the build process of a project.",
+            "D": "To define the scope of dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "A consumer in dependency management primarily declares dependencies on existing artifacts, which can include libraries or modules produced by others. This allows the consumer to utilize the functionality provided by these artifacts in their own projects."
+    },
+    {
+        "question": "Which of the following best describes the relationship between producers and consumers?",
+        "options": {
+            "A": "Producers and consumers are independent and do not interact.",
+            "B": "Producers create artifacts that consumers depend on.",
+            "C": "Consumers create artifacts that producers use.",
+            "D": "Producers and consumers are the same entity in dependency management."
+        },
+        "correct_answer": "B",
+        "explanation": "The relationship between producers and consumers in dependency management is that producers create artifacts, such as libraries or modules, which consumers then depend on to build their projects. This interaction is fundamental to the structure of software development, enabling collaboration and reuse of code."
+    },
+    {
+        "question": "When building a library, which role are you fulfilling?",
+        "options": {
+            "A": "Consumer",
+            "B": "Producer",
+            "C": "Manager",
+            "D": "Coordinator"
+        },
+        "correct_answer": "B",
+        "explanation": "When you are building a library, you are acting as a producer. In this role, you create artifacts that can be consumed by other projects, thereby contributing to the ecosystem of shared code and resources in software development."
+    },
+    {
+        "question": "What are module dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that refer to a module in a repository",
+            "B": "Dependencies that are only used during testing",
+            "C": "Dependencies that are declared for local files only",
+            "D": "Dependencies that are created by the consumer"
+        },
+        "correct_answer": "A",
+        "explanation": "Module dependencies in Gradle refer to dependencies that point to a module in a repository. They are the most common type of dependency and are essential for managing external libraries that your project relies on."
+    },
+    {
+        "question": "What is the primary purpose of project dependencies in Gradle?",
+        "options": {
+            "A": "To declare dependencies on external libraries",
+            "B": "To declare dependencies on other projects within the same build",
+            "C": "To manage file dependencies from a shared drive",
+            "D": "To specify the version of a library used in the project"
+        },
+        "correct_answer": "B",
+        "explanation": "Project dependencies allow you to declare dependencies on other projects within the same Gradle build. This is particularly useful in multi-project builds where different projects may need to interact with each other."
+    },
+    {
+        "question": "Which type of dependency is recommended over file dependencies?",
+        "options": {
+            "A": "Module dependencies",
+            "B": "Project dependencies",
+            "C": "File dependencies",
+            "D": "Both A and B"
+        },
+        "correct_answer": "D",
+        "explanation": "It is recommended to use project dependencies or module dependencies over file dependencies. This is because project and module dependencies provide better management and resolution of transitive dependencies, while file dependencies lack metadata and can lead to issues in dependency management."
+    },
+    {
+        "question": "What is a key characteristic of file dependencies in Gradle?",
+        "options": {
+            "A": "They are always hosted on a remote repository",
+            "B": "They do not include metadata about transitive dependencies",
+            "C": "They are automatically resolved by Gradle",
+            "D": "They can only be used in single-project builds"
+        },
+        "correct_answer": "B",
+        "explanation": "File dependencies are characterized by the absence of metadata, meaning they do not contain information about transitive dependencies, origin, or author. This can make managing dependencies more challenging compared to module or project dependencies."
+    },
+    {
+        "question": "What are module dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that refer to a module in a repository",
+            "B": "Dependencies that are only used during testing",
+            "C": "Dependencies that are declared for local files only",
+            "D": "Dependencies that do not require any version specification"
+        },
+        "correct_answer": "A",
+        "explanation": "Module dependencies in Gradle refer to dependencies that point to a module located in a repository. They are the most common type of dependency and are essential for managing external libraries and components that your project relies on."
+    },
+    {
+        "question": "Which of the following best describes the purpose of module dependencies?",
+        "options": {
+            "A": "To allow projects to reference other projects within the same build",
+            "B": "To specify external libraries that a project needs to function",
+            "C": "To manage files stored on a shared drive",
+            "D": "To define the scope of test-specific dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of module dependencies is to specify external libraries that a project needs to function. They enable the inclusion of pre-built modules from repositories, ensuring that the project has access to the necessary code and resources."
+    },
+    {
+        "question": "How are module dependencies typically declared in a Gradle build script?",
+        "options": {
+            "A": "Using the 'repositories' block",
+            "B": "Using the 'dependencies' block with configuration and notation",
+            "C": "By listing them in the 'settings.gradle' file",
+            "D": "By creating a separate configuration file"
+        },
+        "correct_answer": "B",
+        "explanation": "Module dependencies are declared in a Gradle build script using the 'dependencies' block, where you specify the configuration name followed by the dependency notation, which includes the group ID, artifact ID, and version. This structure allows Gradle to manage and resolve the dependencies effectively."
+    },
+    {
+        "question": "What is the primary purpose of project dependencies in Gradle?",
+        "options": {
+            "A": "To declare dependencies on external libraries hosted in repositories",
+            "B": "To allow a project to depend on other projects within the same build",
+            "C": "To manage the versioning of external dependencies",
+            "D": "To specify the location of shared files for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of project dependencies in Gradle is to allow a project to depend on other projects within the same build. This is particularly useful in multi-project builds where different projects may need to interact with each other, enabling better organization and modularization of code."
+    },
+    {
+        "question": "How are project dependencies declared in a Gradle build script?",
+        "options": {
+            "A": "By specifying the dependency notation with group ID and artifact ID",
+            "B": "By referencing the project path of the dependent project",
+            "C": "By listing the external libraries in a separate configuration file",
+            "D": "By using a command line tool to generate dependency graphs"
+        },
+        "correct_answer": "B",
+        "explanation": "Project dependencies are declared in a Gradle build script by referencing the project path of the dependent project. This allows Gradle to understand the relationship between projects and manage their dependencies effectively within a multi-project build."
+    },
+    {
+        "question": "Which of the following statements is true regarding project dependencies?",
+        "options": {
+            "A": "Project dependencies can only be declared for external libraries.",
+            "B": "Project dependencies are not suitable for multi-project builds.",
+            "C": "Project dependencies allow for modularization within a single Gradle build.",
+            "D": "Project dependencies require additional configuration files to function."
+        },
+        "correct_answer": "C",
+        "explanation": "Project dependencies allow for modularization within a single Gradle build. They enable different projects to be developed and maintained separately while still being able to reference and use each other's code, which is essential for organizing complex applications."
+    },
+    {
+        "question": "What are file dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that are hosted on a shared drive or version control alongside the project source code",
+            "B": "Dependencies that are automatically resolved from a remote repository",
+            "C": "Dependencies that are only used during the testing phase of a project",
+            "D": "Dependencies that are created by compiling source code into binary files"
+        },
+        "correct_answer": "A",
+        "explanation": "File dependencies in Gradle refer to files that are hosted on a shared drive or checked into version control alongside the project source code. Unlike module or project dependencies, file dependencies do not have associated metadata, which can limit their usability in dependency management."
+    },
+    {
+        "question": "Why is it recommended to use project or external dependencies over file dependencies?",
+        "options": {
+            "A": "File dependencies are easier to manage than project dependencies",
+            "B": "Project and external dependencies provide better metadata and transitive dependency management",
+            "C": "File dependencies are automatically included in all configurations",
+            "D": "Project dependencies do not require any configuration in the build file"
+        },
+        "correct_answer": "B",
+        "explanation": "It is recommended to use project or external dependencies over file dependencies because project and external dependencies come with better metadata, which helps in managing transitive dependencies and resolving conflicts. File dependencies lack this metadata, making them less efficient for dependency management."
+    },
+    {
+        "question": "How do you add file dependencies in a Gradle build script?",
+        "options": {
+            "A": "By using the `dependencies` block with a file collection",
+            "B": "By declaring them in the `repositories` block",
+            "C": "By specifying them in the `plugins` block",
+            "D": "By using the `apply` method in the build script"
+        },
+        "correct_answer": "A",
+        "explanation": "To add file dependencies in a Gradle build script, you use the `dependencies` block and pass a file collection as a dependency. This allows you to specify files directly without relying on a repository, but it is generally less preferred compared to other dependency types."
+    },
+    {
+        "question": "What are transitive dependencies in the context of dependency management?",
+        "options": {
+            "A": "Dependencies that are directly declared in a project.",
+            "B": "Dependencies that are required by other dependencies.",
+            "C": "Dependencies that are only used during testing.",
+            "D": "Dependencies that are manually managed by the developer."
+        },
+        "correct_answer": "B",
+        "explanation": "Transitive dependencies are those that are required by other dependencies. When a project depends on a library, that library may have its own dependencies, which are automatically included in the project. This allows for easier management of complex dependency trees without needing to declare every single dependency manually."
+    },
+    {
+        "question": "Why is it important to understand transitive dependencies when managing a project?",
+        "options": {
+            "A": "They can lead to version conflicts and missing dependencies.",
+            "B": "They are the only type of dependencies that can be declared.",
+            "C": "They are not relevant in multi-project builds.",
+            "D": "They can be ignored if the main dependencies are correctly declared."
+        },
+        "correct_answer": "A",
+        "explanation": "Understanding transitive dependencies is crucial because they can lead to version conflicts and missing dependencies if not managed properly. When multiple libraries depend on different versions of the same dependency, it can create issues that need to be resolved to ensure the project builds and runs correctly."
+    },
+    {
+        "question": "How does Gradle handle transitive dependencies by default?",
+        "options": {
+            "A": "It ignores them completely.",
+            "B": "It automatically includes them in the project.",
+            "C": "It requires manual declaration for each transitive dependency.",
+            "D": "It only includes them if they are explicitly marked as required."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle automatically includes transitive dependencies, which are dependencies of the dependencies declared in a project. This feature simplifies dependency management by ensuring that all necessary libraries are available without requiring the developer to declare each one individually."
+    },
+    {
+        "question": "What is the purpose of dependency configurations in Gradle?",
+        "options": {
+            "A": "To specify the scope and usage of dependencies in a project",
+            "B": "To define the programming language used in the project",
+            "C": "To manage the version control of the project files",
+            "D": "To create user interfaces for the project"
+        },
+        "correct_answer": "A",
+        "explanation": "Dependency configurations in Gradle are used to specify the scope and usage of dependencies within a project. They help determine when and how dependencies are included in the build process, such as during compilation, testing, or runtime."
+    },
+    {
+        "question": "Which of the following is NOT a type of dependency configuration in Gradle?",
+        "options": {
+            "A": "implementation",
+            "B": "compileOnly",
+            "C": "runtimeOnly",
+            "D": "executeOnly"
+        },
+        "correct_answer": "D",
+        "explanation": "The 'executeOnly' configuration is not a recognized type of dependency configuration in Gradle. The valid configurations include 'implementation', 'compileOnly', and 'runtimeOnly', which define how dependencies are used in different phases of the build process."
+    },
+    {
+        "question": "How does Gradle handle transitive dependencies?",
+        "options": {
+            "A": "It ignores them completely",
+            "B": "It automatically includes them when a dependency is declared",
+            "C": "It requires manual declaration for each transitive dependency",
+            "D": "It only includes them for test configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle automatically includes transitive dependencies, which are dependencies of the declared dependencies. This means that when you declare a dependency, Gradle will also include any libraries that the declared dependency relies on, simplifying dependency management."
+    },
+    {
+        "question": "What is a common use case for project dependencies in Gradle?",
+        "options": {
+            "A": "To declare dependencies on external libraries only",
+            "B": "To reference other projects within the same multi-project build",
+            "C": "To manage user permissions in the project",
+            "D": "To optimize the performance of the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "Project dependencies in Gradle are commonly used to reference other projects within the same multi-project build. This allows for better organization and management of related projects, enabling them to share code and resources effectively."
+    },
+    {
+        "question": "What is the primary purpose of dependency resolution in Gradle?",
+        "options": {
+            "A": "To specify the order of project execution",
+            "B": "To manage and resolve libraries or files that a project depends on",
+            "C": "To compile source code into executable files",
+            "D": "To optimize the performance of the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of dependency resolution in Gradle is to manage and resolve the libraries or files that a project depends on. This process ensures that the correct versions of dependencies are included in the build, allowing the project to function as intended."
+    },
+    {
+        "question": "Which of the following best describes transitive dependencies?",
+        "options": {
+            "A": "Dependencies that are declared directly in the build script",
+            "B": "Dependencies that are required by other dependencies",
+            "C": "Dependencies that are only used during testing",
+            "D": "Dependencies that are not included in the final build"
+        },
+        "correct_answer": "B",
+        "explanation": "Transitive dependencies are those that are required by other dependencies. When a project depends on a library, it may also require additional libraries that the first library depends on, and these are considered transitive dependencies. Gradle automatically includes these in the resolution process."
+    },
+    {
+        "question": "What is a module dependency in Gradle?",
+        "options": {
+            "A": "A dependency that refers to a file on the local filesystem",
+            "B": "A dependency that refers to a module in a repository",
+            "C": "A dependency that is only used for testing purposes",
+            "D": "A dependency that is declared in a different project"
+        },
+        "correct_answer": "B",
+        "explanation": "A module dependency in Gradle refers to a dependency that points to a module in a repository. This is the most common type of dependency and allows projects to utilize external libraries hosted in repositories."
+    },
+    {
+        "question": "What is the role of the 'dependencies' block in a Gradle build script?",
+        "options": {
+            "A": "To define the main class of the application",
+            "B": "To specify the dependencies required for the project",
+            "C": "To configure the build output directory",
+            "D": "To set the Java version for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'dependencies' block in a Gradle build script is used to specify the dependencies required for the project. This includes defining external libraries, local files, or other projects that the current project relies on to function correctly."
+    }
+]

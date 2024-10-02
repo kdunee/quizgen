@@ -1,0 +1,343 @@
+[
+    {
+        "question": "What is the primary purpose of shared build services in Gradle?",
+        "options": {
+            "A": "To allow tasks to share state or resources",
+            "B": "To compile source code into bytecode",
+            "C": "To manage project dependencies",
+            "D": "To execute tasks in parallel without constraints"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of shared build services in Gradle is to allow tasks to share state or resources. This can include sharing caches of pre-computed values or utilizing common web services or database instances, which enhances efficiency and reduces redundancy in build processes."
+    },
+    {
+        "question": "How does Gradle manage the lifecycle of a build service?",
+        "options": {
+            "A": "By creating the service instance at the start of the build",
+            "B": "By creating the service instance only when required",
+            "C": "By requiring manual cleanup of service instances",
+            "D": "By creating multiple instances for each task"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle manages the lifecycle of a build service by creating the service instance only when it is required. This on-demand creation helps optimize resource usage, as the service is not instantiated until a task that needs it is executed."
+    },
+    {
+        "question": "What must a build service implementation do to ensure it can be used concurrently by multiple tasks?",
+        "options": {
+            "A": "Implement the Runnable interface",
+            "B": "Be thread-safe",
+            "C": "Use a single instance for all tasks",
+            "D": "Avoid using any shared resources"
+        },
+        "correct_answer": "B",
+        "explanation": "A build service implementation must be thread-safe to ensure it can be used concurrently by multiple tasks. This means that the service should handle simultaneous access correctly to prevent data corruption or inconsistent states."
+    },
+    {
+        "question": "What is the role of the `@ServiceReference` annotation in using shared build services?",
+        "options": {
+            "A": "It allows the service to be registered with a specific name",
+            "B": "It automatically assigns the service to the task property without explicit declaration",
+            "C": "It restricts the number of tasks that can use the service concurrently",
+            "D": "It requires the service to be created at build start"
+        },
+        "correct_answer": "B",
+        "explanation": "The `@ServiceReference` annotation allows the shared build service to be automatically assigned to the task property when the task is created, eliminating the need for explicit declaration of the association between the task and the service. This simplifies the process of using shared services in Gradle."
+    },
+    {
+        "question": "What is the primary purpose of a build service in Gradle?",
+        "options": {
+            "A": "To manage the lifecycle of tasks and their execution",
+            "B": "To hold state or resources that can be shared among tasks",
+            "C": "To compile source code into executable files",
+            "D": "To define the dependencies of a project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a build service in Gradle is to hold state or resources that can be shared among tasks. This allows tasks to access shared data or services, improving efficiency and reducing redundancy in build processes."
+    },
+    {
+        "question": "How does Gradle manage the lifecycle of a build service?",
+        "options": {
+            "A": "By creating the service instance at the start of the build",
+            "B": "By creating the service instance only when required and cleaning it up afterward",
+            "C": "By allowing users to manually manage the service lifecycle",
+            "D": "By automatically deleting the service instance after each task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle manages the lifecycle of a build service by creating the service instance only when it is required and cleaning it up when it is no longer needed. This on-demand creation helps optimize resource usage during the build process."
+    },
+    {
+        "question": "What must a build service implementation do to ensure it can be used concurrently by multiple tasks?",
+        "options": {
+            "A": "Implement the Runnable interface",
+            "B": "Be designed to be thread-safe",
+            "C": "Use a single instance for all tasks",
+            "D": "Limit the number of tasks that can access it to one"
+        },
+        "correct_answer": "B",
+        "explanation": "A build service implementation must be designed to be thread-safe to ensure it can be used concurrently by multiple tasks. This is crucial because multiple tasks may attempt to access the service at the same time, and thread safety prevents data corruption or unexpected behavior."
+    },
+    {
+        "question": "What annotation is used to indicate that a task property is associated with a shared build service?",
+        "options": {
+            "A": "@ServiceReference",
+            "B": "@SharedService",
+            "C": "@BuildService",
+            "D": "@TaskReference"
+        },
+        "correct_answer": "A",
+        "explanation": "The @ServiceReference annotation is used to indicate that a task property is associated with a shared build service. This annotation simplifies the process of linking the task to the service, allowing Gradle to manage the service's lifecycle automatically."
+    },
+    {
+        "question": "What is the primary purpose of a build service in Gradle?",
+        "options": {
+            "A": "To manage the lifecycle of tasks and their execution",
+            "B": "To hold state or resources that can be shared among tasks",
+            "C": "To compile source code into executable files",
+            "D": "To provide a user interface for build configuration"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a build service in Gradle is to hold state or resources that can be shared among tasks. This allows tasks to access shared data or services, improving efficiency and reducing redundancy in build processes."
+    },
+    {
+        "question": "How does Gradle manage the lifecycle of a build service?",
+        "options": {
+            "A": "By creating the service instance at the start of the build",
+            "B": "By creating the service instance only when required and cleaning it up afterward",
+            "C": "By allowing users to manually control the service lifecycle",
+            "D": "By automatically deleting the service after each task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle manages the lifecycle of a build service by creating the service instance only when it is required and cleaning it up when it is no longer needed. This on-demand creation helps optimize resource usage during the build process."
+    },
+    {
+        "question": "What must a build service implementation do to ensure it can be used concurrently by multiple tasks?",
+        "options": {
+            "A": "Implement the Runnable interface",
+            "B": "Be designed to be thread-safe",
+            "C": "Use a single instance for all tasks",
+            "D": "Limit the number of tasks that can access it to one"
+        },
+        "correct_answer": "B",
+        "explanation": "A build service implementation must be designed to be thread-safe to ensure it can be used concurrently by multiple tasks. This is crucial because multiple tasks may attempt to access the service at the same time, and thread safety prevents conflicts and data corruption."
+    },
+    {
+        "question": "What annotation is used to indicate that a task property is associated with a shared build service?",
+        "options": {
+            "A": "@ServiceReference",
+            "B": "@SharedService",
+            "C": "@BuildService",
+            "D": "@TaskReference"
+        },
+        "correct_answer": "A",
+        "explanation": "The @ServiceReference annotation is used to indicate that a task property is associated with a shared build service. This annotation simplifies the process of linking the task to the service, allowing Gradle to manage the service lifecycle automatically."
+    },
+    {
+        "question": "What is the primary purpose of concurrency control in build services?",
+        "options": {
+            "A": "To ensure that multiple tasks can use the service simultaneously without conflicts",
+            "B": "To limit the number of tasks that can access the service at the same time",
+            "C": "To allow tasks to run in isolation from each other",
+            "D": "To increase the speed of task execution by running them in parallel"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of concurrency control in build services is to limit the number of tasks that can access the service at the same time. This is important to prevent conflicts and ensure that the service operates correctly when multiple tasks are trying to use it concurrently."
+    },
+    {
+        "question": "How can you constrain concurrent execution of a build service?",
+        "options": {
+            "A": "By implementing the `AutoCloseable` interface in the service",
+            "B": "By using the `getMaxParallelUsages()` method when registering the service",
+            "C": "By annotating the service property with `@ServiceReference`",
+            "D": "By defining the service as a singleton in the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "You can constrain concurrent execution of a build service by using the `getMaxParallelUsages()` method when registering the service. This method allows you to specify the maximum number of tasks that can use the service concurrently, helping to manage resource usage effectively."
+    },
+    {
+        "question": "What happens if the `getMaxParallelUsages()` property has no value when registering a build service?",
+        "options": {
+            "A": "Gradle will allow unlimited concurrent access to the service",
+            "B": "Gradle will block all tasks from using the service",
+            "C": "Gradle will throw an error during the build process",
+            "D": "Gradle will automatically set a default limit of 5 concurrent tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "If the `getMaxParallelUsages()` property has no value when registering a build service, Gradle will allow unlimited concurrent access to the service. This means that any number of tasks can use the service at the same time, which may lead to potential conflicts if not managed properly."
+    },
+    {
+        "question": "What is a requirement for the consuming task property to enforce concurrency constraints?",
+        "options": {
+            "A": "The property must be annotated with `@Internal`",
+            "B": "The property must be a static variable",
+            "C": "The property must implement the `BuildService` interface",
+            "D": "The property must be defined in a separate configuration file"
+        },
+        "correct_answer": "A",
+        "explanation": "For the consuming task property to enforce concurrency constraints, it must be annotated with `@Internal`. This annotation indicates that the property is internal to the task and allows Gradle to manage the service lifecycle and usage constraints effectively."
+    },
+    {
+        "question": "What is the purpose of build service parameters in Gradle?",
+        "options": {
+            "A": "To hold configuration data that can be injected into build services",
+            "B": "To define the lifecycle of a Gradle build",
+            "C": "To manage the execution order of tasks in a build",
+            "D": "To store the results of task execution"
+        },
+        "correct_answer": "A",
+        "explanation": "Build service parameters are used to hold configuration data that can be injected into build services when they are created. This allows tasks to access specific settings or values that are necessary for their execution, enhancing the flexibility and reusability of build services."
+    },
+    {
+        "question": "Which of the following must a parameters type implement to be used with a build service?",
+        "options": {
+            "A": "BuildService",
+            "B": "BuildServiceParameters",
+            "C": "Task",
+            "D": "ServiceRegistry"
+        },
+        "correct_answer": "B",
+        "explanation": "A parameters type must implement the BuildServiceParameters interface to be used with a build service. This ensures that the parameters can be properly injected into the service instance when it is created, allowing the service to utilize the provided configuration."
+    },
+    {
+        "question": "What happens if a build service does not require any parameters?",
+        "options": {
+            "A": "It cannot be registered with Gradle.",
+            "B": "It must still implement BuildServiceParameters.",
+            "C": "BuildServiceParameters.None can be used as the parameter type.",
+            "D": "It will not be thread-safe."
+        },
+        "correct_answer": "C",
+        "explanation": "If a build service does not require any parameters, you can use BuildServiceParameters.None as the type of parameter. This indicates that the service does not need any additional configuration data, simplifying its implementation."
+    },
+    {
+        "question": "How can a build service access its parameters once created?",
+        "options": {
+            "A": "By calling the getParameters() method directly",
+            "B": "By using the parameters passed to its constructor",
+            "C": "By calling this.getParameters() within the service implementation",
+            "D": "By accessing a global configuration object"
+        },
+        "correct_answer": "C",
+        "explanation": "A build service can access its parameters by calling this.getParameters() within the service implementation. This method provides access to the injected parameters, allowing the service to utilize the configuration data as needed during its operation."
+    },
+    {
+        "question": "Why is thread safety important for a build service implementation?",
+        "options": {
+            "A": "Because it allows multiple tasks to use the service concurrently without issues.",
+            "B": "Because it ensures that the service can only be used by one task at a time.",
+            "C": "Because it prevents the service from being registered multiple times.",
+            "D": "Because it allows the service to be used during configuration time."
+        },
+        "correct_answer": "A",
+        "explanation": "Thread safety is crucial for a build service implementation because it allows multiple tasks to access and use the service concurrently without causing data corruption or unexpected behavior. This is particularly important in a build environment where tasks may run in parallel."
+    },
+    {
+        "question": "What happens if a build service is not thread-safe?",
+        "options": {
+            "A": "It can lead to data corruption or inconsistent results when accessed by multiple tasks.",
+            "B": "It will automatically be restricted to single-threaded access.",
+            "C": "It will not be able to receive events from task execution.",
+            "D": "It will be ignored by Gradle during the build process."
+        },
+        "correct_answer": "A",
+        "explanation": "If a build service is not thread-safe, it can lead to data corruption or inconsistent results when accessed by multiple tasks simultaneously. This can cause unpredictable behavior in the build process, making it essential for build services to be designed with thread safety in mind."
+    },
+    {
+        "question": "What is a recommended practice for ensuring thread safety in a build service?",
+        "options": {
+            "A": "Implement synchronization mechanisms to control access to shared resources.",
+            "B": "Allow all tasks to access the service without any restrictions.",
+            "C": "Use the service only during configuration time.",
+            "D": "Avoid using any parameters in the service implementation."
+        },
+        "correct_answer": "A",
+        "explanation": "A recommended practice for ensuring thread safety in a build service is to implement synchronization mechanisms that control access to shared resources. This helps prevent race conditions and ensures that the service behaves predictably when accessed by multiple tasks concurrently."
+    },
+    {
+        "question": "What is the primary purpose of registering a build service in Gradle?",
+        "options": {
+            "A": "To create a service instance immediately for all tasks",
+            "B": "To allow tasks to share state or resources",
+            "C": "To ensure that all tasks run in parallel without constraints",
+            "D": "To define the lifecycle of individual tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of registering a build service in Gradle is to allow tasks to share state or resources. This enables efficient resource management and coordination among tasks, ensuring that they can access shared data or services as needed during the build process."
+    },
+    {
+        "question": "What happens when a build service is registered but not used by any tasks during a build?",
+        "options": {
+            "A": "The service instance is created immediately",
+            "B": "The service instance is created on demand when first used",
+            "C": "The service is discarded and cannot be used later",
+            "D": "The service is automatically assigned to all tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "When a build service is registered but not used by any tasks during a build, the service instance is created on demand when the first task that requires it is executed. This lazy instantiation helps optimize resource usage and performance."
+    },
+    {
+        "question": "Which annotation is used to indicate that a task property is associated with a shared build service?",
+        "options": {
+            "A": "@ServiceReference",
+            "B": "@SharedService",
+            "C": "@BuildService",
+            "D": "@TaskReference"
+        },
+        "correct_answer": "A",
+        "explanation": "The @ServiceReference annotation is used to indicate that a task property is associated with a shared build service. This annotation simplifies the process of linking the task to the service, allowing Gradle to manage the service lifecycle automatically."
+    },
+    {
+        "question": "What is a key requirement for a build service implementation in Gradle?",
+        "options": {
+            "A": "It must be a singleton instance",
+            "B": "It must be thread-safe",
+            "C": "It must be registered with each task individually",
+            "D": "It must not take any parameters"
+        },
+        "correct_answer": "B",
+        "explanation": "A key requirement for a build service implementation in Gradle is that it must be thread-safe. This ensures that the service can be accessed concurrently by multiple tasks without causing data corruption or inconsistent behavior."
+    },
+    {
+        "question": "What is the primary role of an Operation Completion Listener in a build service?",
+        "options": {
+            "A": "To manage the lifecycle of build services",
+            "B": "To receive events related to task execution",
+            "C": "To optimize the performance of build tasks",
+            "D": "To provide parameters to build services"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary role of an Operation Completion Listener in a build service is to receive events related to task execution. This allows the listener to respond to specific events, such as when a task finishes, enabling it to perform actions based on the task's execution status."
+    },
+    {
+        "question": "Which interface must a build service implement to act as an Operation Completion Listener?",
+        "options": {
+            "A": "BuildServiceParameters",
+            "B": "BuildService",
+            "C": "OperationCompletionListener",
+            "D": "TaskExecutionListener"
+        },
+        "correct_answer": "C",
+        "explanation": "To act as an Operation Completion Listener, a build service must implement the OperationCompletionListener interface. This interface provides the necessary methods to handle events related to the completion of operations, such as task execution."
+    },
+    {
+        "question": "What must be done to receive task execution events using a build service?",
+        "options": {
+            "A": "Register the service with a specific task",
+            "B": "Implement the OperationCompletionListener interface",
+            "C": "Use a Property object to manage service access",
+            "D": "Annotate the service with @ServiceReference"
+        },
+        "correct_answer": "B",
+        "explanation": "To receive task execution events using a build service, the service must implement the OperationCompletionListener interface. This implementation allows the service to listen for and respond to events that occur during task execution."
+    },
+    {
+        "question": "What is a key requirement for a build service that receives task execution events?",
+        "options": {
+            "A": "It must be registered with the BuildServiceRegistry",
+            "B": "It must be thread-safe",
+            "C": "It must be annotated with @Internal",
+            "D": "It must not take any parameters"
+        },
+        "correct_answer": "B",
+        "explanation": "A key requirement for a build service that receives task execution events is that it must be thread-safe. This ensures that the service can handle concurrent access from multiple tasks without causing issues or inconsistencies."
+    }
+]

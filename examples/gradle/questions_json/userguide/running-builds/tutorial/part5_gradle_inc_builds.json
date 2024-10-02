@@ -1,0 +1,211 @@
+[
+    {
+        "question": "What is the primary purpose of incremental builds in Gradle?",
+        "options": {
+            "A": "To run all tasks every time a build is executed",
+            "B": "To avoid running tasks whose inputs have not changed",
+            "C": "To compile code faster by using multiple threads",
+            "D": "To automatically update Gradle properties"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of incremental builds in Gradle is to avoid running tasks whose inputs have not changed since the last build. This optimization helps to save time and resources by skipping unnecessary task executions, allowing for faster build processes."
+    },
+    {
+        "question": "What must tasks define for incremental builds to function properly?",
+        "options": {
+            "A": "Only their outputs",
+            "B": "Only their execution time",
+            "C": "Both their inputs and outputs",
+            "D": "Their dependencies only"
+        },
+        "correct_answer": "C",
+        "explanation": "For incremental builds to function properly, tasks must define both their inputs and outputs. Gradle uses this information to determine whether a task needs to be executed based on any changes since the last build."
+    },
+    {
+        "question": "What does the 'UP-TO-DATE' label indicate in the context of incremental builds?",
+        "options": {
+            "A": "The task was executed successfully for the first time",
+            "B": "The task has not been executed due to missing inputs",
+            "C": "The task has been executed previously and its inputs have not changed",
+            "D": "The task was skipped by the user"
+        },
+        "correct_answer": "C",
+        "explanation": "'UP-TO-DATE' indicates that the task has been executed previously and its inputs have not changed since the last build. This label is part of the incremental build feature, allowing developers to quickly identify which tasks did not need to be re-run."
+    },
+    {
+        "question": "Which of the following labels indicates that a task was not executed because its required inputs were not available?",
+        "options": {
+            "A": "UP-TO-DATE",
+            "B": "SKIPPED",
+            "C": "FROM-CACHE",
+            "D": "NO-SOURCE"
+        },
+        "correct_answer": "D",
+        "explanation": "The 'NO-SOURCE' label indicates that a task was not executed because its required inputs were not available. This label helps developers understand why certain tasks did not run during the build process."
+    },
+    {
+        "question": "What is the purpose of Gradle properties in a build configuration?",
+        "options": {
+            "A": "To define the inputs and outputs of tasks",
+            "B": "To configure settings that affect the build process",
+            "C": "To manage dependencies between different projects",
+            "D": "To execute tasks in parallel"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle properties are used to configure settings that affect the build process, such as console output verbosity or JVM options. They allow developers to customize the behavior of Gradle builds without modifying the build scripts directly."
+    },
+    {
+        "question": "How can you enable verbose output in Gradle?",
+        "options": {
+            "A": "By setting the property org.gradle.verbose=true",
+            "B": "By adding org.gradle.console=verbose to gradle.properties",
+            "C": "By running the command with the --verbose flag",
+            "D": "By modifying the build.gradle file directly"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable verbose output in Gradle, you add the line org.gradle.console=verbose to the gradle.properties file. This setting instructs Gradle to provide more detailed output during the build process, which can help in debugging and understanding the build flow."
+    },
+    {
+        "question": "What happens to tasks in an incremental build if their inputs and outputs have not changed?",
+        "options": {
+            "A": "They are executed again to ensure accuracy",
+            "B": "They are skipped to optimize build time",
+            "C": "They are marked as failed",
+            "D": "They are cached for future builds"
+        },
+        "correct_answer": "B",
+        "explanation": "In an incremental build, if the inputs and outputs of tasks have not changed since the last build, Gradle skips executing those tasks. This optimization reduces build time by avoiding unnecessary work, allowing developers to focus on changes that matter."
+    },
+    {
+        "question": "Which of the following labels indicates that a task was not executed because its required inputs were not available?",
+        "options": {
+            "A": "UP-TO-DATE",
+            "B": "SKIPPED",
+            "C": "FROM-CACHE",
+            "D": "NO-SOURCE"
+        },
+        "correct_answer": "D",
+        "explanation": "The NO-SOURCE label indicates that a task was not executed because its required inputs were not available. This label helps developers understand why certain tasks did not run during the build process, which can be important for troubleshooting."
+    },
+    {
+        "question": "What does the 'UP-TO-DATE' label indicate in Gradle's task outcome?",
+        "options": {
+            "A": "The task has been executed and its inputs have not changed since the last build.",
+            "B": "The task was skipped due to a dependency issue.",
+            "C": "The task output was retrieved from the build cache.",
+            "D": "The task was executed for the first time."
+        },
+        "correct_answer": "A",
+        "explanation": "'UP-TO-DATE' indicates that the task has been executed previously and its inputs and outputs have not changed since the last build. This allows Gradle to optimize the build process by skipping unnecessary task executions."
+    },
+    {
+        "question": "Which label would you see if a task was not executed because its required inputs were not available?",
+        "options": {
+            "A": "UP-TO-DATE",
+            "B": "SKIPPED",
+            "C": "FROM-CACHE",
+            "D": "NO-SOURCE"
+        },
+        "correct_answer": "D",
+        "explanation": "The 'NO-SOURCE' label indicates that a task was not executed because its required inputs were not available. This helps developers understand why certain tasks did not run during the build process."
+    },
+    {
+        "question": "What does the 'FROM-CACHE' label signify in the context of Gradle builds?",
+        "options": {
+            "A": "The task was executed and completed successfully.",
+            "B": "The task output was retrieved from a previous build's cache.",
+            "C": "The task was skipped due to a user-defined condition.",
+            "D": "The task has not been executed yet."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'FROM-CACHE' label signifies that the output of the task has been retrieved from the build cache, which allows for faster builds by reusing previously computed results instead of executing the task again."
+    },
+    {
+        "question": "What does the 'SKIPPED' label indicate about a task in Gradle?",
+        "options": {
+            "A": "The task was executed but did not produce any output.",
+            "B": "The task was explicitly prevented from running.",
+            "C": "The task has been executed and is up-to-date.",
+            "D": "The task was executed for the first time."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'SKIPPED' label indicates that the task was explicitly prevented from running, which may be due to user-defined conditions or configurations that dictate when a task should not be executed."
+    },
+    {
+        "question": "What is the primary purpose of incremental builds in Gradle?",
+        "options": {
+            "A": "To run all tasks every time a build is executed",
+            "B": "To avoid running tasks whose inputs have not changed",
+            "C": "To compile code faster by using multiple threads",
+            "D": "To automatically update Gradle properties"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of incremental builds in Gradle is to avoid running tasks whose inputs have not changed since the previous build. This optimization helps to save time and resources by only executing tasks that need to be updated, thus improving the overall efficiency of the build process."
+    },
+    {
+        "question": "What must tasks define for incremental builds to function properly?",
+        "options": {
+            "A": "Their execution time",
+            "B": "Their inputs and outputs",
+            "C": "Their dependencies on other tasks",
+            "D": "Their execution order"
+        },
+        "correct_answer": "B",
+        "explanation": "For incremental builds to function properly, tasks must define their inputs and outputs. Gradle uses this information to determine whether a task needs to be executed based on whether its inputs or outputs have changed since the last build."
+    },
+    {
+        "question": "What does the 'UP-TO-DATE' label indicate in Gradle's build output?",
+        "options": {
+            "A": "The task was executed successfully",
+            "B": "The task has not changed since the last build",
+            "C": "The task was skipped due to a dependency issue",
+            "D": "The task's output was retrieved from the build cache"
+        },
+        "correct_answer": "B",
+        "explanation": "'UP-TO-DATE' indicates that the task has not changed since the last build and therefore does not need to be executed again. This label is part of the incremental build feature, which helps optimize the build process by skipping unnecessary task executions."
+    },
+    {
+        "question": "Which of the following labels indicates that a task was not executed because its required inputs were not available?",
+        "options": {
+            "A": "UP-TO-DATE",
+            "B": "SKIPPED",
+            "C": "FROM-CACHE",
+            "D": "NO-SOURCE"
+        },
+        "correct_answer": "D",
+        "explanation": "The 'NO-SOURCE' label indicates that a task was not executed because its required inputs were not available. This label helps developers understand why certain tasks were skipped during the build process, which can be important for troubleshooting and optimizing builds."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in Gradle?",
+        "options": {
+            "A": "To optimize the build process by managing task execution",
+            "B": "To define the inputs and outputs of tasks",
+            "C": "To handle the versions and configurations of project dependencies",
+            "D": "To create a user interface for the build process"
+        },
+        "correct_answer": "C",
+        "explanation": "The primary purpose of dependency management in Gradle is to handle the versions and configurations of project dependencies. This ensures that the correct libraries and frameworks are included in the project, allowing for consistent builds and avoiding conflicts between different versions of dependencies."
+    },
+    {
+        "question": "Which of the following best describes how Gradle manages dependencies?",
+        "options": {
+            "A": "By automatically downloading and including all available libraries",
+            "B": "By allowing developers to specify required libraries and their versions",
+            "C": "By requiring manual installation of all dependencies before building",
+            "D": "By using a single fixed version for all dependencies in a project"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle manages dependencies by allowing developers to specify required libraries and their versions in the build configuration. This flexibility enables developers to control which versions of libraries are used, ensuring compatibility and stability in the project."
+    },
+    {
+        "question": "What happens if a dependency is not properly managed in a Gradle project?",
+        "options": {
+            "A": "The build process will always succeed regardless of the dependency state",
+            "B": "The project may encounter runtime errors or version conflicts",
+            "C": "Gradle will automatically resolve all issues without user intervention",
+            "D": "The project will be built with default libraries provided by Gradle"
+        },
+        "correct_answer": "B",
+        "explanation": "If a dependency is not properly managed in a Gradle project, the project may encounter runtime errors or version conflicts. This can lead to unexpected behavior or failures during the build process, highlighting the importance of careful dependency management."
+    }
+]

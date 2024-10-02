@@ -1,0 +1,222 @@
+[
+    {
+        "question": "What is the primary benefit of centralizing repository declarations in Gradle?",
+        "options": {
+            "A": "To reduce redundancy and ensure consistency across projects",
+            "B": "To allow each subproject to declare its own repositories independently",
+            "C": "To increase the complexity of build configurations",
+            "D": "To eliminate the need for any repository declarations"
+        },
+        "correct_answer": "A",
+        "explanation": "Centralizing repository declarations in Gradle helps reduce redundancy and ensures consistency across all projects. By declaring repositories in a central location, teams can manage dependencies more effectively and maintain uniformity in repository usage across subprojects."
+    },
+    {
+        "question": "Which file is primarily used to declare repositories centrally in Gradle?",
+        "options": {
+            "A": "build.gradle",
+            "B": "settings.gradle",
+            "C": "gradle.properties",
+            "D": "settings.gradle.kts"
+        },
+        "correct_answer": "B",
+        "explanation": "The `settings.gradle` file is primarily used to declare repositories centrally in Gradle. This allows for a single point of configuration for repositories that can be applied to all subprojects, simplifying dependency management."
+    },
+    {
+        "question": "What does the `repositoriesMode` setting control in Gradle?",
+        "options": {
+            "A": "The visibility of repositories to external users",
+            "B": "The behavior of repository declarations between project and settings files",
+            "C": "The type of repositories that can be declared",
+            "D": "The order in which dependencies are resolved"
+        },
+        "correct_answer": "B",
+        "explanation": "The `repositoriesMode` setting in Gradle controls the behavior of repository declarations between project and settings files. It determines whether repositories declared in a project override those declared in `settings.gradle` or vice versa, allowing for flexible management of dependencies."
+    },
+    {
+        "question": "What happens when the `FAIL_ON_PROJECT_REPOS` mode is enabled?",
+        "options": {
+            "A": "Repositories declared in projects are ignored",
+            "B": "A build error is triggered if a project declares a repository",
+            "C": "All repositories are automatically approved",
+            "D": "Only settings.gradle repositories are used without any restrictions"
+        },
+        "correct_answer": "B",
+        "explanation": "When the `FAIL_ON_PROJECT_REPOS` mode is enabled, declaring a repository in a project triggers a build error. This mode strictly enforces the use of repositories declared in `settings.gradle`, ensuring that only approved repositories are utilized in the build process."
+    },
+    {
+        "question": "What is the primary purpose of dependency resolution management in Gradle?",
+        "options": {
+            "A": "To centralize the declaration of repositories for all projects",
+            "B": "To manage the versioning of project dependencies",
+            "C": "To optimize the build performance of Gradle scripts",
+            "D": "To enforce coding standards across projects"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency resolution management in Gradle is to centralize the declaration of repositories for all projects. This allows for a more organized and efficient way to manage dependencies, ensuring that all subprojects can access the same repositories without needing to declare them individually."
+    },
+    {
+        "question": "Which of the following modes allows project repositories to override those declared in settings.gradle?",
+        "options": {
+            "A": "FAIL_ON_PROJECT_REPOS",
+            "B": "PREFER_SETTINGS",
+            "C": "PREFER_PROJECT",
+            "D": "DEFAULT_MODE"
+        },
+        "correct_answer": "C",
+        "explanation": "The PREFER_PROJECT mode allows repositories declared in a project to override those declared in settings.gradle. This mode is useful when different subprojects require specific repositories that may differ from the centralized settings."
+    },
+    {
+        "question": "What happens when the FAIL_ON_PROJECT_REPOS mode is enabled?",
+        "options": {
+            "A": "Repositories declared in settings.gradle are ignored.",
+            "B": "A build error is triggered if a project declares a repository.",
+            "C": "All repositories are treated equally regardless of their declaration location.",
+            "D": "Only repositories declared in the project are used."
+        },
+        "correct_answer": "B",
+        "explanation": "When the FAIL_ON_PROJECT_REPOS mode is enabled, declaring a repository in a project triggers a build error. This mode strictly enforces the use of repositories declared only in settings.gradle, ensuring consistency across the project."
+    },
+    {
+        "question": "What is the default behavior of repository declarations in Gradle projects?",
+        "options": {
+            "A": "Repositories in settings.gradle always take precedence.",
+            "B": "Repositories in a project override those in settings.gradle.",
+            "C": "Repositories must be declared in both settings.gradle and project files.",
+            "D": "Repositories are ignored unless explicitly declared in the project."
+        },
+        "correct_answer": "B",
+        "explanation": "By default, repositories declared in a project's build.gradle file will override those declared in settings.gradle. This allows for flexibility in managing dependencies at the project level, but can lead to inconsistencies if not managed carefully."
+    },
+    {
+        "question": "What is the primary purpose of centralizing repository declarations in Gradle?",
+        "options": {
+            "A": "To simplify the management of dependencies across multiple subprojects",
+            "B": "To increase the complexity of build configurations",
+            "C": "To allow each subproject to declare its own repositories independently",
+            "D": "To eliminate the need for any repository declarations"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of centralizing repository declarations in Gradle is to simplify the management of dependencies across multiple subprojects. By declaring repositories in a central location, such as the `settings.gradle(.kts)` file, teams can ensure consistent access to the same repositories without needing to repeat declarations in each subproject."
+    },
+    {
+        "question": "Which mode in Gradle allows repositories declared in a project to override those declared in `settings.gradle(.kts)`?",
+        "options": {
+            "A": "PREFER_SETTINGS",
+            "B": "FAIL_ON_PROJECT_REPOS",
+            "C": "PREFER_PROJECT",
+            "D": "DEFAULT_MODE"
+        },
+        "correct_answer": "C",
+        "explanation": "The `PREFER_PROJECT` mode allows repositories declared in a project to override those declared in `settings.gradle(.kts)`. This mode is useful when different subprojects require specific repositories that may not be applicable to all projects."
+    },
+    {
+        "question": "What happens when the `FAIL_ON_PROJECT_REPOS` mode is enabled in Gradle?",
+        "options": {
+            "A": "Repositories declared in projects are ignored completely",
+            "B": "A build error is triggered if a project declares a repository",
+            "C": "Repositories declared in `settings.gradle(.kts)` are ignored",
+            "D": "All repositories are treated equally without any preference"
+        },
+        "correct_answer": "B",
+        "explanation": "When the `FAIL_ON_PROJECT_REPOS` mode is enabled, declaring a repository in a project triggers a build error. This mode strictly enforces the use of repositories declared only in `settings.gradle(.kts)`, ensuring that all projects adhere to a centralized repository management strategy."
+    },
+    {
+        "question": "What is the default behavior of repository declarations in Gradle if no specific mode is set?",
+        "options": {
+            "A": "Repositories in `settings.gradle(.kts)` are always ignored",
+            "B": "Repositories declared in a project override those in `settings.gradle(.kts)`",
+            "C": "Repositories are declared only in the root project",
+            "D": "All repositories must be declared in every subproject"
+        },
+        "correct_answer": "B",
+        "explanation": "The default behavior in Gradle is that repositories declared in a project override those declared in `settings.gradle(.kts)`. This allows for flexibility in managing dependencies at the project level while still providing a centralized declaration option."
+    },
+    {
+        "question": "What is the primary purpose of centralizing repository declarations in Gradle?",
+        "options": {
+            "A": "To declare repositories for each subproject individually",
+            "B": "To manage repositories in a single location for all projects",
+            "C": "To eliminate the need for any repository declarations",
+            "D": "To allow only local repositories to be used"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of centralizing repository declarations in Gradle is to manage repositories in a single location for all projects. This approach simplifies the configuration process and ensures consistency across subprojects, allowing for easier maintenance and updates."
+    },
+    {
+        "question": "Which file is typically used to declare repositories centrally in Gradle?",
+        "options": {
+            "A": "build.gradle",
+            "B": "settings.gradle",
+            "C": "gradle.properties",
+            "D": "settings.xml"
+        },
+        "correct_answer": "B",
+        "explanation": "The `settings.gradle` file is typically used to declare repositories centrally in Gradle. This allows for a unified configuration that applies to all subprojects, rather than requiring individual declarations in each project's build file."
+    },
+    {
+        "question": "What happens by default when repositories are declared in both `settings.gradle` and a project's `build.gradle`?",
+        "options": {
+            "A": "The project repositories are ignored",
+            "B": "The settings repositories are ignored",
+            "C": "The project repositories override the settings repositories",
+            "D": "Both repositories are merged"
+        },
+        "correct_answer": "C",
+        "explanation": "By default, repositories declared in a project's `build.gradle` file will override those declared in `settings.gradle`. This behavior allows for project-specific configurations while still providing a central declaration option."
+    },
+    {
+        "question": "What is the purpose of the `repositoriesMode` setting in Gradle?",
+        "options": {
+            "A": "To define the types of repositories available",
+            "B": "To control the precedence of repository declarations",
+            "C": "To specify the location of local repositories",
+            "D": "To enable or disable repository caching"
+        },
+        "correct_answer": "B",
+        "explanation": "The `repositoriesMode` setting in Gradle is used to control the precedence of repository declarations. It allows users to specify whether project repositories should override those declared in `settings.gradle`, thereby providing flexibility in managing dependencies across different projects."
+    },
+    {
+        "question": "What is the primary purpose of centralizing repository declarations in Gradle?",
+        "options": {
+            "A": "To simplify the management of dependencies across multiple subprojects",
+            "B": "To increase the complexity of build scripts",
+            "C": "To allow each subproject to declare its own repositories independently",
+            "D": "To eliminate the need for any repository declarations"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of centralizing repository declarations in Gradle is to simplify the management of dependencies across multiple subprojects. By declaring repositories in a central location, it reduces redundancy and ensures consistency in dependency resolution across the entire project."
+    },
+    {
+        "question": "Which mode in Gradle allows repositories declared in a project to override those declared in `settings.gradle`?",
+        "options": {
+            "A": "FAIL_ON_PROJECT_REPOS",
+            "B": "PREFER_SETTINGS",
+            "C": "PREFER_PROJECT",
+            "D": "DEFAULT_MODE"
+        },
+        "correct_answer": "C",
+        "explanation": "The `PREFER_PROJECT` mode allows repositories declared in a project to override those declared in `settings.gradle`. This mode is useful when different subprojects require specific repositories that may differ from the central declaration."
+    },
+    {
+        "question": "What happens when the `FAIL_ON_PROJECT_REPOS` mode is enabled?",
+        "options": {
+            "A": "Repositories declared in `settings.gradle` are ignored.",
+            "B": "A build error is triggered if a project declares its own repository.",
+            "C": "All repositories are merged into a single list.",
+            "D": "Only repositories declared in the project are used."
+        },
+        "correct_answer": "B",
+        "explanation": "When the `FAIL_ON_PROJECT_REPOS` mode is enabled, declaring a repository in a project triggers a build error. This mode strictly enforces the use of repositories declared only in `settings.gradle`, ensuring that all subprojects adhere to a consistent repository configuration."
+    },
+    {
+        "question": "What is the default behavior of repository declarations in Gradle?",
+        "options": {
+            "A": "Repositories in `settings.gradle` always take precedence.",
+            "B": "Repositories declared in a project override those in `settings.gradle`.",
+            "C": "Repositories are ignored unless explicitly declared.",
+            "D": "All repositories must be declared in the root project only."
+        },
+        "correct_answer": "B",
+        "explanation": "The default behavior in Gradle is that repositories declared in a project's `build.gradle` file will override those declared in `settings.gradle`. This allows for flexibility in managing dependencies specific to each subproject while still providing a centralized declaration option."
+    }
+]

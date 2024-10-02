@@ -1,0 +1,497 @@
+[
+    {
+        "question": "What is the primary purpose of an incremental build in Gradle?",
+        "options": {
+            "A": "To execute all tasks every time a build is run",
+            "B": "To avoid unnecessary work by skipping tasks that are up to date",
+            "C": "To compile source files into bytecode",
+            "D": "To manage dependencies between tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of an incremental build in Gradle is to avoid unnecessary work by skipping tasks that are up to date. This is achieved by checking if the inputs and outputs of a task have changed since the last build, allowing Gradle to execute only the tasks that need to be run."
+    },
+    {
+        "question": "Which of the following is a requirement for a task to support incremental builds?",
+        "options": {
+            "A": "The task must have at least one input and one output",
+            "B": "The task must be executed in parallel with other tasks",
+            "C": "The task must always produce the same output for the same input",
+            "D": "The task must be defined in a custom class"
+        },
+        "correct_answer": "A",
+        "explanation": "For a task to support incremental builds, it must have at least one input and one output. This allows Gradle to determine if the task is up to date by checking if any of the inputs or outputs have changed since the last execution."
+    },
+    {
+        "question": "What happens when a task's inputs or outputs change in an incremental build?",
+        "options": {
+            "A": "The task is skipped and not executed",
+            "B": "The task is executed to reflect the changes",
+            "C": "The task is marked as failed",
+            "D": "The task's outputs are deleted"
+        },
+        "correct_answer": "B",
+        "explanation": "When a task's inputs or outputs change in an incremental build, the task is executed to reflect those changes. Gradle uses the fingerprints of the inputs and outputs to determine if the task needs to be run again."
+    },
+    {
+        "question": "Which annotation is used to declare a property as an input for a Gradle task?",
+        "options": {
+            "A": "@Output",
+            "B": "@Input",
+            "C": "@Task",
+            "D": "@Property"
+        },
+        "correct_answer": "B",
+        "explanation": "The @Input annotation is used to declare a property as an input for a Gradle task. This informs Gradle that the value of this property affects the task's output and should be considered when determining if the task is up to date."
+    },
+    {
+        "question": "What is the role of the `UP-TO-DATE` status in Gradle's incremental build process?",
+        "options": {
+            "A": "It indicates that the task has failed",
+            "B": "It shows that the task has been executed successfully",
+            "C": "It signifies that the task's inputs and outputs have not changed since the last execution",
+            "D": "It means that the task is ready to be executed"
+        },
+        "correct_answer": "C",
+        "explanation": "The `UP-TO-DATE` status in Gradle's incremental build process signifies that the task's inputs and outputs have not changed since the last execution. This allows Gradle to skip executing the task, saving time and resources."
+    },
+    {
+        "question": "What is the primary purpose of defining task inputs and outputs in Gradle?",
+        "options": {
+            "A": "To ensure tasks are executed in parallel",
+            "B": "To enable incremental builds and optimize task execution",
+            "C": "To create a user interface for task management",
+            "D": "To automatically generate documentation for tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "Defining task inputs and outputs allows Gradle to determine whether a task needs to be executed based on changes to its inputs or outputs. This enables incremental builds, where tasks are only run when necessary, thus optimizing the overall build process."
+    },
+    {
+        "question": "Which of the following statements is true regarding task inputs in Gradle?",
+        "options": {
+            "A": "Inputs can be any type of data, including non-serializable types.",
+            "B": "Inputs must be declared using specific annotations to be recognized by Gradle.",
+            "C": "Inputs are optional and do not affect the execution of tasks.",
+            "D": "Inputs are automatically inferred by Gradle without any explicit declaration."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, task inputs must be declared using specific annotations (such as @Input, @InputFile, etc.) to be recognized and utilized for incremental builds. This ensures that Gradle can track changes and determine when to execute tasks."
+    },
+    {
+        "question": "What happens if a task's inputs or outputs are not properly defined in Gradle?",
+        "options": {
+            "A": "The task will always execute, regardless of changes.",
+            "B": "Gradle will skip the task even if inputs have changed.",
+            "C": "The task will be executed in parallel with other tasks.",
+            "D": "Gradle will automatically infer the inputs and outputs."
+        },
+        "correct_answer": "A",
+        "explanation": "If a task's inputs or outputs are not properly defined, Gradle cannot determine whether the task is up to date. As a result, the task will always execute, which defeats the purpose of incremental builds and can lead to inefficiencies."
+    },
+    {
+        "question": "Which annotation would you use to declare a property that represents a single output directory for a task?",
+        "options": {
+            "A": "@InputFiles",
+            "B": "@OutputDirectory",
+            "C": "@Input",
+            "D": "@Nested"
+        },
+        "correct_answer": "B",
+        "explanation": "The @OutputDirectory annotation is used to declare a property that represents a single output directory for a task. This allows Gradle to track the output and determine if the task needs to be executed based on changes to the output directory."
+    },
+    {
+        "question": "What is the role of the @Nested annotation in Gradle task properties?",
+        "options": {
+            "A": "To indicate that a property is optional and may not always be present.",
+            "B": "To specify that a property contains other properties that should also be tracked as inputs or outputs.",
+            "C": "To mark a property as internal and not exposed to users.",
+            "D": "To allow a property to be used in multiple tasks simultaneously."
+        },
+        "correct_answer": "B",
+        "explanation": "The @Nested annotation is used to indicate that a property contains other properties that should also be tracked as inputs or outputs. This allows for more complex data structures to be used as task properties while still benefiting from incremental build features."
+    },
+    {
+        "question": "What is the purpose of task annotations in Gradle?",
+        "options": {
+            "A": "To define the inputs and outputs of a task for incremental builds",
+            "B": "To specify the execution order of tasks",
+            "C": "To manage dependencies between different projects",
+            "D": "To configure the logging level of the build process"
+        },
+        "correct_answer": "A",
+        "explanation": "Task annotations in Gradle are used to define the inputs and outputs of a task, which allows Gradle to perform incremental builds. By marking properties with specific annotations, Gradle can determine whether a task needs to be executed based on changes to its inputs or outputs, thus optimizing the build process."
+    },
+    {
+        "question": "Which annotation would you use to indicate that a property is a single input file for a task?",
+        "options": {
+            "A": "@InputFiles",
+            "B": "@InputFile",
+            "C": "@OutputFile",
+            "D": "@Nested"
+        },
+        "correct_answer": "B",
+        "explanation": "The @InputFile annotation is used to indicate that a property represents a single input file for a task. This allows Gradle to track changes to that file and determine if the task needs to be re-executed based on modifications to the file."
+    },
+    {
+        "question": "What happens if a task's inputs and outputs are not properly annotated?",
+        "options": {
+            "A": "The task will always execute, regardless of changes.",
+            "B": "Gradle will skip the task even if inputs have changed.",
+            "C": "The task will run in parallel with other tasks.",
+            "D": "Gradle will automatically infer the inputs and outputs."
+        },
+        "correct_answer": "A",
+        "explanation": "If a task's inputs and outputs are not properly annotated, Gradle cannot determine whether the task is up-to-date or needs to be executed. As a result, the task will always execute, which can lead to inefficiencies in the build process."
+    },
+    {
+        "question": "Which annotation should be used for a property that represents a directory where output files are generated?",
+        "options": {
+            "A": "@InputDirectory",
+            "B": "@OutputDirectory",
+            "C": "@InputFiles",
+            "D": "@Nested"
+        },
+        "correct_answer": "B",
+        "explanation": "The @OutputDirectory annotation is used for properties that represent a directory where output files are generated. This allows Gradle to track the output location and determine if the task needs to be re-executed based on changes to the output directory."
+    },
+    {
+        "question": "What is the effect of using the @Nested annotation on a property?",
+        "options": {
+            "A": "It indicates that the property is a simple value.",
+            "B": "It allows Gradle to track changes to the properties of a complex type.",
+            "C": "It marks the property as optional.",
+            "D": "It specifies that the property is an input file."
+        },
+        "correct_answer": "B",
+        "explanation": "The @Nested annotation is used to indicate that a property is a complex type containing its own properties that should also be tracked as inputs or outputs. This allows Gradle to monitor changes to the nested properties and determine if the task needs to be re-executed based on those changes."
+    },
+    {
+        "question": "What is the primary purpose of dependency resolution in build tools?",
+        "options": {
+            "A": "To determine the order of task execution based on their dependencies",
+            "B": "To compile source files into executable code",
+            "C": "To manage the versioning of source files",
+            "D": "To optimize the memory usage during task execution"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency resolution in build tools is to determine the order of task execution based on their dependencies. This ensures that tasks are executed in the correct sequence, allowing tasks that depend on the outputs of other tasks to run only after those tasks have completed successfully."
+    },
+    {
+        "question": "Which of the following best describes a dependency in the context of build tools?",
+        "options": {
+            "A": "A task that can run independently without any prerequisites",
+            "B": "A relationship where one task requires the output of another task",
+            "C": "A configuration setting that affects the performance of a task",
+            "D": "A file that is generated as a result of a task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of build tools, a dependency is defined as a relationship where one task requires the output of another task. This relationship ensures that the dependent task does not execute until the task it relies on has completed, maintaining the integrity of the build process."
+    },
+    {
+        "question": "What happens if a task's inputs change in a build tool that supports dependency resolution?",
+        "options": {
+            "A": "The task will always run, regardless of its dependencies",
+            "B": "The task will be skipped if it is marked as up-to-date",
+            "C": "The task will be marked as out-of-date and will be executed again",
+            "D": "The task will run in parallel with other tasks"
+        },
+        "correct_answer": "C",
+        "explanation": "If a task's inputs change in a build tool that supports dependency resolution, the task will be marked as out-of-date and will be executed again. This mechanism ensures that any changes in the inputs are reflected in the outputs, maintaining the accuracy of the build process."
+    },
+    {
+        "question": "Why is it important to declare task dependencies in a build tool?",
+        "options": {
+            "A": "To improve the speed of the build process",
+            "B": "To ensure that tasks are executed in the correct order",
+            "C": "To reduce the number of tasks that need to be executed",
+            "D": "To allow for more complex task configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "Declaring task dependencies in a build tool is important to ensure that tasks are executed in the correct order. This prevents issues that could arise from tasks running before their dependencies are completed, which could lead to errors or incomplete outputs."
+    },
+    {
+        "question": "What is the primary purpose of task validation in Gradle?",
+        "options": {
+            "A": "To ensure that tasks are executed in parallel",
+            "B": "To verify that task inputs and outputs are correctly defined",
+            "C": "To optimize the build process by skipping unnecessary tasks",
+            "D": "To manage dependencies between tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of task validation in Gradle is to verify that task inputs and outputs are correctly defined. This includes checking for incompatible types, ensuring that required inputs are present, and confirming that outputs are correctly specified. Proper validation helps prevent runtime errors and ensures that tasks behave as expected."
+    },
+    {
+        "question": "What happens if a task has a validation warning in Gradle?",
+        "options": {
+            "A": "The task will be skipped entirely.",
+            "B": "The task will execute without any optimizations.",
+            "C": "The task will run in parallel with other tasks.",
+            "D": "The task will be marked as up-to-date."
+        },
+        "correct_answer": "B",
+        "explanation": "If a task has a validation warning in Gradle, it will execute without any optimizations. This means it cannot be considered up-to-date, will not be loaded from the build cache, and cannot be executed in parallel with other tasks. This behavior is designed to ensure that any potential issues are addressed before the task runs."
+    },
+    {
+        "question": "Which annotation is used to indicate that a task input is optional in Gradle?",
+        "options": {
+            "A": "@Input",
+            "B": "@Optional",
+            "C": "@Output",
+            "D": "@Nested"
+        },
+        "correct_answer": "B",
+        "explanation": "The @Optional annotation is used to indicate that a task input is optional in Gradle. This means that the build should not fail if the corresponding file or directory does not exist, allowing for more flexible task configurations."
+    },
+    {
+        "question": "What is the consequence of using an incompatible type for a task input annotation in Gradle?",
+        "options": {
+            "A": "The task will run successfully but produce incorrect results.",
+            "B": "Gradle will ignore the input and proceed with the task.",
+            "C": "The build will fail or produce a deprecation warning.",
+            "D": "The task will be marked as up-to-date."
+        },
+        "correct_answer": "C",
+        "explanation": "If an incompatible type is used for a task input annotation in Gradle, the build will fail or produce a deprecation warning. This validation step is crucial to ensure that tasks are configured correctly and can execute without errors."
+    },
+    {
+        "question": "What is the primary purpose of the continuous build feature in Gradle?",
+        "options": {
+            "A": "To automatically re-run tasks when their inputs change",
+            "B": "To compile source files into bytecode",
+            "C": "To manage dependencies between tasks",
+            "D": "To optimize memory usage during builds"
+        },
+        "correct_answer": "A",
+        "explanation": "The continuous build feature in Gradle is designed to automatically re-run tasks whenever their inputs change. This allows developers to see the effects of their changes in real-time without needing to manually trigger the build process each time."
+    },
+    {
+        "question": "Which command-line option is used to activate continuous build in Gradle?",
+        "options": {
+            "A": "--incremental",
+            "B": "--continuous",
+            "C": "--parallel",
+            "D": "--verbose"
+        },
+        "correct_answer": "B",
+        "explanation": "The `--continuous` option is used to activate the continuous build feature in Gradle. This option puts Gradle into a state where it continuously checks for changes in the inputs of tasks and executes them when changes are detected."
+    },
+    {
+        "question": "What happens when a task is executed in continuous build mode and its inputs change?",
+        "options": {
+            "A": "The task is skipped and not executed again.",
+            "B": "The task is executed again to reflect the changes.",
+            "C": "Gradle will ignore the changes until the next build.",
+            "D": "The task will only run if manually triggered."
+        },
+        "correct_answer": "B",
+        "explanation": "In continuous build mode, if a task's inputs change, Gradle will automatically execute the task again to reflect those changes. This feature enhances productivity by providing immediate feedback on changes made to the code or resources."
+    },
+    {
+        "question": "Which of the following statements is true regarding continuous build in Gradle?",
+        "options": {
+            "A": "It requires all tasks to be defined as incremental.",
+            "B": "It can only be used with Java projects.",
+            "C": "It allows for real-time feedback on changes made to inputs.",
+            "D": "It disables all other build optimizations."
+        },
+        "correct_answer": "C",
+        "explanation": "Continuous build in Gradle allows for real-time feedback on changes made to inputs, enabling developers to see the results of their modifications immediately. This feature is not limited to Java projects and does not require all tasks to be defined as incremental."
+    },
+    {
+        "question": "What is the primary benefit of defining task inputs and outputs in Gradle?",
+        "options": {
+            "A": "It allows Gradle to skip tasks that do not need to be executed.",
+            "B": "It ensures that all tasks run in a sequential manner.",
+            "C": "It prevents any changes to the task configuration after execution.",
+            "D": "It guarantees that all tasks will always run, regardless of their state."
+        },
+        "correct_answer": "A",
+        "explanation": "Defining task inputs and outputs allows Gradle to determine if a task is up-to-date. If the inputs and outputs have not changed since the last execution, Gradle can skip executing the task, thus saving time and resources."
+    },
+    {
+        "question": "How does Gradle utilize task input and output information for parallel execution?",
+        "options": {
+            "A": "It allows tasks to run simultaneously without any checks.",
+            "B": "It ensures that tasks writing to the same output directory do not run at the same time.",
+            "C": "It forces all tasks to complete before starting any new tasks.",
+            "D": "It eliminates the need for task dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle uses the information about task inputs and outputs to avoid running tasks that write to the same output directory concurrently. This prevents potential conflicts and ensures data integrity during parallel execution."
+    },
+    {
+        "question": "What happens when a task's output is linked to another task's input in Gradle?",
+        "options": {
+            "A": "The first task will always run before the second task, regardless of changes.",
+            "B": "Gradle automatically creates a dependency between the two tasks.",
+            "C": "The second task will run independently of the first task.",
+            "D": "The first task's output will be ignored by the second task."
+        },
+        "correct_answer": "B",
+        "explanation": "When a task's output is linked to another task's input, Gradle automatically infers a dependency between the two tasks. This means that the first task must complete successfully before the second task can execute, ensuring that the second task has the necessary input."
+    },
+    {
+        "question": "What is a potential consequence of not defining task inputs and outputs correctly?",
+        "options": {
+            "A": "Tasks may run in parallel without any issues.",
+            "B": "Gradle may execute tasks unnecessarily, leading to longer build times.",
+            "C": "All tasks will be skipped during execution.",
+            "D": "Gradle will automatically optimize the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "If task inputs and outputs are not defined correctly, Gradle may not be able to determine whether a task is up-to-date. As a result, it may execute tasks unnecessarily, which can lead to longer build times and inefficient resource usage."
+    },
+    {
+        "question": "What is the primary purpose of up-to-date checks in Gradle?",
+        "options": {
+            "A": "To determine if a task needs to be executed based on changes in its inputs or outputs",
+            "B": "To validate the syntax of the build script",
+            "C": "To optimize memory usage during task execution",
+            "D": "To ensure that all tasks run in parallel"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of up-to-date checks in Gradle is to determine if a task needs to be executed based on changes in its inputs or outputs. If the inputs and outputs have not changed since the last execution, Gradle can skip the task, saving time and resources."
+    },
+    {
+        "question": "Which of the following statements is true regarding up-to-date checks?",
+        "options": {
+            "A": "Up-to-date checks are only applicable to tasks with no outputs.",
+            "B": "Gradle uses fingerprints of inputs and outputs to perform up-to-date checks.",
+            "C": "Up-to-date checks can only be performed on file inputs.",
+            "D": "Tasks without any inputs cannot be skipped during execution."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle uses fingerprints of inputs and outputs to perform up-to-date checks. This involves creating a hash of the input files and their paths, as well as the output files, to determine if any changes have occurred since the last execution."
+    },
+    {
+        "question": "What happens if a task's inputs or outputs change between executions?",
+        "options": {
+            "A": "The task will always run, regardless of its previous state.",
+            "B": "Gradle will skip the task to save time.",
+            "C": "Gradle will execute the task again to reflect the changes.",
+            "D": "The task will be marked as up-to-date."
+        },
+        "correct_answer": "C",
+        "explanation": "If a task's inputs or outputs change between executions, Gradle will execute the task again to reflect those changes. This ensures that the build process is accurate and up-to-date with the latest modifications."
+    },
+    {
+        "question": "Which annotation would you use to indicate that a property is an input for a Gradle task?",
+        "options": {
+            "A": "@Output",
+            "B": "@Input",
+            "C": "@Task",
+            "D": "@Property"
+        },
+        "correct_answer": "B",
+        "explanation": "The @Input annotation is used to indicate that a property is an input for a Gradle task. This helps Gradle understand which properties should be monitored for changes to determine if the task needs to be executed."
+    },
+    {
+        "question": "What is the effect of using the `@Optional` annotation on a task input?",
+        "options": {
+            "A": "It makes the input mandatory for the task to execute.",
+            "B": "It allows the task to run even if the input file does not exist.",
+            "C": "It disables up-to-date checks for that input.",
+            "D": "It ensures that the input is always validated before execution."
+        },
+        "correct_answer": "B",
+        "explanation": "Using the `@Optional` annotation on a task input allows the task to run even if the input file does not exist. This is useful for scenarios where the absence of the input is acceptable and should not prevent the task from executing."
+    },
+    {
+        "question": "What is the primary purpose of declaring inputs and outputs in a custom task implementation?",
+        "options": {
+            "A": "To ensure the task runs every time it is executed",
+            "B": "To allow Gradle to skip execution when outputs are up to date",
+            "C": "To make the task dependent on other tasks",
+            "D": "To define the user interface of the task"
+        },
+        "correct_answer": "B",
+        "explanation": "Declaring inputs and outputs in a custom task implementation allows Gradle to determine if the task needs to be executed. If the inputs and outputs have not changed since the last execution, Gradle can skip the task, thus saving time and resources."
+    },
+    {
+        "question": "Which annotation is used to indicate a property that represents a single input file in a custom task?",
+        "options": {
+            "A": "@InputFiles",
+            "B": "@InputFile",
+            "C": "@OutputFile",
+            "D": "@Nested"
+        },
+        "correct_answer": "B",
+        "explanation": "The @InputFile annotation is used to indicate that a property in a custom task represents a single input file. This helps Gradle understand which files are necessary for the task's execution and allows it to perform up-to-date checks."
+    },
+    {
+        "question": "What happens if a task's inputs or outputs are not properly declared in a custom task implementation?",
+        "options": {
+            "A": "The task will always run, regardless of changes.",
+            "B": "Gradle will skip the task even if it needs to run.",
+            "C": "The task may not be able to determine its up-to-date status.",
+            "D": "The task will execute faster than expected."
+        },
+        "correct_answer": "C",
+        "explanation": "If a task's inputs or outputs are not properly declared, Gradle may not be able to determine whether the task is up to date. This can lead to unnecessary task executions or skipped executions when the task actually needs to run."
+    },
+    {
+        "question": "What is the role of the @Nested annotation in a custom task implementation?",
+        "options": {
+            "A": "To indicate that a property is a simple value",
+            "B": "To specify that a property is an output directory",
+            "C": "To denote that a property contains nested inputs or outputs",
+            "D": "To mark a property as optional"
+        },
+        "correct_answer": "C",
+        "explanation": "The @Nested annotation is used to indicate that a property contains nested inputs or outputs. This allows Gradle to track changes to the properties within the nested structure, ensuring that the task's up-to-date checks are accurate."
+    },
+    {
+        "question": "How does Gradle determine if a task needs to be executed based on its inputs and outputs?",
+        "options": {
+            "A": "By checking the last modified time of the task class",
+            "B": "By comparing the current state of inputs and outputs with previously stored fingerprints",
+            "C": "By analyzing the task's execution history",
+            "D": "By evaluating the task's dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines if a task needs to be executed by comparing the current state of its inputs and outputs with previously stored fingerprints. If the fingerprints match, Gradle assumes the outputs are up to date and skips the task."
+    },
+    {
+        "question": "What is the primary purpose of the runtime API in Gradle?",
+        "options": {
+            "A": "To declare inputs and outputs for tasks that do not have access to annotations",
+            "B": "To optimize the performance of Gradle builds by caching outputs",
+            "C": "To provide a graphical interface for managing tasks",
+            "D": "To automatically generate task dependencies based on file changes"
+        },
+        "correct_answer": "A",
+        "explanation": "The runtime API in Gradle is designed to allow users to declare inputs and outputs for tasks that do not have access to annotations, such as ad-hoc tasks or when the source code for a custom task class is not available. This enables the same incremental build benefits as using annotations."
+    },
+    {
+        "question": "Which method in the runtime API allows you to specify a file as an input for a task?",
+        "options": {
+            "A": "addInputFile()",
+            "B": "inputs.file()",
+            "C": "registerInput()",
+            "D": "defineInputFile()"
+        },
+        "correct_answer": "B",
+        "explanation": "In the runtime API, the method `inputs.file()` is used to specify a file as an input for a task. This method allows Gradle to track changes to the specified file and determine if the task needs to be executed again."
+    },
+    {
+        "question": "What happens if a task's inputs are not properly declared in Gradle?",
+        "options": {
+            "A": "The task will always run, regardless of input changes.",
+            "B": "Gradle will skip the task even if inputs have changed.",
+            "C": "The task will run only if the outputs are missing.",
+            "D": "Gradle will automatically infer the inputs from the task's code."
+        },
+        "correct_answer": "A",
+        "explanation": "If a task's inputs are not properly declared, Gradle cannot determine whether the task is up-to-date or not. As a result, the task will always run, which can lead to unnecessary work and longer build times."
+    },
+    {
+        "question": "How does Gradle determine if a task is up-to-date?",
+        "options": {
+            "A": "By checking the last modified time of the task's class file.",
+            "B": "By comparing the current inputs and outputs with previously stored fingerprints.",
+            "C": "By analyzing the system resources used during the last execution.",
+            "D": "By evaluating the task's execution time in previous runs."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines if a task is up-to-date by comparing the current inputs and outputs with previously stored fingerprints. If the fingerprints match, Gradle assumes the outputs are still valid and skips executing the task."
+    }
+]

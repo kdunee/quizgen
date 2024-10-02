@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the primary purpose of the build lifecycle in Gradle?",
+        "options": {
+            "A": "To define the order of task execution based on dependencies",
+            "B": "To compile source code into executable files",
+            "C": "To manage user permissions for project access",
+            "D": "To optimize memory usage during builds"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the build lifecycle in Gradle is to define the order of task execution based on dependencies. This ensures that tasks are executed in the correct sequence, allowing for proper build management and execution."
+    },
+    {
+        "question": "Which phase of the Gradle build lifecycle is responsible for creating the task graph?",
+        "options": {
+            "A": "Initialization Phase",
+            "B": "Configuration Phase",
+            "C": "Execution Phase",
+            "D": "Finalization Phase"
+        },
+        "correct_answer": "B",
+        "explanation": "The Configuration Phase of the Gradle build lifecycle is responsible for creating the task graph. During this phase, Gradle evaluates the build scripts and establishes the relationships and dependencies between tasks."
+    },
+    {
+        "question": "During which phase does Gradle detect the projects participating in the build?",
+        "options": {
+            "A": "Execution Phase",
+            "B": "Configuration Phase",
+            "C": "Initialization Phase",
+            "D": "Dependency Resolution Phase"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle detects the projects participating in the build during the Initialization Phase. This phase involves evaluating the settings file and creating instances for each project that will be part of the build process."
+    },
+    {
+        "question": "What happens during the Execution Phase of the Gradle build lifecycle?",
+        "options": {
+            "A": "Tasks are scheduled and executed based on the task graph",
+            "B": "Projects are initialized and settings are evaluated",
+            "C": "Dependencies between tasks are defined",
+            "D": "Build scripts are compiled into executable formats"
+        },
+        "correct_answer": "A",
+        "explanation": "During the Execution Phase of the Gradle build lifecycle, tasks are scheduled and executed based on the task graph created in the Configuration Phase. This phase is where the actual work of the build occurs, following the defined order of task dependencies."
+    },
+    {
+        "question": "What is the primary purpose of a task graph in Gradle?",
+        "options": {
+            "A": "To define the order of task execution based on dependencies",
+            "B": "To store the output of executed tasks",
+            "C": "To manage user permissions for project access",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a task graph in Gradle is to define the order of task execution based on dependencies. This ensures that tasks are executed in the correct sequence, respecting the relationships and dependencies established between them."
+    },
+    {
+        "question": "At what point does Gradle build the task graph during the build lifecycle?",
+        "options": {
+            "A": "During the execution phase",
+            "B": "Before executing any task",
+            "C": "After all tasks have been executed",
+            "D": "During the initialization phase"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle builds the task graph before executing any task. This allows Gradle to understand the dependencies between tasks and determine the correct order for execution, ensuring that all prerequisites are met before a task runs."
+    },
+    {
+        "question": "Which of the following statements about task graphs is true?",
+        "options": {
+            "A": "Task graphs can only be created manually by the user.",
+            "B": "Task graphs are static and do not change during the build process.",
+            "C": "Task graphs represent a Directed Acyclic Graph (DAG) of tasks.",
+            "D": "Task graphs are only relevant in the execution phase."
+        },
+        "correct_answer": "C",
+        "explanation": "Task graphs represent a Directed Acyclic Graph (DAG) of tasks, which means that they illustrate the relationships and dependencies between tasks in a way that prevents cycles. This structure is essential for determining the correct order of task execution."
+    },
+    {
+        "question": "What happens during the configuration phase in relation to task graphs?",
+        "options": {
+            "A": "Tasks are executed based on the task graph.",
+            "B": "The task graph is created for the requested tasks.",
+            "C": "The settings file is evaluated to detect projects.",
+            "D": "Tasks are defined but not yet linked to dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "During the configuration phase, Gradle evaluates the build scripts and creates a task graph for the requested tasks. This phase is crucial for establishing the relationships and dependencies that will dictate the order of task execution in the subsequent phase."
+    },
+    {
+        "question": "What are the three distinct phases of a Gradle build?",
+        "options": {
+            "A": "Initialization, Configuration, Execution",
+            "B": "Setup, Execution, Cleanup",
+            "C": "Preparation, Configuration, Finalization",
+            "D": "Initialization, Execution, Termination"
+        },
+        "correct_answer": "A",
+        "explanation": "The three distinct phases of a Gradle build are Initialization, Configuration, and Execution. During the Initialization phase, Gradle detects the projects involved. In the Configuration phase, it evaluates build scripts and creates a task graph. Finally, in the Execution phase, Gradle schedules and executes the tasks based on their dependencies."
+    },
+    {
+        "question": "What occurs during the Initialization phase of a Gradle build?",
+        "options": {
+            "A": "Tasks are executed based on their dependencies.",
+            "B": "The settings file is evaluated to determine participating projects.",
+            "C": "Build scripts are evaluated to create a task graph.",
+            "D": "Tasks are configured for parallel execution."
+        },
+        "correct_answer": "B",
+        "explanation": "During the Initialization phase, Gradle evaluates the settings file to determine which projects and included builds are part of the build. This phase is crucial for establishing the context in which the build will occur, as it sets up the necessary project instances."
+    },
+    {
+        "question": "In which phase does Gradle create a task graph for the requested tasks?",
+        "options": {
+            "A": "Initialization",
+            "B": "Configuration",
+            "C": "Execution",
+            "D": "Finalization"
+        },
+        "correct_answer": "B",
+        "explanation": "The task graph is created during the Configuration phase of a Gradle build. In this phase, Gradle evaluates the build scripts and establishes the relationships and dependencies between tasks, which will dictate the order of execution in the subsequent phase."
+    },
+    {
+        "question": "What is the primary purpose of the Execution phase in a Gradle build?",
+        "options": {
+            "A": "To evaluate the settings file for project detection.",
+            "B": "To create a task graph for the build.",
+            "C": "To schedule and execute the selected tasks.",
+            "D": "To configure project properties and tasks."
+        },
+        "correct_answer": "C",
+        "explanation": "The primary purpose of the Execution phase is to schedule and execute the selected tasks. This phase relies on the task execution graphs generated during the Configuration phase to determine the order in which tasks should be executed, taking into account their dependencies."
+    },
+    {
+        "question": "What is the primary purpose of the initialization phase in a Gradle build?",
+        "options": {
+            "A": "To evaluate the build scripts and create a task graph",
+            "B": "To detect the projects participating in the build",
+            "C": "To execute the selected tasks in order",
+            "D": "To configure the properties of the tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the initialization phase in a Gradle build is to detect the set of projects (both root and subprojects) that are participating in the build. This phase involves evaluating the settings file and creating instances of the Settings and Project objects, which are essential for the subsequent phases."
+    },
+    {
+        "question": "During which phase does Gradle create instances of the Project for each project?",
+        "options": {
+            "A": "Execution Phase",
+            "B": "Configuration Phase",
+            "C": "Initialization Phase",
+            "D": "Finalization Phase"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle creates instances of the Project for each project during the initialization phase. This is a crucial step that allows Gradle to understand the structure of the build and prepare for the configuration and execution of tasks."
+    },
+    {
+        "question": "Which file does Gradle evaluate first during the initialization phase?",
+        "options": {
+            "A": "build.gradle(.kts)",
+            "B": "settings.gradle(.kts)",
+            "C": "gradle.properties",
+            "D": "settings.gradle"
+        },
+        "correct_answer": "B",
+        "explanation": "During the initialization phase, Gradle first evaluates the settings file, which is named settings.gradle(.kts). This file is essential for determining which projects are included in the build and sets the stage for the creation of Project instances."
+    },
+    {
+        "question": "What is created as a result of the initialization phase in Gradle?",
+        "options": {
+            "A": "A task execution graph",
+            "B": "A list of executed tasks",
+            "C": "Project instances and a Settings object",
+            "D": "Task dependencies"
+        },
+        "correct_answer": "C",
+        "explanation": "As a result of the initialization phase in Gradle, Project instances and a Settings object are created. This establishes the foundation for the build process, allowing Gradle to proceed to the configuration phase where tasks and properties are added to the projects."
+    },
+    {
+        "question": "What is the primary purpose of the configuration phase in a Gradle build?",
+        "options": {
+            "A": "To detect the projects participating in the build",
+            "B": "To evaluate build scripts and create a task graph",
+            "C": "To execute the selected tasks in order",
+            "D": "To initialize the settings for the build"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the configuration phase in a Gradle build is to evaluate the build scripts of each project and create a task graph based on the tasks defined and their dependencies. This phase sets up the necessary structure for the execution phase, where tasks are actually run."
+    },
+    {
+        "question": "During which phase does Gradle evaluate the build scripts of every project?",
+        "options": {
+            "A": "Initialization Phase",
+            "B": "Configuration Phase",
+            "C": "Execution Phase",
+            "D": "Finalization Phase"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle evaluates the build scripts of every project during the configuration phase. This evaluation is crucial for establishing the tasks and their dependencies, which will later be executed in the execution phase."
+    },
+    {
+        "question": "What happens to the task graph during the configuration phase?",
+        "options": {
+            "A": "It is executed immediately.",
+            "B": "It is created based on the evaluated build scripts.",
+            "C": "It is discarded after initialization.",
+            "D": "It is modified by the execution phase."
+        },
+        "correct_answer": "B",
+        "explanation": "During the configuration phase, Gradle creates the task graph based on the evaluated build scripts. This graph outlines the tasks and their dependencies, which will guide the execution of tasks in the subsequent execution phase."
+    },
+    {
+        "question": "Which of the following statements is true about the configuration phase?",
+        "options": {
+            "A": "It is the first phase of a Gradle build.",
+            "B": "It runs tasks in parallel.",
+            "C": "It determines the order of task execution.",
+            "D": "It initializes the settings for the build."
+        },
+        "correct_answer": "C",
+        "explanation": "The configuration phase determines the order of task execution by creating a task graph that reflects the dependencies between tasks. This structure is essential for the execution phase, where the tasks are actually run in the order defined by their dependencies."
+    },
+    {
+        "question": "What is the primary purpose of the execution phase in a Gradle build?",
+        "options": {
+            "A": "To evaluate the settings file and determine project structure",
+            "B": "To schedule and execute the selected tasks based on their dependencies",
+            "C": "To create a task graph for all projects in the build",
+            "D": "To add tasks and properties to the projects"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the execution phase in a Gradle build is to schedule and execute the selected tasks. This phase relies on the task execution graphs generated during the configuration phase to determine the order in which tasks should be executed, ensuring that dependencies are respected."
+    },
+    {
+        "question": "During which phase does Gradle determine the execution order of tasks?",
+        "options": {
+            "A": "Initialization phase",
+            "B": "Configuration phase",
+            "C": "Execution phase",
+            "D": "Finalization phase"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle determines the execution order of tasks during the execution phase. This phase utilizes the task graph created in the configuration phase to ensure that tasks are executed in the correct order based on their dependencies."
+    },
+    {
+        "question": "What happens to tasks during the execution phase of a Gradle build?",
+        "options": {
+            "A": "Tasks are created and added to the project",
+            "B": "Tasks are evaluated and their properties are set",
+            "C": "Tasks are scheduled and executed according to their dependencies",
+            "D": "Tasks are removed from the project configuration"
+        },
+        "correct_answer": "C",
+        "explanation": "During the execution phase of a Gradle build, tasks are scheduled and executed according to their dependencies. This phase is focused on running the tasks that have been configured in the previous phases, ensuring that they are executed in the correct order."
+    },
+    {
+        "question": "What is the primary purpose of defining task dependencies in Gradle?",
+        "options": {
+            "A": "To ensure tasks are executed in a specific order based on their dependencies",
+            "B": "To allow tasks to run simultaneously without any order",
+            "C": "To create a visual representation of tasks in a project",
+            "D": "To eliminate the need for build scripts"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of defining task dependencies in Gradle is to ensure that tasks are executed in a specific order based on their dependencies. This allows Gradle to manage the execution flow of tasks, ensuring that prerequisite tasks are completed before dependent tasks begin."
+    },
+    {
+        "question": "During which phase does Gradle create the task graph based on defined dependencies?",
+        "options": {
+            "A": "Initialization phase",
+            "B": "Configuration phase",
+            "C": "Execution phase",
+            "D": "Finalization phase"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle creates the task graph during the configuration phase. In this phase, Gradle evaluates the build scripts and establishes the relationships between tasks, allowing it to determine the order of execution based on the defined dependencies."
+    },
+    {
+        "question": "What type of graph is formed by tasks and their dependencies in Gradle?",
+        "options": {
+            "A": "Cyclic graph",
+            "B": "Directed acyclic graph (DAG)",
+            "C": "Undirected graph",
+            "D": "Linear graph"
+        },
+        "correct_answer": "B",
+        "explanation": "The type of graph formed by tasks and their dependencies in Gradle is a Directed Acyclic Graph (DAG). This structure ensures that there are no cycles in the task execution flow, allowing for a clear and manageable order of task execution."
+    },
+    {
+        "question": "What happens if a task has dependencies that are not completed?",
+        "options": {
+            "A": "The task will execute immediately regardless of dependencies",
+            "B": "The task will be skipped and not executed",
+            "C": "The task will wait until all dependencies are completed before executing",
+            "D": "The task will execute in parallel with its dependencies"
+        },
+        "correct_answer": "C",
+        "explanation": "If a task has dependencies that are not completed, the task will wait until all dependencies are completed before executing. This ensures that the necessary prerequisites are fulfilled, maintaining the integrity of the build process."
+    }
+]

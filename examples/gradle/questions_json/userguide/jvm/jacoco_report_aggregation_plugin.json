@@ -1,0 +1,266 @@
+[
+    {
+        "question": "What is the primary purpose of Gradle plugins?",
+        "options": {
+            "A": "To enhance the functionality of Gradle builds",
+            "B": "To create standalone applications",
+            "C": "To manage database connections",
+            "D": "To compile source code into bytecode"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Gradle plugins is to enhance the functionality of Gradle builds by providing additional capabilities, such as code coverage reporting, dependency management, and task automation. Plugins allow developers to customize and extend the build process according to their project's needs."
+    },
+    {
+        "question": "Which of the following statements is true regarding the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "It can aggregate results from multiple Gradle projects into a single report.",
+            "B": "It is only applicable to Java applications.",
+            "C": "It automatically generates reports without any configuration.",
+            "D": "It requires manual installation for each subproject."
+        },
+        "correct_answer": "A",
+        "explanation": "The JaCoCo Report Aggregation plugin is designed to aggregate results from multiple JaCoCo code coverage reports, potentially spanning multiple Gradle projects, into a single HTML report. This functionality is essential for providing a comprehensive view of code coverage across different modules."
+    },
+    {
+        "question": "What must be included in a build script to use the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "A specific version of the JaCoCo library",
+            "B": "The plugin ID 'jacoco-report-aggregation'",
+            "C": "A configuration for database connections",
+            "D": "A list of all project dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "To use the JaCoCo Report Aggregation plugin, the build script must include the plugin ID 'jacoco-report-aggregation'. This line activates the plugin and allows it to function within the Gradle build process, enabling code coverage report aggregation."
+    },
+    {
+        "question": "What happens if a task fails during the execution of a Gradle build by default?",
+        "options": {
+            "A": "All subsequent tasks are executed regardless of the failure.",
+            "B": "The build process stops executing further tasks.",
+            "C": "Only the failed task is retried automatically.",
+            "D": "A warning is logged, but the build continues."
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle stops executing tasks when any task fails, including test failures. This behavior ensures that issues are addressed before proceeding with further tasks, but it can be modified by using the '--continue' option to allow the build to generate reports even if some tasks fail."
+    },
+    {
+        "question": "What is the primary purpose of code coverage in software testing?",
+        "options": {
+            "A": "To measure the amount of code executed during tests",
+            "B": "To identify the number of bugs in the code",
+            "C": "To optimize the performance of the application",
+            "D": "To ensure all code is written in a specific programming language"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of code coverage is to measure the amount of code that is executed during testing. This metric helps developers understand which parts of the codebase are tested and which are not, allowing for better test coverage and identification of untested areas."
+    },
+    {
+        "question": "Which of the following best describes the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "A tool for optimizing code performance",
+            "B": "A plugin that aggregates multiple code coverage reports into one",
+            "C": "A framework for writing unit tests",
+            "D": "A library for managing project dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The JaCoCo Report Aggregation plugin is designed to aggregate the results of multiple JaCoCo code coverage reports into a single HTML report. This allows developers to view a comprehensive overview of code coverage across multiple projects or modules."
+    },
+    {
+        "question": "What must be applied alongside the JaCoCo Report Aggregation plugin for it to function properly?",
+        "options": {
+            "A": "Java Plugin",
+            "B": "JVM Test Suite Plugin",
+            "C": "Android Plugin",
+            "D": "Dependency Management Plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "The JaCoCo Report Aggregation plugin must be applied in conjunction with the JVM Test Suite Plugin. This combination enables the aggregation of code coverage results from various test suites, ensuring accurate reporting."
+    },
+    {
+        "question": "What is the significance of the `jacocoAggregation` configuration in the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "It specifies the output format of the coverage report",
+            "B": "It declares project dependencies that have code coverage data to be aggregated",
+            "C": "It determines the programming language used in the project",
+            "D": "It sets the threshold for acceptable code coverage levels"
+        },
+        "correct_answer": "B",
+        "explanation": "The `jacocoAggregation` configuration is significant because it is used to declare all project dependencies that contain code coverage data to be aggregated. This allows the plugin to collect and compile coverage results from various sources into a unified report."
+    },
+    {
+        "question": "What is the primary purpose of the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "To aggregate code coverage results from multiple reports into a single report",
+            "B": "To compile Java code into bytecode",
+            "C": "To manage project dependencies in Gradle",
+            "D": "To execute unit tests in isolation"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the JaCoCo Report Aggregation plugin is to aggregate the results of multiple JaCoCo code coverage reports into a single HTML report. This allows developers to have a consolidated view of code coverage across different Gradle projects."
+    },
+    {
+        "question": "Which Gradle plugin must be applied alongside the JaCoCo Report Aggregation plugin for it to function properly?",
+        "options": {
+            "A": "Java Plugin",
+            "B": "JVM Test Suite Plugin",
+            "C": "Application Plugin",
+            "D": "Kotlin Plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "The JaCoCo Report Aggregation plugin requires the JVM Test Suite Plugin to be applied in order to function properly. This is because the aggregation of code coverage results is dependent on the test suite configurations provided by the JVM Test Suite Plugin."
+    },
+    {
+        "question": "What happens if a task fails during the execution of a Gradle build that uses the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "The build will continue executing all tasks regardless of failures.",
+            "B": "Gradle will stop executing tasks, including generating aggregation reports.",
+            "C": "Only the failed task will be retried automatically.",
+            "D": "The build will generate a partial report with available data."
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle stops executing tasks when any task fails, including test failures. This means that if a task fails during the build process, the generation of aggregation reports will also be halted unless the `--continue` option is specified in the Gradle command."
+    },
+    {
+        "question": "What is the role of the `jacocoAggregation` configuration in the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "To declare dependencies for the JaCoCo plugin",
+            "B": "To aggregate code coverage data from project dependencies",
+            "C": "To specify the output format of the coverage report",
+            "D": "To manage the execution order of tests"
+        },
+        "correct_answer": "B",
+        "explanation": "The `jacocoAggregation` configuration is used to declare all project dependencies that have code coverage data to be aggregated. This configuration helps in collecting and organizing the coverage results from various subprojects for reporting purposes."
+    },
+    {
+        "question": "What is the primary purpose of the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "To aggregate code coverage results from multiple reports into a single report",
+            "B": "To compile Java code across multiple projects",
+            "C": "To manage project dependencies for Java applications",
+            "D": "To execute unit tests in isolation"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the JaCoCo Report Aggregation plugin is to aggregate code coverage results from multiple JaCoCo reports into a single HTML report. This allows developers to have a comprehensive view of code coverage across different projects or modules."
+    },
+    {
+        "question": "Which configuration is used to declare project dependencies that have code coverage data to be aggregated?",
+        "options": {
+            "A": "testCoverage",
+            "B": "jacocoAggregation",
+            "C": "dependencyManagement",
+            "D": "coverageResults"
+        },
+        "correct_answer": "B",
+        "explanation": "The configuration used to declare all project dependencies having code coverage data to be aggregated is called `jacocoAggregation`. This configuration is essential for the JaCoCo Report Aggregation plugin to function correctly and collect the necessary data."
+    },
+    {
+        "question": "What happens if the JaCoCo Report Aggregation plugin is applied without the JVM Test Suite Plugin?",
+        "options": {
+            "A": "It automatically generates coverage reports without any additional configuration.",
+            "B": "It requires manual registration of reports to aggregate coverage results.",
+            "C": "It will not function and will throw an error.",
+            "D": "It will only aggregate results from the main project."
+        },
+        "correct_answer": "B",
+        "explanation": "If the JaCoCo Report Aggregation plugin is applied without the JVM Test Suite Plugin, it requires manual registration of reports to aggregate coverage results. This means that developers must explicitly define how reports are created and aggregated."
+    },
+    {
+        "question": "What is the effect of using the `--continue` option in a Gradle command when generating reports?",
+        "options": {
+            "A": "It stops the build process immediately upon any task failure.",
+            "B": "It ensures that aggregation reports are generated even if some tasks fail.",
+            "C": "It skips the execution of all tests.",
+            "D": "It compiles the project without running any tests."
+        },
+        "correct_answer": "B",
+        "explanation": "Using the `--continue` option in a Gradle command allows the build process to continue executing tasks even if some tasks fail. This is particularly useful for ensuring that aggregation reports are generated, as it prevents the build from stopping at the first failure."
+    },
+    {
+        "question": "What is the primary purpose of the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "To aggregate code coverage results from multiple reports into a single report",
+            "B": "To compile source code into executable binaries",
+            "C": "To manage project dependencies across multiple modules",
+            "D": "To optimize the performance of build tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the JaCoCo Report Aggregation plugin is to aggregate code coverage results from multiple JaCoCo reports into a single HTML report. This allows developers to have a comprehensive view of code coverage across different Gradle projects, facilitating better testing and quality assurance."
+    },
+    {
+        "question": "Which Gradle plugin must be applied alongside the JaCoCo Report Aggregation plugin for it to function properly?",
+        "options": {
+            "A": "Java Plugin",
+            "B": "JVM Test Suite Plugin",
+            "C": "Application Plugin",
+            "D": "Kotlin Plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "The JaCoCo Report Aggregation plugin must be applied in conjunction with the JVM Test Suite Plugin. This combination ensures that the necessary tasks and configurations for collecting and aggregating code coverage results are properly set up within the Gradle build system."
+    },
+    {
+        "question": "What happens if a task fails during the execution of a Gradle build with the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "The build will continue executing all tasks regardless of failures.",
+            "B": "Only the failed task will be skipped, and subsequent tasks will run.",
+            "C": "Gradle stops executing tasks, including those for report generation.",
+            "D": "The build will automatically retry the failed task."
+        },
+        "correct_answer": "C",
+        "explanation": "By default, Gradle stops executing tasks when any task fails, including test failures. This means that if a task fails during the execution of a build that uses the JaCoCo Report Aggregation plugin, the build will halt, and no further tasks will be executed unless the `--continue` option is specified."
+    },
+    {
+        "question": "What is the role of the `jacocoAggregation` configuration in the JaCoCo Report Aggregation plugin?",
+        "options": {
+            "A": "To define the output format of the aggregated report",
+            "B": "To declare project dependencies that contain code coverage data",
+            "C": "To specify the test types for the coverage reports",
+            "D": "To manage the execution order of build tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The `jacocoAggregation` configuration is used to declare all project dependencies that have code coverage data to be aggregated. This configuration plays a crucial role in ensuring that the necessary data is collected from various projects for the purpose of generating a comprehensive coverage report."
+    },
+    {
+        "question": "What is the primary purpose of reporting in software development?",
+        "options": {
+            "A": "To document the code structure and design patterns",
+            "B": "To provide insights into the performance and quality of the software",
+            "C": "To manage project timelines and budgets",
+            "D": "To facilitate team communication and collaboration"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of reporting in software development is to provide insights into the performance and quality of the software. This includes metrics such as code coverage, test results, and other indicators that help assess the effectiveness of the development process and the reliability of the software."
+    },
+    {
+        "question": "Which of the following is a common type of report generated in software development?",
+        "options": {
+            "A": "User feedback report",
+            "B": "Code coverage report",
+            "C": "Project budget report",
+            "D": "Team performance report"
+        },
+        "correct_answer": "B",
+        "explanation": "A code coverage report is a common type of report generated in software development. It provides information on the percentage of code that has been tested, helping developers understand areas of the codebase that may require more testing to ensure quality and reliability."
+    },
+    {
+        "question": "What is a key benefit of using automated reporting tools in software development?",
+        "options": {
+            "A": "They eliminate the need for manual testing",
+            "B": "They ensure all team members are equally skilled",
+            "C": "They provide consistent and timely insights into project health",
+            "D": "They replace the need for code reviews"
+        },
+        "correct_answer": "C",
+        "explanation": "A key benefit of using automated reporting tools in software development is that they provide consistent and timely insights into project health. Automated reports can quickly aggregate data and present it in a clear format, allowing teams to make informed decisions based on up-to-date information."
+    },
+    {
+        "question": "In the context of reporting, what does the term 'aggregation' refer to?",
+        "options": {
+            "A": "The process of combining multiple reports into one",
+            "B": "The act of collecting user feedback",
+            "C": "The method of distributing reports to stakeholders",
+            "D": "The technique of analyzing code for vulnerabilities"
+        },
+        "correct_answer": "A",
+        "explanation": "In the context of reporting, 'aggregation' refers to the process of combining multiple reports into one comprehensive report. This allows for a holistic view of the data, making it easier to analyze overall performance and quality across different components or projects."
+    }
+]

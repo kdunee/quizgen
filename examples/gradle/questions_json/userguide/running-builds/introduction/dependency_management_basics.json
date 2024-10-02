@@ -1,0 +1,244 @@
+[
+    {
+        "question": "What is the primary purpose of dependency management in software projects?",
+        "options": {
+            "A": "To automate the process of declaring and resolving external resources",
+            "B": "To manually track all project files and their versions",
+            "C": "To ensure that all code is written in a single file",
+            "D": "To eliminate the need for any external libraries"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management is to automate the process of declaring and resolving external resources required by a project. This includes managing libraries, plugins, and other dependencies that support the building and functioning of the project, making it easier to maintain and update."
+    },
+    {
+        "question": "What is a version catalog in the context of dependency management?",
+        "options": {
+            "A": "A list of all project files and their sizes",
+            "B": "A centralized file for managing dependency versions and configurations",
+            "C": "A tool for debugging code errors",
+            "D": "A method for compressing project files"
+        },
+        "correct_answer": "B",
+        "explanation": "A version catalog is a centralized file that allows teams to manage dependency versions and configurations in one place. It simplifies the sharing of dependencies across subprojects and helps enforce consistent versions of libraries and plugins in larger projects."
+    },
+    {
+        "question": "In Gradle, how are dependencies typically organized?",
+        "options": {
+            "A": "By file size and type",
+            "B": "By configurations such as implementation and testImplementation",
+            "C": "By the order in which they are declared in the script",
+            "D": "By the programming language used in the project"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, dependencies are organized by configurations, such as 'implementation' for production code and 'testImplementation' for test code. This organization helps manage how dependencies are used in different contexts within the project."
+    },
+    {
+        "question": "What command can be used to view the dependency tree of a Gradle project?",
+        "options": {
+            "A": "gradle view:dependencies",
+            "B": "gradlew :app:dependencies",
+            "C": "gradle list:dependencies",
+            "D": "gradlew show:dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The command to view the dependency tree of a Gradle project is './gradlew :app:dependencies'. This command provides a detailed view of the dependencies used in the project, including their configurations and versions."
+    },
+    {
+        "question": "What is the primary purpose of a version catalog in Gradle?",
+        "options": {
+            "A": "To centralize dependency declarations and version configurations",
+            "B": "To manage the build process of a project",
+            "C": "To define the source code structure of a project",
+            "D": "To automate the testing of project dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a version catalog in Gradle is to centralize dependency declarations and version configurations. This allows for easier management of dependencies across multiple subprojects and helps teams enforce consistent versions of libraries and plugins."
+    },
+    {
+        "question": "Which section of a version catalog is used to declare version numbers for libraries?",
+        "options": {
+            "A": "[libraries]",
+            "B": "[versions]",
+            "C": "[bundles]",
+            "D": "[plugins]"
+        },
+        "correct_answer": "B",
+        "explanation": "The section of a version catalog used to declare version numbers for libraries is the [versions] section. This section allows developers to specify the version numbers that plugins and libraries will reference, facilitating version management across the project."
+    },
+    {
+        "question": "In a version catalog, what is the purpose of the [libraries] section?",
+        "options": {
+            "A": "To define the versions of plugins used in the project",
+            "B": "To declare the libraries used in the build files",
+            "C": "To group dependencies into bundles for easier management",
+            "D": "To specify the configurations for testing dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The [libraries] section in a version catalog is used to declare the libraries that will be utilized in the build files. This allows for a clear and organized way to manage external dependencies required for the project."
+    },
+    {
+        "question": "How does a version catalog benefit teams working on large projects?",
+        "options": {
+            "A": "By allowing teams to ignore versioning altogether",
+            "B": "By enabling teams to enforce consistent versions of libraries and plugins",
+            "C": "By simplifying the process of writing build scripts",
+            "D": "By automatically updating all dependencies to the latest versions"
+        },
+        "correct_answer": "B",
+        "explanation": "A version catalog benefits teams working on large projects by enabling them to enforce consistent versions of libraries and plugins. This centralization helps prevent version conflicts and ensures that all team members are using the same dependency versions, which is crucial for maintaining project stability."
+    },
+    {
+        "question": "What is the primary purpose of build scripts in Gradle?",
+        "options": {
+            "A": "To automate the process of declaring and resolving external resources required by a project",
+            "B": "To compile source code into executable files",
+            "C": "To manage user permissions for project access",
+            "D": "To create user interfaces for applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of build scripts in Gradle is to automate the process of declaring and resolving external resources, such as libraries and plugins, that are required by a project. This allows developers to manage dependencies efficiently and ensures that the project can be built consistently."
+    },
+    {
+        "question": "In Gradle, where do you specify the dependencies for your project?",
+        "options": {
+            "A": "In the settings.gradle file",
+            "B": "In the build.gradle or build.gradle.kts file",
+            "C": "In the version catalog only",
+            "D": "In the project.properties file"
+        },
+        "correct_answer": "B",
+        "explanation": "Dependencies for a Gradle project are specified in the build.gradle or build.gradle.kts file. This is where developers declare the libraries and plugins that the project requires, allowing Gradle to manage these dependencies during the build process."
+    },
+    {
+        "question": "What is a version catalog in Gradle?",
+        "options": {
+            "A": "A file that contains the source code for the project",
+            "B": "A centralized way to declare and manage dependency versions",
+            "C": "A tool for visualizing project dependencies",
+            "D": "A configuration file for user permissions"
+        },
+        "correct_answer": "B",
+        "explanation": "A version catalog in Gradle is a centralized way to declare and manage dependency versions. It allows teams to share dependencies and version configurations across subprojects, ensuring consistency and simplifying the management of library versions."
+    },
+    {
+        "question": "What does the 'implementation' configuration in Gradle signify?",
+        "options": {
+            "A": "Dependencies that are only needed for testing",
+            "B": "Dependencies required for compiling and running production code",
+            "C": "Dependencies that are optional for the project",
+            "D": "Dependencies that are used for documentation purposes"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'implementation' configuration in Gradle signifies dependencies that are required for compiling and running production code. This configuration ensures that the specified libraries are included in the final build of the application, allowing it to function correctly."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in Gradle?",
+        "options": {
+            "A": "To automate the declaration and resolution of external resources required by a project",
+            "B": "To compile source code without any external libraries",
+            "C": "To manage the version control of the project files",
+            "D": "To create user interfaces for applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management in Gradle is to automate the declaration and resolution of external resources required by a project. This includes managing libraries, plugins, and other resources that the project depends on to build and run successfully."
+    },
+    {
+        "question": "In Gradle, where are dependencies typically declared?",
+        "options": {
+            "A": "In the version catalog file",
+            "B": "In the dependencies block of the build.gradle file",
+            "C": "In the source code files directly",
+            "D": "In the project settings menu"
+        },
+        "correct_answer": "B",
+        "explanation": "Dependencies in Gradle are typically declared in the dependencies block of the build.gradle file. This is where developers specify which external libraries or plugins their project requires for compilation and execution."
+    },
+    {
+        "question": "What is a version catalog in Gradle used for?",
+        "options": {
+            "A": "To define the structure of the project files",
+            "B": "To centralize dependency declarations and version configurations",
+            "C": "To manage user permissions for the project",
+            "D": "To compile the source code into executable files"
+        },
+        "correct_answer": "B",
+        "explanation": "A version catalog in Gradle is used to centralize dependency declarations and version configurations. This allows teams to manage and share dependencies across multiple subprojects easily, ensuring consistency in library versions used throughout the project."
+    },
+    {
+        "question": "What does the 'implementation' configuration in Gradle signify?",
+        "options": {
+            "A": "Dependencies that are only needed for testing",
+            "B": "Dependencies required for compiling and running production code",
+            "C": "Dependencies that are optional for the project",
+            "D": "Dependencies that are used for documentation purposes"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'implementation' configuration in Gradle signifies dependencies that are required for compiling and running production code. This configuration ensures that the specified libraries are included in the final build of the application, allowing it to function correctly."
+    },
+    {
+        "question": "What is the primary purpose of configurations in Gradle?",
+        "options": {
+            "A": "To define the structure of the project files",
+            "B": "To group dependencies based on their usage",
+            "C": "To manage the version control of the project",
+            "D": "To automate the testing process"
+        },
+        "correct_answer": "B",
+        "explanation": "Configurations in Gradle are used to group dependencies based on their usage within the project. This allows developers to specify which dependencies are needed for compiling and running production code versus those needed for testing, thereby organizing the project effectively."
+    },
+    {
+        "question": "Which configuration would you use to add a dependency that is only needed for testing?",
+        "options": {
+            "A": "implementation",
+            "B": "compileOnly",
+            "C": "testImplementation",
+            "D": "runtimeOnly"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'testImplementation' configuration is specifically designed for dependencies that are required only during the testing phase of the project. This helps to keep the production code separate from the testing code, ensuring a cleaner build process."
+    },
+    {
+        "question": "How does using configurations benefit a Gradle project?",
+        "options": {
+            "A": "By allowing multiple versions of the same dependency",
+            "B": "By simplifying the build script syntax",
+            "C": "By organizing dependencies according to their roles in the project",
+            "D": "By automatically updating dependencies to the latest versions"
+        },
+        "correct_answer": "C",
+        "explanation": "Using configurations benefits a Gradle project by organizing dependencies according to their roles, such as production or testing. This organization helps in managing dependencies more effectively and ensures that the correct libraries are used in the appropriate contexts."
+    },
+    {
+        "question": "What is a dependency tree in the context of Gradle?",
+        "options": {
+            "A": "A visual representation of the project's source code structure",
+            "B": "A hierarchical structure showing the relationships between project dependencies",
+            "C": "A list of all the plugins used in a project",
+            "D": "A summary of the project's build performance metrics"
+        },
+        "correct_answer": "B",
+        "explanation": "A dependency tree in Gradle is a hierarchical structure that illustrates the relationships between the various dependencies required by a project. It helps developers understand how dependencies are linked and which libraries are being used, making it easier to manage and troubleshoot dependency issues."
+    },
+    {
+        "question": "How can you view the dependency tree of a Gradle project?",
+        "options": {
+            "A": "By running the command `./gradlew :app:dependencies`",
+            "B": "By checking the `build.gradle` file directly",
+            "C": "By using the Gradle GUI interface",
+            "D": "By inspecting the `libs.versions.toml` file"
+        },
+        "correct_answer": "A",
+        "explanation": "To view the dependency tree of a Gradle project, you can run the command `./gradlew :app:dependencies` in the terminal. This command generates a report that lists all the dependencies and their configurations, allowing developers to see how dependencies are structured within the project."
+    },
+    {
+        "question": "What is the purpose of grouping dependencies by configurations in Gradle?",
+        "options": {
+            "A": "To optimize the build process by reducing the number of files",
+            "B": "To categorize dependencies based on their usage in the project",
+            "C": "To enforce strict version control on all dependencies",
+            "D": "To simplify the syntax of the build.gradle file"
+        },
+        "correct_answer": "B",
+        "explanation": "Grouping dependencies by configurations in Gradle serves to categorize them based on their usage within the project. For example, `implementation` is used for production code dependencies, while `testImplementation` is for test code dependencies. This organization helps manage dependencies more effectively and ensures that the correct libraries are used in the appropriate contexts."
+    }
+]

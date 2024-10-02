@@ -1,0 +1,563 @@
+[
+    {
+        "question": "What is the primary benefit of using lazy properties in Gradle?",
+        "options": {
+            "A": "They allow immediate value resolution during configuration.",
+            "B": "They delay the calculation of a property's value until it is needed.",
+            "C": "They require all property values to be known at the start of the build.",
+            "D": "They simplify the build script by removing the need for task dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using lazy properties in Gradle is that they delay the calculation of a property's value until it is actually needed. This deferred value resolution helps manage complex builds more efficiently by avoiding unnecessary computations during the configuration phase."
+    },
+    {
+        "question": "How do lazy properties improve build performance?",
+        "options": {
+            "A": "By executing all tasks in parallel.",
+            "B": "By avoiding resource-intensive work during configuration.",
+            "C": "By pre-calculating all property values before execution.",
+            "D": "By reducing the number of tasks required in a build."
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties improve build performance by avoiding resource-intensive work during the configuration phase. This means that expensive calculations or file parsing are only performed when the property is actually accessed, which can significantly speed up the overall build process."
+    },
+    {
+        "question": "What is the difference between a Property and a Provider in Gradle?",
+        "options": {
+            "A": "A Property is read-only, while a Provider is configurable.",
+            "B": "A Property can be queried and changed, while a Provider is read-only.",
+            "C": "Both are the same and can be used interchangeably.",
+            "D": "A Provider is used for immediate value resolution, while a Property is for lazy evaluation."
+        },
+        "correct_answer": "B",
+        "explanation": "The key difference between a Property and a Provider in Gradle is that a Property can be queried and changed, making it configurable, while a Provider is read-only and represents a value that can only be queried. This distinction allows for different use cases in managing build configurations."
+    },
+    {
+        "question": "What method can be used to finalize the value of a Property in Gradle?",
+        "options": {
+            "A": "setValue()",
+            "B": "finalizeValue()",
+            "C": "commitValue()",
+            "D": "lockValue()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method used to finalize the value of a Property in Gradle is finalizeValue(). This method calculates the final value for the property and prevents any further changes, ensuring that the property remains consistent during task execution."
+    },
+    {
+        "question": "What is the primary benefit of using lazy properties in Gradle?",
+        "options": {
+            "A": "They allow immediate value resolution during configuration.",
+            "B": "They delay the calculation of a property's value until it is needed.",
+            "C": "They require manual management of task dependencies.",
+            "D": "They simplify the build script by removing all property types."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using lazy properties in Gradle is that they delay the calculation of a property's value until it is actually needed. This deferred value resolution helps manage complex builds more efficiently by avoiding unnecessary computations during the configuration phase."
+    },
+    {
+        "question": "Which of the following statements is true about the `Provider` interface in Gradle?",
+        "options": {
+            "A": "It allows both querying and modifying the property's value.",
+            "B": "It represents a value that can only be queried and cannot be changed.",
+            "C": "It is used exclusively for mutable properties.",
+            "D": "It can be implemented directly in build scripts."
+        },
+        "correct_answer": "B",
+        "explanation": "The `Provider` interface in Gradle represents a value that can only be queried and cannot be changed. This makes it suitable for read-only properties, ensuring that the value remains consistent throughout the build process."
+    },
+    {
+        "question": "How do lazy properties improve build performance in Gradle?",
+        "options": {
+            "A": "By executing all tasks in parallel.",
+            "B": "By avoiding resource-intensive work during configuration.",
+            "C": "By eliminating the need for task dependencies.",
+            "D": "By automatically optimizing the build script syntax."
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties improve build performance by avoiding resource-intensive work during the configuration phase. This means that expensive calculations or file parsing are only performed when the property's value is actually needed, thus enhancing overall build efficiency."
+    },
+    {
+        "question": "What is the purpose of the `finalizeValue()` method in Gradle's lazy properties?",
+        "options": {
+            "A": "To allow further modifications to the property's value.",
+            "B": "To calculate the final value and prevent further changes.",
+            "C": "To reset the property's value to its default state.",
+            "D": "To convert a `Provider` into a `Property`."
+        },
+        "correct_answer": "B",
+        "explanation": "The `finalizeValue()` method in Gradle's lazy properties is used to calculate the final value for the property and prevent any further changes. This ensures that once the task starts executing, the property maintains a consistent value, avoiding potential errors from conflicting modifications."
+    },
+    {
+        "question": "What is the main advantage of deferred value resolution in Gradle's lazy properties?",
+        "options": {
+            "A": "It allows properties to be calculated at the time they are needed.",
+            "B": "It ensures that all properties are calculated at the start of the build.",
+            "C": "It prevents any changes to property values after they are set.",
+            "D": "It simplifies the build script by removing the need for property definitions."
+        },
+        "correct_answer": "A",
+        "explanation": "The main advantage of deferred value resolution is that it allows properties to be calculated only when they are actually needed, rather than at the start of the build. This can improve performance and resource management, as unnecessary calculations are avoided until the property is accessed."
+    },
+    {
+        "question": "How does deferred value resolution benefit task dependency management in Gradle?",
+        "options": {
+            "A": "It eliminates the need for defining task dependencies explicitly.",
+            "B": "It allows tasks to run in parallel without any dependencies.",
+            "C": "It automatically connects the output of one task to the input of another.",
+            "D": "It requires all tasks to be configured before execution."
+        },
+        "correct_answer": "C",
+        "explanation": "Deferred value resolution benefits task dependency management by automatically connecting the output of one task to the input of another. This means that Gradle can track which tasks depend on which properties, ensuring that dependencies are managed correctly without requiring explicit definitions."
+    },
+    {
+        "question": "What happens when a property is accessed in a lazy configuration context?",
+        "options": {
+            "A": "The property value is calculated immediately and stored for future use.",
+            "B": "The property value is ignored and defaults are used.",
+            "C": "The property value is calculated only if it has not been set previously.",
+            "D": "The property value is calculated and then discarded."
+        },
+        "correct_answer": "C",
+        "explanation": "When a property is accessed in a lazy configuration context, the value is calculated only if it has not been set previously. This allows for efficient use of resources, as values are only computed when necessary, and it supports the dynamic nature of build configurations."
+    },
+    {
+        "question": "Which of the following best describes the role of lazy properties in Gradle builds?",
+        "options": {
+            "A": "They are used to store static values that do not change during the build.",
+            "B": "They allow for dynamic configuration of properties that can change based on build context.",
+            "C": "They are only applicable to file paths and cannot be used for other types of data.",
+            "D": "They require all values to be known at the start of the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties in Gradle builds allow for dynamic configuration of properties that can change based on the build context. This flexibility enables builds to adapt to different conditions and configurations without needing to know all values upfront."
+    },
+    {
+        "question": "What is the primary benefit of automatic task dependency management in Gradle?",
+        "options": {
+            "A": "It allows tasks to run in parallel without any configuration.",
+            "B": "It automatically determines task dependencies based on property values.",
+            "C": "It eliminates the need for any task configuration.",
+            "D": "It ensures that all tasks are executed in a fixed order."
+        },
+        "correct_answer": "B",
+        "explanation": "Automatic task dependency management in Gradle allows the framework to automatically determine the dependencies between tasks based on the properties that are connected. This means that when one task's output is used as another task's input, Gradle can manage the execution order without requiring explicit configuration from the user."
+    },
+    {
+        "question": "How do lazy properties contribute to automatic task dependency management?",
+        "options": {
+            "A": "They allow properties to be modified at any time during the build.",
+            "B": "They ensure that all tasks are executed before any properties are resolved.",
+            "C": "They track which task produces a property's value, linking tasks together.",
+            "D": "They prevent any changes to task properties once the build starts."
+        },
+        "correct_answer": "C",
+        "explanation": "Lazy properties contribute to automatic task dependency management by tracking which task produces a property's value. This tracking allows Gradle to automatically link tasks together based on their dependencies, ensuring that tasks are executed in the correct order without requiring manual configuration."
+    },
+    {
+        "question": "What happens when a task's output is connected to another task's input using lazy properties?",
+        "options": {
+            "A": "The tasks will run simultaneously without any dependencies.",
+            "B": "The output of the first task is ignored by the second task.",
+            "C": "Gradle automatically adds the necessary task dependencies.",
+            "D": "The second task must be manually configured to recognize the output."
+        },
+        "correct_answer": "C",
+        "explanation": "When a task's output is connected to another task's input using lazy properties, Gradle automatically adds the necessary task dependencies. This means that the execution order is managed by Gradle, ensuring that the first task completes before the second task begins, based on the dependency established through the properties."
+    },
+    {
+        "question": "What is one of the main benefits of using lazy properties in Gradle?",
+        "options": {
+            "A": "They allow immediate value resolution during configuration.",
+            "B": "They improve build performance by delaying value calculation.",
+            "C": "They require manual management of task dependencies.",
+            "D": "They simplify the build script by removing all property types."
+        },
+        "correct_answer": "B",
+        "explanation": "One of the main benefits of using lazy properties in Gradle is that they improve build performance by delaying the calculation of a property's value until it is actually needed. This means that resource-intensive operations are only performed when necessary, which can significantly speed up the build process."
+    },
+    {
+        "question": "How do lazy properties help with task dependency management in Gradle?",
+        "options": {
+            "A": "They eliminate the need for any task dependencies.",
+            "B": "They automatically determine task dependencies based on property values.",
+            "C": "They require explicit declaration of all task dependencies.",
+            "D": "They only work with file-based properties."
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties help with task dependency management by automatically determining task dependencies based on the values of properties. This means that when a property is used as an input for a task, Gradle can track which task produces the value, ensuring that dependencies are managed without requiring manual synchronization."
+    },
+    {
+        "question": "What does the term 'deferred value resolution' refer to in the context of lazy properties?",
+        "options": {
+            "A": "Calculating property values at the start of the build.",
+            "B": "Delaying the calculation of a property's value until it is needed.",
+            "C": "Forcing immediate updates to property values.",
+            "D": "Automatically finalizing property values during configuration."
+        },
+        "correct_answer": "B",
+        "explanation": "Deferred value resolution refers to the practice of delaying the calculation of a property's value until it is actually required. This allows for more efficient builds, as values are only computed when necessary, rather than at the beginning of the build process."
+    },
+    {
+        "question": "Which of the following statements about lazy properties is true?",
+        "options": {
+            "A": "They can only be used for file properties.",
+            "B": "They are intended to be queried only when required.",
+            "C": "They must be configured with explicit values at all times.",
+            "D": "They do not support automatic dependency management."
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties are intended to be queried only when required. This design allows for improved performance and flexibility in build scripts, as the values are not calculated until they are actually needed, which can help avoid unnecessary computations."
+    },
+    {
+        "question": "What is the primary purpose of the Provider API in Gradle?",
+        "options": {
+            "A": "To manage task dependencies and improve build performance",
+            "B": "To create user interfaces for Gradle builds",
+            "C": "To compile source code into executable files",
+            "D": "To handle network requests during the build process"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Provider API in Gradle is to manage task dependencies and improve build performance. It allows for lazy evaluation of properties, meaning values are only calculated when needed, which helps in optimizing resource usage and ensuring that task dependencies are automatically managed."
+    },
+    {
+        "question": "Which of the following statements about lazy properties is true?",
+        "options": {
+            "A": "They are evaluated immediately when the build starts.",
+            "B": "They can be connected to reflect changes automatically.",
+            "C": "They require manual tracking of dependencies.",
+            "D": "They can only be used for file paths."
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties can be connected together so that changes to one property are automatically reflected in other properties. This feature simplifies dependency management and ensures that related properties stay in sync without requiring manual intervention."
+    },
+    {
+        "question": "What is a key benefit of using the Provider API for task properties?",
+        "options": {
+            "A": "It allows properties to be modified at any time during the build.",
+            "B": "It ensures that properties are always read-only.",
+            "C": "It helps avoid resource-intensive calculations during configuration.",
+            "D": "It eliminates the need for any task dependencies."
+        },
+        "correct_answer": "C",
+        "explanation": "A key benefit of using the Provider API for task properties is that it helps avoid resource-intensive calculations during configuration. By delaying the evaluation of properties until they are actually needed, builds can perform more efficiently and reduce unnecessary processing."
+    },
+    {
+        "question": "What type of property allows both querying and changing its value in Gradle?",
+        "options": {
+            "A": "Provider",
+            "B": "Property",
+            "C": "FileCollection",
+            "D": "Directory"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, a Property allows both querying and changing its value. It is a mutable type that can be configured, while a Provider is read-only and only allows querying of its value."
+    },
+    {
+        "question": "What is the primary purpose of the Property API in Gradle?",
+        "options": {
+            "A": "To manage task dependencies and configurations efficiently",
+            "B": "To create user interfaces for Gradle builds",
+            "C": "To compile source code into executable files",
+            "D": "To handle network communications in Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Property API in Gradle is to manage task dependencies and configurations efficiently. It allows for lazy evaluation of properties, meaning values are only computed when needed, which helps in optimizing build performance and simplifying the management of task inputs and outputs."
+    },
+    {
+        "question": "Which of the following statements about lazy properties is true?",
+        "options": {
+            "A": "They are evaluated immediately when the build script is executed.",
+            "B": "They can be connected to ensure changes in one property reflect in others.",
+            "C": "They require manual tracking of dependencies between tasks.",
+            "D": "They can only be used for read-only values."
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties can be connected to ensure that changes in one property automatically reflect in others. This feature simplifies the management of task dependencies and allows for more dynamic configurations without the need for manual tracking."
+    },
+    {
+        "question": "What is a key benefit of using the Provider interface in Gradle?",
+        "options": {
+            "A": "It allows properties to be modified at any time during the build.",
+            "B": "It ensures that property values are always up-to-date without manual intervention.",
+            "C": "It provides a way to create user-defined tasks easily.",
+            "D": "It allows for the direct execution of build scripts."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using the Provider interface in Gradle is that it ensures property values are always up-to-date without manual intervention. Providers automatically track the task that produces their value, allowing for dynamic updates as configurations change."
+    },
+    {
+        "question": "How can a Property instance be made unmodifiable in Gradle?",
+        "options": {
+            "A": "By calling the finalizeValue() method on the Property.",
+            "B": "By setting the Property to null.",
+            "C": "By using the set() method with a default value.",
+            "D": "By declaring the Property as final in the build script."
+        },
+        "correct_answer": "A",
+        "explanation": "A Property instance can be made unmodifiable in Gradle by calling the finalizeValue() method on the Property. This method calculates the final value for the property and prevents any further changes, ensuring consistency during task execution."
+    },
+    {
+        "question": "What is the primary purpose of defining task inputs and outputs in a build system?",
+        "options": {
+            "A": "To ensure tasks are executed in the correct order based on their dependencies",
+            "B": "To allow tasks to run without any configuration",
+            "C": "To enable tasks to run concurrently without any restrictions",
+            "D": "To eliminate the need for any task dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of defining task inputs and outputs is to ensure that tasks are executed in the correct order based on their dependencies. By specifying which tasks produce outputs that other tasks consume as inputs, the build system can automatically manage the execution sequence, ensuring that all necessary data is available when a task runs."
+    },
+    {
+        "question": "How do lazy properties improve build performance in a task?",
+        "options": {
+            "A": "By executing all tasks simultaneously",
+            "B": "By delaying the calculation of property values until they are needed",
+            "C": "By pre-calculating all property values at the start of the build",
+            "D": "By allowing properties to be modified during task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties improve build performance by delaying the calculation of property values until they are actually needed. This means that resource-intensive operations are only performed when necessary, reducing unnecessary computations and improving overall build efficiency."
+    },
+    {
+        "question": "What is a key benefit of using the Property API for task inputs and outputs?",
+        "options": {
+            "A": "It allows for the direct modification of task outputs during execution",
+            "B": "It automatically tracks which task produces a property's value",
+            "C": "It eliminates the need for any task configuration",
+            "D": "It requires all properties to be defined at the start of the build"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using the Property API for task inputs and outputs is that it automatically tracks which task produces a property's value. This feature simplifies dependency management, as the build system can infer task dependencies based on the properties used, ensuring that tasks are executed in the correct order without manual configuration."
+    },
+    {
+        "question": "What happens when a task's property is finalized using the finalizeValue() method?",
+        "options": {
+            "A": "The property can still be modified after the task starts execution",
+            "B": "The property becomes unmodifiable and its current value is set as final",
+            "C": "The property is deleted from the task configuration",
+            "D": "The property is reset to its default value"
+        },
+        "correct_answer": "B",
+        "explanation": "When a task's property is finalized using the finalizeValue() method, the property becomes unmodifiable and its current value is set as final. This prevents any further changes to the property, ensuring that all consumers of the property see the same value during task execution, which helps maintain consistency and avoid errors."
+    },
+    {
+        "question": "What is the primary purpose of File and Directory Properties in Gradle?",
+        "options": {
+            "A": "To represent file and directory paths that can be configured and queried lazily",
+            "B": "To store static file paths that do not change during the build process",
+            "C": "To manage the execution order of tasks in a build",
+            "D": "To define the versioning of files used in a project"
+        },
+        "correct_answer": "A",
+        "explanation": "File and Directory Properties in Gradle are designed to represent file and directory paths that can be configured and queried lazily. This means their values are not resolved until they are actually needed, which helps improve build performance and manage dependencies effectively."
+    },
+    {
+        "question": "Which method is used to create a Directory Property in Gradle?",
+        "options": {
+            "A": "ObjectFactory.createDirectoryProperty()",
+            "B": "ObjectFactory.directoryProperty()",
+            "C": "ObjectFactory.createProperty()",
+            "D": "ObjectFactory.newDirectoryProperty()"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, a Directory Property is created using the method ObjectFactory.directoryProperty(). This method allows you to define a property that represents a directory path, which can be configured and queried lazily."
+    },
+    {
+        "question": "What is a key benefit of using lazy properties for file and directory management in Gradle?",
+        "options": {
+            "A": "They allow for immediate resolution of file paths",
+            "B": "They prevent any changes to the file system during the build",
+            "C": "They improve build performance by delaying value resolution until needed",
+            "D": "They automatically create backups of files before modification"
+        },
+        "correct_answer": "C",
+        "explanation": "A key benefit of using lazy properties for file and directory management in Gradle is that they improve build performance by delaying value resolution until the properties are actually needed. This avoids unnecessary computations and resource usage during the configuration phase."
+    },
+    {
+        "question": "How does a Directory Property differ from a regular file path in Gradle?",
+        "options": {
+            "A": "A Directory Property is mutable while a regular file path is immutable",
+            "B": "A Directory Property can be lazily evaluated and is aware of changes in the file system",
+            "C": "A Directory Property cannot be used in task dependencies",
+            "D": "A Directory Property is only used for input files, not output files"
+        },
+        "correct_answer": "B",
+        "explanation": "A Directory Property differs from a regular file path in that it can be lazily evaluated and is aware of changes in the file system. This means that the value of a Directory Property can reflect updates made to the directory structure, enhancing the flexibility and responsiveness of the build process."
+    },
+    {
+        "question": "What is the primary purpose of collection properties in Gradle?",
+        "options": {
+            "A": "To manage mutable collections of values",
+            "B": "To create immutable collections of values",
+            "C": "To store single values only",
+            "D": "To define static properties for tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "Collection properties in Gradle are designed to manage mutable collections of values, allowing users to add, remove, or modify elements within the collection dynamically. This flexibility is essential for configuring tasks that may require varying numbers of inputs or outputs."
+    },
+    {
+        "question": "Which type of property is used for managing a list of values in Gradle?",
+        "options": {
+            "A": "SetProperty",
+            "B": "MapProperty",
+            "C": "ListProperty",
+            "D": "Property"
+        },
+        "correct_answer": "C",
+        "explanation": "In Gradle, a ListProperty is specifically used for managing a list of values. It allows for the addition and manipulation of list elements, providing a flexible way to handle collections of data within build scripts."
+    },
+    {
+        "question": "How can you add a new element to a ListProperty in Gradle?",
+        "options": {
+            "A": "Using the add() method",
+            "B": "Using the set() method",
+            "C": "Using the map() method",
+            "D": "Using the finalizeValue() method"
+        },
+        "correct_answer": "A",
+        "explanation": "To add a new element to a ListProperty in Gradle, you use the add() method. This method allows you to append elements to the list dynamically, which is a key feature of collection properties."
+    },
+    {
+        "question": "What is a key benefit of using collection properties in Gradle builds?",
+        "options": {
+            "A": "They prevent any changes to the collection after creation.",
+            "B": "They allow for lazy evaluation of collection values.",
+            "C": "They can only hold primitive data types.",
+            "D": "They automatically synchronize with external databases."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using collection properties in Gradle is that they allow for lazy evaluation of collection values. This means that the values are calculated only when needed, improving build performance and resource management."
+    },
+    {
+        "question": "What is a MapProperty in Gradle?",
+        "options": {
+            "A": "A property type that allows configuration of Map values.",
+            "B": "A property type that only allows read-only access to values.",
+            "C": "A property type that is used exclusively for file paths.",
+            "D": "A property type that cannot be modified after creation."
+        },
+        "correct_answer": "A",
+        "explanation": "A MapProperty in Gradle is a property type that allows the configuration of Map values. It provides methods to set and manipulate the entries of the map, making it suitable for scenarios where key-value pairs need to be managed dynamically during the build process."
+    },
+    {
+        "question": "How can you create a MapProperty instance in Gradle?",
+        "options": {
+            "A": "Using the ObjectFactory.mapProperty() method.",
+            "B": "By directly instantiating a Map object.",
+            "C": "Using the ProviderFactory.provider() method.",
+            "D": "By calling the Property.set() method."
+        },
+        "correct_answer": "A",
+        "explanation": "You can create a MapProperty instance in Gradle using the ObjectFactory.mapProperty() method. This method allows you to specify the types of the keys and values in the map, enabling type-safe configuration of map properties."
+    },
+    {
+        "question": "What is a key feature of MapProperty in Gradle?",
+        "options": {
+            "A": "It can only hold immutable values.",
+            "B": "It allows adding entries with lazy values.",
+            "C": "It is designed for single-value properties only.",
+            "D": "It cannot be used in conjunction with other property types."
+        },
+        "correct_answer": "B",
+        "explanation": "A key feature of MapProperty in Gradle is that it allows adding entries with lazy values. This means you can define entries that are computed only when needed, which can improve build performance and flexibility."
+    },
+    {
+        "question": "What method would you use to set the value of a MapProperty?",
+        "options": {
+            "A": "setValue(Map)",
+            "B": "set(Map)",
+            "C": "add(Map.Entry)",
+            "D": "set(Map.Entry)"
+        },
+        "correct_answer": "B",
+        "explanation": "To set the value of a MapProperty, you would use the set(Map) method. This method allows you to specify the entire map at once, replacing any existing entries with the new ones."
+    },
+    {
+        "question": "What is the purpose of applying a convention to a property in Gradle?",
+        "options": {
+            "A": "To set a default value that can be overridden later",
+            "B": "To permanently lock the property value",
+            "C": "To create a new property type",
+            "D": "To automatically generate documentation for the property"
+        },
+        "correct_answer": "A",
+        "explanation": "Applying a convention to a property allows you to set a default value that will be used until a specific value is configured. This is useful for providing sensible defaults while still allowing flexibility for users to customize the property as needed."
+    },
+    {
+        "question": "Where can conventions be applied to properties in Gradle?",
+        "options": {
+            "A": "Only in the build script",
+            "B": "In the plugin's apply() method, build scripts, and task initialization",
+            "C": "Only in the task's execution phase",
+            "D": "Only in external configuration files"
+        },
+        "correct_answer": "B",
+        "explanation": "Conventions can be applied in several locations, including a plugin's apply() method, within build scripts, and during task initialization. This flexibility allows for consistent configuration across different parts of a Gradle build."
+    },
+    {
+        "question": "What happens when a convention is applied to a property and a specific value is later configured?",
+        "options": {
+            "A": "The convention is permanently removed from the property",
+            "B": "The convention value is ignored and the specific value is used",
+            "C": "The property becomes read-only",
+            "D": "The property will revert to the convention value"
+        },
+        "correct_answer": "B",
+        "explanation": "When a specific value is configured for a property that has a convention applied, the convention value is ignored, and the specific value takes precedence. This allows users to customize properties while still benefiting from default settings."
+    },
+    {
+        "question": "Which method is used to apply a convention to a property in Gradle?",
+        "options": {
+            "A": "set()",
+            "B": "configure()",
+            "C": "convention()",
+            "D": "apply()"
+        },
+        "correct_answer": "C",
+        "explanation": "The convention() method is used to apply a default value or a Provider to a property. This method allows the property to have a fallback value that can be overridden by user-defined values later in the configuration process."
+    },
+    {
+        "question": "What is the purpose of making a property unmodifiable in Gradle?",
+        "options": {
+            "A": "To allow the property to be changed at any time during the build process",
+            "B": "To prevent further changes to the property once it has been configured",
+            "C": "To ensure that the property can only be read and not set",
+            "D": "To automatically synchronize the property with other properties"
+        },
+        "correct_answer": "B",
+        "explanation": "The purpose of making a property unmodifiable in Gradle is to prevent further changes to the property once it has been configured. This ensures that all consumers of the property see the same value, avoiding potential errors that could arise from different parts of the build using different values."
+    },
+    {
+        "question": "Which method is used to finalize the value of a property and make it unmodifiable?",
+        "options": {
+            "A": "setValue()",
+            "B": "finalizeValue()",
+            "C": "lockValue()",
+            "D": "commitValue()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method used to finalize the value of a property and make it unmodifiable is finalizeValue(). This method calculates the final value for the property and prevents any further changes, ensuring consistency during the build process."
+    },
+    {
+        "question": "What happens when the finalizeValue() method is called on a property?",
+        "options": {
+            "A": "The property can be modified again after execution",
+            "B": "The property becomes read-only and cannot be changed",
+            "C": "The property is deleted from the build configuration",
+            "D": "The property is reset to its default value"
+        },
+        "correct_answer": "B",
+        "explanation": "When the finalizeValue() method is called on a property, the property becomes read-only and cannot be changed. This ensures that once the value is set, it remains consistent throughout the execution of the build."
+    },
+    {
+        "question": "What is the difference between finalizeValue() and finalizeValueOnRead() methods?",
+        "options": {
+            "A": "finalizeValue() calculates the final value eagerly, while finalizeValueOnRead() does so lazily",
+            "B": "finalizeValue() can only be used on read-only properties, while finalizeValueOnRead() can be used on any property",
+            "C": "finalizeValue() is used for input properties, while finalizeValueOnRead() is for output properties",
+            "D": "There is no difference; they are interchangeable"
+        },
+        "correct_answer": "A",
+        "explanation": "The difference between finalizeValue() and finalizeValueOnRead() is that finalizeValue() calculates the final value eagerly, meaning it is computed immediately when the method is called. In contrast, finalizeValueOnRead() calculates the final value lazily, meaning it is computed only when the property's value is queried."
+    }
+]

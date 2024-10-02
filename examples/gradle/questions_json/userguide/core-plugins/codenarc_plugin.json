@@ -1,0 +1,200 @@
+[
+    {
+        "question": "What is the primary purpose of the CodeNarc plugin?",
+        "options": {
+            "A": "To perform quality checks on Groovy source files",
+            "B": "To compile Groovy source files into bytecode",
+            "C": "To manage dependencies for Groovy projects",
+            "D": "To execute Groovy scripts in a production environment"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the CodeNarc plugin is to perform quality checks on Groovy source files. It analyzes the code for potential issues and generates reports, helping developers maintain high code quality throughout their projects."
+    },
+    {
+        "question": "Which task is responsible for running CodeNarc against production Groovy source files?",
+        "options": {
+            "A": "codenarcTest",
+            "B": "codenarcMain",
+            "C": "check",
+            "D": "codenarc__SourceSet__"
+        },
+        "correct_answer": "B",
+        "explanation": "The task responsible for running CodeNarc against production Groovy source files is `codenarcMain`. This task is part of the CodeNarc plugin and is specifically designed to analyze the main source files for quality issues."
+    },
+    {
+        "question": "What is the expected project layout for using the CodeNarc plugin?",
+        "options": {
+            "A": "A flat structure with all files in the root directory",
+            "B": "A nested structure with configuration files in a specific directory",
+            "C": "A structure with separate directories for source and test files only",
+            "D": "A structure that includes only the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "The expected project layout for using the CodeNarc plugin includes a nested structure where configuration files are placed in a specific directory, typically under `config/codenarc`. This organization helps in managing the CodeNarc configuration effectively."
+    },
+    {
+        "question": "What does the `check` task depend on when using the CodeNarc plugin?",
+        "options": {
+            "A": "Only the `codenarcMain` task",
+            "B": "All CodeNarc tasks, including `codenarcMain` and `codenarcTest`",
+            "C": "Only the `codenarcTest` task",
+            "D": "No dependencies; it runs independently"
+        },
+        "correct_answer": "B",
+        "explanation": "The `check` task depends on all CodeNarc tasks, including `codenarcMain` and `codenarcTest`. This means that when the `check` task is executed, it will automatically run all the quality checks defined by CodeNarc, ensuring comprehensive code quality assessment."
+    },
+    {
+        "question": "What is the primary purpose of the CodeNarc plugin?",
+        "options": {
+            "A": "To perform quality checks on Groovy source files",
+            "B": "To compile Groovy source files into bytecode",
+            "C": "To manage dependencies for Groovy projects",
+            "D": "To execute Groovy scripts in a production environment"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the CodeNarc plugin is to perform quality checks on Groovy source files. It analyzes the code for potential issues and generates reports, helping developers maintain high code quality in their projects."
+    },
+    {
+        "question": "Which command is used to execute the quality checks provided by the CodeNarc plugin?",
+        "options": {
+            "A": "gradle build",
+            "B": "gradle check",
+            "C": "gradle run",
+            "D": "gradle test"
+        },
+        "correct_answer": "B",
+        "explanation": "To execute the quality checks provided by the CodeNarc plugin, the command 'gradle check' is used. This command runs all CodeNarc tasks, including checks on both production and test Groovy source files."
+    },
+    {
+        "question": "What type of files does the CodeNarc plugin primarily analyze?",
+        "options": {
+            "A": "Java source files",
+            "B": "Groovy source files",
+            "C": "XML configuration files",
+            "D": "HTML documentation files"
+        },
+        "correct_answer": "B",
+        "explanation": "The CodeNarc plugin primarily analyzes Groovy source files. It checks these files for coding standards and potential issues, ensuring that the code adheres to best practices."
+    },
+    {
+        "question": "Where should the CodeNarc configuration files be located in a project?",
+        "options": {
+            "A": "In the root directory of the project",
+            "B": "In the 'src' directory of the project",
+            "C": "In the 'config/codenarc' directory",
+            "D": "In the 'lib' directory of the project"
+        },
+        "correct_answer": "C",
+        "explanation": "The CodeNarc configuration files should be located in the 'config/codenarc' directory of the project. This specific layout allows the CodeNarc plugin to easily find and utilize the configuration settings for quality checks."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in the context of the CodeNarc plugin?",
+        "options": {
+            "A": "To manage the versions of libraries used in the project",
+            "B": "To execute the quality checks on the source files",
+            "C": "To configure the project layout for better organization",
+            "D": "To generate reports from the quality checks"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management in the context of the CodeNarc plugin is to manage the versions of libraries used in the project. This ensures that the correct versions of dependencies are utilized, which is crucial for maintaining compatibility and functionality within the project."
+    },
+    {
+        "question": "Which configuration is specifically associated with the CodeNarc plugin for managing its libraries?",
+        "options": {
+            "A": "groovy",
+            "B": "codenarc",
+            "C": "check",
+            "D": "dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The configuration specifically associated with the CodeNarc plugin for managing its libraries is called 'codenarc'. This configuration allows the project to specify which CodeNarc libraries to use, ensuring that the necessary tools for quality checks are available."
+    },
+    {
+        "question": "What happens when the 'check' task is executed in a project using the CodeNarc plugin?",
+        "options": {
+            "A": "Only the CodeNarc tasks are executed",
+            "B": "All tasks defined by the Groovy plugin are skipped",
+            "C": "All CodeNarc tasks, including 'codenarcMain' and 'codenarcTest', are executed",
+            "D": "The project layout is automatically configured"
+        },
+        "correct_answer": "C",
+        "explanation": "When the 'check' task is executed in a project using the CodeNarc plugin, it depends on all CodeNarc tasks, including 'codenarcMain' and 'codenarcTest'. This means that executing 'check' will run all the quality checks defined by the CodeNarc plugin on both production and test Groovy source files."
+    },
+    {
+        "question": "What is the expected project layout for using the CodeNarc plugin?",
+        "options": {
+            "A": "A flat structure with all files in the root directory",
+            "B": "A nested structure with a 'config' directory containing 'codenarc' and 'codenarc.xml'",
+            "C": "A single directory containing only source files",
+            "D": "A structure with separate directories for each type of source file"
+        },
+        "correct_answer": "B",
+        "explanation": "The expected project layout for using the CodeNarc plugin includes a 'config' directory that contains a 'codenarc' directory, which in turn holds the primary configuration file 'codenarc.xml'. This structure helps organize configuration files specifically for CodeNarc."
+    },
+    {
+        "question": "What is the purpose of the 'codenarc.xml' file in the project layout?",
+        "options": {
+            "A": "To store the source code for the project",
+            "B": "To configure the CodeNarc quality checks",
+            "C": "To define the dependencies for the project",
+            "D": "To execute the CodeNarc tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "'codenarc.xml' is the primary configuration file for CodeNarc, which is used to set up the quality checks for the Groovy source files in the project. This file contains the rules and settings that guide how CodeNarc evaluates the code."
+    },
+    {
+        "question": "Which of the following statements is true regarding the CodeNarc plugin's project layout?",
+        "options": {
+            "A": "It requires all configuration files to be in the root directory.",
+            "B": "It expects a specific directory structure to manage configuration files.",
+            "C": "It allows for any directory structure as long as the files are present.",
+            "D": "It mandates that all source files must be in a 'src' directory."
+        },
+        "correct_answer": "B",
+        "explanation": "The CodeNarc plugin expects a specific directory structure that includes a 'config' directory with a 'codenarc' subdirectory for organizing configuration files. This layout is important for maintaining clarity and organization in the project."
+    },
+    {
+        "question": "What is the primary purpose of task automation in software development?",
+        "options": {
+            "A": "To manually execute repetitive tasks",
+            "B": "To streamline and simplify repetitive processes",
+            "C": "To eliminate the need for any human intervention",
+            "D": "To increase the complexity of project management"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of task automation in software development is to streamline and simplify repetitive processes. By automating tasks, developers can save time, reduce errors, and improve efficiency, allowing them to focus on more complex and creative aspects of their work."
+    },
+    {
+        "question": "Which of the following is a common benefit of using task automation in a project?",
+        "options": {
+            "A": "Increased manual oversight of tasks",
+            "B": "Reduction in the time taken to complete repetitive tasks",
+            "C": "Higher likelihood of human error",
+            "D": "More complex task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "A common benefit of using task automation in a project is the reduction in the time taken to complete repetitive tasks. Automation allows for faster execution of these tasks, which can lead to increased productivity and efficiency in the development process."
+    },
+    {
+        "question": "In the context of task automation, what does the term 'dependency management' refer to?",
+        "options": {
+            "A": "The process of manually tracking project tasks",
+            "B": "The organization of tasks based on their execution order",
+            "C": "The management of libraries and tools required for automation",
+            "D": "The elimination of all dependencies in a project"
+        },
+        "correct_answer": "C",
+        "explanation": "In the context of task automation, 'dependency management' refers to the management of libraries and tools required for automation. This ensures that the necessary components are available and compatible, allowing automated tasks to run smoothly and effectively."
+    },
+    {
+        "question": "What is a typical outcome of integrating task automation into a development workflow?",
+        "options": {
+            "A": "Increased time spent on manual tasks",
+            "B": "Improved consistency and reliability of task execution",
+            "C": "Greater complexity in project setup",
+            "D": "Decreased collaboration among team members"
+        },
+        "correct_answer": "B",
+        "explanation": "A typical outcome of integrating task automation into a development workflow is improved consistency and reliability of task execution. Automation reduces variability in how tasks are performed, leading to more predictable and stable results in the development process."
+    }
+]

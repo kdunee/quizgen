@@ -1,0 +1,563 @@
+[
+    {
+        "question": "What is the primary purpose of the `Test` task in Gradle?",
+        "options": {
+            "A": "To compile Java source files",
+            "B": "To run a collection of test cases using supported test libraries",
+            "C": "To manage project dependencies",
+            "D": "To generate documentation for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the `Test` task in Gradle is to run a collection of test cases using supported test libraries such as JUnit or TestNG. It collates the results of these tests and can generate reports based on the outcomes."
+    },
+    {
+        "question": "How does Gradle determine which tests to run?",
+        "options": {
+            "A": "By scanning the source code for comments",
+            "B": "By inspecting the compiled test classes and their annotations",
+            "C": "By checking the project configuration files",
+            "D": "By executing all methods in the main application"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines which tests to run by inspecting the compiled test classes and their annotations. For example, it looks for classes that inherit from specific test classes or contain methods annotated with `@Test`."
+    },
+    {
+        "question": "What is the effect of setting the `maxParallelForks` property in the `Test` task?",
+        "options": {
+            "A": "It limits the number of test classes that can be executed",
+            "B": "It allows tests to run in parallel, potentially speeding up execution",
+            "C": "It prevents any tests from running in parallel",
+            "D": "It specifies the maximum number of test reports to generate"
+        },
+        "correct_answer": "B",
+        "explanation": "Setting the `maxParallelForks` property allows tests to run in parallel, which can significantly speed up the execution time of test suites, especially on multi-core CPUs. However, tests must be properly isolated to avoid conflicts."
+    },
+    {
+        "question": "What does the `ignoreFailures` property do in the context of the `Test` task?",
+        "options": {
+            "A": "It prevents the build from running if any tests fail",
+            "B": "It allows the build to continue even if some tests fail",
+            "C": "It ignores all test results and does not generate reports",
+            "D": "It skips the execution of all tests"
+        },
+        "correct_answer": "B",
+        "explanation": "The `ignoreFailures` property allows the build to continue even if some tests fail. By default, the `Test` task will stop the build process if any tests fail, but setting this property to true changes that behavior."
+    },
+    {
+        "question": "What is the purpose of test filtering in Gradle?",
+        "options": {
+            "A": "To exclude certain tests from being compiled",
+            "B": "To select specific tests to run based on defined criteria",
+            "C": "To generate reports for only successful tests",
+            "D": "To automatically fix failing tests"
+        },
+        "correct_answer": "B",
+        "explanation": "Test filtering in Gradle allows users to select specific tests to run based on defined criteria, such as class names or method names. This is useful for running a subset of tests during development or debugging."
+    },
+    {
+        "question": "What is the primary purpose of the Gradle Test task?",
+        "options": {
+            "A": "To compile Java source files",
+            "B": "To run a collection of test cases using supported test libraries",
+            "C": "To manage project dependencies",
+            "D": "To generate project documentation"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Gradle Test task is to run a collection of test cases using supported test libraries such as JUnit or TestNG. It collates the results of these tests and can generate reports based on the outcomes."
+    },
+    {
+        "question": "Which two pieces of information are required for the Gradle Test task to operate?",
+        "options": {
+            "A": "The source code directory and the output directory",
+            "B": "The location of compiled test classes and the execution classpath",
+            "C": "The test framework version and the build script location",
+            "D": "The project name and the version number"
+        },
+        "correct_answer": "B",
+        "explanation": "The Gradle Test task requires two key pieces of information to operate: the location of the compiled test classes and the execution classpath, which includes the classes under test and the test library being used."
+    },
+    {
+        "question": "What does the 'maxParallelForks' property control in the Gradle Test task?",
+        "options": {
+            "A": "The maximum number of test classes to run in a single JVM",
+            "B": "The maximum number of test processes that can run in parallel",
+            "C": "The maximum number of test reports generated",
+            "D": "The maximum number of test failures allowed before stopping"
+        },
+        "correct_answer": "B",
+        "explanation": "'maxParallelForks' controls the maximum number of test processes that can run in parallel. Setting this property to a value greater than 1 allows tests to be executed concurrently, which can speed up the overall test execution time."
+    },
+    {
+        "question": "What is the default behavior of the 'ignoreFailures' property in the Gradle Test task?",
+        "options": {
+            "A": "To stop the build process if any test fails",
+            "B": "To continue the build process even if some tests fail",
+            "C": "To skip all tests during the build",
+            "D": "To log all test failures without stopping the build"
+        },
+        "correct_answer": "B",
+        "explanation": "The default behavior of the 'ignoreFailures' property is set to false, meaning that Gradle will stop the build process if any test fails. If set to true, Gradle will continue with the build even if some tests do not pass."
+    },
+    {
+        "question": "How does Gradle detect which tests to run?",
+        "options": {
+            "A": "By scanning the source code for test annotations",
+            "B": "By inspecting the compiled test classes",
+            "C": "By reading configuration files in the project",
+            "D": "By executing a predefined set of test cases"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle detects which tests to run by inspecting the compiled test classes. It uses different criteria depending on the test framework, such as looking for specific annotations in JUnit or TestNG."
+    },
+    {
+        "question": "What is the primary purpose of the `Test` task in Gradle?",
+        "options": {
+            "A": "To run a collection of test cases using a supported test library",
+            "B": "To compile the source code of the project",
+            "C": "To manage project dependencies",
+            "D": "To generate documentation for the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the `Test` task in Gradle is to run a collection of test cases using any supported test library, such as JUnit or TestNG. This task collates the results of the tests and can generate reports based on those results."
+    },
+    {
+        "question": "How does Gradle execute tests to prevent classpath pollution?",
+        "options": {
+            "A": "By running tests in the same JVM as the build process",
+            "B": "By executing tests in a separate ('forked') JVM",
+            "C": "By using a single-threaded execution model",
+            "D": "By compiling tests before execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle executes tests in a separate ('forked') JVM to prevent classpath pollution and excessive memory consumption for the build process. This isolation allows tests to run with different JVM arguments than those used for the main build."
+    },
+    {
+        "question": "What does the `maxParallelForks` property control in the `Test` task?",
+        "options": {
+            "A": "The maximum number of test classes to run in a single JVM",
+            "B": "The maximum number of test processes that can run in parallel",
+            "C": "The maximum heap size for the test JVM",
+            "D": "The maximum number of test reports generated"
+        },
+        "correct_answer": "B",
+        "explanation": "The `maxParallelForks` property controls the maximum number of test processes that can run in parallel. Setting this property to a value greater than 1 can speed up test execution, especially on multi-core CPUs, provided that the tests are properly isolated."
+    },
+    {
+        "question": "What is the default behavior of the `ignoreFailures` property in the `Test` task?",
+        "options": {
+            "A": "To stop the build immediately if any test fails",
+            "B": "To continue the build even if some tests fail",
+            "C": "To skip all tests during the build",
+            "D": "To run only the tests that are expected to pass"
+        },
+        "correct_answer": "B",
+        "explanation": "The default behavior of the `ignoreFailures` property is set to false, meaning that Gradle will stop the build if any tests fail. However, if this property is set to true, Gradle will continue with the project's build even if some tests have failed."
+    },
+    {
+        "question": "What is the primary purpose of test filtering in Gradle?",
+        "options": {
+            "A": "To run all tests in a project regardless of their status",
+            "B": "To select specific tests to run based on defined criteria",
+            "C": "To automatically generate test reports after every run",
+            "D": "To exclude all tests from the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of test filtering in Gradle is to allow users to select specific tests to run based on defined criteria, such as class names or method names. This is particularly useful when developers want to focus on a subset of tests, for example, when fixing a bug or developing new features."
+    },
+    {
+        "question": "Which of the following is a valid way to enable test filtering in Gradle?",
+        "options": {
+            "A": "By setting the `ignoreFailures` property to true",
+            "B": "By using the `--tests` command-line option or defining filters in the build script",
+            "C": "By modifying the `testLogging` configuration",
+            "D": "By changing the `maxParallelForks` property"
+        },
+        "correct_answer": "B",
+        "explanation": "Test filtering can be enabled in Gradle by using the `--tests` command-line option or by defining filters directly in the build script. This allows for precise control over which tests are executed during the build process."
+    },
+    {
+        "question": "What type of patterns can be used for filtering tests in Gradle?",
+        "options": {
+            "A": "Only fully-qualified class names",
+            "B": "Only simple class names",
+            "C": "Fully-qualified names, simple names, and wildcard matching",
+            "D": "Only method names"
+        },
+        "correct_answer": "C",
+        "explanation": "In Gradle, test filtering can utilize fully-qualified names, simple names (if they start with an uppercase letter), and wildcard matching. This flexibility allows developers to specify exactly which tests to run based on their naming conventions."
+    },
+    {
+        "question": "What happens if you use a pattern that starts with a lowercase letter in Gradle's test filtering?",
+        "options": {
+            "A": "It will match all tests regardless of their names",
+            "B": "It will be treated as a fully-qualified name pattern",
+            "C": "It will not match any tests",
+            "D": "It will only match method names"
+        },
+        "correct_answer": "B",
+        "explanation": "If a pattern used in Gradle's test filtering starts with a lowercase letter, it is treated as a fully-qualified name pattern. This means it will match tests based on their complete class and method names, rather than as a simple name pattern."
+    },
+    {
+        "question": "What is the primary output format generated by the Test task in Gradle?",
+        "options": {
+            "A": "HTML test report",
+            "B": "JSON test report",
+            "C": "CSV test report",
+            "D": "Plain text report"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary output format generated by the Test task in Gradle is an HTML test report. This report provides a user-friendly way to view the results of the tests that were executed, including details about passed and failed tests."
+    },
+    {
+        "question": "Which of the following is NOT a default output generated by the Test task?",
+        "options": {
+            "A": "XML test results",
+            "B": "HTML test report",
+            "C": "Binary format of results",
+            "D": "Markdown report"
+        },
+        "correct_answer": "D",
+        "explanation": "The Test task in Gradle does not generate a Markdown report by default. Instead, it generates an HTML test report, XML test results, and a binary format of the results, which are used to create the other formats."
+    },
+    {
+        "question": "How can you change the location where test results are stored in Gradle?",
+        "options": {
+            "A": "By modifying the build.gradle file with specific properties",
+            "B": "By changing the Java version used in the project",
+            "C": "By updating the Gradle wrapper version",
+            "D": "By renaming the test classes"
+        },
+        "correct_answer": "A",
+        "explanation": "You can change the location where test results are stored in Gradle by modifying the build.gradle file with specific properties that define the output directories for test results and reports."
+    },
+    {
+        "question": "What is the purpose of the XML files generated by the Test task?",
+        "options": {
+            "A": "To provide a human-readable summary of test results",
+            "B": "To communicate test results to CI servers and other tools",
+            "C": "To store the source code of the tests",
+            "D": "To log the execution time of each test"
+        },
+        "correct_answer": "B",
+        "explanation": "The XML files generated by the Test task are used to communicate test results to CI servers and other tools. They follow the JUnit XML format, which is widely supported by various continuous integration systems."
+    },
+    {
+        "question": "What is the primary method Gradle uses to detect tests in a project?",
+        "options": {
+            "A": "By scanning the source code for annotations",
+            "B": "By inspecting the compiled test classes",
+            "C": "By analyzing the build.gradle file",
+            "D": "By executing all classes in the test directory"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle detects tests primarily by inspecting the compiled test classes. It uses specific criteria based on the testing framework being used, such as looking for certain annotations or class inheritance, to identify which classes are considered tests."
+    },
+    {
+        "question": "Which of the following is NOT a criterion used by Gradle to identify JUnit test classes?",
+        "options": {
+            "A": "The class inherits from TestCase",
+            "B": "The class is annotated with @RunWith",
+            "C": "The class contains a method annotated with @Test",
+            "D": "The class is located in a specific package"
+        },
+        "correct_answer": "D",
+        "explanation": "Gradle does not use the package location of a class as a criterion for identifying JUnit test classes. Instead, it looks for specific annotations and inheritance from certain classes to determine if a class is a test."
+    },
+    {
+        "question": "What happens if the 'scanForTestClasses' property is set to false in Gradle?",
+        "options": {
+            "A": "Gradle will run all classes in the test directory",
+            "B": "Gradle will only run classes that match specific include/exclude patterns",
+            "C": "Gradle will ignore all test classes",
+            "D": "Gradle will automatically detect all test classes regardless of settings"
+        },
+        "correct_answer": "B",
+        "explanation": "When the 'scanForTestClasses' property is set to false, Gradle will not automatically detect test classes. Instead, it will rely solely on the include and exclude patterns specified in the build script to determine which classes to run as tests."
+    },
+    {
+        "question": "Which testing framework does Gradle scan for methods annotated with @Test to detect tests?",
+        "options": {
+            "A": "JUnit 3",
+            "B": "JUnit 4",
+            "C": "TestNG",
+            "D": "Mockito"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle scans for methods annotated with @Test specifically for TestNG to identify test methods. This is part of its mechanism for detecting tests across different testing frameworks."
+    },
+    {
+        "question": "What is the default behavior of Gradle regarding test logging levels?",
+        "options": {
+            "A": "Logs all events at all levels by default.",
+            "B": "Logs only test failures at the ERROR level.",
+            "C": "Logs no events unless explicitly configured.",
+            "D": "Logs test failures and standard output at the INFO level."
+        },
+        "correct_answer": "D",
+        "explanation": "By default, when the log level is set to INFO, Gradle logs test failures, skipped tests, and standard output and error. This allows developers to see important information about the test execution without overwhelming them with details."
+    },
+    {
+        "question": "Which property in Gradle allows you to configure the logging behavior of test events?",
+        "options": {
+            "A": "testLogging",
+            "B": "logLevel",
+            "C": "testOutput",
+            "D": "logEvents"
+        },
+        "correct_answer": "A",
+        "explanation": "The 'testLogging' property in Gradle allows for fine-tuned control over which test events are logged and at what level. This property can be adjusted to change the verbosity of the logging output during test execution."
+    },
+    {
+        "question": "What happens when the log level is set to DEBUG in Gradle's test logging configuration?",
+        "options": {
+            "A": "Only test failures are logged.",
+            "B": "All events related to test execution are logged.",
+            "C": "No events are logged.",
+            "D": "Only standard output is logged."
+        },
+        "correct_answer": "B",
+        "explanation": "When the log level is set to DEBUG, Gradle logs all events related to test execution, providing detailed information about the tests being run, including successes, failures, and any output generated during the tests."
+    },
+    {
+        "question": "What is the effect of setting the 'testLogging' property in a Gradle test task?",
+        "options": {
+            "A": "It disables all logging for the test task.",
+            "B": "It allows configuration of which events are logged and their log levels.",
+            "C": "It automatically sets the log level to ERROR.",
+            "D": "It only logs the results of the tests without any additional information."
+        },
+        "correct_answer": "B",
+        "explanation": "Setting the 'testLogging' property allows developers to configure which events are logged during test execution and at what log levels. This flexibility helps in tailoring the logging output to meet the needs of the development and debugging process."
+    },
+    {
+        "question": "What is the primary purpose of test grouping in testing frameworks?",
+        "options": {
+            "A": "To organize tests based on their functionality or purpose",
+            "B": "To increase the execution speed of all tests",
+            "C": "To ensure that all tests are run in a specific order",
+            "D": "To automatically generate test reports"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of test grouping is to organize tests based on their functionality or purpose, allowing for better management and execution of related tests. This can help in running specific subsets of tests that serve the same testing goal, such as unit tests, integration tests, or acceptance tests."
+    },
+    {
+        "question": "Which of the following frameworks supports grouping tests through the use of categories?",
+        "options": {
+            "A": "JUnit 5",
+            "B": "TestNG",
+            "C": "JUnit 4",
+            "D": "Mockito"
+        },
+        "correct_answer": "C",
+        "explanation": "JUnit 4 supports grouping tests through the use of categories, which allows developers to include or exclude specific tests based on their assigned categories. This feature helps in organizing tests that share common characteristics or purposes."
+    },
+    {
+        "question": "In which testing framework can you use tags to group tests?",
+        "options": {
+            "A": "JUnit 4",
+            "B": "JUnit 5",
+            "C": "TestNG",
+            "D": "Spock"
+        },
+        "correct_answer": "B",
+        "explanation": "JUnit 5 introduced the concept of tags for grouping tests, which allows developers to specify which tests to include or exclude during execution based on the tags assigned to them. This provides a flexible way to manage test execution based on different criteria."
+    },
+    {
+        "question": "What is a common use case for grouping tests in a testing framework?",
+        "options": {
+            "A": "To run all tests in parallel without any configuration",
+            "B": "To execute a specific subset of tests related to a particular feature or bug fix",
+            "C": "To automatically skip tests that are not relevant",
+            "D": "To generate detailed reports for each individual test"
+        },
+        "correct_answer": "B",
+        "explanation": "A common use case for grouping tests is to execute a specific subset of tests that are related to a particular feature or bug fix. This allows developers to focus on relevant tests without running the entire test suite, which can save time and resources during the development process."
+    },
+    {
+        "question": "What is the primary purpose of the JUnit framework in Java testing?",
+        "options": {
+            "A": "To provide a structure for writing and running tests",
+            "B": "To compile Java code",
+            "C": "To manage project dependencies",
+            "D": "To deploy Java applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the JUnit framework is to provide a structure for writing and running tests in Java applications. It allows developers to create test cases, organize them into test suites, and execute them to verify that the code behaves as expected."
+    },
+    {
+        "question": "Which annotation is commonly used in JUnit to indicate a test method?",
+        "options": {
+            "A": "@Before",
+            "B": "@Test",
+            "C": "@RunWith",
+            "D": "@After"
+        },
+        "correct_answer": "B",
+        "explanation": "The @Test annotation is commonly used in JUnit to indicate that a method is a test method. This annotation allows the JUnit framework to recognize and execute the method as part of the test suite."
+    },
+    {
+        "question": "How does JUnit determine which classes are considered test classes?",
+        "options": {
+            "A": "By checking for the presence of a main method",
+            "B": "By scanning for classes that extend a specific base class",
+            "C": "By looking for classes with methods annotated with @Test",
+            "D": "By analyzing the class names for specific keywords"
+        },
+        "correct_answer": "C",
+        "explanation": "JUnit determines which classes are considered test classes by looking for methods annotated with @Test. This allows it to identify which methods should be executed as tests during the testing process."
+    },
+    {
+        "question": "What is the purpose of the `@Before` annotation in JUnit?",
+        "options": {
+            "A": "To mark a method that runs after each test method",
+            "B": "To mark a method that runs before each test method",
+            "C": "To group multiple test methods together",
+            "D": "To indicate a test that should be ignored"
+        },
+        "correct_answer": "B",
+        "explanation": "The `@Before` annotation in JUnit is used to mark a method that runs before each test method. This is useful for setting up common test data or initializing resources needed for the tests."
+    },
+    {
+        "question": "What is the default behavior of JUnit when a test fails?",
+        "options": {
+            "A": "It ignores the failure and continues with the next test",
+            "B": "It stops the entire test suite immediately",
+            "C": "It logs the failure and continues with the next test",
+            "D": "It retries the test automatically"
+        },
+        "correct_answer": "C",
+        "explanation": "The default behavior of JUnit when a test fails is to log the failure and continue with the next test. This allows for multiple tests to be executed in a single run, providing a comprehensive overview of the test results."
+    },
+    {
+        "question": "What is the primary purpose of the TestNG framework in Java testing?",
+        "options": {
+            "A": "To provide a way to run tests in parallel and manage test dependencies",
+            "B": "To compile Java code into bytecode",
+            "C": "To generate documentation for Java projects",
+            "D": "To manage project dependencies and build configurations"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the TestNG framework is to provide a testing framework that supports parallel test execution, flexible test configuration, and dependency management among tests. This allows developers to write more efficient and organized tests, making it easier to manage complex testing scenarios."
+    },
+    {
+        "question": "How does TestNG determine which methods to execute as tests?",
+        "options": {
+            "A": "By scanning for classes that extend a specific base class",
+            "B": "By looking for methods annotated with @Test",
+            "C": "By checking for methods with names that start with 'test'",
+            "D": "By analyzing the project structure for test files"
+        },
+        "correct_answer": "B",
+        "explanation": "TestNG identifies test methods by looking for methods that are annotated with the @Test annotation. This allows developers to easily mark specific methods as tests, providing clear and concise test definitions."
+    },
+    {
+        "question": "What feature does TestNG provide for organizing tests into groups?",
+        "options": {
+            "A": "Test categories",
+            "B": "Test suites",
+            "C": "Test groups",
+            "D": "Test modules"
+        },
+        "correct_answer": "C",
+        "explanation": "TestNG allows tests to be organized into groups, which can be included or excluded during test execution. This feature helps in managing large test suites by allowing developers to run specific subsets of tests based on their grouping."
+    },
+    {
+        "question": "What is the default behavior of TestNG regarding the execution order of tests?",
+        "options": {
+            "A": "Tests are executed in the order they are defined in the source code",
+            "B": "Tests are executed in a random order",
+            "C": "Tests are executed in the order specified in a testng.xml file",
+            "D": "Tests are executed based on their execution time"
+        },
+        "correct_answer": "B",
+        "explanation": "By default, TestNG executes tests in a random order to ensure that tests do not depend on each other. This helps to identify hidden dependencies and ensures that tests are robust and independent."
+    },
+    {
+        "question": "What is the primary purpose of integration testing?",
+        "options": {
+            "A": "To verify that different components of a system work together as expected",
+            "B": "To test individual components in isolation",
+            "C": "To ensure that the user interface functions correctly",
+            "D": "To measure the performance of the system under load"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of integration testing is to verify that different components of a system work together as expected. This type of testing focuses on the interactions between integrated units or components, ensuring that they function correctly when combined."
+    },
+    {
+        "question": "Which of the following is a common step in setting up integration tests in a Gradle project?",
+        "options": {
+            "A": "Creating a new source set for integration tests",
+            "B": "Running unit tests before integration tests",
+            "C": "Using only the main source set for testing",
+            "D": "Disabling all test tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "A common step in setting up integration tests in a Gradle project is creating a new source set specifically for integration tests. This allows for separate configurations and dependencies that are tailored for integration testing, distinct from unit tests."
+    },
+    {
+        "question": "What is a key difference between unit tests and integration tests?",
+        "options": {
+            "A": "Unit tests focus on the interactions between components, while integration tests focus on individual components.",
+            "B": "Unit tests are typically faster and run in isolation, while integration tests may involve multiple components and are slower.",
+            "C": "Integration tests are always automated, while unit tests are not.",
+            "D": "Unit tests require a specific testing framework, while integration tests do not."
+        },
+        "correct_answer": "B",
+        "explanation": "A key difference between unit tests and integration tests is that unit tests focus on testing individual components in isolation, making them typically faster. In contrast, integration tests involve multiple components working together, which can lead to longer execution times."
+    },
+    {
+        "question": "In Gradle, what is the purpose of the `shouldRunAfter()` declaration in the context of integration tests?",
+        "options": {
+            "A": "To ensure integration tests run before unit tests",
+            "B": "To specify that integration tests should run after unit tests",
+            "C": "To skip the execution of integration tests",
+            "D": "To run integration tests in parallel with unit tests"
+        },
+        "correct_answer": "B",
+        "explanation": "The `shouldRunAfter()` declaration in Gradle is used to specify that integration tests should run after unit tests. This is important because unit tests are generally faster and should be executed first to catch issues early in the build process."
+    },
+    {
+        "question": "What is the primary purpose of test fixtures in a Java project?",
+        "options": {
+            "A": "To provide utilities and setup for testing components",
+            "B": "To compile the main application code",
+            "C": "To manage dependencies for production code",
+            "D": "To execute integration tests only"
+        },
+        "correct_answer": "A",
+        "explanation": "Test fixtures are designed to set up the code under test and provide utilities that facilitate the testing of a component. They help in organizing and reusing common test code, making the testing process more efficient and maintainable."
+    },
+    {
+        "question": "How can a project enable support for test fixtures?",
+        "options": {
+            "A": "By applying the `java-test-fixtures` plugin",
+            "B": "By using the `java-library` plugin only",
+            "C": "By configuring the `test` task directly",
+            "D": "By creating a separate build.gradle file for tests"
+        },
+        "correct_answer": "A",
+        "explanation": "To enable support for test fixtures in a Java project, the `java-test-fixtures` plugin must be applied in addition to the `java` or `java-library` plugins. This allows the project to create a dedicated `testFixtures` source set for writing test fixture code."
+    },
+    {
+        "question": "What is a key benefit of using implementation dependencies in test fixtures?",
+        "options": {
+            "A": "They are always included in the final build artifact.",
+            "B": "They prevent dependencies from leaking into the compile classpath of tests.",
+            "C": "They allow for easier debugging of test cases.",
+            "D": "They automatically run all tests in the project."
+        },
+        "correct_answer": "B",
+        "explanation": "Using implementation dependencies in test fixtures ensures that these dependencies do not leak into the compile classpath of tests that depend on the fixtures. This promotes better separation of concerns and helps avoid unnecessary dependencies in the test environment."
+    },
+    {
+        "question": "How are test fixtures published when using the `java-test-fixtures` plugin?",
+        "options": {
+            "A": "They are published with a `test-fixtures` classifier.",
+            "B": "They are not published at all.",
+            "C": "They are published as part of the main artifact.",
+            "D": "They are published only in binary format."
+        },
+        "correct_answer": "A",
+        "explanation": "When using the `java-test-fixtures` plugin, test fixtures are published with an artifact that has the `test-fixtures` classifier. This allows other projects to depend on the test fixtures of a library, enhancing reusability and modularity."
+    }
+]

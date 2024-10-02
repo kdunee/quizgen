@@ -1,0 +1,255 @@
+[
+    {
+        "question": "What is the main purpose of the Isolated Projects feature in Gradle?",
+        "options": {
+            "A": "To allow projects to share mutable state during builds",
+            "B": "To improve performance by isolating project configurations",
+            "C": "To enable remote caching of build results",
+            "D": "To simplify the build script syntax"
+        },
+        "correct_answer": "B",
+        "explanation": "The main purpose of the Isolated Projects feature in Gradle is to improve performance by isolating project configurations. This isolation prevents build logic from accessing the mutable state of other projects, allowing for parallel execution and independent caching of project configurations."
+    },
+    {
+        "question": "What happens when Isolated Projects is enabled and build logic attempts to access another project's state?",
+        "options": {
+            "A": "The build will succeed without any issues",
+            "B": "Gradle will ignore the access attempt",
+            "C": "The build will fail and report the access problem",
+            "D": "Gradle will automatically resolve the access issue"
+        },
+        "correct_answer": "C",
+        "explanation": "When Isolated Projects is enabled and build logic attempts to access another project's state, the build will fail, and Gradle will report the access problem. This is a key feature designed to maintain the isolation of project configurations and ensure safe parallel execution."
+    },
+    {
+        "question": "Which of the following statements is true regarding the caching mechanism in Isolated Projects?",
+        "options": {
+            "A": "Only fine-grained caching is used during IDE sync",
+            "B": "Coarse-grained caching is applied first, followed by fine-grained caching if necessary",
+            "C": "Caching is not applicable to IDE sync operations",
+            "D": "Caching is only available for remote builds"
+        },
+        "correct_answer": "B",
+        "explanation": "In Isolated Projects, the caching mechanism begins with coarse-grained caching, where the entire sync operation result is cached. If changes occur that affect the IDE model, Gradle then falls back to fine-grained caching, which caches the results of creating tooling models for each project."
+    },
+    {
+        "question": "What is a limitation of the Isolated Projects feature as mentioned in the chapter?",
+        "options": {
+            "A": "It allows for unlimited project configurations",
+            "B": "It is fully compatible with all Gradle plugins",
+            "C": "It does not apply to task execution",
+            "D": "It requires a specific version of Java to function"
+        },
+        "correct_answer": "C",
+        "explanation": "A limitation of the Isolated Projects feature is that parallel configuration and fine-grained caching are only applied to IDE sync and do not extend to task execution. This means that while project configurations can be isolated and cached during sync, task execution does not benefit from these optimizations."
+    },
+    {
+        "question": "What is the primary purpose of the configuration cache in Gradle?",
+        "options": {
+            "A": "To store build artifacts for future use",
+            "B": "To improve performance by caching the results of build configuration",
+            "C": "To manage dependencies between projects",
+            "D": "To provide a user interface for build management"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the configuration cache in Gradle is to improve performance by caching the results of build configuration. This allows Gradle to reuse previously computed results, reducing the time needed for subsequent builds when the configuration has not changed."
+    },
+    {
+        "question": "How does the configuration cache handle changes in build scripts?",
+        "options": {
+            "A": "It ignores changes and continues using the cached results",
+            "B": "It invalidates the cache and requires a full rebuild",
+            "C": "It only updates the cache for unchanged projects",
+            "D": "It automatically updates all project dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "When changes are made to build scripts, the configuration cache invalidates the cached results. This means that Gradle will not reuse the previous cache entry and will require a full rebuild to ensure that the changes are properly reflected in the build process."
+    },
+    {
+        "question": "What happens when the configuration cache is reused during an IDE sync?",
+        "options": {
+            "A": "Gradle performs a full configuration of all projects",
+            "B": "Gradle short-circuits the sync operation and returns cached results",
+            "C": "Gradle only configures projects that have changed",
+            "D": "Gradle updates all project dependencies automatically"
+        },
+        "correct_answer": "B",
+        "explanation": "When the configuration cache is reused during an IDE sync, Gradle short-circuits the sync operation and returns the cached results. This means that if nothing affecting the IDE model has changed, Gradle can skip the configuration phase, leading to faster sync times."
+    },
+    {
+        "question": "What is a limitation of the configuration cache in Gradle as mentioned in the chapter?",
+        "options": {
+            "A": "It can only be used with Java projects",
+            "B": "It does not support remote caching",
+            "C": "It requires a specific version of the operating system",
+            "D": "It is incompatible with all plugins"
+        },
+        "correct_answer": "B",
+        "explanation": "One of the limitations of the configuration cache in Gradle is that it does not support remote caching. All caching, including the configuration cache, is done locally on the machine, which can limit its effectiveness in distributed build environments."
+    },
+    {
+        "question": "What is the primary benefit of enabling parallel configuration in Gradle?",
+        "options": {
+            "A": "To allow multiple projects to share mutable state",
+            "B": "To improve the performance of the build process",
+            "C": "To simplify the build script syntax",
+            "D": "To ensure all projects are configured sequentially"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of enabling parallel configuration in Gradle is to improve the performance of the build process. By allowing projects to be configured simultaneously, Gradle can reduce the overall time taken for builds, especially in multi-project setups."
+    },
+    {
+        "question": "Which of the following statements is true regarding parallel configuration in Gradle?",
+        "options": {
+            "A": "It allows build logic to access the mutable state of other projects.",
+            "B": "It is only applicable to task execution, not to IDE sync.",
+            "C": "It enables projects to be configured independently and in parallel.",
+            "D": "It requires all projects to be configured in a specific order."
+        },
+        "correct_answer": "C",
+        "explanation": "Parallel configuration in Gradle enables projects to be configured independently and in parallel. This means that each project's configuration can occur simultaneously, leading to faster build times, while ensuring that build logic does not access the mutable state of other projects."
+    },
+    {
+        "question": "What happens when a project's configuration changes in the context of parallel configuration?",
+        "options": {
+            "A": "All projects are reconfigured regardless of changes.",
+            "B": "Only the changed project is reconfigured.",
+            "C": "The build fails immediately.",
+            "D": "The project is ignored in the next build."
+        },
+        "correct_answer": "B",
+        "explanation": "When a project's configuration changes in the context of parallel configuration, only the changed project is reconfigured. This selective reconfiguration helps maintain efficiency by avoiding unnecessary work on projects that have not changed."
+    },
+    {
+        "question": "What is a limitation of the current implementation of parallel configuration in Gradle?",
+        "options": {
+            "A": "It can only be used with Gradle 7.0 or earlier.",
+            "B": "It does not apply to task execution.",
+            "C": "It requires all projects to be in the same directory.",
+            "D": "It allows unrestricted access to other projects' states."
+        },
+        "correct_answer": "B",
+        "explanation": "A limitation of the current implementation of parallel configuration in Gradle is that it does not apply to task execution; it is only applied to IDE sync. This means that while project configuration can occur in parallel, the execution of tasks still follows the traditional sequential model."
+    },
+    {
+        "question": "What is the primary purpose of build logic constraints in Isolated Projects?",
+        "options": {
+            "A": "To allow projects to share mutable state freely",
+            "B": "To prevent build logic from accessing the state of another project",
+            "C": "To enable all projects to run synchronously",
+            "D": "To simplify the configuration of multi-module projects"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of build logic constraints in Isolated Projects is to prevent build logic from accessing the mutable state of another project. This isolation ensures that each project's configuration can run in parallel without interference, enhancing performance and reliability during the build process."
+    },
+    {
+        "question": "Which of the following methods is allowed under the build logic constraints of Isolated Projects?",
+        "options": {
+            "A": "getName()",
+            "B": "setState()",
+            "C": "getMutableState()",
+            "D": "updateProject()"
+        },
+        "correct_answer": "A",
+        "explanation": "Under the build logic constraints of Isolated Projects, the method getName() is allowed because it returns immutable information about the project. In contrast, methods that attempt to modify or access mutable state, such as setState() or updateProject(), are restricted to maintain isolation between projects."
+    },
+    {
+        "question": "What happens when build logic attempts to cross project boundaries in Isolated Projects?",
+        "options": {
+            "A": "The build is completed successfully without any issues.",
+            "B": "Gradle ignores the access attempt and continues the build.",
+            "C": "Gradle fails the build and reports the access problem.",
+            "D": "The build is paused until the issue is resolved manually."
+        },
+        "correct_answer": "C",
+        "explanation": "When build logic attempts to cross project boundaries in Isolated Projects, Gradle fails the build and collects all access problems in the configuration cache report. This mechanism is in place to enforce the isolation of projects and ensure that build configurations do not interfere with one another."
+    },
+    {
+        "question": "What is a limitation of the Isolated Projects feature as mentioned in the chapter?",
+        "options": {
+            "A": "It allows for remote caching of build results.",
+            "B": "It applies parallel configuration to task execution.",
+            "C": "It does not limit peak memory consumption based on project isolation.",
+            "D": "It enables full compatibility with all Gradle plugins."
+        },
+        "correct_answer": "C",
+        "explanation": "A limitation of the Isolated Projects feature is that it does not exploit the isolation to limit peak memory consumption. Currently, the peak memory usage is determined by the number of projects that need to be configured, which can lead to higher memory consumption during the build process."
+    },
+    {
+        "question": "What is the purpose of Gradle lifecycle callbacks?",
+        "options": {
+            "A": "To register actions that execute at specific points in the build lifecycle",
+            "B": "To manage dependencies between different projects",
+            "C": "To optimize the performance of task execution",
+            "D": "To define the structure of a Gradle project"
+        },
+        "correct_answer": "A",
+        "explanation": "Gradle lifecycle callbacks are designed to allow plugin authors and build engineers to register actions that will be executed at specific points in the build lifecycle, such as before or after a project is configured. This enables more control over the build process and can lead to performance optimizations."
+    },
+    {
+        "question": "Which of the following is a benefit of using isolated lifecycle callbacks in Gradle?",
+        "options": {
+            "A": "They allow for shared mutable state across projects",
+            "B": "They run in an isolated context that is private to each project",
+            "C": "They simplify the syntax for defining project dependencies",
+            "D": "They automatically handle all project configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "Isolated lifecycle callbacks run in an isolated context that is private to each project, which helps prevent unintended interactions between projects and allows for safer parallel execution during the build configuration phase. This isolation is crucial for maintaining the integrity of project configurations."
+    },
+    {
+        "question": "What happens when a project is configured using Gradle lifecycle callbacks?",
+        "options": {
+            "A": "All projects are configured simultaneously without any restrictions",
+            "B": "Only the project that is currently being configured is affected",
+            "C": "The configuration of one project can directly modify another project's state",
+            "D": "The build process is halted until all projects are configured"
+        },
+        "correct_answer": "B",
+        "explanation": "When a project is configured using Gradle lifecycle callbacks, only the project that is currently being configured is affected. This allows for focused configuration and avoids cross-project interference, which is essential for maintaining project integrity and performance."
+    },
+    {
+        "question": "What is the primary purpose of caching mechanisms in Gradle?",
+        "options": {
+            "A": "To store build artifacts for future use",
+            "B": "To improve performance by reusing previous results",
+            "C": "To manage project dependencies",
+            "D": "To enforce project isolation"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of caching mechanisms in Gradle is to improve performance by reusing previous results. This allows Gradle to avoid redundant work during the build process, particularly during IDE sync, by caching results of operations that have not changed, thus speeding up the overall build time."
+    },
+    {
+        "question": "What type of caching is applied first during IDE sync in Gradle?",
+        "options": {
+            "A": "Fine-grained caching",
+            "B": "Coarse-grained caching",
+            "C": "Remote caching",
+            "D": "Task execution caching"
+        },
+        "correct_answer": "B",
+        "explanation": "During IDE sync in Gradle, coarse-grained caching is applied first. This type of caching involves caching the result of the entire sync operation and reusing it when there are no changes that affect the IDE model, allowing for a more efficient sync process."
+    },
+    {
+        "question": "What happens when a project's build scripts change in relation to caching?",
+        "options": {
+            "A": "The entire project is rebuilt from scratch",
+            "B": "Only the affected project is reconfigured",
+            "C": "Fine-grained caching is applied",
+            "D": "Coarse-grained caching is reused"
+        },
+        "correct_answer": "C",
+        "explanation": "When a project's build scripts change, the cache entry cannot be reused, and Gradle falls back to fine-grained caching. This means that Gradle will cache the results of creating the tooling models for each project and reuse these models when nothing affecting them has changed, optimizing the build process."
+    },
+    {
+        "question": "Which of the following statements about caching in Gradle is true?",
+        "options": {
+            "A": "Caching is only applied to task execution.",
+            "B": "Cached results are stored remotely by default.",
+            "C": "Changes to included builds invalidate all cached results.",
+            "D": "Caching is always enabled by default."
+        },
+        "correct_answer": "C",
+        "explanation": "In Gradle, changes to included builds invalidate all cached results, even if the change does not affect the cached results. This ensures that the build process remains consistent and up-to-date, although it can lead to unnecessary cache invalidation in some cases."
+    }
+]

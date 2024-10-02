@@ -1,0 +1,354 @@
+[
+    {
+        "question": "What is the primary purpose of the Gradle build cache?",
+        "options": {
+            "A": "To store source code for future builds",
+            "B": "To save time by reusing outputs from previous builds",
+            "C": "To manage dependencies between projects",
+            "D": "To compile code faster than traditional methods"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Gradle build cache is to save time by reusing outputs produced by previous builds. This mechanism allows builds to fetch outputs from the cache when inputs have not changed, thus avoiding the need to regenerate them, which can be time-consuming."
+    },
+    {
+        "question": "How can the Gradle build cache be enabled?",
+        "options": {
+            "A": "By adding a specific plugin to the build script",
+            "B": "By running Gradle with the `--build-cache` command-line option or setting `org.gradle.caching=true` in `gradle.properties`",
+            "C": "By modifying the source code of Gradle itself",
+            "D": "By configuring the build cache in the IDE settings"
+        },
+        "correct_answer": "B",
+        "explanation": "The Gradle build cache can be enabled in two ways: by running Gradle with the `--build-cache` command-line option for a single build, or by adding `org.gradle.caching=true` in the `gradle.properties` file to enable it for all builds unless explicitly disabled."
+    },
+    {
+        "question": "What is task output caching in the context of Gradle's build cache?",
+        "options": {
+            "A": "A method to store source code in the build cache",
+            "B": "A feature that allows reusing outputs from previous executions of a task based on matching inputs",
+            "C": "A way to compile tasks in parallel to save time",
+            "D": "A technique to optimize memory usage during builds"
+        },
+        "correct_answer": "B",
+        "explanation": "Task output caching is a feature in Gradle that allows the reuse of outputs from previous executions of a task by matching the inputs to that task. This means that if the inputs have not changed, Gradle can load the outputs from the cache instead of executing the task again, thus saving time."
+    },
+    {
+        "question": "Which of the following statements is true regarding cacheable tasks in Gradle?",
+        "options": {
+            "A": "All tasks in Gradle are cacheable by default.",
+            "B": "Only tasks annotated with `@CacheableTask` can be cached.",
+            "C": "Cacheable tasks do not require any specific input or output declarations.",
+            "D": "Cacheable tasks can only be used in local builds."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, only tasks that are explicitly annotated with `@CacheableTask` can be cached. This annotation indicates that the task's outputs can be reused based on its inputs, allowing for efficient caching and retrieval of task outputs."
+    },
+    {
+        "question": "What is the primary purpose of task output caching in Gradle?",
+        "options": {
+            "A": "To store all build scripts for future use",
+            "B": "To reuse outputs from previous executions of a task",
+            "C": "To compile source code faster",
+            "D": "To manage dependencies more effectively"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of task output caching in Gradle is to reuse outputs from previous executions of a task. This mechanism allows Gradle to avoid redundant work by fetching previously generated outputs when the inputs to the task have not changed, thus saving time and resources during the build process."
+    },
+    {
+        "question": "Which of the following statements is true regarding task output caching?",
+        "options": {
+            "A": "Task output caching is enabled by default for all tasks.",
+            "B": "Task output caching can only be used on the same machine.",
+            "C": "Task output caching requires tasks to have a complete picture of their inputs and outputs.",
+            "D": "Task output caching is only applicable to Java projects."
+        },
+        "correct_answer": "C",
+        "explanation": "For task output caching to work effectively, it is crucial that tasks have a complete picture of their inputs and outputs. This ensures that the results from one build can be safely reused in another, preventing incorrect cache hits and build failures."
+    },
+    {
+        "question": "How can a task be marked as cacheable in Gradle?",
+        "options": {
+            "A": "By adding the `@CacheableTask` annotation to the task class",
+            "B": "By including the task in the build script",
+            "C": "By running the task with the `--cache` command-line option",
+            "D": "By defining the task in the `settings.gradle` file"
+        },
+        "correct_answer": "A",
+        "explanation": "A task can be marked as cacheable in Gradle by adding the `@CacheableTask` annotation to the task class. This annotation indicates that the task's outputs can be cached and reused, which is essential for enabling task output caching."
+    },
+    {
+        "question": "What happens when a task's inputs are not properly declared for caching?",
+        "options": {
+            "A": "The task will always execute, regardless of previous outputs.",
+            "B": "The task may produce incorrect results due to cache hits.",
+            "C": "The task will automatically be marked as non-cacheable.",
+            "D": "The task will run faster than expected."
+        },
+        "correct_answer": "B",
+        "explanation": "If a task's inputs are not properly declared for caching, it can lead to incorrect cache hits, where different results are treated as identical because the same cache key is used. This can cause unexpected behavior and incorrect results during the build process."
+    },
+    {
+        "question": "What is the primary purpose of incremental builds in Gradle?",
+        "options": {
+            "A": "To execute all tasks every time a build is run",
+            "B": "To reuse outputs from previous builds to save time",
+            "C": "To ensure that all tasks are always up-to-date",
+            "D": "To compile code without any dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of incremental builds in Gradle is to reuse outputs from previous builds to save time. By checking if the inputs to tasks have changed, Gradle can avoid executing tasks that do not need to be rerun, thus speeding up the build process."
+    },
+    {
+        "question": "Which of the following is a requirement for a build to benefit from incremental builds?",
+        "options": {
+            "A": "All tasks must be marked as cacheable",
+            "B": "Tasks must have a complete understanding of their inputs and outputs",
+            "C": "The build must be executed on a remote server",
+            "D": "All tasks must produce outputs every time they run"
+        },
+        "correct_answer": "B",
+        "explanation": "For a build to benefit from incremental builds, tasks must have a complete understanding of their inputs and outputs. This allows Gradle to determine whether the outputs can be reused from previous executions, thus enabling faster builds."
+    },
+    {
+        "question": "How does Gradle determine if a task is up-to-date during an incremental build?",
+        "options": {
+            "A": "By checking the task's execution time",
+            "B": "By comparing the task's inputs and outputs with previous builds",
+            "C": "By analyzing the system resources used during the last build",
+            "D": "By evaluating the task's dependencies only"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines if a task is up-to-date by comparing the task's inputs and outputs with those from previous builds. If the inputs have not changed, Gradle can skip executing the task, thus saving time."
+    },
+    {
+        "question": "What happens if a task's inputs change in an incremental build?",
+        "options": {
+            "A": "The task will always be skipped",
+            "B": "The task will be executed again to produce new outputs",
+            "C": "The task will be marked as up-to-date",
+            "D": "The build will fail immediately"
+        },
+        "correct_answer": "B",
+        "explanation": "If a task's inputs change in an incremental build, the task will be executed again to produce new outputs. This ensures that the build reflects the latest changes and that the outputs are accurate."
+    },
+    {
+        "question": "What is a key requirement for a task to be considered cacheable in Gradle?",
+        "options": {
+            "A": "The task must produce outputs that can be reused across builds.",
+            "B": "The task must be executed in a specific order.",
+            "C": "The task must only run on a single developer's machine.",
+            "D": "The task must not have any inputs."
+        },
+        "correct_answer": "A",
+        "explanation": "For a task to be considered cacheable in Gradle, it must produce outputs that can be reused across builds. This means that the task's inputs and outputs must be clearly defined so that Gradle can determine when it can safely reuse previous outputs instead of executing the task again."
+    },
+    {
+        "question": "Which annotation is used to mark a task as cacheable in Gradle?",
+        "options": {
+            "A": "@CacheableTask",
+            "B": "@Cacheable",
+            "C": "@TaskOutput",
+            "D": "@TaskInput"
+        },
+        "correct_answer": "A",
+        "explanation": "The @CacheableTask annotation is used to mark a task as cacheable in Gradle. This annotation allows Gradle to recognize that the task's outputs can be reused based on its inputs, facilitating faster builds by avoiding unnecessary task executions."
+    },
+    {
+        "question": "What happens if a cacheable task does not declare all of its inputs and outputs?",
+        "options": {
+            "A": "The task will always execute, regardless of the cache.",
+            "B": "The task may produce incorrect results or fail.",
+            "C": "The task will be automatically marked as non-cacheable.",
+            "D": "The task will run faster than expected."
+        },
+        "correct_answer": "B",
+        "explanation": "If a cacheable task does not declare all of its inputs and outputs, it can lead to incorrect cache hits, where different results are treated as identical due to the same cache key being used. This can cause the task to produce incorrect results or even fail during execution."
+    },
+    {
+        "question": "What is the role of the build cache key in Gradle's caching mechanism?",
+        "options": {
+            "A": "It determines the order in which tasks are executed.",
+            "B": "It uniquely identifies a task's outputs based on its inputs.",
+            "C": "It stores the configuration settings for the build.",
+            "D": "It tracks the history of all builds performed."
+        },
+        "correct_answer": "B",
+        "explanation": "The build cache key in Gradle's caching mechanism uniquely identifies a task's outputs based on its inputs. This key is used to request previous outputs from the build cache or to store new outputs, allowing Gradle to efficiently reuse results from earlier builds."
+    },
+    {
+        "question": "What is the primary purpose of a remote build cache in Gradle?",
+        "options": {
+            "A": "To store build outputs for reuse across different machines",
+            "B": "To compile source code faster",
+            "C": "To manage dependencies for a project",
+            "D": "To execute tests in parallel"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a remote build cache in Gradle is to store build outputs so that they can be reused across different machines. This allows developers to avoid redundant work by fetching previously generated outputs instead of regenerating them, thus saving time and resources."
+    },
+    {
+        "question": "How does Gradle determine whether to use outputs from the remote build cache?",
+        "options": {
+            "A": "By checking if the build script has changed",
+            "B": "By comparing the cache key of the task with stored outputs",
+            "C": "By analyzing the system's memory usage",
+            "D": "By evaluating the network speed"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines whether to use outputs from the remote build cache by comparing the cache key of the task with stored outputs. The cache key uniquely identifies the outputs based on the task's inputs, ensuring that only compatible outputs are reused."
+    },
+    {
+        "question": "What must be configured for a remote build cache to function properly?",
+        "options": {
+            "A": "The local cache must be disabled",
+            "B": "The server must support HTTP requests",
+            "C": "The build script must be written in Kotlin",
+            "D": "The project must have no dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "For a remote build cache to function properly, the server must support HTTP requests. This allows Gradle to read from and write to the remote cache, enabling the sharing of build outputs across different environments."
+    },
+    {
+        "question": "What happens if a cache entry is not found in the remote build cache?",
+        "options": {
+            "A": "Gradle will automatically disable the build cache",
+            "B": "Gradle will attempt to generate the outputs locally",
+            "C": "Gradle will throw an error and stop the build",
+            "D": "Gradle will skip the task entirely"
+        },
+        "correct_answer": "B",
+        "explanation": "If a cache entry is not found in the remote build cache, Gradle will attempt to generate the outputs locally. This ensures that the build can continue even if the desired outputs are not available in the cache, allowing for flexibility in the build process."
+    },
+    {
+        "question": "What is the primary purpose of the local build cache in Gradle?",
+        "options": {
+            "A": "To store build outputs for reuse in future builds",
+            "B": "To manage dependencies for a project",
+            "C": "To compile source code into executable files",
+            "D": "To track changes in the source code"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the local build cache in Gradle is to store build outputs for reuse in future builds. This mechanism helps save time by avoiding the need to regenerate outputs that have not changed, thus improving build efficiency."
+    },
+    {
+        "question": "How can the local build cache be enabled in Gradle?",
+        "options": {
+            "A": "By adding a specific annotation to the build script",
+            "B": "By running Gradle with the `--build-cache` command-line option",
+            "C": "By modifying the source code of the Gradle plugin",
+            "D": "By setting environment variables in the operating system"
+        },
+        "correct_answer": "B",
+        "explanation": "The local build cache can be enabled in Gradle by running the build with the `--build-cache` command-line option. This allows Gradle to utilize the build cache for that specific build, enhancing performance by reusing previously generated outputs."
+    },
+    {
+        "question": "What happens when the local build cache is enabled and a build output is found in the cache?",
+        "options": {
+            "A": "The build will fail due to missing outputs",
+            "B": "The cached output will be used instead of executing the task again",
+            "C": "The build will ignore the cached output and regenerate it",
+            "D": "The build will automatically clean the cache"
+        },
+        "correct_answer": "B",
+        "explanation": "When the local build cache is enabled and a build output is found in the cache, Gradle will use the cached output instead of executing the task again. This significantly reduces build time by avoiding unnecessary work."
+    },
+    {
+        "question": "Which of the following statements is true regarding the configuration of the local build cache?",
+        "options": {
+            "A": "The local build cache is enabled by default and cannot be disabled.",
+            "B": "The location of the local build cache can be configured in the Gradle User Home.",
+            "C": "The local build cache only stores outputs from the current project.",
+            "D": "The local build cache requires a remote server to function."
+        },
+        "correct_answer": "B",
+        "explanation": "The location of the local build cache can be configured in the Gradle User Home. This allows users to specify where the cache artifacts are stored, providing flexibility in managing build outputs."
+    },
+    {
+        "question": "Why is it important for a cacheable task to have a complete picture of its inputs and outputs?",
+        "options": {
+            "A": "To ensure that the task can run without any errors.",
+            "B": "To allow the task to be executed in parallel with other tasks.",
+            "C": "To safely reuse results from previous builds without incorrect cache hits.",
+            "D": "To minimize the amount of disk space used by the build cache."
+        },
+        "correct_answer": "C",
+        "explanation": "Having a complete picture of a task's inputs and outputs is crucial for ensuring that results from previous builds can be safely reused. This prevents incorrect cache hits, where different results are treated as identical due to the same cache key being used, which can lead to build failures or incorrect outputs."
+    },
+    {
+        "question": "What is a build cache key in the context of Gradle tasks?",
+        "options": {
+            "A": "A unique identifier for each task based on its execution time.",
+            "B": "A unique identifier that defines a task's outputs based on its inputs.",
+            "C": "A reference to the last successful build of a project.",
+            "D": "A configuration setting that determines how tasks are executed."
+        },
+        "correct_answer": "B",
+        "explanation": "A build cache key is a unique identifier that defines a task's outputs based on its inputs. This key is used to request previous outputs from a build cache or to store new outputs, allowing Gradle to determine if a task can reuse outputs from earlier builds."
+    },
+    {
+        "question": "What happens if a task does not declare all of its inputs and outputs correctly?",
+        "options": {
+            "A": "The task will always execute successfully without any issues.",
+            "B": "The task may experience incorrect cache hits or build failures.",
+            "C": "The task will automatically be marked as non-cacheable.",
+            "D": "The task will run faster due to reduced complexity."
+        },
+        "correct_answer": "B",
+        "explanation": "If a task does not declare all of its inputs and outputs correctly, it may lead to incorrect cache hits, where different results are treated as identical, or it may cause build failures if Gradle does not capture all outputs for the task. Proper declaration is essential for reliable caching."
+    },
+    {
+        "question": "What is the role of the `@CacheableTask` annotation in Gradle?",
+        "options": {
+            "A": "It marks a task as non-cacheable by default.",
+            "B": "It enables caching for a task by indicating that its outputs can be reused.",
+            "C": "It automatically optimizes the performance of all tasks in a build.",
+            "D": "It restricts the task from being executed in parallel with other tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "The `@CacheableTask` annotation is used to enable caching for a task, indicating that its outputs can be reused based on its inputs. This allows Gradle to optimize build times by avoiding unnecessary task executions when previous outputs are available in the cache."
+    },
+    {
+        "question": "What is the primary purpose of the Gradle build cache?",
+        "options": {
+            "A": "To store source code for future builds",
+            "B": "To save time by reusing outputs from previous builds",
+            "C": "To manage dependencies between projects",
+            "D": "To compile code faster than traditional methods"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Gradle build cache is to save time by reusing outputs produced by previous builds. This mechanism allows builds to fetch outputs from the cache when inputs have not changed, thus avoiding the need to regenerate them, which can be time-consuming."
+    },
+    {
+        "question": "How can the Gradle build cache be enabled?",
+        "options": {
+            "A": "By adding a specific plugin to the build script",
+            "B": "By running Gradle with the `--build-cache` command-line option or setting `org.gradle.caching=true` in `gradle.properties`",
+            "C": "By modifying the source code of Gradle itself",
+            "D": "By configuring the build cache in the IDE settings"
+        },
+        "correct_answer": "B",
+        "explanation": "The Gradle build cache can be enabled by running Gradle with the `--build-cache` command-line option for a single build or by setting `org.gradle.caching=true` in the `gradle.properties` file to enable it for all builds unless explicitly disabled."
+    },
+    {
+        "question": "What is a key requirement for a task to benefit from task output caching in Gradle?",
+        "options": {
+            "A": "The task must produce multiple outputs",
+            "B": "The task must have a complete definition of its inputs and outputs",
+            "C": "The task must be executed in a specific order",
+            "D": "The task must be run on a remote server"
+        },
+        "correct_answer": "B",
+        "explanation": "For a task to benefit from task output caching in Gradle, it must have a complete definition of its inputs and outputs. This ensures that the results from one build can be safely reused in another, preventing incorrect cache hits and build failures."
+    },
+    {
+        "question": "What happens when a build cache is enabled and a task is executed with unchanged inputs?",
+        "options": {
+            "A": "The task will always execute regardless of the cache",
+            "B": "The task will skip execution and load outputs from the cache",
+            "C": "The task will fail due to missing inputs",
+            "D": "The task will produce new outputs and ignore the cache"
+        },
+        "correct_answer": "B",
+        "explanation": "When a build cache is enabled and a task is executed with unchanged inputs, the task will skip execution and load outputs from the cache. This behavior is designed to save time by avoiding unnecessary work when the outputs are already available."
+    }
+]

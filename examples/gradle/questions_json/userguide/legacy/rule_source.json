@@ -1,0 +1,211 @@
+[
+    {
+        "question": "What is the primary purpose of a Gradle plugin?",
+        "options": {
+            "A": "To define and manage build configurations",
+            "B": "To create user interfaces for applications",
+            "C": "To handle database connections",
+            "D": "To optimize network performance"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a Gradle plugin is to define and manage build configurations. Plugins extend the functionality of Gradle by allowing users to customize the build process, automate tasks, and integrate with other tools and frameworks."
+    },
+    {
+        "question": "Which class must a Gradle plugin extend or implement to define rules?",
+        "options": {
+            "A": "Task",
+            "B": "RuleSource",
+            "C": "Project",
+            "D": "Plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "A Gradle plugin must extend the RuleSource class or implement the Plugin interface to define rules. This allows the plugin to specify how certain tasks or configurations should be applied to the build model."
+    },
+    {
+        "question": "What annotation is used to apply a rule method to a target model element in Gradle?",
+        "options": {
+            "A": "Task",
+            "B": "Rules",
+            "C": "Plugin",
+            "D": "Model"
+        },
+        "correct_answer": "B",
+        "explanation": "The annotation used to apply a rule method to a target model element in Gradle is 'Rules'. This annotation indicates that the method should be treated as a rule that can modify or configure the specified model element."
+    },
+    {
+        "question": "What should new Gradle plugins avoid using according to the chapter?",
+        "options": {
+            "A": "Custom configurations",
+            "B": "Rule-based configuration",
+            "C": "Standard approaches",
+            "D": "Nested classes"
+        },
+        "correct_answer": "B",
+        "explanation": "New Gradle plugins should avoid using rule-based configuration as it is indicated to be deprecated. Instead, developers are encouraged to use standard approaches for writing custom plugins, ensuring compatibility and adherence to current best practices."
+    },
+    {
+        "question": "What is the primary purpose of rule-based configuration in a plugin?",
+        "options": {
+            "A": "To define and enforce specific behaviors for model elements",
+            "B": "To manage dependencies between different plugins",
+            "C": "To optimize the performance of the build process",
+            "D": "To create user interfaces for the plugin"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of rule-based configuration in a plugin is to define and enforce specific behaviors for model elements. This is achieved by extending the RuleSource class and adding methods that specify the rules, allowing for a structured approach to configuring the plugin's behavior."
+    },
+    {
+        "question": "Which class must be extended to implement rule-based configuration in a Gradle plugin?",
+        "options": {
+            "A": "Plugin",
+            "B": "RuleSource",
+            "C": "Task",
+            "D": "Model"
+        },
+        "correct_answer": "B",
+        "explanation": "To implement rule-based configuration in a Gradle plugin, the RuleSource class must be extended. This allows the plugin to define rules that dictate how model elements are configured and interact within the build process."
+    },
+    {
+        "question": "What annotation is used to apply a rule method to a target model element?",
+        "options": {
+            "A": "Model",
+            "B": "Rules",
+            "C": "Target",
+            "D": "Apply"
+        },
+        "correct_answer": "B",
+        "explanation": "The annotation used to apply a rule method to a target model element is the Rules annotation. This annotation indicates that the method should be treated as a rule that can modify or configure the specified model element within the plugin."
+    },
+    {
+        "question": "What should new plugins avoid using according to the chapter's cautionary note?",
+        "options": {
+            "A": "Rule-based configuration",
+            "B": "Custom plugins",
+            "C": "Standard approaches",
+            "D": "Nested classes"
+        },
+        "correct_answer": "A",
+        "explanation": "According to the chapter's cautionary note, new plugins should avoid using rule-based configuration as it is indicated to be deprecated. Instead, developers are encouraged to use the standard approaches described in the chapter on writing custom plugins."
+    },
+    {
+        "question": "What is the primary purpose of model rules in a Gradle plugin?",
+        "options": {
+            "A": "To define the behavior and configuration of model elements",
+            "B": "To manage dependencies between different plugins",
+            "C": "To optimize build performance through caching",
+            "D": "To enforce coding standards in the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of model rules in a Gradle plugin is to define the behavior and configuration of model elements. By extending the RuleSource class, developers can create methods that specify how different components of the build should interact and be configured, allowing for a more structured and maintainable build process."
+    },
+    {
+        "question": "Which class must be extended or implemented to define model rules in a Gradle plugin?",
+        "options": {
+            "A": "Plugin",
+            "B": "RuleSource",
+            "C": "Task",
+            "D": "Project"
+        },
+        "correct_answer": "B",
+        "explanation": "To define model rules in a Gradle plugin, the RuleSource class must be extended. This class provides the necessary framework for creating rule methods that can manipulate and configure model elements within the Gradle build system."
+    },
+    {
+        "question": "What annotation is used to apply a rule method to a target model element in Gradle?",
+        "options": {
+            "A": "Model",
+            "B": "Rules",
+            "C": "Target",
+            "D": "Apply"
+        },
+        "correct_answer": "B",
+        "explanation": "The annotation used to apply a rule method to a target model element in Gradle is the Rules annotation. This annotation indicates that the method should be treated as a rule that can modify or configure the specified model element, facilitating the application of additional rules in the build process."
+    },
+    {
+        "question": "What should new plugins avoid using according to the chapter's cautionary note?",
+        "options": {
+            "A": "The standard approach for writing custom plugins",
+            "B": "The concept of rule-based configuration",
+            "C": "The Gradle API documentation",
+            "D": "The Plugin interface"
+        },
+        "correct_answer": "B",
+        "explanation": "According to the chapter's cautionary note, new plugins should avoid using the concept of rule-based configuration, as it is indicated to be deprecated. Instead, developers are encouraged to use the standard approach for writing custom plugins, which is more aligned with current best practices in Gradle development."
+    },
+    {
+        "question": "What is the primary purpose of custom plugins in Gradle?",
+        "options": {
+            "A": "To define and implement specific build logic and configurations",
+            "B": "To manage dependencies automatically",
+            "C": "To enhance the performance of existing plugins",
+            "D": "To create user interfaces for build scripts"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of custom plugins in Gradle is to define and implement specific build logic and configurations tailored to the needs of a project. Custom plugins allow developers to encapsulate reusable code and rules, making it easier to manage complex build processes."
+    },
+    {
+        "question": "Which class must be extended or implemented to create a custom plugin in Gradle?",
+        "options": {
+            "A": "Project",
+            "B": "RuleSource",
+            "C": "Plugin",
+            "D": "Task"
+        },
+        "correct_answer": "C",
+        "explanation": "To create a custom plugin in Gradle, a developer must implement the Plugin interface. This interface provides the necessary methods to define the behavior of the plugin and how it interacts with the Gradle build system."
+    },
+    {
+        "question": "What annotation is used to apply additional rules in a custom plugin?",
+        "options": {
+            "A": "@Plugin",
+            "B": "@Rule",
+            "C": "@Rules",
+            "D": "@Model"
+        },
+        "correct_answer": "C",
+        "explanation": "The @Rules annotation is used to apply additional rules in a custom plugin. This annotation allows developers to specify methods that define rules for target model elements, enhancing the functionality of the plugin."
+    },
+    {
+        "question": "What is a key consideration when developing new plugins according to the chapter?",
+        "options": {
+            "A": "They should use deprecated concepts for compatibility.",
+            "B": "They should follow the standard approach for writing custom plugins.",
+            "C": "They should avoid using any annotations.",
+            "D": "They should focus solely on performance optimization."
+        },
+        "correct_answer": "B",
+        "explanation": "A key consideration when developing new plugins is to follow the standard approach for writing custom plugins as described in the chapter. This ensures that the plugins are built using current best practices and are compatible with the latest Gradle features."
+    },
+    {
+        "question": "What is the primary purpose of API documentation in software development?",
+        "options": {
+            "A": "To provide a user interface for applications",
+            "B": "To describe how to use and integrate with software components",
+            "C": "To manage software licenses and compliance",
+            "D": "To optimize the performance of software applications"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of API documentation is to describe how to use and integrate with software components. It provides detailed information about the functions, classes, and methods available in the API, along with examples and guidelines for developers to effectively utilize the API in their applications."
+    },
+    {
+        "question": "Which of the following is a key component typically found in API documentation?",
+        "options": {
+            "A": "User interface design guidelines",
+            "B": "Installation instructions for the software",
+            "C": "Code examples demonstrating API usage",
+            "D": "Licensing terms for the software"
+        },
+        "correct_answer": "C",
+        "explanation": "Code examples demonstrating API usage are a key component typically found in API documentation. These examples help developers understand how to implement the API in their own code, showcasing the expected inputs and outputs for various functions and methods."
+    },
+    {
+        "question": "What role does the 'RuleSource' class play in the context of API documentation?",
+        "options": {
+            "A": "It defines the user interface for the API.",
+            "B": "It serves as a base class for defining rules in plugins.",
+            "C": "It provides security features for API access.",
+            "D": "It manages the versioning of the API."
+        },
+        "correct_answer": "B",
+        "explanation": "'RuleSource' serves as a base class for defining rules in plugins. In the context of API documentation, it outlines how developers can extend functionality by implementing specific rules, which is crucial for understanding how to effectively use the API in their projects."
+    }
+]

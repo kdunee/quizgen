@@ -1,0 +1,200 @@
+[
+    {
+        "question": "What are the three distinct phases of the Gradle build lifecycle?",
+        "options": {
+            "A": "Initialization, Configuration, Execution",
+            "B": "Setup, Execution, Cleanup",
+            "C": "Preparation, Configuration, Finalization",
+            "D": "Initialization, Execution, Termination"
+        },
+        "correct_answer": "A",
+        "explanation": "The Gradle build lifecycle consists of three distinct phases: Initialization, Configuration, and Execution. During Initialization, Gradle determines which projects are involved in the build. In the Configuration phase, the project objects are configured using build scripts. Finally, in the Execution phase, Gradle executes the selected tasks."
+    },
+    {
+        "question": "During which phase does Gradle create a Project instance for each project?",
+        "options": {
+            "A": "Execution",
+            "B": "Configuration",
+            "C": "Initialization",
+            "D": "Finalization"
+        },
+        "correct_answer": "C",
+        "explanation": "During the Initialization phase, Gradle creates a Project instance for each project involved in the build. This is the first step in the build lifecycle, where Gradle identifies the projects that will participate in the build process."
+    },
+    {
+        "question": "What happens during the Configuration phase of the Gradle build lifecycle?",
+        "options": {
+            "A": "Gradle executes the tasks specified in the command line.",
+            "B": "Gradle determines which projects will be built.",
+            "C": "Gradle configures Project objects using build scripts.",
+            "D": "Gradle cleans up resources from previous builds."
+        },
+        "correct_answer": "C",
+        "explanation": "During the Configuration phase, Gradle configures the Project objects using the build scripts of all projects in the build. This phase involves resolving dependencies and determining the set of tasks that will be executed."
+    },
+    {
+        "question": "What is the purpose of task configuration avoidance in Gradle?",
+        "options": {
+            "A": "To ensure all tasks are executed regardless of dependencies.",
+            "B": "To prevent unnecessary configuration of tasks that are not executed.",
+            "C": "To automatically configure all tasks before execution.",
+            "D": "To allow tasks to run in parallel without configuration."
+        },
+        "correct_answer": "B",
+        "explanation": "Task configuration avoidance in Gradle is designed to prevent unnecessary configuration of tasks that are not executed. This optimization helps improve build performance by avoiding the configuration of tasks that do not have dependencies on the tasks being executed."
+    },
+    {
+        "question": "What is the primary purpose of the initialization phase in the Gradle build lifecycle?",
+        "options": {
+            "A": "To execute the tasks defined in the build scripts",
+            "B": "To determine which projects will participate in the build",
+            "C": "To configure the project objects using build scripts",
+            "D": "To create a dependency graph of all tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the initialization phase in the Gradle build lifecycle is to determine which projects will take part in the build. During this phase, Gradle creates a `Project` instance for each project involved, setting the stage for the subsequent configuration and execution phases."
+    },
+    {
+        "question": "During which phase does Gradle create a `Project` instance for each project?",
+        "options": {
+            "A": "Execution phase",
+            "B": "Configuration phase",
+            "C": "Initialization phase",
+            "D": "Finalization phase"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle creates a `Project` instance for each project during the initialization phase. This is the first step in the build lifecycle, where Gradle identifies the projects that will be included in the build process."
+    },
+    {
+        "question": "What happens during the initialization phase of a Gradle build?",
+        "options": {
+            "A": "Tasks are executed based on the command line input",
+            "B": "Build scripts are configured and dependencies are resolved",
+            "C": "Gradle determines the projects to be built and creates project instances",
+            "D": "Gradle compiles the source code of the projects"
+        },
+        "correct_answer": "C",
+        "explanation": "During the initialization phase, Gradle determines which projects will be part of the build and creates a `Project` instance for each one. This phase sets the groundwork for the configuration and execution phases that follow."
+    },
+    {
+        "question": "Which of the following statements is true about the initialization phase in Gradle?",
+        "options": {
+            "A": "It is where tasks are registered and configured.",
+            "B": "It is the phase where Gradle executes the tasks.",
+            "C": "It occurs after the configuration phase.",
+            "D": "It determines the projects involved in the build."
+        },
+        "correct_answer": "D",
+        "explanation": "The initialization phase is responsible for determining which projects will be involved in the build. This phase occurs before the configuration phase and is crucial for setting up the build environment."
+    },
+    {
+        "question": "What is the primary purpose of the configuration phase in the Gradle build lifecycle?",
+        "options": {
+            "A": "To determine which projects will be included in the build",
+            "B": "To execute the tasks defined in the build scripts",
+            "C": "To configure project objects using build scripts",
+            "D": "To create a dependency graph of all available tasks"
+        },
+        "correct_answer": "C",
+        "explanation": "The configuration phase is primarily focused on configuring the `Project` objects using the build scripts of all projects involved in the build. During this phase, Gradle determines the set of tasks that will be executed based on the configurations specified in the build scripts."
+    },
+    {
+        "question": "During which phase does Gradle create a `Project` instance for each project?",
+        "options": {
+            "A": "Execution phase",
+            "B": "Configuration phase",
+            "C": "Initialization phase",
+            "D": "Finalization phase"
+        },
+        "correct_answer": "C",
+        "explanation": "The initialization phase is when Gradle creates a `Project` instance for each project that will participate in the build. This phase sets the stage for the subsequent configuration and execution phases."
+    },
+    {
+        "question": "What happens during the execution phase of the Gradle build lifecycle?",
+        "options": {
+            "A": "Gradle determines which projects to include in the build",
+            "B": "Gradle executes the selected tasks",
+            "C": "Gradle configures the project objects",
+            "D": "Gradle creates a dependency graph of tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "During the execution phase, Gradle executes each of the selected tasks that were determined during the configuration phase. This is the phase where the actual work defined by the tasks is carried out."
+    },
+    {
+        "question": "What is meant by 'task configuration avoidance' in Gradle?",
+        "options": {
+            "A": "Gradle avoids executing tasks that are not needed",
+            "B": "Gradle skips the initialization phase for certain tasks",
+            "C": "Gradle does not configure tasks that are not dependencies of the executed task",
+            "D": "Gradle prevents the creation of project instances for unused projects"
+        },
+        "correct_answer": "C",
+        "explanation": "Task configuration avoidance refers to Gradle's ability to skip the configuration of tasks that are not required for the execution of the task being run. This optimization helps to prevent unnecessary work and improves build performance."
+    },
+    {
+        "question": "What occurs during the execution phase of the Gradle build lifecycle?",
+        "options": {
+            "A": "Gradle determines which projects will participate in the build.",
+            "B": "Gradle executes the selected tasks.",
+            "C": "Gradle configures the Project objects using build scripts.",
+            "D": "Gradle creates a dependency graph of all available tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "During the execution phase, Gradle executes the tasks that have been selected for the build. This phase follows the initialization and configuration phases, where projects are identified and configured, respectively. The execution phase is where the actual work defined by the tasks takes place."
+    },
+    {
+        "question": "Which of the following best describes the purpose of the initialization phase in the Gradle build lifecycle?",
+        "options": {
+            "A": "To execute the tasks defined in the build scripts.",
+            "B": "To configure the Project objects using the build scripts.",
+            "C": "To determine which projects will be included in the build.",
+            "D": "To create a dependency graph of tasks."
+        },
+        "correct_answer": "C",
+        "explanation": "The initialization phase is responsible for determining which projects will take part in the build process. During this phase, Gradle creates a `Project` instance for each project identified, setting the stage for the subsequent configuration and execution phases."
+    },
+    {
+        "question": "What is the significance of task configuration avoidance in Gradle?",
+        "options": {
+            "A": "It ensures that all tasks are executed regardless of dependencies.",
+            "B": "It prevents unnecessary configuration of tasks that are not needed.",
+            "C": "It allows Gradle to skip the initialization phase.",
+            "D": "It guarantees that all tasks are configured before execution."
+        },
+        "correct_answer": "B",
+        "explanation": "Task configuration avoidance is a feature in Gradle that prevents the configuration of tasks that are not required for the current build. This optimization helps to reduce build time by avoiding unnecessary work, particularly when tasks do not depend on each other."
+    },
+    {
+        "question": "What is the primary purpose of task configuration avoidance in Gradle?",
+        "options": {
+            "A": "To ensure all tasks are executed regardless of dependencies",
+            "B": "To prevent unnecessary configuration of tasks that are not needed",
+            "C": "To automatically configure all tasks at the start of the build",
+            "D": "To allow tasks to run in parallel without any dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of task configuration avoidance in Gradle is to prevent unnecessary configuration of tasks that are not needed for the current build. This optimization helps improve build performance by only configuring tasks that are required based on the tasks being executed."
+    },
+    {
+        "question": "During which phase of the Gradle build lifecycle does task configuration avoidance occur?",
+        "options": {
+            "A": "Initialization phase",
+            "B": "Configuration phase",
+            "C": "Execution phase",
+            "D": "Finalization phase"
+        },
+        "correct_answer": "B",
+        "explanation": "Task configuration avoidance occurs during the configuration phase of the Gradle build lifecycle. In this phase, Gradle determines which tasks need to be configured based on the tasks that are being executed, thereby avoiding the configuration of tasks that are not necessary."
+    },
+    {
+        "question": "What happens to a task that is not configured due to task configuration avoidance?",
+        "options": {
+            "A": "It is executed immediately without any configuration.",
+            "B": "It is ignored and not included in the build process.",
+            "C": "It remains in a pending state until explicitly called.",
+            "D": "It is configured but not executed."
+        },
+        "correct_answer": "B",
+        "explanation": "When a task is not configured due to task configuration avoidance, it is ignored and not included in the build process. This helps streamline the build by ensuring that only necessary tasks are configured and executed, thus improving efficiency."
+    }
+]

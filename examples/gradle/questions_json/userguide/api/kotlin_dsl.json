@@ -1,0 +1,376 @@
+[
+    {
+        "question": "What is the primary purpose of the Gradle Kotlin DSL?",
+        "options": {
+            "A": "To provide an alternative syntax for Gradle build scripts using Kotlin",
+            "B": "To replace all Groovy-based Gradle scripts with Kotlin scripts",
+            "C": "To enhance the performance of Gradle builds",
+            "D": "To simplify the installation of Gradle on different operating systems"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Gradle Kotlin DSL is to provide an alternative syntax for writing Gradle build scripts using the Kotlin programming language. This allows developers to leverage Kotlin's features, such as type safety and IDE support, while interacting with the Gradle API."
+    },
+    {
+        "question": "Which of the following is a key benefit of using the Gradle Kotlin DSL?",
+        "options": {
+            "A": "It eliminates the need for any plugins in Gradle builds",
+            "B": "It offers enhanced editing experience with better content assist and refactoring",
+            "C": "It automatically converts Groovy scripts to Kotlin scripts",
+            "D": "It requires no knowledge of Kotlin syntax to use"
+        },
+        "correct_answer": "B",
+        "explanation": "One of the key benefits of using the Gradle Kotlin DSL is that it offers an enhanced editing experience, including better content assist, refactoring capabilities, and documentation support in supported IDEs. This makes it easier for developers to write and maintain their build scripts."
+    },
+    {
+        "question": "What file extension is used for Kotlin DSL scripts in Gradle?",
+        "options": {
+            "A": ".gradle",
+            "B": ".kts",
+            "C": ".kt",
+            "D": ".groovy"
+        },
+        "correct_answer": "B",
+        "explanation": "Kotlin DSL scripts in Gradle use the .kts file extension. This distinguishes them from Groovy DSL scripts, which use the .gradle extension. The .kts extension indicates that the script is written in Kotlin."
+    },
+    {
+        "question": "Which of the following statements about type-safe model accessors in the Kotlin DSL is true?",
+        "options": {
+            "A": "They are available for all elements in a Gradle build script.",
+            "B": "They allow dynamic resolution of model elements at runtime.",
+            "C": "They provide compile-time safety and are available for certain scopes.",
+            "D": "They can only be used in multi-project builds."
+        },
+        "correct_answer": "C",
+        "explanation": "Type-safe model accessors in the Kotlin DSL provide compile-time safety and are available for specific scopes, such as project build scripts and precompiled project script plugins. They replace the dynamic resolution found in the Groovy DSL with a more type-safe approach."
+    },
+    {
+        "question": "What is a recommended practice when migrating from Groovy DSL to Kotlin DSL in Gradle?",
+        "options": {
+            "A": "Use the same file names for both Groovy and Kotlin scripts.",
+            "B": "Apply the Kotlin DSL to all existing Groovy scripts without changes.",
+            "C": "Use the .gradle.kts extension for Kotlin DSL scripts.",
+            "D": "Avoid using any plugins during the migration process."
+        },
+        "correct_answer": "C",
+        "explanation": "When migrating from Groovy DSL to Kotlin DSL in Gradle, it is recommended to use the .gradle.kts extension for Kotlin DSL scripts. This allows the Gradle build system to recognize the scripts as Kotlin-based and enables the associated features and benefits."
+    },
+    {
+        "question": "What is the primary advantage of using type-safe model accessors in the Kotlin DSL?",
+        "options": {
+            "A": "They allow dynamic resolution of model elements at runtime.",
+            "B": "They provide compile-time safety and IDE support for accessing model elements.",
+            "C": "They eliminate the need for any Gradle plugins.",
+            "D": "They simplify the syntax for declaring build scripts."
+        },
+        "correct_answer": "B",
+        "explanation": "Type-safe model accessors in the Kotlin DSL provide compile-time safety, ensuring that the model elements are accessed correctly, which reduces runtime errors. Additionally, they enhance the IDE experience by offering better code completion and navigation features, making it easier for developers to work with Gradle build scripts."
+    },
+    {
+        "question": "In which scenarios are type-safe model accessors available in the Kotlin DSL?",
+        "options": {
+            "A": "Only in initialization scripts.",
+            "B": "In main project build scripts and precompiled project script plugins.",
+            "C": "In all Gradle scripts regardless of the context.",
+            "D": "Only when using the Groovy DSL."
+        },
+        "correct_answer": "B",
+        "explanation": "Type-safe model accessors are available in main project build scripts and precompiled project script plugins. They are not available in initialization scripts or when using the Groovy DSL, which relies on dynamic resolution instead."
+    },
+    {
+        "question": "What happens if you try to use type-safe model accessors for model elements contributed after the `plugins {}` block?",
+        "options": {
+            "A": "They will work as expected without any issues.",
+            "B": "They will throw a runtime exception.",
+            "C": "They will not be available for use.",
+            "D": "They will be automatically converted to dynamic accessors."
+        },
+        "correct_answer": "C",
+        "explanation": "Type-safe model accessors are calculated right before evaluating the script body, immediately after the `plugins {}` block. Therefore, any model elements contributed after that point will not be accessible through type-safe accessors, and developers will need to use standard Gradle APIs instead."
+    },
+    {
+        "question": "Which of the following statements is true regarding the limitations of type-safe model accessors?",
+        "options": {
+            "A": "They can be used in any Gradle script without restrictions.",
+            "B": "They are not available for model elements contributed by plugins applied via the `apply()` method.",
+            "C": "They are always faster than using dynamic accessors.",
+            "D": "They can only be used in single-project builds."
+        },
+        "correct_answer": "B",
+        "explanation": "Type-safe model accessors are not available for model elements contributed by plugins applied via the `apply()` method. This limitation means that developers must revert to using standard Gradle APIs in such cases, as type-safe accessors rely on the `plugins {}` block for their functionality."
+    },
+    {
+        "question": "Which IDEs provide full support for Gradle's Kotlin DSL?",
+        "options": {
+            "A": "Eclipse and Visual Studio",
+            "B": "IntelliJ IDEA and Android Studio",
+            "C": "NetBeans and CLion",
+            "D": "Visual Studio Code and Eclipse"
+        },
+        "correct_answer": "B",
+        "explanation": "IntelliJ IDEA and Android Studio are the IDEs that provide full support for Gradle's Kotlin DSL, including features like syntax highlighting, semantic editing, and content assist. Other IDEs may not offer the same level of support."
+    },
+    {
+        "question": "What is the recommended setting for automatic build import in IDEs when using Kotlin DSL?",
+        "options": {
+            "A": "Enable automatic build import and disable script dependency reloading",
+            "B": "Disable automatic build import and enable script dependency reloading",
+            "C": "Enable both automatic build import and script dependency reloading",
+            "D": "Disable both automatic build import and script dependency reloading"
+        },
+        "correct_answer": "B",
+        "explanation": "It is recommended to disable automatic build import while enabling automatic reloading of script dependencies. This allows for early feedback during script editing while maintaining control over when the entire build setup is synchronized with the IDE."
+    },
+    {
+        "question": "What should you do if you encounter issues with the Kotlin DSL script editor in your IDE?",
+        "options": {
+            "A": "Ignore the issues as they are not important",
+            "B": "Restart the IDE and invalidate its caches",
+            "C": "Reinstall the IDE completely",
+            "D": "Switch to using Groovy DSL instead"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter issues with the Kotlin DSL script editor, the first step is to restart the IDE and invalidate its caches. This can often resolve problems related to the IDE's integration with the Kotlin DSL."
+    },
+    {
+        "question": "What is a limitation of the Kotlin DSL in terms of IDE performance?",
+        "options": {
+            "A": "It is faster than the Groovy DSL",
+            "B": "It is known to be slower than the Groovy DSL on first use",
+            "C": "It does not support any IDEs",
+            "D": "It requires a specific version of the IDE to function"
+        },
+        "correct_answer": "B",
+        "explanation": "The Kotlin DSL is known to be slower than the Groovy DSL on first use, particularly in scenarios like clean checkouts or on ephemeral continuous integration agents. This is primarily due to the slower script compilation process for Kotlin DSL."
+    },
+    {
+        "question": "What is the primary purpose of the Kotlin DSL in Gradle?",
+        "options": {
+            "A": "To provide an alternative syntax for Gradle build scripts using Kotlin",
+            "B": "To replace the need for Java in Gradle builds",
+            "C": "To enhance the performance of Gradle builds significantly",
+            "D": "To eliminate the use of plugins in Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Kotlin DSL in Gradle is to provide an alternative syntax for writing Gradle build scripts using the Kotlin programming language. This allows developers to leverage Kotlin's features, such as type safety and IDE support, while defining their build logic."
+    },
+    {
+        "question": "Which of the following is a key benefit of using the Kotlin DSL over the Groovy DSL?",
+        "options": {
+            "A": "Kotlin DSL scripts are always faster to execute than Groovy scripts",
+            "B": "Kotlin DSL provides better type safety and IDE support",
+            "C": "Kotlin DSL does not require any knowledge of Kotlin syntax",
+            "D": "Kotlin DSL can only be used with Kotlin-based projects"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using the Kotlin DSL over the Groovy DSL is that it provides better type safety and enhanced IDE support. This includes features like code completion, refactoring, and documentation, which help developers write and maintain their build scripts more effectively."
+    },
+    {
+        "question": "What file extension is used for Kotlin DSL scripts in Gradle?",
+        "options": {
+            "A": ".gradle",
+            "B": ".kts",
+            "C": ".kt",
+            "D": ".kotlin"
+        },
+        "correct_answer": "B",
+        "explanation": "Kotlin DSL scripts in Gradle use the .kts file extension. This distinguishes them from Groovy DSL scripts, which use the .gradle extension, allowing Gradle to recognize and process the scripts appropriately."
+    },
+    {
+        "question": "What is the role of the `plugins {}` block in a Kotlin DSL script?",
+        "options": {
+            "A": "To define the dependencies for the project",
+            "B": "To declare and apply Gradle plugins to the project",
+            "C": "To configure the Kotlin compiler settings",
+            "D": "To specify the version of Gradle being used"
+        },
+        "correct_answer": "B",
+        "explanation": "The `plugins {}` block in a Kotlin DSL script is used to declare and apply Gradle plugins to the project. This allows developers to easily manage plugin versions and apply them in a type-safe manner, enhancing the overall build script structure."
+    },
+    {
+        "question": "Which of the following statements about type-safe accessors in Kotlin DSL is true?",
+        "options": {
+            "A": "Type-safe accessors are available for all elements in any Gradle script.",
+            "B": "Type-safe accessors can only be used in the root project build script.",
+            "C": "Type-safe accessors provide a way to reference model elements with compile-time type checking.",
+            "D": "Type-safe accessors are not supported in Kotlin DSL."
+        },
+        "correct_answer": "C",
+        "explanation": "Type-safe accessors in Kotlin DSL provide a way to reference model elements with compile-time type checking. This means that developers can access and configure elements in a type-safe manner, reducing the risk of runtime errors and improving code quality."
+    },
+    {
+        "question": "What is a key benefit of using the `plugins {}` block in multi-project builds?",
+        "options": {
+            "A": "It allows for dynamic resolution of dependencies.",
+            "B": "It ensures consistent plugin versions across projects.",
+            "C": "It enables the use of Groovy DSL syntax.",
+            "D": "It automatically imports all project settings."
+        },
+        "correct_answer": "B",
+        "explanation": "Using the `plugins {}` block in multi-project builds helps ensure that plugin versions are consistent across all projects within the build. This consistency is crucial for maintaining compatibility and avoiding issues that may arise from using different plugin versions in different subprojects."
+    },
+    {
+        "question": "When configuring subprojects from the root project build script, which method should be avoided to use type-safe accessors?",
+        "options": {
+            "A": "Using the `apply(plugin = 'id')` method.",
+            "B": "Using the `plugins {}` block.",
+            "C": "Using the `buildscript {}` block.",
+            "D": "Using the `settings.gradle.kts` file."
+        },
+        "correct_answer": "A",
+        "explanation": "The `apply(plugin = 'id')` method should be avoided when configuring subprojects from the root project build script if you want to use type-safe accessors. This method does not allow for type-safe accessors because it is executed in the body of the build script, which limits the access to model elements contributed by plugins."
+    },
+    {
+        "question": "What is a limitation of using type-safe accessors in multi-project builds?",
+        "options": {
+            "A": "They can only be used in the root project.",
+            "B": "They are not available when configuring subprojects from the root project build script.",
+            "C": "They require additional plugins to function.",
+            "D": "They can only be used with Groovy DSL scripts."
+        },
+        "correct_answer": "B",
+        "explanation": "Type-safe accessors are not available when configuring subprojects from the root project build script. This limitation arises because the configuration of subprojects in this context does not allow for the type-safe accessors that are typically available when using the `plugins {}` block."
+    },
+    {
+        "question": "In a multi-project build, what should be done if a plugin cannot be declared using the `plugins {}` block?",
+        "options": {
+            "A": "Use the `buildscript {}` block to declare the plugin.",
+            "B": "Declare the plugin only in the subprojects.",
+            "C": "Use the `apply {}` method exclusively.",
+            "D": "Ignore the plugin and use alternatives."
+        },
+        "correct_answer": "A",
+        "explanation": "If a plugin cannot be declared using the `plugins {}` block, you should use the `buildscript {}` block to declare the plugin. This approach is necessary for plugins that are not published with the required metadata for the `plugins {}` block, allowing you to still include them in your build."
+    },
+    {
+        "question": "What is a primary characteristic of container objects in Gradle?",
+        "options": {
+            "A": "They can only contain objects of a single type.",
+            "B": "They allow for dynamic resolution of elements at runtime.",
+            "C": "They are used to group related elements and provide methods for accessing them.",
+            "D": "They are exclusively used for managing project dependencies."
+        },
+        "correct_answer": "C",
+        "explanation": "Container objects in Gradle are designed to group related elements and provide methods for accessing and managing those elements. This allows for organized handling of various components, such as tasks and configurations, within a build script."
+    },
+    {
+        "question": "Which method is commonly used to retrieve an existing element from a container in Gradle?",
+        "options": {
+            "A": "getElement()",
+            "B": "find()",
+            "C": "named()",
+            "D": "retrieve()"
+        },
+        "correct_answer": "C",
+        "explanation": "The `named()` method is commonly used to retrieve an existing element from a container in Gradle. This method allows you to access elements by their names, facilitating easy configuration and management of tasks and other components."
+    },
+    {
+        "question": "How can you create a new element within a container in Gradle?",
+        "options": {
+            "A": "Using the create() method.",
+            "B": "Using the add() method.",
+            "C": "Using the register() method.",
+            "D": "Using the new() method."
+        },
+        "correct_answer": "C",
+        "explanation": "In Gradle, you can create a new element within a container using the `register()` method. This method allows for the registration of new tasks or configurations, enabling you to define their properties and behavior."
+    },
+    {
+        "question": "What is a benefit of using Kotlin delegated properties with container elements in Gradle?",
+        "options": {
+            "A": "They allow for dynamic type resolution at runtime.",
+            "B": "They simplify the syntax and improve code readability.",
+            "C": "They enable the use of Groovy closures within Kotlin scripts.",
+            "D": "They restrict access to container elements."
+        },
+        "correct_answer": "B",
+        "explanation": "Kotlin delegated properties simplify the syntax and improve code readability when working with container elements in Gradle. By using delegated properties, you can easily reference and manage elements without repetitive code, enhancing the clarity of your build scripts."
+    },
+    {
+        "question": "What is the primary purpose of project properties in Gradle's Kotlin DSL?",
+        "options": {
+            "A": "To define build logic that can be reused across multiple projects",
+            "B": "To store configuration values that can be accessed during the build process",
+            "C": "To manage dependencies for the project",
+            "D": "To provide a way to apply plugins to the project"
+        },
+        "correct_answer": "B",
+        "explanation": "Project properties in Gradle's Kotlin DSL are used to store configuration values that can be accessed during the build process. They allow users to define values that can be referenced throughout the build scripts, enhancing flexibility and configurability."
+    },
+    {
+        "question": "How can extra properties be accessed in a Kotlin DSL script?",
+        "options": {
+            "A": "Using the `by extra` syntax",
+            "B": "Using the `getExtra()` method",
+            "C": "Using the `extra.get()` function",
+            "D": "Using the `extra[]` syntax only"
+        },
+        "correct_answer": "A",
+        "explanation": "Extra properties can be accessed in a Kotlin DSL script using the `by extra` syntax. This allows for the creation and binding of extra properties to variables, making them easily accessible throughout the script."
+    },
+    {
+        "question": "What is a key difference between project properties and extra properties in Gradle's Kotlin DSL?",
+        "options": {
+            "A": "Project properties can only be defined in the root project, while extra properties can be defined in any project.",
+            "B": "Project properties must be defined before they are accessed, while extra properties can be accessed without prior definition.",
+            "C": "Project properties are always required, while extra properties are optional.",
+            "D": "Project properties are limited to string values, while extra properties can hold any type of value."
+        },
+        "correct_answer": "C",
+        "explanation": "A key difference is that project properties are often required for the build to function correctly, while extra properties are optional and can be used to store additional configuration values that may not be necessary for every build."
+    },
+    {
+        "question": "Which of the following statements about extra properties is true?",
+        "options": {
+            "A": "Extra properties can only be defined on project objects.",
+            "B": "Extra properties can be accessed using a map-like syntax.",
+            "C": "Extra properties cannot be used in tasks.",
+            "D": "Extra properties are automatically available in all Gradle scripts without declaration."
+        },
+        "correct_answer": "B",
+        "explanation": "Extra properties can be accessed using a map-like syntax, allowing users to set and retrieve values dynamically. This flexibility makes extra properties useful for various configurations within Gradle scripts."
+    },
+    {
+        "question": "What is a key feature of Kotlin's interoperability with Groovy?",
+        "options": {
+            "A": "Kotlin can only call Groovy methods using static imports.",
+            "B": "Kotlin can seamlessly call Groovy methods and vice versa.",
+            "C": "Kotlin cannot use Groovy closures in any context.",
+            "D": "Kotlin requires explicit type casting for all Groovy method calls."
+        },
+        "correct_answer": "B",
+        "explanation": "Kotlin is designed with interoperability in mind, allowing it to call Groovy methods in a natural way and vice versa. This means that Kotlin code can utilize Groovy methods and Groovy can call Kotlin functions without significant barriers, enhancing the flexibility of using both languages in a project."
+    },
+    {
+        "question": "How can Kotlin extension functions be called from Groovy?",
+        "options": {
+            "A": "By using the `invoke` method directly.",
+            "B": "By calling them as static functions with the receiver as the first parameter.",
+            "C": "By importing them into the Groovy script.",
+            "D": "By defining them as Groovy closures."
+        },
+        "correct_answer": "B",
+        "explanation": "Kotlin extension functions can be called from Groovy as static functions, where the receiver is passed as the first parameter. This allows Groovy to utilize Kotlin's extension capabilities while maintaining type safety and clarity."
+    },
+    {
+        "question": "What is the recommended approach for calling Groovy methods that expect closure arguments from Kotlin?",
+        "options": {
+            "A": "Use the `closureOf<T>()` method.",
+            "B": "Use the `delegateClosureOf<T>()` method.",
+            "C": "Use a lambda expression directly.",
+            "D": "Use the `invoke` method with a closure parameter."
+        },
+        "correct_answer": "A",
+        "explanation": "When calling Groovy methods that expect closure arguments from Kotlin, the recommended approach is to use the `closureOf<T>()` method. This method allows Kotlin functions to be adapted to Groovy closures while preserving Kotlin's strong typing."
+    },
+    {
+        "question": "What is a limitation of using Kotlin DSL with Groovy DSL in a Gradle build?",
+        "options": {
+            "A": "Kotlin DSL cannot access Groovy DSL properties.",
+            "B": "Kotlin DSL is always faster than Groovy DSL.",
+            "C": "Kotlin DSL does not support named parameters.",
+            "D": "Kotlin DSL is known to be slower than Groovy DSL on first use."
+        },
+        "correct_answer": "D",
+        "explanation": "One of the limitations of using Kotlin DSL with Groovy DSL in a Gradle build is that Kotlin DSL is known to be slower than Groovy DSL on first use, particularly in clean checkouts or on ephemeral continuous integration agents. This is due to the slower script compilation process for Kotlin DSL."
+    }
+]

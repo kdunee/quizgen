@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the first step to take if you encounter a 'command not found: gradle' error?",
+        "options": {
+            "A": "Ensure Gradle is correctly added to your PATH",
+            "B": "Reinstall the Java Development Kit",
+            "C": "Check for permission issues on the Gradle executable",
+            "D": "Run the Gradle build with elevated privileges"
+        },
+        "correct_answer": "A",
+        "explanation": "If you encounter a 'command not found: gradle' error, the first step is to ensure that Gradle is correctly added to your PATH. This allows the terminal to recognize the 'gradle' command and execute it properly."
+    },
+    {
+        "question": "What should you do if the JAVA_HOME variable is set to an invalid directory?",
+        "options": {
+            "A": "Delete the JAVA_HOME variable",
+            "B": "Set the JAVA_HOME variable to the correct Java installation path",
+            "C": "Reinstall Gradle",
+            "D": "Run Gradle with the --info flag"
+        },
+        "correct_answer": "B",
+        "explanation": "If the JAVA_HOME variable is set to an invalid directory, you should set the JAVA_HOME variable to the correct path of your Java installation. This ensures that Gradle can locate the Java Development Kit necessary for building projects."
+    },
+    {
+        "question": "What does the command 'gradle help' do?",
+        "options": {
+            "A": "Executes all Gradle tasks",
+            "B": "Runs configuration scripts without executing tasks",
+            "C": "Displays the version of Gradle installed",
+            "D": "Refreshes the Gradle project in the IDE"
+        },
+        "correct_answer": "B",
+        "explanation": "'gradle help' runs configuration scripts without executing any Gradle tasks. This is useful for verifying if there are issues in the build configuration scripts without performing the actual build."
+    },
+    {
+        "question": "If you experience slow build performance, what is a recommended action?",
+        "options": {
+            "A": "Increase the number of tasks executed simultaneously",
+            "B": "Check for dependency resolution issues",
+            "C": "Consult the performance optimization guidelines",
+            "D": "Disable all logging to speed up the process"
+        },
+        "correct_answer": "C",
+        "explanation": "If you experience slow build performance, a recommended action is to consult the performance optimization guidelines. These guidelines provide strategies to improve build speed and efficiency."
+    },
+    {
+        "question": "What is the first step to troubleshoot a Gradle installation issue?",
+        "options": {
+            "A": "Check if Gradle is correctly added to your PATH",
+            "B": "Reinstall the Java Development Kit",
+            "C": "Update your operating system",
+            "D": "Clear the Gradle cache"
+        },
+        "correct_answer": "A",
+        "explanation": "The first step to troubleshoot a Gradle installation issue is to check if Gradle is correctly added to your PATH. If Gradle is not in your PATH, the command line will not recognize the 'gradle' command, leading to a 'command not found' error."
+    },
+    {
+        "question": "What should you do if you encounter the error 'JAVA_HOME is set to an invalid directory'?",
+        "options": {
+            "A": "Reinstall Gradle",
+            "B": "Set the JAVA_HOME variable to the correct Java installation path",
+            "C": "Update your Gradle version",
+            "D": "Change your operating system"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter the error 'JAVA_HOME is set to an invalid directory', you should set the JAVA_HOME variable to the correct path of your Java installation. This ensures that Gradle can locate the Java Development Kit it needs to function properly."
+    },
+    {
+        "question": "What command can you run to verify your Gradle installation?",
+        "options": {
+            "A": "gradle check",
+            "B": "gradle --version",
+            "C": "gradle status",
+            "D": "gradle info"
+        },
+        "correct_answer": "B",
+        "explanation": "To verify your Gradle installation, you can run the command 'gradle --version'. This command will display the installed version of Gradle along with other relevant information, confirming that Gradle is correctly set up."
+    },
+    {
+        "question": "If you receive a 'permission denied' error when running Gradle, what is a likely solution?",
+        "options": {
+            "A": "Change the Gradle version",
+            "B": "Make the Gradle executable file executable using chmod",
+            "C": "Reinstall the Java Development Kit",
+            "D": "Run Gradle as an administrator"
+        },
+        "correct_answer": "B",
+        "explanation": "If you receive a 'permission denied' error when running Gradle, a likely solution is to make the Gradle executable file executable using the 'chmod +x path/to/executable' command on Unix-based systems. This ensures that the Gradle executable has the necessary permissions to run."
+    },
+    {
+        "question": "What is the primary purpose of dependency resolution in Gradle?",
+        "options": {
+            "A": "To manage and resolve conflicts between different versions of dependencies",
+            "B": "To compile source code into executable files",
+            "C": "To optimize the performance of build scripts",
+            "D": "To automate the testing of software applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency resolution in Gradle is to manage and resolve conflicts between different versions of dependencies. This ensures that the correct versions of libraries and frameworks are used in a project, preventing issues that can arise from version mismatches."
+    },
+    {
+        "question": "Which command can be used to view the dependency tree in Gradle?",
+        "options": {
+            "A": "gradle dependencies",
+            "B": "gradle viewDependencies",
+            "C": "gradle listDependencies",
+            "D": "gradle showDependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The command 'gradle dependencies' is used to view the dependency tree in Gradle. This command provides a detailed view of all dependencies in the project, including their versions and any conflicts that may exist."
+    },
+    {
+        "question": "What might indicate a dependency resolution issue during a Gradle build?",
+        "options": {
+            "A": "The build completes successfully without any warnings",
+            "B": "The build fails with a message about version conflicts",
+            "C": "The build takes longer than expected to execute",
+            "D": "The build produces a warning about deprecated features"
+        },
+        "correct_answer": "B",
+        "explanation": "A dependency resolution issue during a Gradle build is typically indicated by a failure message about version conflicts. This suggests that there are incompatible versions of dependencies that need to be resolved for the build to succeed."
+    },
+    {
+        "question": "What is a common method to troubleshoot dependency resolution issues in Gradle?",
+        "options": {
+            "A": "Running the build with the --info flag to get detailed logs",
+            "B": "Reinstalling Gradle to ensure it is up to date",
+            "C": "Changing the project structure to avoid using dependencies",
+            "D": "Disabling all plugins to simplify the build process"
+        },
+        "correct_answer": "A",
+        "explanation": "A common method to troubleshoot dependency resolution issues in Gradle is to run the build with the --info flag. This provides detailed logs that can help identify the source of the problem, such as which dependencies are causing conflicts."
+    },
+    {
+        "question": "What is a common approach to troubleshoot slow builds in Gradle?",
+        "options": {
+            "A": "Increase the number of tasks executed in parallel",
+            "B": "Disable all logging to speed up the process",
+            "C": "Use the Gradle Wrapper instead of a local installation",
+            "D": "Review and optimize build scripts and dependencies"
+        },
+        "correct_answer": "D",
+        "explanation": "To troubleshoot slow builds in Gradle, it is essential to review and optimize build scripts and dependencies. This can involve identifying unnecessary tasks, reducing dependency conflicts, and ensuring that the build configuration is efficient. Increasing parallel task execution may help, but it is not a primary troubleshooting step."
+    },
+    {
+        "question": "Which of the following can contribute to slow build performance in Gradle?",
+        "options": {
+            "A": "Using the latest version of Gradle",
+            "B": "Having a large number of dependencies",
+            "C": "Running builds in a clean environment",
+            "D": "Utilizing the Gradle Daemon"
+        },
+        "correct_answer": "B",
+        "explanation": "Having a large number of dependencies can significantly contribute to slow build performance in Gradle. Each dependency can introduce additional resolution time and potential conflicts, which can slow down the overall build process. In contrast, using the latest version of Gradle and running builds in a clean environment typically helps improve performance."
+    },
+    {
+        "question": "What is one benefit of using the Gradle Daemon for build performance?",
+        "options": {
+            "A": "It eliminates the need for a Java Development Kit",
+            "B": "It allows for faster startup times for builds",
+            "C": "It automatically resolves all dependency conflicts",
+            "D": "It runs builds in a completely isolated environment"
+        },
+        "correct_answer": "B",
+        "explanation": "The Gradle Daemon provides faster startup times for builds by keeping the Gradle process running in the background. This reduces the overhead of starting a new process for each build, leading to improved performance. However, it does not eliminate the need for a Java Development Kit or automatically resolve dependency conflicts."
+    },
+    {
+        "question": "What is the primary purpose of debugging build logic in Gradle?",
+        "options": {
+            "A": "To optimize the performance of Gradle builds",
+            "B": "To identify and fix issues in the build configuration scripts",
+            "C": "To manage dependencies more effectively",
+            "D": "To enhance the user interface of the Gradle tool"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of debugging build logic in Gradle is to identify and fix issues in the build configuration scripts. This involves examining the scripts for errors or misconfigurations that may prevent successful builds, ensuring that the build process runs smoothly and as intended."
+    },
+    {
+        "question": "Which property must be set to enable remote debugging of a Gradle build?",
+        "options": {
+            "A": "org.gradle.debug",
+            "B": "org.gradle.remote",
+            "C": "org.gradle.logging",
+            "D": "org.gradle.build"
+        },
+        "correct_answer": "A",
+        "explanation": "To enable remote debugging of a Gradle build, the property 'org.gradle.debug' must be set to 'true'. This allows developers to attach a remote debugger to the Gradle build process, facilitating the identification of issues within the build logic."
+    },
+    {
+        "question": "What should you do if a task in Gradle executes when it should have been marked as UP-TO-DATE?",
+        "options": {
+            "A": "Ignore the message and continue with the build",
+            "B": "Check the task's dependencies and inputs for changes",
+            "C": "Reinstall Gradle to fix the issue",
+            "D": "Increase the verbosity of the logging to hide the message"
+        },
+        "correct_answer": "B",
+        "explanation": "If a task in Gradle executes when it should have been marked as UP-TO-DATE, you should check the task's dependencies and inputs for changes. This ensures that the task is only executed when necessary, based on its inputs and outputs, which is crucial for maintaining efficient build performance."
+    },
+    {
+        "question": "What is a common method to debug Gradle build scripts?",
+        "options": {
+            "A": "Using a graphical user interface to visualize the build process",
+            "B": "Running the build with the '--info' flag to get detailed logs",
+            "C": "Disabling all logging to speed up the build",
+            "D": "Reverting to an older version of Gradle"
+        },
+        "correct_answer": "B",
+        "explanation": "A common method to debug Gradle build scripts is to run the build with the '--info' flag, which provides detailed logs about the build process. This information can help identify where issues may be occurring and assist in troubleshooting the build logic effectively."
+    },
+    {
+        "question": "What is the primary purpose of refreshing a Gradle project in an IDE?",
+        "options": {
+            "A": "To update the project configuration and dependencies",
+            "B": "To delete all existing build files",
+            "C": "To change the Java version used by the project",
+            "D": "To compile the project without any errors"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of refreshing a Gradle project in an IDE is to update the project configuration and dependencies. This process ensures that any changes made to the build scripts or dependencies are recognized by the IDE, allowing for accurate project management and build execution."
+    },
+    {
+        "question": "Which action should you take if you encounter infrequent errors within your IDE while using Gradle?",
+        "options": {
+            "A": "Reinstall the IDE completely",
+            "B": "Refresh the Gradle project",
+            "C": "Change the project directory",
+            "D": "Disable all plugins in the IDE"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter infrequent errors within your IDE while using Gradle, refreshing the Gradle project is a recommended action. This can resolve many issues by re-synchronizing the project with the latest configuration and dependencies, ensuring that the IDE is aligned with the Gradle build setup."
+    },
+    {
+        "question": "What is a common method to refresh a Gradle project in IntelliJ IDEA?",
+        "options": {
+            "A": "Click on the 'Build' menu and select 'Rebuild Project'",
+            "B": "Go to 'View' > 'Tool Windows' > 'Gradle' and click the 'Refresh' icon",
+            "C": "Use the command line to run 'gradle refresh'",
+            "D": "Close and reopen the IDE"
+        },
+        "correct_answer": "B",
+        "explanation": "In IntelliJ IDEA, a common method to refresh a Gradle project is to go to 'View' > 'Tool Windows' > 'Gradle' and click the 'Refresh' icon. This action updates the project configuration and ensures that the IDE reflects any changes made in the Gradle build scripts."
+    },
+    {
+        "question": "What should you do if you are using Eclipse and need to re-synchronize your Gradle build?",
+        "options": {
+            "A": "Delete the project and re-import it",
+            "B": "Open the 'Gradle Tasks' view and click the 'Refresh' icon",
+            "C": "Change the Java version in the project settings",
+            "D": "Run a clean build from the command line"
+        },
+        "correct_answer": "B",
+        "explanation": "If you are using Eclipse and need to re-synchronize your Gradle build, you should open the 'Gradle Tasks' view and click the 'Refresh' icon. This action will update the project configuration and ensure that the IDE is in sync with the Gradle build settings."
+    },
+    {
+        "question": "What is a common symptom of network configuration issues when using Gradle?",
+        "options": {
+            "A": "Gradle builds fail before any tasks are executed",
+            "B": "Gradle commands execute without any output",
+            "C": "Gradle builds complete successfully but with warnings",
+            "D": "Gradle tasks run but produce incorrect results"
+        },
+        "correct_answer": "A",
+        "explanation": "A common symptom of network configuration issues in Gradle is that builds fail before any tasks are executed. This typically occurs when Gradle cannot communicate with the Gradle daemon process, leading to immediate build failures."
+    },
+    {
+        "question": "What is a potential cause of Gradle failing to connect to the daemon process?",
+        "options": {
+            "A": "The Gradle version is outdated",
+            "B": "Network address translation (NAT) masquerade is enabled",
+            "C": "The Java Development Kit (JDK) is not installed",
+            "D": "The Gradle daemon is not running"
+        },
+        "correct_answer": "B",
+        "explanation": "Network address translation (NAT) masquerade can cause Gradle to fail to connect to the daemon process. When NAT masquerade is enabled, local connections may appear as if they are coming from external IP addresses, which Gradle refuses to connect to for security reasons."
+    },
+    {
+        "question": "How can you monitor the network setup and connection requests for Gradle?",
+        "options": {
+            "A": "By checking the Gradle build logs in the project directory",
+            "B": "By reviewing the daemon log file in the Gradle user home directory",
+            "C": "By using a network monitoring tool outside of Gradle",
+            "D": "By running a specific Gradle command to display network status"
+        },
+        "correct_answer": "B",
+        "explanation": "You can monitor the detected network setup and connection requests for Gradle by reviewing the daemon log file located in the Gradle user home directory. This log file contains detailed information about the network interfaces and connection attempts."
+    },
+    {
+        "question": "What should you do if you encounter a 'permission denied' error when running Gradle?",
+        "options": {
+            "A": "Reinstall Gradle",
+            "B": "Ensure Gradle is executable using chmod",
+            "C": "Update your Java installation",
+            "D": "Change the Gradle version to a newer one"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter a 'permission denied' error when running Gradle, it typically means that the Gradle executable is not set to be executable. You can resolve this by using the `chmod +x path/to/executable` command on *nix-based systems to change the permissions."
+    }
+]

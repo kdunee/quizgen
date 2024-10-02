@@ -1,0 +1,332 @@
+[
+    {
+        "question": "What is the primary purpose of a build cache in software development?",
+        "options": {
+            "A": "To store all project files permanently",
+            "B": "To speed up build processes by reusing outputs from previous builds",
+            "C": "To manage version control for source code",
+            "D": "To ensure all tasks are executed in a specific order"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a build cache is to speed up build processes by reusing outputs from previous builds. This allows developers to avoid redundant work, as tasks that have already been executed can be loaded from the cache instead of being re-run, thus improving efficiency."
+    },
+    {
+        "question": "What factors contribute to the uniqueness of a build cache key?",
+        "options": {
+            "A": "The project name and developer's name",
+            "B": "The task implementation, task action implementations, output properties, and task inputs",
+            "C": "The time of day the build is executed",
+            "D": "The programming language used in the project"
+        },
+        "correct_answer": "B",
+        "explanation": "A build cache key is uniquely identified by several factors, including the task implementation, task action implementations, the names of the output properties, and the names and values of task inputs. These elements ensure that the cache can accurately determine whether a task's output can be reused."
+    },
+    {
+        "question": "Why is it important for cacheable tasks to have repeatable outputs?",
+        "options": {
+            "A": "To ensure that tasks can run in parallel without issues",
+            "B": "To avoid cache misses and ensure consistent results across builds",
+            "C": "To allow for more complex task dependencies",
+            "D": "To reduce the overall size of the build cache"
+        },
+        "correct_answer": "B",
+        "explanation": "It is important for cacheable tasks to have repeatable outputs to avoid cache misses and ensure consistent results across builds. If a task produces different outputs for the same inputs, it can lead to confusion and inefficiencies, as the cache may not be able to reliably reuse the outputs."
+    },
+    {
+        "question": "What is a potential consequence of using unstable task inputs in a build?",
+        "options": {
+            "A": "Increased build speed",
+            "B": "Consistent outputs across builds",
+            "C": "Frequent cache misses due to unique input sets",
+            "D": "Simplified task dependencies"
+        },
+        "correct_answer": "C",
+        "explanation": "Using unstable task inputs can lead to frequent cache misses because each build execution will have a unique set of inputs. This variability prevents the build cache from effectively reusing outputs, negating the benefits of caching and slowing down the build process."
+    },
+    {
+        "question": "What is a key characteristic of cacheable tasks?",
+        "options": {
+            "A": "They produce outputs that can vary with each execution.",
+            "B": "They consistently produce the same outputs for the same inputs.",
+            "C": "They require manual intervention to store outputs.",
+            "D": "They are always faster than non-cacheable tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "Cacheable tasks are designed to produce consistent outputs for the same set of inputs. This repeatability is crucial for effective caching, as it allows Gradle to reuse outputs from the cache without needing to re-execute the task, thus improving build efficiency."
+    },
+    {
+        "question": "Which of the following is essential for a task to be cacheable?",
+        "options": {
+            "A": "The task must have non-repeatable outputs.",
+            "B": "The task must have stable inputs.",
+            "C": "The task must run in a specific order.",
+            "D": "The task must be executed in parallel with other tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "For a task to be cacheable, it must have stable inputs. This means that the inputs should not change between executions, allowing the task to produce the same outputs consistently. Unstable inputs can lead to cache misses, as the task would be seen as having different inputs each time it runs."
+    },
+    {
+        "question": "What happens if a cacheable task has non-repeatable outputs?",
+        "options": {
+            "A": "The task will always succeed without errors.",
+            "B": "The task will be able to reuse outputs from the cache.",
+            "C": "The task may lead to cache misses and inconsistent results.",
+            "D": "The task will automatically become non-cacheable."
+        },
+        "correct_answer": "C",
+        "explanation": "If a cacheable task has non-repeatable outputs, it can lead to cache misses and inconsistent results. This is because the outputs may vary with each execution, making it impossible for Gradle to reliably reuse cached outputs, which undermines the purpose of caching."
+    },
+    {
+        "question": "Why is it important for cacheable tasks to avoid overlapping outputs?",
+        "options": {
+            "A": "Overlapping outputs can improve build performance.",
+            "B": "Overlapping outputs can lead to confusion about which task produced which output.",
+            "C": "Overlapping outputs are necessary for task dependencies.",
+            "D": "Overlapping outputs ensure tasks run in parallel."
+        },
+        "correct_answer": "B",
+        "explanation": "It is important for cacheable tasks to avoid overlapping outputs because overlapping outputs can create confusion about which task produced which output. This can complicate the caching mechanism and lead to issues with task execution, as Gradle may not be able to determine the correct output for each task."
+    },
+    {
+        "question": "What is the significance of repeatable task outputs in a build system?",
+        "options": {
+            "A": "They ensure that tasks produce the same outputs for the same inputs.",
+            "B": "They allow tasks to run in parallel without any dependencies.",
+            "C": "They enable tasks to generate different outputs each time they run.",
+            "D": "They are only important for tasks that do not use caching."
+        },
+        "correct_answer": "A",
+        "explanation": "Repeatable task outputs are crucial because they ensure that a task will produce the same outputs when given the same inputs. This consistency is essential for effective caching, as it allows the build system to reuse outputs from the cache without discrepancies, thus improving build efficiency."
+    },
+    {
+        "question": "What can lead to cache misses in a build system?",
+        "options": {
+            "A": "Using stable task inputs.",
+            "B": "Having non-repeatable task outputs.",
+            "C": "Utilizing a build cache key.",
+            "D": "Implementing input normalization."
+        },
+        "correct_answer": "B",
+        "explanation": "Cache misses can occur when tasks produce non-repeatable outputs, meaning that the outputs can vary even with the same inputs. This inconsistency prevents the build system from effectively using cached results, leading to unnecessary re-execution of tasks."
+    },
+    {
+        "question": "Why is it important for tasks to have stable inputs?",
+        "options": {
+            "A": "To ensure that tasks can run in any order.",
+            "B": "To allow tasks to produce different outputs each time.",
+            "C": "To enable tasks to be loaded from the cache successfully.",
+            "D": "To ensure that tasks do not depend on any outputs."
+        },
+        "correct_answer": "C",
+        "explanation": "Stable inputs are important because they allow tasks to be loaded from the cache successfully. If a task has unstable inputs that change frequently, it will always have a unique set of inputs for each build, resulting in cache misses and preventing the reuse of outputs."
+    },
+    {
+        "question": "What is the role of input normalization in a build system?",
+        "options": {
+            "A": "To ensure that all tasks produce different outputs.",
+            "B": "To determine if two task inputs are essentially the same.",
+            "C": "To allow tasks to run without any inputs.",
+            "D": "To increase the complexity of task dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "Input normalization plays a critical role in determining if two task inputs are essentially the same, which is vital for up-to-date checks and deciding whether a cached result can be reused. This process helps maintain consistency and efficiency in the build system."
+    },
+    {
+        "question": "What is the significance of stable task inputs in a build process?",
+        "options": {
+            "A": "They ensure that tasks can be loaded from the cache without unique inputs for each build.",
+            "B": "They allow tasks to produce different outputs for each build execution.",
+            "C": "They are irrelevant to the caching mechanism of tasks.",
+            "D": "They guarantee that all tasks will run in parallel without issues."
+        },
+        "correct_answer": "A",
+        "explanation": "Stable task inputs are crucial for enabling tasks to be loaded from the cache. If a task has stable inputs, it can produce the same outputs consistently across builds, allowing for effective caching. Unstable inputs, on the other hand, lead to unique inputs for every build, resulting in cache misses."
+    },
+    {
+        "question": "Which of the following is an example of unstable task inputs?",
+        "options": {
+            "A": "A version number that changes with each build.",
+            "B": "A fixed configuration file that does not change.",
+            "C": "A task that always produces the same output for the same inputs.",
+            "D": "A task that uses a constant value as an input."
+        },
+        "correct_answer": "A",
+        "explanation": "A version number that changes with each build is an example of unstable task inputs. Such inputs can lead to different outputs for each build execution, preventing effective caching. In contrast, fixed or constant inputs contribute to stable task inputs."
+    },
+    {
+        "question": "What can happen if a task has unstable inputs?",
+        "options": {
+            "A": "The task will always produce the same output.",
+            "B": "The task may experience cache misses due to unique inputs.",
+            "C": "The task will run faster due to consistent inputs.",
+            "D": "The task will be able to share outputs with other tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "If a task has unstable inputs, it may experience cache misses because the inputs change with each build. This variability means that the task cannot reliably produce the same outputs, which is essential for effective caching and reuse of task results."
+    },
+    {
+        "question": "What is the primary purpose of input normalization in Gradle?",
+        "options": {
+            "A": "To ensure that task inputs are identical for every build",
+            "B": "To determine if two task inputs are essentially the same",
+            "C": "To speed up the execution of all tasks in a build",
+            "D": "To create unique identifiers for each task output"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of input normalization in Gradle is to determine if two task inputs are essentially the same. This process helps Gradle decide whether a cached result can be reused instead of executing the task again, thus improving build efficiency."
+    },
+    {
+        "question": "Which of the following best describes a benefit of input normalization?",
+        "options": {
+            "A": "It guarantees that all tasks will produce the same output every time.",
+            "B": "It allows Gradle to ignore irrelevant changes in task inputs.",
+            "C": "It ensures that all tasks are executed in the same order.",
+            "D": "It prevents any changes to task inputs during a build."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of input normalization is that it allows Gradle to ignore irrelevant changes in task inputs, which can help avoid unnecessary task executions and improve build performance. This is particularly useful when certain inputs do not affect the outcome of the task."
+    },
+    {
+        "question": "What happens if a task has unstable inputs in Gradle?",
+        "options": {
+            "A": "The task will always be cached.",
+            "B": "The task will have a unique set of inputs for every build.",
+            "C": "The task will produce identical outputs every time.",
+            "D": "The task will be skipped during the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "If a task has unstable inputs, it will have a unique set of inputs for every build. This variability leads to cache misses, as the task cannot be loaded from the cache if its inputs change frequently, preventing effective reuse of outputs."
+    },
+    {
+        "question": "How does Gradle handle file inputs during input normalization?",
+        "options": {
+            "A": "It ignores all file inputs to simplify the build process.",
+            "B": "It normalizes both the path and contents of the files.",
+            "C": "It only normalizes the contents of the files.",
+            "D": "It treats all file inputs as unique regardless of their contents."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle normalizes both the path and contents of file inputs during input normalization. This allows Gradle to determine if two file inputs are essentially the same, which is crucial for effective caching and up-to-date checks."
+    },
+    {
+        "question": "What does path sensitivity refer to in the context of Gradle tasks?",
+        "options": {
+            "A": "The ability of a task to execute regardless of the file paths used",
+            "B": "The importance of file paths in determining task inputs and outputs",
+            "C": "The requirement for tasks to have absolute paths for all inputs",
+            "D": "The process of normalizing file paths to a standard format"
+        },
+        "correct_answer": "B",
+        "explanation": "Path sensitivity refers to the importance of file paths in determining the inputs and outputs of Gradle tasks. It indicates how changes in file paths can affect the execution and caching of tasks, as certain tasks may rely on specific path structures to function correctly."
+    },
+    {
+        "question": "Why is it important for tasks to declare their path sensitivity?",
+        "options": {
+            "A": "To ensure that all tasks can run from any directory without issues",
+            "B": "To allow Gradle to determine which inputs can be shared across different environments",
+            "C": "To prevent tasks from executing if their paths are not absolute",
+            "D": "To enable tasks to ignore changes in file names during execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Declaring path sensitivity is important because it allows Gradle to understand which inputs can be shared across different environments, even when builds are executed from different root directories. This helps in optimizing the reuse of cached results and ensures that tasks can function correctly regardless of their execution context."
+    },
+    {
+        "question": "What happens if a task has inputs with absolute path sensitivity?",
+        "options": {
+            "A": "The task can be executed from any location without affecting its output",
+            "B": "The task's outputs can be cached and reused across different builds",
+            "C": "The task is considered non-relocatable and cannot share cached results",
+            "D": "The task will automatically normalize its inputs for better caching"
+        },
+        "correct_answer": "C",
+        "explanation": "If a task has inputs with absolute path sensitivity, it is considered non-relocatable, meaning that it cannot share cached results across different builds executed from different locations. This is because the absolute paths are essential to the task's execution, and any change in the path would lead to a cache miss."
+    },
+    {
+        "question": "How does Gradle handle tasks with relative path sensitivity?",
+        "options": {
+            "A": "It treats them as non-cacheable tasks",
+            "B": "It allows for better caching and sharing of outputs across different builds",
+            "C": "It requires all inputs to be specified with absolute paths",
+            "D": "It ignores the paths entirely during task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle handles tasks with relative path sensitivity by allowing for better caching and sharing of outputs across different builds. Since relative paths are not tied to a specific location, tasks can be executed from various directories while still being able to reuse cached results, enhancing build efficiency."
+    },
+    {
+        "question": "What is the primary benefit of compile avoidance in Gradle?",
+        "options": {
+            "A": "To ensure all tasks are executed every time a build runs",
+            "B": "To prevent unnecessary recompilation of tasks when outputs are unchanged",
+            "C": "To increase the size of the build cache",
+            "D": "To allow tasks to run in parallel without any restrictions"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of compile avoidance in Gradle is to prevent unnecessary recompilation of tasks when their outputs have not changed. This is achieved by checking the Application Binary Interface (ABI) of dependencies, allowing Gradle to reuse outputs from previous builds, thus saving time and resources."
+    },
+    {
+        "question": "Which factor is crucial for enabling compile avoidance in Gradle?",
+        "options": {
+            "A": "The use of absolute paths for all task inputs",
+            "B": "The stability of the Application Binary Interface (ABI) of dependencies",
+            "C": "The presence of timestamps in output files",
+            "D": "The execution of all tasks in a single thread"
+        },
+        "correct_answer": "B",
+        "explanation": "The stability of the Application Binary Interface (ABI) of dependencies is crucial for enabling compile avoidance in Gradle. If the ABI remains unchanged, Gradle can safely reuse the outputs from previous builds, avoiding unnecessary compilation and improving build efficiency."
+    },
+    {
+        "question": "What happens if a task's inputs are unstable in the context of compile avoidance?",
+        "options": {
+            "A": "The task will always be cached regardless of its inputs",
+            "B": "The task will be skipped during the build process",
+            "C": "The task will have a unique set of inputs for every build, leading to cache misses",
+            "D": "The task will automatically optimize its execution time"
+        },
+        "correct_answer": "C",
+        "explanation": "If a task's inputs are unstable, it will have a unique set of inputs for every build, which results in cache misses. This instability prevents Gradle from reusing outputs from the cache, leading to unnecessary recompilation and longer build times."
+    },
+    {
+        "question": "How does Gradle determine if a task can reuse its outputs from the cache?",
+        "options": {
+            "A": "By checking the task's execution time",
+            "B": "By comparing the task's name with other tasks",
+            "C": "By evaluating the inputs and their stability",
+            "D": "By analyzing the output file sizes"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle determines if a task can reuse its outputs from the cache by evaluating the inputs and their stability. If the inputs have not changed and are stable, Gradle can safely reuse the cached outputs, thus optimizing the build process."
+    },
+    {
+        "question": "What is a primary characteristic of non-cacheable tasks?",
+        "options": {
+            "A": "They produce complex, repeatable outputs.",
+            "B": "They typically involve I/O-heavy operations.",
+            "C": "They can be reused across different builds.",
+            "D": "They always generate the same output for the same inputs."
+        },
+        "correct_answer": "B",
+        "explanation": "Non-cacheable tasks are often I/O-heavy operations, such as file copying or syncing, which do not benefit from caching because the time saved by retrieving results from a cache is not significant compared to the time taken to perform the operation locally. These tasks usually do not produce outputs that are suitable for caching."
+    },
+    {
+        "question": "Why might some tasks be considered non-cacheable?",
+        "options": {
+            "A": "They produce outputs that are always the same.",
+            "B": "They require complex processing that cannot be repeated.",
+            "C": "They involve operations that are faster when executed directly.",
+            "D": "They have stable inputs that do not change."
+        },
+        "correct_answer": "C",
+        "explanation": "Some tasks are considered non-cacheable because they involve operations that are inherently faster when executed directly rather than retrieving results from a cache. For example, tasks that move files around locally may not see a performance benefit from caching, as the overhead of retrieving cached results can outweigh the benefits."
+    },
+    {
+        "question": "Which of the following is a common example of a non-cacheable task?",
+        "options": {
+            "A": "Compiling source code.",
+            "B": "Copying files from one directory to another.",
+            "C": "Running unit tests.",
+            "D": "Generating documentation."
+        },
+        "correct_answer": "B",
+        "explanation": "Copying files from one directory to another is a common example of a non-cacheable task. Such tasks are typically I/O-heavy and do not benefit from caching because the time taken to copy files is often less than the time it would take to retrieve them from a cache."
+    }
+]

@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the primary purpose of a Gradle task?",
+        "options": {
+            "A": "To execute a specific action within a build process",
+            "B": "To manage dependencies in a project",
+            "C": "To compile source code into bytecode",
+            "D": "To configure project settings"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a Gradle task is to execute a specific action within a build process. Tasks are the fundamental units of work in Gradle, allowing users to define and perform actions such as compiling code, creating files, or running tests."
+    },
+    {
+        "question": "How can a custom task be created in Gradle?",
+        "options": {
+            "A": "By using the `@TaskAction` annotation in a class that extends `DefaultTask`",
+            "B": "By defining a task in the `settings.gradle` file",
+            "C": "By using the `apply plugin` syntax in the build script",
+            "D": "By creating a new Gradle project"
+        },
+        "correct_answer": "A",
+        "explanation": "A custom task in Gradle can be created by using the `@TaskAction` annotation in a class that extends `DefaultTask`. This allows users to define the specific actions that the task will perform when executed."
+    },
+    {
+        "question": "What is the purpose of setting the 'group' and 'description' properties for a Gradle task?",
+        "options": {
+            "A": "To define the execution order of tasks",
+            "B": "To help users understand the task's functionality",
+            "C": "To specify the input and output files for the task",
+            "D": "To limit the visibility of the task in the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "Setting the 'group' and 'description' properties for a Gradle task helps users understand the task's functionality. This information is useful when listing tasks, as it provides context about what each task does and how it can be used."
+    },
+    {
+        "question": "What is the significance of task inputs and outputs in Gradle?",
+        "options": {
+            "A": "They determine the execution order of tasks",
+            "B": "They define the configuration settings for the build script",
+            "C": "They allow Gradle to track changes and optimize task execution",
+            "D": "They specify the plugins required for the build"
+        },
+        "correct_answer": "C",
+        "explanation": "Task inputs and outputs in Gradle are significant because they allow Gradle to track changes and optimize task execution. By knowing what inputs a task depends on and what outputs it produces, Gradle can determine whether a task needs to be re-executed based on changes in the inputs."
+    },
+    {
+        "question": "What is the primary purpose of creating a custom task in Gradle?",
+        "options": {
+            "A": "To extend the functionality of Gradle and automate specific actions",
+            "B": "To replace built-in tasks with new ones",
+            "C": "To create a user interface for Gradle",
+            "D": "To manage dependencies in a project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of creating a custom task in Gradle is to extend the functionality of Gradle and automate specific actions that are not covered by built-in tasks. Custom tasks allow users to define their own actions and behaviors tailored to their project's needs."
+    },
+    {
+        "question": "Which annotation is used to define the action that a custom task will perform in Gradle?",
+        "options": {
+            "A": "@TaskAction",
+            "B": "@ActionHandler",
+            "C": "@TaskMethod",
+            "D": "@Execute"
+        },
+        "correct_answer": "A",
+        "explanation": "The @TaskAction annotation is used to define the action that a custom task will perform in Gradle. This annotation marks the method that contains the logic to be executed when the task runs."
+    },
+    {
+        "question": "What is the purpose of setting the 'group' and 'description' properties for a custom task?",
+        "options": {
+            "A": "To define the execution order of tasks",
+            "B": "To help users understand how to use the task",
+            "C": "To specify the input and output files for the task",
+            "D": "To limit the visibility of the task in the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "Setting the 'group' and 'description' properties for a custom task helps users understand how to use the task. It provides context and categorization, making it easier to identify the purpose of the task when listing available tasks."
+    },
+    {
+        "question": "How can a custom task in Gradle be configured to accept dynamic input values?",
+        "options": {
+            "A": "By using the @DynamicInput annotation",
+            "B": "By defining properties with the @Input annotation",
+            "C": "By hardcoding the values in the task action",
+            "D": "By creating multiple task classes for different inputs"
+        },
+        "correct_answer": "B",
+        "explanation": "A custom task in Gradle can be configured to accept dynamic input values by defining properties with the @Input annotation. This allows users to set or override these properties when registering or configuring the task, enabling flexibility in task execution."
+    },
+    {
+        "question": "What is the primary purpose of built-in tasks in Gradle?",
+        "options": {
+            "A": "To provide predefined utility functions for common build operations",
+            "B": "To create custom tasks with unique functionalities",
+            "C": "To manage dependencies between different projects",
+            "D": "To automatically generate documentation for the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of built-in tasks in Gradle is to provide predefined utility functions for common build operations, such as copying files, creating JARs, and deleting files. These tasks simplify the build process by allowing users to leverage existing functionality without needing to implement it from scratch."
+    },
+    {
+        "question": "How can users extend the functionality of Gradle tasks?",
+        "options": {
+            "A": "By using only built-in tasks without any modifications",
+            "B": "By subclassing the DefaultTask class to create custom tasks",
+            "C": "By directly modifying the Gradle source code",
+            "D": "By using external plugins exclusively"
+        },
+        "correct_answer": "B",
+        "explanation": "Users can extend the functionality of Gradle tasks by subclassing the DefaultTask class to create custom tasks. This allows them to define specific actions and properties that meet their project's unique requirements, while still utilizing the core capabilities of Gradle."
+    },
+    {
+        "question": "What is the significance of setting a task's group and description in Gradle?",
+        "options": {
+            "A": "It determines the execution order of tasks",
+            "B": "It helps users understand the purpose and usage of the task",
+            "C": "It restricts the task from being executed in certain environments",
+            "D": "It automatically generates a user interface for the task"
+        },
+        "correct_answer": "B",
+        "explanation": "Setting a task's group and description in Gradle is significant because it helps users understand the purpose and usage of the task. This information is displayed when listing tasks, making it easier for users to identify and utilize the tasks relevant to their build process."
+    },
+    {
+        "question": "What is typically required for a Gradle task to perform useful work?",
+        "options": {
+            "A": "A graphical user interface",
+            "B": "Defined inputs and outputs",
+            "C": "A connection to a remote server",
+            "D": "A predefined execution time"
+        },
+        "correct_answer": "B",
+        "explanation": "For a Gradle task to perform useful work, it typically needs defined inputs and outputs. Inputs provide the necessary data for the task to operate, while outputs represent the results produced by the task, allowing for better tracking and management of the build process."
+    },
+    {
+        "question": "What is the purpose of registering a task in Gradle?",
+        "options": {
+            "A": "To define the actions that the task will perform",
+            "B": "To make the task available for execution in the build logic",
+            "C": "To automatically execute the task without user intervention",
+            "D": "To create a new project structure in Gradle"
+        },
+        "correct_answer": "B",
+        "explanation": "Registering a task in Gradle makes it available for execution within the build logic. This process allows users to invoke the task as part of their build process, ensuring that it can be executed when needed."
+    },
+    {
+        "question": "Which method is used to register a task in a Gradle build script?",
+        "options": {
+            "A": "TaskContainer.create()",
+            "B": "TaskContainer.register()",
+            "C": "TaskCollection.add()",
+            "D": "TaskAction.execute()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method used to register a task in a Gradle build script is TaskContainer.register(). This method allows users to define a new task and specify its properties and actions."
+    },
+    {
+        "question": "What is the benefit of setting a task's group and description in Gradle?",
+        "options": {
+            "A": "It allows the task to run faster during execution",
+            "B": "It helps users understand the purpose and usage of the task",
+            "C": "It automatically generates documentation for the task",
+            "D": "It restricts the task from being executed in certain environments"
+        },
+        "correct_answer": "B",
+        "explanation": "Setting a task's group and description helps users understand the purpose and usage of the task. This information is particularly useful when listing tasks, as it provides context for what each task does."
+    },
+    {
+        "question": "What are task inputs and outputs in Gradle?",
+        "options": {
+            "A": "Inputs are the files created by the task, and outputs are the parameters passed to it",
+            "B": "Inputs are the parameters passed to the task, and outputs are the files produced by it",
+            "C": "Inputs are the tasks that depend on this task, and outputs are the tasks that this task depends on",
+            "D": "Inputs are the execution time of the task, and outputs are the success status of the task"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, task inputs are the parameters or data that the task requires to perform its actions, while outputs are the files or results produced by the task. This distinction is important for understanding how tasks interact and depend on each other."
+    },
+    {
+        "question": "What is the primary purpose of configuring a task in Gradle?",
+        "options": {
+            "A": "To define the actions that the task will perform",
+            "B": "To specify the inputs and outputs of the task",
+            "C": "To register the task with the build script",
+            "D": "To create a new project directory"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of configuring a task in Gradle is to specify the inputs and outputs of the task. This configuration allows Gradle to understand what data the task requires to execute and what it will produce, which is essential for task execution and dependency management."
+    },
+    {
+        "question": "Which method is used to register a task in a Gradle build script?",
+        "options": {
+            "A": "TaskContainer.create()",
+            "B": "TaskContainer.register()",
+            "C": "TaskCollection.add()",
+            "D": "TaskAction.define()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method used to register a task in a Gradle build script is TaskContainer.register(). This method allows users to define a new task and make it available for execution within the build logic."
+    },
+    {
+        "question": "What is the significance of setting a task's group and description in Gradle?",
+        "options": {
+            "A": "It determines the order in which tasks are executed",
+            "B": "It helps users understand the purpose and usage of the task",
+            "C": "It restricts access to the task from other scripts",
+            "D": "It automatically generates documentation for the task"
+        },
+        "correct_answer": "B",
+        "explanation": "Setting a task's group and description in Gradle is significant because it helps users understand the purpose and usage of the task. This information is displayed when listing tasks, making it easier for users to identify and utilize the task effectively."
+    },
+    {
+        "question": "What is the role of the @TaskAction annotation in a Gradle task?",
+        "options": {
+            "A": "To define the task's inputs",
+            "B": "To specify the task's outputs",
+            "C": "To indicate the method that contains the task's action",
+            "D": "To register the task with the build script"
+        },
+        "correct_answer": "C",
+        "explanation": "The @TaskAction annotation in a Gradle task indicates the method that contains the task's action. This annotation tells Gradle which method to execute when the task is run, allowing the task to perform its defined operations."
+    },
+    {
+        "question": "What is the purpose of defining inputs for a Gradle task?",
+        "options": {
+            "A": "To specify the files that the task will create",
+            "B": "To inform the task of the data it needs to perform its actions",
+            "C": "To determine the execution order of tasks",
+            "D": "To set the visibility of the task in the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "Defining inputs for a Gradle task is essential because it informs the task of the data it needs to perform its actions. Inputs are the parameters or data that the task will use, which can affect its execution and the outputs it generates."
+    },
+    {
+        "question": "What is the role of outputs in a Gradle task?",
+        "options": {
+            "A": "To define the dependencies of the task",
+            "B": "To specify the results produced by the task after execution",
+            "C": "To determine the execution environment for the task",
+            "D": "To set the priority of the task in the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "Outputs in a Gradle task specify the results produced by the task after execution. They represent the files or data that the task generates, which can be used by other tasks or processes in the build lifecycle."
+    },
+    {
+        "question": "How can a Gradle task be configured to accept dynamic input values?",
+        "options": {
+            "A": "By hardcoding the input values in the task definition",
+            "B": "By using the `@TaskAction` annotation",
+            "C": "By utilizing properties that can be set at runtime",
+            "D": "By defining the inputs as constants in the build script"
+        },
+        "correct_answer": "C",
+        "explanation": "A Gradle task can be configured to accept dynamic input values by utilizing properties that can be set at runtime. This allows users to customize the behavior of the task based on their specific needs when the task is executed."
+    },
+    {
+        "question": "What is the benefit of setting a group and description for a Gradle task?",
+        "options": {
+            "A": "To improve the performance of the task",
+            "B": "To enhance user understanding and organization of tasks",
+            "C": "To restrict access to the task in the build script",
+            "D": "To automatically generate documentation for the task"
+        },
+        "correct_answer": "B",
+        "explanation": "Setting a group and description for a Gradle task enhances user understanding and organization of tasks. It helps users identify the purpose of the task and how to use it effectively, especially when listing available tasks in the build script."
+    },
+    {
+        "question": "What is the purpose of setting a task group in Gradle?",
+        "options": {
+            "A": "To define the order in which tasks are executed",
+            "B": "To categorize tasks for better organization and visibility",
+            "C": "To specify the dependencies of a task",
+            "D": "To determine the output files of a task"
+        },
+        "correct_answer": "B",
+        "explanation": "Setting a task group in Gradle helps categorize tasks, making it easier for users to understand and locate them when listing available tasks. This organization improves the usability of the build script by grouping related tasks together."
+    },
+    {
+        "question": "Why is it important to provide a description for a Gradle task?",
+        "options": {
+            "A": "To define the input parameters for the task",
+            "B": "To explain the purpose and usage of the task to users",
+            "C": "To specify the output files generated by the task",
+            "D": "To enforce the execution order of tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "Providing a description for a Gradle task is important because it explains the purpose and usage of the task to users. This helps users understand what the task does and how to use it effectively within the build process."
+    },
+    {
+        "question": "How can users view the tasks grouped in Gradle?",
+        "options": {
+            "A": "By executing the build script with the `--info` flag",
+            "B": "By listing tasks in the command line, which shows tasks by their groups",
+            "C": "By checking the output files generated by the tasks",
+            "D": "By modifying the build script to include a logging mechanism"
+        },
+        "correct_answer": "B",
+        "explanation": "Users can view the tasks grouped in Gradle by listing tasks in the command line. This command displays tasks organized by their groups, allowing users to easily identify and access related tasks."
+    }
+]

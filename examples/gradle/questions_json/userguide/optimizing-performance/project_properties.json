@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the primary purpose of project properties in Gradle?",
+        "options": {
+            "A": "To define the build script's execution order",
+            "B": "To store configuration values for the project",
+            "C": "To manage dependencies between projects",
+            "D": "To control the visibility of tasks in the build"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of project properties in Gradle is to store configuration values for the project. These properties can be set from the command line, system properties, or environment variables, allowing for flexible configuration of the build process."
+    },
+    {
+        "question": "How can project properties be set from the command line in Gradle?",
+        "options": {
+            "A": "Using the `-D` option",
+            "B": "Using the `-P` option",
+            "C": "Using the `--set` option",
+            "D": "Using the `--property` option"
+        },
+        "correct_answer": "B",
+        "explanation": "Project properties can be set from the command line in Gradle using the `-P` option. This allows users to pass property values directly when executing a Gradle command, enabling dynamic configuration of the build."
+    },
+    {
+        "question": "What happens if a project property is referenced but does not exist?",
+        "options": {
+            "A": "The build will continue without any issues",
+            "B": "An exception will be thrown, and the build will fail",
+            "C": "A default value will be used automatically",
+            "D": "The property will be created with a null value"
+        },
+        "correct_answer": "B",
+        "explanation": "If a project property is referenced but does not exist, an exception will be thrown, and the build will fail. It is important to check for the existence of optional project properties before accessing them to avoid build failures."
+    },
+    {
+        "question": "Which method can be used to check for the existence of a project property in Gradle?",
+        "options": {
+            "A": "Project.getProperty()",
+            "B": "Project.hasProperty()",
+            "C": "Project.existsProperty()",
+            "D": "Project.checkProperty()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method used to check for the existence of a project property in Gradle is `Project.hasProperty()`. This method allows developers to verify whether a specific property is defined before attempting to access its value, thus preventing potential errors."
+    },
+    {
+        "question": "What is the primary purpose of using the command line interface in Gradle?",
+        "options": {
+            "A": "To set project properties and execute tasks",
+            "B": "To create graphical user interfaces for projects",
+            "C": "To manage database connections",
+            "D": "To compile source code into binary format"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of using the command line interface in Gradle is to set project properties and execute tasks. This allows users to customize their build process and manage project configurations directly from the command line, enhancing flexibility and control over the build environment."
+    },
+    {
+        "question": "How can project properties be set using the command line in Gradle?",
+        "options": {
+            "A": "By editing the build.gradle file directly",
+            "B": "By using the `-P` option followed by the property name and value",
+            "C": "By creating a new project configuration file",
+            "D": "By using the `--set-property` command"
+        },
+        "correct_answer": "B",
+        "explanation": "Project properties in Gradle can be set using the command line by utilizing the `-P` option followed by the property name and value. This method allows users to pass property values dynamically when executing Gradle commands, making it easier to customize builds without modifying configuration files."
+    },
+    {
+        "question": "What happens if a project property is referenced but does not exist in Gradle?",
+        "options": {
+            "A": "The build will continue without any issues",
+            "B": "An exception will be thrown, causing the build to fail",
+            "C": "The property will be automatically created with a default value",
+            "D": "Gradle will ignore the property and proceed with the next task"
+        },
+        "correct_answer": "B",
+        "explanation": "If a project property is referenced but does not exist in Gradle, an exception will be thrown, causing the build to fail. This behavior emphasizes the importance of checking for the existence of optional project properties before accessing them to avoid build interruptions."
+    },
+    {
+        "question": "What is the primary purpose of environment variables in the context of project properties?",
+        "options": {
+            "A": "To store user preferences for software applications",
+            "B": "To set property values that should not be easily visible",
+            "C": "To manage system-level configurations for all users",
+            "D": "To define the structure of a project in Gradle"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of environment variables in the context of project properties is to set property values that should not be easily visible, especially in scenarios where users do not have admin rights. This allows for secure configuration of builds without exposing sensitive information."
+    },
+    {
+        "question": "How does Gradle recognize environment variables for setting project properties?",
+        "options": {
+            "A": "By using a specific naming pattern that includes the project name",
+            "B": "By checking the system's PATH variable for project properties",
+            "C": "By looking for environment variables with a dot in their names",
+            "D": "By scanning all user-defined variables in the operating system"
+        },
+        "correct_answer": "A",
+        "explanation": "Gradle recognizes environment variables for setting project properties by using a specific naming pattern that includes the project name. For example, an environment variable named `ORG_GRADLE_PROJECT_foo` would set the `foo` property on the project object."
+    },
+    {
+        "question": "What happens if a project property is referenced but does not exist in Gradle?",
+        "options": {
+            "A": "Gradle will ignore the reference and continue the build",
+            "B": "An exception will be thrown, causing the build to fail",
+            "C": "Gradle will automatically create a default value for the property",
+            "D": "The build will proceed with a warning message"
+        },
+        "correct_answer": "B",
+        "explanation": "If a project property is referenced but does not exist in Gradle, an exception will be thrown, causing the build to fail. This emphasizes the importance of checking for the existence of optional project properties before accessing them."
+    },
+    {
+        "question": "What is the primary purpose of system properties in Gradle?",
+        "options": {
+            "A": "To define project dependencies",
+            "B": "To configure project properties at runtime",
+            "C": "To manage user permissions",
+            "D": "To execute Gradle tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of system properties in Gradle is to configure project properties at runtime. They allow users to set values that can be accessed during the execution of the build process, enabling dynamic configuration based on the environment or user input."
+    },
+    {
+        "question": "How can system properties be set in Gradle?",
+        "options": {
+            "A": "Only through the Gradle build script",
+            "B": "Using the command line or environment variables",
+            "C": "By modifying the Gradle wrapper files",
+            "D": "Through the Gradle user interface"
+        },
+        "correct_answer": "B",
+        "explanation": "System properties in Gradle can be set using the command line or environment variables. This flexibility allows users to configure properties without modifying the build script directly, making it easier to adapt builds to different environments or requirements."
+    },
+    {
+        "question": "What happens if a referenced project property does not exist in Gradle?",
+        "options": {
+            "A": "The build will continue without any issues",
+            "B": "An exception will be thrown, and the build will fail",
+            "C": "The property will be set to a default value",
+            "D": "The property will be ignored silently"
+        },
+        "correct_answer": "B",
+        "explanation": "If a referenced project property does not exist in Gradle, an exception will be thrown, and the build will fail. This behavior emphasizes the importance of checking for the existence of optional project properties before accessing them to avoid build failures."
+    },
+    {
+        "question": "What is the primary purpose of the Gradle Kotlin DSL?",
+        "options": {
+            "A": "To provide a way to define build scripts using Kotlin syntax",
+            "B": "To enhance the performance of Gradle builds",
+            "C": "To allow for the use of Java syntax in build scripts",
+            "D": "To simplify the installation of Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Gradle Kotlin DSL is to provide a way to define build scripts using Kotlin syntax. This allows developers to leverage Kotlin's features, such as type safety and IDE support, while writing their build configurations, making the build process more intuitive and less error-prone."
+    },
+    {
+        "question": "How can project properties be set in Gradle using the command line?",
+        "options": {
+            "A": "By modifying the build.gradle file directly",
+            "B": "Using the `-P` option followed by the property name and value",
+            "C": "By creating a properties file in the project directory",
+            "D": "By setting them in the IDE configuration settings"
+        },
+        "correct_answer": "B",
+        "explanation": "Project properties in Gradle can be set from the command line using the `-P` option followed by the property name and value. This allows users to dynamically pass values to their build scripts without modifying the script files directly."
+    },
+    {
+        "question": "What happens if a project property is referenced but does not exist in Gradle?",
+        "options": {
+            "A": "The build will continue without any issues",
+            "B": "An exception will be thrown, causing the build to fail",
+            "C": "The property will be automatically created with a default value",
+            "D": "A warning will be issued, but the build will succeed"
+        },
+        "correct_answer": "B",
+        "explanation": "If a project property is referenced but does not exist in Gradle, an exception will be thrown, causing the build to fail. This behavior emphasizes the importance of checking for the existence of optional project properties before accessing them to avoid build failures."
+    },
+    {
+        "question": "Which of the following is a feature of the Gradle Kotlin DSL?",
+        "options": {
+            "A": "It allows for dynamic property names with dots",
+            "B": "It requires all properties to be defined as integers",
+            "C": "It supports type-safe access to project properties",
+            "D": "It eliminates the need for build scripts altogether"
+        },
+        "correct_answer": "C",
+        "explanation": "A key feature of the Gradle Kotlin DSL is that it supports type-safe access to project properties. This means that when defining properties, developers can specify their types, which helps catch errors at compile time and improves the overall reliability of the build scripts."
+    },
+    {
+        "question": "What is the primary purpose of project properties in Gradle?",
+        "options": {
+            "A": "To define the build script's execution order",
+            "B": "To store configuration values for the project",
+            "C": "To manage dependencies between projects",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of project properties in Gradle is to store configuration values for the project. These properties can be set from the command line, environment variables, or system properties, allowing for flexible configuration of the build process."
+    },
+    {
+        "question": "How can project properties be set from the command line in Gradle?",
+        "options": {
+            "A": "Using the `-D` option",
+            "B": "Using the `-P` option",
+            "C": "Using the `--set` option",
+            "D": "Using the `--config` option"
+        },
+        "correct_answer": "B",
+        "explanation": "Project properties can be set from the command line in Gradle using the `-P` option. This allows users to pass property values directly when executing a Gradle command, enabling dynamic configuration of the build."
+    },
+    {
+        "question": "What happens if a project property is referenced but does not exist in Gradle?",
+        "options": {
+            "A": "The build will continue without any issues",
+            "B": "An exception will be thrown, and the build will fail",
+            "C": "A default value will be used automatically",
+            "D": "The property will be created with a null value"
+        },
+        "correct_answer": "B",
+        "explanation": "If a project property is referenced but does not exist in Gradle, an exception will be thrown, and the build will fail. It is important to check for the existence of optional project properties before accessing them to avoid build failures."
+    },
+    {
+        "question": "Which of the following is a method to check for the existence of a project property in Gradle?",
+        "options": {
+            "A": "Project.getProperty()",
+            "B": "Project.hasProperty()",
+            "C": "Project.existsProperty()",
+            "D": "Project.checkProperty()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method to check for the existence of a project property in Gradle is `Project.hasProperty()`. This method returns a boolean indicating whether the specified property exists, allowing for safe access to optional properties."
+    },
+    {
+        "question": "What is meant by 'configuration time' in the context of project properties?",
+        "options": {
+            "A": "The time when project properties are set and can be accessed for configuration.",
+            "B": "The time when the project is executed and properties are utilized.",
+            "C": "The time when the project is compiled into executable code.",
+            "D": "The time when user input is required for project setup."
+        },
+        "correct_answer": "A",
+        "explanation": "Configuration time refers to the phase in which project properties are set and can be accessed for configuration purposes. During this time, properties can be defined and read to influence how the build process is configured before execution begins."
+    },
+    {
+        "question": "Why is it important to check for the existence of project properties at configuration time?",
+        "options": {
+            "A": "To ensure that the build process can run without errors.",
+            "B": "To optimize the performance of the build.",
+            "C": "To allow for dynamic changes in project structure.",
+            "D": "To enable the use of default values in all cases."
+        },
+        "correct_answer": "A",
+        "explanation": "It is important to check for the existence of project properties at configuration time to ensure that the build process can run without errors. If a property is referenced but does not exist, it can lead to exceptions that cause the build to fail, making it crucial to verify their presence before accessing them."
+    },
+    {
+        "question": "How can project properties be set from the command line?",
+        "options": {
+            "A": "By using the `-P` option followed by the property name and value.",
+            "B": "By editing the build.gradle file directly.",
+            "C": "By using environment variables only.",
+            "D": "By invoking the Gradle wrapper without any parameters."
+        },
+        "correct_answer": "A",
+        "explanation": "Project properties can be set from the command line by using the `-P` option followed by the property name and value. This allows users to dynamically configure properties without modifying the build scripts directly."
+    },
+    {
+        "question": "What does 'execution time' refer to in the context of project properties?",
+        "options": {
+            "A": "The time when project properties are defined in the build script",
+            "B": "The time when project properties are accessed during the build process",
+            "C": "The time when the Gradle daemon starts",
+            "D": "The time when the project is compiled"
+        },
+        "correct_answer": "B",
+        "explanation": "Execution time refers to the moment during the build process when project properties are accessed and utilized. This is distinct from configuration time, which is when properties are defined. Understanding when properties are accessed is crucial for effective build script management."
+    },
+    {
+        "question": "What happens if a project property is referenced at execution time but does not exist?",
+        "options": {
+            "A": "The build will continue without any issues",
+            "B": "An exception will be thrown, causing the build to fail",
+            "C": "The property will be automatically created with a default value",
+            "D": "The build will skip the execution of that task"
+        },
+        "correct_answer": "B",
+        "explanation": "If a project property is referenced at execution time and it does not exist, an exception will be thrown, leading to a failure of the build. This emphasizes the importance of checking for the existence of optional properties before accessing them to avoid build interruptions."
+    },
+    {
+        "question": "Which method can be used to check for the existence of a project property before accessing it?",
+        "options": {
+            "A": "Project.getProperty()",
+            "B": "Project.hasProperty()",
+            "C": "Project.isPropertyDefined()",
+            "D": "Project.checkProperty()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method Project.hasProperty() is used to check for the existence of a project property before accessing it. This is a best practice to prevent exceptions during the build process when dealing with optional properties."
+    }
+]

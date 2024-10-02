@@ -1,0 +1,354 @@
+[
+    {
+        "question": "What is the primary purpose of defining inputs and outputs for a custom task in Gradle?",
+        "options": {
+            "A": "To ensure the task runs every time without skipping",
+            "B": "To inform Gradle about task dependencies and facilitate incremental building",
+            "C": "To allow the task to execute without any configuration",
+            "D": "To automatically generate documentation for the task"
+        },
+        "correct_answer": "B",
+        "explanation": "Defining inputs and outputs for a custom task in Gradle serves two main purposes: it informs Gradle about task dependencies, allowing it to determine the order of task execution, and it facilitates incremental building by enabling Gradle to skip tasks that have not changed since the last build."
+    },
+    {
+        "question": "Which of the following annotations is used to declare a property as an input file for a Gradle task?",
+        "options": {
+            "A": "@OutputFile",
+            "B": "@InputDirectory",
+            "C": "@InputFile",
+            "D": "@OutputDirectory"
+        },
+        "correct_answer": "C",
+        "explanation": "The annotation @InputFile is used to declare a property as an input file for a Gradle task. This informs Gradle that the specified file is necessary for the task's execution and should be considered when checking if the task is up-to-date."
+    },
+    {
+        "question": "What is the benefit of using lazy properties in Gradle tasks?",
+        "options": {
+            "A": "They allow properties to be set at any time during the task's execution.",
+            "B": "They enable Gradle to automatically determine task dependencies based on property values.",
+            "C": "They ensure that properties are always initialized with default values.",
+            "D": "They allow for dynamic modification of task actions."
+        },
+        "correct_answer": "B",
+        "explanation": "Using lazy properties in Gradle tasks allows for automatic determination of task dependencies based on property values. This means that Gradle can link the output of one task to the input of another, even before the actual values are set, enhancing the build process's efficiency."
+    },
+    {
+        "question": "What is the role of the `@TaskAction` annotation in a custom Gradle task?",
+        "options": {
+            "A": "It defines the inputs for the task.",
+            "B": "It specifies the output files for the task.",
+            "C": "It marks the method that contains the code to be executed when the task runs.",
+            "D": "It indicates that the task can be skipped if inputs are unchanged."
+        },
+        "correct_answer": "C",
+        "explanation": "The `@TaskAction` annotation marks the method that contains the code to be executed when the task runs. This is where the main logic of the task is implemented, and it is called during the execution phase of the build process."
+    },
+    {
+        "question": "What are the primary purposes of defining inputs and outputs for tasks in Gradle?",
+        "options": {
+            "A": "To inform Gradle about task dependencies and facilitate incremental building",
+            "B": "To increase the complexity of the build script",
+            "C": "To allow tasks to run in parallel without any dependencies",
+            "D": "To ensure that all tasks are executed every time the build runs"
+        },
+        "correct_answer": "A",
+        "explanation": "Defining inputs and outputs for tasks in Gradle serves two main purposes: it informs Gradle about task dependencies, allowing it to determine the order of task execution, and it facilitates incremental building by enabling Gradle to skip tasks whose inputs and outputs have not changed since the last build."
+    },
+    {
+        "question": "Which of the following best describes 'inputs' in the context of Gradle tasks?",
+        "options": {
+            "A": "Files or directories that a task produces as output",
+            "B": "Files, directories, or configuration data that a task requires to execute",
+            "C": "The final results of a task's execution",
+            "D": "The scripts that define how tasks are executed"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, 'inputs' refer to the files, directories, or configuration data that a task requires to execute. These inputs are essential for the task to perform its actions and are used to determine if the task needs to be re-executed based on changes."
+    },
+    {
+        "question": "What is the significance of using annotations like @Input and @Output in Gradle task classes?",
+        "options": {
+            "A": "They are used to define the order in which tasks are executed",
+            "B": "They help Gradle understand which properties are inputs and outputs for up-to-date checks",
+            "C": "They allow tasks to run without any dependencies",
+            "D": "They are only necessary for tasks that do not have any inputs or outputs"
+        },
+        "correct_answer": "B",
+        "explanation": "Annotations like @Input and @Output in Gradle task classes are significant because they help Gradle understand which properties are inputs and outputs for the task. This information is crucial for performing up-to-date checks, allowing Gradle to determine whether a task needs to be executed based on changes to its inputs or outputs."
+    },
+    {
+        "question": "How does Gradle utilize the concept of lazy configuration for task inputs and outputs?",
+        "options": {
+            "A": "It requires all inputs and outputs to be defined at the time of task registration",
+            "B": "It allows inputs and outputs to be referenced before they are set, enabling dynamic task behavior",
+            "C": "It prevents any changes to inputs and outputs once a task is registered",
+            "D": "It ensures that all tasks are executed in a specific order"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle utilizes the concept of lazy configuration for task inputs and outputs by allowing them to be referenced before they are actually set. This enables dynamic task behavior, where inputs and outputs can be defined based on conditions or requirements at the time of task execution, rather than at registration."
+    },
+    {
+        "question": "What is the primary benefit of using incremental builds in Gradle?",
+        "options": {
+            "A": "To ensure all tasks are executed every time a build is run",
+            "B": "To avoid unnecessary work by only executing tasks that have changed",
+            "C": "To simplify the build script by removing task dependencies",
+            "D": "To automatically generate documentation for the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using incremental builds in Gradle is to avoid unnecessary work by only executing tasks that have changed. This feature enhances build performance by checking the inputs and outputs of tasks and determining if they are up-to-date, allowing Gradle to skip tasks that do not need to be re-executed."
+    },
+    {
+        "question": "How does Gradle determine if a task is up-to-date?",
+        "options": {
+            "A": "By checking if the task has been executed in the previous build",
+            "B": "By comparing the current time with the last execution time of the task",
+            "C": "By evaluating the inputs and outputs of the task for any changes",
+            "D": "By analyzing the build script for any modifications"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle determines if a task is up-to-date by evaluating the inputs and outputs of the task for any changes. If the inputs have not changed since the last execution and the outputs still exist, Gradle considers the task up-to-date and skips its execution, thus optimizing the build process."
+    },
+    {
+        "question": "What role do task inputs and outputs play in incremental builds?",
+        "options": {
+            "A": "They define the order in which tasks are executed",
+            "B": "They are used to determine task dependencies and up-to-date status",
+            "C": "They specify the environment variables for the build process",
+            "D": "They control the logging level during the build"
+        },
+        "correct_answer": "B",
+        "explanation": "Task inputs and outputs are crucial in incremental builds as they are used to determine task dependencies and the up-to-date status of tasks. By clearly defining inputs and outputs, Gradle can efficiently manage which tasks need to be executed based on changes, thereby improving build performance."
+    },
+    {
+        "question": "What happens if a task's inputs or outputs change between builds?",
+        "options": {
+            "A": "The task will always be skipped in subsequent builds",
+            "B": "The task will be marked as up-to-date",
+            "C": "The task will be executed again in the next build",
+            "D": "The task will fail to execute"
+        },
+        "correct_answer": "C",
+        "explanation": "If a task's inputs or outputs change between builds, the task will be executed again in the next build. This is because Gradle checks for changes in the inputs and outputs to determine if the task is still valid and needs to be re-executed, ensuring that the build reflects the latest changes."
+    },
+    {
+        "question": "What is the primary purpose of defining task inputs and outputs in Gradle?",
+        "options": {
+            "A": "To ensure tasks are executed in the correct order and to enable incremental builds",
+            "B": "To create a user interface for the build process",
+            "C": "To automatically generate documentation for the tasks",
+            "D": "To allow tasks to run without any configuration"
+        },
+        "correct_answer": "A",
+        "explanation": "Defining task inputs and outputs in Gradle serves two main purposes: it informs Gradle about task dependencies, ensuring that tasks are executed in the correct order, and it facilitates incremental building by allowing Gradle to skip tasks if their inputs and outputs have not changed since the last build."
+    },
+    {
+        "question": "How does Gradle determine if a task is up-to-date?",
+        "options": {
+            "A": "By checking if the task has been executed in the past",
+            "B": "By comparing the current state of inputs and outputs with their previous states",
+            "C": "By analyzing the system resources available during the build",
+            "D": "By evaluating the complexity of the task's action"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle determines if a task is up-to-date by comparing the current state of its inputs and outputs with their previous states. If there are no changes, Gradle can skip executing the task, thus optimizing the build process."
+    },
+    {
+        "question": "What happens when the output of one task is used as the input for another task in Gradle?",
+        "options": {
+            "A": "Gradle will ignore the dependency and run tasks in parallel",
+            "B": "Gradle automatically creates a dependency between the two tasks",
+            "C": "The first task will not execute until the second task is complete",
+            "D": "The tasks will execute independently without any order"
+        },
+        "correct_answer": "B",
+        "explanation": "When the output of one task is used as the input for another task, Gradle automatically creates a dependency between the two tasks. This ensures that the first task is executed before the second task, maintaining the correct order of operations in the build process."
+    },
+    {
+        "question": "Which of the following best describes a lifecycle task in Gradle?",
+        "options": {
+            "A": "A task that runs only when explicitly called by the user",
+            "B": "A task that is automatically executed as part of a build lifecycle",
+            "C": "A task that has no dependencies and runs independently",
+            "D": "A task that generates reports for other tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "A lifecycle task in Gradle is a task that is automatically executed as part of a build lifecycle. These tasks are typically defined to manage the overall build process, ensuring that necessary tasks are executed in the correct order."
+    },
+    {
+        "question": "What is the primary purpose of a task action in Gradle?",
+        "options": {
+            "A": "To define the inputs and outputs of a task",
+            "B": "To execute the code that performs the task's work",
+            "C": "To register the task with the Gradle build system",
+            "D": "To configure the task's dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a task action in Gradle is to execute the code that performs the task's work. This is where the actual operations defined by the task are carried out, such as compiling code or generating reports."
+    },
+    {
+        "question": "How can you dynamically modify the actions of an already registered task in Gradle?",
+        "options": {
+            "A": "By using the `doFirst` and `doLast` methods",
+            "B": "By changing the task's inputs and outputs",
+            "C": "By unregistering the task and creating a new one",
+            "D": "By modifying the task's dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "You can dynamically modify the actions of an already registered task in Gradle by using the `doFirst` and `doLast` methods. These methods allow you to add actions that will run before or after the existing actions of the task."
+    },
+    {
+        "question": "What is the significance of defining inputs and outputs for a task in Gradle?",
+        "options": {
+            "A": "They determine the order in which tasks are executed",
+            "B": "They allow Gradle to perform up-to-date checks and manage task dependencies",
+            "C": "They are used to log the execution of the task",
+            "D": "They specify the type of task being created"
+        },
+        "correct_answer": "B",
+        "explanation": "Defining inputs and outputs for a task in Gradle is significant because it allows Gradle to perform up-to-date checks and manage task dependencies. This means that if the inputs have not changed since the last execution, Gradle can skip running the task, improving build efficiency."
+    },
+    {
+        "question": "What annotation is used to indicate that a property is an input for a Gradle task?",
+        "options": {
+            "A": "@Output",
+            "B": "@Input",
+            "C": "@TaskAction",
+            "D": "@DependsOn"
+        },
+        "correct_answer": "B",
+        "explanation": "The annotation used to indicate that a property is an input for a Gradle task is `@Input`. This annotation helps Gradle understand which properties should be considered when determining if a task is up-to-date."
+    },
+    {
+        "question": "What is dynamic task configuration in Gradle?",
+        "options": {
+            "A": "Defining inputs and outputs statically within a task class.",
+            "B": "Adding inputs and outputs to a task instance based on specific conditions at runtime.",
+            "C": "Creating tasks that do not require any inputs or outputs.",
+            "D": "Automatically generating tasks based on project structure."
+        },
+        "correct_answer": "B",
+        "explanation": "Dynamic task configuration refers to the ability to add inputs and outputs to a task instance at runtime, allowing for customization based on specific conditions or requirements. This provides flexibility in how tasks behave during execution."
+    },
+    {
+        "question": "Which of the following is a benefit of using dynamic task configuration?",
+        "options": {
+            "A": "It eliminates the need for any task dependencies.",
+            "B": "It allows for more flexibility and fine-grained control over task behavior.",
+            "C": "It ensures that all tasks are executed in a fixed order.",
+            "D": "It simplifies the task registration process by removing the need for classes."
+        },
+        "correct_answer": "B",
+        "explanation": "Dynamic task configuration allows for more flexibility and fine-grained control over task behavior by enabling the customization of inputs and outputs based on specific conditions at runtime, rather than being fixed at the time of task definition."
+    },
+    {
+        "question": "What is a key difference between static and dynamic task configuration?",
+        "options": {
+            "A": "Static configuration is only for input properties, while dynamic can be for outputs.",
+            "B": "Static configuration defines inputs and outputs directly in the task class, while dynamic configuration allows for runtime customization.",
+            "C": "Dynamic configuration is faster than static configuration.",
+            "D": "Static configuration can only be used with built-in Gradle tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "The key difference is that static configuration defines inputs and outputs directly within the task class, making them fixed for every execution, while dynamic configuration allows for the addition of inputs and outputs at runtime, enabling customization based on specific conditions."
+    },
+    {
+        "question": "Which annotation is used to declare a property as an input in a Gradle task?",
+        "options": {
+            "A": "@OutputFile",
+            "B": "@Input",
+            "C": "@TaskAction",
+            "D": "@DependsOn"
+        },
+        "correct_answer": "B",
+        "explanation": "The @Input annotation is used to declare a property as an input for a Gradle task. This informs Gradle that the value of this property will affect the task's execution and up-to-date checks."
+    },
+    {
+        "question": "What is the primary benefit of using lazy configuration for task inputs and outputs in Gradle?",
+        "options": {
+            "A": "It allows inputs and outputs to be set before they are actually needed.",
+            "B": "It ensures that all inputs and outputs are defined statically at the time of task registration.",
+            "C": "It eliminates the need for task actions in Gradle.",
+            "D": "It automatically generates task dependencies without any configuration."
+        },
+        "correct_answer": "A",
+        "explanation": "The primary benefit of using lazy configuration is that it allows inputs and outputs to be referenced before they are actually set. This means that you can define dependencies and relationships between tasks dynamically, which enhances flexibility and efficiency in the build process."
+    },
+    {
+        "question": "Which of the following is a characteristic of lazy properties in Gradle?",
+        "options": {
+            "A": "They must be defined as Java Bean properties.",
+            "B": "They can be set after the task is registered and before it is executed.",
+            "C": "They require explicit type casting to be used as inputs or outputs.",
+            "D": "They are only applicable to output files, not inputs."
+        },
+        "correct_answer": "B",
+        "explanation": "Lazy properties in Gradle can be set after the task is registered and before it is executed. This allows for greater flexibility in configuring tasks, as the values can be determined based on conditions that may only be known at execution time."
+    },
+    {
+        "question": "What type of Gradle property should be used for defining lazy inputs and outputs?",
+        "options": {
+            "A": "String",
+            "B": "Property<T>",
+            "C": "File",
+            "D": "List<T>"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, the `Property<T>` type should be used for defining lazy inputs and outputs. This allows for the properties to be referenced before they are set, enabling dynamic configuration and linking of task dependencies."
+    },
+    {
+        "question": "Which annotation is used to declare a property as an input for a Gradle task?",
+        "options": {
+            "A": "@OutputFile",
+            "B": "@Input",
+            "C": "@TaskAction",
+            "D": "@DependsOn"
+        },
+        "correct_answer": "B",
+        "explanation": "The `@Input` annotation is used to declare a property as an input for a Gradle task. This informs Gradle that the property is a value that the task depends on, which is essential for up-to-date checks and task dependency management."
+    },
+    {
+        "question": "What is the purpose of using annotations like @Input and @Output in Gradle tasks?",
+        "options": {
+            "A": "To define the task's execution order",
+            "B": "To specify the inputs and outputs for up-to-date checks",
+            "C": "To create a user interface for the task",
+            "D": "To automatically generate documentation for the task"
+        },
+        "correct_answer": "B",
+        "explanation": "Annotations like @Input and @Output are used in Gradle tasks to specify which properties are inputs and outputs of the task. This information is crucial for Gradle's up-to-date checks, allowing it to determine whether a task needs to be executed based on changes to its inputs or outputs."
+    },
+    {
+        "question": "Which annotation would you use to indicate that a property is an input file for a Gradle task?",
+        "options": {
+            "A": "@OutputFile",
+            "B": "@InputDirectory",
+            "C": "@InputFile",
+            "D": "@OutputDirectory"
+        },
+        "correct_answer": "C",
+        "explanation": "The @InputFile annotation is specifically used to indicate that a property represents an input file for a Gradle task. This helps Gradle understand the dependencies and conditions under which the task should be executed."
+    },
+    {
+        "question": "What does the @OutputDirectory annotation signify in a Gradle task?",
+        "options": {
+            "A": "The property is a directory that the task will read from",
+            "B": "The property is a directory that the task will create or modify as output",
+            "C": "The property is a directory that contains input files for the task",
+            "D": "The property is a directory that is ignored during task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "The @OutputDirectory annotation indicates that the property represents a directory that the task will create or modify as output. This helps Gradle track the output of the task and determine if it needs to be re-executed based on changes to the inputs."
+    },
+    {
+        "question": "Why is it important to use the correct annotations for task properties in Gradle?",
+        "options": {
+            "A": "To ensure the task runs in parallel with other tasks",
+            "B": "To enable Gradle to perform incremental builds and optimize task execution",
+            "C": "To allow users to customize the task behavior easily",
+            "D": "To automatically generate test cases for the task"
+        },
+        "correct_answer": "B",
+        "explanation": "Using the correct annotations for task properties is important because it enables Gradle to perform incremental builds. This means that Gradle can skip executing tasks if their inputs and outputs have not changed, optimizing the build process and saving time."
+    }
+]

@@ -1,0 +1,453 @@
+[
+    {
+        "question": "What is the primary purpose of a task in Gradle?",
+        "options": {
+            "A": "To represent an independent unit of work performed during a build",
+            "B": "To manage dependencies between different projects",
+            "C": "To configure the build environment settings",
+            "D": "To execute scripts written in other programming languages"
+        },
+        "correct_answer": "A",
+        "explanation": "In Gradle, a task represents an independent unit of work that the build system performs, such as compiling code or creating archives. Tasks are fundamental to the build process, allowing developers to define specific actions that need to be executed."
+    },
+    {
+        "question": "How can you view all available tasks in a Gradle project?",
+        "options": {
+            "A": "By running the command `./gradlew list`",
+            "B": "By running the command `./gradlew tasks`",
+            "C": "By checking the build.gradle file directly",
+            "D": "By using the Gradle GUI interface"
+        },
+        "correct_answer": "B",
+        "explanation": "To view all available tasks in a Gradle project, you can run the command `./gradlew tasks`. This command lists all tasks defined in the project, categorized by their respective groups, making it easier to understand their purpose."
+    },
+    {
+        "question": "What does the `UP-TO-DATE` label indicate when a Gradle task is executed?",
+        "options": {
+            "A": "The task has been executed successfully",
+            "B": "The task's outputs have not changed since the last execution",
+            "C": "The task is currently being executed",
+            "D": "The task has been skipped due to a dependency issue"
+        },
+        "correct_answer": "B",
+        "explanation": "The `UP-TO-DATE` label indicates that a task's outputs have not changed since the last successful execution. This means that Gradle can skip executing the task again, optimizing the build process by avoiding unnecessary work."
+    },
+    {
+        "question": "What is the difference between lifecycle tasks and actionable tasks in Gradle?",
+        "options": {
+            "A": "Lifecycle tasks perform actions, while actionable tasks do not.",
+            "B": "Lifecycle tasks define targets for the build, while actionable tasks perform specific actions.",
+            "C": "Lifecycle tasks are always visible, while actionable tasks can be hidden.",
+            "D": "Lifecycle tasks are created by plugins, while actionable tasks are defined in the build script."
+        },
+        "correct_answer": "B",
+        "explanation": "Lifecycle tasks in Gradle define targets that can be called, such as `:build`, but do not perform actions themselves. Actionable tasks, on the other hand, define specific actions that Gradle will execute, such as compiling code or creating archives. Lifecycle tasks are often wired to actionable tasks to create a complete build process."
+    },
+    {
+        "question": "What is the primary purpose of task registration in Gradle?",
+        "options": {
+            "A": "To define actions for Gradle to execute during the build process",
+            "B": "To categorize tasks into groups for better organization",
+            "C": "To specify the dependencies between different tasks",
+            "D": "To configure the output format of the build results"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of task registration in Gradle is to define actions for Gradle to execute during the build process. By registering tasks, developers inform Gradle about the specific work that needs to be done, such as compiling code or packaging files."
+    },
+    {
+        "question": "Which method is commonly used to register a task in Gradle?",
+        "options": {
+            "A": "create()",
+            "B": "define()",
+            "C": "register()",
+            "D": "initialize()"
+        },
+        "correct_answer": "C",
+        "explanation": "The method commonly used to register a task in Gradle is `register()`. This method allows developers to specify the name and type of the task they want to create, enabling Gradle to recognize and execute it during the build process."
+    },
+    {
+        "question": "What happens if a task is registered without any actions defined?",
+        "options": {
+            "A": "The task will execute successfully without any output.",
+            "B": "The task will fail due to missing actions.",
+            "C": "The task will be ignored during the build.",
+            "D": "The task will be marked as UP-TO-DATE."
+        },
+        "correct_answer": "C",
+        "explanation": "If a task is registered without any actions defined, it will be ignored during the build. Gradle requires tasks to have defined actions to perform any work; otherwise, they do not contribute to the build process."
+    },
+    {
+        "question": "What is a common practice when configuring a registered task in Gradle?",
+        "options": {
+            "A": "Using the `configure()` method to set task properties",
+            "B": "Directly modifying the task's class definition",
+            "C": "Creating a new task for each configuration change",
+            "D": "Using the `execute()` method to run the task immediately"
+        },
+        "correct_answer": "A",
+        "explanation": "A common practice when configuring a registered task in Gradle is to use the `configure()` method to set task properties. This allows developers to specify inputs, outputs, and other configurations necessary for the task to execute correctly."
+    },
+    {
+        "question": "What is the primary purpose of task configuration in Gradle?",
+        "options": {
+            "A": "To define the actions that a task will perform",
+            "B": "To execute tasks in parallel",
+            "C": "To manage project dependencies",
+            "D": "To compile source code into bytecode"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of task configuration in Gradle is to define the actions that a task will perform. This involves specifying inputs, outputs, and any other necessary parameters that dictate how the task operates when executed."
+    },
+    {
+        "question": "Which method is commonly used to register a task in Gradle?",
+        "options": {
+            "A": "create()",
+            "B": "register()",
+            "C": "define()",
+            "D": "initialize()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method commonly used to register a task in Gradle is `register()`. This method allows developers to inform Gradle about the task they intend to use in their build logic, enabling Gradle to manage it appropriately."
+    },
+    {
+        "question": "What is a key characteristic of actionable tasks in Gradle?",
+        "options": {
+            "A": "They do not require any inputs or outputs.",
+            "B": "They define actions for Gradle to execute.",
+            "C": "They are automatically generated by Gradle.",
+            "D": "They can only be executed once."
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of actionable tasks in Gradle is that they define actions for Gradle to execute. These tasks perform specific operations, such as compiling code or creating archives, and are essential for the build process."
+    },
+    {
+        "question": "How can you configure an existing task in Gradle?",
+        "options": {
+            "A": "By using the `configure()` method only",
+            "B": "By using the `named()` method or a configuration block",
+            "C": "By directly modifying the task's properties in the build script",
+            "D": "By deleting the task and recreating it"
+        },
+        "correct_answer": "B",
+        "explanation": "You can configure an existing task in Gradle by using the `named()` method or a configuration block. This allows you to specify the necessary inputs and outputs for the task without needing to redefine it."
+    },
+    {
+        "question": "What does Gradle use to categorize tasks when listing them?",
+        "options": {
+            "A": "Task groups",
+            "B": "Task types",
+            "C": "Task actions",
+            "D": "Task dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "Gradle uses task groups to categorize tasks when listing them. Each task can be assigned to a specific group, which helps users understand the purpose and relationship of tasks when they are displayed in the terminal."
+    },
+    {
+        "question": "What is the primary purpose of a task in Gradle?",
+        "options": {
+            "A": "To define the structure of a project",
+            "B": "To represent an independent unit of work",
+            "C": "To manage project dependencies",
+            "D": "To configure the build environment"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a task in Gradle is to represent an independent unit of work that the build performs, such as compiling code or creating archives. Tasks are the building blocks of a Gradle build process."
+    },
+    {
+        "question": "What outcome label indicates that a Gradle task has not changed since the last execution?",
+        "options": {
+            "A": "EXECUTED",
+            "B": "UP-TO-DATE",
+            "C": "FROM-CACHE",
+            "D": "SKIPPED"
+        },
+        "correct_answer": "B",
+        "explanation": "The outcome label 'UP-TO-DATE' indicates that a Gradle task's outputs have not changed since the last execution. This means that the task does not need to be re-executed, allowing for more efficient builds."
+    },
+    {
+        "question": "Which of the following statements is true regarding hidden tasks in Gradle?",
+        "options": {
+            "A": "Hidden tasks cannot be executed.",
+            "B": "Hidden tasks are always visible in the task list.",
+            "C": "Hidden tasks do not have a group assigned to them.",
+            "D": "Hidden tasks are automatically deleted after execution."
+        },
+        "correct_answer": "C",
+        "explanation": "Hidden tasks in Gradle do not have a group assigned to them, which is why they do not appear in the task list when running the `:tasks` command. However, they can still be executed directly if their names are known."
+    },
+    {
+        "question": "What is the role of lifecycle tasks in Gradle?",
+        "options": {
+            "A": "To perform specific actions like compiling code",
+            "B": "To define targets that can be called in the build process",
+            "C": "To manage project dependencies",
+            "D": "To configure the build environment"
+        },
+        "correct_answer": "B",
+        "explanation": "Lifecycle tasks in Gradle define targets that can be called in the build process, such as `:build`. They do not perform actions themselves but are wired to actionable tasks that do the actual work."
+    },
+    {
+        "question": "What is the primary benefit of incremental builds in Gradle?",
+        "options": {
+            "A": "They allow all tasks to be executed every time a build is run.",
+            "B": "They enable Gradle to reuse results from previous builds, reducing build time.",
+            "C": "They require all source files to be recompiled regardless of changes.",
+            "D": "They eliminate the need for any build scripts."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of incremental builds in Gradle is that they enable the reuse of results from previous builds. This means that if only minor changes are made, Gradle can skip unnecessary work, significantly reducing build time and improving efficiency."
+    },
+    {
+        "question": "What label does Gradle assign to tasks that have not changed since the last successful build?",
+        "options": {
+            "A": "EXECUTED",
+            "B": "UP-TO-DATE",
+            "C": "FROM-CACHE",
+            "D": "SKIPPED"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle assigns the label 'UP-TO-DATE' to tasks whose outputs have not changed since the last successful build. This indicates that the task does not need to be executed again, allowing for faster build times."
+    },
+    {
+        "question": "Which of the following statements best describes the concept of caching tasks in Gradle?",
+        "options": {
+            "A": "Caching tasks prevents any task from being executed more than once.",
+            "B": "Caching tasks allows Gradle to reuse outputs from previous executions to speed up builds.",
+            "C": "Caching tasks requires all tasks to be run in a specific order.",
+            "D": "Caching tasks is only applicable to tasks that have been explicitly marked as cacheable."
+        },
+        "correct_answer": "B",
+        "explanation": "Caching tasks in Gradle allows the reuse of outputs from previous executions, which can significantly speed up builds. This feature is particularly useful when switching between branches or when only minor changes have been made."
+    },
+    {
+        "question": "What happens when a task is marked as 'FROM-CACHE' during a Gradle build?",
+        "options": {
+            "A": "The task has been executed and its actions completed successfully.",
+            "B": "The task's outputs were retrieved from a previous execution instead of being re-executed.",
+            "C": "The task was skipped due to a dependency failure.",
+            "D": "The task has no source files to process."
+        },
+        "correct_answer": "B",
+        "explanation": "When a task is marked as 'FROM-CACHE', it means that the task's outputs were retrieved from a previous execution rather than being re-executed. This indicates that Gradle was able to use cached results to improve build efficiency."
+    },
+    {
+        "question": "What is the primary purpose of the build cache in Gradle?",
+        "options": {
+            "A": "To store all project files permanently",
+            "B": "To reuse results from previous builds to speed up the build process",
+            "C": "To manage dependencies between tasks",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "B",
+        "explanation": "The build cache in Gradle is designed to reuse results from previous builds, which can significantly speed up the build process. By caching outputs of tasks, Gradle can avoid redoing work that has not changed, thus optimizing build times."
+    },
+    {
+        "question": "How can you enable the build cache feature in Gradle?",
+        "options": {
+            "A": "By setting the `org.gradle.cache.enabled` property to false",
+            "B": "By using the `--build-cache` command line parameter or setting `org.gradle.caching=true` in `gradle.properties`",
+            "C": "By adding a specific plugin to the build script",
+            "D": "By running the build command with the `--offline` option"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable the build cache feature in Gradle, you can either use the `--build-cache` command line parameter or set `org.gradle.caching=true` in your `gradle.properties` file. This allows Gradle to utilize cached outputs from previous builds."
+    },
+    {
+        "question": "What label does Gradle assign to a task whose outputs are retrieved from the build cache?",
+        "options": {
+            "A": "UP-TO-DATE",
+            "B": "EXECUTED",
+            "C": "FROM-CACHE",
+            "D": "SKIPPED"
+        },
+        "correct_answer": "C",
+        "explanation": "When Gradle retrieves outputs of a task from the build cache, it labels the task as `FROM-CACHE`. This indicates that the outputs were restored from a previous execution, allowing for faster builds."
+    },
+    {
+        "question": "Which of the following statements about the build cache is true?",
+        "options": {
+            "A": "The build cache can only be used locally and not remotely.",
+            "B": "The build cache is only applicable to Java projects.",
+            "C": "The build cache can significantly accelerate builds by reusing outputs from previous executions.",
+            "D": "The build cache requires all tasks to be executed every time."
+        },
+        "correct_answer": "C",
+        "explanation": "The build cache can significantly accelerate builds by reusing outputs from previous executions, which means that if the inputs to a task have not changed, Gradle can skip executing that task and use the cached output instead."
+    },
+    {
+        "question": "What is the purpose of task groups in Gradle?",
+        "options": {
+            "A": "To categorize tasks for better organization and visibility",
+            "B": "To define the order in which tasks are executed",
+            "C": "To restrict access to certain tasks based on user roles",
+            "D": "To automatically generate tasks based on project structure"
+        },
+        "correct_answer": "A",
+        "explanation": "Task groups in Gradle are used to categorize tasks, making it easier for users to understand their purpose and relationship to other tasks. When tasks are grouped, they can be listed under their respective categories when running commands like `./gradlew tasks`, enhancing organization and visibility."
+    },
+    {
+        "question": "How can you set a task to belong to a specific group in Gradle?",
+        "options": {
+            "A": "By using the `setGroup` method on the task",
+            "B": "By assigning a value to the `group` property of the task",
+            "C": "By defining the task within a specific plugin",
+            "D": "By including the task in a separate build script"
+        },
+        "correct_answer": "B",
+        "explanation": "To set a task to belong to a specific group in Gradle, you assign a value to the `group` property of the task. This categorization helps in organizing tasks and allows users to filter tasks based on their groups when listing them."
+    },
+    {
+        "question": "What happens to tasks that do not have a group assigned in Gradle?",
+        "options": {
+            "A": "They are automatically deleted from the project",
+            "B": "They are hidden and do not appear in the task list",
+            "C": "They are executed first when running a build",
+            "D": "They are marked as deprecated and cannot be used"
+        },
+        "correct_answer": "B",
+        "explanation": "Tasks that do not have a group assigned in Gradle are considered hidden tasks and do not appear in the task list when running commands like `./gradlew tasks`. However, they can still be executed directly if their names are known."
+    },
+    {
+        "question": "What command would you use to display all tasks, including hidden ones, in a Gradle project?",
+        "options": {
+            "A": "./gradlew tasks --all",
+            "B": "./gradlew showTasks",
+            "C": "./gradlew listTasks",
+            "D": "./gradlew tasks --hidden"
+        },
+        "correct_answer": "A",
+        "explanation": "To display all tasks, including hidden ones, in a Gradle project, you would use the command `./gradlew tasks --all`. This command lists all tasks regardless of their visibility, allowing users to see both grouped and ungrouped tasks."
+    },
+    {
+        "question": "What are the two main categories of tasks in Gradle?",
+        "options": {
+            "A": "Lifecycle tasks and Actionable tasks",
+            "B": "Build tasks and Help tasks",
+            "C": "Verification tasks and Distribution tasks",
+            "D": "Application tasks and Documentation tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "Gradle distinguishes between two main categories of tasks: Lifecycle tasks, which define targets that can be called (like ':build'), and Actionable tasks, which define specific actions for Gradle to perform (like ':compileJava'). Understanding these categories helps in organizing and managing tasks effectively."
+    },
+    {
+        "question": "What is the primary purpose of Lifecycle tasks in Gradle?",
+        "options": {
+            "A": "To perform specific actions like compiling code",
+            "B": "To define targets that can be called during the build process",
+            "C": "To display help information about other tasks",
+            "D": "To manage dependencies between projects"
+        },
+        "correct_answer": "B",
+        "explanation": "Lifecycle tasks in Gradle serve to define targets that can be called during the build process. They do not perform actions themselves but are linked to actionable tasks that execute the necessary actions when the lifecycle task is called."
+    },
+    {
+        "question": "Which of the following best describes Actionable tasks in Gradle?",
+        "options": {
+            "A": "Tasks that only display information about the build",
+            "B": "Tasks that define actions for Gradle to execute",
+            "C": "Tasks that manage project dependencies",
+            "D": "Tasks that are automatically generated by Gradle"
+        },
+        "correct_answer": "B",
+        "explanation": "Actionable tasks in Gradle are those that define specific actions for Gradle to execute, such as compiling code or creating archives. They are essential for performing the actual work in a build process, as opposed to merely defining targets."
+    },
+    {
+        "question": "How can you categorize tasks in Gradle to improve organization?",
+        "options": {
+            "A": "By using the 'description' property only",
+            "B": "By setting the 'group' property for each task",
+            "C": "By renaming tasks to include their category",
+            "D": "By creating separate build scripts for each category"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, tasks can be categorized to improve organization by setting the 'group' property for each task. This allows tasks to be listed under their respective groups when running commands like './gradlew tasks', making it easier to understand their purpose and relationships."
+    },
+    {
+        "question": "What are lifecycle tasks in Gradle?",
+        "options": {
+            "A": "Tasks that define actions for Gradle to execute.",
+            "B": "Tasks that represent targets you can call, such as building a project.",
+            "C": "Tasks that are automatically generated by Gradle plugins.",
+            "D": "Tasks that are only used for testing purposes."
+        },
+        "correct_answer": "B",
+        "explanation": "Lifecycle tasks in Gradle are those that define targets you can call, such as `:build` for your project. They do not perform actions themselves but are wired to actionable tasks that execute the necessary actions to complete the build process."
+    },
+    {
+        "question": "Which of the following statements is true about lifecycle tasks?",
+        "options": {
+            "A": "They can execute actions directly without any dependencies.",
+            "B": "They must be connected to actionable tasks to perform any work.",
+            "C": "They are only available in the core Gradle framework.",
+            "D": "They are not visible in the task listing."
+        },
+        "correct_answer": "B",
+        "explanation": "Lifecycle tasks must be connected to actionable tasks to perform any work. They serve as entry points for the build process, but the actual work is done by the actionable tasks that they are wired to."
+    },
+    {
+        "question": "How does the `base` Gradle plugin relate to lifecycle tasks?",
+        "options": {
+            "A": "It removes all lifecycle tasks from the project.",
+            "B": "It adds lifecycle tasks to the project.",
+            "C": "It only provides actionable tasks for the project.",
+            "D": "It is not related to lifecycle tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "The `base` Gradle plugin adds lifecycle tasks to the project, providing essential targets that can be called during the build process. These tasks help organize the build lifecycle but do not perform actions on their own."
+    },
+    {
+        "question": "What is the primary purpose of lifecycle tasks in a Gradle build?",
+        "options": {
+            "A": "To execute specific actions like compiling code.",
+            "B": "To define the structure and flow of the build process.",
+            "C": "To manage dependencies between tasks.",
+            "D": "To generate documentation for the project."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of lifecycle tasks in a Gradle build is to define the structure and flow of the build process. They serve as entry points that can be called to trigger the execution of associated actionable tasks."
+    },
+    {
+        "question": "What defines an actionable task in Gradle?",
+        "options": {
+            "A": "It specifies a target for Gradle to call without performing any actions.",
+            "B": "It defines actions for Gradle to execute, such as compiling code or creating archives.",
+            "C": "It is a task that can only be executed manually by the user.",
+            "D": "It is a task that does not depend on any other tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "An actionable task in Gradle defines specific actions that Gradle will perform, such as compiling code, zipping files, or publishing archives. These tasks are essential for executing the build process, as they carry out the actual work required to build the project."
+    },
+    {
+        "question": "Which of the following is a characteristic of lifecycle tasks in Gradle?",
+        "options": {
+            "A": "They perform actions directly and produce outputs.",
+            "B": "They serve as targets that can be called but do not execute actions themselves.",
+            "C": "They are always visible in the task list regardless of their configuration.",
+            "D": "They can only be created using plugins."
+        },
+        "correct_answer": "B",
+        "explanation": "Lifecycle tasks in Gradle are designed to serve as targets that can be called, such as `:build`. They do not perform actions directly; instead, they are wired to actionable tasks that execute the necessary actions to complete the build process."
+    },
+    {
+        "question": "How does Gradle determine if a task is actionable?",
+        "options": {
+            "A": "By checking if the task has a group assigned to it.",
+            "B": "By verifying that the task has been registered in the build script.",
+            "C": "By ensuring that the task has defined inputs and outputs.",
+            "D": "By confirming that the task is part of a plugin."
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle determines if a task is actionable by checking if it has defined inputs and outputs. Actionable tasks require specific configurations to know what data they will process and what results they will produce, which is essential for Gradle to execute them correctly."
+    },
+    {
+        "question": "What happens when a task is marked as 'UP-TO-DATE' in Gradle?",
+        "options": {
+            "A": "The task has been executed successfully.",
+            "B": "The task's outputs have changed since the last execution.",
+            "C": "The task will not be executed again because its inputs and outputs have not changed.",
+            "D": "The task is skipped and will not be available for execution."
+        },
+        "correct_answer": "C",
+        "explanation": "When a task is marked as 'UP-TO-DATE', it indicates that the task's inputs and outputs have not changed since the last successful execution. As a result, Gradle will not execute the task again, optimizing the build process by avoiding unnecessary work."
+    }
+]

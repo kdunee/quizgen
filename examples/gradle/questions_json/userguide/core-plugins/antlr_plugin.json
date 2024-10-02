@@ -1,0 +1,277 @@
+[
+    {
+        "question": "What is the primary purpose of the ANTLR plugin?",
+        "options": {
+            "A": "To generate parsers using ANTLR",
+            "B": "To compile Java code",
+            "C": "To manage project dependencies",
+            "D": "To create user interfaces"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the ANTLR plugin is to extend the Java plugin to add support for generating parsers using ANTLR. This allows developers to easily integrate ANTLR's parsing capabilities into their Java projects."
+    },
+    {
+        "question": "Which of the following tasks does the ANTLR plugin add to a project?",
+        "options": {
+            "A": "generateGrammarSource",
+            "B": "compileJava",
+            "C": "runTests",
+            "D": "packageApplication"
+        },
+        "correct_answer": "A",
+        "explanation": "The ANTLR plugin adds several tasks to a project, including 'generateGrammarSource', which generates the source files for all production ANTLR grammars. This task is essential for utilizing ANTLR in a project."
+    },
+    {
+        "question": "Where should production ANTLR grammar files be located in a project?",
+        "options": {
+            "A": "src/test/antlr",
+            "B": "src/main/antlr",
+            "C": "src/main/java",
+            "D": "src/resources"
+        },
+        "correct_answer": "B",
+        "explanation": "Production ANTLR grammar files should be located in the 'src/main/antlr' directory. This organization ensures that the generated sources are placed in the correct target subfolder, reflecting the package structure of the grammar."
+    },
+    {
+        "question": "What happens if no ANTLR dependency is declared in a project using the ANTLR plugin?",
+        "options": {
+            "A": "The project will not compile",
+            "B": "ANTLR version 2.7.7 will be used by default",
+            "C": "The plugin will not function",
+            "D": "The project will use the latest ANTLR version"
+        },
+        "correct_answer": "B",
+        "explanation": "If no ANTLR dependency is declared, the ANTLR plugin will use 'antlr:antlr:2.7.7' as the default version. This ensures that the plugin can still function even if a specific version is not specified by the user."
+    },
+    {
+        "question": "What is the primary purpose of parser generation in the context of the ANTLR plugin?",
+        "options": {
+            "A": "To create source files from ANTLR grammar definitions",
+            "B": "To compile Java code into bytecode",
+            "C": "To manage project dependencies",
+            "D": "To execute Java applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of parser generation in the context of the ANTLR plugin is to create source files from ANTLR grammar definitions. This process involves translating the defined grammar into a parser that can process input according to the specified rules, enabling the development of language processing tools."
+    },
+    {
+        "question": "Which task is responsible for generating source files for production ANTLR grammars?",
+        "options": {
+            "A": "compileJava",
+            "B": "generateGrammarSource",
+            "C": "compileTestJava",
+            "D": "generateTestGrammarSource"
+        },
+        "correct_answer": "B",
+        "explanation": "The task responsible for generating source files for production ANTLR grammars is 'generateGrammarSource'. This task processes the ANTLR grammar files and produces the necessary source code that can be used in the project to implement the defined grammar."
+    },
+    {
+        "question": "What is a key benefit of executing the ANTLR tool in a forked process?",
+        "options": {
+            "A": "It allows for faster compilation of Java code.",
+            "B": "It provides fine-grained control over memory settings.",
+            "C": "It simplifies the management of project dependencies.",
+            "D": "It automatically updates the ANTLR version used."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of executing the ANTLR tool in a forked process is that it provides fine-grained control over memory settings. This allows developers to specify parameters such as heap size, which can be crucial for handling large grammars or complex parsing tasks without running into memory issues."
+    },
+    {
+        "question": "What is the default ANTLR version used if no specific dependency is declared?",
+        "options": {
+            "A": "3.0.0",
+            "B": "2.7.7",
+            "C": "4.0.0",
+            "D": "1.0.0"
+        },
+        "correct_answer": "B",
+        "explanation": "If no specific dependency is declared, the default ANTLR version used is 2.7.7. This version is automatically applied by the ANTLR plugin unless the user specifies a different version in the dependency configuration."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in the context of the ANTLR plugin?",
+        "options": {
+            "A": "To specify the versions of libraries used in the project",
+            "B": "To generate source files from ANTLR grammars",
+            "C": "To compile Java code without any external libraries",
+            "D": "To manage user permissions for accessing project files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management in the context of the ANTLR plugin is to specify the versions of libraries used in the project. This ensures that the correct version of the ANTLR implementation is utilized, allowing for consistent behavior and compatibility within the project."
+    },
+    {
+        "question": "What happens if no specific ANTLR version is declared in the dependency management?",
+        "options": {
+            "A": "The project will fail to compile",
+            "B": "The default ANTLR version 2.7.7 will be used",
+            "C": "The project will automatically upgrade to the latest version",
+            "D": "The ANTLR plugin will not function at all"
+        },
+        "correct_answer": "B",
+        "explanation": "If no specific ANTLR version is declared in the dependency management, the default ANTLR version 2.7.7 will be used. This allows the project to function without requiring explicit version declarations, but it may not utilize the latest features or fixes available in newer versions."
+    },
+    {
+        "question": "Which property is used to set the source directories for ANTLR grammar files in a project?",
+        "options": {
+            "A": "antlr.srcDirs",
+            "B": "antlr.dependencies",
+            "C": "antlr.version",
+            "D": "antlr.sourceSet"
+        },
+        "correct_answer": "A",
+        "explanation": "The property used to set the source directories for ANTLR grammar files in a project is 'antlr.srcDirs'. This property allows the specification of the directories that contain the ANTLR grammar files, ensuring that the ANTLR plugin can locate and process them correctly."
+    },
+    {
+        "question": "What is the purpose of the 'src/main/antlr' directory in a project using the ANTLR plugin?",
+        "options": {
+            "A": "To store production ANTLR grammar files",
+            "B": "To store test ANTLR grammar files",
+            "C": "To store Java source files",
+            "D": "To store configuration files"
+        },
+        "correct_answer": "A",
+        "explanation": "The 'src/main/antlr' directory is specifically designated for production ANTLR grammar files. This organization helps ensure that the generated sources are placed in the correct target subfolder, reflecting the package structure of the grammar."
+    },
+    {
+        "question": "Which directory is used for test ANTLR grammar files in a project using the ANTLR plugin?",
+        "options": {
+            "A": "src/test/antlr",
+            "B": "src/main/antlr",
+            "C": "src/antlr/test",
+            "D": "src/main/test/antlr"
+        },
+        "correct_answer": "A",
+        "explanation": "The 'src/test/antlr' directory is designated for test ANTLR grammar files. This separation allows for organized management of production and test grammars, facilitating better project structure and clarity."
+    },
+    {
+        "question": "What does the 'antlr.srcDirs' property represent in an ANTLR project?",
+        "options": {
+            "A": "The directories containing Java source files",
+            "B": "The directories containing ANTLR grammar files",
+            "C": "The directories for output files",
+            "D": "The directories for configuration files"
+        },
+        "correct_answer": "B",
+        "explanation": "'antlr.srcDirs' is a property that specifies the source directories containing the ANTLR grammar files for a given source set. This property allows for flexible configuration of where the ANTLR files are located within the project structure."
+    },
+    {
+        "question": "What is the default value for the 'antlr.srcDirs' property in an ANTLR project?",
+        "options": {
+            "A": "The current working directory",
+            "B": "The project directory's src/main/antlr",
+            "C": "The project directory's src/test/antlr",
+            "D": "An empty set"
+        },
+        "correct_answer": "B",
+        "explanation": "The default value for the 'antlr.srcDirs' property is set to the project directory's 'src/main/antlr'. This default configuration helps streamline the setup process by providing a standard location for ANTLR grammar files."
+    },
+    {
+        "question": "What is the primary purpose of the ANTLR plugin in task management?",
+        "options": {
+            "A": "To generate parsers using ANTLR",
+            "B": "To manage user permissions in a project",
+            "C": "To optimize build performance",
+            "D": "To automate testing processes"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the ANTLR plugin in task management is to generate parsers using ANTLR. This plugin extends the Java plugin to facilitate the creation of source files from ANTLR grammars, which are essential for parsing tasks in software development."
+    },
+    {
+        "question": "Which task is responsible for generating source files for production ANTLR grammars?",
+        "options": {
+            "A": "generateTestGrammarSource",
+            "B": "generateGrammarSource",
+            "C": "compileJava",
+            "D": "generateSourceSetGrammarSource"
+        },
+        "correct_answer": "B",
+        "explanation": "The task responsible for generating source files for production ANTLR grammars is 'generateGrammarSource'. This task is part of the ANTLR plugin and is specifically designed to create the necessary source files from the defined ANTLR grammars."
+    },
+    {
+        "question": "What does the 'antlr.srcDirs' property specify in a project?",
+        "options": {
+            "A": "The output directories for generated files",
+            "B": "The source directories containing ANTLR grammar files",
+            "C": "The dependencies required for ANTLR",
+            "D": "The configuration settings for the ANTLR tool"
+        },
+        "correct_answer": "B",
+        "explanation": "'antlr.srcDirs' specifies the source directories containing the ANTLR grammar files for a given source set. This property allows developers to define where the ANTLR grammars are located, ensuring that the ANTLR plugin can find and process them correctly."
+    },
+    {
+        "question": "How can developers control the memory settings for the ANTLR generator process?",
+        "options": {
+            "A": "By modifying the 'antlr.srcDirs' property",
+            "B": "By setting the 'maxHeapSize' property",
+            "C": "By changing the output directory structure",
+            "D": "By declaring ANTLR dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Developers can control the memory settings for the ANTLR generator process by setting the 'maxHeapSize' property. This allows for fine-grained control over the memory allocation for the ANTLR tool, which can be crucial for handling large grammars or complex parsing tasks."
+    },
+    {
+        "question": "What does the `antlr.srcDirs` property represent in the context of the ANTLR plugin?",
+        "options": {
+            "A": "The source directories containing the ANTLR grammar files for a specific source set",
+            "B": "The output directories for generated parser files",
+            "C": "The directories where ANTLR dependencies are stored",
+            "D": "The configuration files for the ANTLR plugin"
+        },
+        "correct_answer": "A",
+        "explanation": "The `antlr.srcDirs` property specifies the source directories that contain the ANTLR grammar files for a given source set. This allows the ANTLR plugin to locate the necessary grammar files to generate the corresponding parser code."
+    },
+    {
+        "question": "How can the default value of `antlr.srcDirs` be modified?",
+        "options": {
+            "A": "By changing the project directory structure",
+            "B": "By setting it using any method that converts to a file collection",
+            "C": "By directly editing the ANTLR source files",
+            "D": "By updating the ANTLR plugin version"
+        },
+        "correct_answer": "B",
+        "explanation": "The default value of `antlr.srcDirs` can be modified by setting it using any method that implicitly converts to a file collection. This flexibility allows developers to customize the source directories as needed for their specific project structure."
+    },
+    {
+        "question": "What is the purpose of source set properties in the ANTLR plugin?",
+        "options": {
+            "A": "To define the output format of generated files",
+            "B": "To manage the dependencies of the ANTLR plugin",
+            "C": "To specify the locations of ANTLR grammar files for different source sets",
+            "D": "To configure the memory settings for the ANTLR process"
+        },
+        "correct_answer": "C",
+        "explanation": "Source set properties in the ANTLR plugin are used to specify the locations of ANTLR grammar files for different source sets. This organization helps in managing multiple sets of grammar files within a project, ensuring that the correct files are used for generating parsers."
+    },
+    {
+        "question": "What is the primary purpose of memory management in build processes?",
+        "options": {
+            "A": "To optimize the performance and efficiency of the build",
+            "B": "To increase the size of the build output",
+            "C": "To reduce the number of files generated during the build",
+            "D": "To ensure all tasks run in a single process"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of memory management in build processes is to optimize the performance and efficiency of the build. By controlling memory settings, such as heap size, developers can ensure that the build process runs smoothly and efficiently, preventing issues like memory overflow and improving overall execution time."
+    },
+    {
+        "question": "How can developers control the memory settings for the ANTLR generator process?",
+        "options": {
+            "A": "By modifying the source code of the ANTLR tool",
+            "B": "By setting the `maxHeapSize` property in the AntlrTask",
+            "C": "By changing the file structure of the project",
+            "D": "By using a different programming language"
+        },
+        "correct_answer": "B",
+        "explanation": "Developers can control the memory settings for the ANTLR generator process by setting the `maxHeapSize` property in the AntlrTask. This allows for fine-grained control over the memory allocated to the ANTLR process, which is crucial for handling larger grammar files or complex parsing tasks."
+    },
+    {
+        "question": "What happens if no specific ANTLR version is declared in the build configuration?",
+        "options": {
+            "A": "The build will fail due to missing dependencies",
+            "B": "The default ANTLR version 2.7.7 will be used",
+            "C": "The build will automatically use the latest version available",
+            "D": "The ANTLR plugin will not function at all"
+        },
+        "correct_answer": "B",
+        "explanation": "If no specific ANTLR version is declared in the build configuration, the default ANTLR version 2.7.7 will be used. This ensures that the build process can proceed without requiring explicit version management unless a different version is needed for compatibility or feature reasons."
+    }
+]

@@ -1,0 +1,233 @@
+[
+    {
+        "question": "What is the primary purpose of configuring a proxy in a Gradle build?",
+        "options": {
+            "A": "To enhance the performance of the build process",
+            "B": "To enable access to the internet for downloading dependencies",
+            "C": "To manage the version control of the project",
+            "D": "To compile the source code more efficiently"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of configuring a proxy in a Gradle build is to enable access to the internet for downloading dependencies. Proxies are often used in environments where direct internet access is restricted, allowing Gradle to retrieve necessary resources through the proxy server."
+    },
+    {
+        "question": "Which property is used to specify the HTTP proxy host in Gradle?",
+        "options": {
+            "A": "systemProp.http.proxyHost",
+            "B": "systemProp.http.proxyServer",
+            "C": "systemProp.http.proxyAddress",
+            "D": "systemProp.http.proxyURL"
+        },
+        "correct_answer": "A",
+        "explanation": "The property used to specify the HTTP proxy host in Gradle is 'systemProp.http.proxyHost'. This property allows users to define the address of the proxy server that Gradle should use for HTTP requests."
+    },
+    {
+        "question": "What additional information may be required when configuring a proxy that uses NTLM authentication?",
+        "options": {
+            "A": "Only the proxy host and port",
+            "B": "The authentication domain along with the username and password",
+            "C": "A list of non-proxy hosts",
+            "D": "The type of proxy being used (HTTP, HTTPS, SOCKS)"
+        },
+        "correct_answer": "B",
+        "explanation": "When configuring a proxy that uses NTLM authentication, it is necessary to provide the authentication domain along with the username and password. This ensures that the proxy can authenticate the user correctly before allowing access to the internet."
+    },
+    {
+        "question": "Where can proxy configuration properties be specified in a Gradle project?",
+        "options": {
+            "A": "Only in the build script",
+            "B": "Only in the gradle.properties file",
+            "C": "In both the build script and the gradle.properties file",
+            "D": "In the project’s source code files"
+        },
+        "correct_answer": "C",
+        "explanation": "Proxy configuration properties can be specified in both the build script and the gradle.properties file. This flexibility allows users to choose the method that best fits their project setup and requirements."
+    },
+    {
+        "question": "What is the purpose of JVM system properties in the context of configuring a proxy?",
+        "options": {
+            "A": "To define the environment variables for the operating system",
+            "B": "To set configurations for downloading dependencies through a proxy",
+            "C": "To manage user permissions for accessing the network",
+            "D": "To specify the location of the Java installation"
+        },
+        "correct_answer": "B",
+        "explanation": "JVM system properties are used to set configurations for downloading dependencies through a proxy. By specifying properties such as `http.proxyHost` and `http.proxyPort`, users can direct the Java Virtual Machine to route network requests through a specified proxy server, facilitating access to external resources."
+    },
+    {
+        "question": "Which of the following is a correct way to set a proxy host in a Gradle build script?",
+        "options": {
+            "A": "System.setProperty('proxy.host', 'www.somehost.org')",
+            "B": "System.setProperty('http.proxyHost', 'www.somehost.org')",
+            "C": "System.setProperty('network.proxyHost', 'www.somehost.org')",
+            "D": "System.setProperty('http.host', 'www.somehost.org')"
+        },
+        "correct_answer": "B",
+        "explanation": "The correct way to set a proxy host in a Gradle build script is by using `System.setProperty('http.proxyHost', 'www.somehost.org')`. This command specifically configures the HTTP proxy host for the Java Virtual Machine, allowing it to route requests through the specified proxy."
+    },
+    {
+        "question": "What additional information might be required when configuring a proxy that uses NTLM authentication?",
+        "options": {
+            "A": "Only the proxy host and port",
+            "B": "The authentication domain, username, and password",
+            "C": "The IP address of the proxy server",
+            "D": "The type of proxy (HTTP, HTTPS, SOCKS)"
+        },
+        "correct_answer": "B",
+        "explanation": "When configuring a proxy that uses NTLM authentication, it is necessary to provide the authentication domain, username, and password. This ensures that the system can authenticate properly with the proxy server, allowing access to the network resources."
+    },
+    {
+        "question": "What is the primary purpose of configuring an HTTP proxy in a Gradle build?",
+        "options": {
+            "A": "To enhance the security of the build process",
+            "B": "To enable downloading dependencies through a specified server",
+            "C": "To improve the performance of the Gradle daemon",
+            "D": "To manage the version control of the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of configuring an HTTP proxy in a Gradle build is to enable downloading dependencies through a specified server. This is particularly useful in environments where direct internet access is restricted, allowing Gradle to route requests through the proxy server."
+    },
+    {
+        "question": "Which property is used to specify the host of an HTTP proxy in Gradle?",
+        "options": {
+            "A": "systemProp.http.proxyHost",
+            "B": "systemProp.http.proxyServer",
+            "C": "systemProp.http.proxyAddress",
+            "D": "systemProp.http.proxyURL"
+        },
+        "correct_answer": "A",
+        "explanation": "The property used to specify the host of an HTTP proxy in Gradle is 'systemProp.http.proxyHost'. This property allows users to define the address of the proxy server that Gradle should use for HTTP requests."
+    },
+    {
+        "question": "What additional information may be required when configuring a proxy that uses NTLM authentication?",
+        "options": {
+            "A": "Only the proxy host and port",
+            "B": "The authentication domain along with the username and password",
+            "C": "A list of non-proxy hosts",
+            "D": "The type of proxy being used (HTTP, HTTPS, SOCKS)"
+        },
+        "correct_answer": "B",
+        "explanation": "When configuring a proxy that uses NTLM authentication, it is necessary to provide the authentication domain along with the username and password. This ensures that the proxy can authenticate the user correctly before allowing access to the network."
+    },
+    {
+        "question": "In which file can proxy settings be specified for a Gradle build?",
+        "options": {
+            "A": "settings.gradle",
+            "B": "build.gradle",
+            "C": "gradle.properties",
+            "D": "gradle.build"
+        },
+        "correct_answer": "C",
+        "explanation": "Proxy settings for a Gradle build can be specified in the 'gradle.properties' file. This allows for centralized configuration of properties that Gradle will use during the build process, including those related to proxy settings."
+    },
+    {
+        "question": "What is the primary purpose of configuring an HTTPS proxy in a Gradle build?",
+        "options": {
+            "A": "To enable secure communication over the internet",
+            "B": "To increase the speed of dependency downloads",
+            "C": "To bypass firewall restrictions",
+            "D": "To manage local file storage"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of configuring an HTTPS proxy in a Gradle build is to enable secure communication over the internet. An HTTPS proxy ensures that data transmitted between the client and the server is encrypted, providing a secure channel for downloading dependencies and other resources."
+    },
+    {
+        "question": "Which property is used to specify the host of an HTTPS proxy in Gradle?",
+        "options": {
+            "A": "systemProp.https.proxyHost",
+            "B": "systemProp.http.proxyHost",
+            "C": "systemProp.socksProxyHost",
+            "D": "systemProp.proxyHost"
+        },
+        "correct_answer": "A",
+        "explanation": "The property used to specify the host of an HTTPS proxy in Gradle is 'systemProp.https.proxyHost'. This property allows the user to define the server that will act as the proxy for HTTPS requests, ensuring that the requests are routed through the specified proxy."
+    },
+    {
+        "question": "What additional information may be required when configuring an HTTPS proxy that uses NTLM authentication?",
+        "options": {
+            "A": "Only the proxy host and port",
+            "B": "The authentication domain, username, and password",
+            "C": "The local file path for dependencies",
+            "D": "The type of network connection being used"
+        },
+        "correct_answer": "B",
+        "explanation": "When configuring an HTTPS proxy that uses NTLM authentication, it is necessary to provide the authentication domain, username, and password. This information is essential for the proxy to authenticate the user and allow access to the network resources."
+    },
+    {
+        "question": "What is the primary purpose of a SOCKS proxy?",
+        "options": {
+            "A": "To provide a secure connection for file transfers",
+            "B": "To route network traffic through a different server",
+            "C": "To encrypt data during transmission",
+            "D": "To manage user authentication for web services"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a SOCKS proxy is to route network traffic through a different server. This allows clients to connect to the internet indirectly, which can help with bypassing restrictions, improving privacy, and managing network traffic more effectively."
+    },
+    {
+        "question": "Which of the following is a key characteristic of SOCKS proxies?",
+        "options": {
+            "A": "They only support HTTP traffic.",
+            "B": "They can handle various types of network protocols.",
+            "C": "They require a specific port for FTP connections.",
+            "D": "They are limited to local network access."
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of SOCKS proxies is their ability to handle various types of network protocols, not just HTTP. This flexibility allows SOCKS proxies to be used for different types of traffic, including TCP and UDP, making them versatile for various applications."
+    },
+    {
+        "question": "When configuring a SOCKS proxy in Gradle, which property is used to specify the proxy host?",
+        "options": {
+            "A": "systemProp.socksProxyHost",
+            "B": "systemProp.http.proxyHost",
+            "C": "systemProp.https.proxyHost",
+            "D": "systemProp.proxyHost"
+        },
+        "correct_answer": "A",
+        "explanation": "To specify the proxy host for a SOCKS proxy in Gradle, the property used is 'systemProp.socksProxyHost'. This property allows the user to define the address of the SOCKS proxy server that will be used for routing network traffic."
+    },
+    {
+        "question": "What additional information may be required when using a SOCKS proxy that requires authentication?",
+        "options": {
+            "A": "Only the proxy host and port",
+            "B": "Username and password for the proxy",
+            "C": "Only the username for the proxy",
+            "D": "The domain name of the proxy server"
+        },
+        "correct_answer": "B",
+        "explanation": "When using a SOCKS proxy that requires authentication, the username and password for the proxy are typically required. This information is necessary to establish a secure connection and ensure that only authorized users can access the proxy services."
+    },
+    {
+        "question": "What is the primary purpose of NTLM authentication?",
+        "options": {
+            "A": "To encrypt data during transmission",
+            "B": "To authenticate users to a proxy server",
+            "C": "To manage network traffic",
+            "D": "To configure network settings"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of NTLM authentication is to authenticate users to a proxy server. It is a challenge-response authentication protocol used to verify the identity of users attempting to access network resources, particularly in environments where a proxy server is involved."
+    },
+    {
+        "question": "Which of the following is a requirement for NTLM authentication?",
+        "options": {
+            "A": "Providing a username and password only",
+            "B": "Providing an authentication domain along with the username and password",
+            "C": "Using a secure connection for all data transfers",
+            "D": "Configuring a SOCKS proxy"
+        },
+        "correct_answer": "B",
+        "explanation": "For NTLM authentication, it is necessary to provide an authentication domain along with the username and password. This allows the proxy server to correctly identify and authenticate the user within the specified domain."
+    },
+    {
+        "question": "How can the authentication domain be specified for NTLM authentication in a system property?",
+        "options": {
+            "A": "By setting the `http.proxyHost` property",
+            "B": "By setting the `http.auth.ntlm.domain` property",
+            "C": "By setting the `http.proxyUser` property to a simple username",
+            "D": "By setting the `http.proxyPassword` property"
+        },
+        "correct_answer": "B",
+        "explanation": "The authentication domain for NTLM authentication can be specified by setting the `http.auth.ntlm.domain` system property. This allows the system to understand the domain context in which the user is being authenticated."
+    }
+]

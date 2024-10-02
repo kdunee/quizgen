@@ -1,0 +1,321 @@
+[
+    {
+        "question": "What is the primary purpose of build caching in Gradle?",
+        "options": {
+            "A": "To store all project files permanently",
+            "B": "To avoid unnecessary recompilation and improve build performance",
+            "C": "To manage project dependencies automatically",
+            "D": "To create backups of the project files"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of build caching in Gradle is to avoid unnecessary recompilation and improve build performance. By caching outputs of tasks, Gradle can reuse previously built artifacts when the inputs have not changed, thus speeding up the build process."
+    },
+    {
+        "question": "Which of the following statements about caching Java compilation is true?",
+        "options": {
+            "A": "Caching is only effective for small projects.",
+            "B": "Caching relies on the application binary interface (ABI) of dependencies.",
+            "C": "Caching requires recompilation for all changes in the source code.",
+            "D": "Caching is not supported in Gradle versions prior to 4.0."
+        },
+        "correct_answer": "B",
+        "explanation": "Caching Java compilation relies on the application binary interface (ABI) of dependencies. This means that if the ABI remains unchanged, Gradle can reuse the compiled classes from the cache, avoiding unnecessary recompilation."
+    },
+    {
+        "question": "What is a potential drawback of using annotation processors in Gradle builds?",
+        "options": {
+            "A": "They always lead to faster builds.",
+            "B": "They can cause cache misses due to their implementation details being considered.",
+            "C": "They are not compatible with Gradle's caching mechanism.",
+            "D": "They require additional configuration for every project."
+        },
+        "correct_answer": "B",
+        "explanation": "A potential drawback of using annotation processors in Gradle builds is that they can cause cache misses because their implementation details are considered as inputs to the compiler. This means that changes in the annotation processor classpath can lead to recompilation, even if the ABI remains unchanged."
+    },
+    {
+        "question": "How can integration tests affect build caching?",
+        "options": {
+            "A": "They do not affect build caching at all.",
+            "B": "They can introduce external dependencies that may lead to cache misses.",
+            "C": "They are always cached regardless of their inputs.",
+            "D": "They only depend on the source code and not on external factors."
+        },
+        "correct_answer": "B",
+        "explanation": "Integration tests can introduce external dependencies that may lead to cache misses. Factors such as operating system type, environment variables, and other services can affect the outcome of integration tests, making it essential to declare these additional inputs to avoid incorrect cache hits."
+    },
+    {
+        "question": "What is the primary benefit of compile avoidance in Gradle?",
+        "options": {
+            "A": "To ensure all dependencies are always recompiled",
+            "B": "To reduce unnecessary recompilation of code",
+            "C": "To increase the size of the build cache",
+            "D": "To simplify the build script syntax"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of compile avoidance in Gradle is to reduce unnecessary recompilation of code. By understanding the application binary interfaces (ABI) of dependencies, Gradle can determine when recompilation is not needed, thus saving time and resources during the build process."
+    },
+    {
+        "question": "Which factor primarily influences the cache key for compile tasks in Gradle?",
+        "options": {
+            "A": "The implementation details of the source code",
+            "B": "The ABI of the dependencies",
+            "C": "The order of tasks in the build script",
+            "D": "The version of Gradle being used"
+        },
+        "correct_answer": "B",
+        "explanation": "The cache key for compile tasks in Gradle is primarily influenced by the ABI of the dependencies. This means that changes to the implementation details that do not affect the ABI will not trigger recompilation, allowing for efficient reuse of previously compiled classes."
+    },
+    {
+        "question": "What happens when an annotation processor is used in a Gradle project regarding compile avoidance?",
+        "options": {
+            "A": "It enhances compile avoidance by caching more outputs",
+            "B": "It has no effect on compile avoidance",
+            "C": "It requires recompilation even if the ABI is unchanged",
+            "D": "It allows for faster execution of unit tests"
+        },
+        "correct_answer": "C",
+        "explanation": "When an annotation processor is used in a Gradle project, it requires recompilation even if the ABI is unchanged. This is because the implementation of annotation processors must be considered as an input to the compiler, which can lead to different outputs and thus necessitates a rebuild."
+    },
+    {
+        "question": "How can developers optimize the use of annotation processors in Gradle to avoid performance penalties?",
+        "options": {
+            "A": "By using multiple annotation processors simultaneously",
+            "B": "By setting the annotation processor classpath explicitly",
+            "C": "By avoiding the use of any annotation processors",
+            "D": "By increasing the memory allocated to the Gradle build"
+        },
+        "correct_answer": "B",
+        "explanation": "To optimize the use of annotation processors in Gradle and avoid performance penalties, developers should set the annotation processor classpath explicitly to include only the libraries needed for annotation processing. This helps minimize unnecessary recompilation and improves build performance."
+    },
+    {
+        "question": "What is the primary role of annotation processors in the context of Java compilation?",
+        "options": {
+            "A": "To optimize the performance of compiled classes",
+            "B": "To generate additional source files or classes during compilation",
+            "C": "To manage dependencies between different Java modules",
+            "D": "To handle runtime exceptions during program execution"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary role of annotation processors is to generate additional source files or classes during the compilation process. They analyze annotations in the code and can produce new files based on that analysis, which is essential for certain frameworks and libraries that rely on code generation."
+    },
+    {
+        "question": "Why does Gradle treat annotation processors differently from regular compile dependencies?",
+        "options": {
+            "A": "Because they are not required for the compilation process",
+            "B": "Because their implementation details can affect the compilation output",
+            "C": "Because they are always optional in Java projects",
+            "D": "Because they do not produce any output files"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle treats annotation processors differently because their implementation details can affect the compilation output. Unlike regular compile dependencies, where only the ABI influences compilation, the actual implementation of annotation processors must be considered, which can lead to different outputs if the processors change."
+    },
+    {
+        "question": "What is a recommended practice to avoid performance penalties when using annotation processors in Gradle?",
+        "options": {
+            "A": "Always include all available libraries in the annotation processor classpath",
+            "B": "Set the annotation processor classpath explicitly to include only necessary libraries",
+            "C": "Disable annotation processing entirely for all projects",
+            "D": "Use annotation processors only in production builds"
+        },
+        "correct_answer": "B",
+        "explanation": "To avoid performance penalties when using annotation processors, it is recommended to set the annotation processor classpath explicitly to include only the libraries needed for annotation processing. This helps ensure that unnecessary dependencies do not affect the compilation process and keeps the build efficient."
+    },
+    {
+        "question": "What is the primary purpose of unit testing in software development?",
+        "options": {
+            "A": "To test individual components for correctness",
+            "B": "To evaluate the performance of the entire system",
+            "C": "To ensure the application meets user requirements",
+            "D": "To integrate different modules of the application"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of unit testing is to test individual components or units of code to ensure they function correctly in isolation. This helps identify bugs early in the development process and ensures that each part of the application behaves as expected."
+    },
+    {
+        "question": "Which of the following best describes the relationship between unit tests and build caching?",
+        "options": {
+            "A": "Unit tests are not affected by build caching mechanisms.",
+            "B": "Unit tests can benefit from build caching to avoid redundant executions.",
+            "C": "Build caching is only applicable to integration tests, not unit tests.",
+            "D": "Unit tests must always be executed in a specific order to utilize build caching."
+        },
+        "correct_answer": "B",
+        "explanation": "Unit tests can benefit from build caching as it allows for the reuse of previously computed results, avoiding redundant executions. This improves build performance by caching the results of tests that have not changed, thus speeding up the development process."
+    },
+    {
+        "question": "What is a common characteristic of unit tests compared to integration tests?",
+        "options": {
+            "A": "Unit tests typically have many external dependencies.",
+            "B": "Unit tests are usually more complex than integration tests.",
+            "C": "Unit tests generally do not depend on external factors.",
+            "D": "Unit tests require a specific environment to run."
+        },
+        "correct_answer": "C",
+        "explanation": "A common characteristic of unit tests is that they generally do not depend on external factors, making them easier to run and cache. In contrast, integration tests often involve multiple components and external dependencies, which can complicate their execution and caching."
+    },
+    {
+        "question": "What should be considered when declaring inputs for integration tests?",
+        "options": {
+            "A": "Only the source code files should be declared as inputs.",
+            "B": "All system properties should be included as inputs.",
+            "C": "External factors that may affect the test outcome should be declared.",
+            "D": "Integration tests do not require any inputs to be declared."
+        },
+        "correct_answer": "C",
+        "explanation": "When declaring inputs for integration tests, it is important to consider external factors that may affect the test outcome, such as operating system type, environment variables, and other services. This ensures that the tests are reliable and that the caching mechanism works correctly."
+    },
+    {
+        "question": "What is a key characteristic of integration tests compared to unit tests?",
+        "options": {
+            "A": "Integration tests typically have no external dependencies.",
+            "B": "Integration tests often depend on various external inputs.",
+            "C": "Integration tests are always faster than unit tests.",
+            "D": "Integration tests do not require any setup or configuration."
+        },
+        "correct_answer": "B",
+        "explanation": "Integration tests often depend on various external inputs, such as operating system type, environment variables, and other services. This contrasts with unit tests, which usually have no external dependencies and can be executed in isolation."
+    },
+    {
+        "question": "Why is it important to declare additional inputs for integration tests?",
+        "options": {
+            "A": "To ensure that the tests run faster.",
+            "B": "To avoid incorrect cache hits.",
+            "C": "To simplify the test execution process.",
+            "D": "To reduce the number of tests needed."
+        },
+        "correct_answer": "B",
+        "explanation": "Declaring additional inputs for integration tests is crucial to avoid incorrect cache hits. Since integration tests can be influenced by external factors, failing to declare these inputs may lead to misleading results or cache misses."
+    },
+    {
+        "question": "What is a common issue when using archives as inputs for integration tests?",
+        "options": {
+            "A": "Archives do not contain any relevant data.",
+            "B": "Rebuilding an archive often changes its metadata.",
+            "C": "Archives are always treated as stable inputs.",
+            "D": "Archives cannot be used in integration tests."
+        },
+        "correct_answer": "B",
+        "explanation": "A common issue when using archives as inputs for integration tests is that rebuilding an archive often changes its metadata. This can lead to cache misses, so it is recommended to depend on the exploded contents of the archive instead."
+    },
+    {
+        "question": "What is the recommended approach to handle system properties in integration tests?",
+        "options": {
+            "A": "Always include all system properties as inputs.",
+            "B": "Ignore all system properties to simplify testing.",
+            "C": "Use a CommandLineArgumentProvider to manage relevant system properties.",
+            "D": "Pass absolute paths directly as system properties."
+        },
+        "correct_answer": "C",
+        "explanation": "The recommended approach to handle system properties in integration tests is to use a CommandLineArgumentProvider to manage relevant system properties. This allows for better control over which properties influence the test outcomes and helps maintain the relocatability of the integration test task."
+    },
+    {
+        "question": "What is the primary purpose of defining task inputs in a build system?",
+        "options": {
+            "A": "To ensure that tasks are executed in a specific order",
+            "B": "To determine when a task needs to be re-executed",
+            "C": "To manage the output format of the task results",
+            "D": "To optimize the memory usage during task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of defining task inputs is to determine when a task needs to be re-executed. By specifying inputs, the build system can track changes and decide if the outputs are still valid or if the task should run again to produce updated results."
+    },
+    {
+        "question": "How do outputs of a task influence the build process?",
+        "options": {
+            "A": "Outputs are used to define the dependencies of other tasks",
+            "B": "Outputs determine the execution time of the task",
+            "C": "Outputs are irrelevant to the build process",
+            "D": "Outputs can only be used for logging purposes"
+        },
+        "correct_answer": "A",
+        "explanation": "Outputs of a task influence the build process by defining the dependencies of other tasks. When a task produces outputs, those outputs can be used as inputs for subsequent tasks, creating a chain of dependencies that the build system manages."
+    },
+    {
+        "question": "What happens if a task's inputs change?",
+        "options": {
+            "A": "The task will always execute regardless of the outputs",
+            "B": "The task may be skipped if the outputs are unchanged",
+            "C": "The task will be executed only if the outputs are also changed",
+            "D": "The task will be cached and not executed again"
+        },
+        "correct_answer": "B",
+        "explanation": "If a task's inputs change, the task may be skipped if the outputs are unchanged. The build system uses the relationship between inputs and outputs to determine whether the task needs to be re-executed, allowing for efficient caching and execution."
+    },
+    {
+        "question": "Why is it important to manage task outputs carefully?",
+        "options": {
+            "A": "To ensure that all tasks run in parallel",
+            "B": "To avoid cache misses and ensure repeatable builds",
+            "C": "To reduce the overall size of the build files",
+            "D": "To simplify the build script syntax"
+        },
+        "correct_answer": "B",
+        "explanation": "It is important to manage task outputs carefully to avoid cache misses and ensure repeatable builds. Properly defined outputs help the build system recognize when tasks can be reused from the cache, leading to faster build times and consistent results."
+    },
+    {
+        "question": "What is the primary purpose of classpath normalization in Gradle?",
+        "options": {
+            "A": "To ensure that changes in the order of jars do not affect task execution",
+            "B": "To optimize the size of the classpath for faster builds",
+            "C": "To automatically update dependencies to their latest versions",
+            "D": "To prevent any changes in the classpath from being detected"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of classpath normalization in Gradle is to ensure that changes in the order and timestamps of jars on the classpath do not cause tasks to be marked as out-of-date. This helps maintain build efficiency by avoiding unnecessary recompilation or re-execution of tasks when the classpath remains functionally equivalent."
+    },
+    {
+        "question": "How does classpath normalization affect the build cache in Gradle?",
+        "options": {
+            "A": "It allows for more frequent cache misses due to classpath changes",
+            "B": "It ensures that the build cache key remains stable despite classpath changes",
+            "C": "It eliminates the need for a build cache entirely",
+            "D": "It requires all dependencies to be explicitly defined in the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "Classpath normalization ensures that the build cache key remains stable even when there are changes in the classpath, such as the order of jars or their timestamps. This stability is crucial for effective caching, as it allows Gradle to reuse previously built outputs without unnecessary recompilation, thus improving build performance."
+    },
+    {
+        "question": "What is a potential consequence of not normalizing the classpath in Gradle?",
+        "options": {
+            "A": "Increased build speed due to fewer tasks being executed",
+            "B": "Unpredictable task outputs and increased build times",
+            "C": "Automatic resolution of dependency conflicts",
+            "D": "Simplified build scripts with fewer configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "Not normalizing the classpath can lead to unpredictable task outputs and increased build times. If changes in the classpath are not managed properly, Gradle may incorrectly determine that tasks need to be re-executed, leading to inefficiencies and longer build processes."
+    },
+    {
+        "question": "What does the concept of relocatability refer to in the context of integration tests?",
+        "options": {
+            "A": "The ability to run tests on different operating systems without modification",
+            "B": "The capacity to change file paths without affecting test outcomes",
+            "C": "The process of packaging applications for distribution",
+            "D": "The ability to cache test results for faster execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Relocatability refers to the capacity to change file paths without affecting the outcomes of integration tests. This is important because using absolute paths can lead to issues when the build environment changes, potentially causing incorrect cache hits or failures in test execution."
+    },
+    {
+        "question": "Why is it important to consider relocatability when passing information to integration test tasks?",
+        "options": {
+            "A": "To ensure that tests can be executed in parallel",
+            "B": "To avoid hardcoding paths that may vary across environments",
+            "C": "To improve the speed of test execution",
+            "D": "To simplify the configuration of build scripts"
+        },
+        "correct_answer": "B",
+        "explanation": "It is important to consider relocatability to avoid hardcoding paths that may vary across different environments. This ensures that integration tests can run successfully regardless of the specific file system structure or environment setup, thus maintaining the integrity of the test results."
+    },
+    {
+        "question": "What is a common practice to maintain relocatability in integration tests?",
+        "options": {
+            "A": "Using absolute paths for all file references",
+            "B": "Implementing a CommandLineArgumentProvider for dynamic paths",
+            "C": "Disabling all system properties during test execution",
+            "D": "Relying solely on environment variables for configuration"
+        },
+        "correct_answer": "B",
+        "explanation": "A common practice to maintain relocatability in integration tests is to implement a CommandLineArgumentProvider for dynamic paths. This allows the test to adapt to different environments by providing the necessary paths as arguments, rather than hardcoding them, which enhances the flexibility and reliability of the tests."
+    }
+]

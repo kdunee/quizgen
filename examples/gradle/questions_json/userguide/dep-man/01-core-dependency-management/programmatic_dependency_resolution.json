@@ -1,0 +1,442 @@
+[
+    {
+        "question": "What are the two main phases of dependency resolution in Gradle?",
+        "options": {
+            "A": "Graph resolution and artifact resolution",
+            "B": "Configuration resolution and dependency declaration",
+            "C": "Artifact selection and dependency declaration",
+            "D": "File resolution and variant selection"
+        },
+        "correct_answer": "A",
+        "explanation": "The two main phases of dependency resolution in Gradle are graph resolution and artifact resolution. Graph resolution involves constructing a dependency graph by examining component metadata, while artifact resolution involves selecting and downloading the appropriate artifacts based on that graph."
+    },
+    {
+        "question": "What is the purpose of a resolvable configuration in Gradle?",
+        "options": {
+            "A": "To declare dependencies for a project",
+            "B": "To initiate the dependency resolution process",
+            "C": "To manage project settings and properties",
+            "D": "To compile source code into bytecode"
+        },
+        "correct_answer": "B",
+        "explanation": "A resolvable configuration in Gradle is intended for initiating the dependency resolution process. It allows Gradle to resolve the dependencies declared in the project and is essential for accessing the results of that resolution."
+    },
+    {
+        "question": "What does the ResolutionResult API provide access to in Gradle?",
+        "options": {
+            "A": "The raw source code of dependencies",
+            "B": "The resolved dependency graph",
+            "C": "The configuration settings of the project",
+            "D": "The build output files"
+        },
+        "correct_answer": "B",
+        "explanation": "The ResolutionResult API provides access to the resolved dependency graph in Gradle. This graph represents the relationships between components and variants after the graph resolution phase has been completed, allowing for further analysis and manipulation of dependencies."
+    },
+    {
+        "question": "How does Gradle perform artifact selection during the artifact resolution phase?",
+        "options": {
+            "A": "By selecting all available artifacts without filtering",
+            "B": "By matching attributes of artifacts to the requested attributes",
+            "C": "By randomly choosing artifacts from the dependency graph",
+            "D": "By prioritizing artifacts based on their file size"
+        },
+        "correct_answer": "B",
+        "explanation": "During the artifact resolution phase, Gradle performs artifact selection by matching the attributes of artifacts to the requested attributes. This process ensures that the most appropriate artifacts are selected based on the specific requirements of the project."
+    },
+    {
+        "question": "What is the primary purpose of the graph resolution phase in Gradle's dependency resolution process?",
+        "options": {
+            "A": "To construct a dependency graph from component metadata",
+            "B": "To download all artifacts for the project",
+            "C": "To compile the source code of the project",
+            "D": "To execute the build tasks in the correct order"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the graph resolution phase is to construct a dependency graph from component metadata, which includes examining declared and transitive dependencies. This graph serves as the foundation for the subsequent artifact resolution phase."
+    },
+    {
+        "question": "Which API provides access to the resolved dependency graph after the graph resolution phase?",
+        "options": {
+            "A": "ArtifactCollection",
+            "B": "FileCollection",
+            "C": "ResolutionResult",
+            "D": "Configuration"
+        },
+        "correct_answer": "C",
+        "explanation": "The ResolutionResult API provides access to the resolved dependency graph after the graph resolution phase. It allows users to interact with the graph without triggering artifact resolution, making it useful for diagnostics and visualization."
+    },
+    {
+        "question": "During the graph resolution phase, what type of metadata does Gradle examine?",
+        "options": {
+            "A": "Source code files",
+            "B": "Component metadata such as GMM, POM, and IVY XML",
+            "C": "Build scripts and configurations",
+            "D": "User-defined variables and settings"
+        },
+        "correct_answer": "B",
+        "explanation": "During the graph resolution phase, Gradle examines component metadata such as GMM (Gradle Module Metadata), POM (Project Object Model), and IVY XML for declared and transitive dependencies. This information is crucial for constructing the dependency graph."
+    },
+    {
+        "question": "What is the output of the graph resolution phase used for in Gradle?",
+        "options": {
+            "A": "To initiate the build process",
+            "B": "As input for the artifact resolution phase",
+            "C": "To generate documentation for the project",
+            "D": "To compile the Java source files"
+        },
+        "correct_answer": "B",
+        "explanation": "The output of the graph resolution phase is a fully resolved dependency graph, which is used as input for the artifact resolution phase. This ensures that the correct artifacts are selected based on the resolved dependencies."
+    },
+    {
+        "question": "What is the primary purpose of artifact resolution in Gradle?",
+        "options": {
+            "A": "To select and download the appropriate artifacts based on a resolved dependency graph",
+            "B": "To compile source code into executable files",
+            "C": "To manage version control of source files",
+            "D": "To create a visual representation of the project structure"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of artifact resolution in Gradle is to select and download the appropriate artifacts based on a resolved dependency graph. This process ensures that the correct versions of libraries and resources are used in the project, facilitating successful builds and execution."
+    },
+    {
+        "question": "Which API is primarily used to influence the artifact selection process in Gradle?",
+        "options": {
+            "A": "FileCollection API",
+            "B": "ArtifactView API",
+            "C": "Configuration API",
+            "D": "DependencyGraph API"
+        },
+        "correct_answer": "B",
+        "explanation": "The ArtifactView API is primarily used to influence the artifact selection process in Gradle. It allows developers to customize how artifacts are selected, including triggering transformations, selecting alternative variants, and filtering artifacts based on specific criteria."
+    },
+    {
+        "question": "What happens during the artifact selection process in Gradle?",
+        "options": {
+            "A": "Gradle compiles the source code into bytecode.",
+            "B": "Gradle matches requested attributes to available artifact sets for each node in the dependency graph.",
+            "C": "Gradle generates a report of all dependencies used in the project.",
+            "D": "Gradle automatically updates all dependencies to their latest versions."
+        },
+        "correct_answer": "B",
+        "explanation": "During the artifact selection process in Gradle, the system matches requested attributes to available artifact sets for each node in the dependency graph. This ensures that the most suitable artifacts are selected based on the specified attributes, which may include version, type, and other characteristics."
+    },
+    {
+        "question": "What is a key feature of the lenient artifact resolution process in Gradle?",
+        "options": {
+            "A": "It requires all artifacts to be successfully downloaded.",
+            "B": "It allows resolution to proceed even if some artifacts fail to resolve.",
+            "C": "It automatically selects the latest version of all dependencies.",
+            "D": "It generates a detailed log of all resolution attempts."
+        },
+        "correct_answer": "B",
+        "explanation": "A key feature of the lenient artifact resolution process in Gradle is that it allows resolution to proceed even if some artifacts fail to resolve. This is useful in scenarios where certain dependencies may not be available, enabling the build process to continue with the artifacts that are successfully resolved."
+    },
+    {
+        "question": "What is the primary purpose of configuration management in Gradle?",
+        "options": {
+            "A": "To manage the lifecycle of software applications",
+            "B": "To define and manage dependencies for a project",
+            "C": "To automate the deployment of applications",
+            "D": "To monitor system performance"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of configuration management in Gradle is to define and manage dependencies for a project. This involves declaring configurations that specify how dependencies are resolved and used during the build process, ensuring that the correct versions of libraries and components are included."
+    },
+    {
+        "question": "Which of the following best describes a 'resolvable configuration' in Gradle?",
+        "options": {
+            "A": "A configuration that can be used to declare project properties",
+            "B": "A configuration that initiates dependency resolution",
+            "C": "A configuration that only stores metadata about dependencies",
+            "D": "A configuration that is used for testing purposes only"
+        },
+        "correct_answer": "B",
+        "explanation": "A 'resolvable configuration' in Gradle is a configuration that initiates dependency resolution. It is used to declare dependencies that need to be resolved, allowing Gradle to determine which artifacts to include in the build based on the specified dependencies."
+    },
+    {
+        "question": "What is the role of the 'implementation' configuration in Gradle?",
+        "options": {
+            "A": "To declare dependencies that are only needed at runtime",
+            "B": "To declare dependencies that are required for both compilation and runtime",
+            "C": "To declare dependencies that are only needed for testing",
+            "D": "To declare dependencies that are optional for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'implementation' configuration in Gradle is used to declare dependencies that are required for both compilation and runtime. This means that the dependencies specified in this configuration are necessary for the project to compile and run successfully."
+    },
+    {
+        "question": "What does the term 'dependency graph' refer to in the context of Gradle?",
+        "options": {
+            "A": "A visual representation of the project's source code",
+            "B": "A structure that shows the relationships between different components and their dependencies",
+            "C": "A list of all the files in the project",
+            "D": "A log of all the build tasks executed"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of Gradle, the term 'dependency graph' refers to a structure that shows the relationships between different components and their dependencies. This graph is constructed during the graph resolution phase and is used to determine how dependencies are related and which artifacts need to be resolved."
+    },
+    {
+        "question": "What is the primary purpose of artifact selection in Gradle?",
+        "options": {
+            "A": "To determine which artifacts to download based on a resolved dependency graph",
+            "B": "To compile source code into executable files",
+            "C": "To visualize the dependency graph for debugging purposes",
+            "D": "To manage the versions of dependencies in a project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of artifact selection in Gradle is to determine which artifacts to download based on a resolved dependency graph. This process involves evaluating the attributes of each artifact and selecting the most appropriate one for each node in the graph, ensuring that the correct files are available for the build process."
+    },
+    {
+        "question": "Which API is primarily used to influence the artifact selection process in Gradle?",
+        "options": {
+            "A": "FileCollection API",
+            "B": "ArtifactView API",
+            "C": "Configuration API",
+            "D": "DependencyGraph API"
+        },
+        "correct_answer": "B",
+        "explanation": "The ArtifactView API is the primary mechanism for influencing the artifact selection process in Gradle. It allows users to customize how artifacts are selected, trigger transformations, and filter results based on specific criteria, thereby providing greater control over the artifact resolution process."
+    },
+    {
+        "question": "What happens during the artifact selection process if no artifact sets match the requested attributes?",
+        "options": {
+            "A": "Gradle will automatically select the first available artifact set.",
+            "B": "Gradle will attempt to construct an artifact transform chain to satisfy the request.",
+            "C": "The build process will fail immediately.",
+            "D": "Gradle will skip the artifact selection step entirely."
+        },
+        "correct_answer": "B",
+        "explanation": "If no artifact sets match the requested attributes during the artifact selection process, Gradle will attempt to construct an artifact transform chain to satisfy the request. This allows Gradle to adapt and find suitable artifacts even when the initial selection criteria do not yield a match."
+    },
+    {
+        "question": "What is the role of attributes in the artifact selection process?",
+        "options": {
+            "A": "Attributes are used to define the build environment for the project.",
+            "B": "Attributes help in matching artifacts to the requested specifications during selection.",
+            "C": "Attributes determine the order in which artifacts are downloaded.",
+            "D": "Attributes are irrelevant to the artifact selection process."
+        },
+        "correct_answer": "B",
+        "explanation": "Attributes play a crucial role in the artifact selection process as they help in matching artifacts to the requested specifications. Each artifact can expose multiple sets of attributes, and Gradle uses these attributes to determine the best match for the requested artifacts, ensuring that the correct files are selected for the build."
+    },
+    {
+        "question": "What is a FileCollection in the context of Gradle's dependency resolution?",
+        "options": {
+            "A": "A flat list of files resulting from dependency resolution",
+            "B": "A hierarchical structure of all project files",
+            "C": "A collection of metadata about dependencies",
+            "D": "A type of configuration for declaring dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "A FileCollection in Gradle represents a flat list of files that are the result of dependency resolution. It is commonly used to access the files that have been resolved from the dependencies specified in the project, allowing tasks to work with these files directly."
+    },
+    {
+        "question": "How does a FileCollection differ from an ArtifactCollection in Gradle?",
+        "options": {
+            "A": "FileCollection includes metadata, while ArtifactCollection does not.",
+            "B": "FileCollection is a flat list of files, while ArtifactCollection provides access to both files and their metadata.",
+            "C": "FileCollection is used for declaring dependencies, while ArtifactCollection is for resolving them.",
+            "D": "FileCollection can only be used in Java projects, while ArtifactCollection can be used in any project."
+        },
+        "correct_answer": "B",
+        "explanation": "A FileCollection is specifically a flat list of files that have been resolved from dependencies, whereas an ArtifactCollection provides access to both the files and their associated metadata. This distinction is important for understanding how to work with resolved artifacts in Gradle."
+    },
+    {
+        "question": "In which phase of dependency resolution is a FileCollection typically utilized?",
+        "options": {
+            "A": "During the declaration of dependencies",
+            "B": "During the graph resolution phase",
+            "C": "During the artifact resolution phase",
+            "D": "After the dependency graph has been constructed"
+        },
+        "correct_answer": "C",
+        "explanation": "A FileCollection is typically utilized during the artifact resolution phase, where Gradle resolves the dependencies and produces a flat list of files that can be used in tasks. This phase follows the construction of the dependency graph and is essential for accessing the resolved artifacts."
+    },
+    {
+        "question": "What is the primary purpose of using a FileCollection in Gradle tasks?",
+        "options": {
+            "A": "To define the dependencies of a project",
+            "B": "To manage the versions of dependencies",
+            "C": "To provide access to resolved files for further processing",
+            "D": "To visualize the dependency graph"
+        },
+        "correct_answer": "C",
+        "explanation": "The primary purpose of using a FileCollection in Gradle tasks is to provide access to the resolved files for further processing. This allows tasks to operate on the actual files that have been resolved from the project's dependencies, enabling various build and deployment operations."
+    },
+    {
+        "question": "What is an Artifact Collection in the context of Gradle?",
+        "options": {
+            "A": "A collection of metadata for each resolved artifact along with the files themselves",
+            "B": "A list of all dependencies declared in a project",
+            "C": "A graphical representation of the dependency graph",
+            "D": "A configuration that specifies how to resolve dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "An Artifact Collection in Gradle provides access to both the metadata for each resolved artifact and the files themselves. This allows developers to work with the artifacts that have been resolved during the dependency resolution process, making it easier to manage and utilize dependencies in a project."
+    },
+    {
+        "question": "How does Gradle perform artifact selection within an Artifact Collection?",
+        "options": {
+            "A": "By selecting all artifacts regardless of their attributes",
+            "B": "By performing attribute matching over each set of artifacts exposed by a node in the dependency graph",
+            "C": "By randomly choosing artifacts from the collection",
+            "D": "By prioritizing artifacts based on their file size"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle performs artifact selection by conducting attribute matching over each set of artifacts exposed by a node in the dependency graph. This process ensures that the most appropriate artifacts are selected based on the attributes specified during the resolution process, allowing for more precise dependency management."
+    },
+    {
+        "question": "What is the primary purpose of using the ArtifactView API in Gradle?",
+        "options": {
+            "A": "To declare new dependencies in a project",
+            "B": "To influence the artifact selection process and customize how artifacts are resolved",
+            "C": "To visualize the dependency graph",
+            "D": "To manage project configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of using the ArtifactView API in Gradle is to influence the artifact selection process and customize how artifacts are resolved. This API allows developers to specify different attributes, trigger artifact transforms, and filter selected artifacts, providing greater control over dependency management."
+    },
+    {
+        "question": "What happens during the artifact resolution phase in Gradle?",
+        "options": {
+            "A": "Gradle compiles the source code of the project",
+            "B": "Gradle selects a set of artifacts from the resolved dependency graph based on specified attributes",
+            "C": "Gradle generates a report of all declared dependencies",
+            "D": "Gradle installs the project dependencies into a local repository"
+        },
+        "correct_answer": "B",
+        "explanation": "During the artifact resolution phase, Gradle selects a set of artifacts from the resolved dependency graph based on specified attributes. This selection process is crucial for determining which files will be downloaded and used in the project, ensuring that the correct versions and types of artifacts are utilized."
+    },
+    {
+        "question": "What is the primary purpose of traversing a dependency graph in Gradle?",
+        "options": {
+            "A": "To visualize the relationships between components and variants",
+            "B": "To compile source code into executable files",
+            "C": "To download all dependencies automatically",
+            "D": "To create a backup of project files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of traversing a dependency graph in Gradle is to visualize the relationships between components and variants. This process allows developers to understand how different dependencies are interconnected and can help in diagnosing issues related to dependency resolution."
+    },
+    {
+        "question": "During the graph resolution phase, what type of metadata does Gradle examine?",
+        "options": {
+            "A": "Source code files",
+            "B": "Component metadata such as GMM, POM, and IVY XML",
+            "C": "User-defined configurations",
+            "D": "Execution logs of previous builds"
+        },
+        "correct_answer": "B",
+        "explanation": "During the graph resolution phase, Gradle examines component metadata such as GMM, POM, and IVY XML for declared and transitive dependencies. This metadata is crucial for constructing a complete and accurate dependency graph, which is essential for effective dependency resolution."
+    },
+    {
+        "question": "What does the ResolutionResult API provide access to in Gradle?",
+        "options": {
+            "A": "The source code of all dependencies",
+            "B": "The resolved dependency graph without triggering artifact resolution",
+            "C": "The execution time of each task",
+            "D": "The configuration settings of the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The ResolutionResult API provides access to the resolved dependency graph without triggering artifact resolution. This allows developers to inspect the structure of the dependency graph and understand the relationships between different components and their variants without immediately resolving the artifacts."
+    },
+    {
+        "question": "What is a key benefit of having raw access to the dependency graph?",
+        "options": {
+            "A": "It allows for automatic updates of all dependencies",
+            "B": "It enables the generation of visual representations of the graph",
+            "C": "It simplifies the process of writing build scripts",
+            "D": "It guarantees the successful download of all artifacts"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of having raw access to the dependency graph is that it enables the generation of visual representations of the graph. This can be particularly useful for understanding complex dependencies and for debugging issues related to dependency resolution."
+    },
+    {
+        "question": "What does lenient artifact resolution allow in Gradle?",
+        "options": {
+            "A": "To resolve artifacts even when some dependencies are missing or have conflicts",
+            "B": "To automatically update all dependencies to their latest versions",
+            "C": "To enforce strict version matching for all dependencies",
+            "D": "To ignore all dependency declarations in the build script"
+        },
+        "correct_answer": "A",
+        "explanation": "Lenient artifact resolution in Gradle allows the resolution of artifacts even when there are failures in the dependency graph, such as missing modules or unresolved conflicts. This flexibility is useful for ensuring that the build can proceed despite some issues in the dependency tree."
+    },
+    {
+        "question": "Which method is used to perform lenient artifact resolution in Gradle?",
+        "options": {
+            "A": "ArtifactView#filter()",
+            "B": "ArtifactView#lenient()",
+            "C": "ArtifactView#select()",
+            "D": "ArtifactView#resolve()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method used to perform lenient artifact resolution in Gradle is ArtifactView#lenient(). This method allows the resolution process to continue even if some artifacts cannot be found or downloaded, thus providing a more forgiving approach to dependency resolution."
+    },
+    {
+        "question": "What is a potential outcome of using lenient artifact resolution?",
+        "options": {
+            "A": "All artifacts will be resolved successfully without any issues.",
+            "B": "The build will fail if any artifact cannot be resolved.",
+            "C": "Some artifacts may be omitted from the resolution results.",
+            "D": "Only the latest versions of artifacts will be resolved."
+        },
+        "correct_answer": "C",
+        "explanation": "When using lenient artifact resolution, it is possible that some artifacts may be omitted from the resolution results if they cannot be found or downloaded. This allows the build process to continue without failing entirely due to missing artifacts."
+    },
+    {
+        "question": "In what scenario would you typically use lenient artifact resolution?",
+        "options": {
+            "A": "When you want to ensure all dependencies are strictly enforced.",
+            "B": "When you are working with a stable and well-defined set of dependencies.",
+            "C": "When some dependencies may not exist or have unresolved conflicts.",
+            "D": "When you want to optimize the build process for speed."
+        },
+        "correct_answer": "C",
+        "explanation": "Lenient artifact resolution is typically used in scenarios where some dependencies may not exist or there are unresolved conflicts. This approach allows the build to proceed even in the presence of such issues, making it useful for projects with less stable dependency trees."
+    },
+    {
+        "question": "What is the purpose of component filtering in Gradle's artifact resolution process?",
+        "options": {
+            "A": "To select specific artifacts from a component based on defined criteria",
+            "B": "To automatically resolve all artifacts without any conditions",
+            "C": "To merge multiple components into a single artifact",
+            "D": "To prevent any artifacts from being resolved"
+        },
+        "correct_answer": "A",
+        "explanation": "Component filtering in Gradle's artifact resolution process is used to select specific artifacts from a component based on defined criteria. This allows developers to control which artifacts are included in the resolution results, ensuring that only relevant artifacts are processed."
+    },
+    {
+        "question": "Which method is used to apply filters to artifacts in Gradle's ArtifactView API?",
+        "options": {
+            "A": "applyFilter()",
+            "B": "componentFilter()",
+            "C": "artifactFilter()",
+            "D": "selectArtifacts()"
+        },
+        "correct_answer": "B",
+        "explanation": "The method used to apply filters to artifacts in Gradle's ArtifactView API is componentFilter(). This method allows users to specify conditions that determine which artifacts from a component should be included in the resolution results."
+    },
+    {
+        "question": "What type of information does the componentFilter method receive to apply filtering?",
+        "options": {
+            "A": "The version of the artifact",
+            "B": "The ComponentIdentifier of the component",
+            "C": "The file path of the artifact",
+            "D": "The metadata of the artifact"
+        },
+        "correct_answer": "B",
+        "explanation": "The componentFilter method receives the ComponentIdentifier of the component to apply filtering. This identifier provides the necessary context to determine which artifacts belong to which component, allowing for precise filtering based on component characteristics."
+    },
+    {
+        "question": "What is a potential benefit of using component filtering in artifact resolution?",
+        "options": {
+            "A": "It guarantees that all artifacts will be resolved successfully.",
+            "B": "It allows for more efficient resolution by excluding unnecessary artifacts.",
+            "C": "It simplifies the dependency graph by removing all components.",
+            "D": "It automatically updates all dependencies to their latest versions."
+        },
+        "correct_answer": "B",
+        "explanation": "A potential benefit of using component filtering in artifact resolution is that it allows for more efficient resolution by excluding unnecessary artifacts. By filtering out artifacts that are not needed, the resolution process can be streamlined, reducing overhead and improving performance."
+    }
+]

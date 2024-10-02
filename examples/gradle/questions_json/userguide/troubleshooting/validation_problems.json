@@ -1,0 +1,354 @@
+[
+    {
+        "question": "What is the purpose of task validation in Gradle?",
+        "options": {
+            "A": "To ensure that tasks are executed in the correct order",
+            "B": "To check for errors in task configuration before execution",
+            "C": "To optimize the performance of task execution",
+            "D": "To automatically generate tasks based on project structure"
+        },
+        "correct_answer": "B",
+        "explanation": "The purpose of task validation in Gradle is to check for errors in task configuration before execution. This includes ensuring that all required properties are set, that annotations are used correctly, and that there are no conflicting or invalid configurations, which helps prevent runtime errors during the build process."
+    },
+    {
+        "question": "What happens if a required property for a Gradle task is not set?",
+        "options": {
+            "A": "The task will execute with default values",
+            "B": "Gradle will skip the task without any error",
+            "C": "Gradle will fail the build with an error message",
+            "D": "The task will be marked as optional"
+        },
+        "correct_answer": "C",
+        "explanation": "If a required property for a Gradle task is not set, Gradle will fail the build with an error message. This is because Gradle expects all required properties to be configured to ensure that the task can execute successfully, and missing values can lead to unpredictable behavior."
+    },
+    {
+        "question": "What is the role of normalization in Gradle task validation?",
+        "options": {
+            "A": "To ensure that all tasks run in parallel",
+            "B": "To determine if the absolute path of input files matters",
+            "C": "To optimize the memory usage of the build process",
+            "D": "To automatically clean up temporary files after task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "Normalization in Gradle task validation is used to determine if the absolute path of input files matters or if only the contents are relevant. This is crucial for caching, as it allows Gradle to reuse outputs of tasks across different machines or locations, enhancing build efficiency."
+    },
+    {
+        "question": "What should you do if you encounter an 'invalid use of cacheable annotation' error?",
+        "options": {
+            "A": "Change the task type to a different annotation",
+            "B": "Remove the annotation from the type",
+            "C": "Add a new property to the task",
+            "D": "Modify the build script to include more tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter an 'invalid use of cacheable annotation' error, you should remove the annotation from the type. This error indicates that the annotation is being used incorrectly, such as applying `@CacheableTransform` to a non-artifact transform or `@CacheableTask` to something that is not a task."
+    },
+    {
+        "question": "What is the purpose of cacheable annotations in Gradle?",
+        "options": {
+            "A": "To mark tasks or transforms that can be reused across builds",
+            "B": "To indicate that a task should always run regardless of its inputs",
+            "C": "To prevent tasks from being executed in parallel",
+            "D": "To specify the order in which tasks should be executed"
+        },
+        "correct_answer": "A",
+        "explanation": "Cacheable annotations are used in Gradle to mark tasks or transforms that can be reused across builds. This allows Gradle to cache the outputs of these tasks or transforms, improving build performance by avoiding unnecessary re-execution when the inputs have not changed."
+    },
+    {
+        "question": "Which annotation should be used for a task that is intended to be cacheable?",
+        "options": {
+            "A": "@CacheableTask",
+            "B": "@Input",
+            "C": "@Output",
+            "D": "@TaskAction"
+        },
+        "correct_answer": "A",
+        "explanation": "The annotation @CacheableTask is specifically designed to indicate that a task is cacheable. This means that Gradle can store the outputs of the task and reuse them in future builds if the inputs remain unchanged, thus optimizing build times."
+    },
+    {
+        "question": "What happens if a cacheable task does not declare a normalization strategy?",
+        "options": {
+            "A": "The task will always run, ignoring caching.",
+            "B": "Caching will be highly ineffective.",
+            "C": "The task will fail to execute.",
+            "D": "The task will be marked as non-cacheable."
+        },
+        "correct_answer": "B",
+        "explanation": "If a cacheable task does not declare a normalization strategy, caching will be highly ineffective. Normalization helps Gradle understand how to treat input properties, such as whether the absolute path matters or if only the contents are relevant, which is crucial for effective caching."
+    },
+    {
+        "question": "What is a common mistake when using cacheable annotations on properties?",
+        "options": {
+            "A": "Using them on properties without getters.",
+            "B": "Using them on properties with default values.",
+            "C": "Using them on properties that are always required.",
+            "D": "Using them on properties that are not mutable."
+        },
+        "correct_answer": "A",
+        "explanation": "A common mistake when using cacheable annotations is applying them to properties that do not have corresponding getters. Gradle only recognizes annotations on properties if there is a getter method, so without it, the annotations will have no effect."
+    },
+    {
+        "question": "What is the purpose of declaring a normalization strategy in Gradle?",
+        "options": {
+            "A": "To specify how input files should be compared for caching purposes",
+            "B": "To determine the output format of a task",
+            "C": "To define the execution order of tasks",
+            "D": "To manage the visibility of properties in a task"
+        },
+        "correct_answer": "A",
+        "explanation": "The purpose of declaring a normalization strategy in Gradle is to specify how input files should be compared for caching purposes. This ensures that Gradle can effectively reuse outputs of tasks by understanding whether the absolute paths of input files matter or if only their contents are relevant."
+    },
+    {
+        "question": "Which annotation can be used to declare that a file input should be normalized based on its contents rather than its absolute path?",
+        "options": {
+            "A": "@InputFile",
+            "B": "@PathSensitive",
+            "C": "@OutputDirectory",
+            "D": "@Optional"
+        },
+        "correct_answer": "B",
+        "explanation": "The @PathSensitive annotation can be used to declare that a file input should be normalized based on its contents rather than its absolute path. This allows Gradle to determine if the input files are equivalent based on their content, which is crucial for effective caching."
+    },
+    {
+        "question": "What happens if a normalization strategy is not declared for a cacheable task in Gradle?",
+        "options": {
+            "A": "The task will always execute, regardless of input changes.",
+            "B": "Caching will be highly ineffective, leading to unnecessary task executions.",
+            "C": "The task will fail to compile.",
+            "D": "Gradle will ignore the task entirely."
+        },
+        "correct_answer": "B",
+        "explanation": "If a normalization strategy is not declared for a cacheable task in Gradle, caching will be highly ineffective. This means that Gradle cannot determine if the outputs of the task can be reused, leading to unnecessary task executions and reduced build performance."
+    },
+    {
+        "question": "Which of the following annotations is NOT related to declaring a normalization strategy in Gradle?",
+        "options": {
+            "A": "@Classpath",
+            "B": "@Input",
+            "C": "@CompileClasspath",
+            "D": "@PathSensitive"
+        },
+        "correct_answer": "B",
+        "explanation": "The @Input annotation is not related to declaring a normalization strategy in Gradle. It simply indicates that a property is an input to a task, whereas @Classpath, @CompileClasspath, and @PathSensitive are specifically used to define how inputs should be normalized for caching purposes."
+    },
+    {
+        "question": "What is the purpose of input and output annotations in Gradle tasks?",
+        "options": {
+            "A": "To define the dependencies between tasks",
+            "B": "To specify which properties are inputs or outputs for up-to-date checking and caching",
+            "C": "To control the execution order of tasks",
+            "D": "To manage the visibility of task properties"
+        },
+        "correct_answer": "B",
+        "explanation": "Input and output annotations in Gradle tasks are used to specify which properties are considered inputs or outputs. This is crucial for up-to-date checking and caching, as it allows Gradle to determine whether a task needs to be executed based on changes to its inputs or outputs."
+    },
+    {
+        "question": "What happens if a property in a Gradle task is not annotated with an input or output annotation?",
+        "options": {
+            "A": "Gradle will ignore the property completely",
+            "B": "The property will be treated as an input by default",
+            "C": "Up-to-date checking and caching will not work for that property",
+            "D": "The task will fail during execution"
+        },
+        "correct_answer": "C",
+        "explanation": "If a property in a Gradle task is not annotated with an input or output annotation, Gradle does not know how to treat that property. As a result, up-to-date checking and caching will not work for that property, which can lead to inefficient builds."
+    },
+    {
+        "question": "Which annotation should be used for a property that represents a directory input in a Gradle task?",
+        "options": {
+            "A": "@Input",
+            "B": "@InputDirectory",
+            "C": "@OutputDirectory",
+            "D": "@InputFile"
+        },
+        "correct_answer": "B",
+        "explanation": "The @InputDirectory annotation should be used for properties that represent directory inputs in a Gradle task. This annotation informs Gradle that the contents of the directory are relevant for up-to-date checking and caching."
+    },
+    {
+        "question": "What is a common mistake when using input annotations on file-based properties in Gradle?",
+        "options": {
+            "A": "Using @InputFile on a directory property",
+            "B": "Using @Output on an input property",
+            "C": "Using @InputDirectory on a file property",
+            "D": "Using @Input on a property without a getter"
+        },
+        "correct_answer": "A",
+        "explanation": "A common mistake is using the @InputFile annotation on a directory property. This is incorrect because @InputFile is meant for regular file inputs, while @InputDirectory should be used for directory inputs to ensure proper up-to-date checking and caching."
+    },
+    {
+        "question": "What is the primary purpose of declaring task dependencies in Gradle?",
+        "options": {
+            "A": "To ensure tasks are executed in a specific order",
+            "B": "To reduce the overall build time",
+            "C": "To allow tasks to run concurrently",
+            "D": "To automatically generate documentation for tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of declaring task dependencies in Gradle is to ensure that tasks are executed in a specific order. This is important because some tasks may rely on the outputs of others, and establishing dependencies helps Gradle manage the execution flow correctly."
+    },
+    {
+        "question": "What happens if a task does not declare its dependencies explicitly?",
+        "options": {
+            "A": "Gradle will automatically determine the execution order",
+            "B": "The task may fail if its inputs are not ready",
+            "C": "The task will run faster without dependencies",
+            "D": "The task will be skipped during execution"
+        },
+        "correct_answer": "B",
+        "explanation": "If a task does not declare its dependencies explicitly, it may fail if its inputs are not ready when it is executed. This can lead to issues where the task attempts to use outputs from another task that has not yet run, resulting in errors during the build process."
+    },
+    {
+        "question": "Which of the following is a correct way to declare a dependency between two tasks in Gradle?",
+        "options": {
+            "A": "taskA.dependsOn(taskB)",
+            "B": "taskA.after(taskB)",
+            "C": "taskA.before(taskB)",
+            "D": "taskA.runAfter(taskB)"
+        },
+        "correct_answer": "A",
+        "explanation": "The correct way to declare a dependency between two tasks in Gradle is to use the `dependsOn` method, such as `taskA.dependsOn(taskB)`. This explicitly tells Gradle that `taskA` should not run until `taskB` has completed successfully."
+    },
+    {
+        "question": "What is an implicit dependency in Gradle?",
+        "options": {
+            "A": "A dependency that is declared using the `dependsOn` method",
+            "B": "A dependency that is inferred from the outputs of another task",
+            "C": "A dependency that is ignored by Gradle",
+            "D": "A dependency that is only used for documentation purposes"
+        },
+        "correct_answer": "B",
+        "explanation": "An implicit dependency in Gradle is a dependency that is inferred from the outputs of another task. This means that if a task uses the output of another task as an input, Gradle automatically establishes a dependency between them, ensuring the correct execution order."
+    },
+    {
+        "question": "What is the purpose of using annotations in Gradle build scripts?",
+        "options": {
+            "A": "To define the structure of the build script",
+            "B": "To indicate input and output properties for tasks",
+            "C": "To improve the performance of the build process",
+            "D": "To automatically generate documentation for the build"
+        },
+        "correct_answer": "B",
+        "explanation": "Annotations in Gradle build scripts are primarily used to indicate which properties are inputs and outputs for tasks. This helps Gradle understand how to manage task dependencies, caching, and up-to-date checks, ensuring that the build process runs efficiently and correctly."
+    },
+    {
+        "question": "What does the error 'Missing normalization annotation' indicate?",
+        "options": {
+            "A": "A required property is not set in the build script",
+            "B": "A task or artifact transform lacks a normalization strategy",
+            "C": "An output property is incorrectly defined",
+            "D": "A property is annotated with conflicting annotations"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'Missing normalization annotation' error indicates that a cacheable task or artifact transform does not declare how its file or file collection input properties should be normalized. Normalization is crucial for ensuring that outputs can be reused across different environments, and without it, caching becomes ineffective."
+    },
+    {
+        "question": "What should you do if you encounter the error 'Input file doesn't exist'?",
+        "options": {
+            "A": "Ensure the input file is correctly specified and exists before the task runs",
+            "B": "Change the input file type to a directory",
+            "C": "Remove the input file declaration from the task",
+            "D": "Add a default value for the input file property"
+        },
+        "correct_answer": "A",
+        "explanation": "If you encounter the 'Input file doesn't exist' error, it typically means that the file expected as an input for a task is not present at the time the task is executed. To resolve this, you should ensure that the input file is correctly specified and that it exists before the task runs, often by checking task dependencies."
+    },
+    {
+        "question": "What does the error 'Invalid use of cacheable annotation' imply?",
+        "options": {
+            "A": "A task is not marked as cacheable when it should be",
+            "B": "A cacheable annotation is applied to a non-cacheable type",
+            "C": "A property is incorrectly annotated with multiple conflicting annotations",
+            "D": "A task is missing required input annotations"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'Invalid use of cacheable annotation' error implies that a cacheable annotation, such as `@CacheableTransform` or `@CacheableTask`, has been applied to a type that does not support it. This indicates a misuse of the annotation, and it should be removed or corrected to ensure proper functionality."
+    },
+    {
+        "question": "What is the purpose of using the `@Input` annotation in Gradle?",
+        "options": {
+            "A": "To indicate that a property is an input for up-to-date checking",
+            "B": "To specify that a property is an output of a task",
+            "C": "To mark a property as optional for task execution",
+            "D": "To define a property that should be ignored by Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "The `@Input` annotation is used to indicate that a property is an input for up-to-date checking in Gradle. This means that Gradle will consider the value of this property when determining if a task needs to be executed again, based on whether the inputs have changed since the last execution."
+    },
+    {
+        "question": "Which annotation should be used for a property that represents a directory input in Gradle?",
+        "options": {
+            "A": "@InputFile",
+            "B": "@InputDirectory",
+            "C": "@OutputDirectory",
+            "D": "@Optional"
+        },
+        "correct_answer": "B",
+        "explanation": "The `@InputDirectory` annotation should be used for properties that represent a directory input in Gradle. This informs Gradle that the contents of the directory are relevant for up-to-date checking, allowing it to track changes effectively."
+    },
+    {
+        "question": "What happens if a property is annotated with `@OutputDirectory` but is configured as a regular file?",
+        "options": {
+            "A": "Gradle will execute the task successfully.",
+            "B": "Gradle will throw an error indicating a type mismatch.",
+            "C": "Gradle will ignore the output annotation.",
+            "D": "Gradle will treat it as an input instead."
+        },
+        "correct_answer": "B",
+        "explanation": "If a property is annotated with `@OutputDirectory` but is configured as a regular file, Gradle will throw an error indicating a type mismatch. This is because the output property must correspond to the expected type, and a directory cannot be a regular file."
+    },
+    {
+        "question": "What is the consequence of not annotating a property that is intended to be an input or output in Gradle?",
+        "options": {
+            "A": "Gradle will automatically infer the property type.",
+            "B": "Up-to-date checking and caching will not work for that property.",
+            "C": "The property will be ignored by Gradle.",
+            "D": "The task will fail to execute."
+        },
+        "correct_answer": "B",
+        "explanation": "If a property is not annotated with an appropriate input or output annotation, Gradle will not know how to treat that property, which means that up-to-date checking and caching will not work for it. This can lead to inefficient builds as Gradle cannot determine if the task needs to be re-executed."
+    },
+    {
+        "question": "What is the primary purpose of annotations in Gradle?",
+        "options": {
+            "A": "To provide metadata that influences task behavior and input/output handling",
+            "B": "To define the execution order of tasks",
+            "C": "To optimize the performance of Gradle builds",
+            "D": "To create user interfaces for Gradle tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "Annotations in Gradle serve as metadata that influences how tasks handle inputs and outputs, as well as their behavior during execution. They help Gradle understand the relationships between properties and tasks, enabling features like up-to-date checking and caching."
+    },
+    {
+        "question": "Which annotation would you use to indicate that a property is optional in a Gradle task?",
+        "options": {
+            "A": "@Input",
+            "B": "@Output",
+            "C": "@Optional",
+            "D": "@Required"
+        },
+        "correct_answer": "C",
+        "explanation": "The @Optional annotation is used to indicate that a property in a Gradle task is not required and may not always have a value. This allows for more flexible task configurations, as the absence of a value will not cause the task to fail."
+    },
+    {
+        "question": "What happens if a property in a Gradle task is not annotated correctly?",
+        "options": {
+            "A": "Gradle will ignore the property entirely.",
+            "B": "The task will always execute successfully.",
+            "C": "Gradle will not be able to perform up-to-date checks or caching for that property.",
+            "D": "The property will automatically be treated as an input."
+        },
+        "correct_answer": "C",
+        "explanation": "If a property in a Gradle task is not annotated correctly, Gradle cannot determine its role as an input or output. This leads to ineffective up-to-date checks and caching, as Gradle lacks the necessary information to track changes to that property."
+    },
+    {
+        "question": "Which annotation should be used to indicate that a property represents a directory input in a Gradle task?",
+        "options": {
+            "A": "@InputFile",
+            "B": "@InputDirectory",
+            "C": "@OutputDirectory",
+            "D": "@Input"
+        },
+        "correct_answer": "B",
+        "explanation": "The @InputDirectory annotation is specifically used to indicate that a property represents a directory input in a Gradle task. This helps Gradle understand the nature of the input and manage it appropriately during task execution."
+    }
+]

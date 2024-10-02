@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the primary purpose of file system watching in Gradle?",
+        "options": {
+            "A": "To monitor changes in the file system and update the Virtual File System accordingly",
+            "B": "To optimize memory usage during builds",
+            "C": "To compile code faster by skipping unnecessary tasks",
+            "D": "To manage user permissions for file access"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of file system watching in Gradle is to monitor changes in the file system and update the Virtual File System (VFS) accordingly. This allows Gradle to determine what needs to be rebuilt during repeat builds, improving efficiency and reducing build times."
+    },
+    {
+        "question": "How can file system watching be enabled for all builds in Gradle?",
+        "options": {
+            "A": "By using the '--enable-watch-fs' command line option",
+            "B": "By adding 'org.gradle.vfs.watch=true' to the gradle.properties file",
+            "C": "By setting the environment variable 'GRADLE_WATCH_FS=true'",
+            "D": "By installing a specific Gradle plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "File system watching can be enabled for all builds in Gradle by adding 'org.gradle.vfs.watch=true' to the gradle.properties file. This setting ensures that file system watching is active unless explicitly disabled with the '--no-watch-fs' flag."
+    },
+    {
+        "question": "Which of the following file systems is NOT supported for file system watching in Gradle?",
+        "options": {
+            "A": "NTFS",
+            "B": "ext4",
+            "C": "NFS",
+            "D": "APFS"
+        },
+        "correct_answer": "C",
+        "explanation": "NFS (Network File System) is not supported for file system watching in Gradle. While other file systems like NTFS, ext4, and APFS are supported, Gradle acts conservatively when it encounters unsupported file systems, which can limit its ability to track changes effectively."
+    },
+    {
+        "question": "What happens if file system watching encounters unsupported file systems?",
+        "options": {
+            "A": "It will ignore all changes and not rebuild anything",
+            "B": "It retains information about unsupported file systems between builds",
+            "C": "It drops the VFS state and cannot benefit from file system watching",
+            "D": "It automatically disables file system watching for the entire project"
+        },
+        "correct_answer": "C",
+        "explanation": "If file system watching encounters unsupported file systems, it drops the VFS state and cannot benefit from file system watching. This means that Gradle will not retain information about changes in unsupported file systems, which can affect the efficiency of the build process."
+    },
+    {
+        "question": "What is the primary purpose of the Virtual File System (VFS) in Gradle?",
+        "options": {
+            "A": "To manage project dependencies",
+            "B": "To calculate what needs to be rebuilt on repeat builds",
+            "C": "To store build artifacts",
+            "D": "To optimize network file transfers"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Virtual File System (VFS) in Gradle is to calculate what needs to be rebuilt on repeat builds of a project. By maintaining an up-to-date representation of the file system, Gradle can efficiently determine which files have changed and require rebuilding, thus optimizing the build process."
+    },
+    {
+        "question": "How can file system watching be enabled for all builds in Gradle?",
+        "options": {
+            "A": "By using the '--enable-watch' flag",
+            "B": "By adding 'org.gradle.vfs.watch=true' to gradle.properties",
+            "C": "By setting the environment variable 'GRADLE_WATCH_FS'",
+            "D": "By including a specific plugin in the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable file system watching for all builds in Gradle, you can add the line 'org.gradle.vfs.watch=true' to the gradle.properties file. This setting ensures that file system watching is active unless explicitly disabled with the '--no-watch-fs' flag."
+    },
+    {
+        "question": "Which of the following file systems is NOT supported for file system watching in Gradle?",
+        "options": {
+            "A": "NTFS",
+            "B": "ext4",
+            "C": "NFS",
+            "D": "APFS"
+        },
+        "correct_answer": "C",
+        "explanation": "NFS (Network File System) is not supported for file system watching in Gradle. While Gradle supports several local file systems like NTFS, ext4, and APFS, it does not retain information about changes on unsupported file systems like NFS, which can lead to inefficiencies in the build process."
+    },
+    {
+        "question": "What happens if Gradle encounters unsupported file systems while file system watching is enabled?",
+        "options": {
+            "A": "It will ignore all changes on those file systems.",
+            "B": "It will retain information about those file systems between builds.",
+            "C": "It will drop the VFS state and stop watching.",
+            "D": "It will log an error and continue watching."
+        },
+        "correct_answer": "A",
+        "explanation": "When file system watching is enabled and Gradle encounters unsupported file systems, it acts conservatively and ignores all changes on those file systems. This means that Gradle does not retain information about unsupported file systems between builds, which can affect the efficiency of the build process."
+    },
+    {
+        "question": "What is the primary purpose of Gradle's file system watching feature?",
+        "options": {
+            "A": "To monitor changes in the file system and optimize rebuilds",
+            "B": "To manage dependencies between different projects",
+            "C": "To compile source code into executable files",
+            "D": "To track user activity within the Gradle environment"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Gradle's file system watching feature is to monitor changes in the file system and optimize rebuilds. By keeping track of file changes, Gradle can determine what needs to be rebuilt, thus improving build efficiency and reducing unnecessary work."
+    },
+    {
+        "question": "How can a user enable file system watching for all builds in Gradle?",
+        "options": {
+            "A": "By using the '--no-watch-fs' flag",
+            "B": "By adding 'org.gradle.vfs.watch=true' to gradle.properties",
+            "C": "By running the build with the '--verbose' flag",
+            "D": "By setting 'org.gradle.vfs.verbose=false' in gradle.properties"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable file system watching for all builds in Gradle, a user can add 'org.gradle.vfs.watch=true' to the gradle.properties file. This setting ensures that file system watching is active unless explicitly disabled with the '--no-watch-fs' flag."
+    },
+    {
+        "question": "Which of the following operating systems is NOT supported for Gradle's file system watching feature?",
+        "options": {
+            "A": "Windows 10",
+            "B": "Ubuntu 16.04",
+            "C": "macOS 11",
+            "D": "Red Hat Enterprise Linux 8"
+        },
+        "correct_answer": "C",
+        "explanation": "macOS 11 is not supported for Gradle's file system watching feature; the supported version starts from macOS 12 (Monterey) or later. The other listed operating systems are compatible with this feature."
+    },
+    {
+        "question": "What happens if Gradle encounters unsupported file systems while file system watching is enabled?",
+        "options": {
+            "A": "Gradle will ignore all changes on those file systems.",
+            "B": "Gradle retains information about unsupported file systems between builds.",
+            "C": "Gradle will drop the VFS state and stop watching entirely.",
+            "D": "Gradle acts conservatively and does not retain information about unsupported file systems."
+        },
+        "correct_answer": "D",
+        "explanation": "When file system watching is enabled and Gradle encounters unsupported file systems, it acts conservatively and does not retain information about those file systems between builds. This means that Gradle will not optimize rebuilds based on changes in unsupported file systems."
+    },
+    {
+        "question": "Which of the following operating systems is supported for file system watching by Gradle?",
+        "options": {
+            "A": "Windows 10, version 1709 and later",
+            "B": "Windows 7",
+            "C": "Ubuntu 14.04",
+            "D": "macOS 10.15"
+        },
+        "correct_answer": "A",
+        "explanation": "Gradle supports file system watching on Windows 10, version 1709 and later. This compatibility ensures that users on these operating systems can take advantage of Gradle's file system watching features, which help optimize build processes."
+    },
+    {
+        "question": "What is a requirement for an operating system to support Gradle's file system watching?",
+        "options": {
+            "A": "It must have a graphical user interface.",
+            "B": "It must support native file system watching features.",
+            "C": "It must be a server operating system.",
+            "D": "It must be a 64-bit operating system."
+        },
+        "correct_answer": "B",
+        "explanation": "For an operating system to support Gradle's file system watching, it must have native file system watching features. This capability allows Gradle to monitor changes in the file system efficiently, which is essential for maintaining an up-to-date Virtual File System (VFS) during builds."
+    },
+    {
+        "question": "Which file system types are supported by Gradle for file system watching?",
+        "options": {
+            "A": "FAT32 and exFAT",
+            "B": "APFS and NTFS",
+            "C": "Samba and NFS",
+            "D": "HFS and UFS"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle supports file system watching on specific file system types, including APFS and NTFS. These file systems are compatible with Gradle's monitoring capabilities, allowing it to track changes effectively. In contrast, network file systems like Samba and NFS are not supported."
+    },
+    {
+        "question": "What happens if file system watching is enabled on an unsupported file system?",
+        "options": {
+            "A": "Gradle will ignore all changes.",
+            "B": "Gradle retains information about unsupported file systems between builds.",
+            "C": "Gradle will drop information about unsupported file systems between builds.",
+            "D": "Gradle will automatically disable file system watching."
+        },
+        "correct_answer": "C",
+        "explanation": "When file system watching is enabled on an unsupported file system, Gradle acts conservatively and drops information about unsupported file systems between builds. This means that any changes made on these unsupported systems will not be tracked, which can affect the build process."
+    },
+    {
+        "question": "Which of the following file system types is supported by Gradle for file system watching?",
+        "options": {
+            "A": "FAT32",
+            "B": "ext4",
+            "C": "HFS",
+            "D": "exFAT"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle supports several file system types for file system watching, including ext4. This file system is commonly used in Linux environments and is compatible with Gradle's file watching capabilities, allowing for efficient rebuilds based on file changes."
+    },
+    {
+        "question": "What is a characteristic of file systems that Gradle does not support for file system watching?",
+        "options": {
+            "A": "They must be local to the machine.",
+            "B": "They can be mounted from a network drive.",
+            "C": "They must be compatible with inotify.",
+            "D": "They should allow symlinks."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle does not support file system watching on network file systems like Samba and NFS. When a project directory is mounted from a network drive, Gradle acts conservatively and does not retain information about unsupported file systems between builds, which can hinder the efficiency of file watching."
+    },
+    {
+        "question": "Which operating system feature does Gradle utilize for file system watching?",
+        "options": {
+            "A": "Virtual Memory Management",
+            "B": "Native Operating System Features",
+            "C": "File Compression Techniques",
+            "D": "User Interface Elements"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle uses native operating system features to implement file system watching. This allows it to efficiently monitor changes in the file system and update the Virtual File System (VFS) accordingly, enhancing the build process by reducing unnecessary rebuilds."
+    },
+    {
+        "question": "What happens when file system watching is enabled on unsupported file systems?",
+        "options": {
+            "A": "Gradle retains all information about the file system.",
+            "B": "Gradle ignores changes and does not rebuild.",
+            "C": "Gradle conservatively acts and does not retain information.",
+            "D": "Gradle automatically disables file system watching."
+        },
+        "correct_answer": "C",
+        "explanation": "When file system watching is enabled on unsupported file systems, Gradle acts conservatively and does not retain information about those file systems between builds. This means that any changes made on unsupported file systems may not trigger the expected rebuilds, leading to potential inefficiencies."
+    },
+    {
+        "question": "What is the purpose of logging in build tools like Gradle?",
+        "options": {
+            "A": "To track changes in the file system during builds",
+            "B": "To enhance the graphical user interface of the tool",
+            "C": "To manage user permissions for project files",
+            "D": "To optimize the performance of the build process"
+        },
+        "correct_answer": "A",
+        "explanation": "The purpose of logging in build tools like Gradle is primarily to track changes in the file system during builds. This allows developers to understand what files have been modified, added, or removed, which is crucial for determining what needs to be rebuilt and for troubleshooting issues that may arise during the build process."
+    },
+    {
+        "question": "How can verbose logging be enabled in Gradle?",
+        "options": {
+            "A": "By setting the 'org.gradle.verbose' property to true",
+            "B": "By using the '--verbose' command line option",
+            "C": "By setting the 'org.gradle.vfs.verbose' property to true",
+            "D": "By adding a logging configuration file to the project"
+        },
+        "correct_answer": "C",
+        "explanation": "Verbose logging in Gradle can be enabled by setting the 'org.gradle.vfs.verbose' property to true. This can be done either through the command line or by configuring the property in the 'gradle.properties' file. This setting allows users to see detailed information about Virtual File System changes at the beginning and end of a build."
+    },
+    {
+        "question": "What happens when file system watching is enabled by default in Gradle?",
+        "options": {
+            "A": "It ignores all changes made to the project files.",
+            "B": "It retains information about unsupported file systems between builds.",
+            "C": "It conservatively acts when encountering unsupported file systems.",
+            "D": "It automatically disables logging for performance reasons."
+        },
+        "correct_answer": "C",
+        "explanation": "When file system watching is enabled by default in Gradle, it acts conservatively when encountering unsupported file systems. This means that if Gradle detects content on an unsupported file system, it will not retain information about those files between builds, ensuring that the build process remains stable and predictable."
+    },
+    {
+        "question": "What is a common reason for Gradle not detecting some changes during a build?",
+        "options": {
+            "A": "The build lacks declaration for some inputs or outputs",
+            "B": "The build is running on an unsupported operating system",
+            "C": "The build is using an outdated version of Gradle",
+            "D": "The build is configured to run in verbose mode"
+        },
+        "correct_answer": "A",
+        "explanation": "A common reason for Gradle not detecting changes is that the build lacks proper declarations for some inputs or outputs. This can lead to Gradle being unaware of certain changes that should trigger a rebuild, resulting in potential issues during the build process."
+    },
+    {
+        "question": "What should you do if you encounter the message 'Dropped VFS state due to lost state' during a build?",
+        "options": {
+            "A": "Ignore the message as it does not affect the build",
+            "B": "Check for too many changes that the watching API couldn't handle",
+            "C": "Increase the memory allocated to the Gradle Daemon",
+            "D": "Reinstall Gradle to fix the issue"
+        },
+        "correct_answer": "B",
+        "explanation": "If you encounter the message 'Dropped VFS state due to lost state', it indicates that the build cannot benefit from file system watching due to either an unknown file system event or too many changes occurring at once. Addressing the number of changes can help resolve this issue."
+    },
+    {
+        "question": "Which command can be used to enable verbose logging for Virtual File System (VFS) changes in Gradle?",
+        "options": {
+            "A": "$ gradle <task> --verbose",
+            "B": "$ gradle <task> -Dorg.gradle.vfs.verbose=true",
+            "C": "$ gradle <task> --watch-fs",
+            "D": "$ gradle <task> -Dorg.gradle.verbose=true"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable verbose logging for Virtual File System (VFS) changes in Gradle, you can use the command '$ gradle <task> -Dorg.gradle.vfs.verbose=true'. This command provides detailed output about VFS changes at the start and end of the build process."
+    },
+    {
+        "question": "What is a potential consequence of using file system watching on unsupported file systems?",
+        "options": {
+            "A": "Gradle will retain information about all files between builds",
+            "B": "Gradle may not detect changes and will not rebuild correctly",
+            "C": "File system watching will automatically be disabled",
+            "D": "Gradle will run slower due to compatibility issues"
+        },
+        "correct_answer": "B",
+        "explanation": "When file system watching is enabled on unsupported file systems, Gradle may not detect changes correctly, leading to issues where the build does not rebuild as expected. This is because Gradle acts conservatively and does not retain information about unsupported file systems between builds."
+    }
+]

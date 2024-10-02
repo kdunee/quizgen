@@ -1,0 +1,365 @@
+[
+    {
+        "question": "What is the primary benefit of using a build cache in Android projects?",
+        "options": {
+            "A": "To ensure all tasks are run every time a build is initiated",
+            "B": "To significantly improve build performance by reusing outputs from previous builds",
+            "C": "To eliminate the need for version control in project management",
+            "D": "To automatically update all dependencies in the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using a build cache in Android projects is to significantly improve build performance by reusing outputs from previous builds. This allows tasks that have already been executed with the same inputs to be skipped, leading to faster build times, especially in continuous integration (CI) environments."
+    },
+    {
+        "question": "Which of the following statements about the build cache is true?",
+        "options": {
+            "A": "The build cache is only useful for local development and has no impact on CI builds.",
+            "B": "The build cache can store outputs from tasks that have been run with identical inputs, allowing for reuse.",
+            "C": "The build cache requires manual intervention to clear outputs after each build.",
+            "D": "The build cache is only applicable to Java projects and not to Android projects."
+        },
+        "correct_answer": "B",
+        "explanation": "The build cache can store outputs from tasks that have been run with identical inputs, allowing for reuse in future builds. This feature is particularly beneficial in both local development and CI environments, as it helps to avoid redundant work and speeds up the build process."
+    },
+    {
+        "question": "What should developers ensure to optimize their build cache performance?",
+        "options": {
+            "A": "They should use outdated versions of the Android Gradle Plugin.",
+            "B": "They should always work with the latest stable versions of the Android Gradle Plugin and Gradle Build Tool.",
+            "C": "They should disable the build cache for all tasks.",
+            "D": "They should avoid using any caching mechanisms in their builds."
+        },
+        "correct_answer": "B",
+        "explanation": "To optimize build cache performance, developers should always work with the latest stable versions of the Android Gradle Plugin and Gradle Build Tool. Each new version typically includes performance improvements and enhancements to the build cache, which can lead to better build efficiency."
+    },
+    {
+        "question": "Which type of tests in Android projects are currently not cacheable?",
+        "options": {
+            "A": "Unit tests",
+            "B": "Instrumented tests (Espresso tests)",
+            "C": "Integration tests",
+            "D": "Functional tests"
+        },
+        "correct_answer": "B",
+        "explanation": "Instrumented tests, often referred to as Espresso tests, are currently not cacheable in Android projects. While other tasks may benefit from caching, the Google Android team is working on making these tests cacheable in future updates."
+    },
+    {
+        "question": "What is the primary benefit of using a build cache in Android projects?",
+        "options": {
+            "A": "To ensure all tasks are run every time a build is initiated",
+            "B": "To significantly improve build performance by reusing outputs from previous builds",
+            "C": "To eliminate the need for version control in project management",
+            "D": "To automatically update all dependencies in the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using a build cache in Android projects is to significantly improve build performance by reusing outputs from previous builds. This allows tasks that have already been executed with the same inputs to be skipped, leading to faster build times."
+    },
+    {
+        "question": "How does the build cache affect Continuous Integration (CI) builds?",
+        "options": {
+            "A": "It requires all tasks to be rebuilt from scratch every time.",
+            "B": "It allows for the reuse of outputs from previous builds, enhancing build speed.",
+            "C": "It prevents any caching of outputs, ensuring fresh builds.",
+            "D": "It only benefits local builds, not CI builds."
+        },
+        "correct_answer": "B",
+        "explanation": "The build cache enhances Continuous Integration (CI) builds by allowing the reuse of outputs from previous builds. Since CI builds often start with a clean slate, the cache can provide significant performance improvements by reusing previously built outputs that match the current inputs."
+    },
+    {
+        "question": "What should developers ensure to optimize their build performance effectively?",
+        "options": {
+            "A": "They should use outdated versions of the Android Gradle Plugin.",
+            "B": "They should always work with the latest stable versions of the Android Gradle Plugin and Gradle Build Tool.",
+            "C": "They should avoid using any caching mechanisms.",
+            "D": "They should disable all plugins to streamline the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "To optimize build performance effectively, developers should always work with the latest stable versions of the Android Gradle Plugin and Gradle Build Tool. Each new version typically includes performance improvements, including enhancements to the build cache."
+    },
+    {
+        "question": "What is a common issue when switching branches during local development?",
+        "options": {
+            "A": "It always leads to build failures.",
+            "B": "It can disrupt incremental builds but can be mitigated by using the local build cache.",
+            "C": "It prevents any caching of outputs.",
+            "D": "It requires a complete reinstallation of the development environment."
+        },
+        "correct_answer": "B",
+        "explanation": "Switching branches during local development can disrupt incremental builds, as the build system may not recognize the outputs from the previous branch. However, this issue can be mitigated by using the local build cache, which allows previously built outputs to be reused, saving time."
+    },
+    {
+        "question": "What is the primary benefit of using a build cache in Continuous Integration (CI) for Android projects?",
+        "options": {
+            "A": "It eliminates the need for version control.",
+            "B": "It significantly improves build performance by reusing previous outputs.",
+            "C": "It ensures that all tasks are always run from scratch.",
+            "D": "It allows for unlimited storage of build artifacts."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using a build cache in Continuous Integration (CI) for Android projects is that it significantly improves build performance by reusing outputs from previous builds. This means that if the same tasks are run with the same inputs, the cached outputs can be reused, reducing the time and resources needed for builds."
+    },
+    {
+        "question": "How does the build cache affect CI builds that start with a 'clean'?",
+        "options": {
+            "A": "It prevents any tasks from being executed.",
+            "B": "It allows for the reuse of outputs from previous builds, improving performance.",
+            "C": "It requires all tasks to be rebuilt from scratch.",
+            "D": "It has no impact on the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "In CI builds that start with a 'clean', the build cache allows for the reuse of outputs from previous builds. Even though the build starts fresh, if the same tasks have been executed with the same inputs in prior builds, their outputs can be retrieved from the cache, leading to significant performance improvements."
+    },
+    {
+        "question": "What is a common practice to enhance the benefits of the build cache in CI?",
+        "options": {
+            "A": "Avoid merging branches frequently.",
+            "B": "Ensure all merges to the main branch are built on CI.",
+            "C": "Disable caching for all tasks.",
+            "D": "Run builds without any prior configurations."
+        },
+        "correct_answer": "B",
+        "explanation": "A common practice to enhance the benefits of the build cache in CI is to ensure that all merges to the main branch are built on CI. This practice allows the first local build of the day to take advantage of the cached outputs from the CI builds, thus improving build efficiency."
+    },
+    {
+        "question": "What happens when a developer frequently switches branches during local development?",
+        "options": {
+            "A": "It completely disables the build cache.",
+            "B": "It can defeat incremental builds but is mitigated by the local build cache.",
+            "C": "It guarantees that all tasks will be rebuilt.",
+            "D": "It has no effect on build performance."
+        },
+        "correct_answer": "B",
+        "explanation": "When a developer frequently switches branches during local development, it can defeat incremental builds, which rely on 'UP-TO-DATE' checks. However, this issue is mitigated by the use of the local build cache, which allows previously built outputs from the original branch to be reused, saving time during subsequent builds."
+    },
+    {
+        "question": "What is the primary benefit of using incremental builds in software development?",
+        "options": {
+            "A": "To ensure that all tasks are rebuilt from scratch every time",
+            "B": "To improve build performance by only recompiling changed components",
+            "C": "To eliminate the need for version control systems",
+            "D": "To make the build process more complex and time-consuming"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using incremental builds is to improve build performance by only recompiling components that have changed since the last build. This approach saves time and resources, allowing developers to focus on new changes rather than rebuilding the entire project."
+    },
+    {
+        "question": "How does switching branches in a project affect incremental builds?",
+        "options": {
+            "A": "It has no effect on incremental builds.",
+            "B": "It can defeat the purpose of incremental builds by requiring a full rebuild.",
+            "C": "It automatically optimizes the build process.",
+            "D": "It ensures that all tasks are marked as up-to-date."
+        },
+        "correct_answer": "B",
+        "explanation": "Switching branches can defeat the purpose of incremental builds because it may require a full rebuild if the changes in the new branch are significant. However, using a local build cache can help mitigate this issue by allowing previously built outputs to be reused."
+    },
+    {
+        "question": "What is a key strategy to optimize build performance in Android projects?",
+        "options": {
+            "A": "Using outdated versions of the Android Gradle Plugin",
+            "B": "Ensuring the latest stable versions of the Android Gradle Plugin and Gradle Build Tool are used",
+            "C": "Avoiding the use of build caches altogether",
+            "D": "Rebuilding all tasks every time a change is made"
+        },
+        "correct_answer": "B",
+        "explanation": "A key strategy to optimize build performance in Android projects is to ensure that the latest stable versions of the Android Gradle Plugin and Gradle Build Tool are used. Each new version typically includes performance improvements, including enhancements to the build cache, which can significantly speed up the build process."
+    },
+    {
+        "question": "Which of the following tasks is typically not cacheable in Android projects?",
+        "options": {
+            "A": "Unit test execution",
+            "B": "Lint analysis",
+            "C": "Compilation of Kotlin source code",
+            "D": "Compilation of Java source code"
+        },
+        "correct_answer": "B",
+        "explanation": "The Lint task is typically not cacheable in Android projects, which means it must be executed every time, potentially leading to performance penalties. In contrast, unit test execution and compilation tasks are generally cacheable, allowing for improved build performance."
+    },
+    {
+        "question": "What does task cacheability refer to in the context of Android projects?",
+        "options": {
+            "A": "The ability to reuse outputs from previous builds to improve build performance",
+            "B": "The requirement for all tasks to be executed every time a build is run",
+            "C": "The process of deleting old build outputs to free up space",
+            "D": "The method of tracking changes in source code for version control"
+        },
+        "correct_answer": "A",
+        "explanation": "Task cacheability refers to the ability to reuse outputs from previous builds, which can significantly improve build performance. By caching the results of tasks that have already been executed with the same inputs, subsequent builds can skip redundant work, leading to faster build times."
+    },
+    {
+        "question": "Why is the build cache particularly beneficial for Continuous Integration (CI) builds?",
+        "options": {
+            "A": "It allows for the automatic generation of documentation.",
+            "B": "It enables the reuse of outputs from previous builds, reducing build time.",
+            "C": "It ensures that all tasks are always up-to-date.",
+            "D": "It eliminates the need for version control systems."
+        },
+        "correct_answer": "B",
+        "explanation": "The build cache is particularly beneficial for CI builds because it allows for the reuse of outputs from previous builds. When a CI build starts with a clean slate, many tasks may have been run with the same inputs in prior builds, allowing the system to pull from the cache and significantly reduce build time."
+    },
+    {
+        "question": "Which of the following statements is true regarding the cacheability of tasks in Android projects?",
+        "options": {
+            "A": "All tasks in an Android project are cacheable by default.",
+            "B": "Only certain tasks, such as compilation and assembly, are cacheable.",
+            "C": "Cacheability is irrelevant for Android projects using Kotlin.",
+            "D": "Cacheability applies only to unit tests in Android projects."
+        },
+        "correct_answer": "B",
+        "explanation": "In Android projects, only certain tasks, such as compilation and assembly tasks provided by the Android Gradle Plugin, are cacheable. This means that not all tasks will benefit from caching, and developers should be aware of which tasks can leverage this feature to improve build performance."
+    },
+    {
+        "question": "What is a common challenge that affects task cacheability when switching branches in local development?",
+        "options": {
+            "A": "All tasks become non-cacheable when switching branches.",
+            "B": "Incremental builds are defeated, but local build cache can mitigate this issue.",
+            "C": "Branch switching automatically clears the build cache.",
+            "D": "Cacheability is only relevant for the main branch."
+        },
+        "correct_answer": "B",
+        "explanation": "A common challenge when switching branches in local development is that it can defeat incremental builds, meaning that tasks may not be marked as `UP-TO-DATE`. However, the local build cache can mitigate this issue by allowing previously built outputs from the original branch to be reused, saving time during the build process."
+    },
+    {
+        "question": "What is the primary purpose of the Android Gradle Plugin?",
+        "options": {
+            "A": "To manage dependencies and build configurations for Android projects",
+            "B": "To provide a user interface for Android development",
+            "C": "To optimize the performance of Java applications",
+            "D": "To create mobile applications without coding"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Android Gradle Plugin is to manage dependencies and build configurations specifically for Android projects. It facilitates the build process by integrating various tools and libraries necessary for Android development, ensuring that the project is built correctly and efficiently."
+    },
+    {
+        "question": "How does the Android Gradle Plugin improve build performance?",
+        "options": {
+            "A": "By eliminating the need for a build cache",
+            "B": "By allowing the reuse of previously built outputs",
+            "C": "By increasing the complexity of build scripts",
+            "D": "By requiring manual configuration for each build"
+        },
+        "correct_answer": "B",
+        "explanation": "The Android Gradle Plugin improves build performance by allowing the reuse of previously built outputs through the build cache. This means that if the same tasks are run with identical inputs, the outputs can be retrieved from the cache rather than being rebuilt, leading to significant time savings during the build process."
+    },
+    {
+        "question": "What should developers do to ensure optimal performance when using the Android Gradle Plugin?",
+        "options": {
+            "A": "Use outdated versions of the plugin",
+            "B": "Regularly update to the latest stable versions of the plugin and Gradle Build Tool",
+            "C": "Avoid using any caching mechanisms",
+            "D": "Limit the use of external libraries"
+        },
+        "correct_answer": "B",
+        "explanation": "To ensure optimal performance when using the Android Gradle Plugin, developers should regularly update to the latest stable versions of both the plugin and the Gradle Build Tool. Each new version typically includes performance improvements and enhancements that can significantly benefit the build process."
+    },
+    {
+        "question": "Which of the following tasks is currently not cacheable in Android projects?",
+        "options": {
+            "A": "Unit test execution",
+            "B": "Lint task execution",
+            "C": "Compilation of Kotlin source code",
+            "D": "Assembly tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "The Lint task execution is currently not cacheable in Android projects. While it is an important tool for identifying issues in the code, it incurs a performance penalty and does not benefit from the caching mechanisms that other tasks, such as unit test execution, do."
+    },
+    {
+        "question": "What is a key difference between Java and Kotlin compilation in the context of Gradle?",
+        "options": {
+            "A": "Kotlin compilation supports compile avoidance like Java does.",
+            "B": "Java compilation is not cacheable, while Kotlin compilation is.",
+            "C": "Kotlin compilation does not currently support compile avoidance in the same way as Java.",
+            "D": "Both Java and Kotlin compilation are equally cacheable."
+        },
+        "correct_answer": "C",
+        "explanation": "A key difference between Java and Kotlin compilation in the context of Gradle is that the Kotlin compiler does not currently support compile avoidance in the same way that the Java compiler does. This means that while Java can skip recompilation of unchanged code, Kotlin may not have the same efficiency in this regard, impacting build performance."
+    },
+    {
+        "question": "Why is it important to use the latest versions of the Android Gradle Plugin and Gradle Build Tool?",
+        "options": {
+            "A": "They provide new features unrelated to performance.",
+            "B": "They include performance improvements and optimizations for the build cache.",
+            "C": "They are required for all Java projects, not just Android.",
+            "D": "They eliminate the need for any caching mechanisms."
+        },
+        "correct_answer": "B",
+        "explanation": "Using the latest versions of the Android Gradle Plugin and Gradle Build Tool is important because each new version includes performance improvements and optimizations for the build cache. This can lead to significant enhancements in build speed and efficiency, particularly for Android projects."
+    },
+    {
+        "question": "What is the impact of using annotation processors with Kotlin in Android projects?",
+        "options": {
+            "A": "They are always cached by default.",
+            "B": "They do not affect build performance at all.",
+            "C": "They may not be cached by default, depending on the Kotlin version.",
+            "D": "They are only relevant for Java projects."
+        },
+        "correct_answer": "C",
+        "explanation": "The impact of using annotation processors with Kotlin in Android projects is that they may not be cached by default, particularly in versions of Kotlin prior to 1.3.30. This can affect build performance, as caching helps to reuse outputs from previous builds, reducing the need for recompilation."
+    },
+    {
+        "question": "What is the primary purpose of unit testing in Android projects?",
+        "options": {
+            "A": "To ensure that individual components function correctly",
+            "B": "To test the entire application as a whole",
+            "C": "To improve the performance of the build process",
+            "D": "To check for memory leaks in the application"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of unit testing is to ensure that individual components or units of code function correctly in isolation. This helps identify bugs early in the development process and ensures that each part of the application behaves as expected before integration with other components."
+    },
+    {
+        "question": "Which of the following statements is true regarding unit tests in Android projects?",
+        "options": {
+            "A": "Unit tests are not cacheable in Android projects.",
+            "B": "Unit tests can be run in isolation from the rest of the application.",
+            "C": "Unit tests are only applicable to Java projects, not Kotlin.",
+            "D": "Unit tests are primarily used for UI testing in Android."
+        },
+        "correct_answer": "B",
+        "explanation": "Unit tests can be run in isolation from the rest of the application, allowing developers to test specific functionalities without interference from other components. This isolation is crucial for accurately assessing the behavior of individual units of code."
+    },
+    {
+        "question": "What is a benefit of using unit tests in the development process?",
+        "options": {
+            "A": "They eliminate the need for integration testing.",
+            "B": "They can significantly reduce the time spent debugging.",
+            "C": "They ensure that the application is free of all bugs.",
+            "D": "They replace the need for manual testing entirely."
+        },
+        "correct_answer": "B",
+        "explanation": "One of the key benefits of using unit tests is that they can significantly reduce the time spent debugging. By catching issues early in the development process, developers can address problems before they escalate, leading to a more efficient workflow and higher quality code."
+    },
+    {
+        "question": "What is the primary purpose of the Lint task in Android projects?",
+        "options": {
+            "A": "To improve build performance by caching outputs",
+            "B": "To identify common issues in the code",
+            "C": "To compile Kotlin source code",
+            "D": "To manage dependencies in the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Lint task in Android projects is to identify common issues in the code. It helps developers catch potential problems early in the development process, ensuring better code quality and adherence to best practices."
+    },
+    {
+        "question": "Which statement is true regarding the cacheability of the Lint task in Android projects?",
+        "options": {
+            "A": "The Lint task is cacheable and improves build times.",
+            "B": "The Lint task is not cacheable and can slow down builds.",
+            "C": "The Lint task is only cacheable in debug builds.",
+            "D": "The Lint task is cacheable only for Kotlin projects."
+        },
+        "correct_answer": "B",
+        "explanation": "The Lint task is currently not cacheable, which means it does not benefit from build caching and can impose a performance penalty during the build process. This is important for developers to consider when optimizing their build times."
+    },
+    {
+        "question": "Why is it recommended to always use the latest version of the Android Gradle Plugin?",
+        "options": {
+            "A": "To ensure all tasks are cacheable.",
+            "B": "To receive performance improvements and new features.",
+            "C": "To avoid compatibility issues with older Android devices.",
+            "D": "To enable support for older versions of Kotlin."
+        },
+        "correct_answer": "B",
+        "explanation": "It is recommended to always use the latest version of the Android Gradle Plugin to receive performance improvements and new features, including enhancements to the build cache and overall build process. Keeping the tools updated helps maintain optimal performance and access to the latest capabilities."
+    }
+]

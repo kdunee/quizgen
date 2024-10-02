@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the primary purpose of the {cpp} Library Plugin in Gradle?",
+        "options": {
+            "A": "To provide tasks and conventions for building a C++ library",
+            "B": "To manage dependencies for Java projects",
+            "C": "To optimize the performance of Gradle builds",
+            "D": "To create user interfaces for C++ applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the {cpp} Library Plugin in Gradle is to provide tasks, conventions, and configurations specifically for building C++ libraries. This includes managing the build process, defining build variants, and handling dependencies relevant to C++ projects."
+    },
+    {
+        "question": "Which of the following best describes the 'build types' in the {cpp} Library Plugin?",
+        "options": {
+            "A": "They determine the operating systems the library can run on.",
+            "B": "They control the optimization and debuggability of the generated binaries.",
+            "C": "They specify the programming languages supported by the library.",
+            "D": "They define the user interface components of the library."
+        },
+        "correct_answer": "B",
+        "explanation": "Build types in the {cpp} Library Plugin, such as 'debug' and 'release', control the optimization and debuggability of the generated binaries. The 'debug' build type generates debug symbols without optimization, while the 'release' build type optimizes the binary and extracts debug symbols."
+    },
+    {
+        "question": "What does the 'linkage' property in the {cpp} Library Plugin specify?",
+        "options": {
+            "A": "The programming language used in the library.",
+            "B": "Whether to create a shared or static library.",
+            "C": "The target audience for the library.",
+            "D": "The version of the Gradle tool being used."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'linkage' property in the {cpp} Library Plugin specifies whether a shared library or a static library should be created. This property allows developers to configure the type of library that best suits their project's needs."
+    },
+    {
+        "question": "In the context of the {cpp} Library Plugin, what is the purpose of the 'api' configuration?",
+        "options": {
+            "A": "To declare dependencies that are internal to the library.",
+            "B": "To declare dependencies that are exported to consumers of the library.",
+            "C": "To manage the build lifecycle of the library.",
+            "D": "To specify the source files for the library."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'api' configuration in the {cpp} Library Plugin is used to declare dependencies that are exported by the library API. Dependencies declared in this configuration will be transitively exposed to consumers, allowing them to compile and link against the library effectively."
+    },
+    {
+        "question": "What is the primary purpose of the {cpp} Library Plugin?",
+        "options": {
+            "A": "To provide tasks and conventions for building a {cpp} library",
+            "B": "To manage dependencies for Java applications",
+            "C": "To optimize the performance of web applications",
+            "D": "To create user interfaces for mobile applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the {cpp} Library Plugin is to provide tasks, conventions, and configurations specifically for building a {cpp} library. This includes managing the build process, defining how the library is compiled and linked, and facilitating the integration of the library into other projects."
+    },
+    {
+        "question": "Which of the following best describes the 'build types' in the {cpp} Library Plugin?",
+        "options": {
+            "A": "They determine the programming language used in the project.",
+            "B": "They control the optimization and debuggability of the generated binaries.",
+            "C": "They specify the user interface components of the library.",
+            "D": "They define the versioning strategy for the library."
+        },
+        "correct_answer": "B",
+        "explanation": "Build types in the {cpp} Library Plugin, such as 'debug' and 'release', control the optimization and debuggability of the generated binaries. The 'debug' build type generates debug symbols without optimization, while the 'release' build type optimizes the binary and extracts debug symbols."
+    },
+    {
+        "question": "What does the 'linkage' property in the {cpp} Library Plugin specify?",
+        "options": {
+            "A": "The programming language used for the library.",
+            "B": "Whether to create a shared or static library.",
+            "C": "The target operating system for the library.",
+            "D": "The version of the library being built."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'linkage' property in the {cpp} Library Plugin specifies whether a shared library or a static library should be created. This property is crucial for determining how the library will be linked and used by other projects."
+    },
+    {
+        "question": "Which task is responsible for compiling {cpp} source files in the {cpp} Library Plugin?",
+        "options": {
+            "A": "link__Variant__",
+            "B": "create__Variant__",
+            "C": "compile__Variant__Cpp",
+            "D": "assemble__Variant__"
+        },
+        "correct_answer": "C",
+        "explanation": "The task responsible for compiling {cpp} source files in the {cpp} Library Plugin is 'compile__Variant__Cpp'. This task compiles the source files using the selected compiler and is created for each variant of the library component."
+    },
+    {
+        "question": "What are build variants in the context of the {cpp} Library Plugin?",
+        "options": {
+            "A": "Different configurations for building the library based on types and targets",
+            "B": "A method for optimizing the library's runtime performance",
+            "C": "A way to manage user permissions for library access",
+            "D": "A technique for compressing library files for distribution"
+        },
+        "correct_answer": "A",
+        "explanation": "Build variants refer to different configurations for building the library based on types (such as debug and release) and target machines. This allows developers to customize the build process according to specific requirements, such as optimization levels and debugging capabilities."
+    },
+    {
+        "question": "Which of the following is a default build type in the {cpp} Library Plugin?",
+        "options": {
+            "A": "production",
+            "B": "debug",
+            "C": "testing",
+            "D": "staging"
+        },
+        "correct_answer": "B",
+        "explanation": "The default build types in the {cpp} Library Plugin are 'debug' and 'release'. The 'debug' build type is used for development and includes debug symbols without optimization, while the 'release' build type is optimized for performance."
+    },
+    {
+        "question": "What does the linkage property in build variants determine?",
+        "options": {
+            "A": "The programming language used for the library",
+            "B": "Whether a shared or static library is created",
+            "C": "The version of the library being built",
+            "D": "The target audience for the library"
+        },
+        "correct_answer": "B",
+        "explanation": "The linkage property in build variants determines whether a shared library or a static library is created. This affects how the library is linked and used by other projects, influencing factors such as memory usage and performance."
+    },
+    {
+        "question": "How does the target machine property affect the build process?",
+        "options": {
+            "A": "It specifies the programming language for the library",
+            "B": "It determines the optimization level of the library",
+            "C": "It identifies the operating system and architecture for which the library is built",
+            "D": "It sets the version control system for the library"
+        },
+        "correct_answer": "C",
+        "explanation": "The target machine property identifies the operating system and architecture for which the library is built. This information is crucial for selecting the appropriate toolchain and ensuring compatibility with the intended environment where the library will run."
+    },
+    {
+        "question": "What is the purpose of the 'api' configuration in dependency management?",
+        "options": {
+            "A": "To declare dependencies that are internal and not exposed to consumers",
+            "B": "To declare dependencies that are exported by the library API",
+            "C": "To manage the build lifecycle of the project",
+            "D": "To specify the target machine for the library"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'api' configuration is used to declare dependencies that are exported by the library API. This means that any dependencies declared in this configuration will be transitively available to consumers of the library, allowing them to compile and link against these dependencies."
+    },
+    {
+        "question": "How does the 'implementation' configuration differ from the 'api' configuration?",
+        "options": {
+            "A": "It is used for declaring dependencies that are exported to consumers",
+            "B": "It is used for declaring internal dependencies that are not exposed to consumers",
+            "C": "It is used to manage the build types of the library",
+            "D": "It is used to specify the linkage type of the library"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'implementation' configuration is used to declare internal dependencies that are not exposed to consumers. This helps prevent consumers from accidentally depending on transitive dependencies, leading to faster compilation and fewer recompilations when implementation dependencies change."
+    },
+    {
+        "question": "What is the role of the 'main__Variant__Implementation' configuration?",
+        "options": {
+            "A": "To declare dependencies for all variants of the main component",
+            "B": "To manage the lifecycle tasks of the library",
+            "C": "To specify the target architecture for the library",
+            "D": "To declare dependencies that are shared across all projects"
+        },
+        "correct_answer": "A",
+        "explanation": "The 'main__Variant__Implementation' configuration is used for declaring implementation dependencies for a specific variant of the main component. This allows for variant-specific dependencies that are internal and not meant to be exposed to consumers of that variant."
+    },
+    {
+        "question": "What benefit does using the 'implementation' configuration provide in terms of compilation?",
+        "options": {
+            "A": "It allows consumers to access all dependencies directly",
+            "B": "It reduces the number of recompilations needed when implementation dependencies change",
+            "C": "It ensures that all dependencies are included in the consumer's compile roots",
+            "D": "It automatically optimizes the build process for shared libraries"
+        },
+        "correct_answer": "B",
+        "explanation": "Using the 'implementation' configuration provides the benefit of reducing the number of recompilations needed when implementation dependencies change. Since these dependencies are not exposed to consumers, changes do not require the consumers to be recompiled, leading to a more efficient build process."
+    },
+    {
+        "question": "What is the primary purpose of the 'api' configuration in the {cpp} Library Plugin?",
+        "options": {
+            "A": "To declare dependencies that are internal to the library and not exposed to consumers",
+            "B": "To declare dependencies that are exported by the library API and available to consumers",
+            "C": "To manage the build lifecycle tasks of the library",
+            "D": "To specify the target machine for the library"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'api' configuration is used to declare dependencies that are exported by the library API. This means that any dependencies declared in this configuration will be available to consumers of the library, allowing them to compile and link against these dependencies."
+    },
+    {
+        "question": "How does the 'implementation' configuration differ from the 'api' configuration?",
+        "options": {
+            "A": "It is used for declaring dependencies that are exported to consumers",
+            "B": "It is used for declaring dependencies that are internal and not exposed to consumers",
+            "C": "It is used to manage the build tasks of the library",
+            "D": "It is used to specify the target architecture for the library"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'implementation' configuration is specifically for declaring dependencies that are internal to the library and not meant to be exposed to consumers. This helps prevent accidental dependencies on transitive dependencies and can lead to faster compilation times."
+    },
+    {
+        "question": "What is a key benefit of using the 'implementation' configuration in the {cpp} Library Plugin?",
+        "options": {
+            "A": "It allows consumers to access all dependencies of the library",
+            "B": "It reduces the compile include roots and link libraries for consumers",
+            "C": "It automatically optimizes the library for release builds",
+            "D": "It ensures that all dependencies are included in the final binary"
+        },
+        "correct_answer": "B",
+        "explanation": "One of the key benefits of using the 'implementation' configuration is that it reduces the compile include roots and link libraries for consumers. This means that consumers do not have to deal with unnecessary dependencies, leading to faster compilation and fewer recompilations when implementation dependencies change."
+    },
+    {
+        "question": "What is the primary purpose of lifecycle tasks in the {cpp} Library Plugin?",
+        "options": {
+            "A": "To manage the execution order of tasks during the build process",
+            "B": "To compile source files into object files",
+            "C": "To create static libraries from compiled object files",
+            "D": "To link shared libraries from object files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of lifecycle tasks in the {cpp} Library Plugin is to manage the execution order of tasks during the build process. These tasks aggregate other tasks to ensure that they are executed in the correct sequence, facilitating a smooth and organized build workflow."
+    },
+    {
+        "question": "Which of the following is a standard lifecycle task in the {cpp} Library Plugin?",
+        "options": {
+            "A": "compile",
+            "B": "assemble",
+            "C": "link",
+            "D": "create"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'assemble' task is a standard lifecycle task in the {cpp} Library Plugin. It aggregates tasks that are necessary to assemble the specific variant of the library, ensuring that all required components are built and linked correctly."
+    },
+    {
+        "question": "What does the 'build' lifecycle task depend on in the {cpp} Library Plugin?",
+        "options": {
+            "A": "Only the 'check' task",
+            "B": "Only the 'assemble' task",
+            "C": "Both 'check' and 'assemble' tasks",
+            "D": "Only the 'link' task"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'build' lifecycle task in the {cpp} Library Plugin depends on both the 'check' and 'assemble' tasks. This means that before a full build is completed, the plugin first verifies the project and then assembles the necessary components."
+    },
+    {
+        "question": "What is the role of the 'clean' task in the lifecycle of the {cpp} Library Plugin?",
+        "options": {
+            "A": "To compile the source files",
+            "B": "To delete the build directory and its contents",
+            "C": "To link the compiled object files",
+            "D": "To create a static library"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'clean' task in the lifecycle of the {cpp} Library Plugin is responsible for deleting the build directory and everything within it. This task ensures that the build environment is reset, allowing for a fresh build without remnants from previous builds."
+    },
+    {
+        "question": "What is the primary purpose of the project layout in the {cpp} Library Plugin?",
+        "options": {
+            "A": "To define the structure for source files and headers used in the library",
+            "B": "To specify the build types and linkages for the library",
+            "C": "To manage dependencies for the library",
+            "D": "To configure the target machines for the library"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the project layout in the {cpp} Library Plugin is to define the structure for source files and headers used in the library. This layout helps organize the code and resources in a way that the plugin can easily locate and compile them, ensuring a smooth build process."
+    },
+    {
+        "question": "Which directory in the {cpp} Library Plugin project layout is intended for public headers?",
+        "options": {
+            "A": "src/main/cpp",
+            "B": "src/main/headers",
+            "C": "src/main/public",
+            "D": "src/main/private"
+        },
+        "correct_answer": "C",
+        "explanation": "The directory intended for public headers in the {cpp} Library Plugin project layout is 'src/main/public'. Public headers are those that are needed to compile the library and are required by consumers, making them accessible for external use."
+    },
+    {
+        "question": "What type of files should be placed in the 'src/main/cpp' directory of a {cpp} Library Plugin project?",
+        "options": {
+            "A": "Private headers needed for internal compilation",
+            "B": "Public headers required by consumers",
+            "C": "Source files with extensions .cpp, .c, or .cc",
+            "D": "Configuration files for the build process"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'src/main/cpp' directory is designated for source files with extensions .cpp, .c, or .cc in a {cpp} Library Plugin project. This is where the actual implementation code resides, which the plugin will compile to create the library."
+    },
+    {
+        "question": "What is the significance of the 'src/main/headers' directory in the {cpp} Library Plugin project layout?",
+        "options": {
+            "A": "It contains public headers needed by consumers.",
+            "B": "It holds private headers needed for internal compilation.",
+            "C": "It is used for storing configuration files.",
+            "D": "It is where the source files are located."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'src/main/headers' directory is significant because it holds private headers that are needed to compile the library but are not required by consumers. This separation helps manage dependencies and encapsulates the internal implementation details of the library."
+    }
+]

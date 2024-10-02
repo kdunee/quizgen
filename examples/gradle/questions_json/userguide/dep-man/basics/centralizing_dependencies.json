@@ -1,0 +1,189 @@
+[
+    {
+        "question": "What is the primary purpose of dependency management in Gradle?",
+        "options": {
+            "A": "To ensure compatibility and simplify the management of libraries and their versions",
+            "B": "To automatically generate code for applications",
+            "C": "To enhance the performance of the application at runtime",
+            "D": "To create user interfaces for applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management in Gradle is to ensure compatibility and simplify the management of libraries and their versions. This involves defining dependencies in a way that allows for easy updates and conflict resolution, ultimately leading to a more stable and maintainable project."
+    },
+    {
+        "question": "What is a platform in the context of Gradle dependency management?",
+        "options": {
+            "A": "A tool for building user interfaces",
+            "B": "A set of dependency constraints designed to manage transitive dependencies",
+            "C": "A method for optimizing application performance",
+            "D": "A framework for testing applications"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, a platform is defined as a set of dependency constraints designed to manage transitive dependencies. By specifying a platform, developers can ensure that a group of dependencies are compatible with each other, simplifying the overall dependency management process."
+    },
+    {
+        "question": "What is a version catalog in Gradle?",
+        "options": {
+            "A": "A list of all the files in a project",
+            "B": "A centralized list of dependency coordinates that can be referenced across multiple projects",
+            "C": "A tool for visualizing project dependencies",
+            "D": "A method for compiling code into executable files"
+        },
+        "correct_answer": "B",
+        "explanation": "A version catalog in Gradle is a centralized list of dependency coordinates that can be referenced in multiple projects. This allows developers to maintain a common set of well-known dependencies across different projects, ensuring consistency and ease of updates."
+    },
+    {
+        "question": "How does using a BOM (Bill of Materials) benefit dependency management in Gradle?",
+        "options": {
+            "A": "It automatically generates documentation for the project",
+            "B": "It allows for centralized management of dependency versions",
+            "C": "It improves the speed of the build process",
+            "D": "It provides a graphical interface for managing dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Using a BOM (Bill of Materials) in Gradle benefits dependency management by allowing for centralized management of dependency versions. A BOM file lists dependencies with specific versions, ensuring that all components of a project use compatible versions, which simplifies updates and reduces conflicts."
+    },
+    {
+        "question": "What is the primary purpose of using platforms in Gradle?",
+        "options": {
+            "A": "To manage transitive dependencies and ensure compatibility",
+            "B": "To create standalone applications without dependencies",
+            "C": "To increase the complexity of dependency management",
+            "D": "To eliminate the need for version control in projects"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of using platforms in Gradle is to manage transitive dependencies and ensure compatibility among them. By defining a platform, developers can specify a set of dependencies that are meant to be used together, simplifying the management of versions and reducing conflicts."
+    },
+    {
+        "question": "How does a Bill of Materials (BOM) function in Gradle?",
+        "options": {
+            "A": "It lists all the files in a project directory.",
+            "B": "It provides a centralized way to manage dependency versions.",
+            "C": "It is used to compile source code into executable files.",
+            "D": "It serves as a backup for project files."
+        },
+        "correct_answer": "B",
+        "explanation": "A Bill of Materials (BOM) in Gradle provides a centralized way to manage dependency versions. It lists dependencies along with their specific versions, allowing developers to ensure that all components of a project use compatible versions, thus simplifying dependency management."
+    },
+    {
+        "question": "What is a version catalog in Gradle?",
+        "options": {
+            "A": "A tool for compiling code into different languages.",
+            "B": "A centralized list of dependency coordinates for multiple projects.",
+            "C": "A method for creating user interfaces in applications.",
+            "D": "A way to document project requirements and specifications."
+        },
+        "correct_answer": "B",
+        "explanation": "A version catalog in Gradle is a centralized list of dependency coordinates that can be referenced across multiple projects. This allows developers to maintain a common set of well-known dependencies, ensuring consistency and simplifying the management of versions across different build scripts."
+    },
+    {
+        "question": "What is one advantage of using platforms in Gradle?",
+        "options": {
+            "A": "They allow for the automatic generation of project documentation.",
+            "B": "They help in reducing the risk of version conflicts among dependencies.",
+            "C": "They enable the use of multiple programming languages in a single project.",
+            "D": "They provide a graphical user interface for managing dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "One advantage of using platforms in Gradle is that they help reduce the risk of version conflicts among dependencies. By specifying a set of compatible dependencies within a platform, developers can ensure that all parts of their project work together seamlessly, minimizing issues related to incompatible versions."
+    },
+    {
+        "question": "What is the primary purpose of a version catalog in Gradle?",
+        "options": {
+            "A": "To manage transitive dependencies for a single project",
+            "B": "To provide a centralized list of dependency coordinates for multiple projects",
+            "C": "To define the build script syntax for Gradle",
+            "D": "To automatically update all dependencies to their latest versions"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a version catalog in Gradle is to provide a centralized list of dependency coordinates that can be referenced across multiple projects. This ensures consistency in dependency versions and simplifies dependency management by allowing projects to share a common set of well-known dependencies."
+    },
+    {
+        "question": "How do you create a version catalog in a Gradle project?",
+        "options": {
+            "A": "By defining dependencies directly in the build.gradle file",
+            "B": "By creating a libs.versions.toml file in the gradle directory",
+            "C": "By using the Gradle wrapper to initialize a new project",
+            "D": "By importing dependencies from an external repository"
+        },
+        "correct_answer": "B",
+        "explanation": "To create a version catalog in a Gradle project, you need to create a libs.versions.toml file in the gradle directory. This file will define the versions of your dependencies and plugins, allowing you to reference them in your build scripts for consistent dependency management."
+    },
+    {
+        "question": "What advantage does using a version catalog provide in a multi-project Gradle build?",
+        "options": {
+            "A": "It allows for automatic version updates without user intervention",
+            "B": "It ensures all projects use the same versions of dependencies",
+            "C": "It eliminates the need for any build scripts",
+            "D": "It simplifies the process of creating new Gradle projects"
+        },
+        "correct_answer": "B",
+        "explanation": "Using a version catalog in a multi-project Gradle build ensures that all projects use the same versions of dependencies. This centralization helps maintain compatibility and reduces the risk of version conflicts, making dependency management more efficient across the entire build."
+    },
+    {
+        "question": "What are transitive dependencies in the context of dependency management?",
+        "options": {
+            "A": "Dependencies that are directly included in a project.",
+            "B": "Dependencies that are required by other dependencies.",
+            "C": "Dependencies that are optional and not required for the project.",
+            "D": "Dependencies that are outdated and no longer used."
+        },
+        "correct_answer": "B",
+        "explanation": "Transitive dependencies refer to the dependencies that are required by other dependencies in a project. When a library depends on another library, the latter becomes a transitive dependency of the project that includes the first library. Managing these dependencies is crucial to ensure compatibility and avoid conflicts."
+    },
+    {
+        "question": "Why is it important to manage transitive dependencies in a project?",
+        "options": {
+            "A": "To increase the size of the project unnecessarily.",
+            "B": "To ensure compatibility and avoid version conflicts.",
+            "C": "To eliminate the need for any direct dependencies.",
+            "D": "To simplify the build process by removing all dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "Managing transitive dependencies is important to ensure compatibility and avoid version conflicts. When multiple libraries depend on different versions of the same transitive dependency, it can lead to issues in the project. Proper management helps maintain a stable and functional build."
+    },
+    {
+        "question": "What is one common method for managing transitive dependencies in Gradle?",
+        "options": {
+            "A": "Using a version control system.",
+            "B": "Defining a platform with dependency constraints.",
+            "C": "Ignoring all dependencies.",
+            "D": "Manually downloading each dependency."
+        },
+        "correct_answer": "B",
+        "explanation": "One common method for managing transitive dependencies in Gradle is by defining a platform with dependency constraints. This allows developers to specify a set of dependencies that should be used together, ensuring compatibility and simplifying the management of transitive dependencies."
+    },
+    {
+        "question": "What is the primary purpose of a Bill of Materials (BOM) in Gradle?",
+        "options": {
+            "A": "To list all the files in a project",
+            "B": "To manage dependencies with specific versions centrally",
+            "C": "To define the build process for a project",
+            "D": "To specify the programming language used in a project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a Bill of Materials (BOM) in Gradle is to manage dependencies with specific versions centrally. A BOM file allows developers to define a set of dependencies and their versions, ensuring that all components of a project are compatible and reducing the risk of version conflicts."
+    },
+    {
+        "question": "How does a platform in Gradle relate to dependency management?",
+        "options": {
+            "A": "It is used to compile source code into bytecode.",
+            "B": "It specifies a set of dependency constraints for compatibility.",
+            "C": "It generates documentation for the project.",
+            "D": "It is a tool for testing the application."
+        },
+        "correct_answer": "B",
+        "explanation": "A platform in Gradle specifies a set of dependency constraints designed to manage the transitive dependencies of a library or application. By defining a platform, developers can ensure that a group of dependencies is used together in a compatible manner, simplifying the overall dependency management process."
+    },
+    {
+        "question": "What is a version catalog in Gradle?",
+        "options": {
+            "A": "A list of all the plugins available in Gradle.",
+            "B": "A centralized list of dependency coordinates for multiple projects.",
+            "C": "A configuration file for Gradle build scripts.",
+            "D": "A tool for visualizing project dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "A version catalog in Gradle is a centralized list of dependency coordinates that can be referenced in multiple projects. This allows developers to maintain a common set of well-known dependencies across different projects, ensuring consistency and simplifying dependency management."
+    }
+]

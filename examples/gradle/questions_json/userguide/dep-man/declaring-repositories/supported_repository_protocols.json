@@ -1,0 +1,310 @@
+[
+    {
+        "question": "What is the primary purpose of transport protocols in Gradle?",
+        "options": {
+            "A": "To determine how Gradle communicates with repositories to resolve dependencies",
+            "B": "To manage the build lifecycle of a project",
+            "C": "To define the structure of build scripts",
+            "D": "To optimize the performance of Gradle tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of transport protocols in Gradle is to determine how Gradle communicates with repositories to resolve dependencies. These protocols specify the methods and rules for data transfer between Gradle and the repositories, ensuring that dependencies are fetched correctly."
+    },
+    {
+        "question": "Which of the following is NOT a supported transport protocol in Gradle?",
+        "options": {
+            "A": "HTTP",
+            "B": "FTP",
+            "C": "S3",
+            "D": "HTTPS"
+        },
+        "correct_answer": "B",
+        "explanation": "FTP is not a supported transport protocol in Gradle. The supported protocols include HTTP, HTTPS, S3, and others, which are specifically designed for dependency resolution in Gradle."
+    },
+    {
+        "question": "What type of credentials is typically required for HTTP and HTTPS transport protocols in Gradle?",
+        "options": {
+            "A": "Access key and secret key",
+            "B": "Username and password",
+            "C": "OAuth token",
+            "D": "Session ID"
+        },
+        "correct_answer": "B",
+        "explanation": "For HTTP and HTTPS transport protocols in Gradle, the typical credentials required are a username and password. These credentials are used to authenticate with the repository when resolving dependencies."
+    },
+    {
+        "question": "When configuring a repository using S3, which of the following is a recommended practice?",
+        "options": {
+            "A": "Store access keys in plain text in build scripts",
+            "B": "Use region-specific endpoints for buckets requiring V4 signatures",
+            "C": "Use HTTP instead of HTTPS for better performance",
+            "D": "Avoid using IAM roles for access control"
+        },
+        "correct_answer": "B",
+        "explanation": "When configuring a repository using S3, it is recommended to use region-specific endpoints for buckets that require V4 signatures. This practice helps to avoid issues with authentication and improves the efficiency of network requests."
+    },
+    {
+        "question": "What is the primary purpose of dependency resolution in Gradle?",
+        "options": {
+            "A": "To determine the correct versions of libraries and frameworks needed for a project",
+            "B": "To compile the source code of a project",
+            "C": "To execute tests on the project code",
+            "D": "To package the project for distribution"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency resolution in Gradle is to determine the correct versions of libraries and frameworks that a project needs to function properly. This process ensures that all required dependencies are available and compatible with each other, which is crucial for successful project builds."
+    },
+    {
+        "question": "Which of the following best describes how Gradle communicates with repositories during dependency resolution?",
+        "options": {
+            "A": "By using a single fixed protocol for all repositories",
+            "B": "By utilizing various transport protocols based on repository configuration",
+            "C": "By relying solely on local files without network communication",
+            "D": "By using a graphical user interface to select dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle communicates with repositories during dependency resolution by utilizing various transport protocols based on the configuration of each repository. This flexibility allows Gradle to interact with different types of repositories, such as Maven, Ivy, S3, and GCS, using the appropriate protocol for each."
+    },
+    {
+        "question": "What should be avoided when handling credentials for repositories in Gradle?",
+        "options": {
+            "A": "Storing credentials in a local gradle.properties file",
+            "B": "Hardcoding credentials directly in build scripts",
+            "C": "Using environment variables for sensitive information",
+            "D": "Utilizing open-source plugins for credential management"
+        },
+        "correct_answer": "B",
+        "explanation": "When handling credentials for repositories in Gradle, it is important to avoid hardcoding credentials directly in build scripts. Instead, credentials should be stored securely in external files, such as a local gradle.properties file, or managed through environment variables or open-source plugins to ensure security and prevent exposure of sensitive information."
+    },
+    {
+        "question": "What happens if a Gradle build process requires credentials but they are not provided?",
+        "options": {
+            "A": "The build will proceed without any issues",
+            "B": "Gradle will automatically generate default credentials",
+            "C": "The build will fail to prevent execution of tasks that require credentials",
+            "D": "Gradle will skip all tasks related to dependency resolution"
+        },
+        "correct_answer": "C",
+        "explanation": "If a Gradle build process requires credentials but they are not provided, the build will fail to prevent the execution of tasks that require those credentials. This mechanism ensures that builds do not proceed with missing or invalid credentials, which could lead to further errors or failures in dependency resolution."
+    },
+    {
+        "question": "What is the primary purpose of authentication schemes in Gradle?",
+        "options": {
+            "A": "To specify how Gradle communicates with repositories",
+            "B": "To define the types of dependencies in a project",
+            "C": "To manage the build lifecycle of a project",
+            "D": "To configure the user interface of Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "Authentication schemes in Gradle are primarily used to specify how Gradle communicates with repositories, particularly when accessing secured repositories. They determine the method of authentication required to resolve dependencies, ensuring secure access to resources."
+    },
+    {
+        "question": "Which of the following is a supported authentication scheme for HTTP(S) repositories in Gradle?",
+        "options": {
+            "A": "OAuth2",
+            "B": "Digest Authentication",
+            "C": "SSH Authentication",
+            "D": "Token Authentication"
+        },
+        "correct_answer": "B",
+        "explanation": "Digest Authentication is one of the supported authentication schemes for HTTP(S) repositories in Gradle. It provides a way to securely transmit credentials by using a hash function, which is more secure than basic authentication. Other options listed are not specifically mentioned as supported schemes in the context of Gradle."
+    },
+    {
+        "question": "What should be avoided when handling credentials in Gradle build scripts?",
+        "options": {
+            "A": "Storing credentials in environment variables",
+            "B": "Hardcoding credentials in build scripts",
+            "C": "Using a local gradle.properties file",
+            "D": "Utilizing an open-source credentials plugin"
+        },
+        "correct_answer": "B",
+        "explanation": "Hardcoding credentials in build scripts should be avoided as it poses a security risk. Instead, credentials should be stored externally, such as in a local gradle.properties file or managed through environment variables, to protect sensitive information."
+    },
+    {
+        "question": "What is the default behavior of Gradle regarding credential submission when interacting with a remote server?",
+        "options": {
+            "A": "Credentials are always sent with every request",
+            "B": "Credentials are submitted only when a server responds with an authentication challenge",
+            "C": "Credentials are never sent to the server",
+            "D": "Credentials are cached for future requests"
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle submits credentials only when a server responds with an authentication challenge (HTTP 401). This behavior can be modified to send credentials preemptively if necessary, but the default is to wait for a challenge before sending any credentials."
+    },
+    {
+        "question": "What is the primary purpose of credential management in Gradle?",
+        "options": {
+            "A": "To securely store and retrieve authentication information for repositories",
+            "B": "To automatically generate passwords for users",
+            "C": "To manage the versioning of build scripts",
+            "D": "To optimize the performance of build tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of credential management in Gradle is to securely store and retrieve authentication information for repositories. This ensures that sensitive information, such as usernames and passwords, is not hardcoded in build scripts, thereby enhancing security and flexibility in managing access to repositories."
+    },
+    {
+        "question": "Which of the following is a recommended practice for handling credentials in Gradle?",
+        "options": {
+            "A": "Hardcoding credentials directly in the build script",
+            "B": "Storing credentials in a local gradle.properties file",
+            "C": "Using plain text files for storing sensitive information",
+            "D": "Sharing credentials through public repositories"
+        },
+        "correct_answer": "B",
+        "explanation": "A recommended practice for handling credentials in Gradle is to store them in a local gradle.properties file. This approach keeps sensitive information out of the build scripts and allows for better security management, as credentials can be easily managed and accessed without exposing them in the code."
+    },
+    {
+        "question": "What happens if a Gradle build process requires credentials but they are not provided?",
+        "options": {
+            "A": "The build will proceed without any issues.",
+            "B": "Gradle will automatically generate default credentials.",
+            "C": "The build will fail to execute the tasks that require credentials.",
+            "D": "Gradle will skip all tasks related to repositories."
+        },
+        "correct_answer": "C",
+        "explanation": "If a Gradle build process requires credentials but they are not provided, the build will fail to execute the tasks that require those credentials. This is to prevent build failures due to missing authentication information, ensuring that all necessary credentials are available before running tasks that depend on them."
+    },
+    {
+        "question": "Which of the following types of credentials can be managed by Gradle?",
+        "options": {
+            "A": "Only username and password",
+            "B": "AWS access keys and secret keys",
+            "C": "OAuth tokens only",
+            "D": "All types of credentials including username/password, AWS keys, and HTTP headers"
+        },
+        "correct_answer": "D",
+        "explanation": "Gradle can manage various types of credentials, including username/password, AWS access keys and secret keys, and HTTP headers. This flexibility allows developers to configure authentication for different types of repositories and services, ensuring secure access to resources."
+    },
+    {
+        "question": "What is the primary purpose of repository configuration in Gradle?",
+        "options": {
+            "A": "To define how Gradle communicates with repositories to resolve dependencies",
+            "B": "To specify the programming language used in the project",
+            "C": "To manage the version control system for the project",
+            "D": "To configure the user interface of the Gradle build tool"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of repository configuration in Gradle is to define how Gradle communicates with repositories to resolve dependencies. This includes specifying the transport protocols and authentication methods required to access the repositories."
+    },
+    {
+        "question": "Which of the following transport protocols is NOT supported by Gradle for repository configuration?",
+        "options": {
+            "A": "HTTP",
+            "B": "FTP",
+            "C": "S3",
+            "D": "GCS"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle supports various transport protocols such as HTTP, HTTPS, S3, and GCS for repository configuration. However, FTP is not listed as a supported transport protocol in the context of Gradle repository configuration."
+    },
+    {
+        "question": "What should be avoided when handling credentials in Gradle repository configurations?",
+        "options": {
+            "A": "Storing credentials in a local gradle.properties file",
+            "B": "Hardcoding credentials in build scripts",
+            "C": "Using environment variables for credentials",
+            "D": "Utilizing open-source plugins for credential management"
+        },
+        "correct_answer": "B",
+        "explanation": "When handling credentials in Gradle repository configurations, hardcoding credentials in build scripts should be avoided. Instead, it is recommended to store credentials in a local gradle.properties file or use secure methods such as environment variables or open-source plugins for credential management."
+    },
+    {
+        "question": "What is the role of the 'identity' in Gradle's credential handling?",
+        "options": {
+            "A": "It specifies the type of repository being accessed",
+            "B": "It is derived from the repository name and used for credential lookup",
+            "C": "It defines the transport protocol for the repository",
+            "D": "It indicates the version of Gradle being used"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'identity' in Gradle's credential handling is derived from the repository name and is used for credential lookup. This allows Gradle to automatically find the necessary credentials based on the repository configuration."
+    },
+    {
+        "question": "What is the primary purpose of configuring AWS S3 repositories in Gradle?",
+        "options": {
+            "A": "To manage local file storage",
+            "B": "To resolve dependencies from cloud storage",
+            "C": "To enhance build performance on local machines",
+            "D": "To create backups of local files"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of configuring AWS S3 repositories in Gradle is to resolve dependencies from cloud storage. This allows projects to access and manage artifacts stored in S3, facilitating the retrieval of necessary files during the build process."
+    },
+    {
+        "question": "Which of the following is a requirement for using AWS S3 URLs in Gradle?",
+        "options": {
+            "A": "They must use the 'virtual-hosted-style' format",
+            "B": "They must include a local file path",
+            "C": "They must be encrypted with a secure key",
+            "D": "They must specify a region-specific endpoint only"
+        },
+        "correct_answer": "A",
+        "explanation": "AWS S3 URLs must use the 'virtual-hosted-style' format, which includes the bucket name and the object key. This format is essential for correctly addressing the resources stored in S3 and ensuring proper access during dependency resolution."
+    },
+    {
+        "question": "What is the recommended method for handling credentials when configuring AWS S3 repositories in Gradle?",
+        "options": {
+            "A": "Hardcoding them in the build script",
+            "B": "Storing them in a local gradle.properties file",
+            "C": "Using environment variables only",
+            "D": "Including them in the source code repository"
+        },
+        "correct_answer": "B",
+        "explanation": "The recommended method for handling credentials when configuring AWS S3 repositories in Gradle is to store them in a local gradle.properties file. This approach helps to keep sensitive information secure and separate from the build script, reducing the risk of exposing credentials."
+    },
+    {
+        "question": "What happens if a Gradle build requires credentials but they are not provided?",
+        "options": {
+            "A": "The build will proceed without any issues",
+            "B": "Gradle will automatically generate default credentials",
+            "C": "The build will fail before executing any tasks",
+            "D": "Gradle will skip the tasks that require credentials"
+        },
+        "correct_answer": "C",
+        "explanation": "If a Gradle build requires credentials but they are not provided, the build will fail before executing any tasks. This is to prevent build failures due to missing credentials, ensuring that all necessary information is available for tasks that depend on secure access."
+    },
+    {
+        "question": "What is the primary purpose of integrating Google Cloud Storage (GCS) with Gradle?",
+        "options": {
+            "A": "To manage local file storage",
+            "B": "To facilitate dependency resolution from cloud-based repositories",
+            "C": "To enhance the performance of local builds",
+            "D": "To provide a user interface for project management"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of integrating Google Cloud Storage (GCS) with Gradle is to facilitate dependency resolution from cloud-based repositories. This allows developers to store and retrieve artifacts in a scalable and reliable manner, leveraging GCS's capabilities for cloud storage."
+    },
+    {
+        "question": "Which format must GCS URLs adhere to when configured in Gradle?",
+        "options": {
+            "A": "gcs://<bucketName>/<objectKey>",
+            "B": "gcs://<objectKey>/<bucketName>",
+            "C": "gcs://<bucketName>.<region>/<objectKey>",
+            "D": "gcs://<objectKey>.<region>/<bucketName>"
+        },
+        "correct_answer": "A",
+        "explanation": "GCS URLs must adhere to the 'virtual-hosted-style' format, which is gcs://<bucketName>/<objectKey>. This structure ensures that Gradle can correctly identify and access the specified objects within the designated GCS bucket."
+    },
+    {
+        "question": "What should be avoided when handling credentials for GCS repositories in Gradle?",
+        "options": {
+            "A": "Storing credentials in a local gradle.properties file",
+            "B": "Hardcoding credentials in build scripts",
+            "C": "Using environment variables for sensitive information",
+            "D": "Utilizing Gradle's credential management features"
+        },
+        "correct_answer": "B",
+        "explanation": "When handling credentials for GCS repositories in Gradle, hardcoding credentials in build scripts should be avoided. Instead, it is recommended to store credentials externally, such as in a local gradle.properties file or through environment variables, to enhance security and prevent accidental exposure."
+    },
+    {
+        "question": "Which of the following is a supported credential type for accessing GCS repositories in Gradle?",
+        "options": {
+            "A": "OAuth2 Token",
+            "B": "PasswordCredentials",
+            "C": "SSH Key",
+            "D": "API Key"
+        },
+        "correct_answer": "B",
+        "explanation": "PasswordCredentials is a supported credential type for accessing GCS repositories in Gradle. This type allows for the secure handling of usernames and passwords, which are essential for authenticating with repositories that require access control."
+    }
+]

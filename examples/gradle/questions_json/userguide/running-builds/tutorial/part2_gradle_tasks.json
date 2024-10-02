@@ -1,0 +1,266 @@
+[
+    {
+        "question": "What is a Gradle task?",
+        "options": {
+            "A": "A basic unit of work that can be executed as part of the build process",
+            "B": "A command that initializes a new project",
+            "C": "A configuration file for project settings",
+            "D": "A type of plugin that enhances Gradle functionality"
+        },
+        "correct_answer": "A",
+        "explanation": "A Gradle task is defined as a basic unit of work that can be executed as part of the build process. Tasks can perform various actions such as compiling code, copying files, or generating documentation, and they are essential for automating the build lifecycle."
+    },
+    {
+        "question": "How can you view all available tasks in a Gradle project?",
+        "options": {
+            "A": "By running the command `./gradlew list`",
+            "B": "By running the command `./gradlew tasks`",
+            "C": "By checking the `build.gradle` file directly",
+            "D": "By opening the project in a web browser"
+        },
+        "correct_answer": "B",
+        "explanation": "To view all available tasks in a Gradle project, you can run the command `./gradlew tasks`. This command lists all tasks that are available in the project, including those provided by plugins."
+    },
+    {
+        "question": "What is the purpose of task dependencies in Gradle?",
+        "options": {
+            "A": "To allow tasks to run in parallel without any order",
+            "B": "To ensure that one task completes before another begins if the latter depends on the former",
+            "C": "To create a backup of the project files",
+            "D": "To automatically generate documentation for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "Task dependencies in Gradle are used to ensure that one task completes before another begins if the latter depends on the former. This is crucial for maintaining the correct order of execution, especially when tasks rely on the outputs of other tasks."
+    },
+    {
+        "question": "Which of the following is an example of a built-in Gradle task?",
+        "options": {
+            "A": "Compile",
+            "B": "Copy",
+            "C": "Execute",
+            "D": "Run"
+        },
+        "correct_answer": "B",
+        "explanation": "The `Copy` task is an example of a built-in Gradle task that is used to copy files from one location to another. Gradle provides several built-in tasks that can be utilized to perform common operations during the build process."
+    },
+    {
+        "question": "What is a task in the context of Gradle?",
+        "options": {
+            "A": "A unit of work that Gradle can perform as part of the build process",
+            "B": "A type of error that occurs during the build",
+            "C": "A configuration file used to define project settings",
+            "D": "A command that runs outside of the Gradle environment"
+        },
+        "correct_answer": "A",
+        "explanation": "In Gradle, a task is defined as a basic unit of work that can be executed as part of the build process. Tasks can perform various actions such as compiling code, copying files, or generating documentation, making them essential for automating the build lifecycle."
+    },
+    {
+        "question": "Why are task dependencies important in Gradle?",
+        "options": {
+            "A": "They allow tasks to run in parallel without any order.",
+            "B": "They ensure that tasks are executed in the correct order based on their requirements.",
+            "C": "They prevent tasks from being executed if they are not needed.",
+            "D": "They allow tasks to be executed without any configuration."
+        },
+        "correct_answer": "B",
+        "explanation": "Task dependencies are crucial in Gradle because they dictate the order in which tasks are executed. If one task relies on the output of another, the dependent task must complete first. This ensures that the build process is organized and that tasks have the necessary prerequisites before execution."
+    },
+    {
+        "question": "How can a task declare its dependencies in Gradle?",
+        "options": {
+            "A": "By using the 'dependsOn' method within the task definition.",
+            "B": "By listing all tasks in the build.gradle file.",
+            "C": "By executing tasks in a random order.",
+            "D": "By creating a separate configuration file for dependencies."
+        },
+        "correct_answer": "A",
+        "explanation": "A task can declare its dependencies in Gradle by using the 'dependsOn' method within its definition. This explicitly indicates that the specified task must be completed before the current task can run, allowing Gradle to manage the execution order effectively."
+    },
+    {
+        "question": "What happens if there are no dependencies between tasks in Gradle?",
+        "options": {
+            "A": "Gradle will execute tasks in a random order.",
+            "B": "Gradle will execute tasks in the order they are defined in the build script.",
+            "C": "Gradle will skip executing those tasks altogether.",
+            "D": "Gradle will execute all tasks simultaneously."
+        },
+        "correct_answer": "B",
+        "explanation": "If there are no dependencies between tasks in Gradle, the tasks will be executed in the order they are defined in the build script. This allows users to control the execution flow of tasks even when there are no explicit dependencies."
+    },
+    {
+        "question": "What is the primary purpose of build automation in software development?",
+        "options": {
+            "A": "To manually compile and test code",
+            "B": "To automate repetitive tasks in the build process",
+            "C": "To eliminate the need for version control",
+            "D": "To create user interfaces for applications"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of build automation is to automate repetitive tasks in the build process, such as compiling code, running tests, and packaging applications. This helps improve efficiency, reduce human error, and ensure consistency in the build process."
+    },
+    {
+        "question": "Which of the following is a common task that can be automated in a build process?",
+        "options": {
+            "A": "Writing application documentation",
+            "B": "Compiling source code into executable files",
+            "C": "Designing user interfaces",
+            "D": "Conducting user acceptance testing"
+        },
+        "correct_answer": "B",
+        "explanation": "Compiling source code into executable files is a common task that can be automated in a build process. Build automation tools like Gradle streamline this process, allowing developers to focus on writing code rather than managing the build manually."
+    },
+    {
+        "question": "What is a task dependency in the context of build automation?",
+        "options": {
+            "A": "A task that runs independently of other tasks",
+            "B": "A task that requires another task to complete before it can run",
+            "C": "A task that is optional and can be skipped",
+            "D": "A task that generates documentation for other tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "A task dependency in build automation refers to a situation where one task requires another task to complete before it can run. This ensures that tasks are executed in the correct order, maintaining the integrity of the build process."
+    },
+    {
+        "question": "How can developers view available tasks in a Gradle project?",
+        "options": {
+            "A": "By checking the project settings in the IDE",
+            "B": "By running the command `./gradlew tasks` in the terminal",
+            "C": "By looking at the source code directly",
+            "D": "By consulting the user manual of the programming language"
+        },
+        "correct_answer": "B",
+        "explanation": "Developers can view available tasks in a Gradle project by running the command `./gradlew tasks` in the terminal. This command lists all tasks defined in the project, including those provided by plugins, allowing developers to understand what actions can be performed."
+    },
+    {
+        "question": "What is the primary purpose of a Gradle task?",
+        "options": {
+            "A": "To manage project dependencies",
+            "B": "To serve as a basic unit of work in the build process",
+            "C": "To compile Java code only",
+            "D": "To generate documentation exclusively"
+        },
+        "correct_answer": "B",
+        "explanation": "A Gradle task serves as a basic unit of work that can be executed as part of the build process. Tasks can perform various functions, such as compiling code, copying files, or generating documentation, making them essential for managing the build lifecycle."
+    },
+    {
+        "question": "How can you view all available tasks in a Gradle project?",
+        "options": {
+            "A": "By running the command `./gradlew list`",
+            "B": "By running the command `./gradlew tasks`",
+            "C": "By checking the `build.gradle` file directly",
+            "D": "By opening the project in a web browser"
+        },
+        "correct_answer": "B",
+        "explanation": "To view all available tasks in a Gradle project, you can run the command `./gradlew tasks`. This command lists all tasks defined in the project, including those provided by plugins, allowing developers to see what actions can be performed."
+    },
+    {
+        "question": "What is an example of a built-in Gradle task?",
+        "options": {
+            "A": "Compile",
+            "B": "Copy",
+            "C": "Execute",
+            "D": "Run"
+        },
+        "correct_answer": "B",
+        "explanation": "The `Copy` task is an example of a built-in Gradle task that is used to copy files from one location to another. Gradle provides several built-in tasks that can be utilized to perform common operations during the build process."
+    },
+    {
+        "question": "What does it mean for a task to have dependencies in Gradle?",
+        "options": {
+            "A": "It can run independently without any prerequisites",
+            "B": "It must complete before another task can start",
+            "C": "It can only be executed in a specific order",
+            "D": "It is not related to any other tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, when a task has dependencies, it means that it must complete before another task that relies on its output can start. This ensures that tasks are executed in the correct order, maintaining the integrity of the build process."
+    },
+    {
+        "question": "What determines the execution order of tasks in Gradle?",
+        "options": {
+            "A": "The order in which tasks are listed in the build file",
+            "B": "Explicit and implicit dependencies between tasks",
+            "C": "The time taken by each task to complete",
+            "D": "The alphabetical order of task names"
+        },
+        "correct_answer": "B",
+        "explanation": "The execution order of tasks in Gradle is determined by explicit and implicit dependencies between tasks. If one task depends on the output of another, Gradle ensures that the dependent task runs after the task it relies on has completed."
+    },
+    {
+        "question": "What is an example of an explicit task dependency in Gradle?",
+        "options": {
+            "A": "A task that runs automatically without any dependencies",
+            "B": "A task that is scheduled to run at a specific time",
+            "C": "A task that requires another task to complete before it can run",
+            "D": "A task that runs in parallel with other tasks"
+        },
+        "correct_answer": "C",
+        "explanation": "An explicit task dependency in Gradle is when a task is defined to require another task to complete before it can run. This is done using the 'dependsOn' method, which establishes a clear order of execution based on the dependencies."
+    },
+    {
+        "question": "How can you view all available tasks in a Gradle project?",
+        "options": {
+            "A": "By running the command `./gradlew list`",
+            "B": "By running the command `./gradlew tasks`",
+            "C": "By checking the build.gradle file directly",
+            "D": "By looking in the IDE's project structure"
+        },
+        "correct_answer": "B",
+        "explanation": "You can view all available tasks in a Gradle project by running the command `./gradlew tasks`. This command lists all tasks, including those contributed by plugins, and provides a summary of their functions."
+    },
+    {
+        "question": "What is the purpose of built-in tasks in Gradle?",
+        "options": {
+            "A": "To create new plugins for Gradle",
+            "B": "To enhance build scripts with common functionalities",
+            "C": "To manage external dependencies automatically",
+            "D": "To optimize the performance of the Gradle daemon"
+        },
+        "correct_answer": "B",
+        "explanation": "Built-in tasks in Gradle are designed to enhance build scripts by providing common functionalities such as copying files, deleting files, executing commands, and zipping files. These tasks simplify the build process by allowing developers to leverage pre-defined actions."
+    },
+    {
+        "question": "What is the primary purpose of built-in tasks in Gradle?",
+        "options": {
+            "A": "To provide predefined units of work for common build operations",
+            "B": "To create new programming languages for Gradle scripts",
+            "C": "To manage user permissions in the Gradle environment",
+            "D": "To optimize the performance of the Gradle installation"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of built-in tasks in Gradle is to provide predefined units of work that facilitate common build operations, such as copying files, deleting files, or executing commands. These tasks help streamline the build process and reduce the need for custom scripting."
+    },
+    {
+        "question": "Which of the following is an example of a built-in task in Gradle?",
+        "options": {
+            "A": "Compile",
+            "B": "Copy",
+            "C": "Execute",
+            "D": "Run"
+        },
+        "correct_answer": "B",
+        "explanation": "Copy is an example of a built-in task in Gradle that is specifically designed to copy files from one location to another. Other built-in tasks include Delete, Exec, and Zip, which serve different purposes in the build process."
+    },
+    {
+        "question": "How can a user create a custom task in Gradle?",
+        "options": {
+            "A": "By modifying the Gradle installation files directly",
+            "B": "By using the tasks.register method in the build script",
+            "C": "By running a command in the terminal without any script",
+            "D": "By importing external libraries only"
+        },
+        "correct_answer": "B",
+        "explanation": "A user can create a custom task in Gradle by using the tasks.register method in the build script. This allows developers to define specific actions that the task should perform, enhancing the build process according to their needs."
+    },
+    {
+        "question": "What is a key feature of task dependencies in Gradle?",
+        "options": {
+            "A": "Tasks can run in any order without dependencies",
+            "B": "Tasks can declare dependencies to ensure proper execution order",
+            "C": "Dependencies are only applicable to built-in tasks",
+            "D": "Tasks cannot depend on other tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "A key feature of task dependencies in Gradle is that tasks can declare dependencies to ensure proper execution order. This means that if one task relies on the output of another, Gradle will automatically execute the dependent task first, maintaining the correct sequence of operations."
+    }
+]

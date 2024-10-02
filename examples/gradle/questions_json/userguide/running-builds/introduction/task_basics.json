@@ -1,0 +1,211 @@
+[
+    {
+        "question": "What is a task in the context of Gradle?",
+        "options": {
+            "A": "A unit of work that a build performs",
+            "B": "A configuration file for project settings",
+            "C": "A type of plugin used in Gradle",
+            "D": "A command to install dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "In Gradle, a task represents an independent unit of work that the build system performs, such as compiling code or generating documentation. Tasks are fundamental to the build process, allowing for modular and organized execution of various operations."
+    },
+    {
+        "question": "How can you view all available tasks in a Gradle project?",
+        "options": {
+            "A": "By running the command `./gradlew list`",
+            "B": "By running the command `./gradlew tasks`",
+            "C": "By checking the build.gradle file",
+            "D": "By executing the command `./gradlew help`"
+        },
+        "correct_answer": "B",
+        "explanation": "To view all available tasks in a Gradle project, you can run the command `./gradlew tasks`. This command lists all tasks defined in the project, including those provided by plugins and build scripts, helping users understand what operations can be performed."
+    },
+    {
+        "question": "What does it mean when a task has dependencies in Gradle?",
+        "options": {
+            "A": "It can run independently without any prerequisites",
+            "B": "It requires other tasks to be completed first",
+            "C": "It is automatically executed after all tasks",
+            "D": "It cannot be executed if other tasks fail"
+        },
+        "correct_answer": "B",
+        "explanation": "When a task has dependencies in Gradle, it means that it requires other tasks to be completed before it can run. For example, the `build` task depends on the `compileJava` task, meaning that the Java code must be compiled before the build process can proceed."
+    },
+    {
+        "question": "Which command is used to execute a specific task in Gradle?",
+        "options": {
+            "A": "gradle execute <task_name>",
+            "B": "gradle run <task_name>",
+            "C": "./gradlew <task_name>",
+            "D": "gradle start <task_name>"
+        },
+        "correct_answer": "C",
+        "explanation": "To execute a specific task in Gradle, you use the command `./gradlew <task_name>`. This command invokes the Gradle Wrapper to run the specified task, allowing for consistent execution across different environments."
+    },
+    {
+        "question": "What is the primary purpose of a build in Gradle?",
+        "options": {
+            "A": "To execute independent units of work for a project",
+            "B": "To manage project dependencies",
+            "C": "To create user interfaces for applications",
+            "D": "To deploy applications to production servers"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a build in Gradle is to execute independent units of work, such as compiling code, creating archives, and generating documentation. This process allows developers to automate various tasks associated with project development and management."
+    },
+    {
+        "question": "How can you list all available tasks in a Gradle project?",
+        "options": {
+            "A": "By running the command `./gradlew list`",
+            "B": "By running the command `./gradlew tasks`",
+            "C": "By checking the project settings in the IDE",
+            "D": "By reviewing the build.gradle file"
+        },
+        "correct_answer": "B",
+        "explanation": "You can list all available tasks in a Gradle project by running the command `./gradlew tasks`. This command provides a summary of all tasks defined in the project, including those from plugins and build scripts."
+    },
+    {
+        "question": "What does it mean when a task has dependencies in Gradle?",
+        "options": {
+            "A": "The task can run independently without any prerequisites",
+            "B": "The task must complete before another task can start",
+            "C": "The task is optional and can be skipped during the build",
+            "D": "The task will run in parallel with other tasks"
+        },
+        "correct_answer": "B",
+        "explanation": "When a task has dependencies in Gradle, it means that the task must complete before another task can start. This ensures that tasks are executed in the correct order, allowing for proper build execution and resource management."
+    },
+    {
+        "question": "Which command is used to run a specific task in a Gradle project?",
+        "options": {
+            "A": "gradle run",
+            "B": "gradlew execute",
+            "C": "gradlew run",
+            "D": "gradle start"
+        },
+        "correct_answer": "C",
+        "explanation": "To run a specific task in a Gradle project, you use the command `./gradlew run`. This command triggers the execution of the 'run' task, which typically starts the application defined in the project."
+    },
+    {
+        "question": "What does it mean for a task to have a dependency in Gradle?",
+        "options": {
+            "A": "It means the task can run independently without any prerequisites.",
+            "B": "It means the task must wait for another task to complete before it can execute.",
+            "C": "It means the task will execute in parallel with other tasks.",
+            "D": "It means the task can only be executed manually by the user."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, a task dependency means that one task must complete before another task can start. This ensures that tasks are executed in the correct order, particularly when one task relies on the output or completion of another task."
+    },
+    {
+        "question": "How does Gradle determine the order of task execution?",
+        "options": {
+            "A": "By the alphabetical order of task names.",
+            "B": "By the order in which tasks are defined in the build script.",
+            "C": "By analyzing the defined task dependencies.",
+            "D": "By the time taken to execute each task previously."
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle determines the order of task execution by analyzing the defined task dependencies. When a task depends on another, Gradle ensures that the dependent task is executed first, maintaining the correct sequence for successful builds."
+    },
+    {
+        "question": "What is the primary purpose of defining task dependencies in a Gradle build script?",
+        "options": {
+            "A": "To allow tasks to run simultaneously.",
+            "B": "To ensure that tasks are executed in the correct order.",
+            "C": "To reduce the overall build time.",
+            "D": "To create a visual representation of the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of defining task dependencies in a Gradle build script is to ensure that tasks are executed in the correct order. This is crucial for tasks that rely on the completion of others, as it helps maintain the integrity and success of the build process."
+    },
+    {
+        "question": "What is the primary purpose of Gradle plugins?",
+        "options": {
+            "A": "To define the structure of a project",
+            "B": "To add functionality and tasks to a Gradle build",
+            "C": "To manage dependencies between projects",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle plugins are designed to add functionality and tasks to a Gradle build. They extend the capabilities of Gradle by providing predefined tasks and configurations that can be used to automate various aspects of the build process, such as compiling code, running tests, and packaging applications."
+    },
+    {
+        "question": "How can you view all available tasks in a Gradle project?",
+        "options": {
+            "A": "By running the command `./gradlew list`",
+            "B": "By running the command `./gradlew tasks`",
+            "C": "By checking the build.gradle file",
+            "D": "By executing the `build` task"
+        },
+        "correct_answer": "B",
+        "explanation": "To view all available tasks in a Gradle project, you can run the command `./gradlew tasks`. This command lists all tasks that are defined in the project, including those provided by plugins and custom tasks defined in build scripts."
+    },
+    {
+        "question": "What does it mean when a task has dependencies in Gradle?",
+        "options": {
+            "A": "The task can run independently without any prerequisites",
+            "B": "The task must be executed before other tasks can run",
+            "C": "The task requires other tasks to be completed first",
+            "D": "The task will fail if dependencies are not met"
+        },
+        "correct_answer": "C",
+        "explanation": "When a task has dependencies in Gradle, it means that the task requires other tasks to be completed first before it can run. This ensures that tasks are executed in the correct order, allowing for proper build execution and resource management."
+    },
+    {
+        "question": "Which command is used to execute a specific task in a Gradle project?",
+        "options": {
+            "A": "gradle execute <task_name>",
+            "B": "gradle run <task_name>",
+            "C": "./gradlew <task_name>",
+            "D": "gradle start <task_name>"
+        },
+        "correct_answer": "C",
+        "explanation": "To execute a specific task in a Gradle project, you use the command `./gradlew <task_name>`. This command invokes the Gradle Wrapper, which runs the specified task defined in the build script, allowing you to perform actions such as building the project or running tests."
+    },
+    {
+        "question": "What is the primary purpose of a build script in Gradle?",
+        "options": {
+            "A": "To define the tasks and their dependencies for a project",
+            "B": "To compile the source code into machine language",
+            "C": "To manage the version control of the project",
+            "D": "To execute the project in a production environment"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a build script in Gradle is to define the tasks and their dependencies for a project. This allows Gradle to understand what actions need to be performed and in what order, facilitating the build process."
+    },
+    {
+        "question": "How does Gradle determine the order in which tasks are executed?",
+        "options": {
+            "A": "Based on the alphabetical order of task names",
+            "B": "By the time each task was created",
+            "C": "Through defined task dependencies in the build script",
+            "D": "By user input during the build process"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle determines the order of task execution through defined task dependencies in the build script. When a task depends on another, Gradle ensures that the dependent task is executed first, maintaining the correct sequence for the build process."
+    },
+    {
+        "question": "What command is used to list all available tasks in a Gradle project?",
+        "options": {
+            "A": "./gradlew list",
+            "B": "./gradlew tasks",
+            "C": "./gradlew show",
+            "D": "./gradlew available"
+        },
+        "correct_answer": "B",
+        "explanation": "The command used to list all available tasks in a Gradle project is './gradlew tasks'. This command provides an overview of all tasks defined in the project, including those from plugins and build scripts."
+    },
+    {
+        "question": "What does the 'build' task typically depend on in a Java project?",
+        "options": {
+            "A": "The 'run' task",
+            "B": "The 'compileJava' task",
+            "C": "The 'assemble' task",
+            "D": "The 'test' task"
+        },
+        "correct_answer": "B",
+        "explanation": "In a Java project, the 'build' task typically depends on the 'compileJava' task. This means that the Java code must be compiled before the build process can be completed, ensuring that all necessary components are ready for packaging and testing."
+    }
+]

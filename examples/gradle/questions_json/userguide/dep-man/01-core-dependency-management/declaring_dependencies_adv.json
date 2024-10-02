@@ -1,0 +1,442 @@
+[
+    {
+        "question": "What is the primary purpose of dependency configurations in Gradle?",
+        "options": {
+            "A": "To declare the scope and usage of dependencies",
+            "B": "To compile source code into executable files",
+            "C": "To manage the versioning of project artifacts",
+            "D": "To automate the testing of software applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency configurations in Gradle is to declare the scope and usage of dependencies. Each configuration defines how dependencies are used within a project, such as whether they are needed for compilation, testing, or runtime."
+    },
+    {
+        "question": "Which of the following statements about configuration inheritance in Gradle is true?",
+        "options": {
+            "A": "Child configurations cannot inherit dependencies from parent configurations.",
+            "B": "Configuration inheritance allows for the reuse of dependencies across different configurations.",
+            "C": "All configurations must be defined in the same build script.",
+            "D": "Inheritance is only applicable to configurations defined by the user."
+        },
+        "correct_answer": "B",
+        "explanation": "Configuration inheritance in Gradle allows child configurations to inherit dependencies from parent configurations, enabling the reuse of dependencies across different configurations. This is particularly useful for managing dependencies in a structured manner."
+    },
+    {
+        "question": "What does the 'canBeResolved' flag indicate about a configuration in Gradle?",
+        "options": {
+            "A": "The configuration can be used to declare dependencies only.",
+            "B": "The configuration is intended to be resolved to produce a dependency graph.",
+            "C": "The configuration can be consumed by other projects.",
+            "D": "The configuration is deprecated and should not be used."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'canBeResolved' flag indicates that a configuration is intended to be resolved to produce a dependency graph. If set to true, it means that the configuration contains all necessary information for resolution to occur, allowing Gradle to compute the dependencies."
+    },
+    {
+        "question": "What is a key characteristic of consumable configurations in Gradle?",
+        "options": {
+            "A": "They are meant to be resolved to produce artifacts.",
+            "B": "They expose artifacts and their dependencies for consumption by other projects.",
+            "C": "They can only be used within the same project.",
+            "D": "They are automatically created by Gradle without user intervention."
+        },
+        "correct_answer": "B",
+        "explanation": "Consumable configurations in Gradle are designed to expose artifacts and their dependencies for consumption by other projects. This allows other projects to utilize the artifacts produced by the project that defines the consumable configuration."
+    },
+    {
+        "question": "What is the primary purpose of dependency configurations in Gradle?",
+        "options": {
+            "A": "To declare dependencies for specific scopes within a project",
+            "B": "To compile source code into executable files",
+            "C": "To manage user permissions for project access",
+            "D": "To automate the testing process of the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency configurations in Gradle is to declare dependencies for specific scopes within a project. This allows developers to manage which dependencies are available at different stages of the build process, such as during compilation or runtime."
+    },
+    {
+        "question": "What does the 'canBeResolved' flag indicate about a configuration in Gradle?",
+        "options": {
+            "A": "The configuration can be used to declare dependencies only.",
+            "B": "The configuration can be resolved to compute a dependency graph.",
+            "C": "The configuration is deprecated and should not be used.",
+            "D": "The configuration is only for consumer projects."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'canBeResolved' flag indicates that a configuration can be resolved to compute a dependency graph. This means that it contains all the necessary information for resolution to happen, allowing Gradle to determine which artifacts to download and use."
+    },
+    {
+        "question": "What is the significance of configuration inheritance in Gradle?",
+        "options": {
+            "A": "It allows configurations to be reused across different projects.",
+            "B": "It enables child configurations to inherit dependencies from parent configurations.",
+            "C": "It restricts the visibility of configurations to only the parent project.",
+            "D": "It prevents configurations from being modified once defined."
+        },
+        "correct_answer": "B",
+        "explanation": "Configuration inheritance in Gradle allows child configurations to inherit dependencies from parent configurations. This is useful for organizing dependencies and ensuring that related configurations can share common dependencies, simplifying dependency management."
+    },
+    {
+        "question": "What role do custom configurations play in Gradle dependency management?",
+        "options": {
+            "A": "They are used to define the default behavior of all configurations.",
+            "B": "They allow for the separation of dependencies needed for specific purposes.",
+            "C": "They automatically resolve all dependencies without user input.",
+            "D": "They are only applicable to multi-project builds."
+        },
+        "correct_answer": "B",
+        "explanation": "Custom configurations in Gradle allow for the separation of dependencies needed for specific purposes. This enables developers to create tailored configurations that suit particular tasks or requirements within a project, enhancing flexibility in dependency management."
+    },
+    {
+        "question": "What is the primary purpose of configuration inheritance in Gradle?",
+        "options": {
+            "A": "To allow configurations to share dependencies and settings",
+            "B": "To enforce strict type checking on configurations",
+            "C": "To limit the number of configurations in a project",
+            "D": "To create isolated environments for each configuration"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of configuration inheritance in Gradle is to allow configurations to share dependencies and settings. This means that a child configuration can inherit all dependencies from its parent configuration, facilitating easier management of dependencies across different scopes in a project."
+    },
+    {
+        "question": "Which of the following statements is true about child configurations in Gradle?",
+        "options": {
+            "A": "Child configurations cannot inherit dependencies from parent configurations.",
+            "B": "Child configurations can extend multiple parent configurations.",
+            "C": "Child configurations inherit all dependencies declared in their parent configurations.",
+            "D": "Child configurations must be defined in the same build script as their parent configurations."
+        },
+        "correct_answer": "C",
+        "explanation": "Child configurations in Gradle inherit all dependencies declared in their parent configurations. This inheritance allows for a structured approach to managing dependencies, where specific configurations can build upon the dependencies of more general configurations."
+    },
+    {
+        "question": "What is a common use case for creating a child configuration that extends a parent configuration?",
+        "options": {
+            "A": "To create a configuration that is not meant to be resolved.",
+            "B": "To define a configuration that requires additional dependencies for testing.",
+            "C": "To restrict access to certain dependencies in the project.",
+            "D": "To eliminate the need for any parent configurations."
+        },
+        "correct_answer": "B",
+        "explanation": "A common use case for creating a child configuration that extends a parent configuration is to define a configuration that requires additional dependencies for testing. For example, a `testImplementation` configuration can extend an `implementation` configuration to include all dependencies needed for both the implementation and the testing of the code."
+    },
+    {
+        "question": "In Gradle, what does the term 'configuration hierarchy' refer to?",
+        "options": {
+            "A": "The order in which configurations are declared in the build script.",
+            "B": "The relationship between parent and child configurations.",
+            "C": "The process of resolving dependencies in a project.",
+            "D": "The method of documenting configurations for future reference."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, the term 'configuration hierarchy' refers to the relationship between parent and child configurations. This hierarchy allows child configurations to inherit dependencies and settings from their parent configurations, creating a structured and organized way to manage dependencies across different scopes."
+    },
+    {
+        "question": "What is the primary role of a resolvable configuration in Gradle?",
+        "options": {
+            "A": "To declare dependencies without resolving them",
+            "B": "To compute a dependency graph and resolve artifacts",
+            "C": "To expose artifacts for consumption by other projects",
+            "D": "To manage project settings and configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "A resolvable configuration in Gradle is designed to compute a dependency graph and resolve artifacts. This means it contains all the necessary information for resolution to happen, allowing Gradle to determine which dependencies are needed for a specific task."
+    },
+    {
+        "question": "Which flag indicates that a configuration can be resolved in Gradle?",
+        "options": {
+            "A": "canBeConsumed",
+            "B": "canBeResolved",
+            "C": "isAbstract",
+            "D": "isFinal"
+        },
+        "correct_answer": "B",
+        "explanation": "The flag 'canBeResolved' indicates that a configuration can be resolved in Gradle. When this flag is set to true, it means that the configuration is intended to compute a dependency graph and resolve the components within it."
+    },
+    {
+        "question": "What is the purpose of a consumable configuration in Gradle?",
+        "options": {
+            "A": "To declare dependencies for compilation",
+            "B": "To expose artifacts and their dependencies for other projects",
+            "C": "To manage the build lifecycle of a project",
+            "D": "To define the scope of test dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "A consumable configuration in Gradle is used to expose artifacts and their dependencies for consumption by other projects. This means it allows other projects to access the artifacts produced by the project that defines the consumable configuration."
+    },
+    {
+        "question": "What happens if you try to resolve a configuration that has 'canBeResolved' set to false?",
+        "options": {
+            "A": "The configuration will resolve successfully with a warning.",
+            "B": "An error will occur, indicating the configuration cannot be resolved.",
+            "C": "The configuration will automatically switch to a resolvable state.",
+            "D": "The build will continue without any issues."
+        },
+        "correct_answer": "B",
+        "explanation": "If you try to resolve a configuration that has 'canBeResolved' set to false, an error will occur. This is because such a configuration is not intended to be resolved and is only meant to declare dependencies."
+    },
+    {
+        "question": "What is the primary purpose of defining custom configurations in Gradle?",
+        "options": {
+            "A": "To separate the scope of dependencies needed for a specific purpose",
+            "B": "To automatically resolve all dependencies without user input",
+            "C": "To create a single configuration for all project dependencies",
+            "D": "To enforce strict versioning on all dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of defining custom configurations in Gradle is to separate the scope of dependencies needed for a specific purpose. This allows developers to manage dependencies more effectively by grouping them according to their intended use, which can help avoid conflicts and improve clarity in the build process."
+    },
+    {
+        "question": "Which of the following statements is true regarding custom configurations?",
+        "options": {
+            "A": "Custom configurations can only be used for runtime dependencies.",
+            "B": "Custom configurations can extend other configurations.",
+            "C": "Custom configurations must always be resolved before use.",
+            "D": "Custom configurations cannot be declared in a Gradle build script."
+        },
+        "correct_answer": "B",
+        "explanation": "Custom configurations can extend other configurations, allowing them to inherit dependencies and properties from the configurations they extend. This feature enables more flexible and organized dependency management within a Gradle project."
+    },
+    {
+        "question": "What is a key benefit of using custom configurations in a Gradle project?",
+        "options": {
+            "A": "They automatically resolve all transitive dependencies.",
+            "B": "They allow for better organization of dependencies based on their usage.",
+            "C": "They eliminate the need for any dependency declarations.",
+            "D": "They restrict the use of dependencies to only compile-time."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using custom configurations in a Gradle project is that they allow for better organization of dependencies based on their usage. By defining custom configurations, developers can clearly delineate which dependencies are needed for specific tasks, improving maintainability and clarity in the build process."
+    },
+    {
+        "question": "When defining a custom configuration, what is an important consideration regarding its role?",
+        "options": {
+            "A": "It should always be marked as resolvable.",
+            "B": "It should clearly define its intended usage and scope.",
+            "C": "It must be declared in the root project only.",
+            "D": "It cannot extend any existing configurations."
+        },
+        "correct_answer": "B",
+        "explanation": "When defining a custom configuration, it is important to clearly define its intended usage and scope. This helps ensure that the configuration serves its purpose effectively and avoids potential conflicts with other configurations in the project."
+    },
+    {
+        "question": "What are module dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that refer to a module in a repository",
+            "B": "Dependencies that are only used during testing",
+            "C": "Dependencies that are defined within the same project",
+            "D": "Dependencies that do not require any metadata"
+        },
+        "correct_answer": "A",
+        "explanation": "Module dependencies in Gradle refer to dependencies that point to a specific module in a repository. They are the most common type of dependencies and allow projects to utilize external libraries or modules effectively."
+    },
+    {
+        "question": "Which of the following statements is true about module dependencies?",
+        "options": {
+            "A": "They can only be declared in the build script of the root project.",
+            "B": "They require a metadata file to resolve transitive dependencies.",
+            "C": "They are always resolved from local file systems.",
+            "D": "They do not support versioning."
+        },
+        "correct_answer": "B",
+        "explanation": "Module dependencies require a metadata file, such as a POM or Ivy file, to resolve transitive dependencies. This metadata provides information about the module and its dependencies, allowing Gradle to manage them effectively."
+    },
+    {
+        "question": "What happens if a module dependency does not have a corresponding metadata file?",
+        "options": {
+            "A": "Gradle will automatically create a metadata file.",
+            "B": "The build will fail if no artifact file is found.",
+            "C": "The dependency will be ignored by Gradle.",
+            "D": "Gradle will use a default version for the dependency."
+        },
+        "correct_answer": "B",
+        "explanation": "If a module dependency does not have a corresponding metadata file, the build will fail if no artifact file is found. Gradle relies on these files to understand how to resolve and manage the dependencies."
+    },
+    {
+        "question": "Which of the following best describes the role of module dependencies in a Gradle project?",
+        "options": {
+            "A": "They are used to define the build process of the project.",
+            "B": "They allow for the reuse of code across different projects.",
+            "C": "They are only applicable to Java projects.",
+            "D": "They are used to manage project configurations."
+        },
+        "correct_answer": "B",
+        "explanation": "Module dependencies allow for the reuse of code across different projects by enabling a project to depend on external libraries or modules. This promotes modularity and maintainability in software development."
+    },
+    {
+        "question": "What are file dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that are hosted on a binary repository like Maven or Ivy.",
+            "B": "Dependencies that represent files without any attached metadata.",
+            "C": "Dependencies that are automatically resolved from the internet.",
+            "D": "Dependencies that are only used for testing purposes."
+        },
+        "correct_answer": "B",
+        "explanation": "File dependencies in Gradle refer to files that are included in a project without any associated metadata, such as information about transitive dependencies. They are typically used when dependencies are not hosted in a repository and are instead located on a shared drive or included in version control."
+    },
+    {
+        "question": "How are file dependencies declared in a Gradle project?",
+        "options": {
+            "A": "By specifying their location in the file system directly.",
+            "B": "By using a dependency management tool to fetch them.",
+            "C": "By defining them in a separate configuration file.",
+            "D": "By importing them from a remote repository."
+        },
+        "correct_answer": "A",
+        "explanation": "File dependencies are declared in a Gradle project by specifying their exact location in the file system. This allows developers to include files directly into the project without needing to rely on a repository."
+    },
+    {
+        "question": "What is a key characteristic of file dependencies in Gradle?",
+        "options": {
+            "A": "They are included in the published dependency descriptor for the project.",
+            "B": "They can be used outside the current build.",
+            "C": "They do not require a version to be specified.",
+            "D": "They can only be used within the same build."
+        },
+        "correct_answer": "D",
+        "explanation": "A key characteristic of file dependencies is that they can only be used within the same build. They are not included in the published dependency descriptor, meaning they cannot be accessed by other builds."
+    },
+    {
+        "question": "Why is it important to assign a version to file dependencies?",
+        "options": {
+            "A": "To ensure they are automatically updated.",
+            "B": "To track changes and maintain compatibility.",
+            "C": "To allow them to be used in multiple builds.",
+            "D": "To enable Gradle to resolve them from a repository."
+        },
+        "correct_answer": "B",
+        "explanation": "Assigning a version to file dependencies is important for tracking changes and maintaining compatibility. Since file dependencies are not managed by Gradle's version conflict resolution, having a version helps developers understand the changes associated with each file."
+    },
+    {
+        "question": "What are project dependencies in Gradle?",
+        "options": {
+            "A": "Dependencies that refer to external libraries hosted on a repository.",
+            "B": "Dependencies between modules within the same Gradle project.",
+            "C": "Dependencies that are only used during testing.",
+            "D": "Dependencies that are declared in a separate configuration file."
+        },
+        "correct_answer": "B",
+        "explanation": "Project dependencies refer to the relationships between different modules within the same Gradle project. They allow for code reuse and modularization, ensuring that the necessary modules are built in the correct order and included in the classpath for compilation."
+    },
+    {
+        "question": "How does Gradle handle the order of project dependencies during a build?",
+        "options": {
+            "A": "It builds all projects simultaneously without considering dependencies.",
+            "B": "It builds project dependencies in a random order.",
+            "C": "It automatically determines the correct build order based on the declared dependencies.",
+            "D": "It requires manual specification of the build order in the build script."
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle automatically determines the correct build order for project dependencies based on the declared relationships between modules. This ensures that each module is built before any other module that depends on it, facilitating a smooth build process."
+    },
+    {
+        "question": "What is the purpose of declaring project dependencies in a Gradle build script?",
+        "options": {
+            "A": "To specify external libraries that the project needs.",
+            "B": "To define the order in which tasks should be executed.",
+            "C": "To enable code reuse and maintainability within the project.",
+            "D": "To configure the build environment settings."
+        },
+        "correct_answer": "C",
+        "explanation": "Declaring project dependencies in a Gradle build script serves the purpose of enabling code reuse and maintainability within the project. By defining how different modules relate to each other, developers can structure their code more effectively and avoid strong coupling between components."
+    },
+    {
+        "question": "What happens if a project dependency is not declared in Gradle?",
+        "options": {
+            "A": "The build will succeed without any issues.",
+            "B": "Gradle will automatically infer the dependency from the code.",
+            "C": "The build may fail due to missing classes or resources.",
+            "D": "The dependency will be ignored, and the project will not compile."
+        },
+        "correct_answer": "C",
+        "explanation": "If a project dependency is not declared in Gradle, the build may fail due to missing classes or resources that are required for compilation. Declaring dependencies is crucial for ensuring that all necessary components are available during the build process."
+    },
+    {
+        "question": "What is the primary purpose of declaring a Gradle API dependency?",
+        "options": {
+            "A": "To use the current version of Gradle's API for developing custom tasks or plugins",
+            "B": "To manage external libraries that are not part of the Gradle ecosystem",
+            "C": "To define project-specific configurations for dependency resolution",
+            "D": "To create a local repository for storing project artifacts"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of declaring a Gradle API dependency is to utilize the current version of Gradle's API when developing custom tasks or plugins. This allows developers to access the functionalities provided by Gradle and integrate them into their own build scripts."
+    },
+    {
+        "question": "How can a developer declare a dependency on the Gradle API?",
+        "options": {
+            "A": "By using the gradleApi() method in the DependencyHandler",
+            "B": "By specifying the API version in the build.gradle file",
+            "C": "By importing the Gradle API library directly into the project",
+            "D": "By creating a custom configuration for the API"
+        },
+        "correct_answer": "A",
+        "explanation": "A developer can declare a dependency on the Gradle API by using the gradleApi() method in the DependencyHandler. This method provides a straightforward way to access the Gradle API for custom development."
+    },
+    {
+        "question": "What is a key benefit of using the Gradle API dependency in a project?",
+        "options": {
+            "A": "It allows for automatic updates of external libraries",
+            "B": "It provides access to Gradle's built-in functionalities for task and plugin development",
+            "C": "It simplifies the process of managing project configurations",
+            "D": "It enables the use of third-party plugins without additional setup"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using the Gradle API dependency is that it provides access to Gradle's built-in functionalities, which are essential for developing custom tasks and plugins. This access allows developers to leverage Gradle's capabilities effectively."
+    },
+    {
+        "question": "Which of the following statements is true regarding Gradle API dependencies?",
+        "options": {
+            "A": "They are only used for managing external libraries.",
+            "B": "They are essential for writing and executing functional tests for Gradle plugins.",
+            "C": "They can be declared without specifying a version.",
+            "D": "They are not compatible with custom Gradle tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle API dependencies are essential for writing and executing functional tests for Gradle plugins. They provide the necessary tools and interfaces to interact with Gradle's core functionalities during testing."
+    },
+    {
+        "question": "What is the primary purpose of dependency configurations in Gradle?",
+        "options": {
+            "A": "To declare and manage dependencies for different scopes",
+            "B": "To compile source code into executable files",
+            "C": "To create user interfaces for applications",
+            "D": "To manage version control for source code"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency configurations in Gradle is to declare and manage dependencies for different scopes, such as compile-time and runtime. This allows developers to specify which dependencies are needed for various tasks and ensures that the correct dependencies are available when required."
+    },
+    {
+        "question": "What does the 'canBeResolved' flag indicate about a configuration in Gradle?",
+        "options": {
+            "A": "The configuration can be used to declare dependencies only.",
+            "B": "The configuration can be resolved to compute a dependency graph.",
+            "C": "The configuration is deprecated and should not be used.",
+            "D": "The configuration is only for consumer purposes."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'canBeResolved' flag indicates that a configuration can be resolved to compute a dependency graph. This means that it contains all the necessary information for resolution to happen, allowing Gradle to determine which artifacts to download and use."
+    },
+    {
+        "question": "What is the role of a configuration that has 'canBeConsumed' set to true?",
+        "options": {
+            "A": "It is meant to declare dependencies for internal use only.",
+            "B": "It exposes artifacts and their dependencies for consumption by other projects.",
+            "C": "It is used to compile source code into executable files.",
+            "D": "It is intended for testing purposes only."
+        },
+        "correct_answer": "B",
+        "explanation": "A configuration that has 'canBeConsumed' set to true is designed to expose artifacts and their dependencies for consumption by other projects. This allows other projects to utilize the artifacts produced by the project that defines the configuration."
+    },
+    {
+        "question": "How can configurations in Gradle inherit dependencies?",
+        "options": {
+            "A": "By using the 'extendsFrom' method to create a hierarchy.",
+            "B": "By declaring all dependencies in a single configuration.",
+            "C": "By merging all configurations into one.",
+            "D": "By defining dependencies in the build script only."
+        },
+        "correct_answer": "A",
+        "explanation": "Configurations in Gradle can inherit dependencies by using the 'extendsFrom' method to create a hierarchy. This allows child configurations to inherit all dependencies declared in their parent configurations, facilitating better organization and reuse of dependencies."
+    }
+]

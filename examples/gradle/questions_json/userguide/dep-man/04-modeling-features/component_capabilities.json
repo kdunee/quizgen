@@ -1,0 +1,222 @@
+[
+    {
+        "question": "What is the primary purpose of declaring capabilities in dependency management?",
+        "options": {
+            "A": "To specify the exact versions of dependencies required",
+            "B": "To express the features a component provides",
+            "C": "To list all dependencies in a project",
+            "D": "To create a visual representation of the dependency graph"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of declaring capabilities in dependency management is to express the features that a component provides. This allows for more flexible dependency resolution, as components can be requested based on their capabilities rather than specific versions, enabling better conflict detection and management."
+    },
+    {
+        "question": "How does Gradle handle conflicts when multiple components provide the same capability?",
+        "options": {
+            "A": "It automatically selects the latest version of the component",
+            "B": "It ignores the conflict and proceeds with the build",
+            "C": "It prompts the user to choose which component to use",
+            "D": "It fails the build without any notification"
+        },
+        "correct_answer": "C",
+        "explanation": "When multiple components provide the same capability, Gradle prompts the user to choose which component to use. This conflict resolution mechanism ensures that developers are aware of potential issues and can make informed decisions about which dependencies to include in their project."
+    },
+    {
+        "question": "What is an implicit capability in the context of a component?",
+        "options": {
+            "A": "A capability that is automatically generated based on the component's GAV coordinates",
+            "B": "A capability that must be explicitly declared by the developer",
+            "C": "A capability that is only relevant for external components",
+            "D": "A capability that is not recognized by Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "An implicit capability is a capability that is automatically generated based on the component's group, artifact, and version (GAV) coordinates. This means that every component has a default capability associated with its GAV, which can be used in dependency management without requiring explicit declaration."
+    },
+    {
+        "question": "What must be done when declaring explicit capabilities for a component?",
+        "options": {
+            "A": "Only the new capabilities need to be declared",
+            "B": "All capabilities, including implicit ones, must be declared",
+            "C": "No capabilities need to be declared if they are not used",
+            "D": "Only capabilities that conflict with others need to be declared"
+        },
+        "correct_answer": "B",
+        "explanation": "When declaring explicit capabilities for a component, it is necessary to declare all capabilities, including the implicit ones. This ensures that the dependency management system has a complete understanding of the capabilities provided by the component, which is essential for resolving dependencies correctly."
+    },
+    {
+        "question": "What is the primary purpose of declaring capabilities for a component in Gradle?",
+        "options": {
+            "A": "To specify the exact versions of dependencies required",
+            "B": "To express the features and functionalities a component provides",
+            "C": "To manage the build process more efficiently",
+            "D": "To ensure compatibility with all external libraries"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of declaring capabilities for a component in Gradle is to express the features and functionalities that the component provides. This allows for better dependency management by enabling the system to understand what capabilities are available and to detect conflicts when multiple components provide the same capability."
+    },
+    {
+        "question": "How does declaring capabilities help in managing dependency conflicts?",
+        "options": {
+            "A": "It automatically resolves all dependency versions",
+            "B": "It allows Gradle to detect incompatible capabilities in a dependency graph",
+            "C": "It eliminates the need for versioning dependencies",
+            "D": "It ensures that all dependencies are included in the build"
+        },
+        "correct_answer": "B",
+        "explanation": "Declaring capabilities helps in managing dependency conflicts by allowing Gradle to detect incompatible capabilities in a dependency graph. When components declare their capabilities, Gradle can identify when two components provide the same capability, which helps in resolving conflicts and making informed decisions about which component to use."
+    },
+    {
+        "question": "What is an implicit capability in the context of Gradle components?",
+        "options": {
+            "A": "A capability that is automatically generated based on the component's GAV coordinates",
+            "B": "A capability that must be manually declared by the developer",
+            "C": "A capability that is only relevant for external components",
+            "D": "A capability that is not recognized by Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "An implicit capability in the context of Gradle components is a capability that is automatically generated based on the component's GAV (group, artifact, version) coordinates. Every component has an implicit capability that corresponds to its GAV, which serves as a baseline for its features."
+    },
+    {
+        "question": "What must be done when declaring explicit capabilities for a component?",
+        "options": {
+            "A": "Only the new capabilities need to be declared",
+            "B": "All capabilities, including implicit ones, must be declared",
+            "C": "No capabilities need to be declared if they are not used",
+            "D": "Capabilities can be declared in any order without restrictions"
+        },
+        "correct_answer": "B",
+        "explanation": "When declaring explicit capabilities for a component, all capabilities, including the implicit ones, must be declared. This ensures that the component's capabilities are fully defined and that there is no ambiguity in what features it provides, especially when alternate implementations exist."
+    },
+    {
+        "question": "What is a dependency graph in the context of software components?",
+        "options": {
+            "A": "A visual representation of the software architecture",
+            "B": "A structure that shows the relationships between different software components and their dependencies",
+            "C": "A list of all the features provided by a software library",
+            "D": "A method for optimizing code performance"
+        },
+        "correct_answer": "B",
+        "explanation": "A dependency graph is a structure that illustrates the relationships between different software components and their dependencies. It helps in understanding how components interact and which components rely on others, making it easier to manage and resolve conflicts in dependencies."
+    },
+    {
+        "question": "Why is it important to model capabilities in a dependency graph?",
+        "options": {
+            "A": "To ensure all components are compatible with each other",
+            "B": "To simplify the software architecture",
+            "C": "To allow for better performance optimization",
+            "D": "To provide a clear list of all available features"
+        },
+        "correct_answer": "A",
+        "explanation": "Modeling capabilities in a dependency graph is important because it allows the dependency management engine to identify incompatible capabilities among components. This helps prevent conflicts and ensures that the components used in a project are compatible with each other, leading to a more stable and reliable software system."
+    },
+    {
+        "question": "What happens when there are conflicting capabilities in a dependency graph?",
+        "options": {
+            "A": "The build process will automatically resolve the conflict without any issues",
+            "B": "The build will fail, requiring the developer to choose which module to use",
+            "C": "The conflicting capabilities will be ignored, and the build will proceed",
+            "D": "The software will run but with reduced functionality"
+        },
+        "correct_answer": "B",
+        "explanation": "When there are conflicting capabilities in a dependency graph, the build process will fail. This failure prompts the developer to make a decision on which module to use, ensuring that only compatible components are included in the final build, thus maintaining the integrity of the software."
+    },
+    {
+        "question": "What is the role of implicit capabilities in a component?",
+        "options": {
+            "A": "To provide a default set of features for all components",
+            "B": "To represent the GAV coordinates of the component",
+            "C": "To enhance the performance of the component",
+            "D": "To allow for additional features to be added later"
+        },
+        "correct_answer": "B",
+        "explanation": "Implicit capabilities in a component represent the GAV (group, artifact, version) coordinates of that component. They serve as a foundational capability that is automatically associated with the component, ensuring that its identity and versioning are clearly defined within the dependency graph."
+    },
+    {
+        "question": "What is the primary purpose of declaring capabilities in dependency management?",
+        "options": {
+            "A": "To specify the exact versions of dependencies required",
+            "B": "To allow for smarter conflict resolution in dependencies",
+            "C": "To enhance the performance of the build process",
+            "D": "To simplify the structure of the dependency graph"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of declaring capabilities in dependency management is to allow for smarter conflict resolution. By expressing requirements in terms of capabilities rather than specific versions, the dependency management engine can detect incompatible capabilities and help manage conflicts more effectively."
+    },
+    {
+        "question": "What happens when two components provide the same capability in a dependency graph?",
+        "options": {
+            "A": "The build process will automatically choose one of the components",
+            "B": "The build will fail due to a conflict on the capability",
+            "C": "The components will be merged into a single component",
+            "D": "The capability will be ignored during the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "When two components provide the same capability in a dependency graph, the build will fail due to a conflict on that capability. This mechanism ensures that developers are made aware of potential issues and can make informed decisions about which component to use."
+    },
+    {
+        "question": "What is an implicit capability in the context of a component?",
+        "options": {
+            "A": "A capability that is automatically generated based on the component's GAV coordinates",
+            "B": "A capability that must be explicitly declared by the developer",
+            "C": "A capability that is only relevant for external components",
+            "D": "A capability that is ignored by the dependency management system"
+        },
+        "correct_answer": "A",
+        "explanation": "An implicit capability is a capability that is automatically generated based on the component's GAV (group, artifact, version) coordinates. Every component has an implicit capability that corresponds to its coordinates, which serves as a baseline for dependency management."
+    },
+    {
+        "question": "Why is it necessary to declare all capabilities, including implicit ones, when defining explicit capabilities for a component?",
+        "options": {
+            "A": "To ensure compatibility with older versions of Gradle",
+            "B": "To avoid conflicts and ensure clarity in the dependency graph",
+            "C": "To reduce the overall size of the build file",
+            "D": "To improve the performance of the dependency resolution process"
+        },
+        "correct_answer": "B",
+        "explanation": "It is necessary to declare all capabilities, including implicit ones, when defining explicit capabilities for a component to avoid conflicts and ensure clarity in the dependency graph. This practice helps maintain a clear understanding of what capabilities are available and prevents ambiguity in dependency resolution."
+    },
+    {
+        "question": "What is the primary purpose of Gradle Module Metadata?",
+        "options": {
+            "A": "To declare capabilities of components",
+            "B": "To manage version control of libraries",
+            "C": "To provide a graphical interface for dependency management",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Gradle Module Metadata is to declare capabilities of components. This metadata allows Gradle to understand the features that a component provides, enabling better dependency management and conflict resolution within a project."
+    },
+    {
+        "question": "What happens when a component declares explicit capabilities in Gradle?",
+        "options": {
+            "A": "Only the explicit capabilities need to be declared.",
+            "B": "All capabilities, including implicit ones, must be declared.",
+            "C": "Capabilities are automatically inferred from the source code.",
+            "D": "Explicit capabilities are ignored by the dependency management engine."
+        },
+        "correct_answer": "B",
+        "explanation": "When a component declares explicit capabilities in Gradle, it is required to declare all capabilities, including the implicit ones. This ensures that the dependency management engine has a complete understanding of the component's capabilities, which is essential for resolving conflicts and managing dependencies effectively."
+    },
+    {
+        "question": "How does Gradle handle conflicts between capabilities in a dependency graph?",
+        "options": {
+            "A": "It automatically resolves conflicts by choosing the first declared capability.",
+            "B": "It fails the build and requires the user to manually resolve the conflict.",
+            "C": "It ignores the conflicting capabilities and continues the build.",
+            "D": "It merges the capabilities into a single capability."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle handles conflicts between capabilities in a dependency graph by failing the build and requiring the user to manually resolve the conflict. This approach ensures that developers are aware of potential issues and can make informed decisions about which capabilities to use in their projects."
+    },
+    {
+        "question": "What is an implicit capability in the context of Gradle Module Metadata?",
+        "options": {
+            "A": "A capability that is automatically generated based on the component's GAV coordinates.",
+            "B": "A capability that must be declared explicitly by the user.",
+            "C": "A capability that is only relevant for external components.",
+            "D": "A capability that is ignored by the dependency management system."
+        },
+        "correct_answer": "A",
+        "explanation": "An implicit capability in the context of Gradle Module Metadata is a capability that is automatically generated based on the component's GAV (group, artifact, version) coordinates. This implicit capability represents the basic identity of the component and is included alongside any explicitly declared capabilities."
+    }
+]

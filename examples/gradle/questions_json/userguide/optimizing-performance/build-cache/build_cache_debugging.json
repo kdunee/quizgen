@@ -1,0 +1,343 @@
+[
+    {
+        "question": "What is the primary purpose of task output caching in Gradle?",
+        "options": {
+            "A": "To speed up the build process by reusing outputs from previous builds",
+            "B": "To ensure that all tasks are executed every time a build is run",
+            "C": "To store all project files in a remote location",
+            "D": "To automatically update all dependencies in the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of task output caching in Gradle is to speed up the build process by reusing outputs from previous builds. This allows Gradle to avoid re-executing tasks that have already produced the same outputs, thus improving build efficiency."
+    },
+    {
+        "question": "What can cause a cache miss in Gradle's task output caching?",
+        "options": {
+            "A": "Specifying inputs that do not affect the task's output",
+            "B": "Running the build without any tasks specified",
+            "C": "Using a remote cache for all builds",
+            "D": "Cleaning the project before every build"
+        },
+        "correct_answer": "A",
+        "explanation": "A cache miss can occur when inputs that affect the task's outputs are not specified correctly, or when unnecessary inputs that do not affect the outputs are included. This can lead to Gradle determining that the task needs to be re-executed, resulting in a cache miss."
+    },
+    {
+        "question": "Which of the following is a recommended step to diagnose a cache miss?",
+        "options": {
+            "A": "Check if the build script has been modified",
+            "B": "Always run the build with the cache disabled",
+            "C": "Ensure that all tasks are executed in the same order every time",
+            "D": "Use absolute paths for all task inputs"
+        },
+        "correct_answer": "A",
+        "explanation": "To diagnose a cache miss, it is recommended to check if the build script has been modified, as changes in the build script can affect the inputs and outputs of tasks. This can help identify why a task was not loaded from the cache."
+    },
+    {
+        "question": "What is a common reason for a task to be executed even when it is expected to be cached?",
+        "options": {
+            "A": "The task has no outputs defined",
+            "B": "The task's inputs have changed",
+            "C": "The build cache is configured incorrectly",
+            "D": "The project has been cleaned before the build"
+        },
+        "correct_answer": "B",
+        "explanation": "A common reason for a task to be executed instead of being cached is that the task's inputs have changed. If any input that affects the task's output is modified, Gradle will re-execute the task to ensure the outputs are up-to-date."
+    },
+    {
+        "question": "What is a cache miss in the context of Gradle builds?",
+        "options": {
+            "A": "When a task's output is found in the build cache",
+            "B": "When Gradle cannot find a task's output in the build cache",
+            "C": "When all tasks are executed successfully",
+            "D": "When a task is skipped during the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "A cache miss occurs when Gradle calculates a build cache key for a task that does not match any existing keys in the build cache. This means that the expected outputs for that task are not available, leading to the task being executed instead of retrieved from the cache."
+    },
+    {
+        "question": "Which of the following can cause a cache miss?",
+        "options": {
+            "A": "All inputs to a task are specified correctly",
+            "B": "A change in the implementation of a task",
+            "C": "The build cache is enabled and functioning properly",
+            "D": "The task has no outputs or inputs"
+        },
+        "correct_answer": "B",
+        "explanation": "A change in the implementation of a task, such as modifications to the class names or classloader hashes, can lead to a cache miss. This is because the build cache key is based on the task's implementation, and any changes can result in a different key that does not match the cached version."
+    },
+    {
+        "question": "What is the first step to diagnose a cache miss?",
+        "options": {
+            "A": "Check if the build cache is enabled",
+            "B": "Identify the first cacheable task that was executed",
+            "C": "Run the build again without the cache",
+            "D": "Clear the local cache before building"
+        },
+        "correct_answer": "B",
+        "explanation": "To diagnose a cache miss, the first step is to identify the first cacheable task that was executed. This is important because a cache miss can have a cascading effect, causing dependent tasks to execute if an earlier task was not loaded from the cache."
+    },
+    {
+        "question": "What should you do if you find a task that is out of date but has no cacheable tasks depending on its outcome?",
+        "options": {
+            "A": "You must always re-execute the task",
+            "B": "You can ignore it as it does not affect the cache",
+            "C": "You should investigate further to find the cause",
+            "D": "You need to clear the cache and rebuild"
+        },
+        "correct_answer": "B",
+        "explanation": "If a task is out of date but has no cacheable tasks depending on its outcome, you can ignore it. This is because it does not impact the overall caching mechanism, and the focus should be on tasks that are cacheable and their dependencies."
+    },
+    {
+        "question": "What is the primary goal of incremental builds in a build system?",
+        "options": {
+            "A": "To execute all tasks every time a build is run",
+            "B": "To only execute tasks that have changed since the last build",
+            "C": "To ensure that all outputs are always up-to-date",
+            "D": "To minimize the use of system resources during a build"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary goal of incremental builds is to only execute tasks that have changed since the last build. This approach saves time and resources by avoiding unnecessary work, allowing for faster build times and more efficient use of system resources."
+    },
+    {
+        "question": "Which of the following is a potential consequence of not specifying task inputs correctly in an incremental build?",
+        "options": {
+            "A": "All tasks will be executed successfully every time",
+            "B": "Cache misses may occur, leading to incorrect builds",
+            "C": "The build will always be faster",
+            "D": "Tasks will automatically be marked as up-to-date"
+        },
+        "correct_answer": "B",
+        "explanation": "Failing to specify task inputs correctly can lead to cache misses, which may result in incorrect builds. If necessary inputs are not declared, the build system may not recognize changes that affect task outputs, causing tasks to execute when they should not, or vice versa."
+    },
+    {
+        "question": "What is a cache miss in the context of incremental builds?",
+        "options": {
+            "A": "When a task is executed without any inputs",
+            "B": "When a task's output is not found in the build cache",
+            "C": "When all tasks are executed from the cache",
+            "D": "When a build completes successfully without errors"
+        },
+        "correct_answer": "B",
+        "explanation": "A cache miss occurs when a task's output is not found in the build cache. This typically happens when the build cache key for a task is different from any existing keys in the cache, often due to changes in task inputs or configurations."
+    },
+    {
+        "question": "What should be done to ensure that a build is functioning correctly without the cache?",
+        "options": {
+            "A": "Run the build multiple times with the cache enabled",
+            "B": "Run the build once without cleaning the project",
+            "C": "Run a clean build without enabling the build cache",
+            "D": "Only execute tasks that are known to be cacheable"
+        },
+        "correct_answer": "C",
+        "explanation": "To ensure that a build is functioning correctly without the cache, it is important to run a clean build without enabling the build cache. This allows you to verify that all tasks produce the expected outputs and that the build behaves as intended without relying on cached results."
+    },
+    {
+        "question": "What does it mean for a task to be considered relocatable in the context of caching?",
+        "options": {
+            "A": "The task can be executed in any location without affecting its output.",
+            "B": "The task can only be executed in its original directory.",
+            "C": "The task's output is always the same regardless of input changes.",
+            "D": "The task requires absolute paths to function correctly."
+        },
+        "correct_answer": "A",
+        "explanation": "A task is considered relocatable if its output can be reused when the task is executed in a different location. This means that the task's inputs do not contain absolute paths, allowing the same task to produce the same output regardless of where it is run."
+    },
+    {
+        "question": "Which of the following is a common reason why a task may not be relocatable?",
+        "options": {
+            "A": "The task uses relative paths for its inputs.",
+            "B": "The task's inputs include absolute paths.",
+            "C": "The task is executed in a different environment.",
+            "D": "The task has no outputs defined."
+        },
+        "correct_answer": "B",
+        "explanation": "A task may not be relocatable if its inputs include absolute paths. Absolute paths tie the task's execution to a specific location, preventing the output from being reused in different directories. This is a common issue that can lead to cache misses."
+    },
+    {
+        "question": "What is the primary goal of testing cache relocatability?",
+        "options": {
+            "A": "To ensure tasks can run without any inputs.",
+            "B": "To verify that tasks can be executed in different directories without issues.",
+            "C": "To check if tasks can be executed faster.",
+            "D": "To confirm that all tasks produce the same output every time."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary goal of testing cache relocatability is to verify that tasks can be executed in different directories without issues. This ensures that the outputs can be reused across different locations, which is essential for efficient caching and build performance."
+    },
+    {
+        "question": "What is the primary goal of cross-platform cache reuse in Gradle builds?",
+        "options": {
+            "A": "To ensure that tasks can be executed on different operating systems without modification",
+            "B": "To allow tasks to share outputs between different versions of Gradle",
+            "C": "To enable the reuse of cached outputs across different platforms",
+            "D": "To reduce the overall build time by eliminating all tasks"
+        },
+        "correct_answer": "C",
+        "explanation": "The primary goal of cross-platform cache reuse is to enable the reuse of cached outputs across different platforms. This means that if a task is executed on one platform, its outputs can be utilized on another platform, thereby improving build efficiency and consistency across different environments."
+    },
+    {
+        "question": "Which of the following is a necessary condition for effective cross-platform cache reuse?",
+        "options": {
+            "A": "Tasks must be executed in the same directory structure",
+            "B": "The build must be configured to use a remote cache",
+            "C": "All tasks must be cacheable and have identical inputs",
+            "D": "The same version of Gradle must be used across platforms"
+        },
+        "correct_answer": "B",
+        "explanation": "For effective cross-platform cache reuse, the build must be configured to use a remote cache. This allows outputs generated on one platform to be stored and accessed by builds running on different platforms, facilitating the sharing of cached results."
+    },
+    {
+        "question": "What is a common issue that can prevent tasks from being relocatable across different platforms?",
+        "options": {
+            "A": "Using relative paths in task configurations",
+            "B": "Including absolute paths among the task's inputs",
+            "C": "Running builds in different directories",
+            "D": "Using the same Gradle version on all platforms"
+        },
+        "correct_answer": "B",
+        "explanation": "A common issue that can prevent tasks from being relocatable across different platforms is including absolute paths among the task's inputs. Absolute paths can lead to discrepancies when the same task is executed in different locations, making it difficult for the build system to recognize that the outputs can be reused."
+    },
+    {
+        "question": "What should be done to test cross-platform cache reuse effectively?",
+        "options": {
+            "A": "Run builds on the same operating system",
+            "B": "Set up a remote cache and populate it from one platform",
+            "C": "Ensure all tasks are executed in the same directory",
+            "D": "Use only local caches for all builds"
+        },
+        "correct_answer": "B",
+        "explanation": "To test cross-platform cache reuse effectively, one should set up a remote cache and populate it from one platform. This allows the outputs generated on that platform to be accessed and reused by builds running on other platforms, ensuring that the caching mechanism works as intended across different environments."
+    },
+    {
+        "question": "What is the primary goal of evaluating build performance?",
+        "options": {
+            "A": "To identify and eliminate all tasks in the build process",
+            "B": "To ensure that all tasks are executed every time a build is run",
+            "C": "To analyze execution times and identify patterns in build performance",
+            "D": "To increase the number of tasks that are executed in a build"
+        },
+        "correct_answer": "C",
+        "explanation": "The primary goal of evaluating build performance is to analyze execution times and identify patterns in build performance. This helps in understanding which tasks are taking longer than expected and allows for optimization of the build process, ultimately improving efficiency."
+    },
+    {
+        "question": "Which of the following is a common method for diagnosing build performance issues?",
+        "options": {
+            "A": "Ignoring the execution times of tasks",
+            "B": "Recording execution times and generating graphs",
+            "C": "Running all tasks without any caching",
+            "D": "Removing all tasks from the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "A common method for diagnosing build performance issues is to record execution times and generate graphs. This allows developers to visualize performance trends over time and identify specific tasks that may be causing slowdowns, enabling targeted optimizations."
+    },
+    {
+        "question": "What should be done if tasks are re-executing instead of loading their outputs from the cache?",
+        "options": {
+            "A": "Ignore the issue as it is not significant",
+            "B": "Consider restructuring the project to reduce dependencies between tasks",
+            "C": "Increase the number of tasks in the build",
+            "D": "Always run builds without caching to avoid issues"
+        },
+        "correct_answer": "B",
+        "explanation": "If tasks are re-executing instead of loading their outputs from the cache, it may indicate a problem in the build configuration. In such cases, it is advisable to consider restructuring the project to reduce dependencies between different tasks, which can help improve cache utilization and overall build performance."
+    },
+    {
+        "question": "What is a potential indicator of a problem in build performance?",
+        "options": {
+            "A": "All tasks completing successfully without any warnings",
+            "B": "Consistent execution times across all builds",
+            "C": "Unexpected recompilation of tasks that should be cached",
+            "D": "Tasks being executed in parallel without any issues"
+        },
+        "correct_answer": "C",
+        "explanation": "A potential indicator of a problem in build performance is unexpected recompilation of tasks that should be cached. This suggests that there may be issues with task inputs or configuration that prevent the build system from recognizing that the outputs can be reused, leading to unnecessary work and longer build times."
+    },
+    {
+        "question": "What is the significance of specifying task inputs correctly in a build process?",
+        "options": {
+            "A": "It ensures that all tasks are executed every time.",
+            "B": "It helps avoid incorrect builds and cache misses.",
+            "C": "It allows for faster execution of all tasks.",
+            "D": "It eliminates the need for a build cache."
+        },
+        "correct_answer": "B",
+        "explanation": "Specifying task inputs correctly is crucial because it ensures that the build process accurately reflects the dependencies and requirements of each task. This helps avoid incorrect builds, where tasks may not produce the expected outputs, and prevents cache misses, which occur when the build system cannot find the necessary outputs in the cache due to missing or incorrect inputs."
+    },
+    {
+        "question": "What happens if unnecessary inputs are specified for a task?",
+        "options": {
+            "A": "The task will always be up-to-date.",
+            "B": "It can lead to cache misses.",
+            "C": "The task will execute faster.",
+            "D": "It will not affect the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "Specifying unnecessary inputs for a task can lead to cache misses because the build system may incorrectly determine that the task's outputs have changed, even when they have not. This results in the task being executed again, which is inefficient and counterproductive to the goal of utilizing the build cache effectively."
+    },
+    {
+        "question": "What is a cache miss in the context of task outputs?",
+        "options": {
+            "A": "When a task's output is found in the build cache.",
+            "B": "When a task is executed without any inputs.",
+            "C": "When the build cache key for a task does not match any existing keys in the cache.",
+            "D": "When all tasks are executed successfully."
+        },
+        "correct_answer": "C",
+        "explanation": "A cache miss occurs when the build system calculates a build cache key for a task that does not match any existing keys in the cache. This indicates that the outputs of the task cannot be retrieved from the cache, leading to the task being executed again, which can slow down the build process."
+    },
+    {
+        "question": "Why is it important to ensure that task inputs are stable?",
+        "options": {
+            "A": "To guarantee that tasks will always execute.",
+            "B": "To prevent unnecessary task executions and improve build performance.",
+            "C": "To allow for more complex task configurations.",
+            "D": "To ensure that all tasks are cacheable."
+        },
+        "correct_answer": "B",
+        "explanation": "Ensuring that task inputs are stable is important because it prevents unnecessary task executions, which can degrade build performance. Stable inputs mean that the outputs of tasks can be reliably cached and reused, leading to faster builds and more efficient use of resources."
+    },
+    {
+        "question": "What is the purpose of a build cache key in Gradle?",
+        "options": {
+            "A": "To uniquely identify the outputs of a task based on its inputs and implementation",
+            "B": "To store the source code of the project for future builds",
+            "C": "To manage the dependencies of a project during the build process",
+            "D": "To track the execution time of tasks in a build"
+        },
+        "correct_answer": "A",
+        "explanation": "The purpose of a build cache key in Gradle is to uniquely identify the outputs of a task based on its inputs and implementation. This key is generated from various factors, including the task's input properties and the implementation details, allowing Gradle to determine if the outputs can be reused from the cache."
+    },
+    {
+        "question": "What happens when a build cache key is different from existing keys in the cache?",
+        "options": {
+            "A": "The task will be skipped during the build process",
+            "B": "A cache miss occurs, and the task will be executed again",
+            "C": "The build will fail immediately",
+            "D": "The task will use the previous outputs from the cache"
+        },
+        "correct_answer": "B",
+        "explanation": "When a build cache key is different from existing keys in the cache, a cache miss occurs, meaning that the task will be executed again. This happens because Gradle cannot find a matching output in the cache that corresponds to the new key, necessitating a fresh execution of the task."
+    },
+    {
+        "question": "Which of the following factors can affect the generation of a build cache key?",
+        "options": {
+            "A": "The version of Gradle being used",
+            "B": "The class names and classloader hashes of the task",
+            "C": "The operating system on which the build is run",
+            "D": "The number of tasks in the build"
+        },
+        "correct_answer": "B",
+        "explanation": "The generation of a build cache key can be affected by the class names and classloader hashes of the task. These elements are part of the implementation details that contribute to the uniqueness of the cache key, along with other inputs and properties associated with the task."
+    },
+    {
+        "question": "What is a common reason for a cache miss in a Gradle build?",
+        "options": {
+            "A": "The build script has not been modified",
+            "B": "The task has no outputs defined",
+            "C": "An input property of the task has changed",
+            "D": "The build cache is disabled"
+        },
+        "correct_answer": "C",
+        "explanation": "A common reason for a cache miss in a Gradle build is that an input property of the task has changed. This change can lead to a different build cache key being generated, which does not match any existing keys in the cache, resulting in the task needing to be executed again."
+    }
+]

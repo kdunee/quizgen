@@ -1,0 +1,255 @@
+[
+    {
+        "question": "What is the primary purpose of initialization scripts in Gradle?",
+        "options": {
+            "A": "To run after the build script is executed",
+            "B": "To customize the build environment before the build script runs",
+            "C": "To compile the source code of the project",
+            "D": "To manage dependencies for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "Initialization scripts are designed to customize the build environment or configure settings before the build script is executed. They allow for setting up common configurations across multiple projects, making them essential for establishing a consistent build environment."
+    },
+    {
+        "question": "Which of the following is NOT a use case for initialization scripts?",
+        "options": {
+            "A": "Setting up enterprise-wide configurations",
+            "B": "Configuring properties based on the environment",
+            "C": "Compiling Java source files",
+            "D": "Registering build listeners"
+        },
+        "correct_answer": "C",
+        "explanation": "Compiling Java source files is not a use case for initialization scripts. Instead, initialization scripts are used for setting up configurations, properties, and listeners before the build process begins, rather than for the actual compilation of code."
+    },
+    {
+        "question": "How can you invoke an init script in Gradle?",
+        "options": {
+            "A": "By including it in the build.gradle file",
+            "B": "By specifying it on the command line with the -I option",
+            "C": "By placing it in the src/main/resources directory",
+            "D": "By running it as a standalone application"
+        },
+        "correct_answer": "B",
+        "explanation": "An init script can be invoked by specifying it on the command line using the -I or --init-script option followed by the path to the script. This allows for flexibility in how and when the init script is executed during the Gradle build process."
+    },
+    {
+        "question": "What is a limitation of using initialization scripts in Gradle?",
+        "options": {
+            "A": "They cannot be used to configure project dependencies",
+            "B": "They cannot access classes in the buildSrc project",
+            "C": "They can only be written in Groovy",
+            "D": "They can only be executed once per build"
+        },
+        "correct_answer": "B",
+        "explanation": "A key limitation of initialization scripts is that they cannot access classes in the buildSrc project. This means that while they can configure various aspects of the build environment, they are restricted from utilizing custom classes defined in the buildSrc directory."
+    },
+    {
+        "question": "What is the primary purpose of initialization scripts in Gradle?",
+        "options": {
+            "A": "To run after the build script is executed",
+            "B": "To customize the build environment before the build script runs",
+            "C": "To compile the source code of the project",
+            "D": "To manage dependencies for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of initialization scripts in Gradle is to customize the build environment before the build script runs. They allow users to set up configurations, properties, and other settings that are necessary for the build process, ensuring that the environment is tailored to specific needs."
+    },
+    {
+        "question": "Which of the following is NOT a use case for initialization scripts?",
+        "options": {
+            "A": "Setting up enterprise-wide configurations",
+            "B": "Configuring properties based on the environment",
+            "C": "Compiling Java source files",
+            "D": "Registering build listeners"
+        },
+        "correct_answer": "C",
+        "explanation": "Compiling Java source files is not a use case for initialization scripts. Instead, initialization scripts are used for setting up configurations, properties, and listeners before the build process begins, while the actual compilation of source files is handled during the build script execution."
+    },
+    {
+        "question": "How can you invoke an init script in Gradle?",
+        "options": {
+            "A": "By including it in the build.gradle file",
+            "B": "By specifying it on the command line with the -I option",
+            "C": "By placing it in the src/main/resources directory",
+            "D": "By adding it to the settings.gradle file"
+        },
+        "correct_answer": "B",
+        "explanation": "You can invoke an init script in Gradle by specifying it on the command line with the -I option, followed by the path to the script. This allows you to customize the build environment dynamically when executing a Gradle build."
+    },
+    {
+        "question": "What is a limitation of init scripts in Gradle?",
+        "options": {
+            "A": "They can only be written in Groovy",
+            "B": "They cannot access classes in the buildSrc project",
+            "C": "They can only be used for single-project builds",
+            "D": "They cannot register build listeners"
+        },
+        "correct_answer": "B",
+        "explanation": "A limitation of init scripts in Gradle is that they cannot access classes in the buildSrc project. This means that while init scripts can customize the build environment, they are restricted from utilizing custom classes defined in the buildSrc directory."
+    },
+    {
+        "question": "What is the primary purpose of initialization scripts in Gradle?",
+        "options": {
+            "A": "To run after the build script is executed",
+            "B": "To customize the build environment before the build script runs",
+            "C": "To compile the source code of the project",
+            "D": "To manage dependencies for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "Initialization scripts are designed to customize the build environment or configure settings before the build script is executed. They allow for setting up common configurations across multiple projects, making them essential for establishing a consistent build environment."
+    },
+    {
+        "question": "Which of the following is NOT a use case for initialization scripts?",
+        "options": {
+            "A": "Setting up enterprise-wide configurations",
+            "B": "Configuring properties based on the environment",
+            "C": "Compiling Java source files",
+            "D": "Registering build listeners"
+        },
+        "correct_answer": "C",
+        "explanation": "Compiling Java source files is not a use case for initialization scripts. Instead, initialization scripts are used for setting up configurations, properties, and listeners before the build process begins, rather than for the actual compilation of code."
+    },
+    {
+        "question": "How can you invoke an init script in Gradle?",
+        "options": {
+            "A": "By including it in the build.gradle file",
+            "B": "By specifying it on the command line with the -I option",
+            "C": "By placing it in the src/main/resources directory",
+            "D": "By running it as a standalone application"
+        },
+        "correct_answer": "B",
+        "explanation": "An init script can be invoked by specifying it on the command line using the -I or --init-script option followed by the path to the script. This allows for flexibility in executing different init scripts as needed during the build process."
+    },
+    {
+        "question": "What is a limitation of init scripts in Gradle?",
+        "options": {
+            "A": "They cannot run before the build script",
+            "B": "They cannot access classes in the buildSrc project",
+            "C": "They can only be written in Groovy",
+            "D": "They cannot register build listeners"
+        },
+        "correct_answer": "B",
+        "explanation": "A key limitation of init scripts is that they cannot access classes in the buildSrc project. This means that while they can configure the build environment, they are restricted from utilizing custom classes defined in the buildSrc directory."
+    },
+    {
+        "question": "What is the primary purpose of using an init script in a Gradle build?",
+        "options": {
+            "A": "To run the build script after the project is evaluated",
+            "B": "To customize the build environment before the build script is executed",
+            "C": "To compile the source code of the project",
+            "D": "To manage dependencies for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of using an init script in a Gradle build is to customize the build environment before the build script is executed. Init scripts allow for early configuration of settings, repositories, and plugins, which can be beneficial for setting up common configurations across multiple projects."
+    },
+    {
+        "question": "Which of the following is NOT a typical use case for an init script?",
+        "options": {
+            "A": "Setting up enterprise-wide configurations",
+            "B": "Configuring properties based on the environment",
+            "C": "Compiling Java source files",
+            "D": "Registering build listeners"
+        },
+        "correct_answer": "C",
+        "explanation": "Compiling Java source files is not a typical use case for an init script. Init scripts are primarily used for configuring the build environment and settings before the actual build script runs, rather than for compiling code, which is handled by the build script itself."
+    },
+    {
+        "question": "How can you invoke an init script in Gradle?",
+        "options": {
+            "A": "By including it in the build.gradle file",
+            "B": "By specifying it on the command line with the -I option",
+            "C": "By placing it in the src/main/resources directory",
+            "D": "By adding it to the settings.gradle file"
+        },
+        "correct_answer": "B",
+        "explanation": "You can invoke an init script in Gradle by specifying it on the command line with the -I option, followed by the path to the script. This allows you to run the init script before the build starts, enabling early configuration of the build environment."
+    },
+    {
+        "question": "What is a limitation of init scripts in Gradle?",
+        "options": {
+            "A": "They can only be used in multi-project builds",
+            "B": "They cannot access classes in the buildSrc project",
+            "C": "They must be written in Java only",
+            "D": "They can only configure repositories"
+        },
+        "correct_answer": "B",
+        "explanation": "A limitation of init scripts in Gradle is that they cannot access classes in the buildSrc project. This means that while init scripts can perform various configurations, they are restricted from utilizing custom classes defined in the buildSrc directory."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in the context of init scripts?",
+        "options": {
+            "A": "To define the build environment and configurations",
+            "B": "To declare and manage external libraries and dependencies",
+            "C": "To execute build tasks in parallel",
+            "D": "To optimize the performance of the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of dependency management in init scripts is to declare and manage external libraries and dependencies that the script requires. This allows the init script to utilize additional classes and functionalities that are not part of the core Gradle distribution, enhancing the capabilities of the build process."
+    },
+    {
+        "question": "Which method is used in init scripts to declare external dependencies?",
+        "options": {
+            "A": "apply()",
+            "B": "dependencies()",
+            "C": "initscript()",
+            "D": "include()"
+        },
+        "correct_answer": "C",
+        "explanation": "The method used in init scripts to declare external dependencies is `initscript()`. This method allows the user to specify the classpath for the init script, enabling the inclusion of external libraries that can be utilized within the script."
+    },
+    {
+        "question": "How are dependencies declared in an init script's classpath?",
+        "options": {
+            "A": "By using the apply() method to include them",
+            "B": "By adding them to the classpath configuration within the initscript() method",
+            "C": "By specifying them in the build.gradle file",
+            "D": "By listing them in the settings.gradle file"
+        },
+        "correct_answer": "B",
+        "explanation": "Dependencies in an init script's classpath are declared by adding them to the classpath configuration within the `initscript()` method. This allows the init script to access and use the specified external libraries during its execution."
+    },
+    {
+        "question": "What is a limitation of using init scripts for dependency management?",
+        "options": {
+            "A": "They cannot declare external dependencies",
+            "B": "They cannot access classes in the buildSrc project",
+            "C": "They can only manage dependencies for specific projects",
+            "D": "They can only be executed in a CI environment"
+        },
+        "correct_answer": "B",
+        "explanation": "A limitation of using init scripts for dependency management is that they cannot access classes in the `buildSrc` project. This means that any custom classes or logic defined in the `buildSrc` directory are not available to init scripts, which can restrict their functionality."
+    },
+    {
+        "question": "What is the primary purpose of applying plugins in an init script?",
+        "options": {
+            "A": "To define custom tasks for the build process",
+            "B": "To configure the build environment and settings",
+            "C": "To manage dependencies for the project",
+            "D": "To execute the build script without any configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of applying plugins in an init script is to configure the build environment and settings. Plugins allow users to extend the functionality of Gradle by adding specific capabilities, such as defining repositories or customizing build behavior, which can be crucial for setting up a consistent build environment across projects."
+    },
+    {
+        "question": "How does Gradle handle the application of plugins in an init script?",
+        "options": {
+            "A": "Plugins are applied automatically without any user intervention.",
+            "B": "Gradle instantiates the plugin and calls its apply method with the gradle object.",
+            "C": "Plugins can only be applied after the build script has been executed.",
+            "D": "Plugins must be defined in a separate configuration file outside the init script."
+        },
+        "correct_answer": "B",
+        "explanation": "When applying plugins within an init script, Gradle instantiates the plugin and calls the plugin's apply method, passing the gradle object as a parameter. This allows the plugin to configure various aspects of the build process directly within the init script, enhancing its functionality."
+    },
+    {
+        "question": "What is a limitation of using init scripts in Gradle?",
+        "options": {
+            "A": "They cannot be used to configure repositories.",
+            "B": "They cannot access classes in the buildSrc project.",
+            "C": "They can only be executed in a specific order.",
+            "D": "They do not support external dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "A key limitation of init scripts is that they cannot access classes in the buildSrc project. This means that while init scripts can configure the build environment and apply plugins, they are restricted from utilizing custom classes defined in the buildSrc directory, which can limit their functionality in certain scenarios."
+    }
+]

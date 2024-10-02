@@ -1,0 +1,442 @@
+[
+    {
+        "question": "What is the primary purpose of the command-line interface in Gradle?",
+        "options": {
+            "A": "To provide a graphical user interface for project management",
+            "B": "To serve as the main method for interacting with Gradle",
+            "C": "To automate the installation of Gradle",
+            "D": "To manage dependencies in a project"
+        },
+        "correct_answer": "B",
+        "explanation": "The command-line interface (CLI) in Gradle is the primary method for interacting with the Gradle build system. It allows users to execute tasks, customize builds, and manage project configurations directly from the command line."
+    },
+    {
+        "question": "How can you specify options when executing a Gradle task from the command line?",
+        "options": {
+            "A": "Options must always be placed before the task name",
+            "B": "Options can be specified both before and after the task name",
+            "C": "Options cannot be used with tasks",
+            "D": "Options must be placed after the project name only"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, options can be specified both before and after the task name when executing a command. This flexibility allows users to customize their command-line executions according to their preferences."
+    },
+    {
+        "question": "What does the `--continue` option do when executing Gradle tasks?",
+        "options": {
+            "A": "It skips all tasks that have dependencies",
+            "B": "It forces Gradle to execute all tasks even if some fail",
+            "C": "It allows Gradle to continue executing tasks after a failure occurs",
+            "D": "It restarts the build process from the beginning"
+        },
+        "correct_answer": "C",
+        "explanation": "The `--continue` option allows Gradle to continue executing tasks even if one or more tasks fail. This can be useful for identifying multiple issues in a build without stopping at the first failure."
+    },
+    {
+        "question": "What is the effect of using the `-x` or `--exclude-task` option in a Gradle command?",
+        "options": {
+            "A": "It includes additional tasks to be executed",
+            "B": "It excludes a specified task from being executed",
+            "C": "It forces a task to run regardless of its state",
+            "D": "It changes the order of task execution"
+        },
+        "correct_answer": "B",
+        "explanation": "The `-x` or `--exclude-task` option allows users to exclude a specific task from being executed during a Gradle build. This is useful when you want to run a build without certain tasks that may not be necessary."
+    },
+    {
+        "question": "What is the primary purpose of the Gradle Wrapper?",
+        "options": {
+            "A": "To provide a way to run Gradle builds without requiring a local installation of Gradle",
+            "B": "To automatically update Gradle to the latest version",
+            "C": "To manage dependencies for Gradle projects",
+            "D": "To create a graphical user interface for Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Gradle Wrapper is to allow users to run Gradle builds without needing to have Gradle installed locally. It ensures that the correct version of Gradle is used for the project, which can be specified in the wrapper configuration."
+    },
+    {
+        "question": "How do you execute a Gradle build using the Gradle Wrapper on macOS or Linux?",
+        "options": {
+            "A": "gradle build",
+            "B": "gradlew build",
+            "C": "gradle-wrapper build",
+            "D": "gradle-run build"
+        },
+        "correct_answer": "B",
+        "explanation": "To execute a Gradle build using the Gradle Wrapper on macOS or Linux, you use the command 'gradlew build'. This command invokes the Gradle Wrapper script, which ensures the correct version of Gradle is used for the build."
+    },
+    {
+        "question": "What is a key benefit of using the Gradle Wrapper in a project?",
+        "options": {
+            "A": "It allows for faster builds by caching outputs",
+            "B": "It ensures consistent Gradle versions across different environments",
+            "C": "It simplifies the syntax of Gradle commands",
+            "D": "It automatically generates build scripts"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using the Gradle Wrapper is that it ensures consistent Gradle versions across different environments. This means that all developers and CI systems can use the same version of Gradle, reducing compatibility issues."
+    },
+    {
+        "question": "Which command is used to generate the Gradle Wrapper for a project?",
+        "options": {
+            "A": "gradle create-wrapper",
+            "B": "gradle wrapper",
+            "C": "gradle init-wrapper",
+            "D": "gradle generate-wrapper"
+        },
+        "correct_answer": "B",
+        "explanation": "The command used to generate the Gradle Wrapper for a project is 'gradle wrapper'. This command creates the necessary scripts and configuration files that allow the project to be built using the Gradle Wrapper."
+    },
+    {
+        "question": "What is the primary purpose of executing tasks in Gradle?",
+        "options": {
+            "A": "To compile source code into executable files",
+            "B": "To automate the build process and manage dependencies",
+            "C": "To create user interfaces for applications",
+            "D": "To manage database connections"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of executing tasks in Gradle is to automate the build process and manage dependencies. Tasks are the fundamental units of work in Gradle, allowing users to define and execute various actions required to build, test, and deploy software."
+    },
+    {
+        "question": "How can you specify multiple tasks to execute in a single Gradle command?",
+        "options": {
+            "A": "By using a comma to separate task names",
+            "B": "By listing the task names separated by spaces",
+            "C": "By enclosing task names in parentheses",
+            "D": "By using a semicolon to separate task names"
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle, you can specify multiple tasks to execute by listing the task names separated by spaces. This allows Gradle to execute the tasks in the order they are listed, respecting their dependencies."
+    },
+    {
+        "question": "What command-line option would you use to exclude a specific task from execution?",
+        "options": {
+            "A": "--skip-task",
+            "B": "--omit-task",
+            "C": "--exclude-task",
+            "D": "--ignore-task"
+        },
+        "correct_answer": "C",
+        "explanation": "To exclude a specific task from execution in Gradle, you would use the `--exclude-task` option followed by the name of the task you want to exclude. This allows you to run a task without executing its dependencies that are not needed."
+    },
+    {
+        "question": "What does the `--continue` option do when executing tasks in Gradle?",
+        "options": {
+            "A": "It forces Gradle to skip all tasks",
+            "B": "It allows Gradle to execute all tasks even if some fail",
+            "C": "It restarts the build process from the beginning",
+            "D": "It pauses the execution of tasks until user input is received"
+        },
+        "correct_answer": "B",
+        "explanation": "The `--continue` option in Gradle allows the build to continue executing all tasks even if some tasks fail. This can be useful for identifying multiple issues in a build without stopping at the first failure."
+    },
+    {
+        "question": "What is the primary purpose of task dependencies in Gradle?",
+        "options": {
+            "A": "To define the order in which tasks are executed",
+            "B": "To create a backup of the project files",
+            "C": "To optimize the build performance by skipping tasks",
+            "D": "To generate documentation for the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of task dependencies in Gradle is to define the order in which tasks are executed. When a task depends on another, Gradle ensures that the dependent task is completed before executing the task that relies on it. This helps maintain the correct sequence of operations and ensures that all necessary prerequisites are met before a task runs."
+    },
+    {
+        "question": "How does Gradle handle task dependencies when executing multiple tasks?",
+        "options": {
+            "A": "It executes all tasks simultaneously without considering dependencies",
+            "B": "It executes tasks in the order they are listed on the command line, ignoring dependencies",
+            "C": "It respects the dependencies and executes tasks in the correct order",
+            "D": "It randomly selects tasks to execute without any order"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle respects task dependencies when executing multiple tasks. It ensures that tasks are executed in the correct order based on their dependencies, meaning that if a task depends on another, the dependent task will be executed first. This guarantees that all prerequisites are satisfied before a task runs, maintaining the integrity of the build process."
+    },
+    {
+        "question": "What happens if a task with dependencies is executed without its prerequisites being completed?",
+        "options": {
+            "A": "The task will execute successfully regardless of dependencies",
+            "B": "The task will fail to execute",
+            "C": "The task will skip execution and move to the next one",
+            "D": "The task will execute but produce incorrect results"
+        },
+        "correct_answer": "B",
+        "explanation": "If a task with dependencies is executed without its prerequisites being completed, the task will fail to execute. Gradle enforces the execution order based on task dependencies, and if a required task has not been completed, the dependent task cannot run. This mechanism helps prevent errors and ensures that all necessary conditions are met before a task is executed."
+    },
+    {
+        "question": "Which command-line option can be used to exclude a task from execution, even if it has dependencies?",
+        "options": {
+            "A": "--skip-task",
+            "B": "--exclude-task",
+            "C": "--ignore-dependencies",
+            "D": "--no-execute"
+        },
+        "correct_answer": "B",
+        "explanation": "The command-line option `--exclude-task` can be used to exclude a task from execution, even if it has dependencies. This allows users to prevent specific tasks from running while still executing other tasks in the build process. It is a useful feature for managing complex builds where certain tasks may not be needed at a given time."
+    },
+    {
+        "question": "What is the primary purpose of multi-project builds in Gradle?",
+        "options": {
+            "A": "To manage dependencies between different projects",
+            "B": "To execute tasks in parallel across multiple projects",
+            "C": "To allow for the organization of related projects into a single build",
+            "D": "To simplify the command-line interface for Gradle"
+        },
+        "correct_answer": "C",
+        "explanation": "The primary purpose of multi-project builds in Gradle is to allow for the organization of related projects into a single build. This structure helps manage dependencies and tasks across multiple projects, making it easier to maintain and build complex applications."
+    },
+    {
+        "question": "How can you execute a task in a specific subproject within a multi-project build?",
+        "options": {
+            "A": "By using the command 'gradle subproject:taskName'",
+            "B": "By specifying the task name only",
+            "C": "By using the command 'gradle :taskName'",
+            "D": "By running 'gradle all:taskName'"
+        },
+        "correct_answer": "A",
+        "explanation": "To execute a task in a specific subproject within a multi-project build, you can use the command 'gradle subproject:taskName'. This syntax allows you to target the specific subproject and the task you wish to execute."
+    },
+    {
+        "question": "What happens when you run a task for all subprojects in a multi-project build?",
+        "options": {
+            "A": "Only the root project tasks are executed",
+            "B": "The specified task is executed for each subproject",
+            "C": "Only the first subproject's task is executed",
+            "D": "Tasks are executed in a random order"
+        },
+        "correct_answer": "B",
+        "explanation": "When you run a task for all subprojects in a multi-project build, the specified task is executed for each subproject. This allows for consistent execution of tasks across all related projects, ensuring that all components are built or tested together."
+    },
+    {
+        "question": "What is a common command to list all subprojects in a multi-project build?",
+        "options": {
+            "A": "gradle list",
+            "B": "gradle projects",
+            "C": "gradle subprojects",
+            "D": "gradle show"
+        },
+        "correct_answer": "B",
+        "explanation": "The command 'gradle projects' is commonly used to list all subprojects in a multi-project build. This command provides a hierarchical view of the project's structure, helping users understand the relationships between different subprojects."
+    },
+    {
+        "question": "What are task options in Gradle?",
+        "options": {
+            "A": "Options that are consumed and interpreted by the tasks themselves",
+            "B": "Global options that apply to all Gradle commands",
+            "C": "Options that can be specified anywhere in the command line",
+            "D": "Options that are only available for built-in tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "Task options are specific to individual tasks in Gradle and are consumed and interpreted by those tasks. They must be specified immediately after the task in the command line, distinguishing them from global options that apply to the entire Gradle command."
+    },
+    {
+        "question": "How must task options be specified in the command line?",
+        "options": {
+            "A": "Before the task name",
+            "B": "Immediately after the task name",
+            "C": "At the end of the command line",
+            "D": "In a separate configuration file"
+        },
+        "correct_answer": "B",
+        "explanation": "Task options must be specified immediately after the task name in the command line. This ensures that the options are correctly associated with the intended task and are interpreted as such."
+    },
+    {
+        "question": "Which of the following statements is true about built-in task options?",
+        "options": {
+            "A": "They are available for all tasks and can be used interchangeably with task-specific options.",
+            "B": "They are only applicable to specific tasks and cannot be used with custom tasks.",
+            "C": "They are options available as task options for all tasks in Gradle.",
+            "D": "They must be specified before the task name in the command line."
+        },
+        "correct_answer": "C",
+        "explanation": "Built-in task options are options that are available as task options for all tasks in Gradle. They provide common functionality that can be utilized across different tasks, enhancing the flexibility of command-line interactions."
+    },
+    {
+        "question": "What is a key characteristic of task options in Gradle?",
+        "options": {
+            "A": "They can be specified anywhere in the command line.",
+            "B": "They must be unique to each task and cannot overlap with global options.",
+            "C": "They are optional and can be omitted without affecting task execution.",
+            "D": "They can only be used with built-in tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of task options is that they must be unique to each task and cannot overlap with Gradle's built-in options. This ensures that there is no ambiguity in how options are interpreted during task execution."
+    },
+    {
+        "question": "What is the purpose of the Gradle Build Cache?",
+        "options": {
+            "A": "To store build outputs for reuse in future builds",
+            "B": "To keep track of all project dependencies",
+            "C": "To manage the Gradle Daemon's memory usage",
+            "D": "To log all build errors and warnings"
+        },
+        "correct_answer": "A",
+        "explanation": "The Gradle Build Cache is designed to store build outputs so that they can be reused in future builds, which helps to improve build performance by avoiding unnecessary work. This caching mechanism allows Gradle to skip tasks that have already been completed successfully, thus speeding up the overall build process."
+    },
+    {
+        "question": "Which command-line option can be used to force Gradle to execute all tasks, ignoring up-to-date checks?",
+        "options": {
+            "A": "--rerun-tasks",
+            "B": "--no-build-cache",
+            "C": "--continue",
+            "D": "--offline"
+        },
+        "correct_answer": "A",
+        "explanation": "The `--rerun-tasks` option forces Gradle to execute all tasks regardless of their up-to-date status. This is useful when you want to ensure that all tasks are executed fresh, without relying on any cached outputs or previous execution results."
+    },
+    {
+        "question": "What does the `--parallel` option do in Gradle?",
+        "options": {
+            "A": "It runs tasks in parallel to improve build speed",
+            "B": "It ensures that tasks are executed in a specific order",
+            "C": "It disables the Gradle Daemon for the current build",
+            "D": "It generates a performance report for the build"
+        },
+        "correct_answer": "A",
+        "explanation": "The `--parallel` option allows Gradle to execute tasks in parallel, which can significantly improve build speed, especially in multi-project builds where tasks do not have dependencies on each other. This option enables concurrent execution of tasks, making better use of available system resources."
+    },
+    {
+        "question": "How can you configure Gradle to continue executing tasks after a failure occurs?",
+        "options": {
+            "A": "--continue",
+            "B": "--force",
+            "C": "--skip-failed",
+            "D": "--ignore-errors"
+        },
+        "correct_answer": "A",
+        "explanation": "The `--continue` option allows Gradle to continue executing tasks even if some tasks fail. This can be useful for identifying multiple issues in a build without stopping at the first failure, as Gradle will report all encountered failures at the end of the build."
+    },
+    {
+        "question": "What is the primary purpose of the Continuous Build feature in Gradle?",
+        "options": {
+            "A": "To automatically re-execute tasks when file inputs change",
+            "B": "To compile code without executing tests",
+            "C": "To run all tasks in parallel for faster execution",
+            "D": "To clean the build directory before each execution"
+        },
+        "correct_answer": "A",
+        "explanation": "The Continuous Build feature in Gradle is designed to automatically re-execute the requested tasks whenever there are changes to the file inputs. This allows developers to see the results of their changes in real-time without having to manually trigger the build process each time."
+    },
+    {
+        "question": "Which command-line option is used to enable Continuous Build in Gradle?",
+        "options": {
+            "A": "--rerun-tasks",
+            "B": "--continuous",
+            "C": "--offline",
+            "D": "--build-cache"
+        },
+        "correct_answer": "B",
+        "explanation": "The `--continuous` command-line option is used to enable Continuous Build in Gradle. When this option is specified, Gradle will monitor file inputs and automatically re-execute the specified tasks when changes are detected."
+    },
+    {
+        "question": "What happens if a change is detected during a Continuous Build?",
+        "options": {
+            "A": "The build process is immediately restarted.",
+            "B": "The build waits for a quiet period before re-executing tasks.",
+            "C": "The build is aborted and must be manually restarted.",
+            "D": "Only the changed files are compiled without executing tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "When a change is detected during a Continuous Build, Gradle does not trigger an immediate rebuild. Instead, it waits for a specified quiet period to ensure that no further changes occur before re-executing the tasks. This helps to avoid unnecessary builds when multiple changes are made in quick succession."
+    },
+    {
+        "question": "Which of the following statements is true regarding the Continuous Build feature?",
+        "options": {
+            "A": "It can detect changes to build scripts and automatically reconfigure the build.",
+            "B": "It requires the Gradle Daemon to be disabled for proper functionality.",
+            "C": "It does not work when using the --no-daemon option.",
+            "D": "It can only be used for Java projects."
+        },
+        "correct_answer": "C",
+        "explanation": "The Continuous Build feature does not work when the `--no-daemon` option is used. The Gradle Daemon is necessary for file system watching, which is essential for detecting changes to inputs and triggering the appropriate tasks."
+    },
+    {
+        "question": "What is the purpose of the `projects` task in Gradle?",
+        "options": {
+            "A": "To list the subprojects of the selected project in a hierarchy",
+            "B": "To execute all tasks in the project",
+            "C": "To display the properties of the selected project",
+            "D": "To clean the build directory of the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The `projects` task is designed to provide a hierarchical list of the subprojects within the selected project. This helps users understand the structure of their Gradle build and the relationships between different subprojects."
+    },
+    {
+        "question": "How can you obtain a detailed report of the tasks available in a Gradle project?",
+        "options": {
+            "A": "By running `gradle tasks`",
+            "B": "By executing `gradle projects`",
+            "C": "By using the `gradle help` command",
+            "D": "By invoking `gradle dependencies`"
+        },
+        "correct_answer": "A",
+        "explanation": "Running `gradle tasks` provides a list of the main tasks available in the selected project, along with descriptions for each task. This command is essential for understanding what tasks can be executed within the project."
+    },
+    {
+        "question": "What information does the `dependencies` task provide?",
+        "options": {
+            "A": "A list of the project's dependencies broken down by configuration",
+            "B": "A summary of the project's build performance",
+            "C": "A list of all available tasks in the project",
+            "D": "A report of the project's subprojects"
+        },
+        "correct_answer": "A",
+        "explanation": "The `dependencies` task generates a report that lists the dependencies of the selected project, organized by configuration. This includes both direct and transitive dependencies, which is crucial for understanding the project's dependency graph."
+    },
+    {
+        "question": "What does the `properties` task do in a Gradle project?",
+        "options": {
+            "A": "Lists the properties of the selected project",
+            "B": "Displays the project's dependencies",
+            "C": "Shows the available tasks in the project",
+            "D": "Cleans the build directory of the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The `properties` task is used to list the properties of the selected project. This can include various configuration settings and values that are important for understanding the project's setup and behavior."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in Gradle?",
+        "options": {
+            "A": "To automate the build process without user intervention",
+            "B": "To handle the inclusion and resolution of external libraries and modules",
+            "C": "To optimize the performance of the Gradle daemon",
+            "D": "To provide a graphical user interface for project management"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of dependency management in Gradle is to handle the inclusion and resolution of external libraries and modules. This involves specifying dependencies in the build script, allowing Gradle to automatically download and manage the versions of these libraries, ensuring that the project has the necessary components to compile and run correctly."
+    },
+    {
+        "question": "How does Gradle ensure that the correct versions of dependencies are used?",
+        "options": {
+            "A": "By allowing users to manually download and install dependencies",
+            "B": "By using a centralized repository that hosts all available versions",
+            "C": "By automatically updating all dependencies to the latest version",
+            "D": "By requiring all dependencies to be specified in the build script"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle ensures that the correct versions of dependencies are used by utilizing a centralized repository that hosts all available versions. When a dependency is specified in the build script, Gradle checks this repository to find the appropriate version, resolving any conflicts and ensuring compatibility with other dependencies."
+    },
+    {
+        "question": "What command can be used to list the dependencies of a project in Gradle?",
+        "options": {
+            "A": "gradle list-dependencies",
+            "B": "gradle dependencies",
+            "C": "gradle show-dependencies",
+            "D": "gradle dependency-report"
+        },
+        "correct_answer": "B",
+        "explanation": "The command 'gradle dependencies' is used to list the dependencies of a project in Gradle. This command provides a detailed report of the project's dependencies, including direct and transitive dependencies, which helps in understanding the project's structure and resolving any potential issues."
+    },
+    {
+        "question": "What is a common consequence of not managing dependencies properly in a Gradle project?",
+        "options": {
+            "A": "Increased build speed",
+            "B": "Conflicts between different versions of libraries",
+            "C": "Automatic updates of all project files",
+            "D": "Simplified project structure"
+        },
+        "correct_answer": "B",
+        "explanation": "A common consequence of not managing dependencies properly in a Gradle project is conflicts between different versions of libraries. If multiple dependencies require different versions of the same library, it can lead to runtime errors or unexpected behavior, making it crucial to manage and resolve these dependencies effectively."
+    }
+]

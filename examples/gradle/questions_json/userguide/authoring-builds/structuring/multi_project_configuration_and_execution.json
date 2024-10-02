@@ -1,0 +1,200 @@
+[
+    {
+        "question": "What is the primary purpose of configuration on demand in Gradle?",
+        "options": {
+            "A": "To configure only the relevant projects for the requested tasks",
+            "B": "To execute all projects in a build sequentially",
+            "C": "To automatically optimize all project dependencies",
+            "D": "To ensure all projects are configured regardless of the tasks"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of configuration on demand in Gradle is to configure only the relevant projects for the requested tasks. This approach reduces configuration time in large multi-project builds by evaluating only the necessary build script files, thus improving overall build performance."
+    },
+    {
+        "question": "Which command can be used to enable configuration on demand in Gradle?",
+        "options": {
+            "A": "--enable-configuration",
+            "B": "--configure-on-demand",
+            "C": "--optimize-build",
+            "D": "--run-configuration"
+        },
+        "correct_answer": "B",
+        "explanation": "To enable configuration on demand in Gradle, the command `--configure-on-demand` can be used. This flag instructs Gradle to only configure the projects that are necessary for the tasks being executed, thereby optimizing the build process."
+    },
+    {
+        "question": "What is a potential drawback of using configuration on demand?",
+        "options": {
+            "A": "It guarantees that all projects will be configured correctly.",
+            "B": "It may lead to flawed build outcomes if projects are coupled.",
+            "C": "It increases the overall build time significantly.",
+            "D": "It prevents any project from being configured at all."
+        },
+        "correct_answer": "B",
+        "explanation": "A potential drawback of using configuration on demand is that it may lead to flawed build outcomes if projects are coupled. Coupling can occur when projects directly modify or read each other's configurations, which can interfere with the optimizations that configuration on demand aims to achieve."
+    },
+    {
+        "question": "In which scenario is configuration on demand most effective?",
+        "options": {
+            "A": "When all projects are tightly coupled.",
+            "B": "In large multi-project builds with decoupled projects.",
+            "C": "When executing tasks in alphabetical order.",
+            "D": "In single-project builds only."
+        },
+        "correct_answer": "B",
+        "explanation": "Configuration on demand is most effective in large multi-project builds with decoupled projects. This setup allows Gradle to optimize the configuration process by only evaluating the necessary projects, thus enhancing build efficiency while avoiding issues related to project coupling."
+    },
+    {
+        "question": "What characterizes decoupled projects in Gradle?",
+        "options": {
+            "A": "They interact solely through declared dependencies and task dependencies.",
+            "B": "They can directly modify each other's configurations.",
+            "C": "They are configured simultaneously without any dependencies.",
+            "D": "They require manual intervention to manage dependencies."
+        },
+        "correct_answer": "A",
+        "explanation": "Decoupled projects in Gradle are characterized by their interaction solely through declared dependencies and task dependencies. This means that they do not directly modify or read each other's configurations, which helps to avoid coupling issues that can lead to flawed build outcomes."
+    },
+    {
+        "question": "What is a potential consequence of coupling between projects in Gradle?",
+        "options": {
+            "A": "Improved build performance through parallel execution.",
+            "B": "Flawed build outcomes when using configuration on demand.",
+            "C": "Easier management of project dependencies.",
+            "D": "Increased flexibility in build script configurations."
+        },
+        "correct_answer": "B",
+        "explanation": "Coupling between projects can lead to flawed build outcomes when using configuration on demand. This is because direct modifications or readings of another project's objects can interfere with the expected behavior of the build process, especially when optimizations like configuration on demand are in use."
+    },
+    {
+        "question": "Which practice is recommended to avoid coupling issues in Gradle?",
+        "options": {
+            "A": "Use `allprojects{}` in build scripts to share configurations.",
+            "B": "Reference other subprojects' build scripts directly.",
+            "C": "Prefer cross-configuration from the root project.",
+            "D": "Dynamically change other projects' configurations during execution."
+        },
+        "correct_answer": "C",
+        "explanation": "To avoid coupling issues in Gradle, it is recommended to prefer cross-configuration from the root project. This approach minimizes direct interactions between subprojects, thereby reducing the risk of coupling that can lead to build problems."
+    },
+    {
+        "question": "What is the primary benefit of enabling parallel execution in Gradle?",
+        "options": {
+            "A": "To reduce the overall build time by utilizing CPU resources more effectively",
+            "B": "To ensure that all tasks are executed in alphabetical order",
+            "C": "To allow projects to modify each other's configurations during execution",
+            "D": "To configure all projects simultaneously regardless of dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary benefit of enabling parallel execution in Gradle is to reduce the overall build time by utilizing CPU resources more effectively. By executing tasks from different projects concurrently, Gradle can optimize CPU utilization, leading to faster builds, especially in multi-project setups."
+    },
+    {
+        "question": "How does Gradle determine the number of parallel threads to use during execution?",
+        "options": {
+            "A": "It is manually set by the user in the build script",
+            "B": "It is based on the number of projects in the build",
+            "C": "It automatically determines the optimal number based on CPU cores",
+            "D": "It uses a fixed number of threads regardless of the system's capabilities"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle automatically determines the optimal number of parallel threads based on the number of CPU cores available on the system. This allows Gradle to efficiently utilize system resources and maximize performance during the build process."
+    },
+    {
+        "question": "What is a critical consideration when using parallel execution in Gradle?",
+        "options": {
+            "A": "Tasks must be executed in a specific order to avoid conflicts",
+            "B": "All projects must be coupled to ensure proper execution",
+            "C": "Task dependencies and inputs/outputs must be correctly declared",
+            "D": "Parallel execution can only be used with decoupled projects"
+        },
+        "correct_answer": "C",
+        "explanation": "A critical consideration when using parallel execution in Gradle is that task dependencies and inputs/outputs must be correctly declared. This ensures that tasks are executed in the correct order and that dependencies are respected, preventing potential issues during the build process."
+    },
+    {
+        "question": "What is the primary purpose of declaring task dependencies in Gradle?",
+        "options": {
+            "A": "To ensure tasks are executed in a specific order",
+            "B": "To reduce the overall build time",
+            "C": "To allow tasks to run concurrently without any restrictions",
+            "D": "To automatically configure all projects in a build"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of declaring task dependencies in Gradle is to ensure that tasks are executed in a specific order. This is important because some tasks may rely on the outputs of others, and declaring dependencies helps Gradle understand the sequence in which tasks should be executed to achieve the desired build outcome."
+    },
+    {
+        "question": "What happens if task dependencies are not correctly declared in a Gradle build?",
+        "options": {
+            "A": "All tasks will execute in alphabetical order.",
+            "B": "Tasks may execute out of order, leading to potential build failures.",
+            "C": "The build will automatically optimize itself without any issues.",
+            "D": "Gradle will skip the execution of all tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "If task dependencies are not correctly declared in a Gradle build, tasks may execute out of order, which can lead to potential build failures. Properly declaring dependencies ensures that tasks that rely on the outputs of other tasks are executed only after those tasks have completed successfully."
+    },
+    {
+        "question": "In the context of Gradle, what is a consequence of coupling between projects during task execution?",
+        "options": {
+            "A": "It enhances the performance of the build process.",
+            "B": "It can lead to flawed build outcomes when using configuration on demand.",
+            "C": "It allows for easier management of project dependencies.",
+            "D": "It guarantees that all tasks will run in parallel."
+        },
+        "correct_answer": "B",
+        "explanation": "Coupling between projects during task execution can lead to flawed build outcomes when using configuration on demand. This is because direct modifications or interactions between projects can disrupt the expected behavior of the build process, especially when optimizations like configuration on demand are in use."
+    },
+    {
+        "question": "How can Gradle optimize the execution of tasks across multiple projects?",
+        "options": {
+            "A": "By executing all tasks in a single thread.",
+            "B": "By allowing tasks to run without any dependencies.",
+            "C": "By using parallel execution to run tasks from different projects concurrently.",
+            "D": "By configuring all projects at once regardless of dependencies."
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle can optimize the execution of tasks across multiple projects by using parallel execution, which allows tasks from different projects to run concurrently. This approach improves CPU utilization and can significantly accelerate the overall build time, provided that task dependencies are correctly declared."
+    },
+    {
+        "question": "What is the primary goal of build optimization in Gradle?",
+        "options": {
+            "A": "To reduce the overall time taken to execute builds",
+            "B": "To increase the complexity of build scripts",
+            "C": "To ensure all projects are built sequentially",
+            "D": "To eliminate the need for dependencies between projects"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary goal of build optimization in Gradle is to reduce the overall time taken to execute builds. This is achieved through various features such as configuration on demand and parallel execution, which streamline the build process and improve efficiency."
+    },
+    {
+        "question": "Which feature allows Gradle to execute tasks from different projects concurrently?",
+        "options": {
+            "A": "Configuration on demand",
+            "B": "Incremental builds",
+            "C": "Parallel execution",
+            "D": "Task dependencies"
+        },
+        "correct_answer": "C",
+        "explanation": "Parallel execution is the feature that allows Gradle to execute tasks from different projects concurrently. This optimizes CPU utilization and accelerates the build process by allowing multiple tasks to run at the same time, as long as their dependencies are respected."
+    },
+    {
+        "question": "What is a potential drawback of tightly coupled projects in Gradle?",
+        "options": {
+            "A": "They can lead to faster build times",
+            "B": "They may cause issues with configuration on demand",
+            "C": "They simplify the build process",
+            "D": "They eliminate the need for task dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Tightly coupled projects can lead to issues with configuration on demand because direct modifications or readings of another project's objects create dependencies that can interfere with the optimization processes. This can result in flawed build outcomes when using features designed to improve efficiency."
+    },
+    {
+        "question": "How can a user enable configuration on demand in Gradle?",
+        "options": {
+            "A": "By using the `--parallel` flag",
+            "B": "By adding `org.gradle.configureondemand=true` to the `gradle.properties` file",
+            "C": "By modifying the build script to include all projects",
+            "D": "By executing all tasks in a single project"
+        },
+        "correct_answer": "B",
+        "explanation": "Configuration on demand can be enabled by adding `org.gradle.configureondemand=true` to the `gradle.properties` file. This setting allows Gradle to configure only the relevant projects for the requested tasks, thereby optimizing the build process."
+    }
+]

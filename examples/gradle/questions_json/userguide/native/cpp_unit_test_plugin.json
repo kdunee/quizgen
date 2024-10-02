@@ -1,0 +1,255 @@
+[
+    {
+        "question": "What is the primary purpose of the Gradle build system?",
+        "options": {
+            "A": "To manage project dependencies and automate the build process",
+            "B": "To create graphical user interfaces for applications",
+            "C": "To compile code into machine language",
+            "D": "To provide a platform for running web servers"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Gradle build system is to manage project dependencies and automate the build process. Gradle allows developers to define how their projects are built, including tasks for compiling code, running tests, and packaging applications, making it a powerful tool for software development."
+    },
+    {
+        "question": "Which of the following best describes a 'task' in Gradle?",
+        "options": {
+            "A": "A specific action that Gradle performs as part of the build process",
+            "B": "A configuration file that defines project settings",
+            "C": "A type of project dependency",
+            "D": "A graphical representation of the build process"
+        },
+        "correct_answer": "A",
+        "explanation": "In Gradle, a 'task' is defined as a specific action that Gradle performs as part of the build process. Tasks can include compiling code, running tests, or creating archives, and they can be configured and executed in various ways to suit the needs of the project."
+    },
+    {
+        "question": "What is the role of 'build variants' in Gradle?",
+        "options": {
+            "A": "To define different configurations for building the same project",
+            "B": "To specify the programming language used in the project",
+            "C": "To manage user permissions for project access",
+            "D": "To create visual representations of project dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "Build variants in Gradle are used to define different configurations for building the same project. This allows developers to create multiple versions of an application, such as debug and release builds, each with its own settings and dependencies, facilitating more flexible development and testing."
+    },
+    {
+        "question": "How does Gradle handle project dependencies?",
+        "options": {
+            "A": "By allowing users to declare dependencies in a configuration file",
+            "B": "By automatically downloading all libraries from the internet",
+            "C": "By requiring manual installation of all dependencies",
+            "D": "By using a graphical interface to manage dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "Gradle handles project dependencies by allowing users to declare them in a configuration file, typically using a build script. This declaration specifies which libraries or modules the project depends on, and Gradle can then resolve and manage these dependencies automatically during the build process."
+    },
+    {
+        "question": "What is the primary purpose of unit testing in software development?",
+        "options": {
+            "A": "To verify that individual components of the software function correctly",
+            "B": "To ensure the entire system works as intended",
+            "C": "To document the software's architecture",
+            "D": "To optimize the performance of the software"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of unit testing is to verify that individual components or units of the software function correctly. This involves testing each part in isolation to ensure that it behaves as expected, which helps identify bugs early in the development process."
+    },
+    {
+        "question": "Which of the following best describes a unit test?",
+        "options": {
+            "A": "A test that evaluates the performance of the entire application",
+            "B": "A test that checks the interaction between multiple components",
+            "C": "A test that focuses on a single function or method within a component",
+            "D": "A test that assesses user interface elements"
+        },
+        "correct_answer": "C",
+        "explanation": "A unit test focuses on a single function or method within a component. It is designed to validate that a specific piece of code works correctly in isolation, without dependencies on other parts of the application."
+    },
+    {
+        "question": "What is a common benefit of using unit tests in software development?",
+        "options": {
+            "A": "They eliminate the need for integration testing",
+            "B": "They help ensure that changes do not introduce new bugs",
+            "C": "They provide a complete documentation of the codebase",
+            "D": "They are only useful for large applications"
+        },
+        "correct_answer": "B",
+        "explanation": "A common benefit of using unit tests is that they help ensure that changes made to the code do not introduce new bugs. By running unit tests after modifications, developers can quickly identify if any existing functionality has been affected."
+    },
+    {
+        "question": "In the context of unit testing, what does the term 'test-driven development' (TDD) refer to?",
+        "options": {
+            "A": "Writing tests after the code has been implemented",
+            "B": "Developing software by writing tests before the actual code",
+            "C": "Testing the software in a production environment",
+            "D": "Creating documentation for the testing process"
+        },
+        "correct_answer": "B",
+        "explanation": "Test-driven development (TDD) refers to the practice of developing software by writing tests before the actual code. This approach encourages developers to think about the requirements and design of the code upfront, leading to better-structured and more reliable software."
+    },
+    {
+        "question": "What is the purpose of build variants in the context of the {cpp} Unit Test Plugin?",
+        "options": {
+            "A": "To define different configurations for testing components based on target machines",
+            "B": "To create multiple copies of the same test for redundancy",
+            "C": "To simplify the code structure by removing unnecessary files",
+            "D": "To ensure that all tests run on the same operating system"
+        },
+        "correct_answer": "A",
+        "explanation": "Build variants in the {cpp} Unit Test Plugin serve to define different configurations for testing components based on the target machines. This allows developers to tailor their tests to specific environments, ensuring compatibility and optimal performance across various systems."
+    },
+    {
+        "question": "Which of the following best describes how Gradle uses target machines in build variants?",
+        "options": {
+            "A": "To determine the programming language used in the project",
+            "B": "To select the appropriate tool chain based on the machine's operating system and architecture",
+            "C": "To automatically generate documentation for the project",
+            "D": "To enforce coding standards across all variants"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle uses target machines to select the appropriate tool chain based on the machine's operating system and architecture. This ensures that the build process is optimized for the specific environment in which the application is expected to run, enhancing compatibility and performance."
+    },
+    {
+        "question": "What is a key characteristic of the tasks created by the {cpp} Unit Test Plugin for each build variant?",
+        "options": {
+            "A": "They are identical across all variants to maintain consistency",
+            "B": "They depend on the specific configurations and source files for that variant",
+            "C": "They are only executed if the previous variant fails",
+            "D": "They are designed to run on any operating system without modification"
+        },
+        "correct_answer": "B",
+        "explanation": "The tasks created by the {cpp} Unit Test Plugin for each build variant depend on the specific configurations and source files for that variant. This allows for tailored execution and compilation processes that align with the unique requirements of each variant, ensuring accurate testing and building."
+    },
+    {
+        "question": "What is the purpose of the `testImplementation` configuration in the {cpp} Unit Test Plugin?",
+        "options": {
+            "A": "To declare implementation dependencies for all variants of the test component",
+            "B": "To specify the runtime environment for the application",
+            "C": "To manage the build lifecycle of the project",
+            "D": "To define the source files for the unit tests"
+        },
+        "correct_answer": "A",
+        "explanation": "The `testImplementation` configuration is specifically used to declare implementation dependencies for all variants of the test component. This allows developers to specify libraries and other dependencies that are required for the unit tests to compile and run correctly."
+    },
+    {
+        "question": "Which of the following configurations is used for compiling the unit test in the {cpp} Unit Test Plugin?",
+        "options": {
+            "A": "nativeLinkTest__Variant__",
+            "B": "cppCompileTest__Variant__",
+            "C": "test__Variant__ExecutableImplementation",
+            "D": "testImplementation"
+        },
+        "correct_answer": "B",
+        "explanation": "The `cppCompileTest__Variant__` configuration is used for compiling the unit test. It contains the necessary compile include roots and is invoked when the {cpp} compiler is used to compile the unit test source files."
+    },
+    {
+        "question": "What does the `nativeRuntimeTest__Variant__` configuration provide in the context of the {cpp} Unit Test Plugin?",
+        "options": {
+            "A": "It specifies the source files for the unit tests.",
+            "B": "It contains the runtime libraries needed to execute the unit test.",
+            "C": "It manages the dependencies for the build lifecycle.",
+            "D": "It defines the implementation dependencies for all test variants."
+        },
+        "correct_answer": "B",
+        "explanation": "The `nativeRuntimeTest__Variant__` configuration contains the runtime libraries required to execute the unit test. This ensures that all necessary libraries are available when the unit tests are run, allowing for proper execution and validation of the test cases."
+    },
+    {
+        "question": "How does the {cpp} Unit Test Plugin handle dependencies for specific variants of the test component?",
+        "options": {
+            "A": "By using the `testImplementation` configuration exclusively",
+            "B": "By creating a separate configuration for each variant",
+            "C": "By applying the same dependencies across all variants",
+            "D": "By linking all dependencies to the main application component"
+        },
+        "correct_answer": "B",
+        "explanation": "The {cpp} Unit Test Plugin creates a separate configuration for each variant of the test component, such as `test__Variant__ExecutableImplementation`. This allows developers to declare implementation dependencies that are specific to each variant, providing flexibility in managing different testing scenarios."
+    },
+    {
+        "question": "What is the primary purpose of task management in the context of the {cpp} Unit Test Plugin?",
+        "options": {
+            "A": "To define and execute a series of operations for building and testing applications",
+            "B": "To manage user permissions for accessing project files",
+            "C": "To optimize the performance of the application at runtime",
+            "D": "To create user interfaces for testing applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of task management in the context of the {cpp} Unit Test Plugin is to define and execute a series of operations that facilitate the building and testing of applications. This includes managing tasks related to compiling, linking, installing, and running tests, ensuring that the development process is streamlined and efficient."
+    },
+    {
+        "question": "Which of the following best describes a lifecycle task in the {cpp} Unit Test Plugin?",
+        "options": {
+            "A": "A task that is executed only when a specific condition is met",
+            "B": "A task that aggregates other tasks to perform a complete build or test",
+            "C": "A task that is responsible for cleaning up project files",
+            "D": "A task that manages dependencies for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "A lifecycle task in the {cpp} Unit Test Plugin is a task that aggregates other tasks to perform a complete build or test. These tasks, such as 'build' and 'test', depend on the successful execution of other tasks, ensuring that all necessary steps are completed in the correct order for the project to function properly."
+    },
+    {
+        "question": "What is the role of the 'test' lifecycle task in the {cpp} Unit Test Plugin?",
+        "options": {
+            "A": "To compile the source code of the application",
+            "B": "To run the tests for the component that matches the build host",
+            "C": "To clean the build directory of all files",
+            "D": "To install the application on the target machine"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'test' lifecycle task in the {cpp} Unit Test Plugin is responsible for running the tests for the component that most closely matches the build host. This task ensures that the appropriate tests are executed in the correct environment, allowing developers to verify the functionality of their code."
+    },
+    {
+        "question": "How does the {cpp} Unit Test Plugin determine which toolchain to use for building tasks?",
+        "options": {
+            "A": "Based on the programming language used in the project",
+            "B": "Based on the availability of tools on the host machine",
+            "C": "Based on user-defined settings in the configuration file",
+            "D": "Based on the size of the project files"
+        },
+        "correct_answer": "B",
+        "explanation": "The {cpp} Unit Test Plugin determines which toolchain to use for building tasks based on the availability of tools on the host machine. This allows the plugin to select the most appropriate compiler and linker for the target machine, ensuring compatibility and optimal performance during the build process."
+    },
+    {
+        "question": "What is the purpose of the project layout in the {cpp} Unit Test Plugin?",
+        "options": {
+            "A": "To define the structure and organization of source files and headers for unit testing",
+            "B": "To specify the dependencies required for the project",
+            "C": "To configure the build variants for different target machines",
+            "D": "To manage the execution of unit tests across multiple environments"
+        },
+        "correct_answer": "A",
+        "explanation": "The project layout in the {cpp} Unit Test Plugin serves to define the structure and organization of source files and headers specifically for unit testing. This layout helps the plugin identify where to find the necessary files for compilation and execution of tests, ensuring a systematic approach to project organization."
+    },
+    {
+        "question": "Which directory is designated for {cpp} source files in the project layout?",
+        "options": {
+            "A": "src/test/headers",
+            "B": "src/test/cpp",
+            "C": "src/main/cpp",
+            "D": "src/test/resources"
+        },
+        "correct_answer": "B",
+        "explanation": "In the project layout for the {cpp} Unit Test Plugin, the directory designated for {cpp} source files is 'src/test/cpp'. This is where the plugin looks for source files with the appropriate extensions to compile and run unit tests."
+    },
+    {
+        "question": "What is the significance of the 'src/test/headers' directory in the project layout?",
+        "options": {
+            "A": "It contains the compiled binaries for the unit tests.",
+            "B": "It holds the headers needed to compile the unit test.",
+            "C": "It is used for storing configuration files for the project.",
+            "D": "It is where the test results are generated and stored."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'src/test/headers' directory in the project layout is significant because it holds the headers needed to compile the unit test. These headers are essential for the compilation process, as they provide the necessary declarations and definitions required by the source files."
+    },
+    {
+        "question": "How does the {cpp} Unit Test Plugin handle missing directories in the project layout?",
+        "options": {
+            "A": "It generates default files in the missing directories.",
+            "B": "It ignores the missing directories and compiles whatever it finds.",
+            "C": "It raises an error and halts the build process.",
+            "D": "It automatically creates the missing directories with sample files."
+        },
+        "correct_answer": "B",
+        "explanation": "The {cpp} Unit Test Plugin is designed to handle missing directories in the project layout by ignoring them and compiling whatever it finds. This flexibility allows developers to focus on their code without needing to create a rigid directory structure beforehand."
+    }
+]

@@ -1,0 +1,321 @@
+[
+    {
+        "question": "What is the primary purpose of the Java Library Plugin?",
+        "options": {
+            "A": "To create standalone Java applications",
+            "B": "To provide specific knowledge about Java libraries and expose an API to consumers",
+            "C": "To manage database connections in Java applications",
+            "D": "To optimize Java code for performance"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Java Library Plugin is to enhance the capabilities of the Java Plugin by providing specific knowledge about Java libraries. It allows developers to expose an API to consumers, facilitating better dependency management and separation of implementation details."
+    },
+    {
+        "question": "Which configuration should be used to declare dependencies that are part of the library's public API?",
+        "options": {
+            "A": "implementation",
+            "B": "api",
+            "C": "compileOnly",
+            "D": "runtimeOnly"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'api' configuration should be used to declare dependencies that are part of the library's public API. This ensures that these dependencies are transitively exposed to consumers of the library, allowing them to compile against the library effectively."
+    },
+    {
+        "question": "What is a key benefit of using the 'implementation' configuration in the Java Library Plugin?",
+        "options": {
+            "A": "It allows dependencies to be exposed to consumers at compile time.",
+            "B": "It keeps dependencies off the consumer's compilation classpath.",
+            "C": "It automatically publishes the library to a repository.",
+            "D": "It enables the use of Java modules in the project."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using the 'implementation' configuration is that it keeps dependencies off the consumer's compilation classpath. This prevents accidental dependencies on transitive dependencies and helps maintain a cleaner and more efficient build process."
+    },
+    {
+        "question": "In the context of the Java Library Plugin, what does ABI stand for?",
+        "options": {
+            "A": "Application Binary Interface",
+            "B": "Application Build Integration",
+            "C": "Abstract Binary Interface",
+            "D": "Application Base Interface"
+        },
+        "correct_answer": "A",
+        "explanation": "ABI stands for Application Binary Interface. It refers to the interface that defines how different components of a software application interact at the binary level, including the types exposed in the library's public API."
+    },
+    {
+        "question": "What happens to dependencies declared in the 'implementation' configuration when a library is published?",
+        "options": {
+            "A": "They are included in the compile classpath of consumers.",
+            "B": "They are excluded from the published POM file.",
+            "C": "They are automatically converted to API dependencies.",
+            "D": "They are included in the runtime classpath of consumers."
+        },
+        "correct_answer": "B",
+        "explanation": "Dependencies declared in the 'implementation' configuration are excluded from the published POM file. This means they do not appear on the compile classpath of consumers, which helps prevent unintended dependencies and keeps the API clean."
+    },
+    {
+        "question": "What is the primary purpose of separating API and implementation dependencies in a Java library?",
+        "options": {
+            "A": "To ensure that all dependencies are exposed to consumers",
+            "B": "To prevent internal dependencies from leaking into the consumer's compile classpath",
+            "C": "To allow consumers to modify the library's internal code",
+            "D": "To simplify the library's build script"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of separating API and implementation dependencies is to prevent internal dependencies from leaking into the consumer's compile classpath. This separation helps maintain a clean interface for the library, ensuring that only the necessary dependencies are exposed to consumers, which reduces the risk of accidental transitive dependencies and improves compilation speed."
+    },
+    {
+        "question": "Which configuration should be used to declare dependencies that are part of the library's public API?",
+        "options": {
+            "A": "implementation",
+            "B": "compileOnly",
+            "C": "api",
+            "D": "runtimeOnly"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'api' configuration should be used to declare dependencies that are part of the library's public API. Dependencies declared in this configuration are transitively exposed to consumers, meaning they will be available on the compile classpath of any project that uses the library."
+    },
+    {
+        "question": "What is a benefit of using the 'implementation' configuration for dependencies?",
+        "options": {
+            "A": "It allows consumers to access all internal classes of the library",
+            "B": "It reduces the compile classpath size for consumers",
+            "C": "It automatically publishes the library to a repository",
+            "D": "It makes all dependencies available at runtime"
+        },
+        "correct_answer": "B",
+        "explanation": "Using the 'implementation' configuration for dependencies reduces the compile classpath size for consumers. This is because dependencies declared as 'implementation' are not exposed to the consumers, which helps to keep their classpath clean and minimizes the risk of conflicts with other libraries."
+    },
+    {
+        "question": "When should you prefer using the 'implementation' configuration over 'api'?",
+        "options": {
+            "A": "When the dependency is required for public method parameters",
+            "B": "When the dependency is only used internally within the library",
+            "C": "When the dependency is needed for the library to compile",
+            "D": "When the dependency is a third-party library that must be exposed"
+        },
+        "correct_answer": "B",
+        "explanation": "You should prefer using the 'implementation' configuration over 'api' when the dependency is only used internally within the library. This practice helps to keep the consumer's compile classpath clean and prevents internal implementation details from leaking into the public API."
+    },
+    {
+        "question": "What is the primary purpose of the `api` configuration in the Java Library plugin?",
+        "options": {
+            "A": "To declare dependencies that are internal to the library and not exposed to consumers",
+            "B": "To declare dependencies that are exported and available to consumers of the library",
+            "C": "To declare dependencies that are only required at runtime",
+            "D": "To declare dependencies that are only needed for testing"
+        },
+        "correct_answer": "B",
+        "explanation": "The `api` configuration is used to declare dependencies that are exported by the library API, meaning they are available to consumers of the library. This allows consumers to compile against these dependencies, as they are part of the library's public interface."
+    },
+    {
+        "question": "Which configuration should be used to declare dependencies that are only needed internally within a library?",
+        "options": {
+            "A": "api",
+            "B": "implementation",
+            "C": "compileOnly",
+            "D": "runtimeOnly"
+        },
+        "correct_answer": "B",
+        "explanation": "The `implementation` configuration is specifically designed for declaring dependencies that are internal to the library and not meant to be exposed to consumers. This helps prevent unnecessary dependencies from leaking into the consumers' compile classpath."
+    },
+    {
+        "question": "What is a key benefit of using the `implementation` configuration over the `api` configuration?",
+        "options": {
+            "A": "It allows for faster compilation by reducing the classpath size",
+            "B": "It makes all dependencies available to consumers",
+            "C": "It is used for declaring dependencies required only at runtime",
+            "D": "It automatically includes all transitive dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "Using the `implementation` configuration helps to keep the dependencies off the consumer's compilation classpath, which leads to faster compilation times due to a reduced classpath size. This also minimizes recompilation when internal dependencies change."
+    },
+    {
+        "question": "When should you prefer using the `api` configuration instead of `implementation`?",
+        "options": {
+            "A": "When the dependency is only used in private methods",
+            "B": "When the dependency is part of the library's public API",
+            "C": "When the dependency is only needed at runtime",
+            "D": "When the dependency is not required for compilation"
+        },
+        "correct_answer": "B",
+        "explanation": "You should prefer using the `api` configuration when the dependency contains types that are exposed in the library's public API, such as types used in public method parameters or public fields. This ensures that consumers can access the necessary types for compilation."
+    },
+    {
+        "question": "What is the primary purpose of Gradle configurations in the context of the Java Library plugin?",
+        "options": {
+            "A": "To define how dependencies are declared and managed",
+            "B": "To specify the version of Java to be used",
+            "C": "To control the visibility of classes in the source code",
+            "D": "To automate the testing process of Java applications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Gradle configurations in the context of the Java Library plugin is to define how dependencies are declared and managed. Configurations such as 'api' and 'implementation' help in distinguishing between dependencies that should be exposed to consumers and those that are internal to the library."
+    },
+    {
+        "question": "Which configuration should be used to declare dependencies that are internal to a library and not exposed to consumers?",
+        "options": {
+            "A": "api",
+            "B": "implementation",
+            "C": "compileOnly",
+            "D": "runtimeOnly"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'implementation' configuration should be used to declare dependencies that are internal to the library and not exposed to consumers. This helps prevent accidental dependencies from leaking into the consumer's compile classpath, thereby maintaining a clean separation between the library's internal workings and its public API."
+    },
+    {
+        "question": "What is a key benefit of using the 'api' configuration in Gradle?",
+        "options": {
+            "A": "It reduces the size of the compile classpath for consumers.",
+            "B": "It allows dependencies to be transitively exposed to consumers.",
+            "C": "It ensures that all dependencies are only used at runtime.",
+            "D": "It prevents any dependencies from being included in the library."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using the 'api' configuration in Gradle is that it allows dependencies to be transitively exposed to consumers. This means that when a library declares a dependency using 'api', any project that uses this library will also have access to that dependency, which is essential for proper functionality."
+    },
+    {
+        "question": "In the context of Gradle configurations, what does the 'compileOnly' configuration signify?",
+        "options": {
+            "A": "Dependencies required only at compile time, not at runtime.",
+            "B": "Dependencies that are required at both compile time and runtime.",
+            "C": "Dependencies that are only needed for testing purposes.",
+            "D": "Dependencies that are internal to the library and not exposed to consumers."
+        },
+        "correct_answer": "A",
+        "explanation": "The 'compileOnly' configuration signifies dependencies that are required only at compile time and not at runtime. This is useful for dependencies that are needed to compile the code but are not necessary when the code is executed, such as annotation processors or libraries that are shaded in the final artifact."
+    },
+    {
+        "question": "What is the primary purpose of the Java Module System introduced in Java 9?",
+        "options": {
+            "A": "To allow for strict encapsulation during compile and runtime",
+            "B": "To simplify the process of building Java applications",
+            "C": "To enhance the performance of Java applications",
+            "D": "To provide a new syntax for Java programming"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Java Module System is to allow for strict encapsulation during compile and runtime. This system enables developers to define modules that can specify which packages are exported and which other modules they require, enhancing modularity and reducing the risk of conflicts."
+    },
+    {
+        "question": "Which file is essential for turning a Java library into a Java Module?",
+        "options": {
+            "A": "build.gradle",
+            "B": "module-info.java",
+            "C": "pom.xml",
+            "D": "settings.gradle"
+        },
+        "correct_answer": "B",
+        "explanation": "The file essential for turning a Java library into a Java Module is `module-info.java`. This file contains declarations for the module name, the packages to export, and the modules that the current module requires, thus defining the module's interface and dependencies."
+    },
+    {
+        "question": "What is the role of the `api` configuration in the Java Library plugin?",
+        "options": {
+            "A": "To declare dependencies that are only needed at runtime",
+            "B": "To declare dependencies that are internal and not exposed to consumers",
+            "C": "To declare dependencies that are exported to consumers of the library",
+            "D": "To declare dependencies that are only required for testing"
+        },
+        "correct_answer": "C",
+        "explanation": "The `api` configuration in the Java Library plugin is used to declare dependencies that are exported to consumers of the library. This means that any dependencies declared in the `api` configuration will be available on the compile classpath of the consumers, allowing them to use those dependencies directly."
+    },
+    {
+        "question": "What is a key benefit of using the `implementation` configuration over the `api` configuration?",
+        "options": {
+            "A": "It allows dependencies to be exposed to consumers",
+            "B": "It keeps dependencies off the consumer's compilation classpath",
+            "C": "It is used for declaring test dependencies",
+            "D": "It automatically manages transitive dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using the `implementation` configuration over the `api` configuration is that it keeps dependencies off the consumer's compilation classpath. This prevents accidental dependencies on transitive dependencies and helps maintain a cleaner and more efficient build process."
+    },
+    {
+        "question": "What is an automatic module in the context of Java libraries?",
+        "options": {
+            "A": "A module that has a complete module descriptor and strict encapsulation",
+            "B": "A library that can be used as a module without a full module descriptor",
+            "C": "A traditional Java library that does not support modularity",
+            "D": "A module that requires manual configuration for each dependency"
+        },
+        "correct_answer": "B",
+        "explanation": "An automatic module is a library that can be used as a module without having a complete module descriptor. It typically includes an 'Automatic-Module-Name' entry in its manifest file, allowing it to be treated as a module while exporting all its packages and being able to read all modules on the module path."
+    },
+    {
+        "question": "Which of the following statements is true regarding automatic modules?",
+        "options": {
+            "A": "They can only depend on other automatic modules.",
+            "B": "They can see the unnamed module and interact with it.",
+            "C": "They require a full module descriptor to function properly.",
+            "D": "They cannot be used in a modular Java project."
+        },
+        "correct_answer": "B",
+        "explanation": "Automatic modules can see the unnamed module, which is a traditional library without module information. This allows them to interact with libraries that do not provide module descriptors, making them versatile in modular Java projects."
+    },
+    {
+        "question": "What is the primary benefit of using automatic modules in a Java project?",
+        "options": {
+            "A": "They provide strict encapsulation of all packages.",
+            "B": "They allow traditional libraries to be used as modules.",
+            "C": "They eliminate the need for any dependencies.",
+            "D": "They automatically generate module descriptors for all libraries."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using automatic modules is that they allow traditional libraries, which do not have module descriptors, to be used as modules in a Java project. This enables developers to leverage existing libraries while still taking advantage of the modular system introduced in Java 9."
+    },
+    {
+        "question": "How can a traditional Java library be converted into an automatic module?",
+        "options": {
+            "A": "By adding a module-info.java file with all dependencies listed.",
+            "B": "By including an 'Automatic-Module-Name' entry in its manifest file.",
+            "C": "By restructuring the library to remove all dependencies.",
+            "D": "By compiling the library with the Java Module System enabled."
+        },
+        "correct_answer": "B",
+        "explanation": "To convert a traditional Java library into an automatic module, you can add an 'Automatic-Module-Name' entry in its manifest file. This allows the library to be treated as a module while still exporting all its packages."
+    },
+    {
+        "question": "What is the primary purpose of the Java Library Distribution Plugin?",
+        "options": {
+            "A": "To manage dependencies for Java applications",
+            "B": "To package a library and its dependencies into a distribution deliverable",
+            "C": "To compile Java code into bytecode",
+            "D": "To create a user interface for Java applications"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Java Library Distribution Plugin is to assist in packaging a library along with its dependencies into a distribution deliverable. This allows developers to easily share their libraries with others, ensuring that all necessary components are included for proper functionality."
+    },
+    {
+        "question": "Which of the following best describes a library in the context of the Java Library plugin?",
+        "options": {
+            "A": "A standalone application that runs independently",
+            "B": "A Java component meant to be consumed by other components",
+            "C": "A collection of user interface elements for Java applications",
+            "D": "A tool for managing Java versions"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of the Java Library plugin, a library is defined as a Java component that is intended to be consumed by other components. This means it exposes an API that other projects can utilize, making it a crucial part of multi-project builds and dependency management."
+    },
+    {
+        "question": "What is a key benefit of using the `api` configuration in a Java library?",
+        "options": {
+            "A": "It allows dependencies to be hidden from consumers.",
+            "B": "It ensures that dependencies are only available at runtime.",
+            "C": "It exposes dependencies to consumers, making them available on the compile classpath.",
+            "D": "It reduces the size of the library's JAR file."
+        },
+        "correct_answer": "C",
+        "explanation": "The `api` configuration in a Java library is used to declare dependencies that are exported by the library's API. This means that these dependencies will be available on the compile classpath of consumers, allowing them to use the library effectively without needing to manage those dependencies themselves."
+    },
+    {
+        "question": "Why is it recommended to prefer the `implementation` configuration over `api` when possible?",
+        "options": {
+            "A": "It allows for easier debugging of the library.",
+            "B": "It keeps dependencies off of the consumer's compilation classpath.",
+            "C": "It automatically updates dependencies to the latest version.",
+            "D": "It ensures that all dependencies are included in the final JAR."
+        },
+        "correct_answer": "B",
+        "explanation": "Preferring the `implementation` configuration over `api` is recommended because it keeps dependencies off of the consumer's compilation classpath. This prevents accidental dependencies from leaking into the consumer's environment, leading to cleaner builds and faster compilation times."
+    }
+]

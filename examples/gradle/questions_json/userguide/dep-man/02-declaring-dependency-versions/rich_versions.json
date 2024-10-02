@@ -1,0 +1,222 @@
+[
+    {
+        "question": "What is the primary purpose of rich version declaration in Gradle?",
+        "options": {
+            "A": "To specify the exact version of a dependency required",
+            "B": "To combine different levels of version information for dependencies",
+            "C": "To automatically update all dependencies to the latest version",
+            "D": "To simplify the dependency resolution process by ignoring version conflicts"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of rich version declaration in Gradle is to combine different levels of version information for dependencies. This allows developers to express their versioning needs more flexibly, accommodating various scenarios such as strict requirements, preferred versions, and rejected versions."
+    },
+    {
+        "question": "Which term in rich version declaration indicates that a version must be strictly matched?",
+        "options": {
+            "A": "require",
+            "B": "prefer",
+            "C": "strictly",
+            "D": "reject"
+        },
+        "correct_answer": "C",
+        "explanation": "The term 'strictly' in rich version declaration indicates that a version must be strictly matched. Any version not matching this notation will be excluded, making it the strongest form of version declaration available in Gradle."
+    },
+    {
+        "question": "What does the 'require' term imply in the context of rich version declaration?",
+        "options": {
+            "A": "The selected version can be lower than what is required",
+            "B": "The selected version cannot be lower than what is required but can be higher",
+            "C": "The selected version must be the latest available version",
+            "D": "The selected version is optional and can be ignored"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'require' term implies that the selected version cannot be lower than what is required but could be higher through conflict resolution. This allows for flexibility while ensuring that a minimum version is respected."
+    },
+    {
+        "question": "What is the effect of using the 'reject' term in rich version declaration?",
+        "options": {
+            "A": "It allows all versions of a dependency",
+            "B": "It specifies that certain versions are not accepted",
+            "C": "It automatically selects the latest version available",
+            "D": "It enforces a specific version to be used exclusively"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'reject' term specifies that certain versions of a dependency are not accepted. If a selected version is rejected, dependency resolution will fail, ensuring that incompatible versions are not used."
+    },
+    {
+        "question": "What is the primary purpose of dependency management in software development?",
+        "options": {
+            "A": "To ensure that all software components are compatible and function correctly together",
+            "B": "To increase the size of the software package",
+            "C": "To eliminate the need for version control systems",
+            "D": "To restrict the use of third-party libraries"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency management is to ensure that all software components are compatible and function correctly together. This involves specifying which versions of libraries and frameworks are required, resolving conflicts, and managing updates to maintain stability and functionality in the software project."
+    },
+    {
+        "question": "Which term in dependency management indicates that a specific version must be used without exceptions?",
+        "options": {
+            "A": "Prefer",
+            "B": "Reject",
+            "C": "Strictly",
+            "D": "Require"
+        },
+        "correct_answer": "C",
+        "explanation": "The term 'strictly' in dependency management indicates that a specific version must be used without exceptions. This is the strongest form of version declaration, ensuring that any version not matching the specified notation will be excluded from selection, thereby enforcing strict compatibility."
+    },
+    {
+        "question": "What does the 'require' version declaration imply in dependency management?",
+        "options": {
+            "A": "The selected version can be lower than what is required.",
+            "B": "The selected version must be exactly what is specified.",
+            "C": "The selected version cannot be lower than what is required but can be higher.",
+            "D": "The selected version is optional and can be ignored."
+        },
+        "correct_answer": "C",
+        "explanation": "The 'require' version declaration implies that the selected version cannot be lower than what is required but can be higher through conflict resolution. This allows for flexibility in version selection while ensuring that a minimum version requirement is met."
+    },
+    {
+        "question": "What is the function of the 'reject' version declaration in dependency management?",
+        "options": {
+            "A": "To specify that certain versions are preferred over others",
+            "B": "To declare that specific versions are not accepted for the module",
+            "C": "To allow any version to be selected without restrictions",
+            "D": "To indicate that a version is optional"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'reject' version declaration serves to declare that specific versions are not accepted for the module. If a version is rejected, dependency resolution will fail if that version is selected, ensuring that incompatible versions are excluded from use."
+    },
+    {
+        "question": "What is the purpose of version constraints in dependency management?",
+        "options": {
+            "A": "To specify acceptable versions of dependencies",
+            "B": "To automatically update all dependencies to the latest version",
+            "C": "To eliminate the need for versioning altogether",
+            "D": "To enforce a single version for all dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The purpose of version constraints is to specify acceptable versions of dependencies, allowing developers to control which versions can be used in their projects. This helps ensure compatibility and stability by defining clear boundaries for dependency versions."
+    },
+    {
+        "question": "Which version constraint type is the strongest and excludes any version not matched?",
+        "options": {
+            "A": "require",
+            "B": "prefer",
+            "C": "strictly",
+            "D": "reject"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'strictly' version constraint is the strongest type, as it excludes any version that does not match the specified notation. This ensures that only the defined versions are accepted, providing a high level of control over dependency versions."
+    },
+    {
+        "question": "What does the 'require' version constraint imply?",
+        "options": {
+            "A": "The selected version must be lower than the specified version",
+            "B": "The selected version cannot be lower than the specified version but can be higher",
+            "C": "The selected version must be exactly the specified version",
+            "D": "The selected version is optional and can be ignored"
+        },
+        "correct_answer": "B",
+        "explanation": "'Require' implies that the selected version cannot be lower than what is specified, but it can be higher if there are conflicts. This allows for flexibility in version selection while maintaining a minimum version requirement."
+    },
+    {
+        "question": "What is the function of the 'reject' version constraint?",
+        "options": {
+            "A": "To specify that certain versions are acceptable",
+            "B": "To declare specific versions that are not accepted",
+            "C": "To allow any version to be used without restrictions",
+            "D": "To automatically select the latest version available"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'reject' version constraint is used to declare specific versions that are not accepted for a module. If a selected version is rejected, dependency resolution will fail, ensuring that incompatible versions are not used."
+    },
+    {
+        "question": "What is the primary purpose of semantic versioning?",
+        "options": {
+            "A": "To indicate the level of compatibility between software versions",
+            "B": "To provide a marketing strategy for software releases",
+            "C": "To enforce strict licensing agreements",
+            "D": "To simplify the installation process of software"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of semantic versioning is to indicate the level of compatibility between software versions. It uses a versioning scheme that consists of three numbers (major, minor, and patch) to communicate changes in the software, helping developers understand the impact of upgrading to a new version."
+    },
+    {
+        "question": "In semantic versioning, what does a change in the major version number signify?",
+        "options": {
+            "A": "Backward-compatible changes",
+            "B": "New features added",
+            "C": "Incompatible API changes",
+            "D": "Bug fixes"
+        },
+        "correct_answer": "C",
+        "explanation": "In semantic versioning, a change in the major version number signifies incompatible API changes. This indicates that the new version may not work with previous versions, and developers need to be cautious when upgrading."
+    },
+    {
+        "question": "What does the minor version number in semantic versioning represent?",
+        "options": {
+            "A": "Incompatible changes",
+            "B": "New features that are backward-compatible",
+            "C": "Critical bug fixes",
+            "D": "Security updates"
+        },
+        "correct_answer": "B",
+        "explanation": "The minor version number in semantic versioning represents new features that are backward-compatible. This means that the new features can be added without breaking existing functionality, allowing users to upgrade without issues."
+    },
+    {
+        "question": "What is the significance of the patch version in semantic versioning?",
+        "options": {
+            "A": "It indicates major changes to the software",
+            "B": "It signifies backward-compatible bug fixes",
+            "C": "It denotes the introduction of new features",
+            "D": "It represents deprecated features"
+        },
+        "correct_answer": "B",
+        "explanation": "The patch version in semantic versioning signifies backward-compatible bug fixes. This indicates that the changes made are intended to resolve issues without affecting the existing functionality of the software."
+    },
+    {
+        "question": "What is the primary purpose of dependency resolution in software development?",
+        "options": {
+            "A": "To ensure that all required libraries and modules are included in a project",
+            "B": "To optimize the performance of the application",
+            "C": "To automatically generate documentation for the code",
+            "D": "To enforce coding standards across the project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency resolution is to ensure that all required libraries and modules are included in a project. This process involves determining which versions of dependencies are compatible with each other and selecting the appropriate versions to avoid conflicts, thereby ensuring the application functions correctly."
+    },
+    {
+        "question": "Which term in dependency resolution indicates that a specific version of a module is not accepted?",
+        "options": {
+            "A": "require",
+            "B": "prefer",
+            "C": "strictly",
+            "D": "reject"
+        },
+        "correct_answer": "D",
+        "explanation": "The term 'reject' in dependency resolution indicates that specific version(s) of a module are not accepted. This declaration will cause the dependency resolution process to fail if the selected version is among those that are rejected, ensuring that incompatible versions are not used."
+    },
+    {
+        "question": "What does the 'strictly' version declaration imply in dependency resolution?",
+        "options": {
+            "A": "It allows for any version of a module to be used.",
+            "B": "It excludes any version not matched by the specified version notation.",
+            "C": "It suggests a preferred version but allows for flexibility.",
+            "D": "It indicates that the version can be downgraded without restrictions."
+        },
+        "correct_answer": "B",
+        "explanation": "'Strictly' is the strongest version declaration in dependency resolution, meaning that any version not matched by this notation will be excluded. This ensures that only the specified version or compatible versions are used, preventing potential issues with incompatible dependencies."
+    },
+    {
+        "question": "In the context of dependency resolution, what does the 'prefer' declaration do?",
+        "options": {
+            "A": "It mandates the use of a specific version only.",
+            "B": "It applies only if there is no stronger non-dynamic opinion on a version.",
+            "C": "It automatically rejects all other versions.",
+            "D": "It enforces a downgrade of the current version."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'prefer' declaration in dependency resolution is a soft version declaration that applies only if there is no stronger non-dynamic opinion on a version of the module. This means it allows for flexibility in version selection, favoring the preferred version when no other constraints are present."
+    }
+]

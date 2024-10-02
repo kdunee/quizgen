@@ -1,0 +1,288 @@
+[
+    {
+        "question": "What is the primary purpose of the Gradle Daemon?",
+        "options": {
+            "A": "To run Gradle builds in the background and reduce startup time",
+            "B": "To manage user permissions for Gradle projects",
+            "C": "To compile Java code into bytecode",
+            "D": "To monitor system performance during builds"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Gradle Daemon is to run Gradle builds in the background, which significantly reduces the startup time for builds. By keeping the JVM running, the Daemon avoids the overhead of starting a new JVM for each build, thus improving overall build performance."
+    },
+    {
+        "question": "How does the Gradle Daemon improve build performance?",
+        "options": {
+            "A": "By using a different programming language for builds",
+            "B": "By caching project information and optimizing runtime performance",
+            "C": "By increasing the maximum heap size for all builds",
+            "D": "By disabling all background processes during builds"
+        },
+        "correct_answer": "B",
+        "explanation": "The Gradle Daemon improves build performance by caching project information across builds and benefiting from runtime optimizations in the JVM. This allows for faster subsequent builds as the Daemon retains necessary data and optimizations from previous executions."
+    },
+    {
+        "question": "What command can be used to check the status of running Gradle Daemons?",
+        "options": {
+            "A": "gradle --status",
+            "B": "gradle daemon status",
+            "C": "gradle check daemons",
+            "D": "gradle list daemons"
+        },
+        "correct_answer": "A",
+        "explanation": "The command 'gradle --status' is used to check the status of running Gradle Daemons. This command provides information about the currently active Daemons and their statuses, helping users manage their build environment effectively."
+    },
+    {
+        "question": "What happens if a requested build environment does not match the existing Daemon's environment?",
+        "options": {
+            "A": "The build will fail immediately",
+            "B": "A new Daemon will be started to match the requested environment",
+            "C": "The existing Daemon will be reused regardless of compatibility",
+            "D": "The build will run in a single-use Daemon mode"
+        },
+        "correct_answer": "B",
+        "explanation": "If a requested build environment does not match the existing Daemon's environment, Gradle will start a new Daemon that matches the requested environment. This ensures that the build runs in a compatible environment, which is crucial for successful execution."
+    },
+    {
+        "question": "What is the primary role of the Java Virtual Machine (JVM) in the context of Gradle?",
+        "options": {
+            "A": "To execute Gradle builds and manage memory allocation",
+            "B": "To compile Java code into bytecode",
+            "C": "To provide a graphical user interface for Gradle",
+            "D": "To store project dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary role of the Java Virtual Machine (JVM) in the context of Gradle is to execute Gradle builds and manage memory allocation. The JVM provides the runtime environment necessary for running Java applications, including Gradle, and is responsible for executing the bytecode generated from Java source code."
+    },
+    {
+        "question": "How does the JVM impact the performance of Gradle builds?",
+        "options": {
+            "A": "By providing a faster internet connection",
+            "B": "Through runtime code optimizations and memory caching",
+            "C": "By automatically updating Gradle to the latest version",
+            "D": "By simplifying the build script syntax"
+        },
+        "correct_answer": "B",
+        "explanation": "The JVM impacts the performance of Gradle builds through runtime code optimizations and memory caching. These optimizations allow the JVM to improve execution speed over time, while caching reduces the need to reload data for subsequent builds, leading to faster build times."
+    },
+    {
+        "question": "What happens if the requested build environment does not match the JVM attributes of an existing Gradle Daemon?",
+        "options": {
+            "A": "The Daemon will automatically update to match the environment",
+            "B": "A new Daemon will be started to meet the build requirements",
+            "C": "The build will fail immediately",
+            "D": "The existing Daemon will continue to run without any issues"
+        },
+        "correct_answer": "B",
+        "explanation": "If the requested build environment does not match the JVM attributes of an existing Gradle Daemon, a new Daemon will be started to meet the build requirements. Compatibility is determined by exact matches of the requested environment, and if no suitable Daemon exists, Gradle will create a new one."
+    },
+    {
+        "question": "Which of the following statements about the JVM's memory management in Gradle is true?",
+        "options": {
+            "A": "The JVM automatically allocates unlimited memory for Gradle builds",
+            "B": "The JVM uses a fixed memory size that cannot be changed",
+            "C": "The JVM can be configured to use a specific maximum heap size for Gradle builds",
+            "D": "The JVM does not manage memory for Gradle builds"
+        },
+        "correct_answer": "C",
+        "explanation": "The JVM can be configured to use a specific maximum heap size for Gradle builds. This allows users to optimize memory usage based on the needs of their projects, ensuring that larger builds can benefit from increased memory allocation if necessary."
+    },
+    {
+        "question": "What is the primary benefit of using the Gradle Daemon in build processes?",
+        "options": {
+            "A": "It allows for real-time collaboration between developers.",
+            "B": "It reduces the time it takes to run a build by caching project information.",
+            "C": "It automatically updates project dependencies.",
+            "D": "It provides a graphical user interface for build management."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using the Gradle Daemon is that it reduces the time it takes to run a build by caching project information across builds and running in the background, which eliminates the need for repeated JVM startup times."
+    },
+    {
+        "question": "How does the Gradle Daemon improve build performance between successive builds?",
+        "options": {
+            "A": "By compiling code in parallel across multiple threads.",
+            "B": "By maintaining in-memory caches of build data and optimizing code during execution.",
+            "C": "By automatically generating build scripts for each project.",
+            "D": "By requiring less memory for each build process."
+        },
+        "correct_answer": "B",
+        "explanation": "The Gradle Daemon improves build performance between successive builds by maintaining in-memory caches of build data and utilizing runtime code optimizations, which can lead to faster builds as the process continues."
+    },
+    {
+        "question": "What happens to the Gradle Daemon if it runs out of available heap space due to a memory leak?",
+        "options": {
+            "A": "It automatically increases the heap size to accommodate more memory.",
+            "B": "It finishes the current build and restarts before the next build.",
+            "C": "It stops all running builds immediately.",
+            "D": "It sends an alert to the user about the memory issue."
+        },
+        "correct_answer": "B",
+        "explanation": "If the Gradle Daemon runs out of available heap space due to a memory leak, it finishes the currently running build and then restarts before running the next build. This helps to manage memory effectively and maintain performance."
+    },
+    {
+        "question": "Which of the following statements about the Gradle Daemon's performance impact is true?",
+        "options": {
+            "A": "The Daemon can increase build times by 15-75% for the first build.",
+            "B": "The Daemon allows for builds to be executed without any user interaction.",
+            "C": "The Daemon can reduce build times significantly when building the same project repeatedly.",
+            "D": "The Daemon requires a separate installation to function properly."
+        },
+        "correct_answer": "C",
+        "explanation": "The Gradle Daemon can reduce build times significantly when building the same project repeatedly, as it optimizes the process by keeping the Gradle environment loaded in memory and utilizing cached data."
+    },
+    {
+        "question": "What is the primary benefit of memory caching in the Gradle Daemon?",
+        "options": {
+            "A": "It allows the Daemon to run multiple builds simultaneously.",
+            "B": "It reduces the time taken to access frequently used data across builds.",
+            "C": "It increases the maximum heap size available to the Daemon.",
+            "D": "It enables the Daemon to run without any user intervention."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of memory caching in the Gradle Daemon is that it reduces the time taken to access frequently used data across builds. By maintaining in-memory caches of build data, such as task inputs and outputs, the Daemon can significantly speed up subsequent builds, especially when the same project is built repeatedly."
+    },
+    {
+        "question": "How does memory caching impact the performance of the Gradle Daemon?",
+        "options": {
+            "A": "It eliminates the need for the JVM to start for each build.",
+            "B": "It allows for the reuse of build scripts and plugin classes across builds.",
+            "C": "It prevents any memory leaks from occurring during builds.",
+            "D": "It ensures that all builds are executed in parallel."
+        },
+        "correct_answer": "B",
+        "explanation": "Memory caching impacts the performance of the Gradle Daemon by allowing for the reuse of build scripts and plugin classes across builds. This caching mechanism helps to optimize build times, as the Daemon can quickly access previously loaded data instead of reloading it for each build, leading to faster execution."
+    },
+    {
+        "question": "What happens to the cached data in the Gradle Daemon when a memory leak is detected?",
+        "options": {
+            "A": "The cached data is permanently deleted.",
+            "B": "The Daemon continues to use the cached data until the next build.",
+            "C": "The Daemon finishes the current build and restarts before the next one.",
+            "D": "The Daemon automatically increases its heap size."
+        },
+        "correct_answer": "C",
+        "explanation": "When a memory leak is detected in the Gradle Daemon, it finishes the currently running build and then restarts before running the next build. This process helps to mitigate the effects of the memory leak and ensures that the Daemon can continue to operate efficiently for subsequent builds."
+    },
+    {
+        "question": "What is the primary benefit of using Continuous Integration (CI) in software development?",
+        "options": {
+            "A": "To ensure that code changes are automatically tested and integrated into the main branch",
+            "B": "To allow developers to work independently without any collaboration",
+            "C": "To reduce the need for version control systems",
+            "D": "To eliminate the need for automated testing"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary benefit of Continuous Integration (CI) is to ensure that code changes are automatically tested and integrated into the main branch. This practice helps to identify integration issues early, improves code quality, and facilitates collaboration among team members."
+    },
+    {
+        "question": "How does Continuous Integration typically improve the software development process?",
+        "options": {
+            "A": "By allowing developers to merge their changes at any time without testing",
+            "B": "By automating the testing and deployment processes",
+            "C": "By requiring all developers to work on the same machine",
+            "D": "By delaying the integration of code changes until the end of the project"
+        },
+        "correct_answer": "B",
+        "explanation": "Continuous Integration improves the software development process by automating the testing and deployment processes. This automation ensures that code changes are continuously tested and integrated, reducing the likelihood of bugs and integration issues."
+    },
+    {
+        "question": "What role does the Gradle Daemon play in Continuous Integration?",
+        "options": {
+            "A": "It prevents any background processes from running during builds",
+            "B": "It speeds up build times by running in the background and caching project information",
+            "C": "It is responsible for managing user permissions in the CI environment",
+            "D": "It automatically generates documentation for the project"
+        },
+        "correct_answer": "B",
+        "explanation": "The Gradle Daemon plays a crucial role in Continuous Integration by speeding up build times. It runs in the background and caches project information, which reduces the time required for subsequent builds and enhances overall efficiency in the CI process."
+    },
+    {
+        "question": "Which of the following is a common practice in Continuous Integration?",
+        "options": {
+            "A": "Developers work on features in isolation for extended periods",
+            "B": "Code changes are integrated into the main branch multiple times a day",
+            "C": "Testing is performed only at the end of the development cycle",
+            "D": "Only one developer is allowed to make changes to the codebase at a time"
+        },
+        "correct_answer": "B",
+        "explanation": "A common practice in Continuous Integration is that code changes are integrated into the main branch multiple times a day. This frequent integration helps to catch issues early and ensures that the codebase remains stable and up-to-date."
+    },
+    {
+        "question": "What determines the compatibility of a Gradle Daemon with a requested build environment?",
+        "options": {
+            "A": "The Gradle version and the Java version used",
+            "B": "The operating system and the amount of memory available",
+            "C": "The network speed and the number of running processes",
+            "D": "The type of build tool and the project structure"
+        },
+        "correct_answer": "A",
+        "explanation": "The compatibility of a Gradle Daemon with a requested build environment is determined by the exact matches of the Gradle version, Java version, and JVM attributes. If any of these do not match, the Daemon is considered incompatible."
+    },
+    {
+        "question": "What happens if a requested build environment requires a different Java version than the one the Daemon is using?",
+        "options": {
+            "A": "The Daemon will automatically update to the required Java version",
+            "B": "A new Daemon will be started with the requested Java version",
+            "C": "The build will fail without any further action",
+            "D": "The Daemon will continue to run with the existing Java version"
+        },
+        "correct_answer": "B",
+        "explanation": "If the requested build environment requires a different Java version than the one the Daemon is currently using, Gradle will start a new Daemon that matches the requested Java version. This ensures that the build environment is compatible with the requirements specified."
+    },
+    {
+        "question": "Which of the following is NOT a factor in determining the compatibility of a Gradle Daemon?",
+        "options": {
+            "A": "JVM attributes",
+            "B": "Gradle version",
+            "C": "User permissions",
+            "D": "Java version"
+        },
+        "correct_answer": "C",
+        "explanation": "User permissions are not a factor in determining the compatibility of a Gradle Daemon. Compatibility is based on exact matches of the Gradle version, Java version, and JVM attributes, while user permissions do not affect the Daemon's ability to run."
+    },
+    {
+        "question": "What is the consequence of having incompatible JVM attributes when using a Gradle Daemon?",
+        "options": {
+            "A": "The Daemon will ignore the incompatible attributes and proceed",
+            "B": "The build will run successfully with a warning",
+            "C": "A new Daemon will be created to match the required attributes",
+            "D": "The Daemon will crash and stop running"
+        },
+        "correct_answer": "C",
+        "explanation": "If there are incompatible JVM attributes when using a Gradle Daemon, a new Daemon will be created to match the required attributes. This ensures that the build can proceed with the correct environment settings."
+    },
+    {
+        "question": "What is the primary benefit of runtime code optimization in the context of the Gradle Daemon?",
+        "options": {
+            "A": "It allows the JVM to execute code without any interruptions.",
+            "B": "It progressively improves the performance of code during execution.",
+            "C": "It ensures that all builds are completed in a single run.",
+            "D": "It eliminates the need for caching build data."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of runtime code optimization is that it progressively improves the performance of code during execution. This means that as the code runs, the JVM can apply optimizations that enhance the efficiency of subsequent builds, leading to faster execution times."
+    },
+    {
+        "question": "How does the Gradle Daemon utilize runtime code optimization to improve build performance?",
+        "options": {
+            "A": "By compiling all code before execution.",
+            "B": "By loading all dependencies into memory at once.",
+            "C": "By applying optimizations to code while it runs.",
+            "D": "By preventing any changes to the build environment."
+        },
+        "correct_answer": "C",
+        "explanation": "The Gradle Daemon utilizes runtime code optimization by applying optimizations to code while it runs. This allows the JVM to enhance the performance of the code dynamically, which can lead to significant improvements in build times, especially for repeated builds."
+    },
+    {
+        "question": "What impact does runtime code optimization have on the perceived build times of a project?",
+        "options": {
+            "A": "It has no impact on build times.",
+            "B": "It can lead to longer build times for the first build.",
+            "C": "It can significantly reduce build times for subsequent builds.",
+            "D": "It only affects the initial setup of the project."
+        },
+        "correct_answer": "C",
+        "explanation": "Runtime code optimization can significantly reduce build times for subsequent builds. As the JVM optimizes the code during execution, the performance of later builds improves, leading to a noticeable decrease in the time taken to complete builds after the initial one."
+    }
+]

@@ -1,0 +1,200 @@
+[
+    {
+        "question": "What is the primary purpose of the command-line interface in Gradle?",
+        "options": {
+            "A": "To provide a graphical user interface for project management",
+            "B": "To interact with Gradle outside of an integrated development environment (IDE)",
+            "C": "To automate the installation of Gradle",
+            "D": "To manage dependencies automatically"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the command-line interface in Gradle is to allow users to interact with Gradle outside of an IDE. This interface enables users to execute tasks, specify options, and manage projects directly from the command line, providing flexibility and control over the build process."
+    },
+    {
+        "question": "How should options be specified when executing a Gradle task?",
+        "options": {
+            "A": "Options must always be placed before the task name",
+            "B": "Options can be specified both before and after the task name",
+            "C": "Options cannot be used with multiple tasks",
+            "D": "Options should only be specified with a single dash"
+        },
+        "correct_answer": "B",
+        "explanation": "When executing a Gradle task, options can be specified both before and after the task name. This flexibility allows users to structure their command according to their preferences while still achieving the desired outcome."
+    },
+    {
+        "question": "What is the recommended way to specify options that accept values in Gradle commands?",
+        "options": {
+            "A": "Always use a space between the option and its value",
+            "B": "Use an equals sign (=) between the option and its value",
+            "C": "Options with values should not be specified at all",
+            "D": "Use a colon (:) to separate the option from its value"
+        },
+        "correct_answer": "B",
+        "explanation": "The recommended way to specify options that accept values in Gradle commands is to use an equals sign (=) between the option and its value. This format enhances clarity and ensures that the command is interpreted correctly by Gradle."
+    },
+    {
+        "question": "What is the significance of the Gradle Wrapper in command-line usage?",
+        "options": {
+            "A": "It allows users to run Gradle without installing it",
+            "B": "It is used to create graphical user interfaces for Gradle",
+            "C": "It automatically updates Gradle to the latest version",
+            "D": "It is only necessary for Windows users"
+        },
+        "correct_answer": "A",
+        "explanation": "The Gradle Wrapper is significant because it allows users to run Gradle without needing to install it on their system. This feature ensures that the correct version of Gradle is used for a project, making it easier to manage builds across different environments."
+    },
+    {
+        "question": "What is the primary purpose of the Gradle Wrapper?",
+        "options": {
+            "A": "To provide a consistent way to run Gradle across different environments",
+            "B": "To replace the need for a command-line interface",
+            "C": "To manage dependencies automatically",
+            "D": "To enhance the performance of Gradle builds"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the Gradle Wrapper is to provide a consistent way to run Gradle across different environments. It allows developers to execute Gradle tasks without requiring them to install Gradle manually, ensuring that the correct version of Gradle is used for the project."
+    },
+    {
+        "question": "How do you execute Gradle commands using the Gradle Wrapper on macOS or Linux?",
+        "options": {
+            "A": "gradlew.bat [taskName]",
+            "B": "gradle [taskName]",
+            "C": "./gradlew [taskName]",
+            "D": "gradle-wrapper [taskName]"
+        },
+        "correct_answer": "C",
+        "explanation": "To execute Gradle commands using the Gradle Wrapper on macOS or Linux, you use the command './gradlew [taskName]'. This command invokes the Gradle Wrapper script, which ensures the correct version of Gradle is used for the specified task."
+    },
+    {
+        "question": "What is the recommended way to specify options when executing a Gradle task?",
+        "options": {
+            "A": "Options should always be placed before the task name.",
+            "B": "Options can be specified with or without an equals sign.",
+            "C": "Options must be placed after the task name only.",
+            "D": "Options cannot be used with multiple tasks."
+        },
+        "correct_answer": "B",
+        "explanation": "When executing a Gradle task, options can be specified with or without an equals sign between the option and its argument. While using an equals sign is recommended for clarity, both formats are acceptable, allowing flexibility in command usage."
+    },
+    {
+        "question": "What is the primary purpose of executing a task in Gradle?",
+        "options": {
+            "A": "To compile source code into bytecode",
+            "B": "To run a specific operation defined in the build script",
+            "C": "To install Gradle on the system",
+            "D": "To create a new project directory"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of executing a task in Gradle is to run a specific operation defined in the build script. Tasks are the fundamental units of work in Gradle, and they can perform various actions such as compiling code, running tests, or packaging applications."
+    },
+    {
+        "question": "How can you specify options for a task when executing it in Gradle?",
+        "options": {
+            "A": "By placing options before the task name",
+            "B": "By using a configuration file only",
+            "C": "By prefixing the option name with '--' after the task name",
+            "D": "By using the command 'gradle options taskName'"
+        },
+        "correct_answer": "C",
+        "explanation": "To specify options for a task when executing it in Gradle, you prefix the option name with '--' after the task name. This allows you to customize the behavior of the task being executed."
+    },
+    {
+        "question": "What is the correct command structure to execute multiple tasks in Gradle?",
+        "options": {
+            "A": "gradle [taskName1, taskName2]",
+            "B": "gradle taskName1; taskName2",
+            "C": "gradle taskName1 taskName2",
+            "D": "gradle taskName1 --taskName2"
+        },
+        "correct_answer": "C",
+        "explanation": "The correct command structure to execute multiple tasks in Gradle is to separate the task names with a space, as shown in 'gradle taskName1 taskName2'. This allows Gradle to run each specified task in the order they are listed."
+    },
+    {
+        "question": "What is the significance of using the Gradle Wrapper when executing tasks?",
+        "options": {
+            "A": "It allows for the installation of Gradle on the system",
+            "B": "It ensures a consistent Gradle version across different environments",
+            "C": "It provides a graphical user interface for Gradle",
+            "D": "It automatically updates Gradle to the latest version"
+        },
+        "correct_answer": "B",
+        "explanation": "The significance of using the Gradle Wrapper is that it ensures a consistent Gradle version across different environments. This helps avoid issues that may arise from using different versions of Gradle, making builds more reliable and reproducible."
+    },
+    {
+        "question": "What is the primary purpose of command-line options in Gradle?",
+        "options": {
+            "A": "To specify tasks and modify their execution behavior",
+            "B": "To create graphical user interfaces for Gradle",
+            "C": "To manage dependencies automatically",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of command-line options in Gradle is to specify tasks and modify their execution behavior. By using options, users can customize how tasks are run, including setting parameters and enabling or disabling certain features."
+    },
+    {
+        "question": "How can options be specified when executing a Gradle task?",
+        "options": {
+            "A": "Only before the task name",
+            "B": "Only after the task name",
+            "C": "Both before and after the task name",
+            "D": "Options cannot be specified with tasks"
+        },
+        "correct_answer": "C",
+        "explanation": "Options can be specified both before and after the task name when executing a Gradle task. This flexibility allows users to organize their command-line input in a way that best suits their needs."
+    },
+    {
+        "question": "What is the recommended way to specify options that accept values in Gradle?",
+        "options": {
+            "A": "Using a space between the option and the value",
+            "B": "Using a colon between the option and the value",
+            "C": "Using an equals sign between the option and the value",
+            "D": "Using a dash between the option and the value"
+        },
+        "correct_answer": "C",
+        "explanation": "The recommended way to specify options that accept values in Gradle is to use an equals sign between the option and the value. This format enhances clarity and ensures that the command is interpreted correctly."
+    },
+    {
+        "question": "What is the purpose of long-form options with inverses in Gradle?",
+        "options": {
+            "A": "To provide a way to enable or disable specific features",
+            "B": "To create shortcuts for frequently used commands",
+            "C": "To define new tasks within the build script",
+            "D": "To manage project dependencies more effectively"
+        },
+        "correct_answer": "A",
+        "explanation": "Long-form options with inverses in Gradle are used to provide a way to enable or disable specific features. For example, an option like `--build-cache` can be negated with `--no-build-cache`, allowing users to control the behavior of the build process."
+    },
+    {
+        "question": "What is the purpose of task dependencies in Gradle?",
+        "options": {
+            "A": "To define the order in which tasks are executed",
+            "B": "To create a backup of project files",
+            "C": "To manage user permissions for tasks",
+            "D": "To optimize memory usage during execution"
+        },
+        "correct_answer": "A",
+        "explanation": "Task dependencies in Gradle are used to define the order in which tasks are executed. When a task depends on another, Gradle ensures that the dependent task is completed before the task that requires it starts. This helps maintain the correct sequence of operations and ensures that all necessary prerequisites are met."
+    },
+    {
+        "question": "How can you specify a task dependency in Gradle?",
+        "options": {
+            "A": "By using the `dependsOn` method in the task configuration",
+            "B": "By listing tasks in the command line without any options",
+            "C": "By using the `@task` annotation in the build script",
+            "D": "By defining tasks in separate files"
+        },
+        "correct_answer": "A",
+        "explanation": "In Gradle, you can specify a task dependency by using the `dependsOn` method within the task configuration. This method allows you to explicitly declare that one task should be executed before another, ensuring that the necessary tasks are completed in the correct order."
+    },
+    {
+        "question": "What happens if a task with dependencies is executed in Gradle?",
+        "options": {
+            "A": "Only the specified task runs, ignoring dependencies",
+            "B": "All dependent tasks are executed first, followed by the specified task",
+            "C": "The execution fails if any dependency is missing",
+            "D": "The task runs in parallel with its dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "When a task with dependencies is executed in Gradle, all dependent tasks are executed first, followed by the specified task. This ensures that all prerequisites are completed before the main task runs, maintaining the integrity of the build process."
+    }
+]

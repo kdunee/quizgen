@@ -1,0 +1,343 @@
+[
+    {
+        "question": "What is the primary purpose of properties in Gradle?",
+        "options": {
+            "A": "To hold values that can be defined and accessed within a build script",
+            "B": "To execute tasks in parallel",
+            "C": "To manage dependencies between projects",
+            "D": "To define the structure of a build script"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of properties in Gradle is to hold values that can be defined and accessed within a build script. They are used to store information such as file paths, version numbers, or custom values, allowing for dynamic configuration of the build process."
+    },
+    {
+        "question": "How can properties in Gradle be modified?",
+        "options": {
+            "A": "By using the `set()` method on the property",
+            "B": "By directly changing the value in the build script",
+            "C": "By deleting the property and creating a new one",
+            "D": "By using the `get()` method on the property"
+        },
+        "correct_answer": "A",
+        "explanation": "Properties in Gradle can be modified by using the `set()` method on the property. This method allows you to specify a new value for the property, overwriting any previous value that may have been set."
+    },
+    {
+        "question": "What distinguishes a `Property` from a `Provider` in Gradle?",
+        "options": {
+            "A": "A Property can be queried and changed, while a Provider can only be queried",
+            "B": "A Property is read-only, while a Provider is mutable",
+            "C": "A Property is used for lazy evaluation, while a Provider is not",
+            "D": "A Property is a type of task, while a Provider is a type of dependency"
+        },
+        "correct_answer": "A",
+        "explanation": "The distinction between a `Property` and a `Provider` in Gradle is that a `Property` can be queried and changed, while a `Provider` can only be queried. This means that `Properties` are mutable and can be set to new values, whereas `Providers` are read-only and represent values that may not be immediately available."
+    },
+    {
+        "question": "What is a managed property in Gradle?",
+        "options": {
+            "A": "A property that Gradle automatically manages its state for",
+            "B": "A property that can only be accessed by the build script",
+            "C": "A property that is defined using concrete setter and getter methods",
+            "D": "A property that is used exclusively for configuration purposes"
+        },
+        "correct_answer": "A",
+        "explanation": "A managed property in Gradle is a property that Gradle automatically manages its state for. This means that the implementation for the property is provided by Gradle, allowing for easier management of property values and their lifecycles without requiring manual handling in the build script."
+    },
+    {
+        "question": "What is the primary purpose of a Provider in Gradle?",
+        "options": {
+            "A": "To represent a value that can be changed at any time",
+            "B": "To represent a value that may not be immediately available",
+            "C": "To store configuration settings permanently",
+            "D": "To execute tasks in a build script"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a Provider in Gradle is to represent a value that may not be immediately available. Providers are useful for lazy evaluation, allowing values to be computed only when needed, which can help optimize build performance."
+    },
+    {
+        "question": "Which of the following statements is true about Providers in Gradle?",
+        "options": {
+            "A": "Providers can be modified after they are created.",
+            "B": "Providers can only be queried for their current value.",
+            "C": "Providers can store multiple values at once.",
+            "D": "Providers can be used to set values in a build script."
+        },
+        "correct_answer": "B",
+        "explanation": "Providers in Gradle are read-only and can only be queried for their current value. They do not allow modification of the value once created, which distinguishes them from Properties that can be both queried and changed."
+    },
+    {
+        "question": "How can a Provider be created in Gradle?",
+        "options": {
+            "A": "By using a setter method",
+            "B": "By using the ObjectFactory.property() method",
+            "C": "By directly assigning a value to it",
+            "D": "By using the Provider.create() method"
+        },
+        "correct_answer": "B",
+        "explanation": "A Provider can be created in Gradle using the ObjectFactory.property() method. This method allows for the creation of a Provider that can be used in build scripts to represent values that may not be immediately available."
+    },
+    {
+        "question": "What distinguishes a read-only managed property from a mutable managed property in Gradle?",
+        "options": {
+            "A": "Read-only properties can be set multiple times.",
+            "B": "Mutable properties have both get() and set() methods.",
+            "C": "Read-only properties can be modified after creation.",
+            "D": "Mutable properties can only be queried."
+        },
+        "correct_answer": "B",
+        "explanation": "A read-only managed property, also known as a Provider, has only a get() method and cannot be modified after creation. In contrast, a mutable managed property has both get() and set() methods, allowing its value to be changed."
+    },
+    {
+        "question": "What is the primary benefit of using lazy configuration in Gradle?",
+        "options": {
+            "A": "It allows properties to be set at any time during the build process.",
+            "B": "It enables the immediate evaluation of all properties.",
+            "C": "It defers the evaluation of properties until they are needed.",
+            "D": "It simplifies the syntax of build scripts."
+        },
+        "correct_answer": "C",
+        "explanation": "The primary benefit of using lazy configuration in Gradle is that it defers the evaluation of properties until they are actually needed. This can improve performance and reduce unnecessary computations, as values are only resolved when required, allowing for more efficient build processes."
+    },
+    {
+        "question": "Which of the following best describes a 'Property' in Gradle?",
+        "options": {
+            "A": "A value that can only be queried and cannot be changed.",
+            "B": "A variable that holds a value and can be both queried and changed.",
+            "C": "A type of configuration that is always evaluated immediately.",
+            "D": "A method that executes a task in the build process."
+        },
+        "correct_answer": "B",
+        "explanation": "A 'Property' in Gradle is a variable that holds a value and can be both queried and changed. It extends the 'Provider' interface, allowing it to manage values in a build script while also supporting lazy evaluation."
+    },
+    {
+        "question": "What is the role of a 'Provider' in the context of Gradle's lazy configuration?",
+        "options": {
+            "A": "To store values that can be modified at any time.",
+            "B": "To represent a value that may not be immediately available and is read-only.",
+            "C": "To execute tasks based on the current state of the build.",
+            "D": "To define the structure of a build script."
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of Gradle's lazy configuration, a 'Provider' represents a value that may not be immediately available and is read-only. It allows for lazy evaluation, meaning the value can be derived from other properties or tasks and is only resolved when accessed."
+    },
+    {
+        "question": "How can properties and providers be utilized together in Gradle?",
+        "options": {
+            "A": "Properties can only be set without any relation to providers.",
+            "B": "Providers can overwrite properties at any time during the build.",
+            "C": "Properties can be set to use values from providers, allowing for dynamic configurations.",
+            "D": "Providers can be modified directly to change the value of properties."
+        },
+        "correct_answer": "C",
+        "explanation": "Properties and providers can be utilized together in Gradle by allowing properties to be set to use values from providers. This enables dynamic configurations where the value of a property can be determined based on the state of other properties or tasks, enhancing the flexibility of the build process."
+    },
+    {
+        "question": "What is a managed property in Gradle?",
+        "options": {
+            "A": "A property that is automatically managed by Gradle's implementation.",
+            "B": "A property that can only be set once and cannot be changed.",
+            "C": "A property that requires manual management by the developer.",
+            "D": "A property that is defined using concrete setter and getter methods."
+        },
+        "correct_answer": "A",
+        "explanation": "A managed property in Gradle is a property that is automatically managed by Gradle's implementation, meaning that Gradle handles its state and lifecycle. This allows for easier management of properties without requiring the developer to manually implement the logic for state management."
+    },
+    {
+        "question": "Which of the following best describes a mutable managed property?",
+        "options": {
+            "A": "A property that can only be read and not modified.",
+            "B": "A property that has both a getter and a setter method.",
+            "C": "A property that is defined using a concrete class without any abstract methods.",
+            "D": "A property that is automatically provided by Gradle without any user-defined methods."
+        },
+        "correct_answer": "B",
+        "explanation": "A mutable managed property is characterized by having both a getter and a setter method, allowing its value to be changed after it has been set. This flexibility is essential for properties that need to be updated during the build process."
+    },
+    {
+        "question": "What distinguishes a read-only managed property from a mutable managed property?",
+        "options": {
+            "A": "Read-only properties can be changed at any time.",
+            "B": "Read-only properties do not have a setter method.",
+            "C": "Read-only properties can only be defined in Kotlin.",
+            "D": "Read-only properties are always of type String."
+        },
+        "correct_answer": "B",
+        "explanation": "A read-only managed property, also known as a provider, is distinguished from a mutable managed property by the absence of a setter method. This means that once the value is derived or set, it cannot be changed, ensuring that the property remains constant throughout its lifecycle."
+    },
+    {
+        "question": "How are managed properties typically declared in Gradle?",
+        "options": {
+            "A": "Using concrete classes with public fields.",
+            "B": "Using abstract getter methods in an interface or abstract class.",
+            "C": "Using static methods to define property values.",
+            "D": "Using private fields with public getter methods."
+        },
+        "correct_answer": "B",
+        "explanation": "Managed properties in Gradle are typically declared using abstract getter methods in an interface or abstract class. This allows Gradle to automatically provide the implementation for these properties, managing their state and lifecycle effectively."
+    },
+    {
+        "question": "What defines a mutable managed property in Gradle?",
+        "options": {
+            "A": "It has both a getter and a setter method.",
+            "B": "It can only be read and not modified.",
+            "C": "It is declared using an abstract getter method of type `Provider<T>`.",
+            "D": "It is automatically managed by Gradle without any user-defined methods."
+        },
+        "correct_answer": "A",
+        "explanation": "A mutable managed property in Gradle is defined by having both a getter and a setter method. This allows the property to be modified after its initial declaration, enabling dynamic configuration within the build script."
+    },
+    {
+        "question": "Which of the following types can be used for a mutable managed property?",
+        "options": {
+            "A": "Property<T>",
+            "B": "Provider<T>",
+            "C": "ReadOnlyProperty<T>",
+            "D": "ImmutableProperty<T>"
+        },
+        "correct_answer": "A",
+        "explanation": "The type `Property<T>` is used for mutable managed properties in Gradle. This type allows for both getting and setting values, making it suitable for properties that need to be configurable during the build process."
+    },
+    {
+        "question": "What is a key characteristic of a mutable managed property?",
+        "options": {
+            "A": "It can only be set once and cannot be changed.",
+            "B": "It must have a public or protected visibility for its getter method.",
+            "C": "It is always read-only and cannot be modified.",
+            "D": "It does not require any specific type for its value."
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of a mutable managed property is that its getter method must be declared as abstract and have public or protected visibility. This ensures that Gradle can manage the property's state effectively while allowing it to be modified."
+    },
+    {
+        "question": "In Gradle, how is a mutable managed property typically declared?",
+        "options": {
+            "A": "Using a concrete class with private fields.",
+            "B": "Using an abstract getter method of type `Property<T>`.",
+            "C": "By defining a static variable in the build script.",
+            "D": "Through a simple method without any return type."
+        },
+        "correct_answer": "B",
+        "explanation": "A mutable managed property is typically declared using an abstract getter method of type `Property<T>`. This allows Gradle to manage the property's state and provides the necessary methods for getting and setting its value."
+    },
+    {
+        "question": "What is a read-only managed property in Gradle?",
+        "options": {
+            "A": "A property that can be both read and modified",
+            "B": "A property that can only be queried and not changed",
+            "C": "A property that is automatically deleted after use",
+            "D": "A property that requires manual management of its state"
+        },
+        "correct_answer": "B",
+        "explanation": "A read-only managed property, also known as a provider, is a property that can only be queried and cannot be changed. This type of property is useful for lazy evaluation and can derive its value from other properties, ensuring that the value is always up-to-date without allowing modifications."
+    },
+    {
+        "question": "How is a read-only managed property typically declared in Gradle?",
+        "options": {
+            "A": "Using a setter method of type `Property<T>`",
+            "B": "Using an abstract getter method of type `Provider<T>`",
+            "C": "By defining a concrete class with public fields",
+            "D": "By using a mutable property with a `set()` method"
+        },
+        "correct_answer": "B",
+        "explanation": "A read-only managed property is declared using an abstract getter method of type `Provider<T>`. This allows Gradle to manage the property's state and derive its value from other properties, ensuring that it remains read-only and is evaluated lazily."
+    },
+    {
+        "question": "What is the primary benefit of using read-only managed properties in Gradle?",
+        "options": {
+            "A": "They can be modified at any time during the build process",
+            "B": "They allow for lazy evaluation and automatic state management",
+            "C": "They require manual updates to reflect changes in values",
+            "D": "They can only be used in Java-based build scripts"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary benefit of using read-only managed properties is that they allow for lazy evaluation and automatic state management. This means that the value of the property can be derived from other properties and updated automatically without requiring manual intervention, making the build process more efficient."
+    },
+    {
+        "question": "Which of the following statements is true about read-only managed properties?",
+        "options": {
+            "A": "They can be set using a setter method",
+            "B": "They can derive their value from other properties",
+            "C": "They are mutable and can be changed at any time",
+            "D": "They must be defined with concrete data types"
+        },
+        "correct_answer": "B",
+        "explanation": "Read-only managed properties can derive their value from other properties, allowing for dynamic updates based on the current state of the build. This characteristic is essential for maintaining the integrity and efficiency of the build process, as it ensures that the property reflects the most current information without being directly modifiable."
+    },
+    {
+        "question": "What defines a managed type in Gradle?",
+        "options": {
+            "A": "An abstract class or interface with no fields and all properties managed",
+            "B": "A concrete class with defined fields and methods",
+            "C": "A type that can only be instantiated with a specific constructor",
+            "D": "A type that does not allow any properties to be set"
+        },
+        "correct_answer": "A",
+        "explanation": "A managed type in Gradle is defined as an abstract class or interface that has no fields and whose properties are all managed by Gradle. This means that the state of these properties is automatically handled by the Gradle framework, allowing for easier management and configuration."
+    },
+    {
+        "question": "What is a key characteristic of named managed types in Gradle?",
+        "options": {
+            "A": "They have a unique identifier that is not modifiable",
+            "B": "They include an abstract property called 'name' of type String",
+            "C": "They can only be used in conjunction with Java Bean properties",
+            "D": "They must have at least one concrete field defined"
+        },
+        "correct_answer": "B",
+        "explanation": "Named managed types in Gradle are characterized by having an abstract property called 'name' of type String. This allows Gradle to provide an implementation for the getter method and facilitates the creation of instances with a 'name' parameter, enhancing the usability of these types in various contexts."
+    },
+    {
+        "question": "Which of the following statements about managed properties is true?",
+        "options": {
+            "A": "Managed properties can be directly modified at any time",
+            "B": "Managed properties are always read-only and cannot be set",
+            "C": "Managed properties can be mutable or read-only, depending on their declaration",
+            "D": "Managed properties must always be defined in a concrete class"
+        },
+        "correct_answer": "C",
+        "explanation": "Managed properties in Gradle can be either mutable or read-only, depending on how they are declared. Mutable managed properties have both getter and setter methods, while read-only managed properties only have a getter method, allowing for flexibility in how they are used within Gradle tasks and plugins."
+    },
+    {
+        "question": "What is the purpose of using managed types in Gradle?",
+        "options": {
+            "A": "To enforce strict data encapsulation in all Gradle scripts",
+            "B": "To allow Gradle to automatically manage the state of properties",
+            "C": "To create types that can only be used in Java projects",
+            "D": "To simplify the syntax of Gradle build scripts"
+        },
+        "correct_answer": "B",
+        "explanation": "The purpose of using managed types in Gradle is to allow Gradle to automatically manage the state of properties. This means that developers do not need to manually handle the lifecycle and state of these properties, leading to cleaner and more maintainable build scripts."
+    },
+    {
+        "question": "What is the primary characteristic of Java Bean properties in Gradle?",
+        "options": {
+            "A": "They use `Property<T>` or `Provider<T>` types for implementation.",
+            "B": "They are implemented with concrete setter and getter methods.",
+            "C": "They are automatically managed by Gradle.",
+            "D": "They can only be read and not modified."
+        },
+        "correct_answer": "B",
+        "explanation": "Java Bean properties in Gradle are characterized by their implementation using concrete setter and getter methods. This style is considered legacy and is discouraged in favor of using `Property<T>` or `Provider<T>` types, which provide better management and lazy evaluation capabilities."
+    },
+    {
+        "question": "Why are Java Bean properties discouraged in Gradle?",
+        "options": {
+            "A": "They are more complex to implement than managed properties.",
+            "B": "They do not allow for lazy evaluation of values.",
+            "C": "They require additional libraries to function properly.",
+            "D": "They are not compatible with Kotlin."
+        },
+        "correct_answer": "B",
+        "explanation": "Java Bean properties are discouraged in Gradle because they do not support lazy evaluation of values. Unlike `Property<T>` or `Provider<T>`, which can defer the computation of their values until needed, Java Bean properties require immediate access to their values, which can lead to inefficiencies in build scripts."
+    },
+    {
+        "question": "What is a key difference between managed properties and Java Bean properties in Gradle?",
+        "options": {
+            "A": "Managed properties can only be read, while Java Bean properties can be modified.",
+            "B": "Managed properties are defined using interfaces, while Java Bean properties are not.",
+            "C": "Managed properties are automatically managed by Gradle, while Java Bean properties are not.",
+            "D": "Managed properties require explicit type definitions, while Java Bean properties do not."
+        },
+        "correct_answer": "C",
+        "explanation": "A key difference between managed properties and Java Bean properties in Gradle is that managed properties are automatically managed by Gradle, allowing for better state management and lazy evaluation. In contrast, Java Bean properties do not have this automatic management and rely on explicit getter and setter methods."
+    }
+]

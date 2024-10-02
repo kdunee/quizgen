@@ -1,0 +1,255 @@
+[
+    {
+        "question": "What is the primary role of Gradle in C++ project testing?",
+        "options": {
+            "A": "To compile C++ code into executable files",
+            "B": "To manage dependencies and execute tests",
+            "C": "To create graphical user interfaces for applications",
+            "D": "To optimize the performance of C++ applications"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle's primary role in C++ project testing is to manage dependencies and execute tests. It provides a framework for integrating various testing libraries and frameworks, allowing developers to control how tests are run and ensuring that all necessary components are included in the build process."
+    },
+    {
+        "question": "Which task type is essential for running tests in Gradle for C++ projects?",
+        "options": {
+            "A": "CompileTask",
+            "B": "RunTestExecutable",
+            "C": "BuildProject",
+            "D": "ExecuteTests"
+        },
+        "correct_answer": "B",
+        "explanation": "The essential task type for running tests in Gradle for C++ projects is RunTestExecutable. This task runs a single test executable and checks the execution's success based on the exit code, making it a fundamental component of the testing process in Gradle."
+    },
+    {
+        "question": "What does the 'ignoreFailures' property do in the context of Gradle test execution?",
+        "options": {
+            "A": "It prevents any tests from running if one fails",
+            "B": "It allows the build to continue even if some tests fail",
+            "C": "It ensures that all tests are executed regardless of their success",
+            "D": "It automatically fixes any failing tests before execution"
+        },
+        "correct_answer": "B",
+        "explanation": "'ignoreFailures' is a property that, when set to true, allows Gradle to continue with the project's build process even if some tests have failed. This property provides flexibility in managing build outcomes, especially in larger projects where not all tests may be critical for every build."
+    },
+    {
+        "question": "What is a key feature of the cpp Unit Test Plugin in Gradle?",
+        "options": {
+            "A": "It compiles C++ code into Java bytecode",
+            "B": "It automatically configures test components and their variants",
+            "C": "It generates detailed reports for each test case",
+            "D": "It integrates with web-based testing frameworks"
+        },
+        "correct_answer": "B",
+        "explanation": "A key feature of the cpp Unit Test Plugin in Gradle is that it automatically configures test components and their variants. This streamlines the setup process for testing in C++ projects, ensuring that the necessary configurations are in place for effective test execution."
+    },
+    {
+        "question": "What is the primary task type used for running tests in C++ projects with Gradle?",
+        "options": {
+            "A": "RunTestExecutable",
+            "B": "CppTestSuite",
+            "C": "TestExecutable",
+            "D": "CppUnitTest"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary task type used for running tests in C++ projects with Gradle is RunTestExecutable. This task is responsible for executing a single test executable and checking its success based on the exit code."
+    },
+    {
+        "question": "What happens when the 'ignoreFailures' property is set to true in the RunTestExecutable task?",
+        "options": {
+            "A": "Gradle will stop the build process immediately.",
+            "B": "Gradle will continue the build even if some tests fail.",
+            "C": "Gradle will skip all tests during execution.",
+            "D": "Gradle will only run tests that are expected to pass."
+        },
+        "correct_answer": "B",
+        "explanation": "When the 'ignoreFailures' property is set to true, Gradle will continue with the project's build process even if some tests have failed. This allows for flexibility in the build process, especially in larger projects where not all tests may need to pass for the build to proceed."
+    },
+    {
+        "question": "Which of the following statements is true regarding the test results when using the RunTestExecutable task?",
+        "options": {
+            "A": "Test results are automatically collected and reported.",
+            "B": "Only the exit code of the executable is used to determine success.",
+            "C": "Test results are stored in a database for later retrieval.",
+            "D": "The task generates detailed logs for each test case."
+        },
+        "correct_answer": "B",
+        "explanation": "When using the RunTestExecutable task, only the exit code of the executable is used to determine whether the test execution was successful. This means that no detailed test results or reports are generated by default."
+    },
+    {
+        "question": "What is the role of the 'unitTest' extension in Gradle for C++ projects?",
+        "options": {
+            "A": "To configure the main application build.",
+            "B": "To manage dependencies for production code.",
+            "C": "To configure test components and their variants.",
+            "D": "To compile the C++ source files."
+        },
+        "correct_answer": "C",
+        "explanation": "The 'unitTest' extension in Gradle for C++ projects is used to configure test components and their variants. It provides a structured way to manage unit tests within the Gradle build system, ensuring that the necessary configurations are applied."
+    },
+    {
+        "question": "What is the primary function of the RunTestExecutable task in Gradle?",
+        "options": {
+            "A": "To compile C++ code into an executable",
+            "B": "To run a single test executable and check its exit code",
+            "C": "To generate detailed test reports",
+            "D": "To manage dependencies for C++ projects"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary function of the RunTestExecutable task in Gradle is to run a single test executable built with any testing framework and assert that the execution was successful by checking the exit code of the executable. This task does not collect test case results or generate reports."
+    },
+    {
+        "question": "How does Gradle handle test execution for C++ projects?",
+        "options": {
+            "A": "By executing tests in the same process as the build",
+            "B": "By executing tests in a separate ('forked') process",
+            "C": "By running tests only when explicitly requested",
+            "D": "By using a single-threaded execution model"
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle executes tests in a separate ('forked') process, which allows for better isolation and management of the test environment. This separation helps ensure that the tests do not interfere with the main build process."
+    },
+    {
+        "question": "What does the 'ignoreFailures' property do in the RunTestExecutable task?",
+        "options": {
+            "A": "It prevents any tests from running if one fails",
+            "B": "It allows the build to continue even if some tests fail",
+            "C": "It ensures that all tests are executed regardless of their status",
+            "D": "It generates a report of failed tests"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'ignoreFailures' property, when set to true, allows Gradle to continue with the project's build process even if some tests have failed. By default, this property is false, meaning that the build will stop if any tests fail."
+    },
+    {
+        "question": "What is the primary function of the RunTestExecutable task in Gradle?",
+        "options": {
+            "A": "To compile C++ code into an executable",
+            "B": "To run a single test executable and check its success",
+            "C": "To generate reports for test results",
+            "D": "To manage dependencies for C++ projects"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary function of the RunTestExecutable task in Gradle is to run a single test executable built with any testing framework and assert that the execution was successful based on the exit code of the executable. It does not collect test case results or generate reports."
+    },
+    {
+        "question": "Which property is essential for the RunTestExecutable task to function correctly?",
+        "options": {
+            "A": "testImplementation",
+            "B": "executable",
+            "C": "ignoreFailures",
+            "D": "unitTest"
+        },
+        "correct_answer": "B",
+        "explanation": "The essential property for the RunTestExecutable task to function correctly is the 'executable' property, which specifies where to find the built test executable. This is crucial for the task to know which executable to run during the testing process."
+    },
+    {
+        "question": "What happens when the ignoreFailures property is set to true in the RunTestExecutable task?",
+        "options": {
+            "A": "Gradle will stop the build process immediately.",
+            "B": "Gradle will continue the build even if some tests fail.",
+            "C": "Gradle will skip all tests during execution.",
+            "D": "Gradle will generate a detailed report of failed tests."
+        },
+        "correct_answer": "B",
+        "explanation": "When the ignoreFailures property is set to true in the RunTestExecutable task, Gradle will continue with the project's build process even if some tests have failed. This allows for flexibility in the build process, enabling other tasks to proceed regardless of test outcomes."
+    },
+    {
+        "question": "In which context is the RunTestExecutable task typically used?",
+        "options": {
+            "A": "To manage project dependencies",
+            "B": "To execute C++ unit tests",
+            "C": "To compile Java applications",
+            "D": "To deploy applications to production"
+        },
+        "correct_answer": "B",
+        "explanation": "The RunTestExecutable task is typically used to execute C++ unit tests. It is specifically designed to run test executables that have been built using various testing frameworks, allowing developers to verify the correctness of their C++ code."
+    },
+    {
+        "question": "What is the primary purpose of unit testing in software development?",
+        "options": {
+            "A": "To ensure that individual components of the software function correctly",
+            "B": "To evaluate the performance of the entire system under load",
+            "C": "To verify the integration of different software modules",
+            "D": "To document the software requirements and specifications"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of unit testing is to ensure that individual components or units of the software function correctly in isolation. This helps identify bugs early in the development process, making it easier to maintain and improve the software."
+    },
+    {
+        "question": "Which task type is commonly used to run unit tests in C++ projects with Gradle?",
+        "options": {
+            "A": "CompileTask",
+            "B": "RunTestExecutable",
+            "C": "BuildTask",
+            "D": "ExecuteTest"
+        },
+        "correct_answer": "B",
+        "explanation": "In C++ projects with Gradle, the common task type used to run unit tests is RunTestExecutable. This task runs a single test executable and checks the execution result based on the exit code, ensuring that the tests are executed properly."
+    },
+    {
+        "question": "What happens if the 'ignoreFailures' property is set to true in a Gradle unit testing task?",
+        "options": {
+            "A": "Gradle will stop the build process immediately upon any test failure",
+            "B": "Gradle will continue the build process even if some tests fail",
+            "C": "Gradle will skip all tests and proceed with the build",
+            "D": "Gradle will automatically fix any failing tests before continuing"
+        },
+        "correct_answer": "B",
+        "explanation": "If the 'ignoreFailures' property is set to true in a Gradle unit testing task, Gradle will continue with the project's build process even if some tests have failed. This allows developers to proceed with other tasks while still being aware of test failures."
+    },
+    {
+        "question": "What is a key characteristic of the RunTestExecutable task in Gradle?",
+        "options": {
+            "A": "It generates detailed reports for each test case",
+            "B": "It runs tests in the same process as the build",
+            "C": "It requires the location of the built test executable to function",
+            "D": "It automatically compiles the test code before execution"
+        },
+        "correct_answer": "C",
+        "explanation": "A key characteristic of the RunTestExecutable task in Gradle is that it requires the location of the built test executable to function. This task runs the specified executable and checks the exit code to determine if the tests were successful."
+    },
+    {
+        "question": "What is the primary purpose of test configuration in Gradle for C++ projects?",
+        "options": {
+            "A": "To define how tests are executed and managed within the build process",
+            "B": "To compile the source code into executable files",
+            "C": "To manage dependencies for production code only",
+            "D": "To optimize the performance of the application at runtime"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of test configuration in Gradle for C++ projects is to define how tests are executed and managed within the build process. This includes specifying the test executable, configuring test tasks, and managing dependencies required for testing, ensuring that tests are integrated effectively into the overall build lifecycle."
+    },
+    {
+        "question": "Which task type is essential for running tests in C++ projects using Gradle?",
+        "options": {
+            "A": "CompileTask",
+            "B": "RunTestExecutable",
+            "C": "BuildProject",
+            "D": "DeployApplication"
+        },
+        "correct_answer": "B",
+        "explanation": "The essential task type for running tests in C++ projects using Gradle is the RunTestExecutable task. This task is responsible for executing a single test executable and checking the success of the execution based on the exit code, which is a fundamental aspect of the testing process in Gradle."
+    },
+    {
+        "question": "What does the 'ignoreFailures' property do in the context of Gradle test execution?",
+        "options": {
+            "A": "It prevents any tests from running if one fails",
+            "B": "It allows the build to continue even if some tests fail",
+            "C": "It ensures that all tests are executed regardless of their success",
+            "D": "It automatically fixes any failing tests before execution"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'ignoreFailures' property in Gradle test execution allows the build to continue even if some tests fail. When set to true, this property enables the project’s build process to proceed after the tests have completed, regardless of the test outcomes, which can be useful in certain development scenarios."
+    },
+    {
+        "question": "What is a key feature of the unitTest extension in Gradle for C++ projects?",
+        "options": {
+            "A": "It compiles the main application code",
+            "B": "It configures test components and their variants",
+            "C": "It deploys the application to a server",
+            "D": "It generates documentation for the codebase"
+        },
+        "correct_answer": "B",
+        "explanation": "A key feature of the unitTest extension in Gradle for C++ projects is that it configures test components and their variants. This extension simplifies the setup of testing configurations, allowing developers to manage how tests are organized and executed within the Gradle build system."
+    }
+]

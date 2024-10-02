@@ -1,0 +1,299 @@
+[
+    {
+        "question": "What is the primary purpose of a Groovy build script?",
+        "options": {
+            "A": "To execute Java code directly without any configuration",
+            "B": "To set properties, configure dependencies, and declare tasks for a project",
+            "C": "To compile Groovy code into Java bytecode",
+            "D": "To manage user input and output in a console application"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a Groovy build script is to set properties, configure dependencies, and declare tasks for a project. It serves as a configuration file that utilizes Groovy language constructs to interact with Gradle's API, enabling efficient project management and build processes."
+    },
+    {
+        "question": "In a Groovy build script, what does the presence of an '=' sign typically indicate?",
+        "options": {
+            "A": "A method call is being made",
+            "B": "A property is being set to a new value",
+            "C": "A block of code is being defined",
+            "D": "A variable is being declared without a type"
+        },
+        "correct_answer": "B",
+        "explanation": "The presence of an '=' sign in a Groovy build script typically indicates that a property is being set to a new value. This is a common way to define or modify the state of an object within the script, reflecting the configuration aspect of build scripts."
+    },
+    {
+        "question": "What is a key characteristic of methods in Groovy build scripts?",
+        "options": {
+            "A": "They cannot accept arguments",
+            "B": "They are always defined with parentheses",
+            "C": "They represent behaviors of objects and can configure their state",
+            "D": "They must always return a value"
+        },
+        "correct_answer": "C",
+        "explanation": "A key characteristic of methods in Groovy build scripts is that they represent behaviors of objects and can also configure their state. Methods can accept arguments and may or may not require parentheses, depending on the context, but their primary role is to define actions that can be performed on objects."
+    },
+    {
+        "question": "What is the role of blocks in Groovy build scripts?",
+        "options": {
+            "A": "To define global variables accessible throughout the script",
+            "B": "To configure multiple aspects of a build element in a structured way",
+            "C": "To execute external scripts and commands",
+            "D": "To handle exceptions and errors during execution"
+        },
+        "correct_answer": "B",
+        "explanation": "The role of blocks in Groovy build scripts is to configure multiple aspects of a build element in a structured way. Blocks allow for nested configuration and provide a mechanism to group related settings, making the build script more organized and easier to read."
+    },
+    {
+        "question": "What is the primary role of the `Project` object in a Groovy build script?",
+        "options": {
+            "A": "To manage the execution of tasks and configurations",
+            "B": "To define the syntax of the Groovy language",
+            "C": "To store user-defined variables and constants",
+            "D": "To handle input and output operations"
+        },
+        "correct_answer": "A",
+        "explanation": "The `Project` object serves as the central point for managing the execution of tasks and configurations in a Groovy build script. It provides properties and methods that allow users to define project settings, dependencies, and tasks, making it essential for the build process."
+    },
+    {
+        "question": "How can you identify a property in a Groovy build script?",
+        "options": {
+            "A": "It always has parentheses following its name.",
+            "B": "It is defined using the `def` keyword.",
+            "C": "It can be set using an equals sign (`=`).",
+            "D": "It must be declared within a block."
+        },
+        "correct_answer": "C",
+        "explanation": "A property in a Groovy build script can be identified by the presence of an equals sign (`=`) when setting its value. Properties represent the state of an object and can be accessed or modified directly, distinguishing them from methods, which require parentheses."
+    },
+    {
+        "question": "What is the significance of unqualified names in a Groovy build script?",
+        "options": {
+            "A": "They indicate that the variable is a local variable.",
+            "B": "They refer to properties or methods of the implicit `Project` object.",
+            "C": "They are always global variables accessible from any script.",
+            "D": "They must be defined within a specific block to be valid."
+        },
+        "correct_answer": "B",
+        "explanation": "Unqualified names in a Groovy build script typically refer to properties or methods of the implicit `Project` object. This means that if a name is used without qualification, it is often associated with the `Project` API, allowing for easier configuration and access to project-related settings."
+    },
+    {
+        "question": "What is a common mistake to avoid when using Groovy in Gradle build scripts?",
+        "options": {
+            "A": "Using local variables at the root level of the project.",
+            "B": "Defining properties without an equals sign.",
+            "C": "Using methods without parentheses.",
+            "D": "Referencing properties without the `project.` prefix."
+        },
+        "correct_answer": "A",
+        "explanation": "A common mistake to avoid in Gradle build scripts is using local variables at the root level of the project. Local variables cannot be accessed outside of the build script, which can lead to confusion and errors, as Gradle does not recognize them as project properties."
+    },
+    {
+        "question": "What is the primary purpose of properties in a Groovy build script?",
+        "options": {
+            "A": "To represent the state of an object",
+            "B": "To define methods for object behavior",
+            "C": "To create nested blocks of code",
+            "D": "To manage external dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "Properties in a Groovy build script represent the state of an object. They are used to store values that can be retrieved or modified, allowing for configuration of various aspects of the build process. The presence of an '=' sign indicates that a property is being set, while unqualified names may refer to properties of the implicit Project object or other defined properties."
+    },
+    {
+        "question": "How can you identify a property in a Groovy build script?",
+        "options": {
+            "A": "It always has parentheses following its name.",
+            "B": "It is defined with an '=' sign.",
+            "C": "It is always prefixed with 'project.'",
+            "D": "It must be declared within a block."
+        },
+        "correct_answer": "B",
+        "explanation": "A property in a Groovy build script can be identified by the presence of an '=' sign, which indicates that a value is being assigned to it. Additionally, unqualified names may also represent properties, but they do not necessarily need to be declared within a block or prefixed with 'project.'"
+    },
+    {
+        "question": "What happens when you reference a property in a Groovy build script that is added by a non-core plugin?",
+        "options": {
+            "A": "It must be declared as a local variable.",
+            "B": "It is automatically recognized without any prefix.",
+            "C": "It is recommended to prefix it with 'project.' for clarity.",
+            "D": "It cannot be used in the build script."
+        },
+        "correct_answer": "C",
+        "explanation": "When referencing a property added by a non-core plugin in a Groovy build script, it is recommended to prefix it with 'project.' This practice helps clarify that the property belongs to the Project object, making the script easier to read and understand."
+    },
+    {
+        "question": "Which of the following statements about properties in Groovy is true?",
+        "options": {
+            "A": "Properties can only be read, not modified.",
+            "B": "Properties are implemented as methods behind the scenes.",
+            "C": "Properties must always be declared at the top of the script.",
+            "D": "Properties cannot be used within blocks."
+        },
+        "correct_answer": "B",
+        "explanation": "In Groovy, properties are implemented as methods behind the scenes. Specifically, a property can be read if there is a corresponding getter method and modified if there is a corresponding setter method. This allows properties to function similarly to methods while providing a more concise syntax for accessing and modifying values."
+    },
+    {
+        "question": "What is a defining characteristic of a method in Groovy?",
+        "options": {
+            "A": "It represents a state of an object.",
+            "B": "It can be identified by its arguments or empty parentheses.",
+            "C": "It is always defined within a block.",
+            "D": "It cannot take any arguments."
+        },
+        "correct_answer": "B",
+        "explanation": "A method in Groovy is defined by its ability to take arguments or have empty parentheses. This characteristic allows methods to perform actions or return values, distinguishing them from properties, which represent the state of an object."
+    },
+    {
+        "question": "How can you identify a method that corresponds to a block in Groovy?",
+        "options": {
+            "A": "It must have no arguments.",
+            "B": "It must have at least one argument, with the last argument being a Closure or Action.",
+            "C": "It must be defined outside of any class.",
+            "D": "It must return a value."
+        },
+        "correct_answer": "B",
+        "explanation": "A method that corresponds to a block in Groovy must have at least one argument, and the last argument must be of type Closure or Action. This structure allows the method to accept a block of code that can configure the object it is associated with."
+    },
+    {
+        "question": "What is the primary purpose of methods in a Groovy build script?",
+        "options": {
+            "A": "To define the properties of an object.",
+            "B": "To represent the state of a project.",
+            "C": "To perform actions or configure the state of objects.",
+            "D": "To create local variables for use in the script."
+        },
+        "correct_answer": "C",
+        "explanation": "The primary purpose of methods in a Groovy build script is to perform actions or configure the state of objects. Methods can modify properties, execute tasks, and facilitate the overall functionality of the build process."
+    },
+    {
+        "question": "In Groovy, how are methods typically invoked?",
+        "options": {
+            "A": "By using the assignment operator.",
+            "B": "By calling the method name followed by parentheses.",
+            "C": "By declaring them as properties.",
+            "D": "By defining them within a class only."
+        },
+        "correct_answer": "B",
+        "explanation": "Methods in Groovy are typically invoked by calling the method name followed by parentheses. This syntax allows for the execution of the method, optionally passing arguments if required. This is a fundamental aspect of method usage in Groovy."
+    },
+    {
+        "question": "What is the primary purpose of blocks in a Groovy build script?",
+        "options": {
+            "A": "To define methods that can be called later",
+            "B": "To configure multiple aspects of a build element in one go",
+            "C": "To declare global variables for the entire project",
+            "D": "To execute scripts in a sequential manner"
+        },
+        "correct_answer": "B",
+        "explanation": "Blocks in a Groovy build script are primarily used to configure multiple aspects of a build element in one go. They allow for structured data configuration and can nest settings, making it easier to manage complex build configurations."
+    },
+    {
+        "question": "How can you identify a method that corresponds to a block in Groovy?",
+        "options": {
+            "A": "It must have no arguments",
+            "B": "It must have at least one argument, with the last argument being a Closure or Action",
+            "C": "It must return a value",
+            "D": "It must be defined outside of any class"
+        },
+        "correct_answer": "B",
+        "explanation": "A method that corresponds to a block in Groovy must have at least one argument, and the last argument must be of type Closure or Action. This signature allows the method to accept a block of code that configures the object."
+    },
+    {
+        "question": "What is meant by 'delegation' in the context of blocks in Groovy?",
+        "options": {
+            "A": "The process of assigning tasks to different threads",
+            "B": "The ability of a block to access properties and methods of its delegate object",
+            "C": "The method of defining global variables for all scripts",
+            "D": "The technique of importing external libraries into a script"
+        },
+        "correct_answer": "B",
+        "explanation": "Delegation in the context of blocks refers to the ability of a block to access properties and methods of its delegate object. This allows unqualified method calls within the block to resolve to the appropriate methods and properties of the delegate, enhancing the flexibility of the build script."
+    },
+    {
+        "question": "Which of the following statements about blocks is true?",
+        "options": {
+            "A": "Blocks can only be used at the top level of a build script.",
+            "B": "Blocks can change the target of unqualified methods and properties.",
+            "C": "Blocks are not related to methods in Groovy.",
+            "D": "Blocks must always return a value."
+        },
+        "correct_answer": "B",
+        "explanation": "Blocks can change the target of unqualified methods and properties, allowing for more dynamic and flexible configurations within a build script. This feature is a key aspect of how blocks operate in Groovy, enabling nested configurations."
+    },
+    {
+        "question": "What is the primary purpose of delegation in Groovy build scripts?",
+        "options": {
+            "A": "To allow unqualified properties and methods to be resolved against a specific delegate object",
+            "B": "To create new classes that extend existing ones",
+            "C": "To manage memory usage in Gradle builds",
+            "D": "To enforce strict typing of variables in the script"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of delegation in Groovy build scripts is to allow unqualified properties and methods to be resolved against a specific delegate object. This means that when you use unqualified names within a block, Groovy will look for those names in the context of the delegate, enabling more concise and readable code."
+    },
+    {
+        "question": "How can you determine the delegate type when using a block in a Groovy build script?",
+        "options": {
+            "A": "By checking the type of the last argument in the block method signature",
+            "B": "By looking at the variable names defined in the script",
+            "C": "By analyzing the output of the build script",
+            "D": "By consulting the Gradle user manual"
+        },
+        "correct_answer": "A",
+        "explanation": "You can determine the delegate type when using a block in a Groovy build script by checking the type of the last argument in the block method signature. This information indicates what type is being configured or what type the delegate is, allowing you to understand where unqualified properties and methods are resolved from."
+    },
+    {
+        "question": "What happens to unqualified properties and methods inside a block in a Groovy build script?",
+        "options": {
+            "A": "They are always resolved against the global scope of the script",
+            "B": "They are resolved against the delegate object of the block",
+            "C": "They are ignored by the Groovy interpreter",
+            "D": "They must be explicitly defined before use"
+        },
+        "correct_answer": "B",
+        "explanation": "Inside a block in a Groovy build script, unqualified properties and methods are resolved against the delegate object of the block. This allows for a more streamlined syntax, as you do not need to qualify every property or method with the object it belongs to, making the script easier to read and write."
+    },
+    {
+        "question": "What is the primary purpose of local variables in a Groovy build script?",
+        "options": {
+            "A": "To share values within a build script",
+            "B": "To define project properties accessible globally",
+            "C": "To configure dependencies for the project",
+            "D": "To create tasks that can be executed"
+        },
+        "correct_answer": "A",
+        "explanation": "Local variables in a Groovy build script are primarily used to share values within the script. They are defined using the 'def' keyword and can hold temporary data that can be utilized in specific contexts, such as within task configurations. However, they are not accessible outside of the script, which differentiates them from project properties."
+    },
+    {
+        "question": "Which of the following statements about local variables in Groovy build scripts is true?",
+        "options": {
+            "A": "Local variables can be accessed globally across all build scripts.",
+            "B": "Local variables can only be defined at the root level of a project.",
+            "C": "Local variables cannot be read outside of the build script.",
+            "D": "Local variables are automatically converted to project properties."
+        },
+        "correct_answer": "C",
+        "explanation": "Local variables in Groovy build scripts cannot be read outside of the build script. They are scoped to the script in which they are defined, making them useful for temporary storage of values but limiting their accessibility compared to project properties, which can be accessed globally."
+    },
+    {
+        "question": "How are local variables defined in a Groovy build script?",
+        "options": {
+            "A": "Using the 'let' keyword",
+            "B": "Using the 'var' keyword",
+            "C": "Using the 'def' keyword",
+            "D": "Using the 'local' keyword"
+        },
+        "correct_answer": "C",
+        "explanation": "Local variables in a Groovy build script are defined using the 'def' keyword. This allows the variable to be created without specifying a type, making it flexible for various uses within the script. The 'def' keyword indicates that the variable is local to the script's context."
+    },
+    {
+        "question": "What is a key caution regarding the use of local variables in Groovy build scripts?",
+        "options": {
+            "A": "They can lead to memory leaks if not managed properly.",
+            "B": "They should not be used in nested blocks.",
+            "C": "They cannot be used to store complex data types.",
+            "D": "They should not be used at the root of the project."
+        },
+        "correct_answer": "D",
+        "explanation": "A key caution regarding the use of local variables in Groovy build scripts is that they should not be used at the root of the project. This is because local variables cannot be accessed outside of the build script, which limits their utility and can lead to confusion if they are mistaken for project properties."
+    }
+]

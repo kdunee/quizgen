@@ -1,0 +1,222 @@
+[
+    {
+        "question": "What is the primary purpose of collections in Gradle?",
+        "options": {
+            "A": "To manage and maintain groups of objects",
+            "B": "To store configuration settings for plugins",
+            "C": "To execute build scripts in parallel",
+            "D": "To compile source code into binaries"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of collections in Gradle is to manage and maintain groups of objects, particularly in the context of build scripts and plugins. These collections allow for organized handling of tasks, configurations, and custom domain objects, facilitating easier manipulation and access."
+    },
+    {
+        "question": "Which collection type in Gradle does not allow duplicate elements?",
+        "options": {
+            "A": "NamedDomainObjectList",
+            "B": "DomainObjectSet",
+            "C": "NamedDomainObjectContainer",
+            "D": "ExtensiblePolymorphicDomainObjectContainer"
+        },
+        "correct_answer": "B",
+        "explanation": "The `DomainObjectSet` in Gradle is designed to hold a set of objects where duplicate elements are not allowed. This ensures that each object in the set is unique, which is essential for managing collections effectively in build scripts."
+    },
+    {
+        "question": "What distinguishes a `NamedDomainObjectSet` from a `DomainObjectSet`?",
+        "options": {
+            "A": "A `NamedDomainObjectSet` allows for duplicate elements.",
+            "B": "A `NamedDomainObjectSet` associates each object with a unique name.",
+            "C": "A `NamedDomainObjectSet` automatically manages the objects in the collection.",
+            "D": "A `NamedDomainObjectSet` is used only for configuration settings."
+        },
+        "correct_answer": "B",
+        "explanation": "The key distinction of a `NamedDomainObjectSet` is that it associates each object with a unique name, allowing for easier identification and access. In contrast, a `DomainObjectSet` does not have this naming feature and simply holds a set of objects without any associated names."
+    },
+    {
+        "question": "Which collection type is specifically designed to manage objects with unique names and provides a DSL for configuration?",
+        "options": {
+            "A": "DomainObjectSet",
+            "B": "NamedDomainObjectContainer",
+            "C": "NamedDomainObjectList",
+            "D": "ExtensiblePolymorphicDomainObjectContainer"
+        },
+        "correct_answer": "B",
+        "explanation": "The `NamedDomainObjectContainer` is specifically designed to manage objects with unique names and provides a domain-specific language (DSL) for configuring these objects. This makes it particularly useful for handling custom Gradle objects and their configurations in a structured manner."
+    },
+    {
+        "question": "What is a key feature of the `ExtensiblePolymorphicDomainObjectContainer` in Gradle?",
+        "options": {
+            "A": "It allows for the creation of objects without unique names.",
+            "B": "It supports defining instantiation strategies for different object types.",
+            "C": "It automatically manages the lifecycle of objects.",
+            "D": "It is limited to a single type of object."
+        },
+        "correct_answer": "B",
+        "explanation": "A key feature of the `ExtensiblePolymorphicDomainObjectContainer` is its ability to support defining instantiation strategies for different types of objects. This flexibility allows developers to control how various object types are created and managed within the Gradle build system."
+    },
+    {
+        "question": "What is the primary purpose of a `DomainObjectSet` in Gradle?",
+        "options": {
+            "A": "To manage a set of configurable objects without allowing duplicates",
+            "B": "To automatically create and configure objects based on their names",
+            "C": "To provide a list of objects where order is significant",
+            "D": "To define instantiation strategies for different object types"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a `DomainObjectSet` is to hold a set of configurable objects while ensuring that no duplicate elements are allowed. Unlike other collection types, it does not manage the objects automatically; they must be created and added manually."
+    },
+    {
+        "question": "Which of the following statements is true about `DomainObjectSet`?",
+        "options": {
+            "A": "It automatically manages the lifecycle of the objects within it.",
+            "B": "It allows for the creation of objects with unique names.",
+            "C": "It does not allow duplicate elements in the collection.",
+            "D": "It provides a DSL for configuring the objects it contains."
+        },
+        "correct_answer": "C",
+        "explanation": "A `DomainObjectSet` does not allow duplicate elements, ensuring that each object in the set is unique. However, it does not manage the objects or provide a DSL for configuration, which distinguishes it from other collection types like `NamedDomainObjectContainer`."
+    },
+    {
+        "question": "How are objects added to a `DomainObjectSet`?",
+        "options": {
+            "A": "They are automatically instantiated based on their names.",
+            "B": "They must be created and added manually by the user.",
+            "C": "They are added through a predefined configuration block.",
+            "D": "They are generated from a list of existing objects."
+        },
+        "correct_answer": "B",
+        "explanation": "Objects in a `DomainObjectSet` must be created and added manually by the user. This means that the user has full control over the instantiation and management of the objects within the set."
+    },
+    {
+        "question": "What is the primary characteristic of a `NamedDomainObjectSet` in Gradle?",
+        "options": {
+            "A": "It holds a set of objects where each element has a unique name.",
+            "B": "It automatically manages the lifecycle of the objects in the collection.",
+            "C": "It allows duplicate elements within the collection.",
+            "D": "It is used exclusively for managing tasks in a Gradle project."
+        },
+        "correct_answer": "A",
+        "explanation": "A `NamedDomainObjectSet` is characterized by holding a set of objects where each element is associated with a unique name. This allows for easy identification and retrieval of objects based on their names, but it does not manage the objects automatically; they must be created and added manually."
+    },
+    {
+        "question": "How does a `NamedDomainObjectSet` differ from a `NamedDomainObjectContainer`?",
+        "options": {
+            "A": "A `NamedDomainObjectSet` manages the objects automatically, while a `NamedDomainObjectContainer` does not.",
+            "B": "A `NamedDomainObjectSet` does not manage the objects, requiring manual creation and addition.",
+            "C": "A `NamedDomainObjectSet` allows for duplicate elements, while a `NamedDomainObjectContainer` does not.",
+            "D": "A `NamedDomainObjectSet` is only used for lists of objects, while a `NamedDomainObjectContainer` is for sets."
+        },
+        "correct_answer": "B",
+        "explanation": "The key difference is that a `NamedDomainObjectSet` does not manage the objects in the collection; they need to be created and added manually. In contrast, a `NamedDomainObjectContainer` manages the lifecycle of its objects, providing a more automated approach to handling them."
+    },
+    {
+        "question": "What is a common use case for a `NamedDomainObjectSet` in Gradle?",
+        "options": {
+            "A": "To automatically configure tasks in a build script.",
+            "B": "To hold a set of configurable objects with unique names.",
+            "C": "To manage dependencies in a project.",
+            "D": "To create a list of tasks that can be executed in order."
+        },
+        "correct_answer": "B",
+        "explanation": "A common use case for a `NamedDomainObjectSet` is to hold a set of configurable objects where each object has a unique name. This is particularly useful in build scripts and plugins where unique identification of objects is necessary for configuration and management."
+    },
+    {
+        "question": "What is a `NamedDomainObjectList` primarily used for in Gradle?",
+        "options": {
+            "A": "To hold a list of configurable objects with unique names",
+            "B": "To manage a set of objects without any naming requirements",
+            "C": "To create and configure objects automatically",
+            "D": "To store objects in a way that does not allow duplicates"
+        },
+        "correct_answer": "A",
+        "explanation": "A `NamedDomainObjectList` is used to hold a list of configurable objects where each object has a unique name associated with it. This allows for both indexed access and named access to the elements in the list, making it suitable for scenarios where the order of objects matters."
+    },
+    {
+        "question": "How does a `NamedDomainObjectList` differ from a `NamedDomainObjectContainer`?",
+        "options": {
+            "A": "A `NamedDomainObjectList` manages the objects automatically, while a `NamedDomainObjectContainer` does not.",
+            "B": "A `NamedDomainObjectList` allows for indexed access, while a `NamedDomainObjectContainer` does not.",
+            "C": "A `NamedDomainObjectList` does not allow duplicate names, while a `NamedDomainObjectContainer` can.",
+            "D": "A `NamedDomainObjectList` requires manual creation and addition of objects, similar to a `NamedDomainObjectContainer`."
+        },
+        "correct_answer": "D",
+        "explanation": "Both `NamedDomainObjectList` and `NamedDomainObjectContainer` require manual creation and addition of objects. However, the key difference is that a `NamedDomainObjectList` allows for indexed access to its elements, while a `NamedDomainObjectContainer` manages the objects and provides a DSL for configuration."
+    },
+    {
+        "question": "What is a key characteristic of the objects within a `NamedDomainObjectList`?",
+        "options": {
+            "A": "They must be of the same type.",
+            "B": "They can be accessed by both index and name.",
+            "C": "They are automatically instantiated by Gradle.",
+            "D": "They cannot be modified after creation."
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of the objects within a `NamedDomainObjectList` is that they can be accessed by both index and name. This dual access method allows users to retrieve objects in a way that suits their needs, whether they prefer to work with the order of the list or the unique names of the objects."
+    },
+    {
+        "question": "What is the primary purpose of a `NamedDomainObjectContainer` in Gradle?",
+        "options": {
+            "A": "To manage a set of objects with unique names and provide configuration capabilities",
+            "B": "To store data without any specific structure or naming",
+            "C": "To create a list of objects that do not require unique identification",
+            "D": "To handle tasks that do not need to be configured or managed"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a `NamedDomainObjectContainer` is to manage a set of objects where each object has a unique name associated with it. This allows for easy configuration and management of these objects within Gradle build scripts, making it a crucial component for organizing and handling custom Gradle types."
+    },
+    {
+        "question": "How does a `NamedDomainObjectContainer` differ from a `DomainObjectSet`?",
+        "options": {
+            "A": "A `NamedDomainObjectContainer` manages objects and allows for configuration, while a `DomainObjectSet` does not manage objects.",
+            "B": "A `DomainObjectSet` allows for configuration of objects, while a `NamedDomainObjectContainer` does not.",
+            "C": "A `NamedDomainObjectContainer` can only hold primitive types, while a `DomainObjectSet` can hold complex objects.",
+            "D": "A `DomainObjectSet` automatically creates objects, while a `NamedDomainObjectContainer` requires manual creation."
+        },
+        "correct_answer": "A",
+        "explanation": "A `NamedDomainObjectContainer` differs from a `DomainObjectSet` in that it manages the objects within it and provides configuration capabilities, while a `DomainObjectSet` does not manage the objects and requires them to be created and added manually. This makes the `NamedDomainObjectContainer` more suitable for scenarios where configuration is necessary."
+    },
+    {
+        "question": "What is a key feature of the `NamedDomainObjectContainer` in Gradle?",
+        "options": {
+            "A": "It allows for the automatic instantiation of objects without any configuration.",
+            "B": "It provides a DSL for defining and configuring elements within the container.",
+            "C": "It restricts the types of objects that can be added to only primitive types.",
+            "D": "It does not support unique naming for the objects it contains."
+        },
+        "correct_answer": "B",
+        "explanation": "A key feature of the `NamedDomainObjectContainer` is that it provides a Domain-Specific Language (DSL) for defining and configuring the elements within the container. This allows users to easily manage and customize the behavior of the objects it contains, enhancing the flexibility and usability of Gradle build scripts."
+    },
+    {
+        "question": "What is the primary purpose of an `ExtensiblePolymorphicDomainObjectContainer` in Gradle?",
+        "options": {
+            "A": "To manage a set of objects with unique names and define instantiation strategies for different types.",
+            "B": "To store a fixed collection of objects without any instantiation capabilities.",
+            "C": "To provide a simple list of objects without any naming or configuration features.",
+            "D": "To automatically create and configure all objects in a collection without user input."
+        },
+        "correct_answer": "A",
+        "explanation": "The `ExtensiblePolymorphicDomainObjectContainer` is designed to manage a set of objects that have unique names while allowing users to define specific instantiation strategies for different types of objects. This flexibility is essential for handling various object types within Gradle's build scripts."
+    },
+    {
+        "question": "Which of the following statements is true about the `ExtensiblePolymorphicDomainObjectContainer`?",
+        "options": {
+            "A": "It automatically manages the lifecycle of all objects within it.",
+            "B": "It allows for the definition of custom instantiation strategies for different object types.",
+            "C": "It is a type of collection that does not require unique names for its elements.",
+            "D": "It is primarily used for storing primitive data types."
+        },
+        "correct_answer": "B",
+        "explanation": "The `ExtensiblePolymorphicDomainObjectContainer` allows users to define custom instantiation strategies for different types of objects, making it versatile for managing various object types in Gradle. This feature distinguishes it from simpler collection types that do not offer such capabilities."
+    },
+    {
+        "question": "How does the `ExtensiblePolymorphicDomainObjectContainer` differ from a standard `NamedDomainObjectContainer`?",
+        "options": {
+            "A": "It does not require unique names for its objects.",
+            "B": "It allows for defining instantiation strategies for multiple object types.",
+            "C": "It can only hold a single type of object.",
+            "D": "It automatically configures all objects without user intervention."
+        },
+        "correct_answer": "B",
+        "explanation": "The key difference between the `ExtensiblePolymorphicDomainObjectContainer` and a standard `NamedDomainObjectContainer` is that the former allows users to define instantiation strategies for different types of objects, providing greater flexibility in managing diverse object types within Gradle."
+    }
+]

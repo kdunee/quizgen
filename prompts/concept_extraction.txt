@@ -1,0 +1,70 @@
+You are an expert educator and subject matter expert. Please read the following chapter from a book/lecture. Identify the key concepts discussed in the chapter that are relevant to the overall subject matter of the book/lecture. The concepts should be:
+
+- **Broadly applicable** and not overly dependent on specific examples or unique contexts introduced only within this chapter.
+- **Fundamental and important** to understanding the core ideas, theories, or methods within the field.
+- **Relevant** to the chapter’s content but focused on general principles rather than chapter-specific narratives or details.
+
+Avoid identifying concepts that are only meaningful within the context of the chapter or are overly specific to particular examples introduced in the chapter.
+
+If the chapter does not introduce any new concepts relevant to the book/lecture (e.g., foreword, introduction, acknowledgments), return an empty list of concepts.
+
+**Your output should be a JSON object in the following format:**
+
+```json
+{
+  "concepts": [
+    "Concept 1",
+    "Concept 2",
+    "Concept 3"
+  ]
+}
+```
+
+**Example 1 (Chapter with Relevant Concepts):**
+
+**Title:** *Introduction to Cell Biology*
+
+**Chapter Excerpt:**
+
+"In this chapter, we delve into the fundamentals of **cell biology**, exploring the structure and function of **cell membranes**, the role of **mitochondria** in energy production, and the process of **cellular respiration**. We also examine how **enzymes** facilitate biochemical reactions and the importance of **DNA replication** in cell division."
+
+**Identified Concepts (JSON Output):**
+
+```json
+{
+  "concepts": [
+    "Cell Biology",
+    "Cell Membranes",
+    "Mitochondria",
+    "Cellular Respiration",
+    "Enzymes",
+    "DNA Replication"
+  ]
+}
+```
+
+**Example 2 (Irrelevant Chapter):**
+
+**Title:** *Advanced Quantum Mechanics*
+
+**Chapter Excerpt:**
+
+"This foreword provides insight into the author's journey in writing this book. It acknowledges the contributions of colleagues and the inspiration drawn from pioneers in the field."
+
+**Identified Concepts (JSON Output):**
+
+```json
+{
+  "concepts": []
+}
+```
+
+Now, please analyze the following chapter and output the key concepts in the specified JSON format, focusing on ensuring the concepts are relevant beyond just the chapter context.
+
+**Title:**
+
+{{TITLE}}
+
+**Chapter Text:**
+
+{{CHAPTER_TEXT}}

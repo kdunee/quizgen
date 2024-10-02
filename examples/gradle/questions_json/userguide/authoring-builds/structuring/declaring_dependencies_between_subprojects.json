@@ -1,0 +1,211 @@
+[
+    {
+        "question": "What is the primary purpose of multi-project builds in Gradle?",
+        "options": {
+            "A": "To manage dependencies between multiple subprojects",
+            "B": "To create a single executable file from multiple projects",
+            "C": "To simplify the build process for a single project",
+            "D": "To enhance the performance of a single project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of multi-project builds in Gradle is to manage dependencies between multiple subprojects. This allows for better organization and modularization of code, enabling one subproject to depend on the outputs of another, which is essential for complex applications."
+    },
+    {
+        "question": "How does declaring a project dependency affect the build process?",
+        "options": {
+            "A": "It allows the dependent project to run independently of the other project.",
+            "B": "It ensures that the dependent project is built before the project that relies on it.",
+            "C": "It prevents any changes in one project from affecting the other.",
+            "D": "It automatically merges the code of both projects into one."
+        },
+        "correct_answer": "B",
+        "explanation": "Declaring a project dependency ensures that the dependent project is built before the project that relies on it. This is crucial for maintaining the correct execution order and ensuring that all necessary outputs are available when needed."
+    },
+    {
+        "question": "What is discouraged when modeling dependencies between tasks in different projects?",
+        "options": {
+            "A": "Declaring a task dependency from one project to another",
+            "B": "Using the same task name in different projects",
+            "C": "Creating multiple subprojects within a single build",
+            "D": "Defining project paths using the ':' separator"
+        },
+        "correct_answer": "A",
+        "explanation": "Declaring a task dependency from one project to another is discouraged because it introduces unnecessary coupling between tasks. Instead, it is recommended to produce outputs as artifacts and manage dependencies through Gradle's dependency management engine, which allows for more flexible and decoupled designs."
+    },
+    {
+        "question": "What is the recommended way to depend on the output of a specific task in another project?",
+        "options": {
+            "A": "Directly referencing the task in the build script",
+            "B": "Declaring a task dependency between the projects",
+            "C": "Producing the output as an outgoing artifact",
+            "D": "Using a global variable to share the output"
+        },
+        "correct_answer": "C",
+        "explanation": "The recommended way to depend on the output of a specific task in another project is to produce the output as an outgoing artifact. This approach allows for better separation of concerns and reduces coupling between tasks, making the build process more modular and maintainable."
+    },
+    {
+        "question": "What is the primary purpose of declaring project dependencies in a multi-project build?",
+        "options": {
+            "A": "To ensure that all projects are built simultaneously",
+            "B": "To control the execution order and manage classpath dependencies",
+            "C": "To reduce the overall size of the project files",
+            "D": "To eliminate the need for version control"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of declaring project dependencies in a multi-project build is to control the execution order and manage classpath dependencies. When a project depends on another, it ensures that the dependent project is built first, and its output is included in the classpath, facilitating proper integration and functionality."
+    },
+    {
+        "question": "What happens when a project dependency is declared in Gradle?",
+        "options": {
+            "A": "The dependent project is ignored during the build process",
+            "B": "The dependent project is built first, and its output is added to the classpath",
+            "C": "The build process is halted until all dependencies are resolved",
+            "D": "The dependent project is built only if it has been modified"
+        },
+        "correct_answer": "B",
+        "explanation": "When a project dependency is declared in Gradle, the dependent project is built first, and its output is added to the classpath. This ensures that the necessary classes and resources from the dependent project are available for the project that relies on it, allowing for seamless integration."
+    },
+    {
+        "question": "Why is it discouraged to explicitly declare task dependencies between projects in Gradle?",
+        "options": {
+            "A": "It can lead to unnecessary coupling between tasks",
+            "B": "It simplifies the build process",
+            "C": "It automatically resolves all version conflicts",
+            "D": "It makes the build process faster"
+        },
+        "correct_answer": "A",
+        "explanation": "It is discouraged to explicitly declare task dependencies between projects in Gradle because it can lead to unnecessary coupling between tasks. This coupling can make the build process more complex and harder to maintain. Instead, it is recommended to model dependencies through project outputs and artifacts."
+    },
+    {
+        "question": "What is the recommended way to depend on the output of a specific task in another project?",
+        "options": {
+            "A": "By directly referencing the task in the build script",
+            "B": "By producing the output and marking it as an 'outgoing' artifact",
+            "C": "By creating a new project for each task",
+            "D": "By using global variables to share data between projects"
+        },
+        "correct_answer": "B",
+        "explanation": "The recommended way to depend on the output of a specific task in another project is to produce the output and mark it as an 'outgoing' artifact. This approach allows for better dependency management and reduces coupling, as it leverages Gradle's dependency management engine to share artifacts between projects."
+    },
+    {
+        "question": "What is the primary effect of declaring a project dependency in a multi-project build?",
+        "options": {
+            "A": "It allows projects to run in parallel without any order.",
+            "B": "It affects the execution order by ensuring the dependent project is built first.",
+            "C": "It automatically merges the code of the dependent projects.",
+            "D": "It eliminates the need for a build script in the dependent project."
+        },
+        "correct_answer": "B",
+        "explanation": "Declaring a project dependency in a multi-project build ensures that the dependent project is built first, which affects the execution order. This means that when a project depends on another, the build system will prioritize building the required project before proceeding with the dependent project."
+    },
+    {
+        "question": "What happens to the classpath when a project dependency is declared?",
+        "options": {
+            "A": "The classpath is cleared to avoid conflicts.",
+            "B": "Only the classes of the dependent project are added to the classpath.",
+            "C": "The output classes of the dependent project and its dependencies are added to the classpath.",
+            "D": "The classpath is set to a default value, ignoring project dependencies."
+        },
+        "correct_answer": "C",
+        "explanation": "When a project dependency is declared, the output classes of the dependent project, along with its dependencies, are added to the classpath. This ensures that all necessary classes are available for the project that depends on them, facilitating proper execution."
+    },
+    {
+        "question": "Why is it discouraged to explicitly declare a task dependency from one project to another?",
+        "options": {
+            "A": "It can lead to unnecessary coupling between tasks.",
+            "B": "It makes the build process faster.",
+            "C": "It simplifies the build script significantly.",
+            "D": "It allows for more flexible task execution."
+        },
+        "correct_answer": "A",
+        "explanation": "Explicitly declaring a task dependency from one project to another is discouraged because it can introduce unnecessary coupling between tasks. This tight coupling can make the build process more complex and less maintainable, as changes in one task may directly affect another."
+    },
+    {
+        "question": "What is the primary purpose of declaring task dependencies in a multi-project build?",
+        "options": {
+            "A": "To ensure that tasks are executed in a specific order",
+            "B": "To increase the complexity of the build process",
+            "C": "To allow tasks to run independently without any order",
+            "D": "To eliminate the need for project paths"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of declaring task dependencies in a multi-project build is to ensure that tasks are executed in a specific order. This is important because certain tasks may rely on the outputs of others, and establishing a clear execution order helps maintain the integrity and efficiency of the build process."
+    },
+    {
+        "question": "What happens when a project dependency is declared in Gradle?",
+        "options": {
+            "A": "The dependent project is built first, and its output is added to the classpath",
+            "B": "The dependent project is ignored during the build process",
+            "C": "The dependent project is built only if explicitly requested",
+            "D": "The dependent project runs in parallel with the main project"
+        },
+        "correct_answer": "A",
+        "explanation": "When a project dependency is declared in Gradle, the dependent project is built first, and its output is added to the classpath. This ensures that any classes or resources produced by the dependent project are available for use in the project that depends on it, facilitating a smooth build process."
+    },
+    {
+        "question": "Why is it discouraged to explicitly declare a task dependency from one project to another in Gradle?",
+        "options": {
+            "A": "It can lead to unnecessary coupling between tasks",
+            "B": "It simplifies the build process significantly",
+            "C": "It allows for better performance during builds",
+            "D": "It is not supported by Gradle"
+        },
+        "correct_answer": "A",
+        "explanation": "Explicitly declaring a task dependency from one project to another is discouraged because it can lead to unnecessary coupling between tasks. This tight coupling can make the build process more complex and harder to maintain. Instead, it is recommended to model dependencies through outgoing artifacts, which allows for more flexibility and decoupling."
+    },
+    {
+        "question": "What is the recommended way to share artifacts between projects in Gradle?",
+        "options": {
+            "A": "By declaring task dependencies directly",
+            "B": "By marking outputs as outgoing artifacts",
+            "C": "By using global variables",
+            "D": "By copying files manually between projects"
+        },
+        "correct_answer": "B",
+        "explanation": "The recommended way to share artifacts between projects in Gradle is by marking outputs as outgoing artifacts. This approach allows the dependency management engine to handle the sharing of arbitrary artifacts between projects efficiently, promoting a more modular and maintainable build structure."
+    },
+    {
+        "question": "What is the primary purpose of artifact management in a multi-project build?",
+        "options": {
+            "A": "To manage the execution order of tasks within a single project",
+            "B": "To share and manage outputs produced by different projects",
+            "C": "To compile source code into executable files",
+            "D": "To define the structure of a project directory"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of artifact management in a multi-project build is to share and manage outputs produced by different projects. This allows projects to depend on specific artifacts, facilitating collaboration and modularity in the build process."
+    },
+    {
+        "question": "What happens when a project dependency is declared in Gradle?",
+        "options": {
+            "A": "The dependent project is built first, and its output is added to the classpath.",
+            "B": "The dependent project is ignored during the build process.",
+            "C": "The dependent project is built after the main project.",
+            "D": "The dependent project is built only if explicitly requested."
+        },
+        "correct_answer": "A",
+        "explanation": "When a project dependency is declared in Gradle, the dependent project is built first, and its output is added to the classpath. This ensures that all necessary components are available for the project that depends on them, maintaining the correct execution order."
+    },
+    {
+        "question": "Why is it discouraged to explicitly declare a task dependency from one project to another in Gradle?",
+        "options": {
+            "A": "It can lead to unnecessary coupling between tasks.",
+            "B": "It makes the build process faster.",
+            "C": "It simplifies the project structure.",
+            "D": "It allows for better error handling."
+        },
+        "correct_answer": "A",
+        "explanation": "Explicitly declaring a task dependency from one project to another is discouraged because it can lead to unnecessary coupling between tasks. This coupling can complicate the build process and reduce flexibility, making it harder to manage dependencies effectively."
+    },
+    {
+        "question": "What is the recommended way to model dependencies on outputs from another project in Gradle?",
+        "options": {
+            "A": "By directly linking tasks between projects",
+            "B": "By producing outputs and marking them as outgoing artifacts",
+            "C": "By copying files from one project to another",
+            "D": "By using global variables to share data"
+        },
+        "correct_answer": "B",
+        "explanation": "The recommended way to model dependencies on outputs from another project in Gradle is to produce the outputs and mark them as outgoing artifacts. This approach allows for better management of dependencies and reduces coupling between tasks, enabling a more modular build process."
+    }
+]

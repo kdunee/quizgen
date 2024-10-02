@@ -1,0 +1,134 @@
+[
+    {
+        "question": "What is the primary purpose of Gradle in software development?",
+        "options": {
+            "A": "To manage project dependencies and automate build processes",
+            "B": "To create user interfaces for applications",
+            "C": "To provide a database management system",
+            "D": "To compile programming languages into machine code"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of Gradle is to manage project dependencies and automate build processes. It allows developers to define how their software is built, tested, and deployed, streamlining the development workflow and ensuring consistency across different environments."
+    },
+    {
+        "question": "Which of the following best describes Gradle's build system?",
+        "options": {
+            "A": "It is a declarative build system that requires no configuration.",
+            "B": "It is a flexible build system that uses a domain-specific language.",
+            "C": "It is a rigid build system that only supports Java projects.",
+            "D": "It is a graphical build system that does not require coding."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle is a flexible build system that uses a domain-specific language (DSL) based on Groovy or Kotlin. This allows developers to write custom build logic and configurations, making it adaptable to various project types and requirements."
+    },
+    {
+        "question": "What significant change occurred in Gradle 6 regarding Play applications?",
+        "options": {
+            "A": "Play web application support was enhanced.",
+            "B": "Play web application support was deprecated and replaced by an external plugin.",
+            "C": "Play applications can now be built without any plugins.",
+            "D": "Play applications are no longer supported in Gradle."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle 6, support for Play web applications was deprecated and replaced by an external Play plugin. This change means that developers need to use the new Gradle Play Plugin available from the plugin portal to build Play applications, ensuring they have access to the latest features and improvements."
+    },
+    {
+        "question": "What is the primary purpose of the Play Framework in software development?",
+        "options": {
+            "A": "To manage database connections",
+            "B": "To facilitate the development of web applications",
+            "C": "To provide a user interface design tool",
+            "D": "To optimize server performance"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the Play Framework is to facilitate the development of web applications. It provides a structured environment that simplifies the process of building scalable and maintainable web applications, allowing developers to focus on writing code rather than managing infrastructure."
+    },
+    {
+        "question": "Which of the following statements is true regarding the Play Framework's architecture?",
+        "options": {
+            "A": "It is based on a monolithic architecture only.",
+            "B": "It supports both MVC and reactive programming paradigms.",
+            "C": "It requires a specific database technology to function.",
+            "D": "It is limited to Java programming language only."
+        },
+        "correct_answer": "B",
+        "explanation": "The Play Framework supports both the Model-View-Controller (MVC) architecture and reactive programming paradigms. This flexibility allows developers to choose the best approach for their application needs, promoting a more efficient and responsive design."
+    },
+    {
+        "question": "What significant change occurred in Gradle 6 regarding Play Framework support?",
+        "options": {
+            "A": "Play web application support was enhanced.",
+            "B": "Play web application support was deprecated.",
+            "C": "Play Framework became the only supported framework.",
+            "D": "Play Framework was integrated into Gradle's core functionality."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle 6, Play web application support was deprecated and replaced by an external Play plugin. This change indicates a shift in how Play applications are managed within the Gradle ecosystem, encouraging users to adopt the new Gradle Play Plugin for their development needs."
+    },
+    {
+        "question": "What is the primary purpose of software licensing?",
+        "options": {
+            "A": "To restrict the use of software to a specific group of users",
+            "B": "To provide users with the right to use, modify, and distribute software",
+            "C": "To ensure that software is free of bugs and errors",
+            "D": "To increase the price of software products"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of software licensing is to provide users with the legal rights to use, modify, and distribute software. Licenses define how software can be used and what restrictions apply, ensuring that both the creators and users understand their rights and responsibilities."
+    },
+    {
+        "question": "Which of the following is a common type of software license?",
+        "options": {
+            "A": "Proprietary License",
+            "B": "Hardware License",
+            "C": "Network License",
+            "D": "User License"
+        },
+        "correct_answer": "A",
+        "explanation": "A Proprietary License is a common type of software license that restricts the use, modification, and distribution of the software. Unlike open-source licenses, proprietary licenses typically do not allow users to access the source code or make modifications."
+    },
+    {
+        "question": "What does an open-source software license typically allow users to do?",
+        "options": {
+            "A": "Use the software only for personal projects",
+            "B": "Modify and distribute the software freely",
+            "C": "Sell the software for profit",
+            "D": "Access the software without any restrictions"
+        },
+        "correct_answer": "B",
+        "explanation": "An open-source software license typically allows users to modify and distribute the software freely. This type of license promotes collaboration and sharing within the software community, enabling users to improve and adapt the software to their needs."
+    },
+    {
+        "question": "What is the primary purpose of a plugin architecture in software development?",
+        "options": {
+            "A": "To create a monolithic application structure",
+            "B": "To allow for modular and extensible application design",
+            "C": "To eliminate the need for any external libraries",
+            "D": "To ensure all components are tightly coupled"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a plugin architecture is to allow for modular and extensible application design. This approach enables developers to add or modify functionalities without altering the core application, promoting flexibility and maintainability."
+    },
+    {
+        "question": "Which of the following best describes a plugin in the context of software architecture?",
+        "options": {
+            "A": "A standalone application that operates independently",
+            "B": "A component that adds specific features to an existing application",
+            "C": "A framework that dictates the entire application structure",
+            "D": "A tool used for debugging and testing applications"
+        },
+        "correct_answer": "B",
+        "explanation": "A plugin is best described as a component that adds specific features to an existing application. It enhances the application's capabilities without requiring changes to the core codebase, allowing for greater customization and functionality."
+    },
+    {
+        "question": "What is a key benefit of using a plugin architecture in application development?",
+        "options": {
+            "A": "It simplifies the deployment process by reducing the number of components",
+            "B": "It allows for easier updates and maintenance of individual components",
+            "C": "It requires all components to be developed in the same programming language",
+            "D": "It eliminates the need for version control systems"
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using a plugin architecture is that it allows for easier updates and maintenance of individual components. Since plugins are modular, developers can update or replace them independently without affecting the entire application, leading to improved efficiency in development and maintenance."
+    }
+]

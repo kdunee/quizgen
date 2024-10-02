@@ -1,0 +1,200 @@
+[
+    {
+        "question": "What is the primary purpose of dependency configurations in Gradle?",
+        "options": {
+            "A": "To define different sets of dependencies for various purposes within a project",
+            "B": "To automatically update dependencies to their latest versions",
+            "C": "To compile source code without any external libraries",
+            "D": "To manage the user interface of a Gradle project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency configurations in Gradle is to define different sets of dependencies for various purposes within a project. This allows developers to specify how and when dependencies are used during different stages of the build process, such as compilation and runtime."
+    },
+    {
+        "question": "Which of the following configurations is used for dependencies that are only needed at runtime?",
+        "options": {
+            "A": "compileOnly",
+            "B": "implementation",
+            "C": "runtimeOnly",
+            "D": "testImplementation"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'runtimeOnly' configuration is specifically used for dependencies that are needed only at runtime and are not included in the compile classpath. This helps to optimize the build process by ensuring that only necessary dependencies are included at each stage."
+    },
+    {
+        "question": "What does the 'compileOnly' configuration signify in a Gradle project?",
+        "options": {
+            "A": "Dependencies needed for both compilation and runtime",
+            "B": "Dependencies needed only for compilation, not included in runtime",
+            "C": "Dependencies required for running tests",
+            "D": "Dependencies that are included in the published API"
+        },
+        "correct_answer": "B",
+        "explanation": "'compileOnly' signifies dependencies that are needed only for compilation and are not included in the runtime or publication. This is useful for libraries that are only required during development and not when the application is executed."
+    },
+    {
+        "question": "How can custom configurations be beneficial in a Gradle project?",
+        "options": {
+            "A": "They automatically manage all dependencies without user input",
+            "B": "They allow for the definition of distinct groups of dependencies for specific purposes",
+            "C": "They replace the need for standard configurations like implementation and testImplementation",
+            "D": "They ensure that all dependencies are included in the final build artifact"
+        },
+        "correct_answer": "B",
+        "explanation": "Custom configurations allow developers to define distinct groups of dependencies for specific purposes, such as toolchains or code generation. This helps manage and isolate dependencies, ensuring they are only included in the relevant classpaths and build processes."
+    },
+    {
+        "question": "What is the primary purpose of dependency configurations in Gradle?",
+        "options": {
+            "A": "To define different sets of dependencies for various purposes within a project",
+            "B": "To automatically update all project dependencies to the latest versions",
+            "C": "To compile source code without any external libraries",
+            "D": "To create a user interface for managing project dependencies"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency configurations in Gradle is to define different sets of dependencies for various purposes within a project. This allows developers to specify which dependencies are needed at compile time, runtime, or for specific tasks, ensuring that the build process is efficient and organized."
+    },
+    {
+        "question": "Which of the following configurations is used for dependencies that are only needed at runtime?",
+        "options": {
+            "A": "compileOnly",
+            "B": "implementation",
+            "C": "runtimeOnly",
+            "D": "testImplementation"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'runtimeOnly' configuration is specifically used for dependencies that are needed only at runtime and are not included in the compile classpath. This helps to keep the compile classpath clean and ensures that only necessary dependencies are included during the execution of the application."
+    },
+    {
+        "question": "What does the 'compileOnly' configuration signify in a Gradle project?",
+        "options": {
+            "A": "Dependencies needed for both compilation and runtime",
+            "B": "Dependencies required only for compilation, not included in runtime",
+            "C": "Dependencies that are only needed for testing",
+            "D": "Dependencies that are included in the published API"
+        },
+        "correct_answer": "B",
+        "explanation": "'compileOnly' signifies dependencies that are required only for compilation and are not included in the runtime or publication. This is useful for libraries that are needed during development but should not be packaged with the final application."
+    },
+    {
+        "question": "How can custom configurations be beneficial in a Gradle project?",
+        "options": {
+            "A": "They automatically resolve all dependencies without user input",
+            "B": "They allow for the definition of distinct groups of dependencies for specific purposes",
+            "C": "They replace the need for standard configurations like implementation and testImplementation",
+            "D": "They ensure that all dependencies are included in the final build"
+        },
+        "correct_answer": "B",
+        "explanation": "Custom configurations allow developers to define distinct groups of dependencies for specific purposes, such as toolchains or code generation. This helps manage and isolate dependencies, ensuring they are only included in the relevant classpaths and build processes, which enhances project organization and clarity."
+    },
+    {
+        "question": "What is the primary distinction between compile time and runtime dependencies?",
+        "options": {
+            "A": "Compile time dependencies are only needed for testing, while runtime dependencies are needed for production.",
+            "B": "Compile time dependencies are required for compiling the code, whereas runtime dependencies are needed when the application is running.",
+            "C": "Compile time dependencies are included in the published API, while runtime dependencies are not.",
+            "D": "Compile time dependencies are used for documentation, while runtime dependencies are used for configuration."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary distinction between compile time and runtime dependencies is that compile time dependencies are required for compiling the code, ensuring that the code can be built successfully, while runtime dependencies are necessary for the application to function correctly during execution. This separation helps manage how dependencies are utilized at different stages of the build process."
+    },
+    {
+        "question": "Which of the following configurations is used for dependencies that are only needed at runtime?",
+        "options": {
+            "A": "compileOnly",
+            "B": "implementation",
+            "C": "runtimeOnly",
+            "D": "testImplementation"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'runtimeOnly' configuration is specifically used for dependencies that are required only when the application is running. These dependencies are not included in the compile classpath, meaning they are not needed during the compilation of the code, but are essential for the application to operate correctly at runtime."
+    },
+    {
+        "question": "What is the purpose of the 'compileOnly' configuration in Gradle?",
+        "options": {
+            "A": "To declare dependencies that are needed for both compilation and runtime.",
+            "B": "To declare dependencies that are only needed for compilation and not included in the runtime classpath.",
+            "C": "To declare dependencies that are required for running tests.",
+            "D": "To declare dependencies that are included in the published API."
+        },
+        "correct_answer": "B",
+        "explanation": "'compileOnly' is used to declare dependencies that are necessary only for the compilation of the code. These dependencies are not included in the runtime classpath, meaning they are not required when the application is executed. This is useful for libraries that are needed during development but should not be bundled with the final application."
+    },
+    {
+        "question": "What is the primary purpose of creating custom configurations in Gradle?",
+        "options": {
+            "A": "To define a distinct group of dependencies for specific purposes",
+            "B": "To automatically include all dependencies in the runtime classpath",
+            "C": "To eliminate the need for any dependency declarations",
+            "D": "To merge multiple dependency configurations into one"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of creating custom configurations in Gradle is to define a distinct group of dependencies that can be used for specific purposes, such as toolchains or code generation. This allows for better management and isolation of dependencies, ensuring they are included only in the relevant classpaths and build processes."
+    },
+    {
+        "question": "Which of the following statements is true regarding custom configurations in Gradle?",
+        "options": {
+            "A": "Custom configurations can only be created for test dependencies.",
+            "B": "Custom configurations allow for the isolation of dependencies from standard configurations.",
+            "C": "Custom configurations automatically include all dependencies declared in the project.",
+            "D": "Custom configurations are not supported in Gradle."
+        },
+        "correct_answer": "B",
+        "explanation": "Custom configurations in Gradle allow for the isolation of dependencies from standard configurations. This means that dependencies defined in a custom configuration can be managed separately, ensuring they are only included in specific build processes or classpaths as needed."
+    },
+    {
+        "question": "What is a key benefit of using custom configurations in a Gradle project?",
+        "options": {
+            "A": "They simplify the dependency resolution process by merging all dependencies.",
+            "B": "They help manage dependencies that are only relevant for specific tasks or tools.",
+            "C": "They eliminate the need for any other dependency configurations.",
+            "D": "They automatically update dependencies to the latest versions."
+        },
+        "correct_answer": "B",
+        "explanation": "A key benefit of using custom configurations in a Gradle project is that they help manage dependencies that are only relevant for specific tasks or tools. This allows developers to keep their build process organized and ensures that only the necessary dependencies are included in each context."
+    },
+    {
+        "question": "What is the primary purpose of dependency configurations in Gradle?",
+        "options": {
+            "A": "To define different sets of dependencies for various purposes within a project",
+            "B": "To automatically update all project dependencies to the latest versions",
+            "C": "To compile source code without any external libraries",
+            "D": "To manage the user interface of a Gradle project"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of dependency configurations in Gradle is to define different sets of dependencies for various purposes within a project. This allows developers to specify which dependencies are needed at compile time, runtime, or for testing, ensuring that the build process is efficient and organized."
+    },
+    {
+        "question": "Which of the following configurations is used for dependencies that are only needed at runtime?",
+        "options": {
+            "A": "compileOnly",
+            "B": "implementation",
+            "C": "runtimeOnly",
+            "D": "testImplementation"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'runtimeOnly' configuration is specifically used for dependencies that are only needed at runtime. This means that these dependencies are not required during the compilation of the source code but are necessary for the application to run correctly."
+    },
+    {
+        "question": "What does the 'compileOnly' configuration indicate about a dependency?",
+        "options": {
+            "A": "It is required for both compilation and runtime.",
+            "B": "It is only needed for compilation and not included in the runtime classpath.",
+            "C": "It is only needed at runtime and not during compilation.",
+            "D": "It is required for running tests only."
+        },
+        "correct_answer": "B",
+        "explanation": "'compileOnly' indicates that a dependency is only needed for compilation and will not be included in the runtime classpath. This is useful for dependencies that are necessary to compile the code but are provided by the runtime environment."
+    },
+    {
+        "question": "What is a custom configuration in Gradle used for?",
+        "options": {
+            "A": "To define a standard set of dependencies for all projects",
+            "B": "To create a distinct group of dependencies for specific purposes",
+            "C": "To automatically resolve all dependency conflicts",
+            "D": "To manage the build lifecycle of a project"
+        },
+        "correct_answer": "B",
+        "explanation": "A custom configuration in Gradle is used to create a distinct group of dependencies for specific purposes, such as toolchains or code generation. This allows developers to manage and isolate dependencies that are not part of the standard configurations, ensuring they are only included in relevant classpaths."
+    }
+]

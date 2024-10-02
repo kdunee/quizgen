@@ -1,0 +1,244 @@
+[
+    {
+        "question": "What is the primary role of the settings file in a Gradle project?",
+        "options": {
+            "A": "To define the build process for the project",
+            "B": "To add subprojects to the build",
+            "C": "To manage dependencies for the project",
+            "D": "To configure the project's runtime environment"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary role of the settings file in a Gradle project is to add subprojects to the build. It defines the structure of the project, particularly in multi-project builds, where it is mandatory to declare all subprojects."
+    },
+    {
+        "question": "In which directory is the settings file typically located?",
+        "options": {
+            "A": "In the src directory",
+            "B": "In the root directory of the project",
+            "C": "In the build directory",
+            "D": "In the config directory"
+        },
+        "correct_answer": "B",
+        "explanation": "The settings file is typically found in the root directory of the Gradle project. This location allows it to serve as the entry point for the project configuration and structure."
+    },
+    {
+        "question": "Which of the following statements is true regarding the settings file in Gradle?",
+        "options": {
+            "A": "It is optional for all types of Gradle projects.",
+            "B": "It can only be written in Groovy.",
+            "C": "It is mandatory for multi-project builds.",
+            "D": "It defines the dependencies for the project."
+        },
+        "correct_answer": "C",
+        "explanation": "The settings file is mandatory for multi-project builds in Gradle. It is essential for declaring all subprojects, while it is optional for single-project builds."
+    },
+    {
+        "question": "What is the correct syntax to define the project name in a settings file?",
+        "options": {
+            "A": "project.name = 'project-name'",
+            "B": "rootProject.name = 'project-name'",
+            "C": "define project.name 'project-name'",
+            "D": "set project.name to 'project-name'"
+        },
+        "correct_answer": "B",
+        "explanation": "The correct syntax to define the project name in a settings file is 'rootProject.name = 'project-name''. This syntax is used to specify the name of the root project in both Groovy and Kotlin DSL."
+    },
+    {
+        "question": "What is the primary characteristic of a single-project build in Gradle?",
+        "options": {
+            "A": "It requires a settings file to define subprojects.",
+            "B": "It can operate without a settings file.",
+            "C": "It must include multiple subprojects.",
+            "D": "It is only applicable for large-scale applications."
+        },
+        "correct_answer": "B",
+        "explanation": "A single-project build in Gradle can operate without a settings file, making it optional. This is because a single-project build does not involve the complexity of managing multiple subprojects, which is where the settings file becomes mandatory."
+    },
+    {
+        "question": "In a single-project build, what is the role of the settings file if it is included?",
+        "options": {
+            "A": "To define the build script for the project.",
+            "B": "To specify the project dependencies.",
+            "C": "To declare the project name and structure.",
+            "D": "To manage the version control of the project."
+        },
+        "correct_answer": "C",
+        "explanation": "If a settings file is included in a single-project build, its role is to declare the project name and structure. It provides a way to define the project’s identity, even though it is not required for single-project builds."
+    },
+    {
+        "question": "Which of the following statements is true regarding single-project builds in Gradle?",
+        "options": {
+            "A": "They can only be created using Groovy scripts.",
+            "B": "They do not require a settings file to function.",
+            "C": "They must include at least one subproject.",
+            "D": "They are limited to only one type of build script."
+        },
+        "correct_answer": "B",
+        "explanation": "Single-project builds in Gradle do not require a settings file to function. This flexibility allows developers to create simple projects without the overhead of managing subprojects, which is a feature of multi-project builds."
+    },
+    {
+        "question": "What is the primary purpose of a settings file in a Gradle multi-project build?",
+        "options": {
+            "A": "To define the build process for each subproject",
+            "B": "To add subprojects to the build",
+            "C": "To manage dependencies for the project",
+            "D": "To configure the runtime environment"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a settings file in a Gradle multi-project build is to add subprojects to the build. It defines the structure of the project by including all the subprojects that are part of the multi-project setup, ensuring that Gradle knows how to organize and build them together."
+    },
+    {
+        "question": "In a Gradle multi-project build, how many root projects can be defined?",
+        "options": {
+            "A": "One or more root projects",
+            "B": "Only one root project",
+            "C": "No root projects are allowed",
+            "D": "Two root projects maximum"
+        },
+        "correct_answer": "B",
+        "explanation": "In a Gradle multi-project build, there can only be one root project defined per build. This root project serves as the main entry point for the build process, while any additional subprojects are included within the settings file."
+    },
+    {
+        "question": "Which of the following statements is true regarding the settings file in Gradle?",
+        "options": {
+            "A": "It is optional for both single and multi-project builds.",
+            "B": "It must be written in Java only.",
+            "C": "It is mandatory for multi-project builds.",
+            "D": "It can only include subprojects with specific names."
+        },
+        "correct_answer": "C",
+        "explanation": "The settings file is mandatory for multi-project builds in Gradle. It is essential for defining the structure of the project by including all subprojects, which allows Gradle to manage and build them collectively."
+    },
+    {
+        "question": "What file extensions can a Gradle settings file have?",
+        "options": {
+            "A": ".gradle and .xml",
+            "B": ".gradle and .properties",
+            "C": ".gradle and .kts",
+            "D": ".gradle and .json"
+        },
+        "correct_answer": "C",
+        "explanation": "A Gradle settings file can have the extensions .gradle for Groovy scripts or .gradle.kts for Kotlin scripts. These are the only accepted formats for writing Gradle scripts, allowing users to choose their preferred programming language for configuration."
+    },
+    {
+        "question": "What is the primary role of a settings file in a Gradle project?",
+        "options": {
+            "A": "To define the build process for the project",
+            "B": "To add subprojects to the build",
+            "C": "To manage dependencies for the project",
+            "D": "To configure the runtime environment"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary role of a settings file in a Gradle project is to add subprojects to the build. It defines the structure of the project, particularly in multi-project builds, where it is mandatory to declare all subprojects."
+    },
+    {
+        "question": "Which of the following statements is true regarding the settings file in Gradle?",
+        "options": {
+            "A": "It is optional for all types of Gradle projects.",
+            "B": "It can only be written in Groovy.",
+            "C": "It is mandatory for multi-project builds.",
+            "D": "It is used exclusively for defining dependencies."
+        },
+        "correct_answer": "C",
+        "explanation": "The settings file is mandatory for multi-project builds in Gradle. It is used to declare all subprojects, ensuring that the build process recognizes the entire project structure."
+    },
+    {
+        "question": "In which directory is the settings file typically located in a Gradle project?",
+        "options": {
+            "A": "In the src directory",
+            "B": "In the root directory of the project",
+            "C": "In the build directory",
+            "D": "In the config directory"
+        },
+        "correct_answer": "B",
+        "explanation": "The settings file is typically found in the root directory of the Gradle project. This location allows it to serve as the entry point for the project configuration and structure."
+    },
+    {
+        "question": "What is the format of a settings file in Gradle?",
+        "options": {
+            "A": "It can only be a plain text file.",
+            "B": "It must be a JSON file.",
+            "C": "It can be written in either Groovy or Kotlin.",
+            "D": "It must be an XML file."
+        },
+        "correct_answer": "C",
+        "explanation": "A settings file in Gradle can be written in either Groovy or Kotlin. These are the accepted languages for Gradle scripts, allowing flexibility in how the settings are defined."
+    },
+    {
+        "question": "What is the primary role of the settings file in a Gradle project?",
+        "options": {
+            "A": "To define the project structure and add subprojects",
+            "B": "To manage dependencies for the project",
+            "C": "To execute build tasks and scripts",
+            "D": "To configure the runtime environment"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary role of the settings file in a Gradle project is to define the project structure and add subprojects. It serves as the entry point for the project, allowing the declaration of subprojects in multi-project builds, which is essential for organizing the project effectively."
+    },
+    {
+        "question": "In a multi-project Gradle build, what is the status of the settings file?",
+        "options": {
+            "A": "It is optional and can be omitted",
+            "B": "It is mandatory and must declare all subprojects",
+            "C": "It is only required for the root project",
+            "D": "It is used solely for dependency management"
+        },
+        "correct_answer": "B",
+        "explanation": "In a multi-project Gradle build, the settings file is mandatory and must declare all subprojects. This is crucial for Gradle to understand the structure of the project and how the various subprojects relate to one another."
+    },
+    {
+        "question": "Which of the following statements is true regarding the project name in a Gradle settings file?",
+        "options": {
+            "A": "There can be multiple root projects per build",
+            "B": "The project name is defined using the 'rootProject.name' property",
+            "C": "The project name is optional and can be left undefined",
+            "D": "The project name must be specified in a separate configuration file"
+        },
+        "correct_answer": "B",
+        "explanation": "The project name in a Gradle settings file is defined using the 'rootProject.name' property. This establishes the name of the root project, and there can only be one root project per build, making this definition essential for the project structure."
+    },
+    {
+        "question": "What is the primary role of the root project in a Gradle build?",
+        "options": {
+            "A": "To define the project name and structure",
+            "B": "To execute all build tasks",
+            "C": "To manage dependencies for subprojects",
+            "D": "To compile source code into executable files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary role of the root project in a Gradle build is to define the project name and structure. It serves as the main entry point for the build process and can include subprojects, establishing the overall organization of the project."
+    },
+    {
+        "question": "How many root projects can exist per Gradle build?",
+        "options": {
+            "A": "One",
+            "B": "Two",
+            "C": "Multiple",
+            "D": "None"
+        },
+        "correct_answer": "A",
+        "explanation": "There can only be one root project per Gradle build. This root project acts as the main project that encompasses all other subprojects, if any are included."
+    },
+    {
+        "question": "In which file is the root project typically defined?",
+        "options": {
+            "A": "build.gradle",
+            "B": "settings.gradle",
+            "C": "gradle.properties",
+            "D": "settings.gradle.kts"
+        },
+        "correct_answer": "B",
+        "explanation": "The root project is typically defined in the settings file, which can be named settings.gradle or settings.gradle.kts. This file is crucial for establishing the project's name and including any subprojects."
+    },
+    {
+        "question": "What must be included in the settings file for a multi-project Gradle build?",
+        "options": {
+            "A": "Only the root project name",
+            "B": "Subprojects",
+            "C": "Build tasks",
+            "D": "Dependency configurations"
+        },
+        "correct_answer": "B",
+        "explanation": "In a multi-project Gradle build, the settings file must include subprojects. This inclusion defines the structure of the project and allows Gradle to recognize and manage the relationships between the root project and its subprojects."
+    }
+]

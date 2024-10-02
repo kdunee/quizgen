@@ -1,0 +1,244 @@
+[
+    {
+        "question": "What is the primary purpose of the War plugin in Gradle?",
+        "options": {
+            "A": "To assemble web application WAR files",
+            "B": "To generate JAR files for Java applications",
+            "C": "To manage database connections in applications",
+            "D": "To compile source code into bytecode"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the War plugin in Gradle is to assemble web application WAR files. It extends the functionality of the Java plugin by providing tasks and configurations specifically designed for packaging web applications, which are deployed on web servers."
+    },
+    {
+        "question": "Which directory is designated for web application sources when using the War plugin?",
+        "options": {
+            "A": "src/main/java",
+            "B": "src/main/resources",
+            "C": "src/main/webapp",
+            "D": "src/main/classes"
+        },
+        "correct_answer": "C",
+        "explanation": "When using the War plugin, the designated directory for web application sources is 'src/main/webapp'. This directory contains the static resources and web components that will be included in the WAR file."
+    },
+    {
+        "question": "What does the 'providedCompile' configuration in the War plugin signify?",
+        "options": {
+            "A": "Dependencies required at runtime that are included in the WAR",
+            "B": "Dependencies required at compilation but provided by the deployment environment",
+            "C": "Dependencies that are not needed for the application to run",
+            "D": "Dependencies that are bundled within the WAR file"
+        },
+        "correct_answer": "B",
+        "explanation": "'ProvidedCompile' is a configuration used for dependencies that are required during compilation but are expected to be provided by the environment in which the WAR is deployed. This means these dependencies will not be included in the final WAR file."
+    },
+    {
+        "question": "What is the default behavior of the 'war' task in the War plugin?",
+        "options": {
+            "A": "To compile Java source files into bytecode",
+            "B": "To copy the content of 'src/main/webapp' to the root of the archive",
+            "C": "To generate a JAR file from the project",
+            "D": "To run unit tests on the application"
+        },
+        "correct_answer": "B",
+        "explanation": "The default behavior of the 'war' task in the War plugin is to copy the content of 'src/main/webapp' to the root of the WAR archive. This includes all necessary web resources, ensuring they are packaged correctly for deployment."
+    },
+    {
+        "question": "What is the primary purpose of the War plugin in web application development?",
+        "options": {
+            "A": "To assemble web application WAR files",
+            "B": "To generate JAR files for Java applications",
+            "C": "To manage database connections",
+            "D": "To optimize front-end assets"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the War plugin is to assemble web application WAR files, which are used for deploying web applications. It extends the Java plugin by disabling JAR archive generation and adding a default WAR archive task, facilitating the packaging of web applications."
+    },
+    {
+        "question": "Which directory is designated for web application sources when using the War plugin?",
+        "options": {
+            "A": "src/main/java",
+            "B": "src/main/resources",
+            "C": "src/main/webapp",
+            "D": "src/main/assets"
+        },
+        "correct_answer": "C",
+        "explanation": "The designated directory for web application sources when using the War plugin is 'src/main/webapp'. This directory contains the files that will be included in the WAR file, such as HTML, CSS, and JavaScript files, as well as the WEB-INF directory for configuration."
+    },
+    {
+        "question": "What is the function of the 'providedCompile' configuration in the War plugin?",
+        "options": {
+            "A": "To include dependencies in the final WAR file",
+            "B": "To specify dependencies required at compilation but provided by the deployment environment",
+            "C": "To manage runtime dependencies for the application",
+            "D": "To exclude certain dependencies from the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "'providedCompile' is a configuration used for dependencies that are required at compilation but are provided by the environment in which the WAR is deployed. This means these dependencies are available during the build process but will not be included in the final WAR file."
+    },
+    {
+        "question": "What happens to the contents of the 'src/main/webapp' directory during the WAR task execution?",
+        "options": {
+            "A": "They are deleted to prevent conflicts",
+            "B": "They are copied to the root of the WAR archive",
+            "C": "They are compiled into Java bytecode",
+            "D": "They are ignored by the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "During the execution of the WAR task, the contents of the 'src/main/webapp' directory are copied to the root of the WAR archive. This includes all web application resources, ensuring that they are packaged correctly for deployment."
+    },
+    {
+        "question": "What is the purpose of the 'providedCompile' configuration in the War plugin?",
+        "options": {
+            "A": "To include dependencies that are required at runtime and are packaged in the WAR file",
+            "B": "To specify dependencies required at compilation but provided by the deployment environment",
+            "C": "To manage dependencies that are only needed for testing purposes",
+            "D": "To include all dependencies regardless of their scope"
+        },
+        "correct_answer": "B",
+        "explanation": "'providedCompile' is used for dependencies that are necessary during the compilation phase but are expected to be provided by the environment where the WAR is deployed. This means these dependencies will not be included in the final WAR file, allowing for a cleaner deployment package."
+    },
+    {
+        "question": "How does the 'providedRuntime' configuration differ from 'providedCompile'?",
+        "options": {
+            "A": "It is used for dependencies that are required at compile time only",
+            "B": "It includes dependencies that are needed at runtime but provided by the deployment environment",
+            "C": "It is used for dependencies that should always be included in the WAR file",
+            "D": "It is the same as 'providedCompile' but for testing purposes"
+        },
+        "correct_answer": "B",
+        "explanation": "'providedRuntime' is specifically for dependencies that are required during the runtime of the application but are provided by the environment in which the WAR is deployed. Unlike 'providedCompile', which is for compile-time dependencies, 'providedRuntime' ensures that only runtime dependencies are managed without being packaged in the WAR."
+    },
+    {
+        "question": "What is a key characteristic of the 'provided' configurations in the War plugin?",
+        "options": {
+            "A": "They automatically include all transitive dependencies in the WAR file",
+            "B": "They do not include any dependencies in the WAR file",
+            "C": "They are only applicable to testing dependencies",
+            "D": "They require manual inclusion of all transitive dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'provided' configurations, such as 'providedCompile' and 'providedRuntime', are designed to not include their dependencies in the final WAR file. This is because these dependencies are expected to be available in the deployment environment, thus keeping the WAR file lightweight and avoiding redundancy."
+    },
+    {
+        "question": "What is the primary purpose of the project layout in the context of the War plugin?",
+        "options": {
+            "A": "To define the structure and organization of web application sources",
+            "B": "To manage dependencies for the project",
+            "C": "To configure the build script for Java applications",
+            "D": "To specify the runtime environment for the application"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the project layout in the context of the War plugin is to define the structure and organization of web application sources. This layout includes specific directories, such as `src/main/webapp`, which is designated for web application files, ensuring that the project is organized in a way that facilitates the building and deployment of web applications."
+    },
+    {
+        "question": "Which directory is specifically added by the War plugin for web application sources?",
+        "options": {
+            "A": "src/main/java",
+            "B": "src/main/resources",
+            "C": "src/main/webapp",
+            "D": "src/test/webapp"
+        },
+        "correct_answer": "C",
+        "explanation": "The War plugin adds the `src/main/webapp` directory specifically for web application sources. This directory is where developers place their web-related files, such as HTML, CSS, and JavaScript, which are essential for the web application being built."
+    },
+    {
+        "question": "How does the War plugin affect the default project layout compared to a standard Java project?",
+        "options": {
+            "A": "It removes the need for a `src/main/java` directory.",
+            "B": "It adds a new directory for web application sources.",
+            "C": "It changes the location of the compiled classes.",
+            "D": "It requires all dependencies to be included in the WAR file."
+        },
+        "correct_answer": "B",
+        "explanation": "The War plugin affects the default project layout by adding a new directory for web application sources, specifically `src/main/webapp`. This addition is crucial for organizing web application files separately from standard Java source files, which are typically located in `src/main/java`."
+    },
+    {
+        "question": "What is the primary purpose of task configuration in the context of the War plugin?",
+        "options": {
+            "A": "To define how the WAR file is assembled and what resources are included",
+            "B": "To manage the versioning of the web application",
+            "C": "To optimize the performance of the web server",
+            "D": "To create a backup of the project files"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of task configuration in the context of the War plugin is to define how the WAR file is assembled and what resources are included. This involves specifying the source directories, dependencies, and any custom settings that affect the final output of the WAR file."
+    },
+    {
+        "question": "Which of the following is a key aspect of task configuration for the War plugin?",
+        "options": {
+            "A": "It allows for the automatic generation of documentation",
+            "B": "It enables the specification of dependencies required at compile time",
+            "C": "It provides a way to deploy the application directly to a server",
+            "D": "It ensures that all source files are compiled into a single JAR file"
+        },
+        "correct_answer": "B",
+        "explanation": "A key aspect of task configuration for the War plugin is that it enables the specification of dependencies required at compile time. This is crucial for ensuring that the necessary libraries are available during the build process, particularly for the `providedCompile` and `providedRuntime` configurations."
+    },
+    {
+        "question": "What happens to dependencies declared in the 'providedCompile' configuration?",
+        "options": {
+            "A": "They are included in the final WAR file",
+            "B": "They are only available during compilation and not included in the WAR",
+            "C": "They are automatically updated to the latest version",
+            "D": "They are ignored by the build process"
+        },
+        "correct_answer": "B",
+        "explanation": "Dependencies declared in the 'providedCompile' configuration are only available during compilation and are not included in the final WAR file. This is because these dependencies are expected to be provided by the environment in which the WAR is deployed, allowing for a cleaner and more efficient deployment package."
+    },
+    {
+        "question": "What is the default behavior of the 'war' task in the War plugin?",
+        "options": {
+            "A": "To compile Java source files into a JAR",
+            "B": "To copy the content of the web application source directory to the root of the archive",
+            "C": "To run unit tests before building the WAR",
+            "D": "To generate a report of the project's dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The default behavior of the 'war' task in the War plugin is to copy the content of the web application source directory to the root of the archive. This includes all necessary files and directories, such as `WEB-INF`, ensuring that the WAR file is structured correctly for deployment."
+    },
+    {
+        "question": "What is the primary purpose of the `components.web` in the context of the War plugin?",
+        "options": {
+            "A": "To define the structure of the WAR file",
+            "B": "To publish the production WAR created by the `war` task",
+            "C": "To manage dependencies for the WAR file",
+            "D": "To configure the web application source directory"
+        },
+        "correct_answer": "B",
+        "explanation": "The `components.web` is specifically designed to facilitate the publishing of the production WAR file that is generated by the `war` task. This allows for the WAR file to be made available for deployment or distribution, ensuring that the built application can be easily shared or deployed in a suitable environment."
+    },
+    {
+        "question": "Which of the following configurations is used for dependencies required at runtime but provided by the deployment environment?",
+        "options": {
+            "A": "providedCompile",
+            "B": "implementation",
+            "C": "providedRuntime",
+            "D": "compileOnly"
+        },
+        "correct_answer": "C",
+        "explanation": "The `providedRuntime` configuration is specifically intended for dependencies that are necessary during runtime but are expected to be provided by the environment where the WAR is deployed. This ensures that these dependencies are not included in the final WAR file, as they are assumed to be available in the runtime environment."
+    },
+    {
+        "question": "What is the default behavior of the `War` task regarding the content of the web application?",
+        "options": {
+            "A": "It compiles the Java classes into the WAR file.",
+            "B": "It copies the content of `src/main/webapp` to the root of the archive.",
+            "C": "It generates a `web.xml` file automatically.",
+            "D": "It includes all dependencies in the root of the archive."
+        },
+        "correct_answer": "B",
+        "explanation": "The default behavior of the `War` task is to copy the content from the `src/main/webapp` directory to the root of the generated WAR archive. This includes any necessary files for the web application, ensuring that the structure of the web application is preserved in the final output."
+    },
+    {
+        "question": "What is the significance of the `provided` configurations in the War plugin?",
+        "options": {
+            "A": "They ensure all dependencies are included in the WAR file.",
+            "B": "They allow for transitive dependencies to be included automatically.",
+            "C": "They prevent certain dependencies from being packaged in the WAR file.",
+            "D": "They are used to define the main class for the application."
+        },
+        "correct_answer": "C",
+        "explanation": "The `provided` configurations, such as `providedCompile` and `providedRuntime`, are significant because they prevent the specified dependencies from being included in the WAR file. This is useful for dependencies that are expected to be available in the deployment environment, thus avoiding redundancy and potential conflicts."
+    }
+]

@@ -1,0 +1,332 @@
+[
+    {
+        "question": "What is the primary purpose of the feature lifecycle in Gradle?",
+        "options": {
+            "A": "To ensure features are developed and released in a timely manner",
+            "B": "To allow users to create their own features",
+            "C": "To limit the number of features available to users",
+            "D": "To provide a platform for user feedback on all Gradle features"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the feature lifecycle in Gradle is to ensure that features are developed and released in a timely manner. This allows new functionality to be made available to users early, while also incorporating user feedback into the development process, which is a core value of the Gradle platform."
+    },
+    {
+        "question": "Which state indicates that a feature is not intended for public use and can change without notice?",
+        "options": {
+            "A": "Public",
+            "B": "Incubating",
+            "C": "Internal",
+            "D": "Deprecated"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'Internal' state indicates that a feature is not intended for public use and can change in any way at any time without notice. These features are not documented and are meant solely for Gradle's internal use, which is why users are advised to avoid using them."
+    },
+    {
+        "question": "What happens to features that are in the 'deprecated' state?",
+        "options": {
+            "A": "They are permanently removed from Gradle immediately.",
+            "B": "They may be replaced or become irrelevant and will eventually be removed.",
+            "C": "They are promoted to public features.",
+            "D": "They are only available in the next major release."
+        },
+        "correct_answer": "B",
+        "explanation": "Features in the 'deprecated' state may be replaced or become irrelevant due to the natural evolution of Gradle. They will eventually be removed from Gradle after a deprecation period, which is indicated in the documentation and release notes."
+    },
+    {
+        "question": "What does it mean for a feature to be in the 'incubating' state?",
+        "options": {
+            "A": "It is fully stable and documented for public use.",
+            "B": "It is available for testing and may change based on user feedback.",
+            "C": "It is no longer supported and will be removed soon.",
+            "D": "It is an internal feature not meant for public access."
+        },
+        "correct_answer": "B",
+        "explanation": "A feature in the 'incubating' state is available for testing and allows real-world feedback to be incorporated before it is made public. This state indicates that the feature may change in future Gradle versions based on user experiences and feedback."
+    },
+    {
+        "question": "What does the term 'feature state' refer to in the context of Gradle?",
+        "options": {
+            "A": "The current status of a feature in its development lifecycle",
+            "B": "The programming language used to implement Gradle features",
+            "C": "The user interface design of Gradle's features",
+            "D": "The documentation style for Gradle features"
+        },
+        "correct_answer": "A",
+        "explanation": "The term 'feature state' refers to the current status of a feature in its development lifecycle within Gradle. It indicates whether a feature is internal, incubating, public, or deprecated, which helps users understand how stable and usable the feature is."
+    },
+    {
+        "question": "Which of the following states indicates that a feature is not intended for public use?",
+        "options": {
+            "A": "Public",
+            "B": "Incubating",
+            "C": "Internal",
+            "D": "Deprecated"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'Internal' state indicates that a feature is not intended for public use and is only meant for Gradle itself. Such features can change at any time without notice, and users are advised to avoid using them."
+    },
+    {
+        "question": "What is the primary purpose of a feature being in the 'incubating' state?",
+        "options": {
+            "A": "To indicate that the feature is fully stable and ready for production",
+            "B": "To allow real-world feedback to be incorporated before making it public",
+            "C": "To signify that the feature is outdated and will be removed soon",
+            "D": "To mark the feature as a temporary addition with no future plans"
+        },
+        "correct_answer": "B",
+        "explanation": "A feature in the 'incubating' state is designed to allow real-world feedback to be incorporated before it is made public. This state provides early access to users who are willing to test potential future changes, helping to refine the feature based on actual usage."
+    },
+    {
+        "question": "What happens to a feature once it is marked as 'deprecated'?",
+        "options": {
+            "A": "It is immediately removed from Gradle",
+            "B": "It is still usable but may be removed in future releases",
+            "C": "It becomes a public feature with guaranteed support",
+            "D": "It is promoted to an incubating state for further testing"
+        },
+        "correct_answer": "B",
+        "explanation": "Once a feature is marked as 'deprecated', it is still usable but may be removed in future releases. Deprecated features are typically replaced by newer alternatives, and users are encouraged to avoid using them as they may become stale over time."
+    },
+    {
+        "question": "What characterizes an internal feature in Gradle?",
+        "options": {
+            "A": "It is designed for public use and is well-documented.",
+            "B": "It is intended solely for Gradle's internal use and can change without notice.",
+            "C": "It is a stable feature that will never change once released.",
+            "D": "It is a feature that has been deprecated and will soon be removed."
+        },
+        "correct_answer": "B",
+        "explanation": "Internal features in Gradle are specifically designed for Gradle's internal use only. They are not intended for public use, are not documented, and can change at any time without prior notice. This means users should avoid relying on these features as they may evolve unpredictably."
+    },
+    {
+        "question": "Which of the following statements is true regarding internal features?",
+        "options": {
+            "A": "Internal features are documented and stable for public use.",
+            "B": "Internal features may evolve into public features over time.",
+            "C": "Internal features are always deprecated before removal.",
+            "D": "Internal features are guaranteed to remain unchanged indefinitely."
+        },
+        "correct_answer": "B",
+        "explanation": "Internal features may evolve into public features as they are developed and tested. However, they are not documented and can change without notice, making them unsuitable for public use until they are promoted to a public state."
+    },
+    {
+        "question": "Why should users avoid using internal features in Gradle?",
+        "options": {
+            "A": "They are always documented and stable.",
+            "B": "They can change at any time without notice.",
+            "C": "They are the only features that receive regular updates.",
+            "D": "They are intended for public use and are well-supported."
+        },
+        "correct_answer": "B",
+        "explanation": "Users should avoid using internal features because they can change at any time without notice, which can lead to instability in projects that rely on them. Internal features are not designed for public use and lack documentation, making them unpredictable."
+    },
+    {
+        "question": "What is the purpose of features being in the incubating state?",
+        "options": {
+            "A": "To allow real-world feedback before making them public",
+            "B": "To indicate that they are fully stable and ready for production",
+            "C": "To signify that they are deprecated and will be removed soon",
+            "D": "To restrict their use to internal Gradle development only"
+        },
+        "correct_answer": "A",
+        "explanation": "Features in the incubating state are introduced to gather real-world feedback from users before they are promoted to public status. This allows developers to make necessary adjustments based on user experiences and suggestions, ensuring that the features meet the needs of the community."
+    },
+    {
+        "question": "How are incubating features indicated in the Gradle source code?",
+        "options": {
+            "A": "They are marked with a special comment in the code",
+            "B": "They are annotated with `@java.lang.Deprecated`",
+            "C": "They are annotated with a specific incubating annotation",
+            "D": "They are not indicated in any way"
+        },
+        "correct_answer": "C",
+        "explanation": "Incubating features in the Gradle source code are annotated with a specific incubating annotation. This annotation helps users identify which features are still in the testing phase and may change in future releases, ensuring transparency about their stability."
+    },
+    {
+        "question": "What happens to incubating features when they are promoted to public status?",
+        "options": {
+            "A": "They are removed from the Gradle platform",
+            "B": "They become deprecated immediately",
+            "C": "They are documented and considered stable",
+            "D": "They remain in the incubating state indefinitely"
+        },
+        "correct_answer": "C",
+        "explanation": "When incubating features are promoted to public status, they are documented and considered stable. This means they are now ready for general use and will not change or be removed without undergoing a deprecation process, ensuring users can rely on them."
+    },
+    {
+        "question": "What is a key characteristic of features in the incubating state?",
+        "options": {
+            "A": "They are fully documented and stable",
+            "B": "They can change based on user feedback",
+            "C": "They are intended for internal use only",
+            "D": "They are guaranteed to be included in future releases"
+        },
+        "correct_answer": "B",
+        "explanation": "A key characteristic of features in the incubating state is that they can change based on user feedback. This flexibility allows the Gradle team to refine and improve the features before they are finalized and made public, ensuring they meet user needs effectively."
+    },
+    {
+        "question": "What defines a feature as 'public' in the Gradle platform?",
+        "options": {
+            "A": "It is documented and not explicitly marked as incubating or deprecated.",
+            "B": "It is only available to internal Gradle developers.",
+            "C": "It is in the testing phase and subject to frequent changes.",
+            "D": "It has been removed from the Gradle platform."
+        },
+        "correct_answer": "A",
+        "explanation": "A feature is defined as 'public' in the Gradle platform if it is documented in the User Manual, DSL Reference, or API Reference and is not explicitly marked as incubating or deprecated. Public features are stable and are expected to remain available without intentional changes or removal."
+    },
+    {
+        "question": "What happens to a public feature once it is deprecated?",
+        "options": {
+            "A": "It is immediately removed from the Gradle platform.",
+            "B": "It may still be used but will eventually be removed in a future release.",
+            "C": "It becomes a private feature only for internal use.",
+            "D": "It is promoted to a new version with enhanced capabilities."
+        },
+        "correct_answer": "B",
+        "explanation": "Once a public feature is deprecated, it may still be used, but it is indicated that it will eventually be removed in a future release. The deprecation serves as a warning to users to transition to alternative features or methods, as deprecated features may become stale until their removal."
+    },
+    {
+        "question": "Which of the following statements is true regarding public features in Gradle?",
+        "options": {
+            "A": "Public features can be changed or removed without notice.",
+            "B": "Public features are guaranteed to remain indefinitely unless deprecated.",
+            "C": "Public features are only available in the latest version of Gradle.",
+            "D": "Public features are not documented and are for internal use only."
+        },
+        "correct_answer": "B",
+        "explanation": "Public features in Gradle are guaranteed to remain indefinitely unless they are deprecated. This means that once a feature is established as public, it will not be removed or changed without going through a deprecation process, ensuring stability for users."
+    },
+    {
+        "question": "What does it mean for a feature to be marked as deprecated in Gradle?",
+        "options": {
+            "A": "The feature is actively being developed and improved.",
+            "B": "The feature is no longer recommended for use and may be removed in the future.",
+            "C": "The feature is fully stable and will not change.",
+            "D": "The feature is only available for internal use within Gradle."
+        },
+        "correct_answer": "B",
+        "explanation": "A deprecated feature in Gradle indicates that it is no longer recommended for use and may eventually be removed in future releases. While deprecated features may still function, they are typically replaced by newer alternatives, and users are advised to avoid using them."
+    },
+    {
+        "question": "How are deprecated features indicated in Gradle's source code?",
+        "options": {
+            "A": "They are marked with a special comment in the code.",
+            "B": "They are annotated with `@java.lang.Deprecated`.",
+            "C": "They are highlighted in the documentation.",
+            "D": "They are removed from the source code entirely."
+        },
+        "correct_answer": "B",
+        "explanation": "In Gradle's source code, deprecated features are annotated with `@java.lang.Deprecated`. This annotation serves as a clear indication to developers that the feature is deprecated and may be removed in the future, prompting them to seek alternatives."
+    },
+    {
+        "question": "What typically happens to a deprecated feature in Gradle over time?",
+        "options": {
+            "A": "It is guaranteed to remain unchanged indefinitely.",
+            "B": "It may become stale and is eventually removed from Gradle.",
+            "C": "It is promoted to a public feature after a certain period.",
+            "D": "It is only available for internal Gradle use."
+        },
+        "correct_answer": "B",
+        "explanation": "Over time, a deprecated feature in Gradle may become stale and is eventually removed according to the backward compatibility policy. This process allows Gradle to evolve and improve while ensuring that users are aware of features that are no longer recommended."
+    },
+    {
+        "question": "What should users do when they encounter a deprecated feature in Gradle?",
+        "options": {
+            "A": "Continue using it without concern.",
+            "B": "Look for a replacement feature and avoid using the deprecated one.",
+            "C": "Report it as a bug to the Gradle team.",
+            "D": "Use it only in internal projects."
+        },
+        "correct_answer": "B",
+        "explanation": "When users encounter a deprecated feature in Gradle, they should look for a replacement feature and avoid using the deprecated one. This practice helps ensure that their projects remain up-to-date and compatible with future versions of Gradle."
+    },
+    {
+        "question": "What is the primary goal of Gradle's backward compatibility policy?",
+        "options": {
+            "A": "To ensure that public features remain available indefinitely unless deprecated",
+            "B": "To allow users to freely modify public features without restrictions",
+            "C": "To promote all features to public status without any testing",
+            "D": "To remove deprecated features immediately after they are marked"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary goal of Gradle's backward compatibility policy is to ensure that once a public feature is introduced, it remains available indefinitely unless it is deprecated. This policy helps users rely on the stability of features across major versions, providing a consistent development experience."
+    },
+    {
+        "question": "What happens to a public feature once it is marked as deprecated?",
+        "options": {
+            "A": "It is immediately removed from Gradle",
+            "B": "It may be removed in the next major release but can still be used",
+            "C": "It becomes a public feature again after a review",
+            "D": "It is automatically promoted to an incubating state"
+        },
+        "correct_answer": "B",
+        "explanation": "Once a public feature is marked as deprecated, it may be removed in the next major release, but it can still be used in the meantime. This allows users to transition to alternatives while still having access to the deprecated feature until it is officially removed."
+    },
+    {
+        "question": "How does Gradle handle backward compatibility across major versions?",
+        "options": {
+            "A": "All features are removed in the next major version",
+            "B": "Only deprecated features are supported across major versions",
+            "C": "Public features remain available unless explicitly deprecated",
+            "D": "Backward compatibility is not guaranteed for any features"
+        },
+        "correct_answer": "C",
+        "explanation": "Gradle's backward compatibility policy ensures that public features remain available across major versions unless they are explicitly deprecated. This means that users can rely on the continued availability of features they have integrated into their projects, providing stability and predictability."
+    },
+    {
+        "question": "What is the typical outcome for a feature that has been deprecated?",
+        "options": {
+            "A": "It is permanently removed from Gradle without notice",
+            "B": "It may become stale until it is finally removed",
+            "C": "It is automatically upgraded to a public feature",
+            "D": "It is reintroduced as an incubating feature"
+        },
+        "correct_answer": "B",
+        "explanation": "A deprecated feature may become stale until it is finally removed according to the backward compatibility policy. This means that while it is still available for use, it is no longer recommended, and users are encouraged to transition to newer alternatives."
+    },
+    {
+        "question": "What happens to a Gradle release once a new major version is released?",
+        "options": {
+            "A": "The previous major version becomes maintenance only.",
+            "B": "The previous major version is immediately removed from the system.",
+            "C": "The previous major version continues to receive all updates and new features.",
+            "D": "The previous major version is merged with the new major version."
+        },
+        "correct_answer": "A",
+        "explanation": "Once a new major version of Gradle is released, the previous major version becomes maintenance only. This means it will only receive critical bug fixes and security fixes, while new features and updates will be directed towards the latest major version."
+    },
+    {
+        "question": "What is the purpose of the release candidate (RC) phase in Gradle's development process?",
+        "options": {
+            "A": "To finalize the features for the next major version.",
+            "B": "To test the stability of the release before it becomes generally available.",
+            "C": "To introduce new features that will be available in the next release.",
+            "D": "To deprecate existing features in the current version."
+        },
+        "correct_answer": "B",
+        "explanation": "The release candidate (RC) phase is designed to test the stability of the release before it is promoted to a general availability (GA) release. During this phase, any issues found can be addressed, ensuring that the final release is stable and reliable for users."
+    },
+    {
+        "question": "What does it mean for a feature to be marked as 'deprecated' in Gradle?",
+        "options": {
+            "A": "The feature is permanently removed from Gradle.",
+            "B": "The feature is still available but is recommended to be avoided as it may be removed in the future.",
+            "C": "The feature is newly introduced and is in the testing phase.",
+            "D": "The feature is fully supported and will not change."
+        },
+        "correct_answer": "B",
+        "explanation": "A feature marked as 'deprecated' in Gradle indicates that it is still available for use but is recommended to be avoided. This is because it may be removed in a future release, and users are encouraged to transition to alternative features that are actively supported."
+    },
+    {
+        "question": "How does Gradle ensure backward compatibility for its features?",
+        "options": {
+            "A": "By removing all deprecated features in the next major release.",
+            "B": "By maintaining all public features indefinitely unless they are deprecated.",
+            "C": "By allowing any feature to change without notice.",
+            "D": "By introducing new features without any testing."
+        },
+        "correct_answer": "B",
+        "explanation": "Gradle ensures backward compatibility by maintaining all public features indefinitely unless they are deprecated. This means that once a feature is introduced, it will remain available and stable for users, providing a reliable development environment across major versions."
+    }
+]

@@ -1,0 +1,266 @@
+[
+    {
+        "question": "What is a dynamic version in the context of dependency management?",
+        "options": {
+            "A": "A fixed version that does not change over time",
+            "B": "A version that allows for the latest version or a range of versions to be used",
+            "C": "A version that is only applicable to production environments",
+            "D": "A version that is guaranteed to be stable and compatible"
+        },
+        "correct_answer": "B",
+        "explanation": "A dynamic version allows for the latest version or a range of versions to be used in dependency management. This flexibility is useful during development or when creating libraries that need to be compatible with various versions of dependencies."
+    },
+    {
+        "question": "What is a potential risk of using dynamic versions in a project?",
+        "options": {
+            "A": "They always lead to faster build times",
+            "B": "They can cause unreproducible builds due to API changes",
+            "C": "They ensure that all dependencies are always up to date",
+            "D": "They eliminate the need for version control in projects"
+        },
+        "correct_answer": "B",
+        "explanation": "Using dynamic versions can lead to unreproducible builds because as new versions of a dependency are released, they may introduce incompatible API changes. This can result in the source code failing to compile if it relies on a specific API that has changed."
+    },
+    {
+        "question": "How does Gradle handle caching for dynamic versions by default?",
+        "options": {
+            "A": "It caches them indefinitely without checking for updates",
+            "B": "It caches them for 24 hours before checking for new versions",
+            "C": "It does not cache dynamic versions at all",
+            "D": "It caches them for 1 hour and then checks for updates"
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle caches dynamic versions for 24 hours. During this time, it does not attempt to resolve newer versions from the declared repositories, which helps to reduce unnecessary network calls and improve build performance."
+    },
+    {
+        "question": "What is a common use case for declaring a dynamic version?",
+        "options": {
+            "A": "To ensure that a project always uses the same version of a dependency",
+            "B": "To integrate the latest features of a dependency during development",
+            "C": "To avoid using any external libraries in a project",
+            "D": "To lock a dependency to a specific version for production"
+        },
+        "correct_answer": "B",
+        "explanation": "A common use case for declaring a dynamic version is to integrate the latest features of a dependency during development. This allows developers to take advantage of cutting-edge updates without having to manually change the version number each time a new release occurs."
+    },
+    {
+        "question": "What is a changing version in the context of dependency management?",
+        "options": {
+            "A": "A version that is stable and ready for production use",
+            "B": "A version that is still under active development and may change frequently",
+            "C": "A version that is locked and cannot be modified",
+            "D": "A version that is only used for testing purposes"
+        },
+        "correct_answer": "B",
+        "explanation": "A changing version refers to a version of a module that is still under active development and has not yet been released as a stable version. This means that the features and functionalities may evolve, and the version can change frequently, making it suitable for early integration but potentially unstable."
+    },
+    {
+        "question": "What suffix is commonly associated with changing versions in Maven repositories?",
+        "options": {
+            "A": "-RELEASE",
+            "B": "-FINAL",
+            "C": "-SNAPSHOT",
+            "D": "-BETA"
+        },
+        "correct_answer": "C",
+        "explanation": "In Maven repositories, changing versions are typically denoted with the suffix '-SNAPSHOT'. This indicates that the version is still in development and may change, allowing users to access the latest updates before a stable release is available."
+    },
+    {
+        "question": "What is a potential risk of using changing versions in a project?",
+        "options": {
+            "A": "They are guaranteed to be compatible with all other dependencies.",
+            "B": "They can lead to unreproducible builds due to frequent changes.",
+            "C": "They are always faster to compile than stable versions.",
+            "D": "They require no additional configuration in the build system."
+        },
+        "correct_answer": "B",
+        "explanation": "Using changing versions can lead to unreproducible builds because the underlying code may change frequently. As new versions are released, they may introduce incompatible API changes, which can cause the project to fail to compile or behave unexpectedly."
+    },
+    {
+        "question": "How does Gradle handle caching for changing versions by default?",
+        "options": {
+            "A": "It caches them indefinitely without checking for updates.",
+            "B": "It caches them for 24 hours before checking for new versions.",
+            "C": "It does not cache changing versions at all.",
+            "D": "It caches them for 1 hour before checking for new versions."
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle caches changing versions for 24 hours. During this time, it does not attempt to resolve newer versions from the declared repositories, which helps to reduce unnecessary network calls but may delay access to the latest changes."
+    },
+    {
+        "question": "What is the purpose of using dynamic versions in dependency management?",
+        "options": {
+            "A": "To ensure that the same version of a dependency is always used",
+            "B": "To allow the use of the latest version or a range of versions of a dependency",
+            "C": "To prevent any changes to dependencies during development",
+            "D": "To lock dependencies to a specific version for reproducibility"
+        },
+        "correct_answer": "B",
+        "explanation": "Dynamic versions in dependency management allow developers to use the latest version or a specified range of versions of a dependency. This flexibility is useful during development or when integrating new features, but it can also lead to potential issues with compatibility if the API of the dependency changes."
+    },
+    {
+        "question": "What is a changing version in the context of dependency management?",
+        "options": {
+            "A": "A version that is fixed and does not change over time",
+            "B": "A version that is under active development and may change frequently",
+            "C": "A version that is guaranteed to be stable and reliable",
+            "D": "A version that is only used for testing purposes"
+        },
+        "correct_answer": "B",
+        "explanation": "A changing version refers to a dependency that is still under active development and may change frequently. This is often indicated by a suffix like '-SNAPSHOT' in Maven repositories, signifying that the version is not yet stable and can evolve as new features are added."
+    },
+    {
+        "question": "What is a potential risk of using dynamic versions in a build?",
+        "options": {
+            "A": "They always lead to faster build times",
+            "B": "They can cause the build to break if an incompatible API change occurs",
+            "C": "They guarantee that the build will always succeed",
+            "D": "They prevent the use of any other versioning strategy"
+        },
+        "correct_answer": "B",
+        "explanation": "Using dynamic versions can lead to the risk of breaking the build if a new version of a dependency introduces an incompatible API change. This is because the build may automatically resolve to the latest version, which might not be compatible with the existing code."
+    },
+    {
+        "question": "How does Gradle handle caching for dynamic versions by default?",
+        "options": {
+            "A": "It caches them indefinitely without checking for updates",
+            "B": "It caches them for 24 hours before checking for new versions",
+            "C": "It does not cache them at all",
+            "D": "It caches them for 1 hour and then checks for updates"
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle caches dynamic versions for 24 hours. During this time, it does not attempt to resolve newer versions from the declared repositories, which helps to reduce the number of network calls but may lead to using outdated versions if not refreshed."
+    },
+    {
+        "question": "What is the primary goal of achieving reproducible builds?",
+        "options": {
+            "A": "To ensure that builds produce the same output every time they are executed",
+            "B": "To allow for faster build times by skipping certain steps",
+            "C": "To enable the use of dynamic versions for all dependencies",
+            "D": "To automatically update dependencies to their latest versions"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary goal of achieving reproducible builds is to ensure that builds produce the same output every time they are executed. This consistency is crucial for debugging, collaboration, and maintaining the integrity of software projects, as it allows developers to trust that the build process will yield the same results under the same conditions."
+    },
+    {
+        "question": "Which practice can help maintain reproducible builds when using dynamic versions?",
+        "options": {
+            "A": "Using dependency locking",
+            "B": "Always using the latest version of dependencies",
+            "C": "Avoiding version specifications altogether",
+            "D": "Manually updating dependencies for each build"
+        },
+        "correct_answer": "A",
+        "explanation": "Using dependency locking can help maintain reproducible builds when using dynamic versions. Dependency locking ensures that specific versions of dependencies are used consistently across builds, preventing unexpected changes that could arise from using the latest versions or dynamic version specifications."
+    },
+    {
+        "question": "What is a potential risk of using dynamic versions in a build?",
+        "options": {
+            "A": "They can lead to longer build times",
+            "B": "They may cause the build to produce inconsistent outputs",
+            "C": "They require manual updates for each dependency",
+            "D": "They are not compatible with version ranges"
+        },
+        "correct_answer": "B",
+        "explanation": "A potential risk of using dynamic versions in a build is that they may cause the build to produce inconsistent outputs. As new versions of dependencies are released, they may introduce changes that are incompatible with the existing code, leading to build failures or unexpected behavior."
+    },
+    {
+        "question": "How does Gradle handle caching for dynamic versions by default?",
+        "options": {
+            "A": "It caches them indefinitely until manually cleared",
+            "B": "It caches them for 24 hours",
+            "C": "It does not cache them at all",
+            "D": "It caches them for 1 hour"
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle caches dynamic versions for 24 hours. During this time, it does not attempt to resolve newer versions from the declared repositories, which helps to reduce the number of network calls and can improve build performance, but may also lead to outdated dependencies if not managed properly."
+    },
+    {
+        "question": "What is the default caching duration for dynamic versions in Gradle?",
+        "options": {
+            "A": "12 hours",
+            "B": "24 hours",
+            "C": "48 hours",
+            "D": "72 hours"
+        },
+        "correct_answer": "B",
+        "explanation": "By default, Gradle caches dynamic versions of dependencies for 24 hours. During this time, it does not attempt to resolve newer versions from the declared repositories, which helps in maintaining build stability."
+    },
+    {
+        "question": "What is a potential risk of using dynamic versions in a build?",
+        "options": {
+            "A": "Increased build speed",
+            "B": "Unreproducible builds",
+            "C": "Improved dependency management",
+            "D": "Reduced network usage"
+        },
+        "correct_answer": "B",
+        "explanation": "Using dynamic versions can lead to unreproducible builds because as new versions of a particular module are published, their APIs may become incompatible with the existing source code. This can cause builds to fail unexpectedly when a new version is resolved."
+    },
+    {
+        "question": "What is the purpose of controlling dynamic version caching in Gradle?",
+        "options": {
+            "A": "To ensure all dependencies are downloaded every time",
+            "B": "To manage how often Gradle checks for new versions",
+            "C": "To eliminate the need for versioning",
+            "D": "To speed up the build process by avoiding dependency resolution"
+        },
+        "correct_answer": "B",
+        "explanation": "Controlling dynamic version caching allows developers to manage how often Gradle checks for new versions of dependencies. By adjusting the time-to-live (TTL) threshold, developers can specify whether Gradle should resolve new versions more frequently or maintain the default caching duration."
+    },
+    {
+        "question": "What is a changing version in the context of Gradle?",
+        "options": {
+            "A": "A version that is fixed and does not change",
+            "B": "A version that is under active development and may change frequently",
+            "C": "A version that is only used for testing purposes",
+            "D": "A version that is deprecated and no longer supported"
+        },
+        "correct_answer": "B",
+        "explanation": "A changing version indicates that the feature set is still under active development and has not yet been released as a stable version. This allows consumers to integrate unfinished versions of artifacts early and often, which is common in development workflows."
+    },
+    {
+        "question": "What is the primary purpose of component selection rules in Gradle?",
+        "options": {
+            "A": "To specify the exact version of a dependency to use",
+            "B": "To influence which component instance should be selected when multiple versions are available",
+            "C": "To automatically update all dependencies to their latest versions",
+            "D": "To lock dependencies to a specific version for all builds"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of component selection rules in Gradle is to influence which component instance should be selected when multiple versions are available. These rules allow for explicit rejection of certain versions based on defined conditions, ensuring that only acceptable versions are considered for selection."
+    },
+    {
+        "question": "How are component selection rules applied when resolving dependencies?",
+        "options": {
+            "A": "They are applied only to the latest version of a dependency",
+            "B": "They are applied starting with the highest version first",
+            "C": "They are applied randomly to any available version",
+            "D": "They are applied only to static versions of dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "Component selection rules are applied starting with the highest version first. The version selected will be the first one that all component selection rules accept, ensuring that the most suitable version is chosen based on the defined criteria."
+    },
+    {
+        "question": "What happens if a version of a module is explicitly rejected by a component selection rule?",
+        "options": {
+            "A": "The version will be selected anyway if it is the latest",
+            "B": "The version will be ignored and not considered for selection",
+            "C": "The version will be marked for future consideration",
+            "D": "The version will be automatically updated to the next available version"
+        },
+        "correct_answer": "B",
+        "explanation": "If a version of a module is explicitly rejected by a component selection rule, that version will be ignored and not considered for selection. This allows developers to control which versions are acceptable for their projects based on specific criteria."
+    },
+    {
+        "question": "Which of the following can be considered when applying component selection rules?",
+        "options": {
+            "A": "Only the version number of the dependency",
+            "B": "Component metadata and additional attributes",
+            "C": "The popularity of the dependency in the community",
+            "D": "The date of the last update of the dependency"
+        },
+        "correct_answer": "B",
+        "explanation": "Component selection rules can consider component metadata and additional attributes when selecting a version. This allows for more informed decisions based on the characteristics of the components, rather than relying solely on version numbers."
+    }
+]

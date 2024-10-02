@@ -1,0 +1,233 @@
+[
+    {
+        "question": "What is the primary role of a producer in dependency management?",
+        "options": {
+            "A": "To consume artifacts produced by other projects",
+            "B": "To generate artifacts for consumption by other projects",
+            "C": "To manage the runtime environment of applications",
+            "D": "To resolve conflicts between different versions of dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "In dependency management, a producer is responsible for generating artifacts that will be consumed by other projects. This involves creating libraries or components that other developers or applications can utilize, distinguishing the producer's role from that of a consumer, which relies on these artifacts."
+    },
+    {
+        "question": "What does strong encapsulation in dependency management ensure?",
+        "options": {
+            "A": "All dependencies are visible to consumers at all times",
+            "B": "Only the public API of a library is exposed to its consumers",
+            "C": "Consumers can modify the implementation details of a library",
+            "D": "Producers must include all dependencies in their public API"
+        },
+        "correct_answer": "B",
+        "explanation": "Strong encapsulation ensures that only the public API of a library is visible to its consumers, while implementation dependencies remain hidden. This means that consumers do not need to be aware of the internal workings of a library, which helps maintain a clean separation between the library's interface and its implementation."
+    },
+    {
+        "question": "What is a consequence of adding a dependency to a library project?",
+        "options": {
+            "A": "It will not affect any consumers of the library",
+            "B": "It becomes a transitive dependency for consumers of the library",
+            "C": "It automatically resolves all version conflicts for consumers",
+            "D": "It is only relevant during the runtime of the library"
+        },
+        "correct_answer": "B",
+        "explanation": "When a developer adds a dependency to a library project, that dependency becomes a transitive dependency for any consumers of the library. This means that the consumer may also need to manage this dependency, including resolving any version conflicts that arise, which can impact the consumer's project."
+    },
+    {
+        "question": "Why is it important for producers to be respectful of consumers in dependency management?",
+        "options": {
+            "A": "To ensure that consumers can modify the producer's code",
+            "B": "To prevent consumers from experiencing issues due to transitive dependencies",
+            "C": "To allow consumers to access all implementation details of the producer",
+            "D": "To ensure that all consumers use the same version of the producer's artifacts"
+        },
+        "correct_answer": "B",
+        "explanation": "Producers must be respectful of consumers because adding dependencies can create transitive dependencies that may lead to conflicts or issues for the consumers. Understanding the implications of these dependencies helps producers make informed decisions that minimize negative impacts on consumers' projects."
+    },
+    {
+        "question": "What is the primary role of a producer in dependency management?",
+        "options": {
+            "A": "To consume artifacts produced by other projects",
+            "B": "To generate artifacts for consumption by others",
+            "C": "To manage the runtime environment of applications",
+            "D": "To resolve conflicts between different versions of dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary role of a producer in dependency management is to generate artifacts that can be consumed by other projects or tasks. Producers create libraries or components that provide functionality for consumers, which depend on these artifacts to build their own projects."
+    },
+    {
+        "question": "How does strong encapsulation benefit consumers of a library?",
+        "options": {
+            "A": "It allows consumers to access all implementation details of the library.",
+            "B": "It ensures that only the public API of the library is visible to consumers.",
+            "C": "It prevents consumers from using any dependencies of the library.",
+            "D": "It requires consumers to manage all dependencies of the library."
+        },
+        "correct_answer": "B",
+        "explanation": "Strong encapsulation benefits consumers by ensuring that they only see the public API of a library, rather than all its implementation details. This means that consumers are shielded from changes in the library's internal workings, which can help maintain compatibility and reduce the risk of breaking changes."
+    },
+    {
+        "question": "What is a consequence of adding a dependency to a library project?",
+        "options": {
+            "A": "It will only affect the library itself and not its consumers.",
+            "B": "It becomes a transitive dependency for any consumers of the library.",
+            "C": "It automatically resolves all version conflicts for consumers.",
+            "D": "It eliminates the need for consumers to manage their own dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "When a dependency is added to a library project, it becomes a transitive dependency for any consumers of that library. This means that the consumers may also need to manage this dependency, and it could lead to conflicts if the consumer requires a different version of the same dependency."
+    },
+    {
+        "question": "What should a developer consider when including a new dependency in a library?",
+        "options": {
+            "A": "The dependency will not affect any consumers of the library.",
+            "B": "The dependency may introduce conflicts for consumers with different version requirements.",
+            "C": "The dependency will automatically be excluded from the consumer's classpath.",
+            "D": "The dependency will only be relevant at runtime and not during compilation."
+        },
+        "correct_answer": "B",
+        "explanation": "When including a new dependency in a library, a developer must consider that it may introduce conflicts for consumers if those consumers require different versions of the same dependency. This awareness is crucial for maintaining compatibility and ensuring that consumers can function correctly without issues arising from transitive dependencies."
+    },
+    {
+        "question": "What is the primary purpose of producer variants in dependency management?",
+        "options": {
+            "A": "To generate different artifacts for different types of consumers",
+            "B": "To ensure all dependencies are included in the consumer's classpath",
+            "C": "To simplify the build process for applications only",
+            "D": "To eliminate the need for version control in libraries"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of producer variants is to generate different artifacts tailored for different types of consumers. This allows a single codebase to produce multiple binaries that can cater to specific needs, such as different versions for Java and Android projects, ensuring that consumers receive the appropriate artifact for their context."
+    },
+    {
+        "question": "How does Gradle handle the visibility of dependencies in producer variants?",
+        "options": {
+            "A": "All dependencies are visible to consumers regardless of configuration",
+            "B": "Only implementation dependencies are visible to consumers",
+            "C": "API dependencies are visible, while implementation dependencies are not",
+            "D": "Dependencies are hidden from all consumers to prevent conflicts"
+        },
+        "correct_answer": "C",
+        "explanation": "In Gradle, API dependencies are visible to consumers, while implementation dependencies are not. This strong encapsulation ensures that consumers only see the public API of a library, which helps to prevent unnecessary exposure of internal implementation details and reduces the risk of conflicts."
+    },
+    {
+        "question": "What is a consequence of adding a dependency to a library in terms of consumer impact?",
+        "options": {
+            "A": "It has no effect on consumers if they are not using the library",
+            "B": "It becomes a transitive dependency for all consumers of the library",
+            "C": "It automatically resolves all version conflicts for consumers",
+            "D": "It restricts consumers from using any other dependencies"
+        },
+        "correct_answer": "B",
+        "explanation": "When a developer adds a dependency to a library, it becomes a transitive dependency for all consumers of that library. This means that the dependency may affect the consumers' projects, especially in terms of version conflicts, as the consumers may require a different version of the same dependency."
+    },
+    {
+        "question": "What does strong encapsulation in dependency management ensure?",
+        "options": {
+            "A": "Consumers only see the public API of a library.",
+            "B": "All dependencies are visible to consumers.",
+            "C": "Producers must expose all implementation details.",
+            "D": "Consumers can modify the library's implementation."
+        },
+        "correct_answer": "A",
+        "explanation": "Strong encapsulation ensures that consumers only see the public API of a library, which means they are not exposed to the implementation details or internal dependencies of the library. This helps maintain a clean separation between the library's interface and its implementation, allowing for better modularity and reducing the risk of breaking changes affecting consumers."
+    },
+    {
+        "question": "What happens to dependencies assigned to the 'implementation' configuration in a library?",
+        "options": {
+            "A": "They are included in the compile classpath of the consumer.",
+            "B": "They are excluded from the compile classpath of the consumer.",
+            "C": "They are only available at runtime for the consumer.",
+            "D": "They are automatically upgraded for the consumer."
+        },
+        "correct_answer": "B",
+        "explanation": "Dependencies assigned to the 'implementation' configuration of a library do not end up on the compile classpath of the consumer. This means that while the library can use these dependencies during its compilation, the consumer is not required to be aware of them, thus maintaining strong encapsulation."
+    },
+    {
+        "question": "Why is it important for producers to consider the impact of their dependencies on consumers?",
+        "options": {
+            "A": "Producers can change the API without notifying consumers.",
+            "B": "Dependencies can become transitive and affect conflict resolution.",
+            "C": "Consumers are responsible for managing all dependencies.",
+            "D": "Producers should always use the latest versions of dependencies."
+        },
+        "correct_answer": "B",
+        "explanation": "It is important for producers to consider the impact of their dependencies on consumers because when a producer adds a dependency, it becomes a transitive dependency for the consumers. This can lead to conflicts if the consumer requires a different version of that dependency, making it crucial for producers to be mindful of their choices to avoid breaking changes for consumers."
+    },
+    {
+        "question": "What are transitive dependencies in the context of dependency management?",
+        "options": {
+            "A": "Dependencies that are directly included in a project.",
+            "B": "Dependencies that are required by other dependencies.",
+            "C": "Dependencies that are only needed at runtime.",
+            "D": "Dependencies that are ignored by the consumer."
+        },
+        "correct_answer": "B",
+        "explanation": "Transitive dependencies are those that are required by other dependencies. When a project includes a library, any dependencies that library has become transitive dependencies for the project. This means that the consumer of the library must also be aware of these additional dependencies, as they can affect the overall dependency graph and may lead to version conflicts."
+    },
+    {
+        "question": "Why is it important for developers to consider transitive dependencies?",
+        "options": {
+            "A": "They can be ignored without consequences.",
+            "B": "They can lead to conflicts if different versions are required.",
+            "C": "They are only relevant for applications, not libraries.",
+            "D": "They automatically resolve themselves without developer input."
+        },
+        "correct_answer": "B",
+        "explanation": "It is important for developers to consider transitive dependencies because they can lead to conflicts if different versions are required by the consumer. When a library adds a dependency, it becomes a transitive dependency for any project that uses that library. If the consumer requires a different version of that dependency, it can create a conflict that needs to be resolved, impacting the functionality of the consumer project."
+    },
+    {
+        "question": "What is a potential consequence of adding a dependency to a library project?",
+        "options": {
+            "A": "It will only affect the library itself and not its consumers.",
+            "B": "It may create transitive dependencies for consumers, affecting their builds.",
+            "C": "It will automatically update all consumer projects to the latest version.",
+            "D": "It will eliminate the need for version management in consumer projects."
+        },
+        "correct_answer": "B",
+        "explanation": "Adding a dependency to a library project can create transitive dependencies for consumers, which may affect their builds. This is because the added dependency becomes part of the consumer's dependency graph, and if the consumer requires a different version, it can lead to conflicts. Developers must be mindful of these consequences to ensure compatibility and stability for consumers."
+    },
+    {
+        "question": "What is the primary concern of conflict resolution in dependency management?",
+        "options": {
+            "A": "Ensuring that all dependencies are included in the final build",
+            "B": "Resolving discrepancies between different versions of dependencies",
+            "C": "Minimizing the size of the final application",
+            "D": "Maximizing the number of dependencies used in a project"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary concern of conflict resolution in dependency management is to resolve discrepancies between different versions of dependencies. This ensures that a project can function correctly without version conflicts that could lead to runtime errors or unexpected behavior."
+    },
+    {
+        "question": "What happens when a dependency is added to a project in terms of its consumers?",
+        "options": {
+            "A": "It becomes a transitive dependency for all consumers of that project",
+            "B": "It is only relevant to the project itself and not to any consumers",
+            "C": "It automatically updates all other dependencies in the project",
+            "D": "It is ignored by the dependency management system"
+        },
+        "correct_answer": "A",
+        "explanation": "When a dependency is added to a project, it becomes a transitive dependency for all consumers of that project. This means that any project that depends on the original project will also inherit this new dependency, which can lead to potential conflicts if the consumer requires a different version."
+    },
+    {
+        "question": "Why is it important for producers to consider the impact of their dependencies on consumers?",
+        "options": {
+            "A": "Because consumers have no influence on the dependencies of producers",
+            "B": "Because dependencies can affect the performance of the producer's application",
+            "C": "Because adding dependencies can lead to conflicts for consumers",
+            "D": "Because consumers are responsible for managing their own dependencies"
+        },
+        "correct_answer": "C",
+        "explanation": "It is important for producers to consider the impact of their dependencies on consumers because adding dependencies can lead to conflicts for consumers. If a consumer requires a different version of a dependency, it may cause issues in the consumer's project, highlighting the need for careful dependency management."
+    },
+    {
+        "question": "What is a consequence of strong encapsulation in dependency management?",
+        "options": {
+            "A": "All dependencies are visible to consumers regardless of their configuration",
+            "B": "Implementation dependencies do not appear on the compile classpath of consumers",
+            "C": "Consumers can modify the implementation details of a library",
+            "D": "Producers must expose all internal dependencies to consumers"
+        },
+        "correct_answer": "B",
+        "explanation": "A consequence of strong encapsulation in dependency management is that implementation dependencies do not appear on the compile classpath of consumers. This means that consumers only need to be aware of the public API of a library, which helps to reduce potential conflicts and maintain a clean separation between implementation details and the API."
+    }
+]
