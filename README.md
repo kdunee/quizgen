@@ -20,6 +20,7 @@ Before you begin, ensure you have:
 
 - Python 3.10 or later installed.
 - An OpenAI API key (available from [OpenAI](https://platform.openai.com/signup)).
+- Anki with AnkiConnect installed if you plan to use the Anki import feature.
 
 ### Step-by-Step Setup
 
@@ -36,7 +37,7 @@ Before you begin, ensure you have:
    pip install -r requirements.txt
    ```
 
-1. Set up your OpenAI API key:
+1. Set up your OpenAI API key as an environment variable:
 
    ```bash
    export OPENAI_API_KEY=your_api_key_here
@@ -52,91 +53,64 @@ Before you begin, ensure you have:
 
 Here's the typical workflow for using QuizGen:
 
-1. **Generate Questions:** Use `generate_questions.py` or `generate_questions_batch.py` to create questions from your source material. This outputs JSON files.
-2. **Convert to CSV (Optional):** If needed, use `convert_questions.py` or `convert_questions_batch.py` to convert the JSON files to CSV.
-3. **Generate Embeddings:** Use `generate_embeddings.py` or `generate_embeddings_batch.py` to create embeddings from the JSON questions. This is necessary for the next step.
-4. **Thin Out Questions (Optional):**  Use `thin_out_questions.py` with the CSV and embeddings to reduce similar questions.
-5. **Import to Anki (Optional):** Use `import_to_anki.py` with the CSV files to import your questions into Anki.
+1. **Generate Questions:** Use the `generate` command to create questions from your source material. This outputs JSON files.
+2. **Convert to CSV (Optional):** If needed, use the `convert` command to convert the JSON files to CSV.
+3. **Generate Embeddings:** Use the `embeddings` command to create embeddings from the JSON questions. This is necessary for the next step.
+4. **Thin Out Questions (Optional):**  Use the `thin` command with the CSV and embeddings to reduce similar questions.
+5. **Import to Anki (Optional):** Use the `anki` command with the CSV files to import your questions into Anki.
 
 ## Usage
 
-This section outlines the steps for using QuizGen. Note that some steps depend on the output of previous steps.
-
-### Generating Questions
-
-To generate questions from your educational content (output: JSON files):
+QuizGen provides a unified command-line interface (CLI) to access all its functionalities. Here's how you can use it:
 
 ```bash
-python generate_questions.py --chapter-path path/to/chapter.md --title "Course Title" --output path/to/output.json
+python quizgen.py <command> [options]
 ```
 
-For batch processing multiple chapters:
+**Available Commands:**
 
-```bash
-python generate_questions_batch.py --input-dir path/to/source/files --output-dir path/to/output/json --title "Course Title" --file-filter "*.md"
-```
+- **generate:** Generate questions from educational content.
 
-### Converting Questions to CSV (Optional)
+   ```bash
+    # Generate questions from a single chapter:
+    python quizgen.py generate --chapter-path path/to/chapter.md --title "Course Title" --output path/to/output.json
 
-To convert JSON questions to CSV format for easier review or integration with other tools (requires JSON output from "Generating Questions"):
+    # Generate questions in batch mode:
+    python quizgen.py generate --batch --input-dir path/to/source/files --output-dir path/to/output/json --title "Course Title"
+    ```
 
-```bash
-python convert_questions_batch.py --input-dir path/to/json/files --output-dir path/to/csv/output
-```
+- **convert:** Convert questions from JSON to CSV format.
 
-Or, for a single file:
+    ```bash
+    # Convert questions to CSV:
+    python quizgen.py convert --batch --input-dir path/to/json/files --output-dir path/to/csv/output
+    ```
 
-```bash
-python convert_questions.py --input-path input_file.json --output-path output_file.csv
-```
+- **embeddings:** Generate embeddings for question comparison.
 
-### Generating Embeddings
+    ```bash
+    # Generate embeddings:
+    python quizgen.py embeddings --batch --input-dir path/to/json/files --output-dir path/to/embeddings/output
+    ```
 
-To create embeddings for generated questions (requires JSON output from "Generating Questions"):
+- **thin:** Reduce similar questions using embeddings.
 
-```bash
-python generate_embeddings_batch.py --input-dir path/to/json/files --output-dir path/to/embeddings/output
-```
+    ```bash
+    # Thin out questions:
+    python quizgen.py thin --csv-dir path/to/csv/files --embeddings-dir path/to/embeddings --output-dir path/to/output --T 10 
+    ```
 
-Or for a single file:
+- **anki:** Import questions into Anki.
 
-```bash
-python generate_embeddings.py --input-path input_questions.json --output-path output_embeddings.npy
-```
-
-### Thinning Out Questions (Optional)
-
-To reduce similar questions based on their embeddings (requires CSV and embeddings output from previous steps):
-
-```bash
-python thin_out_questions.py --csv-dir path/to/csv/files --embeddings-dir path/to/embeddings --output-dir path/to/output --T number_of_expected_questions
-```
-
-- `--T`: Specifies the target number of questions to retain.
-
-### Importing to Anki (Optional)
-
-To import questions into Anki as flashcards (requires CSV output from "Converting Questions to CSV"):
-
-```bash
-python import_to_anki.py --input-dir path/to/csv/files --root-deck-name "Root Deck Name"
-```
-
-Ensure Anki is installed and properly set up (with AnkiConnect) before importing.
+    ```bash
+    # Import to Anki:
+    python quizgen.py anki --input-dir path/to/csv/files --root-deck-name "Root Deck Name" 
+    ```
 
 ## Project Structure
 
-- `generate_questions.py`: Core script for generating questions from a single chapter.
-- `generate_questions_batch.py`: Processes multiple chapters in batch.
-- `convert_questions.py`: Converts generated questions from JSON to CSV format.
-- `convert_questions_batch.py`: Batch converts JSON questions to CSV.
-- `generate_embeddings.py`: Generates embeddings for question comparison.
-- `generate_embeddings_batch.py`: Batch processing of embeddings.
-- `thin_out_questions.py`: Reduces similar questions using embeddings.
-- `import_to_anki.py`: Imports CSV-formatted questions into Anki.
-
-### Directories
-
+- `quizgen.py`: The main CLI script.
+- `scripts/`: Directory containing the individual scripts for each functionality.
 - `prompts/`: Templates used by AI models to guide question generation.
 - `examples/`: Sample source materials and example outputs demonstrating usage.
 
@@ -146,8 +120,9 @@ Contributions are welcome! Here's how you can contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Submit a Pull Request with a description of your changes.
+3. Install the project in editable mode: `pip install -e .`
+4. Make your changes.
+5. Submit a Pull Request with a description of your changes.
 
 For bug reports or feature requests, please open an issue on GitHub. Ensure that your contributions follow the coding guidelines.
 
