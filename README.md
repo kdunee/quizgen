@@ -55,13 +55,13 @@ Before you begin, ensure you have:
 To generate questions for a single chapter:
 
 ```bash
-python generate_questions.py --chapter-path path/to/chapter.md --title "Course Title" --output-path output/questions.json
+python generate_questions.py --chapter-path path/to/chapter.md --title "Course Title" --output path/to/output.json
 ```
 
 For batch processing multiple chapters:
 
 ```bash
-python generate_questions_batch.py path/to/base/directory --title "Course Title" --filter "*.md"
+python generate_questions_batch.py --input-dir path/to/source/files --output-dir path/to/output/json --title "Course Title" --file-filter "*.md"
 ```
 
 ### Converting Questions to CSV
@@ -69,13 +69,13 @@ python generate_questions_batch.py path/to/base/directory --title "Course Title"
 To convert JSON questions to CSV format for easier review or integration:
 
 ```bash
-python convert_questions_batch.py path/to/base/directory
+python convert_questions_batch.py --input-dir path/to/json/files --output-dir path/to/csv/output
 ```
 
 Or, for a single file:
 
 ```bash
-python convert_questions.py input_file.json output_file.csv
+python convert_questions.py --input-path input_file.json --output-path output_file.csv
 ```
 
 ### Generating Embeddings
@@ -83,7 +83,7 @@ python convert_questions.py input_file.json output_file.csv
 To create embeddings for generated questions:
 
 ```bash
-python generate_embeddings_batch.py path/to/base/directory
+python generate_embeddings_batch.py --input-dir path/to/json/files --output-dir path/to/embeddings/output
 ```
 
 Or for a single file:
@@ -97,7 +97,7 @@ python generate_embeddings.py --input-path input_questions.json --output-path ou
 To reduce similar questions based on their embeddings:
 
 ```bash
-python thin_out_questions.py csv_directory embeddings_directory output_directory --T number_of_expected_questions
+python thin_out_questions.py --csv-dir path/to/csv/files --embeddings-dir path/to/embeddings --output-dir path/to/output --T number_of_expected_questions
 ```
 
 - `--T`: Specifies the target number of questions to retain.
@@ -107,7 +107,7 @@ python thin_out_questions.py csv_directory embeddings_directory output_directory
 To import questions into Anki as flashcards:
 
 ```bash
-python import_to_anki.py directory_of_csv_files root_deck_name
+python import_to_anki.py --input-dir path/to/csv/files --root-deck-name "Root Deck Name"
 ```
 
 Ensure Anki is installed and properly set up (with AnkiConnect) before importing.

@@ -31,9 +31,9 @@ def json_to_anki_csv(input_file, output_file):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert JSON questions to Anki CSV format.")
-    parser.add_argument("input_file", help="Path to the input JSON file.")
-    parser.add_argument("output_file", help="Path to the output CSV file.")
+    parser.add_argument("--input-path", required=True, help="Path to the input JSON file.")
+    parser.add_argument("--output-path", required=True, help="Path to the output CSV file.")
     args = parser.parse_args()
 
-    json_to_anki_csv(args.input_file, args.output_file)
-    print(f"CSV file created at: {args.output_file}")
+    json_to_anki_csv(args.input_path, args.output_path)
+    print(f"CSV file created at: {args.output_path}")

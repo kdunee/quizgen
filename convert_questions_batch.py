@@ -4,14 +4,14 @@ import subprocess
 from tqdm import tqdm
 import sys
 
-def convert_questions(base_dir):
-    base_dir = pathlib.Path(base_dir).resolve()
-    questions_dir = base_dir / 'questions_json'
-    json_files = list(questions_dir.rglob('*.json'))
+def convert_questions(input_dir, output_dir):
+    input_dir = pathlib.Path(input_dir).resolve()
+    output_dir = pathlib.Path(output_dir).resolve()
+    json_files = list(input_dir.rglob('*.json'))
 
     for json_file in tqdm(json_files, desc="Converting files"):
-        relative_path = json_file.relative_to(questions_dir)
-        output_path = base_dir / 'questions_csv' / relative_path.with_suffix('.csv')
+        relative_path = json_file.relative_to(input_dir)
+        output_path = output_dir / relative_path.with_suffix('.csv')
 
         # Ensure the output directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -29,10 +29,11 @@ def convert_questions(base_dir):
 
 def main():
     parser = argparse.ArgumentParser(description="Convert JSON question files to CSV format")
-    parser.add_argument("base_dir", help="Base directory containing questions_json and questions_csv directories")
+    parser.add_argument("--input-dir", required=True, help="Input directory containing JSON question files")
+    parser.add_argument("--output-dir", required=True, help="Output directory for CSV files")
     args = parser.parse_args()
 
-    convert_questions(args.base_dir)
+    convert_questions(args.input_dir, args.output_dir)
 
 if __name__ == "__main__":
     main()

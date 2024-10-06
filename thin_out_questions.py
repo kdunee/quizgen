@@ -124,15 +124,15 @@ def main():
     parser = argparse.ArgumentParser(
         description="Thin out a set of question embeddings to T questions, ensuring that the selected questions are diverse and not too similar to each other."
     )
-    parser.add_argument("csv_directory", help="Directory containing CSV files")
-    parser.add_argument("embeddings_directory", help="Directory containing .npy files")
-    parser.add_argument("output_directory", help="Output directory")
+    parser.add_argument("--csv-dir", required=True, help="Directory containing CSV files")
+    parser.add_argument("--embeddings-dir", required=True, help="Directory containing .npy files")
+    parser.add_argument("--output-dir", required=True, help="Output directory")
     parser.add_argument("--T", type=int, default=100, help="Number of questions to select")
 
     args = parser.parse_args()
 
     # Load the embeddings
-    embeddings, index = load_embeddings(args.embeddings_directory)
+    embeddings, index = load_embeddings(args.embeddings_dir)
 
     # Thin out the embeddings
     selected_indices = thin_out_questions(embeddings, T=args.T)
@@ -147,7 +147,7 @@ def main():
     # Read only the necessary CSV files and select the required rows
     selected_questions = []
     for csv_file_path, row_numbers in csv_file_rows.items():
-        full_csv_path = os.path.join(args.csv_directory, csv_file_path)
+        full_csv_path = os.path.join(args.csv_dir, csv_file_path)
         with open(full_csv_path, 'r', newline='', encoding='utf-8') as csvfile:
             reader = csv.reader(csvfile)
             content = list(reader)
@@ -155,10 +155,10 @@ def main():
                 selected_questions.append(content[row_number])
 
     # Ensure the output directory exists
-    os.makedirs(args.output_directory, exist_ok=True)
+    os.makedirs(args.output_dir, exist_ok=True)
 
     # Write the selected questions to a new CSV file in the output directory
-    output_file_path = os.path.join(args.output_directory, f"thinned_out_questions_{args.T}.csv")
+    output_file_path = os.path.join(args.output_dir, f"thinned_out_questions_{args.T}.csv")
     with open(output_file_path, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(selected_questions)

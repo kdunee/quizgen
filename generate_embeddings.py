@@ -11,8 +11,8 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input-path", type=str)
-    parser.add_argument("--output-path", type=str)
+    parser.add_argument("--input-path", required=True, type=str)
+    parser.add_argument("--output-path", required=True, type=str)
     parser.add_argument("--embedding-model", type=str, default="text-embedding-3-small")
     args = parser.parse_args()
 

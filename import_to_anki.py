@@ -66,11 +66,11 @@ def process_csv_files(root_dir, root_deck_name):
 
 def main():
     parser = argparse.ArgumentParser(description='Import flashcards into Anki using AnkiConnect.')
-    parser.add_argument('directory', type=str, help='The root directory containing CSV files.')
-    parser.add_argument('root_deck_name', type=str, help='The root deck name in Anki.')
+    parser.add_argument('--input-dir', type=str, required=True, help='The root directory containing CSV files.')
+    parser.add_argument('--root-deck-name', type=str, required=True, help='The root deck name in Anki.')
     args = parser.parse_args()
 
-    process_csv_files(args.directory, args.root_deck_name)
+    process_csv_files(args.input_dir, args.root_deck_name)
 
 if __name__ == '__main__':
     main()
