@@ -1,5 +1,4 @@
 openai==1.47.1
-ipykernel==6.29.5
-python-dotenv==1.0.1
 scikit-learn==1.5.2
+numpy==2.1.2
 tqdm==4.66.5

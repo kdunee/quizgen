@@ -1,8 +1,9 @@
 import argparse
 import pathlib
 import subprocess
-from tqdm import tqdm
 import sys
+
+from tqdm import tqdm
 
 def generate_questions(input_dir, output_dir, title, file_filter, concept_model, questions_model):
     input_dir = pathlib.Path(input_dir).resolve()

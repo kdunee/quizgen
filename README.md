@@ -18,7 +18,7 @@ The tool processes content, extracts key concepts, generates relevant questions,
 
 Before you begin, ensure you have:
 
-- Python 3.8 or later installed.
+- Python 3.10 or later installed.
 - An OpenAI API key (available from [OpenAI](https://platform.openai.com/signup)).
 
 ### Step-by-Step Setup
@@ -44,7 +44,7 @@ Before you begin, ensure you have:
 
 ### Troubleshooting
 
-- **Python version issues**: Ensure your Python version is 3.8+ by running `python --version`.
+- **Python version issues**: Ensure your Python version is 3.10+ by running `python --version`.
 - **Outdated `pip`**: Upgrade `pip` if needed by running `python -m pip install --upgrade pip`.
 - For additional help, check the [OpenAI documentation](https://platform.openai.com/docs).
 
