@@ -26,7 +26,7 @@ Before you begin, ensure you have:
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/kdunee/quizgen.git](https://github.com/kdunee/quizgen.git)
+   git clone https://github.com/kdunee/quizgen.git
    cd quizgen
    ```
 
