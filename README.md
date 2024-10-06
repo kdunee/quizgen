@@ -27,7 +27,7 @@ Before you begin, ensure you have:
 The easiest way to install QuizGen is via pip:
 
 ```bash
-pip install quizgen
+pip install quizgen-ai
 ```
 
 ### Development Setup
