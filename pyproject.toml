@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quizgen-ai"
-version = "0.1.0"
+version = "0.1.1-dev"
 description = "AI-Powered Question Generation Tool"
 authors = ["Kosma Dunikowski <kosmadunikowski@gmail.com>"]
 readme = "README.md"
