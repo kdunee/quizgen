@@ -123,6 +123,13 @@ quizgen <command> [options]
     quizgen anki --input-dir path/to/csv/files --root-deck-name "Root Deck Name" 
     ```
 
+## Example Anki Deck
+
+Check out this example Anki deck generated using QuizGen:
+
+- **Gradle Flashcards:** This deck is based on the official Gradle User Manual (October 2024) and covers a wide range of topics related to the Gradle build tool.
+  - [Download the Anki deck](https://ankiweb.net/shared/info/1572773429)
+
 ## Contributing
 
 Contributions are welcome! Here's how you can contribute:
