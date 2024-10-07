@@ -5,6 +5,9 @@ description = "AI-Powered Question Generation Tool"
 authors = ["Kosma Dunikowski <kosmadunikowski@gmail.com>"]
 readme = "README.md"
 packages = [{include = "quizgen", from = "src"}]
+repository = "https://github.com/kdunee/quizgen"
+license = "MIT"
+keywords = ["ai", "quiz", "anki", "llm"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
