@@ -7,6 +7,7 @@ from collections import defaultdict
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
+
 def thin_out_questions(embeddings, T):
     """
     Thins out a set of question embeddings to approximately T questions, ensuring that the
@@ -71,6 +72,7 @@ def thin_out_questions(embeddings, T):
     # Step 5: Return the indices of the selected questions
     return final_selected_indices[:T]  # Trim to exactly T
 
+
 def load_embeddings(directory_path: str) -> Tuple[np.ndarray, List[Tuple[str, int]]]:
     """
     Loads all .npy files from a directory tree and returns a single matrix of
@@ -97,22 +99,22 @@ def load_embeddings(directory_path: str) -> Tuple[np.ndarray, List[Tuple[str, in
 
     for root, _, files in os.walk(directory_path):
         for file in files:
-            if file.endswith('.npy'):
+            if file.endswith(".npy"):
                 file_path = os.path.join(root, file)
                 relative_path = os.path.relpath(file_path, directory_path)
-                
+
                 # Load the embeddings from the .npy file
                 file_embeddings = np.load(file_path)
                 if file_embeddings.shape == (0,):
                     continue
-                
+
                 # Add the embeddings to the list
                 embeddings.append(file_embeddings)
-                
+
                 # Create index entries for each embedding in this file
                 for i in range(file_embeddings.shape[0]):
                     index.append((relative_path, i))
-                
+
                 total_rows += file_embeddings.shape[0]
 
     # Concatenate all embeddings into a single matrix
@@ -120,14 +122,21 @@ def load_embeddings(directory_path: str) -> Tuple[np.ndarray, List[Tuple[str, in
 
     return combined_embeddings, index
 
+
 def main():
     parser = argparse.ArgumentParser(
         description="Thin out a set of question embeddings to T questions, ensuring that the selected questions are diverse and not too similar to each other."
     )
-    parser.add_argument("--csv-dir", required=True, help="Directory containing CSV files")
-    parser.add_argument("--embeddings-dir", required=True, help="Directory containing .npy files")
+    parser.add_argument(
+        "--csv-dir", required=True, help="Directory containing CSV files"
+    )
+    parser.add_argument(
+        "--embeddings-dir", required=True, help="Directory containing .npy files"
+    )
     parser.add_argument("--output-dir", required=True, help="Output directory")
-    parser.add_argument("--T", type=int, default=100, help="Number of questions to select")
+    parser.add_argument(
+        "--T", type=int, default=100, help="Number of questions to select"
+    )
 
     args = parser.parse_args()
 
@@ -141,14 +150,14 @@ def main():
     csv_file_rows = defaultdict(list)
     for idx in selected_indices:
         npy_file_path, row_number = index[idx]
-        csv_file_path = npy_file_path.replace('.npy', '.csv')
+        csv_file_path = npy_file_path.replace(".npy", ".csv")
         csv_file_rows[csv_file_path].append(row_number)
 
     # Read only the necessary CSV files and select the required rows
     selected_questions = []
     for csv_file_path, row_numbers in csv_file_rows.items():
         full_csv_path = os.path.join(args.csv_dir, csv_file_path)
-        with open(full_csv_path, 'r', newline='', encoding='utf-8') as csvfile:
+        with open(full_csv_path, "r", newline="", encoding="utf-8") as csvfile:
             reader = csv.reader(csvfile)
             content = list(reader)
             for row_number in row_numbers:
@@ -158,12 +167,17 @@ def main():
     os.makedirs(args.output_dir, exist_ok=True)
 
     # Write the selected questions to a new CSV file in the output directory
-    output_file_path = os.path.join(args.output_dir, f"thinned_out_questions_{args.T}.csv")
-    with open(output_file_path, 'w', newline='', encoding='utf-8') as csvfile:
+    output_file_path = os.path.join(
+        args.output_dir, f"thinned_out_questions_{args.T}.csv"
+    )
+    with open(output_file_path, "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(selected_questions)
 
-    print(f"Selected {len(selected_questions)} questions and saved them to {output_file_path}")
+    print(
+        f"Selected {len(selected_questions)} questions and saved them to {output_file_path}"
+    )
+
 
 if __name__ == "__main__":
     main()

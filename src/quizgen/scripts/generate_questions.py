@@ -65,19 +65,37 @@ def create_quiz_generation_prompt(chapter: str, concept: str) -> str:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
-    parser = argparse.ArgumentParser(description="Generate questions for a single chapter")
-    parser.add_argument("--chapter-path", type=str, required=True, help="Path to the chapter file")
-    parser.add_argument("--title", type=str, required=True, help="Title of the course or chapter")
-    parser.add_argument("--output", type=str, required=True, help="Path to the output JSON file")
-    parser.add_argument("--concept-model", type=str, default="gpt-4o-mini-2024-07-18", help="Model to use for concept extraction")
-    parser.add_argument("--questions-model", type=str, default="gpt-4o-2024-08-06", help="Model to use for question generation")
+    parser = argparse.ArgumentParser(
+        description="Generate questions for a single chapter"
+    )
+    parser.add_argument(
+        "--chapter-path", type=str, required=True, help="Path to the chapter file"
+    )
+    parser.add_argument(
+        "--title", type=str, required=True, help="Title of the course or chapter"
+    )
+    parser.add_argument(
+        "--output", type=str, required=True, help="Path to the output JSON file"
+    )
+    parser.add_argument(
+        "--concept-model",
+        type=str,
+        default="gpt-4o-mini-2024-07-18",
+        help="Model to use for concept extraction",
+    )
+    parser.add_argument(
+        "--questions-model",
+        type=str,
+        default="gpt-4o-2024-08-06",
+        help="Model to use for question generation",
+    )
     args = parser.parse_args()
 
     with open(args.chapter_path, "r", encoding="utf-8") as f:
         chapter = f.read()
 
     concepts = list_concepts(args.title, chapter, args.concept_model)
-    
+
     all_questions = []
     for concept in concepts:
         questions = generate_questions(chapter, concept, args.questions_model)

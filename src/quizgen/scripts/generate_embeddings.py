@@ -22,7 +22,13 @@ if __name__ == "__main__":
     all_embeddings = []
     for question in questions:
         question_text = question["question"]
-        embedding = openai_client.embeddings.create(input = [question_text], model=args.embedding_model).data[0].embedding
+        embedding = (
+            openai_client.embeddings.create(
+                input=[question_text], model=args.embedding_model
+            )
+            .data[0]
+            .embedding
+        )
         all_embeddings.append(embedding)
 
     all_embeddings = np.array(all_embeddings)
