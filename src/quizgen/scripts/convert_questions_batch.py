@@ -27,7 +27,14 @@ def convert_questions(input_dir, output_dir):
         print(f"Processing file: {relative_path}")
         script_path = os.path.join(os.path.dirname(__file__), "convert_questions.py")
         subprocess.run(
-            [sys.executable, script_path, str(json_file), str(output_path)],
+            [
+                sys.executable,
+                script_path,
+                "--input-path",
+                str(json_file),
+                "--output-path",
+                str(output_path),
+            ],
             check=True,
         )
         print(f"Finished processing file: {relative_path}")
