@@ -1,0 +1,409 @@
+[
+    {
+        "question": "What is the primary purpose of built-in functions in programming languages?",
+        "options": {
+            "A": "To provide predeclared functions that assist with common operations",
+            "B": "To define new data types for user-defined structures",
+            "C": "To manage memory allocation for complex data types",
+            "D": "To enforce strict type checking during compilation"
+        },
+        "correct_answer": "A",
+        "explanation": "Built-in functions serve the primary purpose of providing predeclared functions that assist with common operations, such as manipulating data structures, performing calculations, and managing memory. They are readily available for use without the need for user-defined implementations."
+    },
+    {
+        "question": "Which of the following statements is true regarding the built-in function 'append'?",
+        "options": {
+            "A": "It can only append a single value to a slice.",
+            "B": "It returns a new slice with the appended values.",
+            "C": "It modifies the original slice in all cases.",
+            "D": "It can append values of different types to a slice."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'append' function returns a new slice that includes the original elements along with the appended values. It does not modify the original slice in all cases, especially if the original slice's capacity is exceeded, in which case a new underlying array is allocated."
+    },
+    {
+        "question": "What does the built-in function 'copy' do?",
+        "options": {
+            "A": "It creates a duplicate of a variable in memory.",
+            "B": "It transfers elements from one slice to another and returns the number of elements copied.",
+            "C": "It merges two slices into one.",
+            "D": "It clears all elements from a slice."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'copy' function transfers elements from a source slice to a destination slice and returns the number of elements that were successfully copied. The number of elements copied is determined by the smaller length of the source or destination slices."
+    },
+    {
+        "question": "What is the result of calling the built-in function 'clear' on a nil slice?",
+        "options": {
+            "A": "It will throw an error.",
+            "B": "It will set the length of the slice to zero.",
+            "C": "It will have no effect (no-op).",
+            "D": "It will initialize the slice with default values."
+        },
+        "correct_answer": "C",
+        "explanation": "Calling the 'clear' function on a nil slice is a no-op, meaning it has no effect. The function is designed to delete or zero out elements, but if the slice is nil, there are no elements to clear."
+    },
+    {
+        "question": "Which built-in function is used to allocate storage for a variable of a specified type?",
+        "options": {
+            "A": "make",
+            "B": "new",
+            "C": "append",
+            "D": "copy"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'new' function is used to allocate storage for a variable of a specified type at runtime. It returns a pointer to the allocated memory, which is initialized to the zero value of that type."
+    },
+    {
+        "question": "What is the primary purpose of the built-in function 'append' in relation to slices?",
+        "options": {
+            "A": "To remove elements from a slice",
+            "B": "To add elements to a slice",
+            "C": "To create a new slice with the same elements",
+            "D": "To sort the elements of a slice"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the built-in function 'append' is to add elements to a slice. It allows for appending zero or more values to an existing slice and returns a new slice that includes the added elements."
+    },
+    {
+        "question": "What does the built-in function 'copy' do with slices?",
+        "options": {
+            "A": "It merges two slices into one",
+            "B": "It removes duplicate elements from a slice",
+            "C": "It copies elements from one slice to another",
+            "D": "It converts a slice into an array"
+        },
+        "correct_answer": "C",
+        "explanation": "The built-in function 'copy' is used to copy elements from one slice to another. It takes a source slice and a destination slice as arguments and returns the number of elements that were successfully copied."
+    },
+    {
+        "question": "What is the relationship between the length and capacity of a slice?",
+        "options": {
+            "A": "Length is always greater than capacity",
+            "B": "Length can be equal to or less than capacity",
+            "C": "Capacity is always zero for non-empty slices",
+            "D": "Length and capacity are the same for all slices"
+        },
+        "correct_answer": "B",
+        "explanation": "The relationship between the length and capacity of a slice is that the length can be equal to or less than the capacity. The capacity refers to the total number of elements that can be stored in the underlying array, while the length is the number of elements currently in the slice."
+    },
+    {
+        "question": "What happens if you attempt to append elements to a slice that does not have enough capacity?",
+        "options": {
+            "A": "The slice will automatically shrink in size",
+            "B": "A run-time error will occur",
+            "C": "A new underlying array will be allocated",
+            "D": "The append operation will be ignored"
+        },
+        "correct_answer": "C",
+        "explanation": "If you attempt to append elements to a slice that does not have enough capacity, the 'append' function will allocate a new underlying array that is sufficiently large to accommodate both the existing elements and the new elements being added."
+    },
+    {
+        "question": "What is the primary purpose of the built-in function 'delete' in Go?",
+        "options": {
+            "A": "To remove an element from a map",
+            "B": "To clear all elements from a slice",
+            "C": "To create a new map with specified keys",
+            "D": "To check if a key exists in a map"
+        },
+        "correct_answer": "A",
+        "explanation": "The built-in function 'delete' is specifically designed to remove an element with a specified key from a map. If the key does not exist or if the map is nil, the function performs no operation, making it a safe way to attempt to remove an entry without causing an error."
+    },
+    {
+        "question": "What happens when the 'clear' function is called on a nil map in Go?",
+        "options": {
+            "A": "It deletes all entries in the map.",
+            "B": "It returns an error.",
+            "C": "It performs no operation.",
+            "D": "It initializes the map with default values."
+        },
+        "correct_answer": "C",
+        "explanation": "When the 'clear' function is called on a nil map, it performs no operation. This means that calling 'clear' on a nil map is safe and will not result in an error or any changes to the map."
+    },
+    {
+        "question": "Which of the following statements is true regarding the built-in function 'len' when applied to a map?",
+        "options": {
+            "A": "It returns the number of keys in the map.",
+            "B": "It returns the total memory allocated for the map.",
+            "C": "It returns the length of the longest key in the map.",
+            "D": "It returns the number of values in the map."
+        },
+        "correct_answer": "A",
+        "explanation": "The built-in function 'len' when applied to a map returns the number of defined keys in that map. This provides a quick way to determine how many entries are present without needing to iterate through the map."
+    },
+    {
+        "question": "What is a requirement for the key type when using the 'delete' function on a map?",
+        "options": {
+            "A": "The key type must be a string.",
+            "B": "The key must be assignable to the key type of the map.",
+            "C": "The key must be an integer.",
+            "D": "The key must be a pointer type."
+        },
+        "correct_answer": "B",
+        "explanation": "When using the 'delete' function on a map, the key must be assignable to the key type of that map. This means that the key provided must be of a compatible type that matches the map's defined key type."
+    },
+    {
+        "question": "What is the primary purpose of the built-in function 'close' in relation to channels?",
+        "options": {
+            "A": "To send values to the channel",
+            "B": "To indicate that no more values will be sent on the channel",
+            "C": "To receive values from the channel",
+            "D": "To delete the channel from memory"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of the 'close' function is to indicate that no more values will be sent on the channel. This allows the receiving end to know when to stop waiting for new values, and it helps prevent sending to a closed channel, which would cause a run-time panic."
+    },
+    {
+        "question": "What happens if you attempt to close a nil channel using the 'close' function?",
+        "options": {
+            "A": "It successfully closes the channel without any issues.",
+            "B": "It results in a run-time panic.",
+            "C": "It simply does nothing and the program continues.",
+            "D": "It returns an error message."
+        },
+        "correct_answer": "B",
+        "explanation": "Attempting to close a nil channel results in a run-time panic. This is because the 'close' function expects a valid channel reference, and a nil channel does not meet this requirement."
+    },
+    {
+        "question": "What is the expected behavior of receive operations after a channel has been closed?",
+        "options": {
+            "A": "They will block until new values are sent.",
+            "B": "They will return the zero value for the channel's type without blocking.",
+            "C": "They will throw an error.",
+            "D": "They will return the last value sent on the channel."
+        },
+        "correct_answer": "B",
+        "explanation": "After a channel has been closed, receive operations will return the zero value for the channel's type without blocking, provided that all previously sent values have been received. This allows the program to handle the end of data transmission gracefully."
+    },
+    {
+        "question": "Which of the following statements is true regarding sending values to a closed channel?",
+        "options": {
+            "A": "It is allowed and will succeed.",
+            "B": "It will cause a run-time panic.",
+            "C": "It will silently fail without any notification.",
+            "D": "It will return an error code."
+        },
+        "correct_answer": "B",
+        "explanation": "Sending values to a closed channel will cause a run-time panic. This is a safety feature in Go to prevent data corruption and ensure that the program behaves predictably when dealing with channels."
+    },
+    {
+        "question": "What is the purpose of the built-in function 'complex' in Go?",
+        "options": {
+            "A": "To create a complex number from real and imaginary parts",
+            "B": "To extract the real part of a complex number",
+            "C": "To convert a complex number to a string representation",
+            "D": "To perform arithmetic operations on complex numbers"
+        },
+        "correct_answer": "A",
+        "explanation": "The 'complex' function is specifically designed to construct a complex number from given real and imaginary parts. It takes two floating-point arguments and returns a complex number, which can be of type complex64 or complex128 depending on the types of the arguments."
+    },
+    {
+        "question": "Which of the following statements is true about the 'real' and 'imag' functions?",
+        "options": {
+            "A": "They can only be used with integer types.",
+            "B": "They extract the real and imaginary parts from a complex number, respectively.",
+            "C": "They convert complex numbers into floating-point numbers.",
+            "D": "They are used to create complex numbers from real and imaginary parts."
+        },
+        "correct_answer": "B",
+        "explanation": "The 'real' and 'imag' functions are used to extract the real and imaginary parts of a complex number, respectively. They take a complex number as an argument and return the corresponding floating-point type, making them essential for manipulating complex numbers."
+    },
+    {
+        "question": "What type of arguments does the 'complex' function accept?",
+        "options": {
+            "A": "Any numeric type",
+            "B": "Two floating-point numbers of the same type",
+            "C": "Two integer numbers",
+            "D": "Any type of constant"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'complex' function requires two arguments that must be floating-point numbers of the same type. The return type is a complex number that corresponds to the type of the floating-point arguments, either complex64 or complex128."
+    },
+    {
+        "question": "What happens if the arguments to the 'complex' function are untyped constants?",
+        "options": {
+            "A": "They are treated as complex numbers.",
+            "B": "They must be converted to the same floating-point type.",
+            "C": "They will cause a compile-time error.",
+            "D": "They are ignored by the function."
+        },
+        "correct_answer": "B",
+        "explanation": "If the arguments to the 'complex' function are untyped constants, they are first implicitly converted to the type of the other argument. This ensures that both arguments are of the same floating-point type before creating the complex number."
+    },
+    {
+        "question": "What is the purpose of the built-in function 'new' in Go?",
+        "options": {
+            "A": "To allocate storage for a variable of a specified type",
+            "B": "To create a new slice with a specified length and capacity",
+            "C": "To initialize a map with a specified number of elements",
+            "D": "To append values to an existing slice"
+        },
+        "correct_answer": "A",
+        "explanation": "The built-in function 'new' is used to allocate storage for a variable of a specified type at runtime. It returns a pointer to the allocated memory, which is initialized to the zero value of that type. This is essential for dynamic memory management in Go."
+    },
+    {
+        "question": "What does the 'make' function do in Go?",
+        "options": {
+            "A": "Allocates memory for a variable and returns a pointer to it",
+            "B": "Creates and initializes slices, maps, or channels",
+            "C": "Copies elements from one slice to another",
+            "D": "Clears all elements from a map or slice"
+        },
+        "correct_answer": "B",
+        "explanation": "'make' is a built-in function in Go that is specifically used to create and initialize slices, maps, or channels. It allows for the specification of length and capacity for slices and initial space for maps, making it a crucial function for working with these data structures."
+    },
+    {
+        "question": "What is the difference between 'len' and 'cap' functions in Go?",
+        "options": {
+            "A": "'len' returns the number of elements in a slice, while 'cap' returns the total allocated space for the slice.",
+            "B": "'len' returns the total allocated space for a slice, while 'cap' returns the number of elements in the slice.",
+            "C": "'len' can only be used with arrays, while 'cap' can be used with slices and maps.",
+            "D": "'len' returns the length of a string, while 'cap' returns the length of an array."
+        },
+        "correct_answer": "A",
+        "explanation": "In Go, the 'len' function returns the number of elements currently in a slice, while the 'cap' function returns the total capacity of the slice, which is the number of elements for which space has been allocated in the underlying array. This distinction is important for understanding memory usage and performance."
+    },
+    {
+        "question": "What happens if you call 'new' with a type that is not a variable type?",
+        "options": {
+            "A": "It will allocate memory but not return a pointer.",
+            "B": "It will result in a compile-time error.",
+            "C": "It will return a nil pointer.",
+            "D": "It will allocate memory and return a pointer to the zero value."
+        },
+        "correct_answer": "B",
+        "explanation": "Calling 'new' with a type that is not a variable type will result in a compile-time error. The 'new' function is specifically designed to allocate memory for variable types, and using it with non-variable types is not permitted in Go."
+    },
+    {
+        "question": "What is the primary purpose of the built-in function 'panic' in Go?",
+        "options": {
+            "A": "To terminate the execution of a function and report an error condition",
+            "B": "To recover from a run-time panic and continue execution",
+            "C": "To allocate memory for a variable at run time",
+            "D": "To print debugging information to the console"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of the 'panic' function in Go is to terminate the execution of the current function and report an error condition. When 'panic' is called, it triggers a sequence that unwinds the stack, executing deferred functions, and ultimately leads to program termination if not recovered."
+    },
+    {
+        "question": "What does the built-in function 'recover' do in Go?",
+        "options": {
+            "A": "It initiates a panic sequence in the program",
+            "B": "It allows a program to manage the behavior of a panicking goroutine",
+            "C": "It prints the current state of the program to the console",
+            "D": "It allocates memory for a new variable"
+        },
+        "correct_answer": "B",
+        "explanation": "'Recover' is used in Go to manage the behavior of a panicking goroutine. It can be called within a deferred function to regain control after a panic has occurred, allowing the program to continue executing normally if handled properly."
+    },
+    {
+        "question": "What happens when a function calls 'panic'?",
+        "options": {
+            "A": "The program continues executing without interruption",
+            "B": "The function's execution is terminated, and deferred functions are executed",
+            "C": "The function returns a value indicating success or failure",
+            "D": "The program enters an infinite loop"
+        },
+        "correct_answer": "B",
+        "explanation": "When a function calls 'panic', its execution is terminated immediately, and any deferred functions are executed in the order they were deferred. This unwinding process continues up the call stack until the program is either recovered or terminated."
+    },
+    {
+        "question": "What is a no-op in the context of the 'delete' function?",
+        "options": {
+            "A": "It performs a deletion operation successfully",
+            "B": "It does nothing if the map is nil or the key does not exist",
+            "C": "It returns an error if the key is not found",
+            "D": "It creates a new map with the specified key"
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of the 'delete' function, a no-op means that if the map is nil or the specified key does not exist in the map, the function does nothing and does not produce an error. This behavior allows for safe deletion attempts without needing to check the existence of the key beforehand."
+    },
+    {
+        "question": "What does the built-in function 'len' return when applied to a slice?",
+        "options": {
+            "A": "The number of elements in the slice",
+            "B": "The total memory allocated for the slice",
+            "C": "The maximum number of elements the slice can hold",
+            "D": "The type of the elements in the slice"
+        },
+        "correct_answer": "A",
+        "explanation": "The built-in function 'len' returns the number of elements currently present in a slice. It provides a way to determine how many items are stored in the slice at any given time, which is crucial for managing data within the slice."
+    },
+    {
+        "question": "What does the built-in function 'cap' return when applied to a slice?",
+        "options": {
+            "A": "The number of elements currently in the slice",
+            "B": "The total number of elements that can be added to the slice without reallocating",
+            "C": "The size of the slice in bytes",
+            "D": "The type of the slice"
+        },
+        "correct_answer": "B",
+        "explanation": "The built-in function 'cap' returns the capacity of a slice, which is the total number of elements that can be stored in the underlying array without needing to allocate new memory. This is important for understanding how much more data can be added to the slice before it needs to be resized."
+    },
+    {
+        "question": "What is the relationship between the length and capacity of a slice?",
+        "options": {
+            "A": "Length can be greater than capacity",
+            "B": "Length is always equal to capacity",
+            "C": "Length is always less than or equal to capacity",
+            "D": "Length and capacity are unrelated"
+        },
+        "correct_answer": "C",
+        "explanation": "The relationship between the length and capacity of a slice is that the length is always less than or equal to the capacity. This means that while the length indicates how many elements are currently in the slice, the capacity indicates how many elements can be stored in the slice's underlying array without needing to allocate more memory."
+    },
+    {
+        "question": "What happens to the length of a slice when it is cleared or set to nil?",
+        "options": {
+            "A": "The length becomes negative",
+            "B": "The length remains unchanged",
+            "C": "The length becomes zero",
+            "D": "The length doubles"
+        },
+        "correct_answer": "C",
+        "explanation": "When a slice is cleared or set to nil, its length becomes zero. This indicates that there are no elements present in the slice, which is important for managing data and ensuring that operations on the slice are valid."
+    },
+    {
+        "question": "What is the purpose of type parameters in Go?",
+        "options": {
+            "A": "To allow functions and data structures to operate on different types without sacrificing type safety",
+            "B": "To define new data types that cannot be used with existing types",
+            "C": "To enforce strict type checking at compile time only",
+            "D": "To create global variables that can be accessed from any part of the program"
+        },
+        "correct_answer": "A",
+        "explanation": "Type parameters in Go enable functions and data structures to be generic, allowing them to operate on different types while maintaining type safety. This means that developers can write more flexible and reusable code without losing the benefits of static typing."
+    },
+    {
+        "question": "Which of the following statements is true regarding type parameters?",
+        "options": {
+            "A": "Type parameters can only be used with built-in types.",
+            "B": "Type parameters must be specified when defining a function or type.",
+            "C": "Type parameters can only be used in function return types.",
+            "D": "Type parameters are optional and can be omitted in function definitions."
+        },
+        "correct_answer": "B",
+        "explanation": "Type parameters must be specified when defining a function or type in Go. This allows the function or type to be generic and work with various types, enhancing code reusability and flexibility."
+    },
+    {
+        "question": "What happens if a type parameter is used with incompatible types?",
+        "options": {
+            "A": "The program will compile successfully but will fail at runtime.",
+            "B": "The program will not compile, and an error will be raised.",
+            "C": "The type parameter will be automatically converted to a compatible type.",
+            "D": "The incompatible types will be ignored, and the program will run with default values."
+        },
+        "correct_answer": "B",
+        "explanation": "If a type parameter is used with incompatible types, the program will not compile, and an error will be raised. This ensures that type safety is maintained, preventing potential runtime errors due to type mismatches."
+    },
+    {
+        "question": "In the context of type parameters, what does the term 'type set' refer to?",
+        "options": {
+            "A": "A collection of all possible types that can be used with a type parameter.",
+            "B": "A predefined list of types that are allowed in Go.",
+            "C": "A set of rules that govern how types can be combined.",
+            "D": "A method for defining new types based on existing ones."
+        },
+        "correct_answer": "A",
+        "explanation": "The term 'type set' refers to a collection of all possible types that can be used with a type parameter. This concept allows developers to specify constraints on the types that can be passed to a function or type, enhancing the flexibility and safety of generic programming."
+    }
+]

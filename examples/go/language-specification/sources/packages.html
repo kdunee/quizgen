@@ -1,0 +1,174 @@
+<h2 id="Packages">Packages</h2>
+
+<p>
+Go programs are constructed by linking together <i>packages</i>.
+A package in turn is constructed from one or more source files
+that together declare constants, types, variables and functions
+belonging to the package and which are accessible in all files
+of the same package. Those elements may be
+<a href="#Exported_identifiers">exported</a> and used in another package.
+</p>
+
+<h3 id="Source_file_organization">Source file organization</h3>
+
+<p>
+Each source file consists of a package clause defining the package
+to which it belongs, followed by a possibly empty set of import
+declarations that declare packages whose contents it wishes to use,
+followed by a possibly empty set of declarations of functions,
+types, variables, and constants.
+</p>
+
+<pre class="ebnf">
+SourceFile       = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" } .
+</pre>
+
+<h3 id="Package_clause">Package clause</h3>
+
+<p>
+A package clause begins each source file and defines the package
+to which the file belongs.
+</p>
+
+<pre class="ebnf">
+PackageClause  = "package" PackageName .
+PackageName    = identifier .
+</pre>
+
+<p>
+The PackageName must not be the <a href="#Blank_identifier">blank identifier</a>.
+</p>
+
+<pre>
+package math
+</pre>
+
+<p>
+A set of files sharing the same PackageName form the implementation of a package.
+An implementation may require that all source files for a package inhabit the same directory.
+</p>
+
+<h3 id="Import_declarations">Import declarations</h3>
+
+<p>
+An import declaration states that the source file containing the declaration
+depends on functionality of the <i>imported</i> package
+(<a href="#Program_initialization_and_execution">§Program initialization and execution</a>)
+and enables access to <a href="#Exported_identifiers">exported</a> identifiers
+of that package.
+The import names an identifier (PackageName) to be used for access and an ImportPath
+that specifies the package to be imported.
+</p>
+
+<pre class="ebnf">
+ImportDecl       = "import" ( ImportSpec | "(" { ImportSpec ";" } ")" ) .
+ImportSpec       = [ "." | PackageName ] ImportPath .
+ImportPath       = string_lit .
+</pre>
+
+<p>
+The PackageName is used in <a href="#Qualified_identifiers">qualified identifiers</a>
+to access exported identifiers of the package within the importing source file.
+It is declared in the <a href="#Blocks">file block</a>.
+If the PackageName is omitted, it defaults to the identifier specified in the
+<a href="#Package_clause">package clause</a> of the imported package.
+If an explicit period (<code>.</code>) appears instead of a name, all the
+package's exported identifiers declared in that package's
+<a href="#Blocks">package block</a> will be declared in the importing source
+file's file block and must be accessed without a qualifier.
+</p>
+
+<p>
+The interpretation of the ImportPath is implementation-dependent but
+it is typically a substring of the full file name of the compiled
+package and may be relative to a repository of installed packages.
+</p>
+
+<p>
+Implementation restriction: A compiler may restrict ImportPaths to
+non-empty strings using only characters belonging to
+<a href="https://www.unicode.org/versions/Unicode6.3.0/">Unicode's</a>
+L, M, N, P, and S general categories (the Graphic characters without
+spaces) and may also exclude the characters
+<code>!"#$%&amp;'()*,:;&lt;=&gt;?[\]^`{|}</code>
+and the Unicode replacement character U+FFFD.
+</p>
+
+<p>
+Consider a compiled a package containing the package clause
+<code>package math</code>, which exports function <code>Sin</code>, and
+installed the compiled package in the file identified by
+<code>"lib/math"</code>.
+This table illustrates how <code>Sin</code> is accessed in files
+that import the package after the
+various types of import declaration.
+</p>
+
+<pre class="grammar">
+Import declaration          Local name of Sin
+
+import   "lib/math"         math.Sin
+import m "lib/math"         m.Sin
+import . "lib/math"         Sin
+</pre>
+
+<p>
+An import declaration declares a dependency relation between
+the importing and imported package.
+It is illegal for a package to import itself, directly or indirectly,
+or to directly import a package without
+referring to any of its exported identifiers. To import a package solely for
+its side-effects (initialization), use the <a href="#Blank_identifier">blank</a>
+identifier as explicit package name:
+</p>
+
+<pre>
+import _ "lib/math"
+</pre>
+
+
+<h3 id="An_example_package">An example package</h3>
+
+<p>
+Here is a complete Go package that implements a concurrent prime sieve.
+</p>
+
+<pre>
+package main
+
+import "fmt"
+
+// Send the sequence 2, 3, 4, … to channel 'ch'.
+func generate(ch chan&lt;- int) {
+	for i := 2; ; i++ {
+		ch &lt;- i  // Send 'i' to channel 'ch'.
+	}
+}
+
+// Copy the values from channel 'src' to channel 'dst',
+// removing those divisible by 'prime'.
+func filter(src &lt;-chan int, dst chan&lt;- int, prime int) {
+	for i := range src {  // Loop over values received from 'src'.
+		if i%prime != 0 {
+			dst &lt;- i  // Send 'i' to channel 'dst'.
+		}
+	}
+}
+
+// The prime sieve: Daisy-chain filter processes together.
+func sieve() {
+	ch := make(chan int)  // Create a new channel.
+	go generate(ch)       // Start generate() as a subprocess.
+	for {
+		prime := &lt;-ch
+		fmt.Print(prime, "\n")
+		ch1 := make(chan int)
+		go filter(ch, ch1, prime)
+		ch = ch1
+	}
+}
+
+func main() {
+	sieve()
+}
+</pre>

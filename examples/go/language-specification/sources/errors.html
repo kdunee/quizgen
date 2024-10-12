@@ -1,0 +1,21 @@
+<h2 id="Errors">Errors</h2>
+
+<p>
+The predeclared type <code>error</code> is defined as
+</p>
+
+<pre>
+type error interface {
+	Error() string
+}
+</pre>
+
+<p>
+It is the conventional interface for representing an error condition,
+with the nil value representing no error.
+For instance, a function to read data from a file might be defined:
+</p>
+
+<pre>
+func Read(f *File, b []byte) (n int, err error)
+</pre>

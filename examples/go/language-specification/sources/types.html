@@ -1,0 +1,970 @@
+<h2 id="Types">Types</h2>
+
+<p>
+A type determines a set of values together with operations and methods specific
+to those values. A type may be denoted by a <i>type name</i>, if it has one, which must be
+followed by <a href="#Instantiations">type arguments</a> if the type is generic.
+A type may also be specified using a <i>type literal</i>, which composes a type
+from existing types.
+</p>
+
+<pre class="ebnf">
+Type      = TypeName [ TypeArgs ] | TypeLit | "(" Type ")" .
+TypeName  = identifier | QualifiedIdent .
+TypeArgs  = "[" TypeList [ "," ] "]" .
+TypeList  = Type { "," Type } .
+TypeLit   = ArrayType | StructType | PointerType | FunctionType | InterfaceType |
+            SliceType | MapType | ChannelType .
+</pre>
+
+<p>
+The language <a href="#Predeclared_identifiers">predeclares</a> certain type names.
+Others are introduced with <a href="#Type_declarations">type declarations</a>
+or <a href="#Type_parameter_declarations">type parameter lists</a>.
+<i>Composite types</i>&mdash;array, struct, pointer, function,
+interface, slice, map, and channel types&mdash;may be constructed using
+type literals.
+</p>
+
+<p>
+Predeclared types, defined types, and type parameters are called <i>named types</i>.
+An alias denotes a named type if the type given in the alias declaration is a named type.
+</p>
+
+<h3 id="Boolean_types">Boolean types</h3>
+
+<p>
+A <i>boolean type</i> represents the set of Boolean truth values
+denoted by the predeclared constants <code>true</code>
+and <code>false</code>. The predeclared boolean type is <code>bool</code>;
+it is a <a href="#Type_definitions">defined type</a>.
+</p>
+
+<h3 id="Numeric_types">Numeric types</h3>
+
+<p>
+An <i>integer</i>, <i>floating-point</i>, or <i>complex</i> type
+represents the set of integer, floating-point, or complex values, respectively.
+They are collectively called <i>numeric types</i>.
+The predeclared architecture-independent numeric types are:
+</p>
+
+<pre class="grammar">
+uint8       the set of all unsigned  8-bit integers (0 to 255)
+uint16      the set of all unsigned 16-bit integers (0 to 65535)
+uint32      the set of all unsigned 32-bit integers (0 to 4294967295)
+uint64      the set of all unsigned 64-bit integers (0 to 18446744073709551615)
+
+int8        the set of all signed  8-bit integers (-128 to 127)
+int16       the set of all signed 16-bit integers (-32768 to 32767)
+int32       the set of all signed 32-bit integers (-2147483648 to 2147483647)
+int64       the set of all signed 64-bit integers (-9223372036854775808 to 9223372036854775807)
+
+float32     the set of all IEEE 754 32-bit floating-point numbers
+float64     the set of all IEEE 754 64-bit floating-point numbers
+
+complex64   the set of all complex numbers with float32 real and imaginary parts
+complex128  the set of all complex numbers with float64 real and imaginary parts
+
+byte        alias for uint8
+rune        alias for int32
+</pre>
+
+<p>
+The value of an <i>n</i>-bit integer is <i>n</i> bits wide and represented using
+<a href="https://en.wikipedia.org/wiki/Two's_complement">two's complement arithmetic</a>.
+</p>
+
+<p>
+There is also a set of predeclared integer types with implementation-specific sizes:
+</p>
+
+<pre class="grammar">
+uint     either 32 or 64 bits
+int      same size as uint
+uintptr  an unsigned integer large enough to store the uninterpreted bits of a pointer value
+</pre>
+
+<p>
+To avoid portability issues all numeric types are <a href="#Type_definitions">defined
+types</a> and thus distinct except
+<code>byte</code>, which is an <a href="#Alias_declarations">alias</a> for <code>uint8</code>, and
+<code>rune</code>, which is an alias for <code>int32</code>.
+Explicit conversions
+are required when different numeric types are mixed in an expression
+or assignment. For instance, <code>int32</code> and <code>int</code>
+are not the same type even though they may have the same size on a
+particular architecture.
+</p>
+
+<h3 id="String_types">String types</h3>
+
+<p>
+A <i>string type</i> represents the set of string values.
+A string value is a (possibly empty) sequence of bytes.
+The number of bytes is called the length of the string and is never negative.
+Strings are immutable: once created,
+it is impossible to change the contents of a string.
+The predeclared string type is <code>string</code>;
+it is a <a href="#Type_definitions">defined type</a>.
+</p>
+
+<p>
+The length of a string <code>s</code> can be discovered using
+the built-in function <a href="#Length_and_capacity"><code>len</code></a>.
+The length is a compile-time constant if the string is a constant.
+A string's bytes can be accessed by integer <a href="#Index_expressions">indices</a>
+0 through <code>len(s)-1</code>.
+It is illegal to take the address of such an element; if
+<code>s[i]</code> is the <code>i</code>'th byte of a
+string, <code>&amp;s[i]</code> is invalid.
+</p>
+
+
+<h3 id="Array_types">Array types</h3>
+
+<p>
+An array is a numbered sequence of elements of a single
+type, called the element type.
+The number of elements is called the length of the array and is never negative.
+</p>
+
+<pre class="ebnf">
+ArrayType   = "[" ArrayLength "]" ElementType .
+ArrayLength = Expression .
+ElementType = Type .
+</pre>
+
+<p>
+The length is part of the array's type; it must evaluate to a
+non-negative <a href="#Constants">constant</a>
+<a href="#Representability">representable</a> by a value
+of type <code>int</code>.
+The length of array <code>a</code> can be discovered
+using the built-in function <a href="#Length_and_capacity"><code>len</code></a>.
+The elements can be addressed by integer <a href="#Index_expressions">indices</a>
+0 through <code>len(a)-1</code>.
+Array types are always one-dimensional but may be composed to form
+multi-dimensional types.
+</p>
+
+<pre>
+[32]byte
+[2*N] struct { x, y int32 }
+[1000]*float64
+[3][5]int
+[2][2][2]float64  // same as [2]([2]([2]float64))
+</pre>
+
+<p>
+An array type <code>T</code> may not have an element of type <code>T</code>,
+or of a type containing <code>T</code> as a component, directly or indirectly,
+if those containing types are only array or struct types.
+</p>
+
+<pre>
+// invalid array types
+type (
+	T1 [10]T1                 // element type of T1 is T1
+	T2 [10]struct{ f T2 }     // T2 contains T2 as component of a struct
+	T3 [10]T4                 // T3 contains T3 as component of a struct in T4
+	T4 struct{ f T3 }         // T4 contains T4 as component of array T3 in a struct
+)
+
+// valid array types
+type (
+	T5 [10]*T5                // T5 contains T5 as component of a pointer
+	T6 [10]func() T6          // T6 contains T6 as component of a function type
+	T7 [10]struct{ f []T7 }   // T7 contains T7 as component of a slice in a struct
+)
+</pre>
+
+<h3 id="Slice_types">Slice types</h3>
+
+<p>
+A slice is a descriptor for a contiguous segment of an <i>underlying array</i> and
+provides access to a numbered sequence of elements from that array.
+A slice type denotes the set of all slices of arrays of its element type.
+The number of elements is called the length of the slice and is never negative.
+The value of an uninitialized slice is <code>nil</code>.
+</p>
+
+<pre class="ebnf">
+SliceType = "[" "]" ElementType .
+</pre>
+
+<p>
+The length of a slice <code>s</code> can be discovered by the built-in function
+<a href="#Length_and_capacity"><code>len</code></a>; unlike with arrays it may change during
+execution.  The elements can be addressed by integer <a href="#Index_expressions">indices</a>
+0 through <code>len(s)-1</code>.  The slice index of a
+given element may be less than the index of the same element in the
+underlying array.
+</p>
+<p>
+A slice, once initialized, is always associated with an underlying
+array that holds its elements.  A slice therefore shares storage
+with its array and with other slices of the same array; by contrast,
+distinct arrays always represent distinct storage.
+</p>
+<p>
+The array underlying a slice may extend past the end of the slice.
+The <i>capacity</i> is a measure of that extent: it is the sum of
+the length of the slice and the length of the array beyond the slice;
+a slice of length up to that capacity can be created by
+<a href="#Slice_expressions"><i>slicing</i></a> a new one from the original slice.
+The capacity of a slice <code>a</code> can be discovered using the
+built-in function <a href="#Length_and_capacity"><code>cap(a)</code></a>.
+</p>
+
+<p>
+A new, initialized slice value for a given element type <code>T</code> may be
+made using the built-in function
+<a href="#Making_slices_maps_and_channels"><code>make</code></a>,
+which takes a slice type
+and parameters specifying the length and optionally the capacity.
+A slice created with <code>make</code> always allocates a new, hidden array
+to which the returned slice value refers. That is, executing
+</p>
+
+<pre>
+make([]T, length, capacity)
+</pre>
+
+<p>
+produces the same slice as allocating an array and <a href="#Slice_expressions">slicing</a>
+it, so these two expressions are equivalent:
+</p>
+
+<pre>
+make([]int, 50, 100)
+new([100]int)[0:50]
+</pre>
+
+<p>
+Like arrays, slices are always one-dimensional but may be composed to construct
+higher-dimensional objects.
+With arrays of arrays, the inner arrays are, by construction, always the same length;
+however with slices of slices (or arrays of slices), the inner lengths may vary dynamically.
+Moreover, the inner slices must be initialized individually.
+</p>
+
+<h3 id="Struct_types">Struct types</h3>
+
+<p>
+A struct is a sequence of named elements, called fields, each of which has a
+name and a type. Field names may be specified explicitly (IdentifierList) or
+implicitly (EmbeddedField).
+Within a struct, non-<a href="#Blank_identifier">blank</a> field names must
+be <a href="#Uniqueness_of_identifiers">unique</a>.
+</p>
+
+<pre class="ebnf">
+StructType    = "struct" "{" { FieldDecl ";" } "}" .
+FieldDecl     = (IdentifierList Type | EmbeddedField) [ Tag ] .
+EmbeddedField = [ "*" ] TypeName [ TypeArgs ] .
+Tag           = string_lit .
+</pre>
+
+<pre>
+// An empty struct.
+struct {}
+
+// A struct with 6 fields.
+struct {
+	x, y int
+	u float32
+	_ float32  // padding
+	A *[]int
+	F func()
+}
+</pre>
+
+<p>
+A field declared with a type but no explicit field name is called an <i>embedded field</i>.
+An embedded field must be specified as
+a type name <code>T</code> or as a pointer to a non-interface type name <code>*T</code>,
+and <code>T</code> itself may not be
+a pointer type or type parameter. The unqualified type name acts as the field name.
+</p>
+
+<pre>
+// A struct with four embedded fields of types T1, *T2, P.T3 and *P.T4
+struct {
+	T1        // field name is T1
+	*T2       // field name is T2
+	P.T3      // field name is T3
+	*P.T4     // field name is T4
+	x, y int  // field names are x and y
+}
+</pre>
+
+<p>
+The following declaration is illegal because field names must be unique
+in a struct type:
+</p>
+
+<pre>
+struct {
+	T     // conflicts with embedded field *T and *P.T
+	*T    // conflicts with embedded field T and *P.T
+	*P.T  // conflicts with embedded field T and *T
+}
+</pre>
+
+<p>
+A field or <a href="#Method_declarations">method</a> <code>f</code> of an
+embedded field in a struct <code>x</code> is called <i>promoted</i> if
+<code>x.f</code> is a legal <a href="#Selectors">selector</a> that denotes
+that field or method <code>f</code>.
+</p>
+
+<p>
+Promoted fields act like ordinary fields
+of a struct except that they cannot be used as field names in
+<a href="#Composite_literals">composite literals</a> of the struct.
+</p>
+
+<p>
+Given a struct type <code>S</code> and a type name
+<code>T</code>, promoted methods are included in the method set of the struct as follows:
+</p>
+<ul>
+	<li>
+	If <code>S</code> contains an embedded field <code>T</code>,
+	the <a href="#Method_sets">method sets</a> of <code>S</code>
+	and <code>*S</code> both include promoted methods with receiver
+	<code>T</code>. The method set of <code>*S</code> also
+	includes promoted methods with receiver <code>*T</code>.
+	</li>
+
+	<li>
+	If <code>S</code> contains an embedded field <code>*T</code>,
+	the method sets of <code>S</code> and <code>*S</code> both
+	include promoted methods with receiver <code>T</code> or
+	<code>*T</code>.
+	</li>
+</ul>
+
+<p>
+A field declaration may be followed by an optional string literal <i>tag</i>,
+which becomes an attribute for all the fields in the corresponding
+field declaration. An empty tag string is equivalent to an absent tag.
+The tags are made visible through a <a href="/pkg/reflect/#StructTag">reflection interface</a>
+and take part in <a href="#Type_identity">type identity</a> for structs
+but are otherwise ignored.
+</p>
+
+<pre>
+struct {
+	x, y float64 ""  // an empty tag string is like an absent tag
+	name string  "any string is permitted as a tag"
+	_    [4]byte "ceci n'est pas un champ de structure"
+}
+
+// A struct corresponding to a TimeStamp protocol buffer.
+// The tag strings define the protocol buffer field numbers;
+// they follow the convention outlined by the reflect package.
+struct {
+	microsec  uint64 `protobuf:"1"`
+	serverIP6 uint64 `protobuf:"2"`
+}
+</pre>
+
+<p>
+A struct type <code>T</code> may not contain a field of type <code>T</code>,
+or of a type containing <code>T</code> as a component, directly or indirectly,
+if those containing types are only array or struct types.
+</p>
+
+<pre>
+// invalid struct types
+type (
+	T1 struct{ T1 }            // T1 contains a field of T1
+	T2 struct{ f [10]T2 }      // T2 contains T2 as component of an array
+	T3 struct{ T4 }            // T3 contains T3 as component of an array in struct T4
+	T4 struct{ f [10]T3 }      // T4 contains T4 as component of struct T3 in an array
+)
+
+// valid struct types
+type (
+	T5 struct{ f *T5 }         // T5 contains T5 as component of a pointer
+	T6 struct{ f func() T6 }   // T6 contains T6 as component of a function type
+	T7 struct{ f [10][]T7 }    // T7 contains T7 as component of a slice in an array
+)
+</pre>
+
+<h3 id="Pointer_types">Pointer types</h3>
+
+<p>
+A pointer type denotes the set of all pointers to <a href="#Variables">variables</a> of a given
+type, called the <i>base type</i> of the pointer.
+The value of an uninitialized pointer is <code>nil</code>.
+</p>
+
+<pre class="ebnf">
+PointerType = "*" BaseType .
+BaseType    = Type .
+</pre>
+
+<pre>
+*Point
+*[4]int
+</pre>
+
+<h3 id="Function_types">Function types</h3>
+
+<p>
+A function type denotes the set of all functions with the same parameter
+and result types. The value of an uninitialized variable of function type
+is <code>nil</code>.
+</p>
+
+<pre class="ebnf">
+FunctionType   = "func" Signature .
+Signature      = Parameters [ Result ] .
+Result         = Parameters | Type .
+Parameters     = "(" [ ParameterList [ "," ] ] ")" .
+ParameterList  = ParameterDecl { "," ParameterDecl } .
+ParameterDecl  = [ IdentifierList ] [ "..." ] Type .
+</pre>
+
+<p>
+Within a list of parameters or results, the names (IdentifierList)
+must either all be present or all be absent. If present, each name
+stands for one item (parameter or result) of the specified type and
+all non-<a href="#Blank_identifier">blank</a> names in the signature
+must be <a href="#Uniqueness_of_identifiers">unique</a>.
+If absent, each type stands for one item of that type.
+Parameter and result
+lists are always parenthesized except that if there is exactly
+one unnamed result it may be written as an unparenthesized type.
+</p>
+
+<p>
+The final incoming parameter in a function signature may have
+a type prefixed with <code>...</code>.
+A function with such a parameter is called <i>variadic</i> and
+may be invoked with zero or more arguments for that parameter.
+</p>
+
+<pre>
+func()
+func(x int) int
+func(a, _ int, z float32) bool
+func(a, b int, z float32) (bool)
+func(prefix string, values ...int)
+func(a, b int, z float64, opt ...interface{}) (success bool)
+func(int, int, float64) (float64, *[]int)
+func(n int) func(p *T)
+</pre>
+
+<h3 id="Interface_types">Interface types</h3>
+
+<p>
+An interface type defines a <i>type set</i>.
+A variable of interface type can store a value of any type that is in the type
+set of the interface. Such a type is said to
+<a href="#Implementing_an_interface">implement the interface</a>.
+The value of an uninitialized variable of interface type is <code>nil</code>.
+</p>
+
+<pre class="ebnf">
+InterfaceType  = "interface" "{" { InterfaceElem ";" } "}" .
+InterfaceElem  = MethodElem | TypeElem .
+MethodElem     = MethodName Signature .
+MethodName     = identifier .
+TypeElem       = TypeTerm { "|" TypeTerm } .
+TypeTerm       = Type | UnderlyingType .
+UnderlyingType = "~" Type .
+</pre>
+
+<p>
+An interface type is specified by a list of <i>interface elements</i>.
+An interface element is either a <i>method</i> or a <i>type element</i>,
+where a type element is a union of one or more <i>type terms</i>.
+A type term is either a single type or a single underlying type.
+</p>
+
+<h4 id="Basic_interfaces">Basic interfaces</h4>
+
+<p>
+In its most basic form an interface specifies a (possibly empty) list of methods.
+The type set defined by such an interface is the set of types which implement all of
+those methods, and the corresponding <a href="#Method_sets">method set</a> consists
+exactly of the methods specified by the interface.
+Interfaces whose type sets can be defined entirely by a list of methods are called
+<i>basic interfaces.</i>
+</p>
+
+<pre>
+// A simple File interface.
+interface {
+	Read([]byte) (int, error)
+	Write([]byte) (int, error)
+	Close() error
+}
+</pre>
+
+<p>
+The name of each explicitly specified method must be <a href="#Uniqueness_of_identifiers">unique</a>
+and not <a href="#Blank_identifier">blank</a>.
+</p>
+
+<pre>
+interface {
+	String() string
+	String() string  // illegal: String not unique
+	_(x int)         // illegal: method must have non-blank name
+}
+</pre>
+
+<p>
+More than one type may implement an interface.
+For instance, if two types <code>S1</code> and <code>S2</code>
+have the method set
+</p>
+
+<pre>
+func (p T) Read(p []byte) (n int, err error)
+func (p T) Write(p []byte) (n int, err error)
+func (p T) Close() error
+</pre>
+
+<p>
+(where <code>T</code> stands for either <code>S1</code> or <code>S2</code>)
+then the <code>File</code> interface is implemented by both <code>S1</code> and
+<code>S2</code>, regardless of what other methods
+<code>S1</code> and <code>S2</code> may have or share.
+</p>
+
+<p>
+Every type that is a member of the type set of an interface implements that interface.
+Any given type may implement several distinct interfaces.
+For instance, all types implement the <i>empty interface</i> which stands for the set
+of all (non-interface) types:
+</p>
+
+<pre>
+interface{}
+</pre>
+
+<p>
+For convenience, the predeclared type <code>any</code> is an alias for the empty interface.
+[<a href="#Go_1.18">Go 1.18</a>]
+</p>
+
+<p>
+Similarly, consider this interface specification,
+which appears within a <a href="#Type_declarations">type declaration</a>
+to define an interface called <code>Locker</code>:
+</p>
+
+<pre>
+type Locker interface {
+	Lock()
+	Unlock()
+}
+</pre>
+
+<p>
+If <code>S1</code> and <code>S2</code> also implement
+</p>
+
+<pre>
+func (p T) Lock() { … }
+func (p T) Unlock() { … }
+</pre>
+
+<p>
+they implement the <code>Locker</code> interface as well
+as the <code>File</code> interface.
+</p>
+
+<h4 id="Embedded_interfaces">Embedded interfaces</h4>
+
+<p>
+In a slightly more general form
+an interface <code>T</code> may use a (possibly qualified) interface type
+name <code>E</code> as an interface element. This is called
+<i>embedding</i> interface <code>E</code> in <code>T</code>
+[<a href="#Go_1.14">Go 1.14</a>].
+The type set of <code>T</code> is the <i>intersection</i> of the type sets
+defined by <code>T</code>'s explicitly declared methods and the type sets
+of <code>T</code>’s embedded interfaces.
+In other words, the type set of <code>T</code> is the set of all types that implement all the
+explicitly declared methods of <code>T</code> and also all the methods of
+<code>E</code>
+[<a href="#Go_1.18">Go 1.18</a>].
+</p>
+
+<pre>
+type Reader interface {
+	Read(p []byte) (n int, err error)
+	Close() error
+}
+
+type Writer interface {
+	Write(p []byte) (n int, err error)
+	Close() error
+}
+
+// ReadWriter's methods are Read, Write, and Close.
+type ReadWriter interface {
+	Reader  // includes methods of Reader in ReadWriter's method set
+	Writer  // includes methods of Writer in ReadWriter's method set
+}
+</pre>
+
+<p>
+When embedding interfaces, methods with the
+<a href="#Uniqueness_of_identifiers">same</a> names must
+have <a href="#Type_identity">identical</a> signatures.
+</p>
+
+<pre>
+type ReadCloser interface {
+	Reader   // includes methods of Reader in ReadCloser's method set
+	Close()  // illegal: signatures of Reader.Close and Close are different
+}
+</pre>
+
+<h4 id="General_interfaces">General interfaces</h4>
+
+<p>
+In their most general form, an interface element may also be an arbitrary type term
+<code>T</code>, or a term of the form <code>~T</code> specifying the underlying type <code>T</code>,
+or a union of terms <code>t<sub>1</sub>|t<sub>2</sub>|…|t<sub>n</sub></code>
+[<a href="#Go_1.18">Go 1.18</a>].
+Together with method specifications, these elements enable the precise
+definition of an interface's type set as follows:
+</p>
+
+<ul>
+	<li>The type set of the empty interface is the set of all non-interface types.
+	</li>
+
+	<li>The type set of a non-empty interface is the intersection of the type sets
+		of its interface elements.
+	</li>
+
+	<li>The type set of a method specification is the set of all non-interface types
+		whose method sets include that method.
+	</li>
+
+	<li>The type set of a non-interface type term is the set consisting
+		of just that type.
+	</li>
+
+	<li>The type set of a term of the form <code>~T</code>
+		is the set of all types whose underlying type is <code>T</code>.
+	</li>
+
+	<li>The type set of a <i>union</i> of terms
+		<code>t<sub>1</sub>|t<sub>2</sub>|…|t<sub>n</sub></code>
+		is the union of the type sets of the terms.
+	</li>
+</ul>
+
+<p>
+The quantification "the set of all non-interface types" refers not just to all (non-interface)
+types declared in the program at hand, but all possible types in all possible programs, and
+hence is infinite.
+Similarly, given the set of all non-interface types that implement a particular method, the
+intersection of the method sets of those types will contain exactly that method, even if all
+types in the program at hand always pair that method with another method.
+</p>
+
+<p>
+By construction, an interface's type set never contains an interface type.
+</p>
+
+<pre>
+// An interface representing only the type int.
+interface {
+	int
+}
+
+// An interface representing all types with underlying type int.
+interface {
+	~int
+}
+
+// An interface representing all types with underlying type int that implement the String method.
+interface {
+	~int
+	String() string
+}
+
+// An interface representing an empty type set: there is no type that is both an int and a string.
+interface {
+	int
+	string
+}
+</pre>
+
+<p>
+In a term of the form <code>~T</code>, the underlying type of <code>T</code>
+must be itself, and <code>T</code> cannot be an interface.
+</p>
+
+<pre>
+type MyInt int
+
+interface {
+	~[]byte  // the underlying type of []byte is itself
+	~MyInt   // illegal: the underlying type of MyInt is not MyInt
+	~error   // illegal: error is an interface
+}
+</pre>
+
+<p>
+Union elements denote unions of type sets:
+</p>
+
+<pre>
+// The Float interface represents all floating-point types
+// (including any named types whose underlying types are
+// either float32 or float64).
+type Float interface {
+	~float32 | ~float64
+}
+</pre>
+
+<p>
+The type <code>T</code> in a term of the form <code>T</code> or <code>~T</code> cannot
+be a <a href="#Type_parameter_declarations">type parameter</a>, and the type sets of all
+non-interface terms must be pairwise disjoint (the pairwise intersection of the type sets must be empty).
+Given a type parameter <code>P</code>:
+</p>
+
+<pre>
+interface {
+	P                // illegal: P is a type parameter
+	int | ~P         // illegal: P is a type parameter
+	~int | MyInt     // illegal: the type sets for ~int and MyInt are not disjoint (~int includes MyInt)
+	float32 | Float  // overlapping type sets but Float is an interface
+}
+</pre>
+
+<p>
+Implementation restriction:
+A union (with more than one term) cannot contain the
+<a href="#Predeclared_identifiers">predeclared identifier</a> <code>comparable</code>
+or interfaces that specify methods, or embed <code>comparable</code> or interfaces
+that specify methods.
+</p>
+
+<p>
+Interfaces that are not <a href="#Basic_interfaces">basic</a> may only be used as type
+constraints, or as elements of other interfaces used as constraints.
+They cannot be the types of values or variables, or components of other,
+non-interface types.
+</p>
+
+<pre>
+var x Float                     // illegal: Float is not a basic interface
+
+var x interface{} = Float(nil)  // illegal
+
+type Floatish struct {
+	f Float                 // illegal
+}
+</pre>
+
+<p>
+An interface type <code>T</code> may not embed a type element
+that is, contains, or embeds <code>T</code>, directly or indirectly.
+</p>
+
+<pre>
+// illegal: Bad may not embed itself
+type Bad interface {
+	Bad
+}
+
+// illegal: Bad1 may not embed itself using Bad2
+type Bad1 interface {
+	Bad2
+}
+type Bad2 interface {
+	Bad1
+}
+
+// illegal: Bad3 may not embed a union containing Bad3
+type Bad3 interface {
+	~int | ~string | Bad3
+}
+
+// illegal: Bad4 may not embed an array containing Bad4 as element type
+type Bad4 interface {
+	[10]Bad4
+}
+</pre>
+
+<h4 id="Implementing_an_interface">Implementing an interface</h4>
+
+<p>
+A type <code>T</code> implements an interface <code>I</code> if
+</p>
+
+<ul>
+<li>
+	<code>T</code> is not an interface and is an element of the type set of <code>I</code>; or
+</li>
+<li>
+	<code>T</code> is an interface and the type set of <code>T</code> is a subset of the
+	type set of <code>I</code>.
+</li>
+</ul>
+
+<p>
+A value of type <code>T</code> implements an interface if <code>T</code>
+implements the interface.
+</p>
+
+<h3 id="Map_types">Map types</h3>
+
+<p>
+A map is an unordered group of elements of one type, called the
+element type, indexed by a set of unique <i>keys</i> of another type,
+called the key type.
+The value of an uninitialized map is <code>nil</code>.
+</p>
+
+<pre class="ebnf">
+MapType     = "map" "[" KeyType "]" ElementType .
+KeyType     = Type .
+</pre>
+
+<p>
+The <a href="#Comparison_operators">comparison operators</a>
+<code>==</code> and <code>!=</code> must be fully defined
+for operands of the key type; thus the key type must not be a function, map, or
+slice.
+If the key type is an interface type, these
+comparison operators must be defined for the dynamic key values;
+failure will cause a <a href="#Run_time_panics">run-time panic</a>.
+</p>
+
+<pre>
+map[string]int
+map[*T]struct{ x, y float64 }
+map[string]interface{}
+</pre>
+
+<p>
+The number of map elements is called its length.
+For a map <code>m</code>, it can be discovered using the
+built-in function <a href="#Length_and_capacity"><code>len</code></a>
+and may change during execution. Elements may be added during execution
+using <a href="#Assignment_statements">assignments</a> and retrieved with
+<a href="#Index_expressions">index expressions</a>; they may be removed with the
+<a href="#Deletion_of_map_elements"><code>delete</code></a> and
+<a href="#Clear"><code>clear</code></a> built-in function.
+</p>
+
+<p>
+A new, empty map value is made using the built-in
+function <a href="#Making_slices_maps_and_channels"><code>make</code></a>,
+which takes the map type and an optional capacity hint as arguments:
+</p>
+
+<pre>
+make(map[string]int)
+make(map[string]int, 100)
+</pre>
+
+<p>
+The initial capacity does not bound its size:
+maps grow to accommodate the number of items
+stored in them, with the exception of <code>nil</code> maps.
+A <code>nil</code> map is equivalent to an empty map except that no elements
+may be added.
+</p>
+
+<h3 id="Channel_types">Channel types</h3>
+
+<p>
+A channel provides a mechanism for
+<a href="#Go_statements">concurrently executing functions</a>
+to communicate by
+<a href="#Send_statements">sending</a> and
+<a href="#Receive_operator">receiving</a>
+values of a specified element type.
+The value of an uninitialized channel is <code>nil</code>.
+</p>
+
+<pre class="ebnf">
+ChannelType = ( "chan" | "chan" "&lt;-" | "&lt;-" "chan" ) ElementType .
+</pre>
+
+<p>
+The optional <code>&lt;-</code> operator specifies the channel <i>direction</i>,
+<i>send</i> or <i>receive</i>. If a direction is given, the channel is <i>directional</i>,
+otherwise it is <i>bidirectional</i>.
+A channel may be constrained only to send or only to receive by
+<a href="#Assignment_statements">assignment</a> or
+explicit <a href="#Conversions">conversion</a>.
+</p>
+
+<pre>
+chan T          // can be used to send and receive values of type T
+chan&lt;- float64  // can only be used to send float64s
+&lt;-chan int      // can only be used to receive ints
+</pre>
+
+<p>
+The <code>&lt;-</code> operator associates with the leftmost <code>chan</code>
+possible:
+</p>
+
+<pre>
+chan&lt;- chan int    // same as chan&lt;- (chan int)
+chan&lt;- &lt;-chan int  // same as chan&lt;- (&lt;-chan int)
+&lt;-chan &lt;-chan int  // same as &lt;-chan (&lt;-chan int)
+chan (&lt;-chan int)
+</pre>
+
+<p>
+A new, initialized channel
+value can be made using the built-in function
+<a href="#Making_slices_maps_and_channels"><code>make</code></a>,
+which takes the channel type and an optional <i>capacity</i> as arguments:
+</p>
+
+<pre>
+make(chan int, 100)
+</pre>
+
+<p>
+The capacity, in number of elements, sets the size of the buffer in the channel.
+If the capacity is zero or absent, the channel is unbuffered and communication
+succeeds only when both a sender and receiver are ready. Otherwise, the channel
+is buffered and communication succeeds without blocking if the buffer
+is not full (sends) or not empty (receives).
+A <code>nil</code> channel is never ready for communication.
+</p>
+
+<p>
+A channel may be closed with the built-in function
+<a href="#Close"><code>close</code></a>.
+The multi-valued assignment form of the
+<a href="#Receive_operator">receive operator</a>
+reports whether a received value was sent before
+the channel was closed.
+</p>
+
+<p>
+A single channel may be used in
+<a href="#Send_statements">send statements</a>,
+<a href="#Receive_operator">receive operations</a>,
+and calls to the built-in functions
+<a href="#Length_and_capacity"><code>cap</code></a> and
+<a href="#Length_and_capacity"><code>len</code></a>
+by any number of goroutines without further synchronization.
+Channels act as first-in-first-out queues.
+For example, if one goroutine sends values on a channel
+and a second goroutine receives them, the values are
+received in the order sent.
+</p>

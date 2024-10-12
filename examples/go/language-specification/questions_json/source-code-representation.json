@@ -1,0 +1,255 @@
+[
+    {
+        "question": "What encoding is used for source code representation as mentioned in the chapter?",
+        "options": {
+            "A": "ASCII",
+            "B": "UTF-8",
+            "C": "ISO-8859-1",
+            "D": "UTF-16"
+        },
+        "correct_answer": "B",
+        "explanation": "Source code representation is encoded in UTF-8, which is a variable-width character encoding that can represent every character in the Unicode character set. This encoding allows for a wide range of characters to be used in source code, making it versatile for internationalization."
+    },
+    {
+        "question": "How are uppercase and lowercase letters treated in source code representation?",
+        "options": {
+            "A": "They are considered the same character.",
+            "B": "They are treated as different characters.",
+            "C": "Uppercase letters are ignored.",
+            "D": "Lowercase letters are ignored."
+        },
+        "correct_answer": "B",
+        "explanation": "In source code representation, uppercase and lowercase letters are treated as distinct characters. This distinction is important for programming languages that are case-sensitive, meaning that 'A' and 'a' would be recognized as different identifiers."
+    },
+    {
+        "question": "What is the significance of the underscore character in source code representation?",
+        "options": {
+            "A": "It is treated as a special symbol.",
+            "B": "It is considered a lowercase letter.",
+            "C": "It is ignored in the source code.",
+            "D": "It cannot be used in variable names."
+        },
+        "correct_answer": "B",
+        "explanation": "The underscore character (U+005F) is considered a lowercase letter in source code representation. This means it can be used in identifiers and variable names, similar to other lowercase letters, which allows for more flexibility in naming conventions."
+    },
+    {
+        "question": "What is a potential implementation restriction mentioned regarding the NUL character in source code?",
+        "options": {
+            "A": "It must be included in all source files.",
+            "B": "It may be disallowed in the source text.",
+            "C": "It is treated as a whitespace character.",
+            "D": "It is automatically converted to a space."
+        },
+        "correct_answer": "B",
+        "explanation": "The chapter mentions that for compatibility with other tools, a compiler may disallow the NUL character (U+0000) in the source text. This restriction is important to ensure that the source code can be processed correctly by various tools and compilers that may not handle the NUL character properly."
+    },
+    {
+        "question": "What is the primary encoding format for source code as mentioned in the chapter?",
+        "options": {
+            "A": "ASCII",
+            "B": "UTF-8",
+            "C": "ISO-8859-1",
+            "D": "UTF-16"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary encoding format for source code mentioned in the chapter is UTF-8. This encoding allows for a wide range of characters to be represented, making it suitable for various languages and symbols used in programming."
+    },
+    {
+        "question": "How are uppercase and lowercase letters treated in Unicode?",
+        "options": {
+            "A": "They are considered the same character.",
+            "B": "They are treated as distinct characters.",
+            "C": "Uppercase letters are ignored.",
+            "D": "Lowercase letters are treated as digits."
+        },
+        "correct_answer": "B",
+        "explanation": "In Unicode, uppercase and lowercase letters are treated as distinct characters. Each letter has its own unique code point, which differentiates them in any text representation."
+    },
+    {
+        "question": "What character is considered a lowercase letter according to the chapter?",
+        "options": {
+            "A": "A",
+            "B": "Z",
+            "C": "_",
+            "D": "0"
+        },
+        "correct_answer": "C",
+        "explanation": "The underscore character (_) is considered a lowercase letter in the context of Unicode as mentioned in the chapter. This classification allows it to be used in identifiers and variable names in programming."
+    },
+    {
+        "question": "What is the significance of the NUL character (U+0000) in source code?",
+        "options": {
+            "A": "It is always allowed in source text.",
+            "B": "It may be disallowed by a compiler for compatibility.",
+            "C": "It represents a whitespace character.",
+            "D": "It is treated as a comment in the code."
+        },
+        "correct_answer": "B",
+        "explanation": "The NUL character (U+0000) may be disallowed by a compiler for compatibility with other tools. This restriction ensures that the source code remains compatible across different programming environments and tools."
+    },
+    {
+        "question": "What is the primary characteristic of UTF-8 encoding?",
+        "options": {
+            "A": "It encodes text as a series of fixed-length characters.",
+            "B": "It uses a variable-length encoding for Unicode characters.",
+            "C": "It only supports ASCII characters.",
+            "D": "It requires a specific byte order for all characters."
+        },
+        "correct_answer": "B",
+        "explanation": "UTF-8 encoding is characterized by its use of variable-length encoding for Unicode characters. This means that different characters can be represented using different numbers of bytes, allowing for efficient representation of a wide range of characters from various languages."
+    },
+    {
+        "question": "How does UTF-8 treat accented characters compared to their base characters?",
+        "options": {
+            "A": "Accented characters are treated as the same code point as their base characters.",
+            "B": "Accented characters are treated as distinct code points from their base characters.",
+            "C": "Accented characters are ignored in UTF-8 encoding.",
+            "D": "Accented characters are always represented in a fixed-length format."
+        },
+        "correct_answer": "B",
+        "explanation": "In UTF-8 encoding, accented characters are treated as distinct code points from their base characters. This means that a single accented character is different from a combination of a base character and an accent, which are represented as two separate code points."
+    },
+    {
+        "question": "What is a potential implementation restriction when using UTF-8 in source code?",
+        "options": {
+            "A": "The use of uppercase letters is not allowed.",
+            "B": "The NUL character may be disallowed in the source text.",
+            "C": "All characters must be represented in hexadecimal format.",
+            "D": "Only ASCII characters can be used in UTF-8 encoding."
+        },
+        "correct_answer": "B",
+        "explanation": "One potential implementation restriction when using UTF-8 in source code is that the NUL character (U+0000) may be disallowed. This restriction is in place for compatibility with other tools that may not handle the NUL character properly."
+    },
+    {
+        "question": "Which of the following statements is true regarding the underscore character in UTF-8 encoding?",
+        "options": {
+            "A": "The underscore character is treated as a special control character.",
+            "B": "The underscore character is considered a lowercase letter.",
+            "C": "The underscore character cannot be used in source code.",
+            "D": "The underscore character is represented as a single byte in UTF-8."
+        },
+        "correct_answer": "B",
+        "explanation": "In UTF-8 encoding, the underscore character (U+005F) is considered a lowercase letter. This classification allows it to be used in contexts where letters are permitted, such as variable names in programming languages."
+    },
+    {
+        "question": "What is the significance of character distinction in source code representation?",
+        "options": {
+            "A": "It ensures that different representations of the same character are treated as identical.",
+            "B": "It allows for the differentiation between uppercase and lowercase letters.",
+            "C": "It simplifies the encoding process by merging similar characters.",
+            "D": "It eliminates the need for Unicode encoding in source code."
+        },
+        "correct_answer": "B",
+        "explanation": "Character distinction is significant in source code representation because it allows for the differentiation between uppercase and lowercase letters, as well as other characters. Each code point is treated as distinct, which is crucial for accurate interpretation and processing of the source code."
+    },
+    {
+        "question": "Which of the following statements is true regarding Unicode code points?",
+        "options": {
+            "A": "All Unicode code points are treated as the same character.",
+            "B": "Uppercase and lowercase letters are considered different Unicode code points.",
+            "C": "The underscore character is not classified as a letter.",
+            "D": "Unicode code points can only represent letters and digits."
+        },
+        "correct_answer": "B",
+        "explanation": "Uppercase and lowercase letters are considered different Unicode code points, which highlights the importance of character distinction in programming. This distinction ensures that the source code is interpreted correctly, as different characters can have different meanings and functions."
+    },
+    {
+        "question": "What is the role of the underscore character in the context of character distinction?",
+        "options": {
+            "A": "It is treated as a special symbol with no relation to letters.",
+            "B": "It is considered a lowercase letter in source code representation.",
+            "C": "It is ignored by compilers when processing source code.",
+            "D": "It is categorized as a digit in Unicode."
+        },
+        "correct_answer": "B",
+        "explanation": "In the context of character distinction, the underscore character is considered a lowercase letter. This classification allows it to be used in identifiers and variable names, similar to other letters, which is important for maintaining consistency in source code representation."
+    },
+    {
+        "question": "What is the primary purpose of character categories in Unicode?",
+        "options": {
+            "A": "To define how characters are displayed on screen",
+            "B": "To classify characters based on their properties and usage",
+            "C": "To determine the encoding format of the text",
+            "D": "To specify the order in which characters are processed"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of character categories in Unicode is to classify characters based on their properties and usage. This classification helps in understanding how different characters behave in programming and text processing, allowing for more effective handling of text data."
+    },
+    {
+        "question": "Which of the following is considered a Unicode letter according to the character categories?",
+        "options": {
+            "A": "The underscore character (_) ",
+            "B": "The newline character (U+000A)",
+            "C": "The digit '5'",
+            "D": "The space character"
+        },
+        "correct_answer": "A",
+        "explanation": "The underscore character (_) is considered a lowercase letter in Unicode character categories. This classification allows it to be treated similarly to other letters in programming contexts, such as variable naming."
+    },
+    {
+        "question": "What distinguishes a Unicode digit from a Unicode letter?",
+        "options": {
+            "A": "Digits can only be represented in binary format",
+            "B": "Digits are categorized as 'Number, decimal digit' while letters are categorized as 'Letter'",
+            "C": "Digits are always uppercase characters",
+            "D": "Digits cannot be combined with letters in source code"
+        },
+        "correct_answer": "B",
+        "explanation": "Unicode digits are categorized as 'Number, decimal digit', while letters are categorized as 'Letter'. This distinction is important for programming languages that differentiate between numeric and alphabetic characters for operations and syntax."
+    },
+    {
+        "question": "Which character is explicitly mentioned as being treated as a lowercase letter in the chapter?",
+        "options": {
+            "A": "The letter 'a'",
+            "B": "The digit '0'",
+            "C": "The underscore character (_)",
+            "D": "The letter 'Z'"
+        },
+        "correct_answer": "C",
+        "explanation": "The underscore character (_) is explicitly mentioned as being treated as a lowercase letter in the chapter. This classification is significant in programming, where underscores are often used in variable names and identifiers."
+    },
+    {
+        "question": "Which of the following best describes what constitutes a letter in the context of Unicode?",
+        "options": {
+            "A": "Any character that is not a digit or punctuation",
+            "B": "Only uppercase characters in the alphabet",
+            "C": "Any Unicode code point categorized as a 'Letter' or the underscore character",
+            "D": "Only lowercase characters in the alphabet"
+        },
+        "correct_answer": "C",
+        "explanation": "In Unicode, a letter is defined as any code point categorized as a 'Letter' along with the underscore character (_). This means that both uppercase and lowercase letters, as well as the underscore, are included in this category."
+    },
+    {
+        "question": "What is the range of characters classified as decimal digits in Unicode?",
+        "options": {
+            "A": "All characters from A to Z",
+            "B": "All characters from 0 to 9",
+            "C": "All characters from 0 to 7",
+            "D": "All characters from 0 to F"
+        },
+        "correct_answer": "B",
+        "explanation": "Decimal digits in Unicode are specifically defined as the characters from 0 to 9. This classification is important for distinguishing between different types of numeric representations in programming and data processing."
+    },
+    {
+        "question": "Which character is considered a lowercase letter according to the Unicode standard discussed in the chapter?",
+        "options": {
+            "A": "The character 'A'",
+            "B": "The character '0'",
+            "C": "The character '_'",
+            "D": "The character 'Z'"
+        },
+        "correct_answer": "C",
+        "explanation": "The underscore character (_) is classified as a lowercase letter in the context of Unicode. This is an important distinction as it allows for the inclusion of the underscore in identifiers and variable names in programming languages."
+    },
+    {
+        "question": "What is the significance of the character categories defined in the Unicode Standard?",
+        "options": {
+            "A": "They determine how characters are displayed on screen",
+            "B": "They are used to classify characters for programming and data processing",
+            "C": "They dictate the font style of the characters",
+            "D": "They are irrelevant to programming languages"
+        },
+        "correct_answer": "B",
+        "explanation": "The character categories defined in the Unicode Standard are significant because they help classify characters for programming and data processing. This classification allows programming languages to correctly interpret and manipulate different types of characters, such as letters and digits."
+    }
+]

@@ -1,0 +1,310 @@
+[
+    {
+        "question": "What is the primary purpose of the `unsafe` package in Go?",
+        "options": {
+            "A": "To provide high-level abstractions for memory management",
+            "B": "To facilitate low-level programming and operations that may violate type safety",
+            "C": "To ensure type safety and portability across different platforms",
+            "D": "To optimize performance by enforcing strict type checks"
+        },
+        "correct_answer": "B",
+        "explanation": "The `unsafe` package in Go is designed for low-level programming, allowing operations that can violate the type system. This package provides functionalities that enable developers to manipulate memory directly, which can lead to performance optimizations but requires careful handling to avoid type safety issues."
+    },
+    {
+        "question": "Which of the following functions in the `unsafe` package is used to determine the size of a variable's type?",
+        "options": {
+            "A": "Alignof",
+            "B": "Offsetof",
+            "C": "Sizeof",
+            "D": "Add"
+        },
+        "correct_answer": "C",
+        "explanation": "The `Sizeof` function in the `unsafe` package is used to return the size in bytes of a variable's type. This function is essential for understanding memory usage and layout in low-level programming."
+    },
+    {
+        "question": "What does the `Alignof` function return when given a variable?",
+        "options": {
+            "A": "The size of the variable in bytes",
+            "B": "The memory address of the variable",
+            "C": "The alignment requirement of the variable's type in bytes",
+            "D": "The offset of the variable within its struct"
+        },
+        "correct_answer": "C",
+        "explanation": "The `Alignof` function returns the alignment requirement of a variable's type in bytes. This is important for ensuring that variables are placed in memory at addresses that meet their alignment requirements, which can affect performance and correctness."
+    },
+    {
+        "question": "What is a potential consequence of using the `unsafe` package in Go?",
+        "options": {
+            "A": "Increased portability of code across platforms",
+            "B": "Improved type safety and error checking",
+            "C": "Risk of runtime panics due to type violations",
+            "D": "Automatic memory management by the garbage collector"
+        },
+        "correct_answer": "C",
+        "explanation": "Using the `unsafe` package can lead to runtime panics if type violations occur, as it allows for operations that bypass the type system. This means that developers must manually ensure type safety when using this package, which can introduce risks if not handled carefully."
+    },
+    {
+        "question": "What is the primary concern when using the package 'unsafe' in programming?",
+        "options": {
+            "A": "It guarantees type safety for all operations.",
+            "B": "It allows for low-level programming that may violate the type system.",
+            "C": "It automatically manages memory allocation.",
+            "D": "It simplifies the syntax for pointer operations."
+        },
+        "correct_answer": "B",
+        "explanation": "The primary concern when using the 'unsafe' package is that it allows for low-level programming that can violate the type system. This means that operations performed using this package may not adhere to the usual type safety guarantees, requiring manual vetting for type safety and potentially leading to non-portable code."
+    },
+    {
+        "question": "Which function in the 'unsafe' package is used to determine the size of a variable's type?",
+        "options": {
+            "A": "Alignof",
+            "B": "Offsetof",
+            "C": "Sizeof",
+            "D": "Add"
+        },
+        "correct_answer": "C",
+        "explanation": "The function 'Sizeof' in the 'unsafe' package is used to determine the size of a variable's type. It returns the size in bytes of a hypothetical variable as if it were declared with that type, which is essential for understanding memory usage and alignment."
+    },
+    {
+        "question": "What does the function 'Alignof' return when given a variable?",
+        "options": {
+            "A": "The size of the variable in bytes.",
+            "B": "The memory address of the variable.",
+            "C": "The alignment requirement of the variable's type in bytes.",
+            "D": "The type of the variable."
+        },
+        "correct_answer": "C",
+        "explanation": "'Alignof' returns the alignment requirement of the variable's type in bytes. This is important for ensuring that variables are stored in memory at addresses that meet their alignment requirements, which can affect performance and correctness in low-level programming."
+    },
+    {
+        "question": "Why must a package using 'unsafe' be manually vetted for type safety?",
+        "options": {
+            "A": "Because it automatically checks for type errors.",
+            "B": "Because it can lead to undefined behavior if not used correctly.",
+            "C": "Because it is designed to be used only with constant types.",
+            "D": "Because it simplifies type conversions."
+        },
+        "correct_answer": "B",
+        "explanation": "A package using 'unsafe' must be manually vetted for type safety because it can lead to undefined behavior if not used correctly. The operations allowed by 'unsafe' bypass the usual type checks, which can result in errors that are difficult to diagnose and fix, making careful review essential."
+    },
+    {
+        "question": "What does memory alignment refer to in programming?",
+        "options": {
+            "A": "The requirement for memory addresses to be multiples of a specific value based on data type",
+            "B": "The process of organizing data in a way that maximizes memory usage",
+            "C": "The method of converting data types to ensure compatibility",
+            "D": "The technique of compressing data to save space in memory"
+        },
+        "correct_answer": "A",
+        "explanation": "Memory alignment refers to the requirement that memory addresses for variables must be multiples of a specific value, which is determined by the data type's alignment. This ensures efficient access and manipulation of data in memory, as misaligned data can lead to performance penalties or errors."
+    },
+    {
+        "question": "Which function is used to determine the alignment of a variable's type in Go?",
+        "options": {
+            "A": "Sizeof",
+            "B": "Alignof",
+            "C": "Offsetof",
+            "D": "Add"
+        },
+        "correct_answer": "B",
+        "explanation": "The function Alignof is used to determine the alignment of a variable's type in Go. It returns the alignment in bytes, which is essential for ensuring that variables are stored at memory addresses that meet the alignment requirements."
+    },
+    {
+        "question": "What is the minimum alignment guarantee for any variable in Go?",
+        "options": {
+            "A": "At least 4 bytes",
+            "B": "At least 8 bytes",
+            "C": "At least 1 byte",
+            "D": "At least 16 bytes"
+        },
+        "correct_answer": "C",
+        "explanation": "The minimum alignment guarantee for any variable in Go is at least 1 byte. This means that all variables must be aligned to at least 1 byte, ensuring that they can be accessed correctly in memory."
+    },
+    {
+        "question": "How does the alignment of a struct type in Go get determined?",
+        "options": {
+            "A": "It is the same as the alignment of its first field",
+            "B": "It is the largest alignment of all its fields",
+            "C": "It is always 8 bytes regardless of its fields",
+            "D": "It is determined by the size of the struct itself"
+        },
+        "correct_answer": "B",
+        "explanation": "The alignment of a struct type in Go is determined by the largest alignment of all its fields. This ensures that the struct is aligned in memory according to the most restrictive alignment requirement of its constituent fields, which is crucial for performance and correctness."
+    },
+    {
+        "question": "What is the primary purpose of pointer arithmetic in programming?",
+        "options": {
+            "A": "To manipulate memory addresses directly",
+            "B": "To create new data types",
+            "C": "To enforce type safety",
+            "D": "To manage variable scope"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of pointer arithmetic is to manipulate memory addresses directly. This allows programmers to perform operations such as incrementing or decrementing pointers to navigate through arrays or other data structures in memory."
+    },
+    {
+        "question": "Which function in the unsafe package is used to add an integer value to a pointer?",
+        "options": {
+            "A": "Slice",
+            "B": "Add",
+            "C": "Offsetof",
+            "D": "Alignof"
+        },
+        "correct_answer": "B",
+        "explanation": "The function 'Add' in the unsafe package is specifically designed to add an integer value to a pointer. This function allows for pointer arithmetic by returning an updated pointer that points to a new memory address based on the addition of the specified integer."
+    },
+    {
+        "question": "What must be true about the 'len' argument when using the Add function?",
+        "options": {
+            "A": "It must be a floating-point number",
+            "B": "It must be a negative integer",
+            "C": "It must be of integer type or an untyped constant",
+            "D": "It must be a string"
+        },
+        "correct_answer": "C",
+        "explanation": "The 'len' argument when using the Add function must be of integer type or an untyped constant. This ensures that the addition operation is valid and that the resulting pointer remains within the bounds of the memory being manipulated."
+    },
+    {
+        "question": "What does the function Offsetof return when applied to a struct field?",
+        "options": {
+            "A": "The size of the struct",
+            "B": "The alignment of the struct",
+            "C": "The field's offset in bytes relative to the struct's address",
+            "D": "The total number of fields in the struct"
+        },
+        "correct_answer": "C",
+        "explanation": "The function Offsetof returns the field's offset in bytes relative to the struct's address. This is useful for understanding the memory layout of a struct and how its fields are positioned in memory."
+    },
+    {
+        "question": "What determines if a type has variable size in Go?",
+        "options": {
+            "A": "If it is a type parameter, array, or struct containing elements of variable size",
+            "B": "If it is a pointer type",
+            "C": "If it is a numeric type",
+            "D": "If it is declared with the keyword 'var'"
+        },
+        "correct_answer": "A",
+        "explanation": "A type has variable size in Go if it is a type parameter, or if it is an array or struct type that contains elements or fields of variable size. This means that the size of the type can change based on its contents, unlike types with a fixed size."
+    },
+    {
+        "question": "What does the function Alignof return in Go?",
+        "options": {
+            "A": "The size of a variable in bytes",
+            "B": "The alignment of a variable's type in bytes",
+            "C": "The memory address of a variable",
+            "D": "The type of a variable"
+        },
+        "correct_answer": "B",
+        "explanation": "The function Alignof returns the alignment of a variable's type in bytes. This alignment is important for ensuring that variables are stored in memory at addresses that are multiples of their alignment, which can be necessary for performance and correctness on certain architectures."
+    },
+    {
+        "question": "Which of the following statements is true regarding the size of structs in Go?",
+        "options": {
+            "A": "A struct has size zero if it contains no fields with size greater than zero.",
+            "B": "A struct always has a size of one byte.",
+            "C": "A struct's size is determined solely by the number of fields it contains.",
+            "D": "A struct cannot have a variable size."
+        },
+        "correct_answer": "A",
+        "explanation": "A struct in Go has size zero if it contains no fields (or elements) that have a size greater than zero. This means that two distinct zero-size structs may occupy the same memory address, which is a unique characteristic of zero-size types."
+    },
+    {
+        "question": "What is the relationship between a variable's type and its alignment in Go?",
+        "options": {
+            "A": "The alignment of a variable is always equal to its size.",
+            "B": "The alignment of a variable is determined by the largest alignment of its fields if it is a struct.",
+            "C": "All variable types have the same alignment.",
+            "D": "Alignment is irrelevant for numeric types."
+        },
+        "correct_answer": "B",
+        "explanation": "The alignment of a variable in Go is determined by the largest alignment of all its fields if it is a struct. This ensures that the struct is aligned properly in memory, which is crucial for performance and correctness, especially on different architectures."
+    },
+    {
+        "question": "What does the function Slice do in the context of array management?",
+        "options": {
+            "A": "It creates a new array with a specified length.",
+            "B": "It returns a slice whose underlying array starts at a given pointer.",
+            "C": "It modifies the original array by adding elements.",
+            "D": "It converts a slice into a pointer type."
+        },
+        "correct_answer": "B",
+        "explanation": "The Slice function returns a slice whose underlying array starts at a specified pointer and has a defined length. This allows for efficient management of array segments without creating a new array, enabling operations on portions of the original array."
+    },
+    {
+        "question": "What is a key requirement for the len argument in the Slice function?",
+        "options": {
+            "A": "It must be a floating-point number.",
+            "B": "It must be a negative integer.",
+            "C": "It must be of integer type or an untyped constant.",
+            "D": "It must be a string representing a number."
+        },
+        "correct_answer": "C",
+        "explanation": "The len argument in the Slice function must be of integer type or an untyped constant. This ensures that the length of the slice is defined correctly and can be represented in memory, preventing runtime errors."
+    },
+    {
+        "question": "What happens if the ptr argument in the Slice function is nil and len is zero?",
+        "options": {
+            "A": "It returns a pointer to an empty array.",
+            "B": "It returns a nil slice.",
+            "C": "It causes a runtime panic.",
+            "D": "It returns an empty string."
+        },
+        "correct_answer": "B",
+        "explanation": "If the ptr argument in the Slice function is nil and len is zero, the function returns a nil slice. This behavior is specifically defined to handle cases where no valid memory address is provided, ensuring safe operations."
+    },
+    {
+        "question": "What is the significance of the Alignof function in array and slice management?",
+        "options": {
+            "A": "It determines the size of an array.",
+            "B": "It checks if a slice is empty.",
+            "C": "It returns the alignment of a variable's type in bytes.",
+            "D": "It converts a slice into an array."
+        },
+        "correct_answer": "C",
+        "explanation": "The Alignof function returns the alignment of a variable's type in bytes, which is crucial for ensuring that variables are stored in memory at addresses that meet the alignment requirements of their types. This is important for performance and correctness in low-level programming."
+    },
+    {
+        "question": "What does it mean for a string to be immutable in Go?",
+        "options": {
+            "A": "The string can be modified after it is created.",
+            "B": "The string cannot be changed once it is created.",
+            "C": "The string can only be modified through unsafe operations.",
+            "D": "The string can be resized dynamically."
+        },
+        "correct_answer": "B",
+        "explanation": "In Go, immutability of a string means that once a string is created, its content cannot be changed. Any operation that appears to modify a string actually creates a new string instead, preserving the original string's value."
+    },
+    {
+        "question": "What happens to the underlying bytes of a string when it is passed to a function in Go?",
+        "options": {
+            "A": "The bytes can be modified directly.",
+            "B": "The bytes are copied and can be changed.",
+            "C": "The bytes remain unchanged and cannot be modified.",
+            "D": "The bytes are automatically converted to a slice."
+        },
+        "correct_answer": "C",
+        "explanation": "When a string is passed to a function in Go, the underlying bytes of the string remain unchanged and cannot be modified. This is due to the immutability of strings in Go, which ensures that the original string data is preserved."
+    },
+    {
+        "question": "Which of the following statements is true regarding string immutability in Go?",
+        "options": {
+            "A": "Strings can be modified in place without creating a new string.",
+            "B": "Strings must be converted to a slice to be modified.",
+            "C": "Strings are immutable, meaning their content cannot be changed after creation.",
+            "D": "Strings can be resized and their content changed dynamically."
+        },
+        "correct_answer": "C",
+        "explanation": "The correct statement is that strings in Go are immutable, meaning that once a string is created, its content cannot be changed. Any operation that seems to modify a string will instead create a new string, leaving the original string intact."
+    },
+    {
+        "question": "What is a consequence of string immutability in Go?",
+        "options": {
+            "A": "Strings can be shared safely between goroutines without synchronization.",
+            "B": "Strings can be modified by multiple functions simultaneously.",
+            "C": "Strings require more memory due to frequent copying.",
+            "D": "Strings can only be created using unsafe operations."
+        },
+        "correct_answer": "A",
+        "explanation": "A consequence of string immutability in Go is that strings can be shared safely between goroutines without the need for synchronization. Since the content of a string cannot be changed, there is no risk of concurrent modifications leading to inconsistent states."
+    }
+]

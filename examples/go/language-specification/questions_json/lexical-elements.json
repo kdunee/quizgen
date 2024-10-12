@@ -1,0 +1,552 @@
+[
+    {
+        "question": "What is the purpose of comments in programming?",
+        "options": {
+            "A": "To serve as program documentation",
+            "B": "To execute code more efficiently",
+            "C": "To define variable types",
+            "D": "To create user interfaces"
+        },
+        "correct_answer": "A",
+        "explanation": "Comments are used in programming to serve as documentation for the code. They help explain the purpose and functionality of the code to anyone reading it, making it easier to understand and maintain."
+    },
+    {
+        "question": "Which of the following correctly describes tokens in a programming language?",
+        "options": {
+            "A": "Tokens are the smallest units of code that are ignored by the compiler.",
+            "B": "Tokens are sequences of characters that form the vocabulary of the language.",
+            "C": "Tokens are comments that provide documentation for the code.",
+            "D": "Tokens are reserved words that cannot be used as identifiers."
+        },
+        "correct_answer": "B",
+        "explanation": "Tokens are sequences of characters that form the vocabulary of a programming language. They include identifiers, keywords, operators, punctuation, and literals, and are essential for the structure and syntax of the code."
+    },
+    {
+        "question": "What is the role of semicolons in programming syntax?",
+        "options": {
+            "A": "They are used to separate comments from code.",
+            "B": "They act as terminators for statements in the code.",
+            "C": "They indicate the beginning of a new line of code.",
+            "D": "They are used to define variable types."
+        },
+        "correct_answer": "B",
+        "explanation": "Semicolons act as terminators for statements in programming syntax. They indicate the end of a statement, allowing the compiler to understand where one instruction ends and another begins."
+    },
+    {
+        "question": "What defines an identifier in a programming language?",
+        "options": {
+            "A": "An identifier can start with any character.",
+            "B": "An identifier must be a single character.",
+            "C": "An identifier must start with a letter and can include letters and digits.",
+            "D": "An identifier is a reserved keyword in the language."
+        },
+        "correct_answer": "C",
+        "explanation": "An identifier is defined as a sequence of one or more letters and digits, where the first character must be a letter. This allows identifiers to name program entities such as variables and types."
+    },
+    {
+        "question": "Which of the following statements about keywords is true?",
+        "options": {
+            "A": "Keywords can be used as identifiers in the code.",
+            "B": "Keywords are reserved words that cannot be used as identifiers.",
+            "C": "Keywords are optional elements in programming syntax.",
+            "D": "Keywords are only used in comments."
+        },
+        "correct_answer": "B",
+        "explanation": "Keywords are reserved words in a programming language that cannot be used as identifiers. They have special meanings and are integral to the syntax and structure of the code."
+    },
+    {
+        "question": "What is the primary purpose of comments in programming?",
+        "options": {
+            "A": "To serve as program documentation",
+            "B": "To execute code more efficiently",
+            "C": "To define variables and functions",
+            "D": "To increase the speed of program execution"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of comments in programming is to serve as documentation for the code. They help explain the code's functionality, making it easier for others (or the original author) to understand the logic and purpose of the code without affecting its execution."
+    },
+    {
+        "question": "Which of the following correctly describes line comments?",
+        "options": {
+            "A": "They start with /* and end with */",
+            "B": "They start with // and continue to the end of the line",
+            "C": "They can span multiple lines",
+            "D": "They are ignored by the compiler"
+        },
+        "correct_answer": "B",
+        "explanation": "Line comments in programming start with the character sequence // and continue until the end of the line. This allows programmers to add brief explanations or notes without affecting the rest of the code."
+    },
+    {
+        "question": "What is a characteristic of general comments in programming?",
+        "options": {
+            "A": "They can only be used at the beginning of a file",
+            "B": "They start with // and can only be one line long",
+            "C": "They start with /* and end with */",
+            "D": "They are executed as part of the program"
+        },
+        "correct_answer": "C",
+        "explanation": "General comments in programming start with /* and end with */. They can span multiple lines and are used to provide more detailed documentation or explanations within the code."
+    },
+    {
+        "question": "Which statement is true regarding the placement of comments in code?",
+        "options": {
+            "A": "Comments can start inside a string literal",
+            "B": "Comments can start inside another comment",
+            "C": "Comments cannot start inside a rune or string literal",
+            "D": "Comments must always be placed at the beginning of a line"
+        },
+        "correct_answer": "C",
+        "explanation": "Comments cannot start inside a rune or string literal, or inside another comment. This ensures that comments do not interfere with the actual code or data being processed."
+    },
+    {
+        "question": "What are tokens in the context of the Go programming language?",
+        "options": {
+            "A": "The vocabulary of the language, consisting of identifiers, keywords, operators, and literals",
+            "B": "The comments written in the code to explain its functionality",
+            "C": "The errors generated during the compilation of a program",
+            "D": "The functions defined within a Go program"
+        },
+        "correct_answer": "A",
+        "explanation": "Tokens are the fundamental building blocks of the Go programming language, forming its vocabulary. They include identifiers, keywords, operators, punctuation, and literals. Understanding tokens is essential for parsing and interpreting Go code."
+    },
+    {
+        "question": "Which of the following is NOT a class of tokens in Go?",
+        "options": {
+            "A": "Identifiers",
+            "B": "Comments",
+            "C": "Keywords",
+            "D": "Literals"
+        },
+        "correct_answer": "B",
+        "explanation": "Comments are not considered a class of tokens in Go. Instead, they serve as documentation within the code. The main classes of tokens include identifiers, keywords, operators, punctuation, and literals."
+    },
+    {
+        "question": "What role does white space play in tokenization in Go?",
+        "options": {
+            "A": "It is ignored except as a separator between tokens",
+            "B": "It combines tokens into a single token",
+            "C": "It is treated as a token itself",
+            "D": "It is necessary for defining the structure of the code"
+        },
+        "correct_answer": "A",
+        "explanation": "In Go, white space is generally ignored during tokenization, except when it serves to separate tokens that would otherwise combine into a single token. This allows for flexibility in formatting code without affecting its functionality."
+    },
+    {
+        "question": "What happens when a newline or end of file is encountered during tokenization?",
+        "options": {
+            "A": "It triggers the insertion of a semicolon",
+            "B": "It marks the end of the program",
+            "C": "It creates a new token",
+            "D": "It generates a syntax error"
+        },
+        "correct_answer": "A",
+        "explanation": "When a newline or end of file is encountered during the tokenization process in Go, it may trigger the automatic insertion of a semicolon. This helps to maintain the structure of the code without requiring explicit semicolons in many cases."
+    },
+    {
+        "question": "What is the primary purpose of identifiers in a programming language?",
+        "options": {
+            "A": "To name program entities such as variables and types",
+            "B": "To define the syntax of the language",
+            "C": "To represent data types and their operations",
+            "D": "To serve as comments for code documentation"
+        },
+        "correct_answer": "A",
+        "explanation": "Identifiers are used to name program entities such as variables, functions, and types. They provide a way to reference these entities in the code, making it easier to read and maintain. Identifiers must follow specific rules regarding their composition, such as starting with a letter."
+    },
+    {
+        "question": "Which of the following is a valid identifier according to the rules of identifiers?",
+        "options": {
+            "A": "1stVariable",
+            "B": "_myVariable",
+            "C": "my-variable",
+            "D": "my variable"
+        },
+        "correct_answer": "B",
+        "explanation": "A valid identifier must start with a letter or an underscore and can contain letters, digits, and underscores. '_myVariable' is valid because it starts with an underscore. In contrast, '1stVariable' starts with a digit, 'my-variable' contains a hyphen, and 'my variable' contains a space, all of which are not allowed."
+    },
+    {
+        "question": "What character must the first character of an identifier be?",
+        "options": {
+            "A": "A digit",
+            "B": "An underscore or letter",
+            "C": "A special character",
+            "D": "A whitespace character"
+        },
+        "correct_answer": "B",
+        "explanation": "The first character of an identifier must be either a letter or an underscore. This rule ensures that identifiers are easily distinguishable from numeric literals and other tokens in the programming language."
+    },
+    {
+        "question": "Which of the following statements about identifiers is true?",
+        "options": {
+            "A": "Identifiers can include spaces between words.",
+            "B": "Identifiers can be the same as reserved keywords.",
+            "C": "Identifiers must be unique within their scope.",
+            "D": "Identifiers can start with any character."
+        },
+        "correct_answer": "C",
+        "explanation": "Identifiers must be unique within their scope to avoid conflicts and ambiguity in the code. This means that two identifiers cannot have the same name in the same context. However, identifiers cannot include spaces, cannot be the same as reserved keywords, and must start with a letter or underscore."
+    },
+    {
+        "question": "What is the primary characteristic of keywords in the Go programming language?",
+        "options": {
+            "A": "They can be used as identifiers for variables.",
+            "B": "They are reserved words that cannot be used as identifiers.",
+            "C": "They are optional and can be omitted in code.",
+            "D": "They are only used in comments."
+        },
+        "correct_answer": "B",
+        "explanation": "Keywords in the Go programming language are reserved words that have special meaning in the language syntax. They cannot be used as identifiers for variables, functions, or any other program entities, ensuring that the language's structure and functionality are preserved."
+    },
+    {
+        "question": "Which of the following is an example of a keyword in Go?",
+        "options": {
+            "A": "variable",
+            "B": "func",
+            "C": "myFunction",
+            "D": "data"
+        },
+        "correct_answer": "B",
+        "explanation": "The term 'func' is a keyword in Go, used to define a function. Keywords are predefined and reserved by the language, and they cannot be repurposed as identifiers for other entities in the code."
+    },
+    {
+        "question": "How are keywords treated in the context of Go programming?",
+        "options": {
+            "A": "They can be redefined by the programmer.",
+            "B": "They are ignored by the compiler.",
+            "C": "They are reserved and have specific functions.",
+            "D": "They can be used interchangeably with identifiers."
+        },
+        "correct_answer": "C",
+        "explanation": "Keywords in Go are reserved words that have specific functions and meanings within the language. They are integral to the syntax and structure of Go programs, and their reserved status prevents them from being used as identifiers."
+    },
+    {
+        "question": "What happens if a programmer tries to use a keyword as an identifier in Go?",
+        "options": {
+            "A": "The program will compile successfully.",
+            "B": "The program will produce a warning but still run.",
+            "C": "The program will result in a compilation error.",
+            "D": "The keyword will be automatically converted to a valid identifier."
+        },
+        "correct_answer": "C",
+        "explanation": "If a programmer attempts to use a keyword as an identifier in Go, the compiler will generate a compilation error. This is because keywords are reserved and cannot be repurposed, ensuring that the language's syntax remains clear and unambiguous."
+    },
+    {
+        "question": "What is the primary role of operators in the Go programming language?",
+        "options": {
+            "A": "To perform operations on variables and values",
+            "B": "To define the structure of a program",
+            "C": "To create comments within the code",
+            "D": "To manage memory allocation"
+        },
+        "correct_answer": "A",
+        "explanation": "Operators in the Go programming language are used to perform operations on variables and values, such as arithmetic calculations, comparisons, and logical operations. They are essential for manipulating data and controlling the flow of a program."
+    },
+    {
+        "question": "Which of the following is NOT considered a type of operator in Go?",
+        "options": {
+            "A": "Arithmetic operators",
+            "B": "Logical operators",
+            "C": "Control flow operators",
+            "D": "Assignment operators"
+        },
+        "correct_answer": "C",
+        "explanation": "Control flow operators are not a recognized category of operators in Go. The main types of operators include arithmetic operators (for calculations), logical operators (for boolean logic), and assignment operators (for assigning values)."
+    },
+    {
+        "question": "What is the function of punctuation in Go code?",
+        "options": {
+            "A": "To separate tokens and indicate the end of statements",
+            "B": "To define variable types",
+            "C": "To create loops and conditions",
+            "D": "To comment out sections of code"
+        },
+        "correct_answer": "A",
+        "explanation": "Punctuation in Go code serves to separate tokens and indicate the end of statements. For example, semicolons are used to terminate statements, while parentheses and braces are used to group expressions and define code blocks."
+    },
+    {
+        "question": "Which character sequence is used to denote an operator in Go?",
+        "options": {
+            "A": "[]",
+            "B": "{}",
+            "C": "++",
+            "D": "//"
+        },
+        "correct_answer": "C",
+        "explanation": "The character sequence '++' is an example of an operator in Go, specifically the increment operator. Operators are defined by specific character sequences that perform operations on values, while the other options represent different syntactical elements in the language."
+    },
+    {
+        "question": "What is a literal in programming?",
+        "options": {
+            "A": "A fixed value that is directly represented in the code",
+            "B": "A variable that can change during program execution",
+            "C": "A comment that explains the code",
+            "D": "A function that returns a value"
+        },
+        "correct_answer": "A",
+        "explanation": "A literal is a fixed value that is directly represented in the code, such as numbers, characters, or strings. Unlike variables, literals do not change during program execution and are used to represent constant values."
+    },
+    {
+        "question": "Which of the following is NOT a type of literal?",
+        "options": {
+            "A": "Integer literal",
+            "B": "Floating-point literal",
+            "C": "Function literal",
+            "D": "String literal"
+        },
+        "correct_answer": "C",
+        "explanation": "A function literal is not a recognized type of literal. The common types of literals include integer literals, floating-point literals, and string literals, which represent fixed values in the code."
+    },
+    {
+        "question": "How is a string literal defined in programming?",
+        "options": {
+            "A": "A sequence of characters enclosed in single quotes",
+            "B": "A sequence of characters enclosed in double quotes",
+            "C": "A sequence of characters without any quotes",
+            "D": "A sequence of characters enclosed in back quotes"
+        },
+        "correct_answer": "B",
+        "explanation": "A string literal is defined as a sequence of characters enclosed in double quotes. This allows for the representation of text values in the code, while single quotes are typically used for rune literals."
+    },
+    {
+        "question": "What character sequence indicates the start of a raw string literal?",
+        "options": {
+            "A": "'",
+            "B": "\"",
+            "C": "`",
+            "D": "//"
+        },
+        "correct_answer": "C",
+        "explanation": "A raw string literal is indicated by the use of back quotes (`). This allows the string to include any character except for the back quote itself, and it treats the content as a sequence of uninterpreted characters."
+    },
+    {
+        "question": "Which of the following correctly represents an imaginary literal?",
+        "options": {
+            "A": "5i",
+            "B": "5.0",
+            "C": "5i + 3",
+            "D": "5 + 3i"
+        },
+        "correct_answer": "A",
+        "explanation": "An imaginary literal is represented by an integer or floating-point literal followed by the letter 'i'. Therefore, '5i' is a valid imaginary literal, while '5.0' and '5 + 3i' do not conform to the definition of an imaginary literal."
+    },
+    {
+        "question": "What is a string literal in programming?",
+        "options": {
+            "A": "A sequence of characters that represents a string constant",
+            "B": "A variable that can change its value during program execution",
+            "C": "A comment that explains the code",
+            "D": "A data type that holds numeric values"
+        },
+        "correct_answer": "A",
+        "explanation": "A string literal is a sequence of characters that represents a string constant. It is used to define text values in a program, and can be enclosed in either double quotes for interpreted string literals or back quotes for raw string literals."
+    },
+    {
+        "question": "Which of the following correctly describes raw string literals?",
+        "options": {
+            "A": "They can contain escape sequences and special characters.",
+            "B": "They are enclosed in double quotes and can span multiple lines.",
+            "C": "They are enclosed in back quotes and do not interpret escape sequences.",
+            "D": "They must start with a letter and can only contain alphanumeric characters."
+        },
+        "correct_answer": "C",
+        "explanation": "Raw string literals are enclosed in back quotes and do not interpret escape sequences, meaning that all characters within the quotes are taken literally, including newlines. This allows for multi-line strings without special handling."
+    },
+    {
+        "question": "What is the main difference between interpreted string literals and raw string literals?",
+        "options": {
+            "A": "Interpreted string literals can only contain letters.",
+            "B": "Raw string literals can contain escape sequences, while interpreted cannot.",
+            "C": "Interpreted string literals allow escape sequences, while raw string literals do not.",
+            "D": "There is no difference; they are the same."
+        },
+        "correct_answer": "C",
+        "explanation": "The main difference is that interpreted string literals allow escape sequences (like newline or tab), while raw string literals do not interpret any escape sequences and treat all characters literally, including newlines."
+    },
+    {
+        "question": "Which of the following is a valid example of a string literal?",
+        "options": {
+            "A": "'Hello, World!'",
+            "B": "`Hello, World!`",
+            "C": "\"Hello, World!\"",
+            "D": "Hello, World!"
+        },
+        "correct_answer": "C",
+        "explanation": "Both `\"Hello, World!\"` and `\"Hello, World!\"` are valid examples of string literals. The first is an interpreted string literal enclosed in double quotes, while the second is a raw string literal enclosed in back quotes. However, option A is a rune literal, and option D is not enclosed in any quotes, making it invalid."
+    },
+    {
+        "question": "What is a rune literal in the Go programming language?",
+        "options": {
+            "A": "A sequence of characters enclosed in double quotes",
+            "B": "An integer value identifying a Unicode code point",
+            "C": "A comment that documents the code",
+            "D": "A type of variable that holds string values"
+        },
+        "correct_answer": "B",
+        "explanation": "A rune literal represents an integer value that identifies a Unicode code point. It is expressed as one or more characters enclosed in single quotes. This allows for the representation of characters in a way that corresponds to their Unicode values."
+    },
+    {
+        "question": "Which of the following is a valid representation of a rune literal?",
+        "options": {
+            "A": "'abc'",
+            "B": "'\\n'",
+            "C": "'Hello'",
+            "D": "'Hello World'"
+        },
+        "correct_answer": "B",
+        "explanation": "The valid representation of a rune literal must consist of a single character or an escape sequence. Therefore, '\\n' is valid as it represents a single character (newline), while 'abc' and 'Hello World' are invalid because they contain multiple characters."
+    },
+    {
+        "question": "What character sequences can be used to represent special values in a rune literal?",
+        "options": {
+            "A": "Only numeric values",
+            "B": "Backslash escapes",
+            "C": "Any character sequence",
+            "D": "Only letters and digits"
+        },
+        "correct_answer": "B",
+        "explanation": "In a rune literal, certain single-character escapes, such as '\\n' for newline or '\\t' for tab, can be used to represent special values. These backslash escapes allow for the encoding of specific characters that may not be easily typed."
+    },
+    {
+        "question": "Which of the following is NOT a valid rune literal?",
+        "options": {
+            "A": "'a'",
+            "B": "'\\u1234'",
+            "C": "'\\k'",
+            "D": "'\\n'"
+        },
+        "correct_answer": "C",
+        "explanation": "'\\k' is not a valid escape sequence in a rune literal because 'k' is not recognized as a valid escape character. Valid escape sequences include those for special characters like newline ('\\n') or backslash ('\\\\')."
+    },
+    {
+        "question": "What is an integer literal in the context of programming?",
+        "options": {
+            "A": "A sequence of digits representing an integer constant",
+            "B": "A character sequence that can include letters and symbols",
+            "C": "A type of comment used for documentation",
+            "D": "A special keyword reserved for control flow"
+        },
+        "correct_answer": "A",
+        "explanation": "An integer literal is defined as a sequence of digits that represents an integer constant. It can include optional prefixes to indicate different numeral systems, such as binary, octal, or hexadecimal, but fundamentally it is a representation of an integer value."
+    },
+    {
+        "question": "Which of the following prefixes indicates a binary integer literal?",
+        "options": {
+            "A": "0o",
+            "B": "0x",
+            "C": "0b",
+            "D": "0d"
+        },
+        "correct_answer": "C",
+        "explanation": "The prefix '0b' or '0B' is used to indicate a binary integer literal. This allows the programmer to specify that the digits following the prefix are in base 2, distinguishing it from other numeral systems like octal (0o) or hexadecimal (0x)."
+    },
+    {
+        "question": "What is the purpose of underscores in integer literals?",
+        "options": {
+            "A": "To separate different types of literals",
+            "B": "To improve readability without changing the value",
+            "C": "To indicate a negative value",
+            "D": "To denote a floating-point number"
+        },
+        "correct_answer": "B",
+        "explanation": "Underscores in integer literals serve to improve readability by allowing the separation of groups of digits. They do not affect the actual value of the literal, making it easier for programmers to read and understand large numbers."
+    },
+    {
+        "question": "Which of the following is NOT a valid integer literal format?",
+        "options": {
+            "A": "0x1A3F",
+            "B": "0o755",
+            "C": "123_456",
+            "D": "12.34"
+        },
+        "correct_answer": "D",
+        "explanation": "The format '12.34' is not a valid integer literal; it represents a floating-point number instead. Integer literals must consist solely of digits, possibly prefixed with a base indicator, and cannot include decimal points."
+    },
+    {
+        "question": "What is a floating-point literal in programming?",
+        "options": {
+            "A": "A representation of a complex number",
+            "B": "A sequence of characters representing a string constant",
+            "C": "A decimal or hexadecimal representation of a floating-point constant",
+            "D": "An integer value identifying a Unicode code point"
+        },
+        "correct_answer": "C",
+        "explanation": "A floating-point literal is defined as a decimal or hexadecimal representation of a floating-point constant. It can include an integer part, a decimal point, a fractional part, and an exponent part, allowing for the representation of real numbers in programming."
+    },
+    {
+        "question": "Which of the following is a valid characteristic of a decimal floating-point literal?",
+        "options": {
+            "A": "It must always include both an integer and a fractional part.",
+            "B": "It can elide either the integer part or the fractional part.",
+            "C": "It cannot include an exponent part.",
+            "D": "It must always be prefixed with '0x'."
+        },
+        "correct_answer": "B",
+        "explanation": "A decimal floating-point literal can elide either the integer part or the fractional part, meaning that one of these components can be omitted. This flexibility allows for various valid representations of floating-point numbers."
+    },
+    {
+        "question": "What is the purpose of the exponent part in a floating-point literal?",
+        "options": {
+            "A": "To indicate the base of the number system used.",
+            "B": "To scale the mantissa by a power of ten.",
+            "C": "To represent the imaginary part of a complex number.",
+            "D": "To specify the number of decimal places."
+        },
+        "correct_answer": "B",
+        "explanation": "The exponent part in a floating-point literal serves to scale the mantissa (the integer and fractional part) by a power of ten. This allows for the representation of very large or very small numbers in a compact form."
+    },
+    {
+        "question": "In a hexadecimal floating-point literal, which part is required?",
+        "options": {
+            "A": "The integer part must always be present.",
+            "B": "The exponent part is optional.",
+            "C": "The radix point is mandatory.",
+            "D": "The fractional part must be included."
+        },
+        "correct_answer": "A",
+        "explanation": "In a hexadecimal floating-point literal, the integer part is required. While the radix point and fractional part can be elided, the exponent part is mandatory to properly define the value in the hexadecimal format."
+    },
+    {
+        "question": "What is an imaginary literal in the context of programming?",
+        "options": {
+            "A": "A representation of a complex constant's imaginary part",
+            "B": "A sequence of characters that represent a string",
+            "C": "A numeric value that cannot be expressed in decimal form",
+            "D": "A comment that describes a complex constant"
+        },
+        "correct_answer": "A",
+        "explanation": "An imaginary literal represents the imaginary part of a complex constant. It consists of an integer or floating-point literal followed by the letter 'i', indicating that the value is multiplied by the imaginary unit 'i'. This allows for the representation of complex numbers in programming."
+    },
+    {
+        "question": "Which of the following correctly describes the format of an imaginary literal?",
+        "options": {
+            "A": "It must always start with the letter 'i'.",
+            "B": "It consists of a numeric literal followed by the letter 'i'.",
+            "C": "It can only be a floating-point number.",
+            "D": "It is a sequence of characters enclosed in double quotes."
+        },
+        "correct_answer": "B",
+        "explanation": "An imaginary literal is formatted as a numeric literal (either an integer or a floating-point literal) followed by the letter 'i'. This indicates that the numeric value represents the imaginary part of a complex number."
+    },
+    {
+        "question": "What happens if an imaginary literal's integer part consists entirely of decimal digits?",
+        "options": {
+            "A": "It is considered an invalid literal.",
+            "B": "It is treated as a decimal integer for backward compatibility.",
+            "C": "It must be prefixed with '0i' to be valid.",
+            "D": "It can only be used in raw string literals."
+        },
+        "correct_answer": "B",
+        "explanation": "If an imaginary literal's integer part consists entirely of decimal digits, it is treated as a decimal integer for backward compatibility. This means that even if it starts with a leading zero, it is still considered valid as a decimal integer."
+    },
+    {
+        "question": "Which of the following is an example of a valid imaginary literal?",
+        "options": {
+            "A": "3.14i",
+            "B": "'3.14i'",
+            "C": "\"3.14i\"",
+            "D": "3.14"
+        },
+        "correct_answer": "A",
+        "explanation": "The example '3.14i' is a valid imaginary literal, as it consists of a floating-point number (3.14) followed by the letter 'i'. This indicates that it represents the imaginary part of a complex number. The other options do not conform to the format of an imaginary literal."
+    }
+]

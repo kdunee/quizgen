@@ -1,0 +1,908 @@
+<h2 id="Declarations_and_scope">Declarations and scope</h2>
+
+<p>
+A <i>declaration</i> binds a non-<a href="#Blank_identifier">blank</a> identifier to a
+<a href="#Constant_declarations">constant</a>,
+<a href="#Type_declarations">type</a>,
+<a href="#Type_parameter_declarations">type parameter</a>,
+<a href="#Variable_declarations">variable</a>,
+<a href="#Function_declarations">function</a>,
+<a href="#Labeled_statements">label</a>, or
+<a href="#Import_declarations">package</a>.
+Every identifier in a program must be declared.
+No identifier may be declared twice in the same block, and
+no identifier may be declared in both the file and package block.
+</p>
+
+<p>
+The <a href="#Blank_identifier">blank identifier</a> may be used like any other identifier
+in a declaration, but it does not introduce a binding and thus is not declared.
+In the package block, the identifier <code>init</code> may only be used for
+<a href="#Package_initialization"><code>init</code> function</a> declarations,
+and like the blank identifier it does not introduce a new binding.
+</p>
+
+<pre class="ebnf">
+Declaration   = ConstDecl | TypeDecl | VarDecl .
+TopLevelDecl  = Declaration | FunctionDecl | MethodDecl .
+</pre>
+
+<p>
+The <i>scope</i> of a declared identifier is the extent of source text in which
+the identifier denotes the specified constant, type, variable, function, label, or package.
+</p>
+
+<p>
+Go is lexically scoped using <a href="#Blocks">blocks</a>:
+</p>
+
+<ol>
+	<li>The scope of a <a href="#Predeclared_identifiers">predeclared identifier</a> is the universe block.</li>
+
+	<li>The scope of an identifier denoting a constant, type, variable,
+	    or function (but not method) declared at top level (outside any
+	    function) is the package block.</li>
+
+	<li>The scope of the package name of an imported package is the file block
+	    of the file containing the import declaration.</li>
+
+	<li>The scope of an identifier denoting a method receiver, function parameter,
+	    or result variable is the function body.</li>
+
+	<li>The scope of an identifier denoting a type parameter of a function
+	    or declared by a method receiver begins after the name of the function
+	    and ends at the end of the function body.</li>
+
+	<li>The scope of an identifier denoting a type parameter of a type
+	    begins after the name of the type and ends at the end
+	    of the TypeSpec.</li>
+
+	<li>The scope of a constant or variable identifier declared
+	    inside a function begins at the end of the ConstSpec or VarSpec
+	    (ShortVarDecl for short variable declarations)
+	    and ends at the end of the innermost containing block.</li>
+
+	<li>The scope of a type identifier declared inside a function
+	    begins at the identifier in the TypeSpec
+	    and ends at the end of the innermost containing block.</li>
+</ol>
+
+<p>
+An identifier declared in a block may be redeclared in an inner block.
+While the identifier of the inner declaration is in scope, it denotes
+the entity declared by the inner declaration.
+</p>
+
+<p>
+The <a href="#Package_clause">package clause</a> is not a declaration; the package name
+does not appear in any scope. Its purpose is to identify the files belonging
+to the same <a href="#Packages">package</a> and to specify the default package name for import
+declarations.
+</p>
+
+
+<h3 id="Label_scopes">Label scopes</h3>
+
+<p>
+Labels are declared by <a href="#Labeled_statements">labeled statements</a> and are
+used in the <a href="#Break_statements">"break"</a>,
+<a href="#Continue_statements">"continue"</a>, and
+<a href="#Goto_statements">"goto"</a> statements.
+It is illegal to define a label that is never used.
+In contrast to other identifiers, labels are not block scoped and do
+not conflict with identifiers that are not labels. The scope of a label
+is the body of the function in which it is declared and excludes
+the body of any nested function.
+</p>
+
+
+<h3 id="Blank_identifier">Blank identifier</h3>
+
+<p>
+The <i>blank identifier</i> is represented by the underscore character <code>_</code>.
+It serves as an anonymous placeholder instead of a regular (non-blank)
+identifier and has special meaning in <a href="#Declarations_and_scope">declarations</a>,
+as an <a href="#Operands">operand</a>, and in <a href="#Assignment_statements">assignment statements</a>.
+</p>
+
+
+<h3 id="Predeclared_identifiers">Predeclared identifiers</h3>
+
+<p>
+The following identifiers are implicitly declared in the
+<a href="#Blocks">universe block</a>
+[<a href="#Go_1.18">Go 1.18</a>]
+[<a href="#Go_1.21">Go 1.21</a>]:
+</p>
+<pre class="grammar">
+Types:
+	any bool byte comparable
+	complex64 complex128 error float32 float64
+	int int8 int16 int32 int64 rune string
+	uint uint8 uint16 uint32 uint64 uintptr
+
+Constants:
+	true false iota
+
+Zero value:
+	nil
+
+Functions:
+	append cap clear close complex copy delete imag len
+	make max min new panic print println real recover
+</pre>
+
+<h3 id="Exported_identifiers">Exported identifiers</h3>
+
+<p>
+An identifier may be <i>exported</i> to permit access to it from another package.
+An identifier is exported if both:
+</p>
+<ol>
+	<li>the first character of the identifier's name is a Unicode uppercase
+	letter (Unicode character category Lu); and</li>
+	<li>the identifier is declared in the <a href="#Blocks">package block</a>
+	or it is a <a href="#Struct_types">field name</a> or
+	<a href="#MethodName">method name</a>.</li>
+</ol>
+<p>
+All other identifiers are not exported.
+</p>
+
+<h3 id="Uniqueness_of_identifiers">Uniqueness of identifiers</h3>
+
+<p>
+Given a set of identifiers, an identifier is called <i>unique</i> if it is
+<i>different</i> from every other in the set.
+Two identifiers are different if they are spelled differently, or if they
+appear in different <a href="#Packages">packages</a> and are not
+<a href="#Exported_identifiers">exported</a>. Otherwise, they are the same.
+</p>
+
+<h3 id="Constant_declarations">Constant declarations</h3>
+
+<p>
+A constant declaration binds a list of identifiers (the names of
+the constants) to the values of a list of <a href="#Constant_expressions">constant expressions</a>.
+The number of identifiers must be equal
+to the number of expressions, and the <i>n</i>th identifier on
+the left is bound to the value of the <i>n</i>th expression on the
+right.
+</p>
+
+<pre class="ebnf">
+ConstDecl      = "const" ( ConstSpec | "(" { ConstSpec ";" } ")" ) .
+ConstSpec      = IdentifierList [ [ Type ] "=" ExpressionList ] .
+
+IdentifierList = identifier { "," identifier } .
+ExpressionList = Expression { "," Expression } .
+</pre>
+
+<p>
+If the type is present, all constants take the type specified, and
+the expressions must be <a href="#Assignability">assignable</a> to that type,
+which must not be a type parameter.
+If the type is omitted, the constants take the
+individual types of the corresponding expressions.
+If the expression values are untyped <a href="#Constants">constants</a>,
+the declared constants remain untyped and the constant identifiers
+denote the constant values. For instance, if the expression is a
+floating-point literal, the constant identifier denotes a floating-point
+constant, even if the literal's fractional part is zero.
+</p>
+
+<pre>
+const Pi float64 = 3.14159265358979323846
+const zero = 0.0         // untyped floating-point constant
+const (
+	size int64 = 1024
+	eof        = -1  // untyped integer constant
+)
+const a, b, c = 3, 4, "foo"  // a = 3, b = 4, c = "foo", untyped integer and string constants
+const u, v float32 = 0, 3    // u = 0.0, v = 3.0
+</pre>
+
+<p>
+Within a parenthesized <code>const</code> declaration list the
+expression list may be omitted from any but the first ConstSpec.
+Such an empty list is equivalent to the textual substitution of the
+first preceding non-empty expression list and its type if any.
+Omitting the list of expressions is therefore equivalent to
+repeating the previous list.  The number of identifiers must be equal
+to the number of expressions in the previous list.
+Together with the <a href="#Iota"><code>iota</code> constant generator</a>
+this mechanism permits light-weight declaration of sequential values:
+</p>
+
+<pre>
+const (
+	Sunday = iota
+	Monday
+	Tuesday
+	Wednesday
+	Thursday
+	Friday
+	Partyday
+	numberOfDays  // this constant is not exported
+)
+</pre>
+
+
+<h3 id="Iota">Iota</h3>
+
+<p>
+Within a <a href="#Constant_declarations">constant declaration</a>, the predeclared identifier
+<code>iota</code> represents successive untyped integer <a href="#Constants">
+constants</a>. Its value is the index of the respective <a href="#ConstSpec">ConstSpec</a>
+in that constant declaration, starting at zero.
+It can be used to construct a set of related constants:
+</p>
+
+<pre>
+const (
+	c0 = iota  // c0 == 0
+	c1 = iota  // c1 == 1
+	c2 = iota  // c2 == 2
+)
+
+const (
+	a = 1 &lt;&lt; iota  // a == 1  (iota == 0)
+	b = 1 &lt;&lt; iota  // b == 2  (iota == 1)
+	c = 3          // c == 3  (iota == 2, unused)
+	d = 1 &lt;&lt; iota  // d == 8  (iota == 3)
+)
+
+const (
+	u         = iota * 42  // u == 0     (untyped integer constant)
+	v float64 = iota * 42  // v == 42.0  (float64 constant)
+	w         = iota * 42  // w == 84    (untyped integer constant)
+)
+
+const x = iota  // x == 0
+const y = iota  // y == 0
+</pre>
+
+<p>
+By definition, multiple uses of <code>iota</code> in the same ConstSpec all have the same value:
+</p>
+
+<pre>
+const (
+	bit0, mask0 = 1 &lt;&lt; iota, 1&lt;&lt;iota - 1  // bit0 == 1, mask0 == 0  (iota == 0)
+	bit1, mask1                           // bit1 == 2, mask1 == 1  (iota == 1)
+	_, _                                  //                        (iota == 2, unused)
+	bit3, mask3                           // bit3 == 8, mask3 == 7  (iota == 3)
+)
+</pre>
+
+<p>
+This last example exploits the <a href="#Constant_declarations">implicit repetition</a>
+of the last non-empty expression list.
+</p>
+
+
+<h3 id="Type_declarations">Type declarations</h3>
+
+<p>
+A type declaration binds an identifier, the <i>type name</i>, to a <a href="#Types">type</a>.
+Type declarations come in two forms: alias declarations and type definitions.
+</p>
+
+<pre class="ebnf">
+TypeDecl = "type" ( TypeSpec | "(" { TypeSpec ";" } ")" ) .
+TypeSpec = AliasDecl | TypeDef .
+</pre>
+
+<h4 id="Alias_declarations">Alias declarations</h4>
+
+<p>
+An alias declaration binds an identifier to the given type
+[<a href="#Go_1.9">Go 1.9</a>].
+</p>
+
+<pre class="ebnf">
+AliasDecl = identifier [ TypeParameters ] "=" Type .
+</pre>
+
+<p>
+Within the <a href="#Declarations_and_scope">scope</a> of
+the identifier, it serves as an <i>alias</i> for the given type.
+</p>
+
+<pre>
+type (
+	nodeList = []*Node  // nodeList and []*Node are identical types
+	Polar    = polar    // Polar and polar denote identical types
+)
+</pre>
+
+<p>
+If the alias declaration specifies <a href="#Type_parameter_declarations">type parameters</a>
+[<a href="#Go_1.24">Go 1.24</a>], the type name denotes a <i>generic alias</i>.
+Generic aliases must be <a href="#Instantiations">instantiated</a> when they
+are used.
+</p>
+
+<pre>
+type set[P comparable] = map[P]bool
+</pre>
+
+<p>
+In an alias declaration the given type cannot be a type parameter.
+</p>
+
+<pre>
+type A[P any] = P    // illegal: P is a type parameter
+</pre>
+
+<h4 id="Type_definitions">Type definitions</h4>
+
+<p>
+A type definition creates a new, distinct type with the same
+<a href="#Underlying_types">underlying type</a> and operations as the given type
+and binds an identifier, the <i>type name</i>, to it.
+</p>
+
+<pre class="ebnf">
+TypeDef = identifier [ TypeParameters ] Type .
+</pre>
+
+<p>
+The new type is called a <i>defined type</i>.
+It is <a href="#Type_identity">different</a> from any other type,
+including the type it is created from.
+</p>
+
+<pre>
+type (
+	Point struct{ x, y float64 }  // Point and struct{ x, y float64 } are different types
+	polar Point                   // polar and Point denote different types
+)
+
+type TreeNode struct {
+	left, right *TreeNode
+	value any
+}
+
+type Block interface {
+	BlockSize() int
+	Encrypt(src, dst []byte)
+	Decrypt(src, dst []byte)
+}
+</pre>
+
+<p>
+A defined type may have <a href="#Method_declarations">methods</a> associated with it.
+It does not inherit any methods bound to the given type,
+but the <a href="#Method_sets">method set</a>
+of an interface type or of elements of a composite type remains unchanged:
+</p>
+
+<pre>
+// A Mutex is a data type with two methods, Lock and Unlock.
+type Mutex struct         { /* Mutex fields */ }
+func (m *Mutex) Lock()    { /* Lock implementation */ }
+func (m *Mutex) Unlock()  { /* Unlock implementation */ }
+
+// NewMutex has the same composition as Mutex but its method set is empty.
+type NewMutex Mutex
+
+// The method set of PtrMutex's underlying type *Mutex remains unchanged,
+// but the method set of PtrMutex is empty.
+type PtrMutex *Mutex
+
+// The method set of *PrintableMutex contains the methods
+// Lock and Unlock bound to its embedded field Mutex.
+type PrintableMutex struct {
+	Mutex
+}
+
+// MyBlock is an interface type that has the same method set as Block.
+type MyBlock Block
+</pre>
+
+<p>
+Type definitions may be used to define different boolean, numeric,
+or string types and associate methods with them:
+</p>
+
+<pre>
+type TimeZone int
+
+const (
+	EST TimeZone = -(5 + iota)
+	CST
+	MST
+	PST
+)
+
+func (tz TimeZone) String() string {
+	return fmt.Sprintf("GMT%+dh", tz)
+}
+</pre>
+
+<p>
+If the type definition specifies <a href="#Type_parameter_declarations">type parameters</a>,
+the type name denotes a <i>generic type</i>.
+Generic types must be <a href="#Instantiations">instantiated</a> when they
+are used.
+</p>
+
+<pre>
+type List[T any] struct {
+	next  *List[T]
+	value T
+}
+</pre>
+
+<p>
+In a type definition the given type cannot be a type parameter.
+</p>
+
+<pre>
+type T[P any] P    // illegal: P is a type parameter
+
+func f[T any]() {
+	type L T   // illegal: T is a type parameter declared by the enclosing function
+}
+</pre>
+
+<p>
+A generic type may also have <a href="#Method_declarations">methods</a> associated with it.
+In this case, the method receivers must declare the same number of type parameters as
+present in the generic type definition.
+</p>
+
+<pre>
+// The method Len returns the number of elements in the linked list l.
+func (l *List[T]) Len() int  { … }
+</pre>
+
+<h3 id="Type_parameter_declarations">Type parameter declarations</h3>
+
+<p>
+A type parameter list declares the <i>type parameters</i> of a generic function or type declaration.
+The type parameter list looks like an ordinary <a href="#Function_types">function parameter list</a>
+except that the type parameter names must all be present and the list is enclosed
+in square brackets rather than parentheses
+[<a href="#Go_1.18">Go 1.18</a>].
+</p>
+
+<pre class="ebnf">
+TypeParameters  = "[" TypeParamList [ "," ] "]" .
+TypeParamList   = TypeParamDecl { "," TypeParamDecl } .
+TypeParamDecl   = IdentifierList TypeConstraint .
+</pre>
+
+<p>
+All non-blank names in the list must be unique.
+Each name declares a type parameter, which is a new and different <a href="#Types">named type</a>
+that acts as a placeholder for an (as of yet) unknown type in the declaration.
+The type parameter is replaced with a <i>type argument</i> upon
+<a href="#Instantiations">instantiation</a> of the generic function or type.
+</p>
+
+<pre>
+[P any]
+[S interface{ ~[]byte|string }]
+[S ~[]E, E any]
+[P Constraint[int]]
+[_ any]
+</pre>
+
+<p>
+Just as each ordinary function parameter has a parameter type, each type parameter
+has a corresponding (meta-)type which is called its
+<a href="#Type_constraints"><i>type constraint</i></a>.
+</p>
+
+<p>
+A parsing ambiguity arises when the type parameter list for a generic type
+declares a single type parameter <code>P</code> with a constraint <code>C</code>
+such that the text <code>P C</code> forms a valid expression:
+</p>
+
+<pre>
+type T[P *C] …
+type T[P (C)] …
+type T[P *C|Q] …
+…
+</pre>
+
+<p>
+In these rare cases, the type parameter list is indistinguishable from an
+expression and the type declaration is parsed as an array type declaration.
+To resolve the ambiguity, embed the constraint in an
+<a href="#Interface_types">interface</a> or use a trailing comma:
+</p>
+
+<pre>
+type T[P interface{*C}] …
+type T[P *C,] …
+</pre>
+
+<p>
+Type parameters may also be declared by the receiver specification
+of a <a href="#Method_declarations">method declaration</a> associated
+with a generic type.
+</p>
+
+<p>
+Within a type parameter list of a generic type <code>T</code>, a type constraint
+may not (directly, or indirectly through the type parameter list of another
+generic type) refer to <code>T</code>.
+</p>
+
+<pre>
+type T1[P T1[P]] …                    // illegal: T1 refers to itself
+type T2[P interface{ T2[int] }] …     // illegal: T2 refers to itself
+type T3[P interface{ m(T3[int])}] …   // illegal: T3 refers to itself
+type T4[P T5[P]] …                    // illegal: T4 refers to T5 and
+type T5[P T4[P]] …                    //          T5 refers to T4
+
+type T6[P int] struct{ f *T6[P] }     // ok: reference to T6 is not in type parameter list
+</pre>
+
+<h4 id="Type_constraints">Type constraints</h4>
+
+<p>
+A <i>type constraint</i> is an <a href="#Interface_types">interface</a> that defines the
+set of permissible type arguments for the respective type parameter and controls the
+operations supported by values of that type parameter
+[<a href="#Go_1.18">Go 1.18</a>].
+</p>
+
+<pre class="ebnf">
+TypeConstraint = TypeElem .
+</pre>
+
+<p>
+If the constraint is an interface literal of the form <code>interface{E}</code> where
+<code>E</code> is an embedded <a href="#Interface_types">type element</a> (not a method), in a type parameter list
+the enclosing <code>interface{ … }</code> may be omitted for convenience:
+</p>
+
+<pre>
+[T []P]                      // = [T interface{[]P}]
+[T ~int]                     // = [T interface{~int}]
+[T int|string]               // = [T interface{int|string}]
+type Constraint ~int         // illegal: ~int is not in a type parameter list
+</pre>
+
+<!--
+We should be able to simplify the rules for comparable or delegate some of them
+elsewhere since we have a section that clearly defines how interfaces implement
+other interfaces based on their type sets. But this should get us going for now.
+-->
+
+<p>
+The <a href="#Predeclared_identifiers">predeclared</a>
+<a href="#Interface_types">interface type</a> <code>comparable</code>
+denotes the set of all non-interface types that are
+<a href="#Comparison_operators">strictly comparable</a>
+[<a href="#Go_1.18">Go 1.18</a>].
+</p>
+
+<p>
+Even though interfaces that are not type parameters are <a href="#Comparison_operators">comparable</a>,
+they are not strictly comparable and therefore they do not implement <code>comparable</code>.
+However, they <a href="#Satisfying_a_type_constraint">satisfy</a> <code>comparable</code>.
+</p>
+
+<pre>
+int                          // implements comparable (int is strictly comparable)
+[]byte                       // does not implement comparable (slices cannot be compared)
+interface{}                  // does not implement comparable (see above)
+interface{ ~int | ~string }  // type parameter only: implements comparable (int, string types are strictly comparable)
+interface{ comparable }      // type parameter only: implements comparable (comparable implements itself)
+interface{ ~int | ~[]byte }  // type parameter only: does not implement comparable (slices are not comparable)
+interface{ ~struct{ any } }  // type parameter only: does not implement comparable (field any is not strictly comparable)
+</pre>
+
+<p>
+The <code>comparable</code> interface and interfaces that (directly or indirectly) embed
+<code>comparable</code> may only be used as type constraints. They cannot be the types of
+values or variables, or components of other, non-interface types.
+</p>
+
+<h4 id="Satisfying_a_type_constraint">Satisfying a type constraint</h4>
+
+<p>
+A type argument <code>T</code><i> satisfies</i> a type constraint <code>C</code>
+if <code>T</code> is an element of the type set defined by <code>C</code>; i.e.,
+if <code>T</code> <a href="#Implementing_an_interface">implements</a> <code>C</code>.
+As an exception, a <a href="#Comparison_operators">strictly comparable</a>
+type constraint may also be satisfied by a <a href="#Comparison_operators">comparable</a>
+(not necessarily strictly comparable) type argument
+[<a href="#Go_1.20">Go 1.20</a>].
+More precisely:
+</p>
+
+<p>
+A type T <i>satisfies</i> a constraint <code>C</code> if
+</p>
+
+<ul>
+<li>
+	<code>T</code> <a href="#Implementing_an_interface">implements</a> <code>C</code>; or
+</li>
+<li>
+	<code>C</code> can be written in the form <code>interface{ comparable; E }</code>,
+	where <code>E</code> is a <a href="#Basic_interfaces">basic interface</a> and
+	<code>T</code> is <a href="#Comparison_operators">comparable</a> and implements <code>E</code>.
+</li>
+</ul>
+
+<pre>
+type argument      type constraint                // constraint satisfaction
+
+int                interface{ ~int }              // satisfied: int implements interface{ ~int }
+string             comparable                     // satisfied: string implements comparable (string is strictly comparable)
+[]byte             comparable                     // not satisfied: slices are not comparable
+any                interface{ comparable; int }   // not satisfied: any does not implement interface{ int }
+any                comparable                     // satisfied: any is comparable and implements the basic interface any
+struct{f any}      comparable                     // satisfied: struct{f any} is comparable and implements the basic interface any
+any                interface{ comparable; m() }   // not satisfied: any does not implement the basic interface interface{ m() }
+interface{ m() }   interface{ comparable; m() }   // satisfied: interface{ m() } is comparable and implements the basic interface interface{ m() }
+</pre>
+
+<p>
+Because of the exception in the constraint satisfaction rule, comparing operands of type parameter type
+may panic at run-time (even though comparable type parameters are always strictly comparable).
+</p>
+
+<h3 id="Variable_declarations">Variable declarations</h3>
+
+<p>
+A variable declaration creates one or more <a href="#Variables">variables</a>,
+binds corresponding identifiers to them, and gives each a type and an initial value.
+</p>
+
+<pre class="ebnf">
+VarDecl     = "var" ( VarSpec | "(" { VarSpec ";" } ")" ) .
+VarSpec     = IdentifierList ( Type [ "=" ExpressionList ] | "=" ExpressionList ) .
+</pre>
+
+<pre>
+var i int
+var U, V, W float64
+var k = 0
+var x, y float32 = -1, -2
+var (
+	i       int
+	u, v, s = 2.0, 3.0, "bar"
+)
+var re, im = complexSqrt(-1)
+var _, found = entries[name]  // map lookup; only interested in "found"
+</pre>
+
+<p>
+If a list of expressions is given, the variables are initialized
+with the expressions following the rules for <a href="#Assignment_statements">assignment statements</a>.
+Otherwise, each variable is initialized to its <a href="#The_zero_value">zero value</a>.
+</p>
+
+<p>
+If a type is present, each variable is given that type.
+Otherwise, each variable is given the type of the corresponding
+initialization value in the assignment.
+If that value is an untyped constant, it is first implicitly
+<a href="#Conversions">converted</a> to its <a href="#Constants">default type</a>;
+if it is an untyped boolean value, it is first implicitly converted to type <code>bool</code>.
+The predeclared value <code>nil</code> cannot be used to initialize a variable
+with no explicit type.
+</p>
+
+<pre>
+var d = math.Sin(0.5)  // d is float64
+var i = 42             // i is int
+var t, ok = x.(T)      // t is T, ok is bool
+var n = nil            // illegal
+</pre>
+
+<p>
+Implementation restriction: A compiler may make it illegal to declare a variable
+inside a <a href="#Function_declarations">function body</a> if the variable is
+never used.
+</p>
+
+<h3 id="Short_variable_declarations">Short variable declarations</h3>
+
+<p>
+A <i>short variable declaration</i> uses the syntax:
+</p>
+
+<pre class="ebnf">
+ShortVarDecl = IdentifierList ":=" ExpressionList .
+</pre>
+
+<p>
+It is shorthand for a regular <a href="#Variable_declarations">variable declaration</a>
+with initializer expressions but no types:
+</p>
+
+<pre class="grammar">
+"var" IdentifierList "=" ExpressionList .
+</pre>
+
+<pre>
+i, j := 0, 10
+f := func() int { return 7 }
+ch := make(chan int)
+r, w, _ := os.Pipe()  // os.Pipe() returns a connected pair of Files and an error, if any
+_, y, _ := coord(p)   // coord() returns three values; only interested in y coordinate
+</pre>
+
+<p>
+Unlike regular variable declarations, a short variable declaration may <i>redeclare</i>
+variables provided they were originally declared earlier in the same block
+(or the parameter lists if the block is the function body) with the same type,
+and at least one of the non-<a href="#Blank_identifier">blank</a> variables is new.
+As a consequence, redeclaration can only appear in a multi-variable short declaration.
+Redeclaration does not introduce a new variable; it just assigns a new value to the original.
+The non-blank variable names on the left side of <code>:=</code>
+must be <a href="#Uniqueness_of_identifiers">unique</a>.
+</p>
+
+<pre>
+field1, offset := nextField(str, 0)
+field2, offset := nextField(str, offset)  // redeclares offset
+x, y, x := 1, 2, 3                        // illegal: x repeated on left side of :=
+</pre>
+
+<p>
+Short variable declarations may appear only inside functions.
+In some contexts such as the initializers for
+<a href="#If_statements">"if"</a>,
+<a href="#For_statements">"for"</a>, or
+<a href="#Switch_statements">"switch"</a> statements,
+they can be used to declare local temporary variables.
+</p>
+
+<h3 id="Function_declarations">Function declarations</h3>
+
+<!--
+	Given the importance of functions, this section has always
+	been woefully underdeveloped. Would be nice to expand this
+	a bit.
+-->
+
+<p>
+A function declaration binds an identifier, the <i>function name</i>,
+to a function.
+</p>
+
+<pre class="ebnf">
+FunctionDecl = "func" FunctionName [ TypeParameters ] Signature [ FunctionBody ] .
+FunctionName = identifier .
+FunctionBody = Block .
+</pre>
+
+<p>
+If the function's <a href="#Function_types">signature</a> declares
+result parameters, the function body's statement list must end in
+a <a href="#Terminating_statements">terminating statement</a>.
+</p>
+
+<pre>
+func IndexRune(s string, r rune) int {
+	for i, c := range s {
+		if c == r {
+			return i
+		}
+	}
+	// invalid: missing return statement
+}
+</pre>
+
+<p>
+If the function declaration specifies <a href="#Type_parameter_declarations">type parameters</a>,
+the function name denotes a <i>generic function</i>.
+A generic function must be <a href="#Instantiations">instantiated</a> before it can be
+called or used as a value.
+</p>
+
+<pre>
+func min[T ~int|~float64](x, y T) T {
+	if x &lt; y {
+		return x
+	}
+	return y
+}
+</pre>
+
+<p>
+A function declaration without type parameters may omit the body.
+Such a declaration provides the signature for a function implemented outside Go,
+such as an assembly routine.
+</p>
+
+<pre>
+func flushICache(begin, end uintptr)  // implemented externally
+</pre>
+
+<h3 id="Method_declarations">Method declarations</h3>
+
+<p>
+A method is a <a href="#Function_declarations">function</a> with a <i>receiver</i>.
+A method declaration binds an identifier, the <i>method name</i>, to a method,
+and associates the method with the receiver's <i>base type</i>.
+</p>
+
+<pre class="ebnf">
+MethodDecl = "func" Receiver MethodName Signature [ FunctionBody ] .
+Receiver   = Parameters .
+</pre>
+
+<p>
+The receiver is specified via an extra parameter section preceding the method
+name. That parameter section must declare a single non-variadic parameter, the receiver.
+Its type must be a <a href="#Type_definitions">defined</a> type <code>T</code> or a
+pointer to a defined type <code>T</code>, possibly followed by a list of type parameter
+names <code>[P1, P2, …]</code> enclosed in square brackets.
+<code>T</code> is called the receiver <i>base type</i>. A receiver base type cannot be
+a pointer or interface type and it must be defined in the same package as the method.
+The method is said to be <i>bound</i> to its receiver base type and the method name
+is visible only within <a href="#Selectors">selectors</a> for type <code>T</code>
+or <code>*T</code>.
+</p>
+
+<p>
+A non-<a href="#Blank_identifier">blank</a> receiver identifier must be
+<a href="#Uniqueness_of_identifiers">unique</a> in the method signature.
+If the receiver's value is not referenced inside the body of the method,
+its identifier may be omitted in the declaration. The same applies in
+general to parameters of functions and methods.
+</p>
+
+<p>
+For a base type, the non-blank names of methods bound to it must be unique.
+If the base type is a <a href="#Struct_types">struct type</a>,
+the non-blank method and field names must be distinct.
+</p>
+
+<p>
+Given defined type <code>Point</code> the declarations
+</p>
+
+<pre>
+func (p *Point) Length() float64 {
+	return math.Sqrt(p.x * p.x + p.y * p.y)
+}
+
+func (p *Point) Scale(factor float64) {
+	p.x *= factor
+	p.y *= factor
+}
+</pre>
+
+<p>
+bind the methods <code>Length</code> and <code>Scale</code>,
+with receiver type <code>*Point</code>,
+to the base type <code>Point</code>.
+</p>
+
+<p>
+If the receiver base type is a <a href="#Type_declarations">generic type</a>, the
+receiver specification must declare corresponding type parameters for the method
+to use. This makes the receiver type parameters available to the method.
+Syntactically, this type parameter declaration looks like an
+<a href="#Instantiations">instantiation</a> of the receiver base type: the type
+arguments must be identifiers denoting the type parameters being declared, one
+for each type parameter of the receiver base type.
+The type parameter names do not need to match their corresponding parameter names in the
+receiver base type definition, and all non-blank parameter names must be unique in the
+receiver parameter section and the method signature.
+The receiver type parameter constraints are implied by the receiver base type definition:
+corresponding type parameters have corresponding constraints.
+</p>
+
+<pre>
+type Pair[A, B any] struct {
+	a A
+	b B
+}
+
+func (p Pair[A, B]) Swap() Pair[B, A]  { … }  // receiver declares A, B
+func (p Pair[First, _]) First() First  { … }  // receiver declares First, corresponds to A in Pair
+</pre>
