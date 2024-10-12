@@ -2,6 +2,7 @@ import argparse
 import pathlib
 import subprocess
 import sys
+import os
 
 from tqdm import tqdm
 
@@ -26,10 +27,11 @@ def generate_questions(
             continue
 
         print(f"Processing chapter: {relative_path}")
+        script_path = os.path.join(os.path.dirname(__file__), "generate_questions.py")
         subprocess.run(
             [
                 sys.executable,
-                "generate_questions.py",
+                script_path,
                 "--title",
                 title,
                 "--chapter-path",
