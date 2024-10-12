@@ -1,0 +1,295 @@
+<h2 id="Appendix">Appendix</h2>
+
+<h3 id="Language_versions">Language versions</h3>
+
+<p>
+The <a href="/doc/go1compat">Go 1 compatibility guarantee</a> ensures that
+programs written to the Go 1 specification will continue to compile and run
+correctly, unchanged, over the lifetime of that specification.
+More generally, as adjustments are made and features added to the language,
+the compatibility guarantee ensures that a Go program that works with a
+specific Go language version will continue to work with any subsequent version.
+</p>
+
+<p>
+For instance, the ability to use the prefix <code>0b</code> for binary
+integer literals was introduced with Go 1.13, indicated
+by [<a href="#Go_1.13">Go 1.13</a>] in the section on
+<a href="#Integer_literals">integer literals</a>.
+Source code containing an integer literal such as <code>0b1011</code>
+will be rejected if the implied or required language version used by
+the compiler is older than Go 1.13.
+</p>
+
+<p>
+The following table describes the minimum language version required for
+features introduced after Go 1.
+</p>
+
+<h4 id="Go_1.9">Go 1.9</h4>
+<ul>
+<li>
+An <a href="#Alias_declarations">alias declaration</a> may be used to declare an alias name for a type.
+</li>
+</ul>
+
+<h4 id="Go_1.13">Go 1.13</h4>
+<ul>
+<li>
+<a href="#Integer_literals">Integer literals</a> may use the prefixes <code>0b</code>, <code>0B</code>, <code>0o</code>,
+and <code>0O</code> for binary, and octal literals, respectively.
+</li>
+<li>
+Hexadecimal <a href="#Floating-point_literals">floating-point literals</a> may be written using the prefixes
+<code>0x</code> and <code>0X</code>.
+</li>
+<li>
+The <a href="#Imaginary_literals">imaginary suffix</a> <code>i</code> may be used with any (binary, decimal, hexadecimal)
+integer or floating-point literal, not just decimal literals.
+</li>
+<li>
+The digits of any number literal may be <a href="#Integer_literals">separated</a> (grouped)
+using underscores <code>_</code>.
+</li>
+<li>
+The shift count in a <a href="#Operators">shift operation</a> may be a signed integer type.
+</li>
+</ul>
+
+<h4 id="Go_1.14">Go 1.14</h4>
+<ul>
+<li>
+Emdedding a method more than once through different <a href="#Embedded_interfaces">embedded interfaces</a>
+is not an error.
+</li>
+</ul>
+
+<h4 id="Go_1.17">Go 1.17</h4>
+<ul>
+<li>
+A slice may be <a href="#Conversions">converted</a> to an array pointer if the slice and array element
+types match, and the array is not longer than the slice.
+</li>
+<li>
+The built-in <a href="#Package_unsafe">package <code>unsafe</code></a> includes the new functions
+<code>Add</code> and <code>Slice</code>.
+</li>
+</ul>
+
+<h4 id="Go_1.18">Go 1.18</h4>
+<p>
+The 1.18 release adds polymorphic functions and types ("generics") to the language.
+Specifically:
+</p>
+<ul>
+<li>
+The set of <a href="#Operators_and_punctuation">operators and punctuation</a> includes the new token <code>~</code>.
+</li>
+<li>
+Function and type declarations may declare <a href="#Type_parameter_declarations">type parameters</a>.
+</li>
+<li>
+Interface types may <a href="#General_interfaces">embed arbitrary types</a> (not just type names of interfaces)
+as well as union and <code>~T</code> type elements.
+</li>
+<li>
+The set of <a href="#Predeclared_identifiers">predeclared</a> types includes the new types
+<code>any</code> and <code>comparable</code>.
+</li>
+</ul>
+
+<h4 id="Go_1.20">Go 1.20</h4>
+<ul>
+<li>
+A slice may be <a href="#Conversions">converted</a> to an array if the slice and array element
+types match and the array is not longer than the slice.
+</li>
+<li>
+The built-in <a href="#Package_unsafe">package <code>unsafe</code></a> includes the new functions
+<code>SliceData</code>, <code>String</code>, and <code>StringData</code>.
+</li>
+<li>
+<a href="#Comparison_operators">Comparable types</a> (such as ordinary interfaces) may satisfy
+<code>comparable</code> constraints, even if the type arguments are not strictly comparable.
+</li>
+</ul>
+
+<h4 id="Go_1.21">Go 1.21</h4>
+<ul>
+<li>
+The set of <a href="#Predeclared_identifiers">predeclared</a> functions includes the new functions
+<code>min</code>, <code>max</code>, and <code>clear</code>.
+</li>
+<li>
+<a href="#Type_inference">Type inference</a> uses the types of interface methods for inference.
+It also infers type arguments for generic functions assigned to variables or
+passed as arguments to other (possibly generic) functions.
+</li>
+</ul>
+
+<h4 id="Go_1.22">Go 1.22</h4>
+<ul>
+<li>
+In a <a href="#For_statements">"for" statement</a>, each iteration has its own set of iteration
+variables rather than sharing the same variables in each iteration.
+</li>
+<li>
+A "for" statement with <a href="#For_range">"range" clause</a> may iterate over
+integer values from zero to an upper limit.
+</li>
+</ul>
+
+<h4 id="Go_1.23">Go 1.23</h4>
+<ul>
+<li>A "for" statement with <a href="#For_range">"range" clause</a> accepts an iterator
+function as range expression.
+</li>
+</ul>
+
+<h4 id="Go_1.24">Go 1.24</h4>
+<ul>
+<li>
+An <a href="#Alias_declarations">alias declaration</a> may declare
+<a href="#Type_parameter_declarations">type parameters</a>.
+</li>
+</ul>
+
+<h3 id="Type_unification_rules">Type unification rules</h3>
+
+<p>
+The type unification rules describe if and how two types unify.
+The precise details are relevant for Go implementations,
+affect the specifics of error messages (such as whether
+a compiler reports a type inference or other error),
+and may explain why type inference fails in unusual code situations.
+But by and large these rules can be ignored when writing Go code:
+type inference is designed to mostly "work as expected",
+and the unification rules are fine-tuned accordingly.
+</p>
+
+<p>
+Type unification is controlled by a <i>matching mode</i>, which may
+be <i>exact</i> or <i>loose</i>.
+As unification recursively descends a composite type structure,
+the matching mode used for elements of the type, the <i>element matching mode</i>,
+remains the same as the matching mode except when two types are unified for
+<a href="#Assignability">assignability</a> (<code>≡<sub>A</sub></code>):
+in this case, the matching mode is <i>loose</i> at the top level but
+then changes to <i>exact</i> for element types, reflecting the fact
+that types don't have to be identical to be assignable.
+</p>
+
+<p>
+Two types that are not bound type parameters unify exactly if any of
+following conditions is true:
+</p>
+
+<ul>
+<li>
+	Both types are <a href="#Type_identity">identical</a>.
+</li>
+<li>
+	Both types have identical structure and their element types
+	unify exactly.
+</li>
+<li>
+	Exactly one type is an <a href="#Type_inference">unbound</a>
+	type parameter with a <a href="#Core_types">core type</a>,
+	and that core type unifies with the other type per the
+	unification rules for <code>≡<sub>A</sub></code>
+	(loose unification at the top level and exact unification
+	for element types).
+</li>
+</ul>
+
+<p>
+If both types are bound type parameters, they unify per the given
+matching modes if:
+</p>
+
+<ul>
+<li>
+	Both type parameters are identical.
+</li>
+<li>
+	At most one of the type parameters has a known type argument.
+	In this case, the type parameters are <i>joined</i>:
+	they both stand for the same type argument.
+	If neither type parameter has a known type argument yet,
+	a future type argument inferred for one the type parameters
+	is simultaneously inferred for both of them.
+</li>
+<li>
+	Both type parameters have a known type argument
+	and the type arguments unify per the given matching modes.
+</li>
+</ul>
+
+<p>
+A single bound type parameter <code>P</code> and another type <code>T</code> unify
+per the given matching modes if:
+</p>
+
+<ul>
+<li>
+	<code>P</code> doesn't have a known type argument.
+	In this case, <code>T</code> is inferred as the type argument for <code>P</code>.
+</li>
+<li>
+	<code>P</code> does have a known type argument <code>A</code>,
+	<code>A</code> and <code>T</code> unify per the given matching modes,
+	and one of the following conditions is true:
+	<ul>
+	<li>
+		Both <code>A</code> and <code>T</code> are interface types:
+		In this case, if both <code>A</code> and <code>T</code> are
+		also <a href="#Type_definitions">defined</a> types,
+		they must be <a href="#Type_identity">identical</a>.
+		Otherwise, if neither of them is a defined type, they must
+		have the same number of methods
+		(unification of <code>A</code> and <code>T</code> already
+		established that the methods match).
+	</li>
+	<li>
+		Neither <code>A</code> nor <code>T</code> are interface types:
+		In this case, if <code>T</code> is a defined type, <code>T</code>
+		replaces <code>A</code> as the inferred type argument for <code>P</code>.
+	</li>
+	</ul>
+</li>
+</ul>
+
+<p>
+Finally, two types that are not bound type parameters unify loosely
+(and per the element matching mode) if:
+</p>
+
+<ul>
+<li>
+	Both types unify exactly.
+</li>
+<li>
+	One type is a <a href="#Type_definitions">defined type</a>,
+	the other type is a type literal, but not an interface,
+	and their underlying types unify per the element matching mode.
+</li>
+<li>
+	Both types are interfaces (but not type parameters) with
+	identical <a href="#Interface_types">type terms</a>,
+	both or neither embed the predeclared type
+	<a href="#Predeclared_identifiers">comparable</a>,
+	corresponding method types unify exactly,
+	and the method set of one of the interfaces is a subset of
+	the method set of the other interface.
+</li>
+<li>
+	Only one type is an interface (but not a type parameter),
+	corresponding methods of the two types unify per the element matching mode,
+	and the method set of the interface is a subset of
+	the method set of the other type.
+</li>
+<li>
+	Both types have the same structure and their element types
+	unify per the element matching mode.
+</li>
+</ul>

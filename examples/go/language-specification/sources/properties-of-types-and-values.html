@@ -1,0 +1,397 @@
+<h2 id="Properties_of_types_and_values">Properties of types and values</h2>
+
+<h3 id="Underlying_types">Underlying types</h3>
+
+<p>
+Each type <code>T</code> has an <i>underlying type</i>: If <code>T</code>
+is one of the predeclared boolean, numeric, or string types, or a type literal,
+the corresponding underlying type is <code>T</code> itself.
+Otherwise, <code>T</code>'s underlying type is the underlying type of the
+type to which <code>T</code> refers in its declaration.
+For a type parameter that is the underlying type of its
+<a href="#Type_constraints">type constraint</a>, which is always an interface.
+</p>
+
+<pre>
+type (
+	A1 = string
+	A2 = A1
+)
+
+type (
+	B1 string
+	B2 B1
+	B3 []B1
+	B4 B3
+)
+
+func f[P any](x P) { … }
+</pre>
+
+<p>
+The underlying type of <code>string</code>, <code>A1</code>, <code>A2</code>, <code>B1</code>,
+and <code>B2</code> is <code>string</code>.
+The underlying type of <code>[]B1</code>, <code>B3</code>, and <code>B4</code> is <code>[]B1</code>.
+The underlying type of <code>P</code> is <code>interface{}</code>.
+</p>
+
+<h3 id="Core_types">Core types</h3>
+
+<p>
+Each non-interface type <code>T</code> has a <i>core type</i>, which is the same as the
+<a href="#Underlying_types">underlying type</a> of <code>T</code>.
+</p>
+
+<p>
+An interface <code>T</code> has a core type if one of the following
+conditions is satisfied:
+</p>
+
+<ol>
+<li>
+There is a single type <code>U</code> which is the <a href="#Underlying_types">underlying type</a>
+of all types in the <a href="#Interface_types">type set</a> of <code>T</code>; or
+</li>
+<li>
+the type set of <code>T</code> contains only <a href="#Channel_types">channel types</a>
+with identical element type <code>E</code>, and all directional channels have the same
+direction.
+</li>
+</ol>
+
+<p>
+No other interfaces have a core type.
+</p>
+
+<p>
+The core type of an interface is, depending on the condition that is satisfied, either:
+</p>
+
+<ol>
+<li>
+the type <code>U</code>; or
+</li>
+<li>
+the type <code>chan E</code> if <code>T</code> contains only bidirectional
+channels, or the type <code>chan&lt;- E</code> or <code>&lt;-chan E</code>
+depending on the direction of the directional channels present.
+</li>
+</ol>
+
+<p>
+By definition, a core type is never a <a href="#Type_definitions">defined type</a>,
+<a href="#Type_parameter_declarations">type parameter</a>, or
+<a href="#Interface_types">interface type</a>.
+</p>
+
+<p>
+Examples of interfaces with core types:
+</p>
+
+<pre>
+type Celsius float32
+type Kelvin  float32
+
+interface{ int }                          // int
+interface{ Celsius|Kelvin }               // float32
+interface{ ~chan int }                    // chan int
+interface{ ~chan int|~chan&lt;- int }        // chan&lt;- int
+interface{ ~[]*data; String() string }    // []*data
+</pre>
+
+<p>
+Examples of interfaces without core types:
+</p>
+
+<pre>
+interface{}                               // no single underlying type
+interface{ Celsius|float64 }              // no single underlying type
+interface{ chan int | chan&lt;- string }     // channels have different element types
+interface{ &lt;-chan int | chan&lt;- int }      // directional channels have different directions
+</pre>
+
+<p>
+Some operations (<a href="#Slice_expressions">slice expressions</a>,
+<a href="#Appending_and_copying_slices"><code>append</code> and <code>copy</code></a>)
+rely on a slightly more loose form of core types which accept byte slices and strings.
+Specifically, if there are exactly two types, <code>[]byte</code> and <code>string</code>,
+which are the underlying types of all types in the type set of interface <code>T</code>,
+the core type of <code>T</code> is called <code>bytestring</code>.
+</p>
+
+<p>
+Examples of interfaces with <code>bytestring</code> core types:
+</p>
+
+<pre>
+interface{ int }                          // int (same as ordinary core type)
+interface{ []byte | string }              // bytestring
+interface{ ~[]byte | myString }           // bytestring
+</pre>
+
+<p>
+Note that <code>bytestring</code> is not a real type; it cannot be used to declare
+variables or compose other types. It exists solely to describe the behavior of some
+operations that read from a sequence of bytes, which may be a byte slice or a string.
+</p>
+
+<h3 id="Type_identity">Type identity</h3>
+
+<p>
+Two types are either <i>identical</i> or <i>different</i>.
+</p>
+
+<p>
+A <a href="#Types">named type</a> is always different from any other type.
+Otherwise, two types are identical if their <a href="#Types">underlying</a> type literals are
+structurally equivalent; that is, they have the same literal structure and corresponding
+components have identical types. In detail:
+</p>
+
+<ul>
+	<li>Two array types are identical if they have identical element types and
+	    the same array length.</li>
+
+	<li>Two slice types are identical if they have identical element types.</li>
+
+	<li>Two struct types are identical if they have the same sequence of fields,
+	    and if corresponding pairs of fields have the same names, identical types,
+	    and identical tags, and are either both embedded or both not embedded.
+	    <a href="#Exported_identifiers">Non-exported</a> field names from different
+	    packages are always different.</li>
+
+	<li>Two pointer types are identical if they have identical base types.</li>
+
+	<li>Two function types are identical if they have the same number of parameters
+	    and result values, corresponding parameter and result types are
+	    identical, and either both functions are variadic or neither is.
+	    Parameter and result names are not required to match.</li>
+
+	<li>Two interface types are identical if they define the same type set.
+	</li>
+
+	<li>Two map types are identical if they have identical key and element types.</li>
+
+	<li>Two channel types are identical if they have identical element types and
+	    the same direction.</li>
+
+	<li>Two <a href="#Instantiations">instantiated</a> types are identical if
+	    their defined types and all type arguments are identical.
+	</li>
+</ul>
+
+<p>
+Given the declarations
+</p>
+
+<pre>
+type (
+	A0 = []string
+	A1 = A0
+	A2 = struct{ a, b int }
+	A3 = int
+	A4 = func(A3, float64) *A0
+	A5 = func(x int, _ float64) *[]string
+
+	B0 A0
+	B1 []string
+	B2 struct{ a, b int }
+	B3 struct{ a, c int }
+	B4 func(int, float64) *B0
+	B5 func(x int, y float64) *A1
+
+	C0 = B0
+	D0[P1, P2 any] struct{ x P1; y P2 }
+	E0 = D0[int, string]
+)
+</pre>
+
+<p>
+these types are identical:
+</p>
+
+<pre>
+A0, A1, and []string
+A2 and struct{ a, b int }
+A3 and int
+A4, func(int, float64) *[]string, and A5
+
+B0 and C0
+D0[int, string] and E0
+[]int and []int
+struct{ a, b *B5 } and struct{ a, b *B5 }
+func(x int, y float64) *[]string, func(int, float64) (result *[]string), and A5
+</pre>
+
+<p>
+<code>B0</code> and <code>B1</code> are different because they are new types
+created by distinct <a href="#Type_definitions">type definitions</a>;
+<code>func(int, float64) *B0</code> and <code>func(x int, y float64) *[]string</code>
+are different because <code>B0</code> is different from <code>[]string</code>;
+and <code>P1</code> and <code>P2</code> are different because they are different
+type parameters.
+<code>D0[int, string]</code> and <code>struct{ x int; y string }</code> are
+different because the former is an <a href="#Instantiations">instantiated</a>
+defined type while the latter is a type literal
+(but they are still <a href="#Assignability">assignable</a>).
+</p>
+
+<h3 id="Assignability">Assignability</h3>
+
+<p>
+A value <code>x</code> of type <code>V</code> is <i>assignable</i> to a <a href="#Variables">variable</a> of type <code>T</code>
+("<code>x</code> is assignable to <code>T</code>") if one of the following conditions applies:
+</p>
+
+<ul>
+<li>
+<code>V</code> and <code>T</code> are identical.
+</li>
+<li>
+<code>V</code> and <code>T</code> have identical
+<a href="#Underlying_types">underlying types</a>
+but are not type parameters and at least one of <code>V</code>
+or <code>T</code> is not a <a href="#Types">named type</a>.
+</li>
+<li>
+<code>V</code> and <code>T</code> are channel types with
+identical element types, <code>V</code> is a bidirectional channel,
+and at least one of <code>V</code> or <code>T</code> is not a <a href="#Types">named type</a>.
+</li>
+<li>
+<code>T</code> is an interface type, but not a type parameter, and
+<code>x</code> <a href="#Implementing_an_interface">implements</a> <code>T</code>.
+</li>
+<li>
+<code>x</code> is the predeclared identifier <code>nil</code> and <code>T</code>
+is a pointer, function, slice, map, channel, or interface type,
+but not a type parameter.
+</li>
+<li>
+<code>x</code> is an untyped <a href="#Constants">constant</a>
+<a href="#Representability">representable</a>
+by a value of type <code>T</code>.
+</li>
+</ul>
+
+<p>
+Additionally, if <code>x</code>'s type <code>V</code> or <code>T</code> are type parameters, <code>x</code>
+is assignable to a variable of type <code>T</code> if one of the following conditions applies:
+</p>
+
+<ul>
+<li>
+<code>x</code> is the predeclared identifier <code>nil</code>, <code>T</code> is
+a type parameter, and <code>x</code> is assignable to each type in
+<code>T</code>'s type set.
+</li>
+<li>
+<code>V</code> is not a <a href="#Types">named type</a>, <code>T</code> is
+a type parameter, and <code>x</code> is assignable to each type in
+<code>T</code>'s type set.
+</li>
+<li>
+<code>V</code> is a type parameter and <code>T</code> is not a named type,
+and values of each type in <code>V</code>'s type set are assignable
+to <code>T</code>.
+</li>
+</ul>
+
+<h3 id="Representability">Representability</h3>
+
+<p>
+A <a href="#Constants">constant</a> <code>x</code> is <i>representable</i>
+by a value of type <code>T</code>,
+where <code>T</code> is not a <a href="#Type_parameter_declarations">type parameter</a>,
+if one of the following conditions applies:
+</p>
+
+<ul>
+<li>
+<code>x</code> is in the set of values <a href="#Types">determined</a> by <code>T</code>.
+</li>
+
+<li>
+<code>T</code> is a <a href="#Numeric_types">floating-point type</a> and <code>x</code> can be rounded to <code>T</code>'s
+precision without overflow. Rounding uses IEEE 754 round-to-even rules but with an IEEE
+negative zero further simplified to an unsigned zero. Note that constant values never result
+in an IEEE negative zero, NaN, or infinity.
+</li>
+
+<li>
+<code>T</code> is a complex type, and <code>x</code>'s
+<a href="#Complex_numbers">components</a> <code>real(x)</code> and <code>imag(x)</code>
+are representable by values of <code>T</code>'s component type (<code>float32</code> or
+<code>float64</code>).
+</li>
+</ul>
+
+<p>
+If <code>T</code> is a type parameter,
+<code>x</code> is representable by a value of type <code>T</code> if <code>x</code> is representable
+by a value of each type in <code>T</code>'s type set.
+</p>
+
+<pre>
+x                   T           x is representable by a value of T because
+
+'a'                 byte        97 is in the set of byte values
+97                  rune        rune is an alias for int32, and 97 is in the set of 32-bit integers
+"foo"               string      "foo" is in the set of string values
+1024                int16       1024 is in the set of 16-bit integers
+42.0                byte        42 is in the set of unsigned 8-bit integers
+1e10                uint64      10000000000 is in the set of unsigned 64-bit integers
+2.718281828459045   float32     2.718281828459045 rounds to 2.7182817 which is in the set of float32 values
+-1e-1000            float64     -1e-1000 rounds to IEEE -0.0 which is further simplified to 0.0
+0i                  int         0 is an integer value
+(42 + 0i)           float32     42.0 (with zero imaginary part) is in the set of float32 values
+</pre>
+
+<pre>
+x                   T           x is not representable by a value of T because
+
+0                   bool        0 is not in the set of boolean values
+'a'                 string      'a' is a rune, it is not in the set of string values
+1024                byte        1024 is not in the set of unsigned 8-bit integers
+-1                  uint16      -1 is not in the set of unsigned 16-bit integers
+1.1                 int         1.1 is not an integer value
+42i                 float32     (0 + 42i) is not in the set of float32 values
+1e1000              float64     1e1000 overflows to IEEE +Inf after rounding
+</pre>
+
+<h3 id="Method_sets">Method sets</h3>
+
+<p>
+The <i>method set</i> of a type determines the methods that can be
+<a href="#Calls">called</a> on an <a href="#Operands">operand</a> of that type.
+Every type has a (possibly empty) method set associated with it:
+</p>
+
+<ul>
+<li>The method set of a <a href="#Type_definitions">defined type</a> <code>T</code> consists of all
+<a href="#Method_declarations">methods</a> declared with receiver type <code>T</code>.
+</li>
+
+<li>
+The method set of a pointer to a defined type <code>T</code>
+(where <code>T</code> is neither a pointer nor an interface)
+is the set of all methods declared with receiver <code>*T</code> or <code>T</code>.
+</li>
+
+<li>The method set of an <a href="#Interface_types">interface type</a> is the intersection
+of the method sets of each type in the interface's <a href="#Interface_types">type set</a>
+(the resulting method set is usually just the set of declared methods in the interface).
+</li>
+</ul>
+
+<p>
+Further rules apply to structs (and pointer to structs) containing embedded fields,
+as described in the section on <a href="#Struct_types">struct types</a>.
+Any other type has an empty method set.
+</p>
+
+<p>
+In a method set, each method must have a
+<a href="#Uniqueness_of_identifiers">unique</a>
+non-<a href="#Blank_identifier">blank</a> <a href="#MethodName">method name</a>.
+</p>

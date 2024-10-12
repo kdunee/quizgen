@@ -1,0 +1,1417 @@
+<h2 id="Statements">Statements</h2>
+
+<p>
+Statements control execution.
+</p>
+
+<pre class="ebnf">
+Statement =
+	Declaration | LabeledStmt | SimpleStmt |
+	GoStmt | ReturnStmt | BreakStmt | ContinueStmt | GotoStmt |
+	FallthroughStmt | Block | IfStmt | SwitchStmt | SelectStmt | ForStmt |
+	DeferStmt .
+
+SimpleStmt = EmptyStmt | ExpressionStmt | SendStmt | IncDecStmt | Assignment | ShortVarDecl .
+</pre>
+
+<h3 id="Terminating_statements">Terminating statements</h3>
+
+<p>
+A <i>terminating statement</i> interrupts the regular flow of control in
+a <a href="#Blocks">block</a>. The following statements are terminating:
+</p>
+
+<ol>
+<li>
+	A <a href="#Return_statements">"return"</a> or
+    	<a href="#Goto_statements">"goto"</a> statement.
+	<!-- ul below only for regular layout -->
+	<ul> </ul>
+</li>
+
+<li>
+	A call to the built-in function
+	<a href="#Handling_panics"><code>panic</code></a>.
+	<!-- ul below only for regular layout -->
+	<ul> </ul>
+</li>
+
+<li>
+	A <a href="#Blocks">block</a> in which the statement list ends in a terminating statement.
+	<!-- ul below only for regular layout -->
+	<ul> </ul>
+</li>
+
+<li>
+	An <a href="#If_statements">"if" statement</a> in which:
+	<ul>
+	<li>the "else" branch is present, and</li>
+	<li>both branches are terminating statements.</li>
+	</ul>
+</li>
+
+<li>
+	A <a href="#For_statements">"for" statement</a> in which:
+	<ul>
+	<li>there are no "break" statements referring to the "for" statement, and</li>
+	<li>the loop condition is absent, and</li>
+	<li>the "for" statement does not use a range clause.</li>
+	</ul>
+</li>
+
+<li>
+	A <a href="#Switch_statements">"switch" statement</a> in which:
+	<ul>
+	<li>there are no "break" statements referring to the "switch" statement,</li>
+	<li>there is a default case, and</li>
+	<li>the statement lists in each case, including the default, end in a terminating
+	    statement, or a possibly labeled <a href="#Fallthrough_statements">"fallthrough"
+	    statement</a>.</li>
+	</ul>
+</li>
+
+<li>
+	A <a href="#Select_statements">"select" statement</a> in which:
+	<ul>
+	<li>there are no "break" statements referring to the "select" statement, and</li>
+	<li>the statement lists in each case, including the default if present,
+	    end in a terminating statement.</li>
+	</ul>
+</li>
+
+<li>
+	A <a href="#Labeled_statements">labeled statement</a> labeling
+	a terminating statement.
+</li>
+</ol>
+
+<p>
+All other statements are not terminating.
+</p>
+
+<p>
+A <a href="#Blocks">statement list</a> ends in a terminating statement if the list
+is not empty and its final non-empty statement is terminating.
+</p>
+
+
+<h3 id="Empty_statements">Empty statements</h3>
+
+<p>
+The empty statement does nothing.
+</p>
+
+<pre class="ebnf">
+EmptyStmt = .
+</pre>
+
+
+<h3 id="Labeled_statements">Labeled statements</h3>
+
+<p>
+A labeled statement may be the target of a <code>goto</code>,
+<code>break</code> or <code>continue</code> statement.
+</p>
+
+<pre class="ebnf">
+LabeledStmt = Label ":" Statement .
+Label       = identifier .
+</pre>
+
+<pre>
+Error: log.Panic("error encountered")
+</pre>
+
+
+<h3 id="Expression_statements">Expression statements</h3>
+
+<p>
+With the exception of specific built-in functions,
+function and method <a href="#Calls">calls</a> and
+<a href="#Receive_operator">receive operations</a>
+can appear in statement context. Such statements may be parenthesized.
+</p>
+
+<pre class="ebnf">
+ExpressionStmt = Expression .
+</pre>
+
+<p>
+The following built-in functions are not permitted in statement context:
+</p>
+
+<pre>
+append cap complex imag len make new real
+unsafe.Add unsafe.Alignof unsafe.Offsetof unsafe.Sizeof unsafe.Slice unsafe.SliceData unsafe.String unsafe.StringData
+</pre>
+
+<pre>
+h(x+y)
+f.Close()
+&lt;-ch
+(&lt;-ch)
+len("foo")  // illegal if len is the built-in function
+</pre>
+
+
+<h3 id="Send_statements">Send statements</h3>
+
+<p>
+A send statement sends a value on a channel.
+The channel expression's <a href="#Core_types">core type</a>
+must be a <a href="#Channel_types">channel</a>,
+the channel direction must permit send operations,
+and the type of the value to be sent must be <a href="#Assignability">assignable</a>
+to the channel's element type.
+</p>
+
+<pre class="ebnf">
+SendStmt = Channel "&lt;-" Expression .
+Channel  = Expression .
+</pre>
+
+<p>
+Both the channel and the value expression are evaluated before communication
+begins. Communication blocks until the send can proceed.
+A send on an unbuffered channel can proceed if a receiver is ready.
+A send on a buffered channel can proceed if there is room in the buffer.
+A send on a closed channel proceeds by causing a <a href="#Run_time_panics">run-time panic</a>.
+A send on a <code>nil</code> channel blocks forever.
+</p>
+
+<pre>
+ch &lt;- 3  // send value 3 to channel ch
+</pre>
+
+
+<h3 id="IncDec_statements">IncDec statements</h3>
+
+<p>
+The "++" and "--" statements increment or decrement their operands
+by the untyped <a href="#Constants">constant</a> <code>1</code>.
+As with an assignment, the operand must be <a href="#Address_operators">addressable</a>
+or a map index expression.
+</p>
+
+<pre class="ebnf">
+IncDecStmt = Expression ( "++" | "--" ) .
+</pre>
+
+<p>
+The following <a href="#Assignment_statements">assignment statements</a> are semantically
+equivalent:
+</p>
+
+<pre class="grammar">
+IncDec statement    Assignment
+x++                 x += 1
+x--                 x -= 1
+</pre>
+
+
+<h3 id="Assignment_statements">Assignment statements</h3>
+
+<p>
+An <i>assignment</i> replaces the current value stored in a <a href="#Variables">variable</a>
+with a new value specified by an <a href="#Expressions">expression</a>.
+An assignment statement may assign a single value to a single variable, or multiple values to a
+matching number of variables.
+</p>
+
+<pre class="ebnf">
+Assignment = ExpressionList assign_op ExpressionList .
+
+assign_op = [ add_op | mul_op ] "=" .
+</pre>
+
+<p>
+Each left-hand side operand must be <a href="#Address_operators">addressable</a>,
+a map index expression, or (for <code>=</code> assignments only) the
+<a href="#Blank_identifier">blank identifier</a>.
+Operands may be parenthesized.
+</p>
+
+<pre>
+x = 1
+*p = f()
+a[i] = 23
+(k) = &lt;-ch  // same as: k = &lt;-ch
+</pre>
+
+<p>
+An <i>assignment operation</i> <code>x</code> <i>op</i><code>=</code>
+<code>y</code> where <i>op</i> is a binary <a href="#Arithmetic_operators">arithmetic operator</a>
+is equivalent to <code>x</code> <code>=</code> <code>x</code> <i>op</i>
+<code>(y)</code> but evaluates <code>x</code>
+only once.  The <i>op</i><code>=</code> construct is a single token.
+In assignment operations, both the left- and right-hand expression lists
+must contain exactly one single-valued expression, and the left-hand
+expression must not be the blank identifier.
+</p>
+
+<pre>
+a[i] &lt;&lt;= 2
+i &amp;^= 1&lt;&lt;n
+</pre>
+
+<p>
+A tuple assignment assigns the individual elements of a multi-valued
+operation to a list of variables.  There are two forms.  In the
+first, the right hand operand is a single multi-valued expression
+such as a function call, a <a href="#Channel_types">channel</a> or
+<a href="#Map_types">map</a> operation, or a <a href="#Type_assertions">type assertion</a>.
+The number of operands on the left
+hand side must match the number of values.  For instance, if
+<code>f</code> is a function returning two values,
+</p>
+
+<pre>
+x, y = f()
+</pre>
+
+<p>
+assigns the first value to <code>x</code> and the second to <code>y</code>.
+In the second form, the number of operands on the left must equal the number
+of expressions on the right, each of which must be single-valued, and the
+<i>n</i>th expression on the right is assigned to the <i>n</i>th
+operand on the left:
+</p>
+
+<pre>
+one, two, three = '一', '二', '三'
+</pre>
+
+<p>
+The <a href="#Blank_identifier">blank identifier</a> provides a way to
+ignore right-hand side values in an assignment:
+</p>
+
+<pre>
+_ = x       // evaluate x but ignore it
+x, _ = f()  // evaluate f() but ignore second result value
+</pre>
+
+<p>
+The assignment proceeds in two phases.
+First, the operands of <a href="#Index_expressions">index expressions</a>
+and <a href="#Address_operators">pointer indirections</a>
+(including implicit pointer indirections in <a href="#Selectors">selectors</a>)
+on the left and the expressions on the right are all
+<a href="#Order_of_evaluation">evaluated in the usual order</a>.
+Second, the assignments are carried out in left-to-right order.
+</p>
+
+<pre>
+a, b = b, a  // exchange a and b
+
+x := []int{1, 2, 3}
+i := 0
+i, x[i] = 1, 2  // set i = 1, x[0] = 2
+
+i = 0
+x[i], i = 2, 1  // set x[0] = 2, i = 1
+
+x[0], x[0] = 1, 2  // set x[0] = 1, then x[0] = 2 (so x[0] == 2 at end)
+
+x[1], x[3] = 4, 5  // set x[1] = 4, then panic setting x[3] = 5.
+
+type Point struct { x, y int }
+var p *Point
+x[2], p.x = 6, 7  // set x[2] = 6, then panic setting p.x = 7
+
+i = 2
+x = []int{3, 5, 7}
+for i, x[i] = range x {  // set i, x[2] = 0, x[0]
+	break
+}
+// after this loop, i == 0 and x is []int{3, 5, 3}
+</pre>
+
+<p>
+In assignments, each value must be <a href="#Assignability">assignable</a>
+to the type of the operand to which it is assigned, with the following special cases:
+</p>
+
+<ol>
+<li>
+	Any typed value may be assigned to the blank identifier.
+</li>
+
+<li>
+	If an untyped constant
+	is assigned to a variable of interface type or the blank identifier,
+	the constant is first implicitly <a href="#Conversions">converted</a> to its
+	 <a href="#Constants">default type</a>.
+</li>
+
+<li>
+	If an untyped boolean value is assigned to a variable of interface type or
+	the blank identifier, it is first implicitly converted to type <code>bool</code>.
+</li>
+</ol>
+
+<h3 id="If_statements">If statements</h3>
+
+<p>
+"If" statements specify the conditional execution of two branches
+according to the value of a boolean expression.  If the expression
+evaluates to true, the "if" branch is executed, otherwise, if
+present, the "else" branch is executed.
+</p>
+
+<pre class="ebnf">
+IfStmt = "if" [ SimpleStmt ";" ] Expression Block [ "else" ( IfStmt | Block ) ] .
+</pre>
+
+<pre>
+if x &gt; max {
+	x = max
+}
+</pre>
+
+<p>
+The expression may be preceded by a simple statement, which
+executes before the expression is evaluated.
+</p>
+
+<pre>
+if x := f(); x &lt; y {
+	return x
+} else if x &gt; z {
+	return z
+} else {
+	return y
+}
+</pre>
+
+
+<h3 id="Switch_statements">Switch statements</h3>
+
+<p>
+"Switch" statements provide multi-way execution.
+An expression or type is compared to the "cases"
+inside the "switch" to determine which branch
+to execute.
+</p>
+
+<pre class="ebnf">
+SwitchStmt = ExprSwitchStmt | TypeSwitchStmt .
+</pre>
+
+<p>
+There are two forms: expression switches and type switches.
+In an expression switch, the cases contain expressions that are compared
+against the value of the switch expression.
+In a type switch, the cases contain types that are compared against the
+type of a specially annotated switch expression.
+The switch expression is evaluated exactly once in a switch statement.
+</p>
+
+<h4 id="Expression_switches">Expression switches</h4>
+
+<p>
+In an expression switch,
+the switch expression is evaluated and
+the case expressions, which need not be constants,
+are evaluated left-to-right and top-to-bottom; the first one that equals the
+switch expression
+triggers execution of the statements of the associated case;
+the other cases are skipped.
+If no case matches and there is a "default" case,
+its statements are executed.
+There can be at most one default case and it may appear anywhere in the
+"switch" statement.
+A missing switch expression is equivalent to the boolean value
+<code>true</code>.
+</p>
+
+<pre class="ebnf">
+ExprSwitchStmt = "switch" [ SimpleStmt ";" ] [ Expression ] "{" { ExprCaseClause } "}" .
+ExprCaseClause = ExprSwitchCase ":" StatementList .
+ExprSwitchCase = "case" ExpressionList | "default" .
+</pre>
+
+<p>
+If the switch expression evaluates to an untyped constant, it is first implicitly
+<a href="#Conversions">converted</a> to its <a href="#Constants">default type</a>.
+The predeclared untyped value <code>nil</code> cannot be used as a switch expression.
+The switch expression type must be <a href="#Comparison_operators">comparable</a>.
+</p>
+
+<p>
+If a case expression is untyped, it is first implicitly <a href="#Conversions">converted</a>
+to the type of the switch expression.
+For each (possibly converted) case expression <code>x</code> and the value <code>t</code>
+of the switch expression, <code>x == t</code> must be a valid <a href="#Comparison_operators">comparison</a>.
+</p>
+
+<p>
+In other words, the switch expression is treated as if it were used to declare and
+initialize a temporary variable <code>t</code> without explicit type; it is that
+value of <code>t</code> against which each case expression <code>x</code> is tested
+for equality.
+</p>
+
+<p>
+In a case or default clause, the last non-empty statement
+may be a (possibly <a href="#Labeled_statements">labeled</a>)
+<a href="#Fallthrough_statements">"fallthrough" statement</a> to
+indicate that control should flow from the end of this clause to
+the first statement of the next clause.
+Otherwise control flows to the end of the "switch" statement.
+A "fallthrough" statement may appear as the last statement of all
+but the last clause of an expression switch.
+</p>
+
+<p>
+The switch expression may be preceded by a simple statement, which
+executes before the expression is evaluated.
+</p>
+
+<pre>
+switch tag {
+default: s3()
+case 0, 1, 2, 3: s1()
+case 4, 5, 6, 7: s2()
+}
+
+switch x := f(); {  // missing switch expression means "true"
+case x &lt; 0: return -x
+default: return x
+}
+
+switch {
+case x &lt; y: f1()
+case x &lt; z: f2()
+case x == 4: f3()
+}
+</pre>
+
+<p>
+Implementation restriction: A compiler may disallow multiple case
+expressions evaluating to the same constant.
+For instance, the current compilers disallow duplicate integer,
+floating point, or string constants in case expressions.
+</p>
+
+<h4 id="Type_switches">Type switches</h4>
+
+<p>
+A type switch compares types rather than values. It is otherwise similar
+to an expression switch. It is marked by a special switch expression that
+has the form of a <a href="#Type_assertions">type assertion</a>
+using the keyword <code>type</code> rather than an actual type:
+</p>
+
+<pre>
+switch x.(type) {
+// cases
+}
+</pre>
+
+<p>
+Cases then match actual types <code>T</code> against the dynamic type of the
+expression <code>x</code>. As with type assertions, <code>x</code> must be of
+<a href="#Interface_types">interface type</a>, but not a
+<a href="#Type_parameter_declarations">type parameter</a>, and each non-interface type
+<code>T</code> listed in a case must implement the type of <code>x</code>.
+The types listed in the cases of a type switch must all be
+<a href="#Type_identity">different</a>.
+</p>
+
+<pre class="ebnf">
+TypeSwitchStmt  = "switch" [ SimpleStmt ";" ] TypeSwitchGuard "{" { TypeCaseClause } "}" .
+TypeSwitchGuard = [ identifier ":=" ] PrimaryExpr "." "(" "type" ")" .
+TypeCaseClause  = TypeSwitchCase ":" StatementList .
+TypeSwitchCase  = "case" TypeList | "default" .
+</pre>
+
+<p>
+The TypeSwitchGuard may include a
+<a href="#Short_variable_declarations">short variable declaration</a>.
+When that form is used, the variable is declared at the end of the
+TypeSwitchCase in the <a href="#Blocks">implicit block</a> of each clause.
+In clauses with a case listing exactly one type, the variable
+has that type; otherwise, the variable has the type of the expression
+in the TypeSwitchGuard.
+</p>
+
+<p>
+Instead of a type, a case may use the predeclared identifier
+<a href="#Predeclared_identifiers"><code>nil</code></a>;
+that case is selected when the expression in the TypeSwitchGuard
+is a <code>nil</code> interface value.
+There may be at most one <code>nil</code> case.
+</p>
+
+<p>
+Given an expression <code>x</code> of type <code>interface{}</code>,
+the following type switch:
+</p>
+
+<pre>
+switch i := x.(type) {
+case nil:
+	printString("x is nil")                // type of i is type of x (interface{})
+case int:
+	printInt(i)                            // type of i is int
+case float64:
+	printFloat64(i)                        // type of i is float64
+case func(int) float64:
+	printFunction(i)                       // type of i is func(int) float64
+case bool, string:
+	printString("type is bool or string")  // type of i is type of x (interface{})
+default:
+	printString("don't know the type")     // type of i is type of x (interface{})
+}
+</pre>
+
+<p>
+could be rewritten:
+</p>
+
+<pre>
+v := x  // x is evaluated exactly once
+if v == nil {
+	i := v                                 // type of i is type of x (interface{})
+	printString("x is nil")
+} else if i, isInt := v.(int); isInt {
+	printInt(i)                            // type of i is int
+} else if i, isFloat64 := v.(float64); isFloat64 {
+	printFloat64(i)                        // type of i is float64
+} else if i, isFunc := v.(func(int) float64); isFunc {
+	printFunction(i)                       // type of i is func(int) float64
+} else {
+	_, isBool := v.(bool)
+	_, isString := v.(string)
+	if isBool || isString {
+		i := v                         // type of i is type of x (interface{})
+		printString("type is bool or string")
+	} else {
+		i := v                         // type of i is type of x (interface{})
+		printString("don't know the type")
+	}
+}
+</pre>
+
+<p>
+A <a href="#Type_parameter_declarations">type parameter</a> or a <a href="#Type_declarations">generic type</a>
+may be used as a type in a case. If upon <a href="#Instantiations">instantiation</a> that type turns
+out to duplicate another entry in the switch, the first matching case is chosen.
+</p>
+
+<pre>
+func f[P any](x any) int {
+	switch x.(type) {
+	case P:
+		return 0
+	case string:
+		return 1
+	case []P:
+		return 2
+	case []byte:
+		return 3
+	default:
+		return 4
+	}
+}
+
+var v1 = f[string]("foo")   // v1 == 0
+var v2 = f[byte]([]byte{})  // v2 == 2
+</pre>
+
+<p>
+The type switch guard may be preceded by a simple statement, which
+executes before the guard is evaluated.
+</p>
+
+<p>
+The "fallthrough" statement is not permitted in a type switch.
+</p>
+
+<h3 id="For_statements">For statements</h3>
+
+<p>
+A "for" statement specifies repeated execution of a block. There are three forms:
+The iteration may be controlled by a single condition, a "for" clause, or a "range" clause.
+</p>
+
+<pre class="ebnf">
+ForStmt = "for" [ Condition | ForClause | RangeClause ] Block .
+Condition = Expression .
+</pre>
+
+<h4 id="For_condition">For statements with single condition</h4>
+
+<p>
+In its simplest form, a "for" statement specifies the repeated execution of
+a block as long as a boolean condition evaluates to true.
+The condition is evaluated before each iteration.
+If the condition is absent, it is equivalent to the boolean value
+<code>true</code>.
+</p>
+
+<pre>
+for a &lt; b {
+	a *= 2
+}
+</pre>
+
+<h4 id="For_clause">For statements with <code>for</code> clause</h4>
+
+<p>
+A "for" statement with a ForClause is also controlled by its condition, but
+additionally it may specify an <i>init</i>
+and a <i>post</i> statement, such as an assignment,
+an increment or decrement statement. The init statement may be a
+<a href="#Short_variable_declarations">short variable declaration</a>, but the post statement must not.
+</p>
+
+<pre class="ebnf">
+ForClause = [ InitStmt ] ";" [ Condition ] ";" [ PostStmt ] .
+InitStmt = SimpleStmt .
+PostStmt = SimpleStmt .
+</pre>
+
+<pre>
+for i := 0; i &lt; 10; i++ {
+	f(i)
+}
+</pre>
+
+<p>
+If non-empty, the init statement is executed once before evaluating the
+condition for the first iteration;
+the post statement is executed after each execution of the block (and
+only if the block was executed).
+Any element of the ForClause may be empty but the
+<a href="#Semicolons">semicolons</a> are
+required unless there is only a condition.
+If the condition is absent, it is equivalent to the boolean value
+<code>true</code>.
+</p>
+
+<pre>
+for cond { S() }    is the same as    for ; cond ; { S() }
+for      { S() }    is the same as    for true     { S() }
+</pre>
+
+<p>
+Each iteration has its own separate declared variable (or variables)
+[<a href="#Go_1.22">Go 1.22</a>].
+The variable used by the first iteration is declared by the init statement.
+The variable used by each subsequent iteration is declared implicitly before
+executing the post statement and initialized to the value of the previous
+iteration's variable at that moment.
+</p>
+
+<pre>
+var prints []func()
+for i := 0; i < 5; i++ {
+	prints = append(prints, func() { println(i) })
+	i++
+}
+for _, p := range prints {
+	p()
+}
+</pre>
+
+<p>
+prints
+</p>
+
+<pre>
+1
+3
+5
+</pre>
+
+<p>
+Prior to [<a href="#Go_1.22">Go 1.22</a>], iterations share one set of variables
+instead of having their own separate variables.
+In that case, the example above prints
+</p>
+
+<pre>
+6
+6
+6
+</pre>
+
+<h4 id="For_range">For statements with <code>range</code> clause</h4>
+
+<p>
+A "for" statement with a "range" clause
+iterates through all entries of an array, slice, string or map, values received on
+a channel, integer values from zero to an upper limit [<a href="#Go_1.22">Go 1.22</a>],
+or values passed to an iterator function's yield function [<a href="#Go_1.23">Go 1.23</a>].
+For each entry it assigns <i>iteration values</i>
+to corresponding <i>iteration variables</i> if present and then executes the block.
+</p>
+
+<pre class="ebnf">
+RangeClause = [ ExpressionList "=" | IdentifierList ":=" ] "range" Expression .
+</pre>
+
+<p>
+The expression on the right in the "range" clause is called the <i>range expression</i>,
+its <a href="#Core_types">core type</a> must be
+an array, pointer to an array, slice, string, map, channel permitting
+<a href="#Receive_operator">receive operations</a>, an integer, or
+a function with specific signature (see below).
+As with an assignment, if present the operands on the left must be
+<a href="#Address_operators">addressable</a> or map index expressions; they
+denote the iteration variables.
+If the range expression is a function, the maximum number of iteration variables depends on
+the function signature.
+If the range expression is a channel or integer, at most one iteration variable is permitted;
+otherwise there may be up to two.
+If the last iteration variable is the <a href="#Blank_identifier">blank identifier</a>,
+the range clause is equivalent to the same clause without that identifier.
+</p>
+
+<p>
+The range expression <code>x</code> is evaluated before beginning the loop,
+with one exception: if at most one iteration variable is present and <code>x</code> or
+<a href="#Length_and_capacity"><code>len(x)</code></a> is <a href="#Constants">constant</a>,
+the range expression is not evaluated.
+</p>
+
+<p>
+Function calls on the left are evaluated once per iteration.
+For each iteration, iteration values are produced as follows
+if the respective iteration variables are present:
+</p>
+
+<pre class="grammar">
+Range expression                                       1st value                2nd value
+
+array or slice      a  [n]E, *[n]E, or []E             index    i  int          a[i]       E
+string              s  string type                     index    i  int          see below  rune
+map                 m  map[K]V                         key      k  K            m[k]       V
+channel             c  chan E, &lt;-chan E                element  e  E
+integer value       n  integer type, or untyped int    value    i  see below
+function, 0 values  f  func(func() bool)
+function, 1 value   f  func(func(V) bool)              value    v  V
+function, 2 values  f  func(func(K, V) bool)           key      k  K            v          V
+</pre>
+
+<ol>
+<li>
+For an array, pointer to array, or slice value <code>a</code>, the index iteration
+values are produced in increasing order, starting at element index 0.
+If at most one iteration variable is present, the range loop produces
+iteration values from 0 up to <code>len(a)-1</code> and does not index into the array
+or slice itself. For a <code>nil</code> slice, the number of iterations is 0.
+</li>
+
+<li>
+For a string value, the "range" clause iterates over the Unicode code points
+in the string starting at byte index 0.  On successive iterations, the index value will be the
+index of the first byte of successive UTF-8-encoded code points in the string,
+and the second value, of type <code>rune</code>, will be the value of
+the corresponding code point. If the iteration encounters an invalid
+UTF-8 sequence, the second value will be <code>0xFFFD</code>,
+the Unicode replacement character, and the next iteration will advance
+a single byte in the string.
+</li>
+
+<li>
+The iteration order over maps is not specified
+and is not guaranteed to be the same from one iteration to the next.
+If a map entry that has not yet been reached is removed during iteration,
+the corresponding iteration value will not be produced. If a map entry is
+created during iteration, that entry may be produced during the iteration or
+may be skipped. The choice may vary for each entry created and from one
+iteration to the next.
+If the map is <code>nil</code>, the number of iterations is 0.
+</li>
+
+<li>
+For channels, the iteration values produced are the successive values sent on
+the channel until the channel is <a href="#Close">closed</a>. If the channel
+is <code>nil</code>, the range expression blocks forever.
+</li>
+
+<li>
+For an integer value <code>n</code>, where <code>n</code> is of <a href="#Numeric_types">integer type</a>
+or an untyped <a href="#Constants">integer constant</a>, the iteration values 0 through <code>n-1</code>
+are produced in increasing order.
+If <code>n</code> is of integer type, the iteration values have that same type.
+Otherwise, the type of <code>n</code> is determined as if it were assigned to the
+iteration variable.
+Specifically:
+if the iteration variable is preexisting, the type of the iteration values is the type of the iteration
+variable, which must be of integer type.
+Otherwise, if the iteration variable is declared by the "range" clause or is absent,
+the type of the iteration values is the <a href="#Constants">default type</a> for <code>n</code>.
+If <code>n</code> &lt= 0, the loop does not run any iterations.
+</li>
+
+<li>
+For a function <code>f</code>, the iteration proceeds by calling <code>f</code>
+with a new, synthesized <code>yield</code> function as its argument.
+If <code>yield</code> is called before <code>f</code> returns,
+the arguments to <code>yield</code> become the iteration values
+for executing the loop body once.
+After each successive loop iteration, <code>yield</code> returns true
+and may be called again to continue the loop.
+As long as the loop body does not terminate, the "range" clause will continue
+to generate iteration values this way for each <code>yield</code> call until
+<code>f</code> returns.
+If the loop body terminates (such as by a <code>break</code> statement),
+<code>yield</code> returns false and must not be called again.
+</li>
+</ol>
+
+<p>
+The iteration variables may be declared by the "range" clause using a form of
+<a href="#Short_variable_declarations">short variable declaration</a>
+(<code>:=</code>).
+In this case their <a href="#Declarations_and_scope">scope</a> is the block of the "for" statement
+and each iteration has its own new variables [<a href="#Go_1.22">Go 1.22</a>]
+(see also <a href="#For_clause">"for" statements with a ForClause</a>).
+The variables have the types of their respective iteration values.
+</p>
+
+<p>
+If the iteration variables are not explicitly declared by the "range" clause,
+they must be preexisting.
+In this case, the iteration values are assigned to the respective variables
+as in an <a href="#Assignment_statements">assignment statement</a>.
+</p>
+
+<pre>
+var testdata *struct {
+	a *[7]int
+}
+for i, _ := range testdata.a {
+	// testdata.a is never evaluated; len(testdata.a) is constant
+	// i ranges from 0 to 6
+	f(i)
+}
+
+var a [10]string
+for i, s := range a {
+	// type of i is int
+	// type of s is string
+	// s == a[i]
+	g(i, s)
+}
+
+var key string
+var val interface{}  // element type of m is assignable to val
+m := map[string]int{"mon":0, "tue":1, "wed":2, "thu":3, "fri":4, "sat":5, "sun":6}
+for key, val = range m {
+	h(key, val)
+}
+// key == last map key encountered in iteration
+// val == map[key]
+
+var ch chan Work = producer()
+for w := range ch {
+	doWork(w)
+}
+
+// empty a channel
+for range ch {}
+
+// call f(0), f(1), ... f(9)
+for i := range 10 {
+	// type of i is int (default type for untyped constant 10)
+	f(i)
+}
+
+// invalid: 256 cannot be assigned to uint8
+var u uint8
+for u = range 256 {
+}
+
+// invalid: 1e3 is a floating-point constant
+for range 1e3 {
+}
+
+// fibo generates the Fibonacci sequence
+fibo := func(yield func(x int) bool) {
+	f0, f1 := 0, 1
+	for yield(f0) {
+		f0, f1 = f1, f0+f1
+	}
+}
+
+// print the Fibonacci numbers below 1000:
+for x := range fibo {
+	if x >= 1000 {
+		break
+	}
+	fmt.Printf("%d ", x)
+}
+// output: 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+
+// iteration support for a recursive tree data structure
+type Tree[K cmp.Ordered, V any] struct {
+	left, right *Tree[K, V]
+	key         K
+	value       V
+}
+
+func (t *Tree[K, V]) walk(yield func(key K, val V) bool) bool {
+	return t == nil || t.left.walk(yield) && yield(t.key, t.value) && t.right.walk(yield)
+}
+
+func (t *Tree[K, V]) Walk(yield func(key K, val V) bool) {
+	t.walk(yield)
+}
+
+// walk tree t in-order
+var t Tree[string, int]
+for k, v := range t.Walk {
+	// process k, v
+}
+</pre>
+
+
+<h3 id="Go_statements">Go statements</h3>
+
+<p>
+A "go" statement starts the execution of a function call
+as an independent concurrent thread of control, or <i>goroutine</i>,
+within the same address space.
+</p>
+
+<pre class="ebnf">
+GoStmt = "go" Expression .
+</pre>
+
+<p>
+The expression must be a function or method call; it cannot be parenthesized.
+Calls of built-in functions are restricted as for
+<a href="#Expression_statements">expression statements</a>.
+</p>
+
+<p>
+The function value and parameters are
+<a href="#Calls">evaluated as usual</a>
+in the calling goroutine, but
+unlike with a regular call, program execution does not wait
+for the invoked function to complete.
+Instead, the function begins executing independently
+in a new goroutine.
+When the function terminates, its goroutine also terminates.
+If the function has any return values, they are discarded when the
+function completes.
+</p>
+
+<pre>
+go Server()
+go func(ch chan&lt;- bool) { for { sleep(10); ch &lt;- true }} (c)
+</pre>
+
+
+<h3 id="Select_statements">Select statements</h3>
+
+<p>
+A "select" statement chooses which of a set of possible
+<a href="#Send_statements">send</a> or
+<a href="#Receive_operator">receive</a>
+operations will proceed.
+It looks similar to a
+<a href="#Switch_statements">"switch"</a> statement but with the
+cases all referring to communication operations.
+</p>
+
+<pre class="ebnf">
+SelectStmt = "select" "{" { CommClause } "}" .
+CommClause = CommCase ":" StatementList .
+CommCase   = "case" ( SendStmt | RecvStmt ) | "default" .
+RecvStmt   = [ ExpressionList "=" | IdentifierList ":=" ] RecvExpr .
+RecvExpr   = Expression .
+</pre>
+
+<p>
+A case with a RecvStmt may assign the result of a RecvExpr to one or
+two variables, which may be declared using a
+<a href="#Short_variable_declarations">short variable declaration</a>.
+The RecvExpr must be a (possibly parenthesized) receive operation.
+There can be at most one default case and it may appear anywhere
+in the list of cases.
+</p>
+
+<p>
+Execution of a "select" statement proceeds in several steps:
+</p>
+
+<ol>
+<li>
+For all the cases in the statement, the channel operands of receive operations
+and the channel and right-hand-side expressions of send statements are
+evaluated exactly once, in source order, upon entering the "select" statement.
+The result is a set of channels to receive from or send to,
+and the corresponding values to send.
+Any side effects in that evaluation will occur irrespective of which (if any)
+communication operation is selected to proceed.
+Expressions on the left-hand side of a RecvStmt with a short variable declaration
+or assignment are not yet evaluated.
+</li>
+
+<li>
+If one or more of the communications can proceed,
+a single one that can proceed is chosen via a uniform pseudo-random selection.
+Otherwise, if there is a default case, that case is chosen.
+If there is no default case, the "select" statement blocks until
+at least one of the communications can proceed.
+</li>
+
+<li>
+Unless the selected case is the default case, the respective communication
+operation is executed.
+</li>
+
+<li>
+If the selected case is a RecvStmt with a short variable declaration or
+an assignment, the left-hand side expressions are evaluated and the
+received value (or values) are assigned.
+</li>
+
+<li>
+The statement list of the selected case is executed.
+</li>
+</ol>
+
+<p>
+Since communication on <code>nil</code> channels can never proceed,
+a select with only <code>nil</code> channels and no default case blocks forever.
+</p>
+
+<pre>
+var a []int
+var c, c1, c2, c3, c4 chan int
+var i1, i2 int
+select {
+case i1 = &lt;-c1:
+	print("received ", i1, " from c1\n")
+case c2 &lt;- i2:
+	print("sent ", i2, " to c2\n")
+case i3, ok := (&lt;-c3):  // same as: i3, ok := &lt;-c3
+	if ok {
+		print("received ", i3, " from c3\n")
+	} else {
+		print("c3 is closed\n")
+	}
+case a[f()] = &lt;-c4:
+	// same as:
+	// case t := &lt;-c4
+	//	a[f()] = t
+default:
+	print("no communication\n")
+}
+
+for {  // send random sequence of bits to c
+	select {
+	case c &lt;- 0:  // note: no statement, no fallthrough, no folding of cases
+	case c &lt;- 1:
+	}
+}
+
+select {}  // block forever
+</pre>
+
+
+<h3 id="Return_statements">Return statements</h3>
+
+<p>
+A "return" statement in a function <code>F</code> terminates the execution
+of <code>F</code>, and optionally provides one or more result values.
+Any functions <a href="#Defer_statements">deferred</a> by <code>F</code>
+are executed before <code>F</code> returns to its caller.
+</p>
+
+<pre class="ebnf">
+ReturnStmt = "return" [ ExpressionList ] .
+</pre>
+
+<p>
+In a function without a result type, a "return" statement must not
+specify any result values.
+</p>
+<pre>
+func noResult() {
+	return
+}
+</pre>
+
+<p>
+There are three ways to return values from a function with a result
+type:
+</p>
+
+<ol>
+	<li>The return value or values may be explicitly listed
+		in the "return" statement. Each expression must be single-valued
+		and <a href="#Assignability">assignable</a>
+		to the corresponding element of the function's result type.
+<pre>
+func simpleF() int {
+	return 2
+}
+
+func complexF1() (re float64, im float64) {
+	return -7.0, -4.0
+}
+</pre>
+	</li>
+	<li>The expression list in the "return" statement may be a single
+		call to a multi-valued function. The effect is as if each value
+		returned from that function were assigned to a temporary
+		variable with the type of the respective value, followed by a
+		"return" statement listing these variables, at which point the
+		rules of the previous case apply.
+<pre>
+func complexF2() (re float64, im float64) {
+	return complexF1()
+}
+</pre>
+	</li>
+	<li>The expression list may be empty if the function's result
+		type specifies names for its <a href="#Function_types">result parameters</a>.
+		The result parameters act as ordinary local variables
+		and the function may assign values to them as necessary.
+		The "return" statement returns the values of these variables.
+<pre>
+func complexF3() (re float64, im float64) {
+	re = 7.0
+	im = 4.0
+	return
+}
+
+func (devnull) Write(p []byte) (n int, _ error) {
+	n = len(p)
+	return
+}
+</pre>
+	</li>
+</ol>
+
+<p>
+Regardless of how they are declared, all the result values are initialized to
+the <a href="#The_zero_value">zero values</a> for their type upon entry to the
+function. A "return" statement that specifies results sets the result parameters before
+any deferred functions are executed.
+</p>
+
+<p>
+Implementation restriction: A compiler may disallow an empty expression list
+in a "return" statement if a different entity (constant, type, or variable)
+with the same name as a result parameter is in
+<a href="#Declarations_and_scope">scope</a> at the place of the return.
+</p>
+
+<pre>
+func f(n int) (res int, err error) {
+	if _, err := f(n-1); err != nil {
+		return  // invalid return statement: err is shadowed
+	}
+	return
+}
+</pre>
+
+<h3 id="Break_statements">Break statements</h3>
+
+<p>
+A "break" statement terminates execution of the innermost
+<a href="#For_statements">"for"</a>,
+<a href="#Switch_statements">"switch"</a>, or
+<a href="#Select_statements">"select"</a> statement
+within the same function.
+</p>
+
+<pre class="ebnf">
+BreakStmt = "break" [ Label ] .
+</pre>
+
+<p>
+If there is a label, it must be that of an enclosing
+"for", "switch", or "select" statement,
+and that is the one whose execution terminates.
+</p>
+
+<pre>
+OuterLoop:
+	for i = 0; i &lt; n; i++ {
+		for j = 0; j &lt; m; j++ {
+			switch a[i][j] {
+			case nil:
+				state = Error
+				break OuterLoop
+			case item:
+				state = Found
+				break OuterLoop
+			}
+		}
+	}
+</pre>
+
+<h3 id="Continue_statements">Continue statements</h3>
+
+<p>
+A "continue" statement begins the next iteration of the
+innermost enclosing <a href="#For_statements">"for" loop</a>
+by advancing control to the end of the loop block.
+The "for" loop must be within the same function.
+</p>
+
+<pre class="ebnf">
+ContinueStmt = "continue" [ Label ] .
+</pre>
+
+<p>
+If there is a label, it must be that of an enclosing
+"for" statement, and that is the one whose execution
+advances.
+</p>
+
+<pre>
+RowLoop:
+	for y, row := range rows {
+		for x, data := range row {
+			if data == endOfRow {
+				continue RowLoop
+			}
+			row[x] = data + bias(x, y)
+		}
+	}
+</pre>
+
+<h3 id="Goto_statements">Goto statements</h3>
+
+<p>
+A "goto" statement transfers control to the statement with the corresponding label
+within the same function.
+</p>
+
+<pre class="ebnf">
+GotoStmt = "goto" Label .
+</pre>
+
+<pre>
+goto Error
+</pre>
+
+<p>
+Executing the "goto" statement must not cause any variables to come into
+<a href="#Declarations_and_scope">scope</a> that were not already in scope at the point of the goto.
+For instance, this example:
+</p>
+
+<pre>
+	goto L  // BAD
+	v := 3
+L:
+</pre>
+
+<p>
+is erroneous because the jump to label <code>L</code> skips
+the creation of <code>v</code>.
+</p>
+
+<p>
+A "goto" statement outside a <a href="#Blocks">block</a> cannot jump to a label inside that block.
+For instance, this example:
+</p>
+
+<pre>
+if n%2 == 1 {
+	goto L1
+}
+for n &gt; 0 {
+	f()
+	n--
+L1:
+	f()
+	n--
+}
+</pre>
+
+<p>
+is erroneous because the label <code>L1</code> is inside
+the "for" statement's block but the <code>goto</code> is not.
+</p>
+
+<h3 id="Fallthrough_statements">Fallthrough statements</h3>
+
+<p>
+A "fallthrough" statement transfers control to the first statement of the
+next case clause in an <a href="#Expression_switches">expression "switch" statement</a>.
+It may be used only as the final non-empty statement in such a clause.
+</p>
+
+<pre class="ebnf">
+FallthroughStmt = "fallthrough" .
+</pre>
+
+
+<h3 id="Defer_statements">Defer statements</h3>
+
+<p>
+A "defer" statement invokes a function whose execution is deferred
+to the moment the surrounding function returns, either because the
+surrounding function executed a <a href="#Return_statements">return statement</a>,
+reached the end of its <a href="#Function_declarations">function body</a>,
+or because the corresponding goroutine is <a href="#Handling_panics">panicking</a>.
+</p>
+
+<pre class="ebnf">
+DeferStmt = "defer" Expression .
+</pre>
+
+<p>
+The expression must be a function or method call; it cannot be parenthesized.
+Calls of built-in functions are restricted as for
+<a href="#Expression_statements">expression statements</a>.
+</p>
+
+<p>
+Each time a "defer" statement
+executes, the function value and parameters to the call are
+<a href="#Calls">evaluated as usual</a>
+and saved anew but the actual function is not invoked.
+Instead, deferred functions are invoked immediately before
+the surrounding function returns, in the reverse order
+they were deferred. That is, if the surrounding function
+returns through an explicit <a href="#Return_statements">return statement</a>,
+deferred functions are executed <i>after</i> any result parameters are set
+by that return statement but <i>before</i> the function returns to its caller.
+If a deferred function value evaluates
+to <code>nil</code>, execution <a href="#Handling_panics">panics</a>
+when the function is invoked, not when the "defer" statement is executed.
+</p>
+
+<p>
+For instance, if the deferred function is
+a <a href="#Function_literals">function literal</a> and the surrounding
+function has <a href="#Function_types">named result parameters</a> that
+are in scope within the literal, the deferred function may access and modify
+the result parameters before they are returned.
+If the deferred function has any return values, they are discarded when
+the function completes.
+(See also the section on <a href="#Handling_panics">handling panics</a>.)
+</p>
+
+<pre>
+lock(l)
+defer unlock(l)  // unlocking happens before surrounding function returns
+
+// prints 3 2 1 0 before surrounding function returns
+for i := 0; i &lt;= 3; i++ {
+	defer fmt.Print(i)
+}
+
+// f returns 42
+func f() (result int) {
+	defer func() {
+		// result is accessed after it was set to 6 by the return statement
+		result *= 7
+	}()
+	return 6
+}
+</pre>

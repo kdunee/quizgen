@@ -1,0 +1,871 @@
+[
+    {
+        "question": "What is the primary role of statements in programming?",
+        "options": {
+            "A": "To control the execution flow of a program",
+            "B": "To define data structures",
+            "C": "To declare variables",
+            "D": "To create user interfaces"
+        },
+        "correct_answer": "A",
+        "explanation": "Statements are fundamental components of programming that control the execution flow of a program. They dictate how the program behaves, including how it makes decisions, loops through data, and handles function calls."
+    },
+    {
+        "question": "Which of the following is a characteristic of terminating statements?",
+        "options": {
+            "A": "They allow the program to continue executing without interruption.",
+            "B": "They interrupt the regular flow of control in a block.",
+            "C": "They are only used in loops.",
+            "D": "They can only be used in function declarations."
+        },
+        "correct_answer": "B",
+        "explanation": "Terminating statements are designed to interrupt the regular flow of control within a block. Examples include return statements and goto statements, which change the execution path of the program."
+    },
+    {
+        "question": "What is the purpose of an empty statement?",
+        "options": {
+            "A": "To perform a no-operation in the code.",
+            "B": "To declare a variable without initializing it.",
+            "C": "To create a loop that never ends.",
+            "D": "To define a function without any parameters."
+        },
+        "correct_answer": "A",
+        "explanation": "An empty statement serves the purpose of performing a no-operation in the code. It is syntactically valid but does not execute any action, often used as a placeholder."
+    },
+    {
+        "question": "In the context of statements, what does a labeled statement allow?",
+        "options": {
+            "A": "To create a new variable scope.",
+            "B": "To mark a statement for control transfer operations.",
+            "C": "To define a function with multiple return types.",
+            "D": "To execute a statement conditionally."
+        },
+        "correct_answer": "B",
+        "explanation": "A labeled statement allows a programmer to mark a specific statement in the code, which can then be targeted by control transfer operations such as goto, break, or continue. This provides a way to manage complex control flows."
+    },
+    {
+        "question": "Which statement type is used to send a value on a channel?",
+        "options": {
+            "A": "Receive statement",
+            "B": "Send statement",
+            "C": "Return statement",
+            "D": "Break statement"
+        },
+        "correct_answer": "B",
+        "explanation": "A send statement is specifically designed to send a value on a channel. It ensures that the value is transmitted to the channel, which is essential for communication in concurrent programming."
+    },
+    {
+        "question": "What is the primary purpose of control flow statements in programming?",
+        "options": {
+            "A": "To manage the execution order of code based on conditions",
+            "B": "To define data structures and types",
+            "C": "To declare variables and constants",
+            "D": "To perform mathematical calculations"
+        },
+        "correct_answer": "A",
+        "explanation": "Control flow statements are used to manage the execution order of code based on specific conditions or criteria. They allow the program to make decisions, repeat actions, and branch into different paths of execution, which is essential for creating dynamic and responsive applications."
+    },
+    {
+        "question": "Which of the following statements is considered a terminating statement?",
+        "options": {
+            "A": "A simple assignment statement",
+            "B": "A return statement",
+            "C": "An expression statement",
+            "D": "An empty statement"
+        },
+        "correct_answer": "B",
+        "explanation": "A return statement is considered a terminating statement because it interrupts the regular flow of control in a block and causes the function to exit, potentially returning values to the caller. Other statements, such as assignments or expression statements, do not terminate the flow of control."
+    },
+    {
+        "question": "In a 'for' statement, what happens if the condition is omitted?",
+        "options": {
+            "A": "The loop will not execute at all.",
+            "B": "The loop will execute indefinitely.",
+            "C": "The loop will execute only once.",
+            "D": "The loop will execute until a break statement is encountered."
+        },
+        "correct_answer": "B",
+        "explanation": "If the condition in a 'for' statement is omitted, it is treated as equivalent to the boolean value true, which means the loop will execute indefinitely until a break statement is encountered or the program is terminated. This allows for continuous execution of the loop's block."
+    },
+    {
+        "question": "What is the role of a 'switch' statement in control flow?",
+        "options": {
+            "A": "To perform arithmetic operations based on conditions",
+            "B": "To provide multi-way branching based on the value of an expression",
+            "C": "To declare multiple variables at once",
+            "D": "To define a function that can be called later"
+        },
+        "correct_answer": "B",
+        "explanation": "A 'switch' statement provides multi-way branching based on the value of an expression. It allows the program to evaluate an expression and execute different blocks of code depending on which case matches the expression's value, making it a powerful tool for handling multiple conditions."
+    },
+    {
+        "question": "What is a 'goto' statement used for in control flow?",
+        "options": {
+            "A": "To declare a new variable",
+            "B": "To transfer control to a labeled statement within the same function",
+            "C": "To create a loop that iterates a specific number of times",
+            "D": "To define a function that can be reused"
+        },
+        "correct_answer": "B",
+        "explanation": "A 'goto' statement is used to transfer control to a labeled statement within the same function. It allows for an unconditional jump to a specific point in the code, which can be useful for breaking out of nested loops or handling error conditions, although its use is often discouraged in favor of structured control flow."
+    },
+    {
+        "question": "What is a terminating statement?",
+        "options": {
+            "A": "A statement that interrupts the regular flow of control in a block.",
+            "B": "A statement that executes without any conditions.",
+            "C": "A statement that can only be used within loops.",
+            "D": "A statement that does not affect the flow of control."
+        },
+        "correct_answer": "A",
+        "explanation": "A terminating statement is defined as one that interrupts the regular flow of control within a block. This includes statements like 'return', 'goto', and certain conditional statements that lead to the end of execution for the current block."
+    },
+    {
+        "question": "Which of the following statements is NOT considered a terminating statement?",
+        "options": {
+            "A": "A 'return' statement.",
+            "B": "A 'goto' statement.",
+            "C": "An 'if' statement with both branches terminating.",
+            "D": "A simple assignment statement."
+        },
+        "correct_answer": "D",
+        "explanation": "A simple assignment statement is not a terminating statement. It does not interrupt the flow of control; rather, it simply assigns a value to a variable. In contrast, 'return', 'goto', and certain 'if' statements can terminate the flow of control."
+    },
+    {
+        "question": "In which scenario does an 'if' statement act as a terminating statement?",
+        "options": {
+            "A": "When it has no 'else' branch.",
+            "B": "When both branches of the 'if' statement are terminating statements.",
+            "C": "When it is nested within another 'if' statement.",
+            "D": "When it is the first statement in a block."
+        },
+        "correct_answer": "B",
+        "explanation": "An 'if' statement acts as a terminating statement when both its 'if' and 'else' branches are terminating statements. This means that the execution will not continue past the 'if' statement once it is executed."
+    },
+    {
+        "question": "What is the effect of a 'break' statement in a loop?",
+        "options": {
+            "A": "It continues to the next iteration of the loop.",
+            "B": "It terminates the innermost loop or switch statement.",
+            "C": "It skips the current iteration and exits the function.",
+            "D": "It pauses the execution of the loop until a condition is met."
+        },
+        "correct_answer": "B",
+        "explanation": "A 'break' statement is used to terminate the execution of the innermost 'for', 'switch', or 'select' statement. It effectively exits the loop or switch, allowing control to pass to the statement following the terminated statement."
+    },
+    {
+        "question": "What is the primary purpose of labeled statements in programming?",
+        "options": {
+            "A": "To define variables within a block of code",
+            "B": "To provide a target for control transfer statements like goto",
+            "C": "To create functions that can be called multiple times",
+            "D": "To execute a block of code conditionally"
+        },
+        "correct_answer": "B",
+        "explanation": "Labeled statements serve as targets for control transfer statements such as goto, break, or continue. By labeling a statement, you can direct the flow of execution to that specific point in the code, allowing for more complex control structures."
+    },
+    {
+        "question": "Which of the following statements is true about labeled statements?",
+        "options": {
+            "A": "They can only be used with for loops.",
+            "B": "They must be followed by a colon and a statement.",
+            "C": "They can only label function declarations.",
+            "D": "They are used to define the scope of variables."
+        },
+        "correct_answer": "B",
+        "explanation": "Labeled statements must be followed by a colon and a statement. This syntax allows the label to be associated with the statement that follows, enabling control transfer statements to reference that label."
+    },
+    {
+        "question": "In which scenario would you typically use a labeled statement?",
+        "options": {
+            "A": "To declare a new variable in a function.",
+            "B": "To create a loop that iterates over a collection.",
+            "C": "To break out of nested loops or switch statements.",
+            "D": "To define a new function that can be reused."
+        },
+        "correct_answer": "C",
+        "explanation": "Labeled statements are particularly useful for breaking out of nested loops or switch statements. By using a label, you can specify which loop or switch to exit, providing greater control over the flow of execution."
+    },
+    {
+        "question": "What happens if a labeled statement is used incorrectly, such as jumping to a label that is not in scope?",
+        "options": {
+            "A": "The program will execute normally without any issues.",
+            "B": "The program will compile but may produce unexpected results.",
+            "C": "The program will throw a compile-time error.",
+            "D": "The program will enter an infinite loop."
+        },
+        "correct_answer": "C",
+        "explanation": "If a labeled statement is used incorrectly, such as attempting to jump to a label that is not in scope, the program will throw a compile-time error. This is to ensure that the control flow remains valid and predictable."
+    },
+    {
+        "question": "What is an expression statement?",
+        "options": {
+            "A": "A statement that evaluates an expression and discards the result.",
+            "B": "A statement that defines a variable.",
+            "C": "A statement that controls the flow of execution.",
+            "D": "A statement that terminates a loop."
+        },
+        "correct_answer": "A",
+        "explanation": "An expression statement is a statement that evaluates an expression and discards the result. It can include function calls and operations that do not require the result to be stored or used further."
+    },
+    {
+        "question": "Which of the following is NOT a valid expression statement?",
+        "options": {
+            "A": "x + y",
+            "B": "f()",
+            "C": "len(a)",
+            "D": "var x = 5"
+        },
+        "correct_answer": "D",
+        "explanation": "The statement 'var x = 5' is a variable declaration, not an expression statement. Expression statements are meant to evaluate expressions, while variable declarations are used to define new variables."
+    },
+    {
+        "question": "What happens if an expression statement evaluates a built-in function that is not permitted in statement context?",
+        "options": {
+            "A": "The program will compile successfully.",
+            "B": "The program will panic at runtime.",
+            "C": "The program will throw a compile-time error.",
+            "D": "The expression will be ignored."
+        },
+        "correct_answer": "C",
+        "explanation": "If an expression statement evaluates a built-in function that is not permitted in statement context, the program will throw a compile-time error. This restriction ensures that only valid expressions are used in expression statements."
+    },
+    {
+        "question": "Which of the following is a characteristic of expression statements?",
+        "options": {
+            "A": "They must always return a value.",
+            "B": "They can include function calls.",
+            "C": "They cannot be used in control structures.",
+            "D": "They must be assigned to a variable."
+        },
+        "correct_answer": "B",
+        "explanation": "Expression statements can include function calls and other expressions that do not require a return value. They are flexible in that they can be used in various contexts, including control structures."
+    },
+    {
+        "question": "What is the primary function of a send statement in Go?",
+        "options": {
+            "A": "To send a value on a channel",
+            "B": "To receive a value from a channel",
+            "C": "To declare a new variable",
+            "D": "To terminate a loop"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary function of a send statement in Go is to send a value on a channel. This operation allows communication between goroutines, enabling them to share data safely. The send statement must ensure that the channel is of the correct type and that the value being sent is assignable to the channel's element type."
+    },
+    {
+        "question": "Which of the following must be true for a send statement to execute successfully?",
+        "options": {
+            "A": "The channel must be closed",
+            "B": "The channel must be nil",
+            "C": "The channel must permit send operations",
+            "D": "The value must be a constant"
+        },
+        "correct_answer": "C",
+        "explanation": "For a send statement to execute successfully, the channel must permit send operations. This means that the channel must be properly initialized and not closed or nil. If the channel is unbuffered, the send operation will block until a receiver is ready; if it is buffered, it will block only if the buffer is full."
+    },
+    {
+        "question": "What happens if a send statement is executed on a closed channel?",
+        "options": {
+            "A": "The program continues without any issues",
+            "B": "The send operation is ignored",
+            "C": "The program panics at runtime",
+            "D": "The value is sent to the next available receiver"
+        },
+        "correct_answer": "C",
+        "explanation": "If a send statement is executed on a closed channel, it causes a runtime panic. This is because sending on a closed channel is not allowed in Go, and the language enforces this rule to prevent undefined behavior and ensure safe communication between goroutines."
+    },
+    {
+        "question": "In a send statement, what must be true about the value being sent?",
+        "options": {
+            "A": "It must be a pointer type",
+            "B": "It must be a global variable",
+            "C": "It must be assignable to the channel's element type",
+            "D": "It must be a constant"
+        },
+        "correct_answer": "C",
+        "explanation": "In a send statement, the value being sent must be assignable to the channel's element type. This ensures type safety and that the value being communicated is compatible with what the receiving goroutine expects. If the value does not match the channel's type, a compile-time error will occur."
+    },
+    {
+        "question": "What is the primary function of increment/decrement statements?",
+        "options": {
+            "A": "To increase or decrease the value of a variable by one",
+            "B": "To assign a new value to a variable based on a condition",
+            "C": "To create a new variable with a modified value",
+            "D": "To compare two variables and return a boolean result"
+        },
+        "correct_answer": "A",
+        "explanation": "Increment and decrement statements are specifically designed to increase or decrease the value of a variable by one. They are shorthand operations that simplify the process of modifying a variable's value, making code more concise and readable."
+    },
+    {
+        "question": "Which of the following is a valid increment statement?",
+        "options": {
+            "A": "x += 1",
+            "B": "x = x + 1",
+            "C": "x++",
+            "D": "All of the above"
+        },
+        "correct_answer": "D",
+        "explanation": "All the options provided are valid ways to increment a variable's value by one. 'x += 1' and 'x = x + 1' are explicit assignments, while 'x++' is a shorthand increment statement that achieves the same result."
+    },
+    {
+        "question": "What must be true about the operand in an increment/decrement statement?",
+        "options": {
+            "A": "It must be a constant value",
+            "B": "It must be addressable or a map index expression",
+            "C": "It must be a function call",
+            "D": "It must be a boolean expression"
+        },
+        "correct_answer": "B",
+        "explanation": "The operand in an increment or decrement statement must be addressable or a map index expression. This means that the operand must refer to a variable that can be modified, ensuring that the increment or decrement operation can be applied correctly."
+    },
+    {
+        "question": "What is the effect of the statement 'x--'?",
+        "options": {
+            "A": "It increases the value of x by one",
+            "B": "It decreases the value of x by one",
+            "C": "It assigns the value of x to zero",
+            "D": "It checks if x is greater than zero"
+        },
+        "correct_answer": "B",
+        "explanation": "'x--' is a decrement statement that decreases the value of x by one. This operation is a shorthand way to modify the variable's value directly, making it easier to read and write in code."
+    },
+    {
+        "question": "What is the primary purpose of an assignment statement?",
+        "options": {
+            "A": "To replace the current value stored in a variable with a new value",
+            "B": "To declare a new variable in the program",
+            "C": "To evaluate an expression without changing any values",
+            "D": "To create a loop that iterates over a set of values"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of an assignment statement is to replace the current value stored in a variable with a new value specified by an expression. This allows for the modification of variable values throughout the program."
+    },
+    {
+        "question": "Which of the following must be true for the left-hand side of an assignment statement?",
+        "options": {
+            "A": "It must be a constant value",
+            "B": "It must be addressable or a map index expression",
+            "C": "It must be a function call",
+            "D": "It must be a literal value"
+        },
+        "correct_answer": "B",
+        "explanation": "For an assignment statement, the left-hand side must be addressable, meaning it can be assigned a value. This includes variables, map index expressions, or the blank identifier, but it cannot be a constant or literal value."
+    },
+    {
+        "question": "What happens during the assignment operation in terms of evaluation?",
+        "options": {
+            "A": "The right-hand side is evaluated after the left-hand side",
+            "B": "Both sides are evaluated simultaneously",
+            "C": "The left-hand side is evaluated first, followed by the right-hand side",
+            "D": "The right-hand side is evaluated first, followed by the left-hand side"
+        },
+        "correct_answer": "D",
+        "explanation": "In an assignment operation, the right-hand side expression is evaluated first, and then the result is assigned to the left-hand side. This ensures that the value being assigned is determined before the assignment takes place."
+    },
+    {
+        "question": "What is a tuple assignment?",
+        "options": {
+            "A": "An assignment that assigns multiple values to multiple variables",
+            "B": "An assignment that assigns a single value to multiple variables",
+            "C": "An assignment that does not change any variable values",
+            "D": "An assignment that only works with numeric values"
+        },
+        "correct_answer": "A",
+        "explanation": "A tuple assignment is a type of assignment that allows multiple values to be assigned to multiple variables simultaneously. The number of variables on the left must match the number of values on the right, making it a convenient way to handle multiple assignments in one statement."
+    },
+    {
+        "question": "What is the primary purpose of an 'if' statement in programming?",
+        "options": {
+            "A": "To specify conditional execution of code blocks based on a boolean expression",
+            "B": "To create loops that repeat a block of code multiple times",
+            "C": "To define functions that can be called later in the program",
+            "D": "To handle errors and exceptions that may occur during execution"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of an 'if' statement is to specify conditional execution of code blocks based on the evaluation of a boolean expression. If the expression evaluates to true, the code within the 'if' block is executed; otherwise, the code in the 'else' block (if present) is executed."
+    },
+    {
+        "question": "In an 'if' statement, what happens if the condition evaluates to false?",
+        "options": {
+            "A": "The code in the 'if' block is executed.",
+            "B": "The program terminates immediately.",
+            "C": "The code in the 'else' block is executed, if present.",
+            "D": "The condition is re-evaluated until it becomes true."
+        },
+        "correct_answer": "C",
+        "explanation": "If the condition in an 'if' statement evaluates to false, the code in the 'else' block is executed, if it is present. If there is no 'else' block, the program simply continues with the next statement following the 'if' statement."
+    },
+    {
+        "question": "What is the structure of a basic 'if' statement?",
+        "options": {
+            "A": "if condition { code block }",
+            "B": "if { code block } condition",
+            "C": "if condition: code block",
+            "D": "if (condition) code block"
+        },
+        "correct_answer": "A",
+        "explanation": "The basic structure of an 'if' statement is 'if condition { code block }'. This format allows the program to evaluate the condition and execute the code block if the condition is true."
+    },
+    {
+        "question": "What is the role of the 'else' clause in an 'if' statement?",
+        "options": {
+            "A": "To provide an alternative block of code that executes if the 'if' condition is true.",
+            "B": "To define a loop that continues until the 'if' condition is true.",
+            "C": "To execute a block of code when the 'if' condition is false.",
+            "D": "To terminate the program if the 'if' condition is false."
+        },
+        "correct_answer": "C",
+        "explanation": "The 'else' clause in an 'if' statement provides an alternative block of code that executes when the 'if' condition evaluates to false. This allows for different actions to be taken based on the outcome of the condition."
+    },
+    {
+        "question": "What is the primary purpose of a switch statement in programming?",
+        "options": {
+            "A": "To execute a block of code repeatedly until a condition is met",
+            "B": "To compare an expression against multiple cases and execute the corresponding block",
+            "C": "To define a function that can return multiple values",
+            "D": "To handle errors and exceptions in a program"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a switch statement is to compare an expression against multiple cases and execute the corresponding block of code for the first matching case. This allows for cleaner and more organized control flow compared to using multiple if-else statements."
+    },
+    {
+        "question": "In a switch statement, what happens if no case matches and there is no default case?",
+        "options": {
+            "A": "The program terminates immediately",
+            "B": "The switch statement executes the first case by default",
+            "C": "The switch statement does nothing and control passes to the next statement",
+            "D": "The switch statement throws an error"
+        },
+        "correct_answer": "C",
+        "explanation": "If no case matches and there is no default case in a switch statement, the switch statement does nothing, and control passes to the next statement in the program. This allows for graceful handling of situations where no conditions are met."
+    },
+    {
+        "question": "What is a key characteristic of the case expressions in a switch statement?",
+        "options": {
+            "A": "They must always be constant values",
+            "B": "They can only be of integer type",
+            "C": "They are evaluated only once when the switch statement is entered",
+            "D": "They can include complex data types only"
+        },
+        "correct_answer": "C",
+        "explanation": "A key characteristic of the case expressions in a switch statement is that they are evaluated exactly once when the switch statement is entered. This means that the switch expression is compared against the evaluated case expressions to determine which block of code to execute."
+    },
+    {
+        "question": "What is the role of the default case in a switch statement?",
+        "options": {
+            "A": "To handle all cases that are not explicitly defined",
+            "B": "To terminate the switch statement immediately",
+            "C": "To provide a fallback option if all other cases match",
+            "D": "To execute code before any case is evaluated"
+        },
+        "correct_answer": "A",
+        "explanation": "The role of the default case in a switch statement is to handle all cases that are not explicitly defined. If none of the specified cases match the switch expression, the default case will be executed, providing a way to manage unexpected values."
+    },
+    {
+        "question": "What is the primary purpose of a 'for' statement in programming?",
+        "options": {
+            "A": "To specify repeated execution of a block of code",
+            "B": "To define a function that returns a value",
+            "C": "To create a new variable in the current scope",
+            "D": "To handle exceptions during program execution"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a 'for' statement is to specify repeated execution of a block of code as long as a certain condition is met. This allows for efficient iteration over data structures or repeated execution of tasks without needing to manually repeat the code."
+    },
+    {
+        "question": "In a 'for' statement, what happens if the condition is omitted?",
+        "options": {
+            "A": "The loop will not execute at all.",
+            "B": "The loop will execute indefinitely.",
+            "C": "The loop will execute only once.",
+            "D": "The loop will execute until a break statement is encountered."
+        },
+        "correct_answer": "B",
+        "explanation": "If the condition is omitted in a 'for' statement, it is treated as equivalent to the boolean value 'true', which means the loop will execute indefinitely until a break statement or another terminating condition is encountered."
+    },
+    {
+        "question": "What is a 'range' clause in a 'for' statement used for?",
+        "options": {
+            "A": "To define a new function within the loop.",
+            "B": "To iterate over elements in a collection or data structure.",
+            "C": "To specify a condition for terminating the loop.",
+            "D": "To declare variables that will be used in the loop."
+        },
+        "correct_answer": "B",
+        "explanation": "A 'range' clause in a 'for' statement is used to iterate over elements in a collection or data structure, such as arrays, slices, maps, or channels. It allows for easy access to each element and its index or key during the iteration."
+    },
+    {
+        "question": "Which of the following statements about 'for' loops is true?",
+        "options": {
+            "A": "A 'for' loop can only iterate over arrays.",
+            "B": "A 'for' loop can have multiple initialization and post statements.",
+            "C": "A 'for' loop cannot be nested within another 'for' loop.",
+            "D": "A 'for' loop must always have a condition to terminate."
+        },
+        "correct_answer": "B",
+        "explanation": "A 'for' loop can have multiple initialization and post statements, allowing for more complex control over the loop's execution. This flexibility enables the programmer to set up variables and modify them at each iteration, enhancing the loop's functionality."
+    },
+    {
+        "question": "What is the primary purpose of statements in Go?",
+        "options": {
+            "A": "To control the execution flow of a program",
+            "B": "To define data structures",
+            "C": "To declare variables",
+            "D": "To import packages"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of statements in Go is to control the execution flow of a program. Statements dictate how the program behaves, including how it makes decisions, loops through data, and handles function calls."
+    },
+    {
+        "question": "Which of the following is a type of terminating statement in Go?",
+        "options": {
+            "A": "For statement",
+            "B": "Return statement",
+            "C": "If statement",
+            "D": "Switch statement"
+        },
+        "correct_answer": "B",
+        "explanation": "A return statement is a type of terminating statement in Go. It interrupts the regular flow of control in a block and can optionally provide result values. Other statements like for, if, and switch do not inherently terminate the flow of control."
+    },
+    {
+        "question": "What is the function of a 'break' statement in Go?",
+        "options": {
+            "A": "To skip the current iteration of a loop",
+            "B": "To terminate the execution of the innermost loop or switch statement",
+            "C": "To declare a new variable",
+            "D": "To invoke a deferred function"
+        },
+        "correct_answer": "B",
+        "explanation": "A 'break' statement in Go is used to terminate the execution of the innermost 'for', 'switch', or 'select' statement within the same function. It allows for an immediate exit from the loop or switch, bypassing any remaining iterations or cases."
+    },
+    {
+        "question": "What does a 'defer' statement do in Go?",
+        "options": {
+            "A": "It immediately executes a function",
+            "B": "It schedules a function to be executed after the surrounding function returns",
+            "C": "It creates a new goroutine",
+            "D": "It terminates the current loop"
+        },
+        "correct_answer": "B",
+        "explanation": "A 'defer' statement in Go schedules a function to be executed after the surrounding function returns. This allows for cleanup actions, such as unlocking a resource, to be performed automatically, ensuring that they occur even if the function exits prematurely."
+    },
+    {
+        "question": "In Go, what is the role of a 'goto' statement?",
+        "options": {
+            "A": "To declare a new variable",
+            "B": "To transfer control to a labeled statement within the same function",
+            "C": "To terminate a loop",
+            "D": "To define a function"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'goto' statement in Go is used to transfer control to a labeled statement within the same function. It allows for non-linear control flow, but its use is generally discouraged in favor of structured control statements like loops and conditionals."
+    },
+    {
+        "question": "What is the primary purpose of a 'select' statement in Go?",
+        "options": {
+            "A": "To choose which of a set of possible send or receive operations will proceed",
+            "B": "To define a multi-way branching structure based on a boolean condition",
+            "C": "To execute a function concurrently in a new goroutine",
+            "D": "To terminate the execution of a loop or switch statement"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a 'select' statement in Go is to choose which of a set of possible send or receive operations will proceed. It allows for handling multiple channel operations, enabling the program to wait for one of several communications to be ready."
+    },
+    {
+        "question": "What happens if none of the communications in a 'select' statement can proceed?",
+        "options": {
+            "A": "The program terminates immediately",
+            "B": "The 'select' statement blocks until at least one communication can proceed",
+            "C": "The 'select' statement executes the default case if present",
+            "D": "The program throws a runtime error"
+        },
+        "correct_answer": "B",
+        "explanation": "If none of the communications in a 'select' statement can proceed, the 'select' statement blocks until at least one of the communications can proceed. If there is a default case, that case is executed instead."
+    },
+    {
+        "question": "In a 'select' statement, how are the channel operands evaluated?",
+        "options": {
+            "A": "They are evaluated only if the corresponding case is selected",
+            "B": "They are evaluated in source order upon entering the 'select' statement",
+            "C": "They are evaluated after the 'select' statement completes",
+            "D": "They are evaluated in a random order"
+        },
+        "correct_answer": "B",
+        "explanation": "In a 'select' statement, the channel operands of receive operations and the channel and right-hand-side expressions of send statements are evaluated exactly once, in source order, upon entering the 'select' statement. This ensures that any side effects from the evaluation occur regardless of which communication operation is selected."
+    },
+    {
+        "question": "What is a requirement for a 'select' statement to execute a case with a receive operation?",
+        "options": {
+            "A": "The channel must be buffered",
+            "B": "The channel must be nil",
+            "C": "The channel must be ready to send or receive",
+            "D": "The channel must have a default case"
+        },
+        "correct_answer": "C",
+        "explanation": "For a 'select' statement to execute a case with a receive operation, the channel must be ready to send or receive. If the channel is nil, the select statement will block forever, as communication on nil channels can never proceed."
+    },
+    {
+        "question": "What is the primary purpose of a return statement in a function?",
+        "options": {
+            "A": "To terminate the function and optionally provide result values",
+            "B": "To initiate a new function call",
+            "C": "To create a loop within the function",
+            "D": "To declare a new variable within the function"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of a return statement in a function is to terminate the execution of that function and optionally provide one or more result values. This allows the function to pass data back to the caller, and any deferred functions are executed before the function returns."
+    },
+    {
+        "question": "In a function with a result type, how can values be returned?",
+        "options": {
+            "A": "Only by explicitly listing them in the return statement",
+            "B": "By using a global variable to store the result",
+            "C": "By calling another function that returns values",
+            "D": "By using a return statement with an empty expression list"
+        },
+        "correct_answer": "A",
+        "explanation": "In a function with a result type, values can be returned by explicitly listing them in the return statement. This ensures that each expression is single-valued and assignable to the corresponding element of the function's result type."
+    },
+    {
+        "question": "What happens to deferred functions when a return statement is executed?",
+        "options": {
+            "A": "They are executed before the return statement completes",
+            "B": "They are ignored and not executed",
+            "C": "They are executed after the return statement sets result parameters",
+            "D": "They are executed in the order they were defined"
+        },
+        "correct_answer": "C",
+        "explanation": "When a return statement is executed, any deferred functions are invoked after the result parameters are set by that return statement but before the function returns to its caller. This ensures that any cleanup or finalization logic defined in deferred functions is executed at the appropriate time."
+    },
+    {
+        "question": "What is a requirement for a return statement in a function that does not have a result type?",
+        "options": {
+            "A": "It must specify at least one result value",
+            "B": "It must not specify any result values",
+            "C": "It can only return a single value",
+            "D": "It must be the last statement in the function"
+        },
+        "correct_answer": "B",
+        "explanation": "In a function that does not have a result type, a return statement must not specify any result values. This is a requirement to ensure that the function adheres to its defined signature and behavior."
+    },
+    {
+        "question": "What is the primary function of a 'break' statement in programming?",
+        "options": {
+            "A": "To terminate the execution of the innermost loop or switch statement.",
+            "B": "To pause the execution of the program for a specified duration.",
+            "C": "To skip the current iteration of a loop and continue with the next one.",
+            "D": "To transfer control to a labeled statement outside the current block."
+        },
+        "correct_answer": "A",
+        "explanation": "The primary function of a 'break' statement is to terminate the execution of the innermost 'for', 'switch', or 'select' statement within the same function. This allows the program to exit the loop or switch early based on certain conditions."
+    },
+    {
+        "question": "In which scenarios can a 'break' statement be used?",
+        "options": {
+            "A": "Only within 'for' loops.",
+            "B": "Within 'for', 'switch', or 'select' statements.",
+            "C": "Only in 'switch' statements.",
+            "D": "In any part of the program without restrictions."
+        },
+        "correct_answer": "B",
+        "explanation": "A 'break' statement can be used within 'for', 'switch', or 'select' statements. It is designed to terminate the execution of the innermost of these statements, allowing for controlled flow in the program."
+    },
+    {
+        "question": "What happens if a 'break' statement includes a label?",
+        "options": {
+            "A": "It terminates the entire program immediately.",
+            "B": "It terminates the innermost loop or switch statement that matches the label.",
+            "C": "It has no effect and behaves like a regular break.",
+            "D": "It causes a syntax error in the program."
+        },
+        "correct_answer": "B",
+        "explanation": "If a 'break' statement includes a label, it terminates the execution of the innermost 'for', 'switch', or 'select' statement that matches the label. This allows for more precise control over which statement is exited."
+    },
+    {
+        "question": "Which of the following is a correct use of a 'break' statement?",
+        "options": {
+            "A": "Using 'break' to exit a function.",
+            "B": "Using 'break' to skip to the next iteration of a loop.",
+            "C": "Using 'break' to terminate a labeled loop.",
+            "D": "Using 'break' to declare a variable."
+        },
+        "correct_answer": "C",
+        "explanation": "Using 'break' to terminate a labeled loop is a correct use of the statement. It allows the programmer to exit from a specific loop or switch statement that has been labeled, providing greater control over program flow."
+    },
+    {
+        "question": "What is the primary function of a 'continue' statement in a loop?",
+        "options": {
+            "A": "To terminate the loop immediately",
+            "B": "To skip the current iteration and proceed to the next iteration",
+            "C": "To exit the loop and return a value",
+            "D": "To pause the loop until a condition is met"
+        },
+        "correct_answer": "B",
+        "explanation": "The 'continue' statement is used to skip the current iteration of the innermost enclosing 'for' loop and proceed to the next iteration. This allows the loop to continue executing without completing the remaining statements in the current iteration."
+    },
+    {
+        "question": "In which context can a 'continue' statement be used?",
+        "options": {
+            "A": "Within any function, regardless of the type of loop",
+            "B": "Only within a 'for' loop",
+            "C": "In both 'for' and 'switch' statements",
+            "D": "Only in 'select' statements"
+        },
+        "correct_answer": "B",
+        "explanation": "A 'continue' statement can only be used within a 'for' loop. It is specifically designed to advance control to the end of the loop block, allowing the next iteration to begin immediately."
+    },
+    {
+        "question": "What happens if a 'continue' statement is labeled?",
+        "options": {
+            "A": "It will skip to the next iteration of the outermost loop",
+            "B": "It will skip to the next iteration of the labeled loop",
+            "C": "It will terminate the labeled loop",
+            "D": "It will cause a compilation error"
+        },
+        "correct_answer": "B",
+        "explanation": "If a 'continue' statement is labeled, it will skip to the next iteration of the loop that is associated with the label. This allows for more control over which loop's iteration is affected when there are nested loops."
+    },
+    {
+        "question": "Which of the following statements is true about the 'continue' statement?",
+        "options": {
+            "A": "It can be used to skip the execution of a 'switch' statement.",
+            "B": "It can only be used in loops that have a condition.",
+            "C": "It must be the last statement in a loop block.",
+            "D": "It does not affect the execution of the loop's post statements."
+        },
+        "correct_answer": "D",
+        "explanation": "The 'continue' statement does not affect the execution of the loop's post statements. When a 'continue' statement is executed, control jumps to the end of the loop, and the post statement (if present) will still be executed before the next iteration begins."
+    },
+    {
+        "question": "What is the primary function of a 'goto' statement in programming?",
+        "options": {
+            "A": "To transfer control to a labeled statement within the same function",
+            "B": "To create a loop that repeats a block of code",
+            "C": "To define a new function or method",
+            "D": "To terminate the execution of a program"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary function of a 'goto' statement is to transfer control to a labeled statement within the same function. This allows for non-linear control flow, enabling the program to jump to different parts of the code based on certain conditions."
+    },
+    {
+        "question": "Which of the following is a restriction when using a 'goto' statement?",
+        "options": {
+            "A": "It can only jump to labels within the same function.",
+            "B": "It must always be used with a loop.",
+            "C": "It can only be used at the beginning of a function.",
+            "D": "It cannot be used in conjunction with other control statements."
+        },
+        "correct_answer": "A",
+        "explanation": "A restriction when using a 'goto' statement is that it can only jump to labels within the same function. This means that the label must be defined in the same scope as the 'goto' statement, ensuring that the control flow remains within the same function context."
+    },
+    {
+        "question": "What happens if a 'goto' statement attempts to jump to a label that is not in scope?",
+        "options": {
+            "A": "The program will execute normally without any issues.",
+            "B": "The program will terminate with an error.",
+            "C": "The program will skip the 'goto' statement.",
+            "D": "The program will enter an infinite loop."
+        },
+        "correct_answer": "B",
+        "explanation": "If a 'goto' statement attempts to jump to a label that is not in scope, the program will terminate with an error. This is because the jump would skip the creation of any variables that are defined in the scope of the label, leading to undefined behavior."
+    },
+    {
+        "question": "In which scenario is a 'goto' statement considered erroneous?",
+        "options": {
+            "A": "When it jumps to a label defined within the same function.",
+            "B": "When it jumps to a label defined inside a block that is not in scope.",
+            "C": "When it is used to exit a loop.",
+            "D": "When it is used to call a function."
+        },
+        "correct_answer": "B",
+        "explanation": "A 'goto' statement is considered erroneous when it jumps to a label defined inside a block that is not in scope. This violates the rules of variable scope and can lead to errors in the program's execution."
+    },
+    {
+        "question": "What is the primary function of a fallthrough statement in a switch statement?",
+        "options": {
+            "A": "To transfer control to the first statement of the next case clause",
+            "B": "To terminate the execution of the switch statement",
+            "C": "To skip the current case and move to the next one without executing it",
+            "D": "To create a loop within the switch statement"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary function of a fallthrough statement is to transfer control to the first statement of the next case clause in an expression switch statement. It allows the execution to continue into the next case, which can be useful for combining behaviors of multiple cases."
+    },
+    {
+        "question": "In which context can a fallthrough statement be used?",
+        "options": {
+            "A": "As the first statement in a case clause",
+            "B": "As the last non-empty statement in a case clause",
+            "C": "In any statement block within a function",
+            "D": "Only in labeled statements"
+        },
+        "correct_answer": "B",
+        "explanation": "A fallthrough statement can only be used as the last non-empty statement in a case clause of an expression switch statement. This restriction ensures that it is clear when control will pass to the next case."
+    },
+    {
+        "question": "What happens if a fallthrough statement is placed in a case clause that is not the last statement?",
+        "options": {
+            "A": "It will cause a compile-time error",
+            "B": "It will execute the next case statement immediately",
+            "C": "It will be ignored and not executed",
+            "D": "It will terminate the switch statement"
+        },
+        "correct_answer": "A",
+        "explanation": "If a fallthrough statement is placed in a case clause that is not the last statement, it will cause a compile-time error. This is because fallthrough statements are only valid as the last non-empty statement in a case clause."
+    },
+    {
+        "question": "What is the effect of using a fallthrough statement in a switch case?",
+        "options": {
+            "A": "It allows the current case to execute and then skips to the end of the switch",
+            "B": "It allows the current case to execute and then continues executing the next case",
+            "C": "It prevents the current case from executing",
+            "D": "It exits the switch statement immediately"
+        },
+        "correct_answer": "B",
+        "explanation": "Using a fallthrough statement in a switch case allows the current case to execute and then continues executing the next case. This can be useful for cases that share common behavior without needing to repeat code."
+    },
+    {
+        "question": "What is the primary purpose of a defer statement in a function?",
+        "options": {
+            "A": "To execute a function immediately when called",
+            "B": "To invoke a function after the surrounding function returns",
+            "C": "To skip the execution of a function",
+            "D": "To create a new goroutine for a function"
+        },
+        "correct_answer": "B",
+        "explanation": "The primary purpose of a defer statement is to invoke a function after the surrounding function returns. This allows for cleanup actions or final operations to be performed just before the function exits, ensuring that they are executed regardless of how the function terminates."
+    },
+    {
+        "question": "When are deferred functions executed in relation to return statements?",
+        "options": {
+            "A": "Before any return statements are executed",
+            "B": "After the return values are set but before the function returns",
+            "C": "At the same time as the return statement",
+            "D": "Only if the function panics"
+        },
+        "correct_answer": "B",
+        "explanation": "Deferred functions are executed after the return values are set but before the surrounding function returns to its caller. This ensures that any cleanup or finalization logic can access the return values that have just been established."
+    },
+    {
+        "question": "What happens if a deferred function evaluates to nil?",
+        "options": {
+            "A": "The function executes normally",
+            "B": "The function panics when invoked",
+            "C": "The function is skipped entirely",
+            "D": "The function returns a default value"
+        },
+        "correct_answer": "B",
+        "explanation": "If a deferred function evaluates to nil, it causes a panic when the function is invoked, not at the time the defer statement is executed. This means that any potential errors related to nil values are only encountered when the deferred function is actually called."
+    },
+    {
+        "question": "How are multiple deferred functions executed when a surrounding function returns?",
+        "options": {
+            "A": "In the order they were declared",
+            "B": "In reverse order of their declaration",
+            "C": "All at once",
+            "D": "Only the last one declared is executed"
+        },
+        "correct_answer": "B",
+        "explanation": "Multiple deferred functions are executed in reverse order of their declaration. This means that the last deferred function declared will be the first one to execute when the surrounding function returns, allowing for a last-in, first-out execution pattern."
+    }
+]

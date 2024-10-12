@@ -1,0 +1,57 @@
+<h2 id="Variables">Variables</h2>
+
+<p>
+A variable is a storage location for holding a <i>value</i>.
+The set of permissible values is determined by the
+variable's <i><a href="#Types">type</a></i>.
+</p>
+
+<p>
+A <a href="#Variable_declarations">variable declaration</a>
+or, for function parameters and results, the signature
+of a <a href="#Function_declarations">function declaration</a>
+or <a href="#Function_literals">function literal</a> reserves
+storage for a named variable.
+
+Calling the built-in function <a href="#Allocation"><code>new</code></a>
+or taking the address of a <a href="#Composite_literals">composite literal</a>
+allocates storage for a variable at run time.
+Such an anonymous variable is referred to via a (possibly implicit)
+<a href="#Address_operators">pointer indirection</a>.
+</p>
+
+<p>
+<i>Structured</i> variables of <a href="#Array_types">array</a>, <a href="#Slice_types">slice</a>,
+and <a href="#Struct_types">struct</a> types have elements and fields that may
+be <a href="#Address_operators">addressed</a> individually. Each such element
+acts like a variable.
+</p>
+
+<p>
+The <i>static type</i> (or just <i>type</i>) of a variable is the
+type given in its declaration, the type provided in the
+<code>new</code> call or composite literal, or the type of
+an element of a structured variable.
+Variables of interface type also have a distinct <i>dynamic type</i>,
+which is the (non-interface) type of the value assigned to the variable at run time
+(unless the value is the predeclared identifier <code>nil</code>,
+which has no type).
+The dynamic type may vary during execution but values stored in interface
+variables are always <a href="#Assignability">assignable</a>
+to the static type of the variable.
+</p>
+
+<pre>
+var x interface{}  // x is nil and has static type interface{}
+var v *T           // v has value nil, static type *T
+x = 42             // x has value 42 and dynamic type int
+x = v              // x has value (*T)(nil) and dynamic type *T
+</pre>
+
+<p>
+A variable's value is retrieved by referring to the variable in an
+<a href="#Expressions">expression</a>; it is the most recent value
+<a href="#Assignment_statements">assigned</a> to the variable.
+If a variable has not yet been assigned a value, its value is the
+<a href="#The_zero_value">zero value</a> for its type.
+</p>

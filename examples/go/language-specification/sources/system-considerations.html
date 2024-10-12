@@ -1,0 +1,198 @@
+<h2 id="System_considerations">System considerations</h2>
+
+<h3 id="Package_unsafe">Package <code>unsafe</code></h3>
+
+<p>
+The built-in package <code>unsafe</code>, known to the compiler
+and accessible through the <a href="#Import_declarations">import path</a> <code>"unsafe"</code>,
+provides facilities for low-level programming including operations
+that violate the type system. A package using <code>unsafe</code>
+must be vetted manually for type safety and may not be portable.
+The package provides the following interface:
+</p>
+
+<pre class="grammar">
+package unsafe
+
+type ArbitraryType int  // shorthand for an arbitrary Go type; it is not a real type
+type Pointer *ArbitraryType
+
+func Alignof(variable ArbitraryType) uintptr
+func Offsetof(selector ArbitraryType) uintptr
+func Sizeof(variable ArbitraryType) uintptr
+
+type IntegerType int  // shorthand for an integer type; it is not a real type
+func Add(ptr Pointer, len IntegerType) Pointer
+func Slice(ptr *ArbitraryType, len IntegerType) []ArbitraryType
+func SliceData(slice []ArbitraryType) *ArbitraryType
+func String(ptr *byte, len IntegerType) string
+func StringData(str string) *byte
+</pre>
+
+<!--
+These conversions also apply to type parameters with suitable core types.
+Determine if we can simply use core type instead of underlying type here,
+of if the general conversion rules take care of this.
+-->
+
+<p>
+A <code>Pointer</code> is a <a href="#Pointer_types">pointer type</a> but a <code>Pointer</code>
+value may not be <a href="#Address_operators">dereferenced</a>.
+Any pointer or value of <a href="#Core_types">core type</a> <code>uintptr</code> can be
+<a href="#Conversions">converted</a> to a type of core type <code>Pointer</code> and vice versa.
+The effect of converting between <code>Pointer</code> and <code>uintptr</code> is implementation-defined.
+</p>
+
+<pre>
+var f float64
+bits = *(*uint64)(unsafe.Pointer(&amp;f))
+
+type ptr unsafe.Pointer
+bits = *(*uint64)(ptr(&amp;f))
+
+func f[P ~*B, B any](p P) uintptr {
+	return uintptr(unsafe.Pointer(p))
+}
+
+var p ptr = nil
+</pre>
+
+<p>
+The functions <code>Alignof</code> and <code>Sizeof</code> take an expression <code>x</code>
+of any type and return the alignment or size, respectively, of a hypothetical variable <code>v</code>
+as if <code>v</code> was declared via <code>var v = x</code>.
+</p>
+<p>
+The function <code>Offsetof</code> takes a (possibly parenthesized) <a href="#Selectors">selector</a>
+<code>s.f</code>, denoting a field <code>f</code> of the struct denoted by <code>s</code>
+or <code>*s</code>, and returns the field offset in bytes relative to the struct's address.
+If <code>f</code> is an <a href="#Struct_types">embedded field</a>, it must be reachable
+without pointer indirections through fields of the struct.
+For a struct <code>s</code> with field <code>f</code>:
+</p>
+
+<pre>
+uintptr(unsafe.Pointer(&amp;s)) + unsafe.Offsetof(s.f) == uintptr(unsafe.Pointer(&amp;s.f))
+</pre>
+
+<p>
+Computer architectures may require memory addresses to be <i>aligned</i>;
+that is, for addresses of a variable to be a multiple of a factor,
+the variable's type's <i>alignment</i>.  The function <code>Alignof</code>
+takes an expression denoting a variable of any type and returns the
+alignment of the (type of the) variable in bytes.  For a variable
+<code>x</code>:
+</p>
+
+<pre>
+uintptr(unsafe.Pointer(&amp;x)) % unsafe.Alignof(x) == 0
+</pre>
+
+<p>
+A (variable of) type <code>T</code> has <i>variable size</i> if <code>T</code>
+is a <a href="#Type_parameter_declarations">type parameter</a>, or if it is an
+array or struct type containing elements
+or fields of variable size. Otherwise the size is <i>constant</i>.
+Calls to <code>Alignof</code>, <code>Offsetof</code>, and <code>Sizeof</code>
+are compile-time <a href="#Constant_expressions">constant expressions</a> of
+type <code>uintptr</code> if their arguments (or the struct <code>s</code> in
+the selector expression <code>s.f</code> for <code>Offsetof</code>) are types
+of constant size.
+</p>
+
+<p>
+The function <code>Add</code> adds <code>len</code> to <code>ptr</code>
+and returns the updated pointer <code>unsafe.Pointer(uintptr(ptr) + uintptr(len))</code>
+[<a href="#Go_1.17">Go 1.17</a>].
+The <code>len</code> argument must be of <a href="#Numeric_types">integer type</a> or an untyped <a href="#Constants">constant</a>.
+A constant <code>len</code> argument must be <a href="#Representability">representable</a> by a value of type <code>int</code>;
+if it is an untyped constant it is given type <code>int</code>.
+The rules for <a href="/pkg/unsafe#Pointer">valid uses</a> of <code>Pointer</code> still apply.
+</p>
+
+<p>
+The function <code>Slice</code> returns a slice whose underlying array starts at <code>ptr</code>
+and whose length and capacity are <code>len</code>.
+<code>Slice(ptr, len)</code> is equivalent to
+</p>
+
+<pre>
+(*[len]ArbitraryType)(unsafe.Pointer(ptr))[:]
+</pre>
+
+<p>
+except that, as a special case, if <code>ptr</code>
+is <code>nil</code> and <code>len</code> is zero,
+<code>Slice</code> returns <code>nil</code>
+[<a href="#Go_1.17">Go 1.17</a>].
+</p>
+
+<p>
+The <code>len</code> argument must be of <a href="#Numeric_types">integer type</a> or an untyped <a href="#Constants">constant</a>.
+A constant <code>len</code> argument must be non-negative and <a href="#Representability">representable</a> by a value of type <code>int</code>;
+if it is an untyped constant it is given type <code>int</code>.
+At run time, if <code>len</code> is negative,
+or if <code>ptr</code> is <code>nil</code> and <code>len</code> is not zero,
+a <a href="#Run_time_panics">run-time panic</a> occurs
+[<a href="#Go_1.17">Go 1.17</a>].
+</p>
+
+<p>
+The function <code>SliceData</code> returns a pointer to the underlying array of the <code>slice</code> argument.
+If the slice's capacity <code>cap(slice)</code> is not zero, that pointer is <code>&slice[:1][0]</code>.
+If <code>slice</code> is <code>nil</code>, the result is <code>nil</code>.
+Otherwise it  is a non-<code>nil</code> pointer to an unspecified memory address
+[<a href="#Go_1.20">Go 1.20</a>].
+</p>
+
+<p>
+The function <code>String</code> returns a <code>string</code> value whose underlying bytes start at
+<code>ptr</code> and whose length is <code>len</code>.
+The same requirements apply to the <code>ptr</code> and <code>len</code> argument as in the function
+<code>Slice</code>. If <code>len</code> is zero, the result is the empty string <code>""</code>.
+Since Go strings are immutable, the bytes passed to <code>String</code> must not be modified afterwards.
+[<a href="#Go_1.20">Go 1.20</a>]
+</p>
+
+<p>
+The function <code>StringData</code> returns a pointer to the underlying bytes of the <code>str</code> argument.
+For an empty string the return value is unspecified, and may be <code>nil</code>.
+Since Go strings are immutable, the bytes returned by <code>StringData</code> must not be modified
+[<a href="#Go_1.20">Go 1.20</a>].
+</p>
+
+<h3 id="Size_and_alignment_guarantees">Size and alignment guarantees</h3>
+
+<p>
+For the <a href="#Numeric_types">numeric types</a>, the following sizes are guaranteed:
+</p>
+
+<pre class="grammar">
+type                                 size in bytes
+
+byte, uint8, int8                     1
+uint16, int16                         2
+uint32, int32, float32                4
+uint64, int64, float64, complex64     8
+complex128                           16
+</pre>
+
+<p>
+The following minimal alignment properties are guaranteed:
+</p>
+<ol>
+<li>For a variable <code>x</code> of any type: <code>unsafe.Alignof(x)</code> is at least 1.
+</li>
+
+<li>For a variable <code>x</code> of struct type: <code>unsafe.Alignof(x)</code> is the largest of
+   all the values <code>unsafe.Alignof(x.f)</code> for each field <code>f</code> of <code>x</code>, but at least 1.
+</li>
+
+<li>For a variable <code>x</code> of array type: <code>unsafe.Alignof(x)</code> is the same as
+	the alignment of a variable of the array's element type.
+</li>
+</ol>
+
+<p>
+A struct or array type has size zero if it contains no fields (or elements, respectively) that have a size greater than zero. Two distinct zero-size variables may have the same address in memory.
+</p>

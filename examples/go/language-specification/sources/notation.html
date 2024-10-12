@@ -1,0 +1,51 @@
+<h2 id="Notation">Notation</h2>
+<p>
+The syntax is specified using a
+<a href="https://en.wikipedia.org/wiki/Wirth_syntax_notation">variant</a>
+of Extended Backus-Naur Form (EBNF):
+</p>
+
+<pre class="grammar">
+Syntax      = { Production } .
+Production  = production_name "=" [ Expression ] "." .
+Expression  = Term { "|" Term } .
+Term        = Factor { Factor } .
+Factor      = production_name | token [ "…" token ] | Group | Option | Repetition .
+Group       = "(" Expression ")" .
+Option      = "[" Expression "]" .
+Repetition  = "{" Expression "}" .
+</pre>
+
+<p>
+Productions are expressions constructed from terms and the following
+operators, in increasing precedence:
+</p>
+<pre class="grammar">
+|   alternation
+()  grouping
+[]  option (0 or 1 times)
+{}  repetition (0 to n times)
+</pre>
+
+<p>
+Lowercase production names are used to identify lexical (terminal) tokens.
+Non-terminals are in CamelCase. Lexical tokens are enclosed in
+double quotes <code>""</code> or back quotes <code>``</code>.
+</p>
+
+<p>
+The form <code>a … b</code> represents the set of characters from
+<code>a</code> through <code>b</code> as alternatives. The horizontal
+ellipsis <code>…</code> is also used elsewhere in the spec to informally denote various
+enumerations or code snippets that are not further specified. The character <code>…</code>
+(as opposed to the three characters <code>...</code>) is not a token of the Go
+language.
+</p>
+
+<p>
+A link of the form [<a href="#Language_versions">Go 1.xx</a>] indicates that a described
+language feature (or some aspect of it) was changed or added with language version 1.xx and
+thus requires at minimum that language version to build.
+For details, see the <a href="#Language_versions">linked section</a>
+in the <a href="#Appendix">appendix</a>.
+</p>

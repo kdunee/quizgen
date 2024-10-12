@@ -1,0 +1,134 @@
+[
+    {
+        "question": "What triggers a run-time panic in a program?",
+        "options": {
+            "A": "Syntax errors in the code",
+            "B": "Attempting to index an array out of bounds",
+            "C": "Using an undefined variable",
+            "D": "Compiling the program with warnings"
+        },
+        "correct_answer": "B",
+        "explanation": "A run-time panic is triggered by execution errors, such as attempting to index an array out of bounds. This type of error occurs during the execution of the program, leading to a panic state that interrupts normal operation."
+    },
+    {
+        "question": "What is the relationship between run-time panics and the built-in function 'panic'?",
+        "options": {
+            "A": "Run-time panics are unrelated to the 'panic' function.",
+            "B": "Run-time panics are equivalent to a call to the 'panic' function.",
+            "C": "The 'panic' function prevents run-time panics from occurring.",
+            "D": "Run-time panics are only triggered by the 'panic' function."
+        },
+        "correct_answer": "B",
+        "explanation": "Run-time panics are equivalent to a call to the built-in function 'panic' with a specific error value. This means that when a run-time error occurs, it effectively invokes the 'panic' function, signaling an abnormal termination of the program."
+    },
+    {
+        "question": "What type does the error value associated with a run-time panic satisfy?",
+        "options": {
+            "A": "The interface type 'runtime.Error'",
+            "B": "The interface type 'panic.Error'",
+            "C": "The interface type 'system.Error'",
+            "D": "The interface type 'exception.Error'"
+        },
+        "correct_answer": "A",
+        "explanation": "The error value associated with a run-time panic satisfies the interface type 'runtime.Error'. This interface is a part of the error handling mechanism in the programming environment, allowing for consistent error reporting and handling."
+    },
+    {
+        "question": "What is a run-time panic in the context of execution errors?",
+        "options": {
+            "A": "An error that occurs during the compilation of code",
+            "B": "An error that occurs when the program is running, often due to invalid operations",
+            "C": "An error that is always recoverable without any special handling",
+            "D": "An error that is caused by syntax mistakes in the code"
+        },
+        "correct_answer": "B",
+        "explanation": "A run-time panic refers to an error that occurs while the program is executing, typically due to invalid operations such as attempting to index an array out of bounds. This type of error interrupts the normal flow of the program and requires specific handling to manage."
+    },
+    {
+        "question": "What triggers a run-time panic in a program?",
+        "options": {
+            "A": "A successful execution of a function",
+            "B": "An attempt to perform an invalid operation, such as accessing an out-of-bounds index",
+            "C": "A syntax error in the code",
+            "D": "A failure to declare a variable"
+        },
+        "correct_answer": "B",
+        "explanation": "A run-time panic is triggered by an attempt to perform an invalid operation, such as accessing an index that is out of bounds in an array. This type of error indicates that the program has encountered a situation it cannot handle, leading to a panic state."
+    },
+    {
+        "question": "What type does a run-time panic in a program correspond to?",
+        "options": {
+            "A": "A predeclared interface type",
+            "B": "An implementation-defined interface type",
+            "C": "A user-defined type",
+            "D": "A global variable type"
+        },
+        "correct_answer": "B",
+        "explanation": "A run-time panic corresponds to an implementation-defined interface type, specifically the type 'runtime.Error'. This type satisfies the predeclared interface type 'error', which allows for consistent error handling in the program."
+    },
+    {
+        "question": "What is a run-time panic in the context of error handling?",
+        "options": {
+            "A": "An error that occurs during the compilation of code",
+            "B": "An execution error that triggers a panic function call",
+            "C": "A warning that indicates potential issues in the code",
+            "D": "A type of error that can be ignored without consequences"
+        },
+        "correct_answer": "B",
+        "explanation": "A run-time panic refers to an execution error that occurs while a program is running, such as trying to access an array out of bounds. This panic is equivalent to invoking a built-in panic function, which indicates a serious error that disrupts normal execution."
+    },
+    {
+        "question": "What type does a run-time panic in Go satisfy?",
+        "options": {
+            "A": "The built-in type string",
+            "B": "The interface type error",
+            "C": "The interface type runtime.Error",
+            "D": "The type int"
+        },
+        "correct_answer": "B",
+        "explanation": "In Go, a run-time panic satisfies the predeclared interface type error. This means that the panic can be treated as an error, allowing for consistent error handling practices within the language."
+    },
+    {
+        "question": "What happens when a run-time panic occurs?",
+        "options": {
+            "A": "The program continues executing without interruption",
+            "B": "The program terminates immediately without any error message",
+            "C": "The program triggers a panic function call with an error value",
+            "D": "The program automatically corrects the error and resumes"
+        },
+        "correct_answer": "C",
+        "explanation": "When a run-time panic occurs, it triggers a panic function call with an implementation-defined error value. This indicates a critical issue that needs to be addressed, and it typically results in the program halting unless the panic is recovered."
+    },
+    {
+        "question": "What is the primary purpose of an interface type in programming?",
+        "options": {
+            "A": "To define a contract that implementing types must fulfill",
+            "B": "To store data in a structured format",
+            "C": "To execute code in a specific sequence",
+            "D": "To manage memory allocation for variables"
+        },
+        "correct_answer": "A",
+        "explanation": "The primary purpose of an interface type in programming is to define a contract that implementing types must fulfill. This means that any type that implements the interface must provide concrete implementations for the methods defined in the interface, allowing for polymorphism and code flexibility."
+    },
+    {
+        "question": "Which of the following statements is true about interface types?",
+        "options": {
+            "A": "Interface types can contain data fields.",
+            "B": "Interface types can be implemented by multiple types.",
+            "C": "Interface types cannot be used as function parameters.",
+            "D": "Interface types must have a fixed number of methods."
+        },
+        "correct_answer": "B",
+        "explanation": "Interface types can be implemented by multiple types, allowing different types to be treated uniformly as long as they adhere to the interface's contract. This feature promotes code reusability and flexibility, enabling developers to write more generic and adaptable code."
+    },
+    {
+        "question": "What does it mean for a type to satisfy an interface?",
+        "options": {
+            "A": "The type must have the same name as the interface.",
+            "B": "The type must implement all methods defined in the interface.",
+            "C": "The type must inherit from the interface.",
+            "D": "The type must be a primitive data type."
+        },
+        "correct_answer": "B",
+        "explanation": "For a type to satisfy an interface, it must implement all methods defined in that interface. This means that the type provides concrete implementations for the methods, allowing it to be used wherever the interface type is expected, thus enabling polymorphism."
+    }
+]

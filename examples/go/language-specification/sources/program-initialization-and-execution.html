@@ -1,0 +1,268 @@
+<h2 id="Program_initialization_and_execution">Program initialization and execution</h2>
+
+<h3 id="The_zero_value">The zero value</h3>
+<p>
+When storage is allocated for a <a href="#Variables">variable</a>,
+either through a declaration or a call of <code>new</code>, or when
+a new value is created, either through a composite literal or a call
+of <code>make</code>,
+and no explicit initialization is provided, the variable or value is
+given a default value.  Each element of such a variable or value is
+set to the <i>zero value</i> for its type: <code>false</code> for booleans,
+<code>0</code> for numeric types, <code>""</code>
+for strings, and <code>nil</code> for pointers, functions, interfaces, slices, channels, and maps.
+This initialization is done recursively, so for instance each element of an
+array of structs will have its fields zeroed if no value is specified.
+</p>
+<p>
+These two simple declarations are equivalent:
+</p>
+
+<pre>
+var i int
+var i int = 0
+</pre>
+
+<p>
+After
+</p>
+
+<pre>
+type T struct { i int; f float64; next *T }
+t := new(T)
+</pre>
+
+<p>
+the following holds:
+</p>
+
+<pre>
+t.i == 0
+t.f == 0.0
+t.next == nil
+</pre>
+
+<p>
+The same would also be true after
+</p>
+
+<pre>
+var t T
+</pre>
+
+<h3 id="Package_initialization">Package initialization</h3>
+
+<p>
+Within a package, package-level variable initialization proceeds stepwise,
+with each step selecting the variable earliest in <i>declaration order</i>
+which has no dependencies on uninitialized variables.
+</p>
+
+<p>
+More precisely, a package-level variable is considered <i>ready for
+initialization</i> if it is not yet initialized and either has
+no <a href="#Variable_declarations">initialization expression</a> or
+its initialization expression has no <i>dependencies</i> on uninitialized variables.
+Initialization proceeds by repeatedly initializing the next package-level
+variable that is earliest in declaration order and ready for initialization,
+until there are no variables ready for initialization.
+</p>
+
+<p>
+If any variables are still uninitialized when this
+process ends, those variables are part of one or more initialization cycles,
+and the program is not valid.
+</p>
+
+<p>
+Multiple variables on the left-hand side of a variable declaration initialized
+by single (multi-valued) expression on the right-hand side are initialized
+together: If any of the variables on the left-hand side is initialized, all
+those variables are initialized in the same step.
+</p>
+
+<pre>
+var x = a
+var a, b = f() // a and b are initialized together, before x is initialized
+</pre>
+
+<p>
+For the purpose of package initialization, <a href="#Blank_identifier">blank</a>
+variables are treated like any other variables in declarations.
+</p>
+
+<p>
+The declaration order of variables declared in multiple files is determined
+by the order in which the files are presented to the compiler: Variables
+declared in the first file are declared before any of the variables declared
+in the second file, and so on.
+To ensure reproducible initialization behavior, build systems are encouraged
+to present multiple files belonging to the same package in lexical file name
+order to a compiler.
+</p>
+
+<p>
+Dependency analysis does not rely on the actual values of the
+variables, only on lexical <i>references</i> to them in the source,
+analyzed transitively. For instance, if a variable <code>x</code>'s
+initialization expression refers to a function whose body refers to
+variable <code>y</code> then <code>x</code> depends on <code>y</code>.
+Specifically:
+</p>
+
+<ul>
+<li>
+A reference to a variable or function is an identifier denoting that
+variable or function.
+</li>
+
+<li>
+A reference to a method <code>m</code> is a
+<a href="#Method_values">method value</a> or
+<a href="#Method_expressions">method expression</a> of the form
+<code>t.m</code>, where the (static) type of <code>t</code> is
+not an interface type, and the method <code>m</code> is in the
+<a href="#Method_sets">method set</a> of <code>t</code>.
+It is immaterial whether the resulting function value
+<code>t.m</code> is invoked.
+</li>
+
+<li>
+A variable, function, or method <code>x</code> depends on a variable
+<code>y</code> if <code>x</code>'s initialization expression or body
+(for functions and methods) contains a reference to <code>y</code>
+or to a function or method that depends on <code>y</code>.
+</li>
+</ul>
+
+<p>
+For example, given the declarations
+</p>
+
+<pre>
+var (
+	a = c + b  // == 9
+	b = f()    // == 4
+	c = f()    // == 5
+	d = 3      // == 5 after initialization has finished
+)
+
+func f() int {
+	d++
+	return d
+}
+</pre>
+
+<p>
+the initialization order is <code>d</code>, <code>b</code>, <code>c</code>, <code>a</code>.
+Note that the order of subexpressions in initialization expressions is irrelevant:
+<code>a = c + b</code> and <code>a = b + c</code> result in the same initialization
+order in this example.
+</p>
+
+<p>
+Dependency analysis is performed per package; only references referring
+to variables, functions, and (non-interface) methods declared in the current
+package are considered. If other, hidden, data dependencies exists between
+variables, the initialization order between those variables is unspecified.
+</p>
+
+<p>
+For instance, given the declarations
+</p>
+
+<pre>
+var x = I(T{}).ab()   // x has an undetected, hidden dependency on a and b
+var _ = sideEffect()  // unrelated to x, a, or b
+var a = b
+var b = 42
+
+type I interface      { ab() []int }
+type T struct{}
+func (T) ab() []int   { return []int{a, b} }
+</pre>
+
+<p>
+the variable <code>a</code> will be initialized after <code>b</code> but
+whether <code>x</code> is initialized before <code>b</code>, between
+<code>b</code> and <code>a</code>, or after <code>a</code>, and
+thus also the moment at which <code>sideEffect()</code> is called (before
+or after <code>x</code> is initialized) is not specified.
+</p>
+
+<p>
+Variables may also be initialized using functions named <code>init</code>
+declared in the package block, with no arguments and no result parameters.
+</p>
+
+<pre>
+func init() { … }
+</pre>
+
+<p>
+Multiple such functions may be defined per package, even within a single
+source file. In the package block, the <code>init</code> identifier can
+be used only to declare <code>init</code> functions, yet the identifier
+itself is not <a href="#Declarations_and_scope">declared</a>. Thus
+<code>init</code> functions cannot be referred to from anywhere
+in a program.
+</p>
+
+<p>
+The entire package is initialized by assigning initial values
+to all its package-level variables followed by calling
+all <code>init</code> functions in the order they appear
+in the source, possibly in multiple files, as presented
+to the compiler.
+</p>
+
+<h3 id="Program_initialization">Program initialization</h3>
+
+<p>
+The packages of a complete program are initialized stepwise, one package at a time.
+If a package has imports, the imported packages are initialized
+before initializing the package itself. If multiple packages import
+a package, the imported package will be initialized only once.
+The importing of packages, by construction, guarantees that there
+can be no cyclic initialization dependencies.
+More precisely:
+</p>
+
+<p>
+Given the list of all packages, sorted by import path, in each step the first
+uninitialized package in the list for which all imported packages (if any) are
+already initialized is <a href="#Package_initialization">initialized</a>.
+This step is repeated until all packages are initialized.
+</p>
+
+<p>
+Package initialization&mdash;variable initialization and the invocation of
+<code>init</code> functions&mdash;happens in a single goroutine,
+sequentially, one package at a time.
+An <code>init</code> function may launch other goroutines, which can run
+concurrently with the initialization code. However, initialization
+always sequences
+the <code>init</code> functions: it will not invoke the next one
+until the previous one has returned.
+</p>
+
+<h3 id="Program_execution">Program execution</h3>
+<p>
+A complete program is created by linking a single, unimported package
+called the <i>main package</i> with all the packages it imports, transitively.
+The main package must
+have package name <code>main</code> and
+declare a function <code>main</code> that takes no
+arguments and returns no value.
+</p>
+
+<pre>
+func main() { … }
+</pre>
+
+<p>
+Program execution begins by <a href="#Program_initialization">initializing the program</a>
+and then invoking the function <code>main</code> in package <code>main</code>.
+When that function invocation returns, the program exits.
+It does not wait for other (non-<code>main</code>) goroutines to complete.
+</p>

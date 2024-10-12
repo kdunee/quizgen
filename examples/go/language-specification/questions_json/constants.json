@@ -1,0 +1,310 @@
+[
+    {
+        "question": "What are numeric constants collectively referred to as?",
+        "options": {
+            "A": "Boolean constants",
+            "B": "String constants",
+            "C": "Rune, integer, floating-point, and complex constants",
+            "D": "Typed constants"
+        },
+        "correct_answer": "C",
+        "explanation": "Numeric constants are collectively referred to as rune, integer, floating-point, and complex constants. This classification highlights the types of constants that represent exact values and are used in various mathematical and logical operations."
+    },
+    {
+        "question": "Which of the following statements is true about untyped constants?",
+        "options": {
+            "A": "They can only be used in expressions with explicit types.",
+            "B": "They have a default type that is determined by their context.",
+            "C": "They cannot be converted to typed values.",
+            "D": "They are always represented as integer constants."
+        },
+        "correct_answer": "B",
+        "explanation": "Untyped constants have a default type that is determined by the context in which they are used. This allows them to be implicitly converted to a typed value when required, such as in variable declarations or assignment statements."
+    },
+    {
+        "question": "What happens if a constant value cannot be represented as a value of the respective type?",
+        "options": {
+            "A": "The constant is automatically converted to a compatible type.",
+            "B": "An error occurs.",
+            "C": "The constant is rounded to the nearest representable value.",
+            "D": "The constant is ignored in the expression."
+        },
+        "correct_answer": "B",
+        "explanation": "If a constant value cannot be represented as a value of the respective type, it results in an error. This ensures that only valid and representable constants are used in operations and assignments, maintaining type safety."
+    },
+    {
+        "question": "Which of the following is NOT a type of constant mentioned in the chapter?",
+        "options": {
+            "A": "Floating-point constants",
+            "B": "Complex constants",
+            "C": "Character constants",
+            "D": "Integer constants"
+        },
+        "correct_answer": "C",
+        "explanation": "Character constants are not mentioned as a type of constant in the chapter. The types of constants discussed include boolean, rune, integer, floating-point, complex, and string constants, with numeric constants being a subset of these."
+    },
+    {
+        "question": "What are the two predeclared boolean constants in programming?",
+        "options": {
+            "A": "true and false",
+            "B": "yes and no",
+            "C": "1 and 0",
+            "D": "on and off"
+        },
+        "correct_answer": "A",
+        "explanation": "The two predeclared boolean constants in programming are 'true' and 'false'. These constants represent the two possible truth values in boolean logic, which are fundamental in decision-making and control flow in programming."
+    },
+    {
+        "question": "How are boolean constants typically represented in programming languages?",
+        "options": {
+            "A": "As numeric values",
+            "B": "As string literals",
+            "C": "As predeclared identifiers",
+            "D": "As complex constants"
+        },
+        "correct_answer": "C",
+        "explanation": "Boolean constants are typically represented as predeclared identifiers, specifically 'true' and 'false'. This allows for clear and concise representation of truth values in logical expressions and conditions."
+    },
+    {
+        "question": "What is the significance of boolean constants in programming?",
+        "options": {
+            "A": "They are used to represent numeric values.",
+            "B": "They are essential for defining constant expressions.",
+            "C": "They control the flow of execution in conditional statements.",
+            "D": "They denote types of variables."
+        },
+        "correct_answer": "C",
+        "explanation": "Boolean constants are significant in programming because they control the flow of execution in conditional statements. They allow programmers to make decisions based on true or false evaluations, which is fundamental to logic and control structures in code."
+    },
+    {
+        "question": "Which of the following statements is true regarding boolean constants?",
+        "options": {
+            "A": "Boolean constants can only be used in numeric calculations.",
+            "B": "Boolean constants are always typed.",
+            "C": "Boolean constants represent truth values.",
+            "D": "Boolean constants can be represented as complex numbers."
+        },
+        "correct_answer": "C",
+        "explanation": "Boolean constants represent truth values, specifically 'true' and 'false'. They are not used in numeric calculations or represented as complex numbers, and while they can be typed, they are often used in untyped contexts as well."
+    },
+    {
+        "question": "What are numeric constants primarily used to represent?",
+        "options": {
+            "A": "Exact values of arbitrary precision",
+            "B": "Values that can overflow",
+            "C": "Boolean truth values only",
+            "D": "String representations of numbers"
+        },
+        "correct_answer": "A",
+        "explanation": "Numeric constants are used to represent exact values of arbitrary precision, meaning they can hold precise numerical values without the risk of overflow. This characteristic distinguishes them from other types of constants that may have limitations on their value range."
+    },
+    {
+        "question": "Which of the following is NOT a type of numeric constant?",
+        "options": {
+            "A": "Integer constants",
+            "B": "Floating-point constants",
+            "C": "String constants",
+            "D": "Complex constants"
+        },
+        "correct_answer": "C",
+        "explanation": "String constants are not considered numeric constants. Numeric constants include integer, floating-point, and complex constants, which are all types of values that can be used in mathematical operations."
+    },
+    {
+        "question": "What is a key characteristic of untyped constants?",
+        "options": {
+            "A": "They can only represent boolean values.",
+            "B": "They have a default type based on their context.",
+            "C": "They cannot be converted to typed values.",
+            "D": "They are always represented with limited precision."
+        },
+        "correct_answer": "B",
+        "explanation": "Untyped constants have a default type that is determined by the context in which they are used. This allows them to be implicitly converted to a specific type when required, making them flexible in various programming scenarios."
+    },
+    {
+        "question": "What happens if a compiler cannot represent a numeric constant precisely?",
+        "options": {
+            "A": "It automatically converts it to a string.",
+            "B": "It gives an error.",
+            "C": "It rounds the constant to the nearest integer.",
+            "D": "It ignores the constant and continues execution."
+        },
+        "correct_answer": "B",
+        "explanation": "If a compiler is unable to represent a numeric constant precisely, it will give an error. This ensures that the integrity of the numeric value is maintained and prevents potential issues that could arise from inaccurate representations."
+    },
+    {
+        "question": "What distinguishes typed constants from untyped constants?",
+        "options": {
+            "A": "Typed constants have a specific type assigned, while untyped constants do not.",
+            "B": "Typed constants can only be numeric, while untyped constants can be any data type.",
+            "C": "Typed constants are always represented as literals, while untyped constants are not.",
+            "D": "Typed constants can only be declared in functions, while untyped constants can be declared globally."
+        },
+        "correct_answer": "A",
+        "explanation": "Typed constants have a specific type assigned to them, which can be explicitly defined through constant declarations or conversions. In contrast, untyped constants do not have a fixed type and can be implicitly converted to a type based on the context in which they are used."
+    },
+    {
+        "question": "What is the default type of an untyped constant?",
+        "options": {
+            "A": "It has no default type and must be explicitly defined.",
+            "B": "The default type is determined by the context in which it is used.",
+            "C": "The default type is always integer.",
+            "D": "The default type is always string."
+        },
+        "correct_answer": "B",
+        "explanation": "The default type of an untyped constant is determined by the context in which it is used. For example, if an untyped constant is used in a variable declaration, it will be implicitly converted to a type that matches the expected type in that context, such as boolean, rune, integer, floating-point, complex, or string."
+    },
+    {
+        "question": "Which of the following statements is true regarding numeric constants?",
+        "options": {
+            "A": "Numeric constants can overflow and represent values of arbitrary precision.",
+            "B": "Numeric constants are always typed and cannot be untyped.",
+            "C": "Numeric constants do not overflow and represent exact values of arbitrary precision.",
+            "D": "Numeric constants can only be represented as floating-point values."
+        },
+        "correct_answer": "C",
+        "explanation": "Numeric constants do not overflow and represent exact values of arbitrary precision. This means that they can accurately represent a wide range of values without the risk of exceeding the limits of their type, unlike other data types that may have fixed precision."
+    },
+    {
+        "question": "How can a constant be explicitly given a type?",
+        "options": {
+            "A": "By using a variable declaration only.",
+            "B": "Through a constant declaration or a conversion.",
+            "C": "By assigning it to a variable of a different type.",
+            "D": "By using it in an expression that requires a specific type."
+        },
+        "correct_answer": "B",
+        "explanation": "A constant can be explicitly given a type through a constant declaration or a conversion. This allows the constant to be treated as a specific type in contexts where a typed value is required, ensuring that it can be used correctly in operations and expressions."
+    },
+    {
+        "question": "What is a constant expression?",
+        "options": {
+            "A": "An expression that evaluates to a constant value",
+            "B": "An expression that can change its value during execution",
+            "C": "An expression that only contains variable references",
+            "D": "An expression that requires user input to evaluate"
+        },
+        "correct_answer": "A",
+        "explanation": "A constant expression is defined as an expression that evaluates to a constant value. This means that the result of the expression does not change and is determined at compile time, allowing for predictable and consistent values in programming."
+    },
+    {
+        "question": "Which of the following can be considered a constant expression?",
+        "options": {
+            "A": "The result of a built-in function applied to constant arguments",
+            "B": "A variable that is updated in a loop",
+            "C": "An expression that includes user-defined functions",
+            "D": "A random number generated at runtime"
+        },
+        "correct_answer": "A",
+        "explanation": "The result of a built-in function applied to constant arguments qualifies as a constant expression because it yields a constant value that does not change. In contrast, variables that are updated or values generated at runtime do not meet the criteria for constant expressions."
+    },
+    {
+        "question": "How are numeric constants related to constant expressions?",
+        "options": {
+            "A": "Numeric constants cannot be used in constant expressions.",
+            "B": "Numeric constants are a type of constant expression.",
+            "C": "Constant expressions can only include string constants.",
+            "D": "Numeric constants are always mutable."
+        },
+        "correct_answer": "B",
+        "explanation": "Numeric constants are indeed a type of constant expression. They represent exact values that do not change and can be used in various expressions to yield constant results, thus fitting the definition of constant expressions."
+    },
+    {
+        "question": "What happens if a constant expression cannot be represented as a value of the respective type?",
+        "options": {
+            "A": "The program will run without any issues.",
+            "B": "An error will occur.",
+            "C": "The constant will be automatically converted to a string.",
+            "D": "The constant will be assigned a default value."
+        },
+        "correct_answer": "B",
+        "explanation": "If a constant expression cannot be represented as a value of the respective type, an error will occur. This ensures that the integrity of type representation is maintained in programming, preventing potential runtime errors or unexpected behavior."
+    },
+    {
+        "question": "What is meant by 'arbitrary precision' in the context of numeric constants?",
+        "options": {
+            "A": "Numeric constants can represent values with no limit on their size.",
+            "B": "Numeric constants can only represent whole numbers.",
+            "C": "Numeric constants are limited to a fixed number of decimal places.",
+            "D": "Numeric constants can only represent values within a specific range."
+        },
+        "correct_answer": "A",
+        "explanation": "In the context of numeric constants, 'arbitrary precision' means that these constants can represent values without a predefined limit on their size. This allows for very large or very small numbers to be represented accurately, as opposed to being constrained by typical data type limits."
+    },
+    {
+        "question": "What happens if a compiler cannot represent a numeric constant precisely?",
+        "options": {
+            "A": "The program will run without any issues.",
+            "B": "An error will be generated.",
+            "C": "The constant will be rounded to the nearest integer.",
+            "D": "The constant will be converted to a string."
+        },
+        "correct_answer": "B",
+        "explanation": "If a compiler cannot represent a numeric constant precisely, it will generate an error. This ensures that the integrity of the constant's value is maintained and that the programmer is alerted to any potential issues with representation."
+    },
+    {
+        "question": "What is the default type of an untyped constant in contexts requiring a typed value?",
+        "options": {
+            "A": "It is always treated as a string.",
+            "B": "It depends on the type of the constant.",
+            "C": "It is always treated as an integer.",
+            "D": "It is always treated as a boolean."
+        },
+        "correct_answer": "B",
+        "explanation": "The default type of an untyped constant depends on the type of the constant itself. For example, a boolean constant defaults to 'bool', a rune constant defaults to 'rune', and so on. This allows the constant to be implicitly converted to the appropriate type when needed."
+    },
+    {
+        "question": "Which of the following statements is true regarding the representation of numeric constants?",
+        "options": {
+            "A": "Numeric constants can represent negative zero and infinity.",
+            "B": "Numeric constants must be represented with at least 256 bits for integers.",
+            "C": "Numeric constants are always represented with a fixed precision.",
+            "D": "Numeric constants can only represent values within the range of -1 to 1."
+        },
+        "correct_answer": "B",
+        "explanation": "It is true that numeric constants must be represented with at least 256 bits for integers. This requirement ensures that a wide range of integer values can be accurately represented, while other types of constants also have specific representation requirements to maintain precision."
+    },
+    {
+        "question": "What is the purpose of type conversion in programming?",
+        "options": {
+            "A": "To change the data type of a value to match the expected type in a given context",
+            "B": "To create a new variable with a different name",
+            "C": "To increase the precision of numeric constants",
+            "D": "To combine multiple values into a single data structure"
+        },
+        "correct_answer": "A",
+        "explanation": "The purpose of type conversion is to change the data type of a value so that it matches the expected type in a specific context, such as in variable declarations or assignment statements. This ensures that operations on the value are valid and that the program behaves as intended."
+    },
+    {
+        "question": "What happens if a constant value cannot be represented as a value of the specified type during type conversion?",
+        "options": {
+            "A": "The program will automatically adjust the value to fit the type",
+            "B": "An error will occur indicating the value cannot be represented",
+            "C": "The constant will be converted to a default type",
+            "D": "The constant will be ignored in the operation"
+        },
+        "correct_answer": "B",
+        "explanation": "If a constant value cannot be represented as a value of the specified type during type conversion, an error will occur. This is to prevent invalid operations and ensure that the program maintains type safety and correctness."
+    },
+    {
+        "question": "What is an untyped constant in the context of type conversion?",
+        "options": {
+            "A": "A constant that has no value associated with it",
+            "B": "A constant that can be converted to any type without restrictions",
+            "C": "A constant that has a default type determined by its context",
+            "D": "A constant that is only used in expressions"
+        },
+        "correct_answer": "C",
+        "explanation": "An untyped constant is a constant that does not have an explicit type assigned to it. Instead, it has a default type that is determined by the context in which it is used, allowing it to be implicitly converted to a typed value when necessary."
+    },
+    {
+        "question": "Which of the following statements is true regarding the conversion of constants?",
+        "options": {
+            "A": "Constants can only be converted to the same type they were originally defined as",
+            "B": "Type conversion can only be applied to numeric constants",
+            "C": "Constants may be converted explicitly or implicitly based on their usage",
+            "D": "Type conversion is not applicable to boolean constants"
+        },
+        "correct_answer": "C",
+        "explanation": "Constants may be converted either explicitly through a conversion operation or implicitly based on their usage in contexts that require a specific type. This flexibility allows for greater versatility in how constants are utilized in programming."
+    }
+]
