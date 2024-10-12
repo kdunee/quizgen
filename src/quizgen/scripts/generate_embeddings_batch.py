@@ -2,6 +2,7 @@ import argparse
 import pathlib
 import subprocess
 import sys
+import os
 
 from tqdm import tqdm
 
@@ -24,10 +25,11 @@ def generate_embeddings(input_dir, output_dir):
             continue
 
         print(f"Processing file: {relative_path}")
+        script_path = os.path.join(os.path.dirname(__file__), "generate_embeddings.py")
         subprocess.run(
             [
                 sys.executable,
-                "generate_embeddings.py",
+                script_path,
                 "--input-path",
                 str(json_file),
                 "--output-path",

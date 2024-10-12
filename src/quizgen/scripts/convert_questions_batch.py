@@ -2,6 +2,7 @@ import argparse
 import pathlib
 import subprocess
 import sys
+import os
 
 from tqdm import tqdm
 
@@ -24,8 +25,9 @@ def convert_questions(input_dir, output_dir):
             continue
 
         print(f"Processing file: {relative_path}")
+        script_path = os.path.join(os.path.dirname(__file__), "convert_questions.py")
         subprocess.run(
-            [sys.executable, "convert_questions.py", str(json_file), str(output_path)],
+            [sys.executable, script_path, str(json_file), str(output_path)],
             check=True,
         )
         print(f"Finished processing file: {relative_path}")
