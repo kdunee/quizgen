@@ -16,6 +16,9 @@ scikit-learn = "^1.5.2"
 numpy = "^2.1.2"
 tqdm = "^4.66.5"
 
+[tool.poetry.dev-dependencies]
+ruff = "^0.6.9"
+
 [tool.poetry.scripts]
 quizgen = "quizgen.quizgen:main"
 
