@@ -123,6 +123,26 @@ quizgen <command> [options]
     quizgen anki --input-dir path/to/csv/files --root-deck-name "Root Deck Name" 
     ```
 
+## Model Selection
+
+QuizGen allows you to select specific AI models for different stages of the question generation process. This can be useful for experimenting with different models or fine-tuning the output to your needs.
+
+The following model selection arguments are available:
+
+- `--concept-model`: Specifies the model used for concept extraction. Default is `gpt-4o-mini-2024-07-18`.
+- `--questions-model`: Specifies the model used for question generation. Default is `gpt-4o-2024-08-06`.
+- `--embedding-model`: Specifies the model used for generating embeddings. Default is `text-embedding-3-small`.
+
+These arguments can be used with both single chapter and batch commands. For example:
+
+```bash
+# Generate questions using a specific model:
+quizgen generate --chapter-path path/to/chapter.md --title "Course Title" --output path/to/output.json --questions-model gpt-4
+
+# Generate embeddings using a specific model:
+quizgen embeddings --batch --input-dir path/to/json/files --output-dir path/to/embeddings/output --embedding-model text-embedding-ada-002
+```
+
 ## Example Anki Decks
 
 Check out these example Anki decks generated using QuizGen:
