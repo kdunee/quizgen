@@ -7,7 +7,7 @@ import os
 from tqdm import tqdm
 
 
-def generate_embeddings(input_dir, output_dir):
+def generate_embeddings(input_dir, output_dir, embedding_model):
     input_dir = pathlib.Path(input_dir).resolve()
     output_dir = pathlib.Path(output_dir).resolve()
     json_files = list(input_dir.rglob("*.json"))
@@ -34,6 +34,8 @@ def generate_embeddings(input_dir, output_dir):
                 str(json_file),
                 "--output-path",
                 str(output_path),
+                "--embedding-model",
+                embedding_model,
             ],
             check=True,
         )
@@ -54,9 +56,15 @@ def main():
     parser.add_argument(
         "--output-dir", required=True, help="Output directory for embedding files"
     )
+    parser.add_argument(
+        "--embedding-model",
+        type=str,
+        default="text-embedding-3-small",
+        help="Model to use for generating embeddings",
+    )
     args = parser.parse_args()
 
-    generate_embeddings(args.input_dir, args.output_dir)
+    generate_embeddings(args.input_dir, args.output_dir, args.embedding_model)
 
 
 if __name__ == "__main__":
